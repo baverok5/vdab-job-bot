@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Job monitor — Baver</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --card: #ffffff; --border: #e3e1dc;
+    --text: #1e1e1c; --text2: #6b6a65; --text3: #97958e;
+    --accent: #185fa5; --accent-bg: #e6f1fb; --accent-fill: #378add;
+    --green: #0f6e56; --green-bg: #e1f5ee;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #161615; --card: #222220; --border: #3a3936;
+      --text: #eceae6; --text2: #a5a39c; --text3: #7c7a73;
+      --accent: #85b7eb; --accent-bg: #0c447c33; --accent-fill: #2f7fd0;
+      --green: #5dcaa5; --green-bg: #08504133;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg); color: var(--text);
+    max-width: 640px; margin: 0 auto; padding: 16px 12px 60px;
+  }
+  h1 { font-size: 19px; font-weight: 600; }
+  .sub { font-size: 12.5px; color: var(--text3); margin-top: 3px; }
+  .stats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin: 16px 0; }
+  .stat { background: var(--card); border: 0.5px solid var(--border); border-radius: 10px; padding: 10px 12px; }
+  .stat b { font-size: 21px; font-weight: 600; display: block; }
+  .stat span { font-size: 11px; color: var(--text3); }
+  .label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--text3); margin: 18px 0 8px; }
+  .card {
+    background: var(--card); border: 0.5px solid var(--border);
+    border-radius: 12px; padding: 14px; margin-bottom: 10px; cursor: pointer;
+  }
+  .card.done { opacity: .55; }
+  .top { display: flex; justify-content: space-between; gap: 10px; align-items: flex-start; }
+  .title { font-size: 15px; font-weight: 600; line-height: 1.3; }
+  .co { font-size: 13px; color: var(--text2); margin-top: 2px; }
+  .score { background: var(--accent-bg); color: var(--accent); font-size: 13px; font-weight: 600; border-radius: 8px; padding: 4px 9px; white-space: nowrap; }
+  .tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+  .tag { font-size: 11px; padding: 3px 9px; border-radius: 20px; background: var(--bg); border: 0.5px solid var(--border); color: var(--text2); }
+  .tag.new { background: var(--green-bg); color: var(--green); border-color: transparent; font-weight: 600; }
+  .body { display: none; margin-top: 12px; border-top: 0.5px solid var(--border); padding-top: 12px; }
+  .card.open .body { display: block; }
+  .sec { margin-bottom: 12px; }
+  .sec .h { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; color: var(--text3); margin-bottom: 4px; }
+  .sec .t { font-size: 13.5px; color: var(--text2); line-height: 1.6; white-space: pre-wrap; }
+  .quote { background: var(--bg); border-left: 2px solid var(--accent-fill); border-radius: 0 8px 8px 0; padding: 9px 12px; font-size: 13.5px; line-height: 1.6; white-space: pre-wrap; }
+  .row { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+  button, .btn {
+    font: inherit; font-size: 13.5px; border-radius: 9px; padding: 10px 14px;
+    border: 0.5px solid var(--border); background: transparent; color: var(--text2);
+    cursor: pointer; text-decoration: none; text-align: center;
+  }
+  .primary { flex: 1; background: var(--accent-fill); color: #fff; border: none; font-weight: 600; }
+  .copybtn { font-size: 12px; padding: 5px 10px; margin-top: 6px; }
+  .empty { text-align: center; color: var(--text3); font-size: 13.5px; padding: 40px 0; }
+</style>
+</head>
+<body>
+
+<h1>Job monitor</h1>
+<div class="sub" id="updated">Loading…</div>
+
+<div class="stats">
+  <div class="stat"><b id="s-new">–</b><span>New matches</span></div>
+  <div class="stat"><b id="s-applied">–</b><span>Applied</span></div>
+  <div class="stat"><b id="s-total">–</b><span>Total found</span></div>
+</div>
+
+<div class="label">Ready to apply</div>
+<div id="list-new"><div class="empty">Loading jobs…</div></div>
+
+<div class="label">Handled</div>
+<div id="list-done"><div class="empty">Nothing yet</div></div>
+
+<script>
+const LS = "jobstatus";  // {jobId: "applied"|"skipped"}
+const getStatus = () => JSON.parse(localStorage.getItem(LS) || "{}");
+const setStatus = (id, s) => {
+  const m = getStatus(); m[id] = s;
+  localStorage.setItem(LS, JSON.stringify(m)); render();
+};
+
+let DATA = { jobs: [], updated: "" };
+
+function esc(s) {
+  return (s || "").replace(/[&<>"]/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;" }[c]));
+}
+
+function gmailLink(j) {
+  const to = encodeURIComponent(j.apply_email || "");
+  const su = encodeURIComponent(j.email_subject || ("Application — " + j.title));
+  const bo = encodeURIComponent(j.email_body || "");
+  return `https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${su}&body=${bo}`;
+}
+
+function copyText(btn, text) {
+  navigator.clipboard.writeText(text).then(() => {
+    const old = btn.textContent; btn.textContent = "Copied";
+    setTimeout(() => btn.textContent = old, 1500);
+  });
+}
+
+function isToday(str) {
+  return (str || "").slice(0, 10) === new Date().toISOString().slice(0, 10);
+}
+
+function card(j, done) {
+  const el = document.createElement("div");
+  el.className = "card" + (done ? " done" : "");
+  el.innerHTML = `
+    <div class="top">
+      <div>
+        <div class="title">${esc(j.title)}</div>
+        <div class="co">${esc(j.company)} · ${esc(j.location)}</div>
+      </div>
+      <div class="score">${j.match_score || "–"}%</div>
+    </div>
+    <div class="tags">
+      ${isToday(j.found_at) ? '<span class="tag new">New today</span>' : ""}
+      <span class="tag">Found ${esc((j.found_at || "").slice(0, 10))}</span>
+      ${j.apply_email ? '<span class="tag">Direct email</span>' : ""}
+    </div>
+    <div class="body">
+      <div class="sec"><div class="h">Why it matches</div><div class="t">${esc(j.reason)}</div></div>
+      <div class="sec"><div class="h">Application email</div>
+        <div class="quote">${esc(j.email_body)}</div>
+        <button class="copybtn" data-copy="email">Copy email</button>
+      </div>
+      <div class="sec"><div class="h">Cover letter</div>
+        <div class="quote">${esc(j.cover_letter)}</div>
+        <button class="copybtn" data-copy="cover">Copy cover letter</button>
+      </div>
+      <div class="sec"><div class="h">CV highlights for this job</div>
+        <div class="t">${esc(j.cv_highlights)}</div>
+      </div>
+      <div class="row">
+        <a class="btn primary" data-act="apply" href="${gmailLink(j)}" target="_blank" rel="noopener">Open email draft</a>
+        <a class="btn" href="${esc(j.url)}" target="_blank" rel="noopener">View on VDAB</a>
+        ${done ? "" : '<button data-act="skip">Skip</button>'}
+      </div>
+    </div>`;
+
+  el.addEventListener("click", e => {
+    const act = e.target.dataset.act, cp = e.target.dataset.copy;
+    if (cp === "email") return copyText(e.target, j.email_body || "");
+    if (cp === "cover") return copyText(e.target, j.cover_letter || "");
+    if (act === "apply") { setTimeout(() => setStatus(j.id, "applied"), 400); return; }
+    if (act === "skip") { setStatus(j.id, "skipped"); return; }
+    if (e.target.closest("a,button")) return;
+    el.classList.toggle("open");
+  });
+  return el;
+}
+
+function render() {
+  const st = getStatus();
+  const fresh = DATA.jobs.filter(j => !st[j.id]);
+  const done = DATA.jobs.filter(j => st[j.id]);
+
+  document.getElementById("s-new").textContent = fresh.length;
+  document.getElementById("s-applied").textContent =
+    Object.values(st).filter(v => v === "applied").length;
+  document.getElementById("s-total").textContent = DATA.jobs.length;
+  document.getElementById("updated").textContent =
+    DATA.updated ? "Bot last ran: " + DATA.updated : "No data yet — the bot hasn't run.";
+
+  const ln = document.getElementById("list-new"); ln.innerHTML = "";
+  if (!fresh.length) ln.innerHTML = '<div class="empty">No new matches right now.<br>The bot checks VDAB every hour.</div>';
+  fresh.forEach(j => ln.appendChild(card(j, false)));
+
+  const ld = document.getElementById("list-done"); ld.innerHTML = "";
+  if (!done.length) ld.innerHTML = '<div class="empty">Nothing yet</div>';
+  done.forEach(j => ld.appendChild(card(j, true)));
+}
+
+fetch("jobs.json?t=" + Date.now())
+  .then(r => r.json())
+  .then(d => { DATA = d; render(); })
+  .catch(() => {
+    document.getElementById("updated").textContent = "Could not load jobs.json yet.";
+  });
+</script>
+</body>
+</html>
