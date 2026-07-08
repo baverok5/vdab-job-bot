@@ -53,7 +53,7 @@ HEADERS = {
     "Accept-Language": "nl-BE,nl;q=0.9,en;q=0.8",
 }
 
-MAX_NEW_PER_RUN = 25  # safety cap so one run never floods Gemini's free tier
+MAX_NEW_PER_RUN = 10  # safety cap so one run never floods Gemini's free tier
 
 
 # ---------------------------------------------------------------- helpers
@@ -149,17 +149,17 @@ def fetch_job_detail(browser, url, job_id):
         extra_http_headers={"Accept-Language": HEADERS["Accept-Language"]},
     )
     try:
-        page.goto(url, wait_until="domcontentloaded", timeout=60000)
+        page.goto(url, wait_until="domcontentloaded", timeout=45000)
         # Wait until the SPA has actually rendered the posting (body fills up),
         # rather than the near-empty "Toepassing laden..." loading shell.
         try:
             page.wait_for_function(
                 "document.body && document.body.innerText.length > 800",
-                timeout=25000,
+                timeout=12000,
             )
         except Exception:
             pass
-        page.wait_for_timeout(1000)  # let late content settle
+        page.wait_for_timeout(800)  # let late content settle
         body_text = page.inner_text("body")
         html = page.content()
     except Exception as e:
