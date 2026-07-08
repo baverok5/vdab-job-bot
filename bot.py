@@ -3,7 +3,8 @@ VDAB Job Bot — finds English-only, no-experience jobs and prepares application
 
 How it works (runs on GitHub Actions every hour):
 1. Scrapes VDAB job search results for English-language jobs
-2. For each NEW job: fetches the full description from VDAB's JSON API
+2. For each NEW job: renders the full description in a headless browser
+   (VDAB is a JavaScript app + bot-protected API, so plain HTTP can't see it)
 3. Asks Gemini: "Does this need Dutch/French? Does it require experience?"
 4. If it passes: Gemini writes a tailored cover letter + email + CV summary
 5. Saves everything to docs/jobs.json (shown on the dashboard)
@@ -18,6 +19,7 @@ from datetime import datetime, timezone
 
 import requests
 from bs4 import BeautifulSoup
+from playwright.sync_api import sync_playwright
 
 # ---------------------------------------------------------------- settings
 
@@ -27,16 +29,6 @@ SEARCH_URLS = [
     "https://www.vdab.be/vindeenjob/jobs/digital-marketing",
     "https://www.vdab.be/vindeenjob/jobs/marketing-english",
     "https://www.vdab.be/vindeenjob/jobs/seo",
-]
-
-# VDAB's public job pages are a JavaScript app whose HTML has no job content.
-# But the site exposes server-rendered HTML *fragments* for each vacancy (used
-# to embed jobs elsewhere) — discovered in VDAB's own JS bundle. These DO
-# contain the full posting. {id} is the numeric vacancy id. First that works wins.
-DETAIL_CANDIDATES = [
-    "https://www.vdab.be/include/vindeenjob/vacatures/{id}",
-    "https://www.vdab.be/embed/vindeenjob/vacatures/{id}?preview=true",
-    "https://www.vdab.be/embed/vindeenjob/vacatures/{id}",
 ]
 
 JOBS_FILE = "docs/jobs.json"      # matched jobs (dashboard reads this)
@@ -62,9 +54,6 @@ HEADERS = {
 }
 
 MAX_NEW_PER_RUN = 8  # safety cap so one run never floods Gemini's free tier
-
-# Remembers which detail endpoint worked, so later jobs skip straight to it.
-_working_api_tmpl = None
 
 
 # ---------------------------------------------------------------- helpers
@@ -149,66 +138,47 @@ def find_job_links(search_url):
     return found
 
 
-_dumped = False
-
-
-def fetch_job_detail(url, job_id):
-    """Fetch one job's server-rendered HTML fragment from VDAB and return its
-    readable text + any apply email."""
-    global _working_api_tmpl, _dumped
-
-    if not _dumped:
-        _dumped = True
-        for probe in (
-            f"https://www.vdab.be/embed/vindeenjob/vacatures/{job_id}?preview=true",
-            f"https://www.vdab.be/rest/vindeenjob/v3/vacatures/{job_id}",
-        ):
-            try:
-                pr = requests.get(probe, headers={**HEADERS, "Accept": "*/*"}, timeout=60)
-                print(f"  RAWDUMP {probe} -> {pr.status_code} "
-                      f"ctype={pr.headers.get('content-type','')} len={len(pr.text)}")
-                print(f"  RAWDUMP body[:1500]: {pr.text[:1500]!r}")
-            except Exception as e:
-                print(f"  RAWDUMP {probe} -> error {e}")
-
-    # Try the known-good endpoint first, then fall back to the candidates.
-    templates = []
-    if _working_api_tmpl:
-        templates.append(_working_api_tmpl)
-    templates += [t for t in DETAIL_CANDIDATES if t != _working_api_tmpl]
-
-    for tmpl in templates:
-        detail_url = tmpl.format(id=job_id)
+def fetch_job_detail(browser, url, job_id):
+    """Render one job page in a headless browser and return its readable text
+    + any apply email. VDAB is a JS app with a bot-protected API, so a real
+    browser is the only reliable way to see the posting."""
+    page = browser.new_page(
+        user_agent=HEADERS["User-Agent"],
+        locale="nl-BE",
+        extra_http_headers={"Accept-Language": HEADERS["Accept-Language"]},
+    )
+    try:
+        page.goto(url, wait_until="domcontentloaded", timeout=60000)
+        # Wait until the SPA has actually rendered the posting (body fills up),
+        # rather than the near-empty "Toepassing laden..." loading shell.
         try:
-            r = requests.get(detail_url, headers=HEADERS, timeout=60)
-        except Exception as e:
-            print(f"  detail {detail_url} -> error {e}")
-            continue
-
-        if r.status_code != 200:
-            print(f"  detail {detail_url} -> {r.status_code}")
-            continue
-
-        soup = BeautifulSoup(r.text, "html.parser")
-        for tag in soup(["script", "style", "nav", "footer", "header"]):
-            tag.decompose()
-        text = re.sub(r"\n{3,}", "\n\n", soup.get_text("\n", strip=True))
-        print(f"  detail {detail_url} -> 200, {len(text)} chars of text")
-
-        # The empty SPA shell yields ~230 chars ending in "Toepassing laden...".
-        # A real fragment has far more, so this cleanly tells them apart.
-        if len(text) > 300 and "Toepassing laden" not in text:
-            _working_api_tmpl = tmpl
-            apply_email = None
-            mail_link = BeautifulSoup(r.text, "html.parser").select_one(
-                'a[href^="mailto:"]'
+            page.wait_for_function(
+                "document.body && document.body.innerText.length > 800",
+                timeout=25000,
             )
-            if mail_link:
-                apply_email = mail_link["href"].replace("mailto:", "").split("?")[0]
-            return text[:15000], apply_email
+        except Exception:
+            pass
+        page.wait_for_timeout(1000)  # let late content settle
+        body_text = page.inner_text("body")
+        html = page.content()
+    except Exception as e:
+        print(f"  render error {url}: {e}")
+        page.close()
+        return None, None
+    page.close()
 
-    print(f"  Could not fetch job detail for {job_id}")
-    return None, None
+    text = re.sub(r"\n{3,}", "\n\n", body_text).strip()
+    print(f"  rendered {job_id}: {len(text)} chars of text")
+    if len(text) < 300 or "Toepassing laden" in text:
+        print(f"  (page did not render real content for {job_id})")
+        return None, None
+
+    apply_email = None
+    mail_link = BeautifulSoup(html, "html.parser").select_one('a[href^="mailto:"]')
+    if mail_link:
+        apply_email = mail_link["href"].replace("mailto:", "").split("?")[0]
+
+    return text[:15000], apply_email
 
 
 # ---------------------------------------------------------------- AI steps
@@ -289,11 +259,27 @@ def main():
     new_links = new_links[:MAX_NEW_PER_RUN]
 
     matched = 0
+    with sync_playwright() as pw:
+        browser = pw.chromium.launch(args=["--no-sandbox"])
+        try:
+            matched = _process_jobs(browser, new_links, seen, jobs, cv_text)
+        finally:
+            browser.close()
+
+    jobs["updated"] = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    jobs["jobs"] = jobs["jobs"][:100]  # keep the file small
+    save_json(JOBS_FILE, jobs)
+    save_json(SEEN_FILE, sorted(seen))
+    print(f"\nDone. {matched} new match(es) this run.")
+
+
+def _process_jobs(browser, new_links, seen, jobs, cv_text):
+    matched = 0
     for url, job_id in new_links:
         print(f"\nChecking job {job_id}: {url}")
         seen.add(job_id)
 
-        job_text, apply_email = fetch_job_detail(url, job_id)
+        job_text, apply_email = fetch_job_detail(browser, url, job_id)
         if not job_text:
             continue
 
@@ -336,11 +322,7 @@ def main():
         )
         time.sleep(5)  # pace Gemini free-tier requests
 
-    jobs["updated"] = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
-    jobs["jobs"] = jobs["jobs"][:100]  # keep the file small
-    save_json(JOBS_FILE, jobs)
-    save_json(SEEN_FILE, sorted(seen))
-    print(f"\nDone. {matched} new match(es) this run.")
+    return matched
 
 
 if __name__ == "__main__":
