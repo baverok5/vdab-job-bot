@@ -77,11 +77,12 @@ def ask_gemini(prompt, expect_json=False):
     body = {"contents": [{"parts": [{"text": prompt}]}]}
     if expect_json:
         body["generationConfig"] = {"responseMimeType": "application/json"}
-    for attempt in range(3):
+    for attempt in range(4):
         try:
             r = requests.post(GEMINI_URL, json=body, timeout=90)
-            if r.status_code in (429, 503):   # rate limited / busy — wait, retry
-                time.sleep(30 * (attempt + 1))
+            if r.status_code in (429, 503):   # rate limited / busy — brief wait, retry
+                # 429 (quota) deserves a longer pause than a transient 503 blip.
+                time.sleep((12 if r.status_code == 429 else 5) * (attempt + 1))
                 continue
             r.raise_for_status()
             text = r.json()["candidates"][0]["content"]["parts"][0]["text"]
@@ -91,7 +92,7 @@ def ask_gemini(prompt, expect_json=False):
             return text
         except Exception as e:
             print(f"  Gemini error (attempt {attempt+1}): {e}")
-            time.sleep(10)
+            time.sleep(4)
     return None
 
 
