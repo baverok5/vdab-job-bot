@@ -2,190 +2,311 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex">
-<title>Job monitor — Baver</title>
+<title>Jobs — apply in one tap</title>
+
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#246bce">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Jobs">
+
 <style>
   :root {
-    --bg: #f7f6f3; --card: #ffffff; --border: #e3e1dc;
-    --text: #1e1e1c; --text2: #6b6a65; --text3: #97958e;
-    --accent: #185fa5; --accent-bg: #e6f1fb; --accent-fill: #378add;
-    --green: #0f6e56; --green-bg: #e1f5ee;
+    --bg: #f6f6f4; --card: #ffffff; --border: #e6e4df; --border2: #efede8;
+    --text: #1c1c1a; --text2: #63625d; --text3: #94928b;
+    --accent: #1c5abf; --accent2: #3a86e6; --accent-bg: #e8f1fc;
+    --green: #0f6e56; --green-bg: #e2f5ee;
+    --amber: #9a6a12; --amber-bg: #f8efdb;
+    --shadow: 0 1px 2px rgba(0,0,0,.04), 0 6px 16px rgba(0,0,0,.05);
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #161615; --card: #222220; --border: #3a3936;
-      --text: #eceae6; --text2: #a5a39c; --text3: #7c7a73;
-      --accent: #85b7eb; --accent-bg: #0c447c33; --accent-fill: #2f7fd0;
-      --green: #5dcaa5; --green-bg: #08504133;
+      --bg: #141413; --card: #201f1e; --border: #35342f; --border2: #2a2926;
+      --text: #efede8; --text2: #a8a69f; --text3: #78766f;
+      --accent: #8fbdf1; --accent2: #3a86e6; --accent-bg: #123056;
+      --green: #5dcaa5; --green-bg: #0c463799;
+      --amber: #e0b667; --amber-bg: #3a2e1499;
+      --shadow: 0 1px 2px rgba(0,0,0,.2), 0 8px 20px rgba(0,0,0,.28);
     }
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  html { -webkit-text-size-adjust: 100%; }
   body {
-    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     background: var(--bg); color: var(--text);
-    max-width: 640px; margin: 0 auto; padding: 16px 12px 60px;
+    line-height: 1.5; padding-bottom: env(safe-area-inset-bottom);
   }
-  h1 { font-size: 19px; font-weight: 600; }
-  .sub { font-size: 12.5px; color: var(--text3); margin-top: 3px; }
-  .stats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin: 16px 0; }
-  .stat { background: var(--card); border: 0.5px solid var(--border); border-radius: 10px; padding: 10px 12px; }
-  .stat b { font-size: 21px; font-weight: 600; display: block; }
-  .stat span { font-size: 11px; color: var(--text3); }
-  .label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--text3); margin: 18px 0 8px; }
-  .card {
-    background: var(--card); border: 0.5px solid var(--border);
-    border-radius: 12px; padding: 14px; margin-bottom: 10px; cursor: pointer;
+  .wrap { max-width: 560px; margin: 0 auto; padding: 0 12px 40px; }
+
+  header {
+    position: sticky; top: 0; z-index: 20;
+    background: color-mix(in srgb, var(--bg) 86%, transparent);
+    backdrop-filter: saturate(1.4) blur(12px);
+    -webkit-backdrop-filter: saturate(1.4) blur(12px);
+    padding: calc(env(safe-area-inset-top) + 12px) 0 8px;
+    border-bottom: 0.5px solid var(--border2);
   }
-  .card.done { opacity: .55; }
-  .top { display: flex; justify-content: space-between; gap: 10px; align-items: flex-start; }
-  .title { font-size: 15px; font-weight: 600; line-height: 1.3; }
-  .co { font-size: 13px; color: var(--text2); margin-top: 2px; }
-  .score { background: var(--accent-bg); color: var(--accent); font-size: 13px; font-weight: 600; border-radius: 8px; padding: 4px 9px; white-space: nowrap; }
-  .tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
-  .tag { font-size: 11px; padding: 3px 9px; border-radius: 20px; background: var(--bg); border: 0.5px solid var(--border); color: var(--text2); }
+  .hbar { max-width: 560px; margin: 0 auto; padding: 0 14px;
+    display: flex; align-items: center; gap: 10px; }
+  .logo { width: 30px; height: 30px; border-radius: 8px; flex: none;
+    background: linear-gradient(160deg, #3a86e6, #1c5abf);
+    display: grid; place-items: center; color: #fff; font-weight: 800; font-size: 17px; }
+  .htext h1 { font-size: 18px; font-weight: 700; letter-spacing: -.01em; }
+  .htext .sub { font-size: 11.5px; color: var(--text3); margin-top: 1px; }
+  .install {
+    margin-left: auto; font: inherit; font-size: 12.5px; font-weight: 600;
+    color: #fff; background: var(--accent2); border: none; border-radius: 8px;
+    padding: 7px 12px; cursor: pointer; display: none;
+  }
+
+  .tabs { display: flex; gap: 4px; background: var(--card); border: 0.5px solid var(--border);
+    border-radius: 11px; padding: 4px; margin: 14px 0 4px; box-shadow: var(--shadow); }
+  .tab { flex: 1; text-align: center; font-size: 13px; font-weight: 600; color: var(--text2);
+    padding: 8px 4px; border-radius: 8px; cursor: pointer; border: none; background: transparent; }
+  .tab.on { background: var(--accent-bg); color: var(--accent); }
+  .tab .n { font-size: 11px; opacity: .7; margin-left: 3px; }
+
+  .list { margin-top: 12px; }
+  .card { background: var(--card); border: 0.5px solid var(--border); border-radius: 14px;
+    padding: 14px; margin-bottom: 11px; box-shadow: var(--shadow); overflow: hidden; }
+  .top { display: flex; gap: 10px; align-items: flex-start; cursor: pointer; }
+  .title { font-size: 15.5px; font-weight: 650; letter-spacing: -.01em; line-height: 1.32; }
+  .co { font-size: 13px; color: var(--text2); margin-top: 3px; }
+  .score { flex: none; background: var(--accent-bg); color: var(--accent);
+    font-size: 13px; font-weight: 700; border-radius: 9px; padding: 5px 9px; }
+  .tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
+  .tag { font-size: 11px; padding: 3px 9px; border-radius: 20px; background: var(--bg);
+    border: 0.5px solid var(--border); color: var(--text2); }
   .tag.new { background: var(--green-bg); color: var(--green); border-color: transparent; font-weight: 600; }
-  .body { display: none; margin-top: 12px; border-top: 0.5px solid var(--border); padding-top: 12px; }
-  .card.open .body { display: block; }
-  .sec { margin-bottom: 12px; }
-  .sec .h { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; color: var(--text3); margin-bottom: 4px; }
-  .sec .t { font-size: 13.5px; color: var(--text2); line-height: 1.6; white-space: pre-wrap; }
-  .quote { background: var(--bg); border-left: 2px solid var(--accent-fill); border-radius: 0 8px 8px 0; padding: 9px 12px; font-size: 13.5px; line-height: 1.6; white-space: pre-wrap; }
-  .row { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
-  button, .btn {
-    font: inherit; font-size: 13.5px; border-radius: 9px; padding: 10px 14px;
-    border: 0.5px solid var(--border); background: transparent; color: var(--text2);
-    cursor: pointer; text-decoration: none; text-align: center;
-  }
-  .primary { flex: 1; background: var(--accent-fill); color: #fff; border: none; font-weight: 600; }
-  .copybtn { font-size: 12px; padding: 5px 10px; margin-top: 6px; }
-  .empty { text-align: center; color: var(--text3); font-size: 13.5px; padding: 40px 0; }
+  .tag.mail { background: var(--accent-bg); color: var(--accent); border-color: transparent; font-weight: 600; }
+  .tag.applied { background: var(--green-bg); color: var(--green); border-color: transparent; font-weight: 700; }
+
+  .body { max-height: 0; opacity: 0; transition: max-height .28s ease, opacity .2s ease; }
+  .card.open .body { max-height: 3000px; opacity: 1; margin-top: 13px;
+    border-top: 0.5px solid var(--border2); padding-top: 13px; }
+  .sec { margin-bottom: 13px; }
+  .sec .h { font-size: 10.5px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .06em; color: var(--text3); margin-bottom: 5px; }
+  .sec .t { font-size: 13.5px; color: var(--text2); white-space: pre-wrap; }
+  .quote { background: var(--bg); border: 0.5px solid var(--border2);
+    border-left: 2.5px solid var(--accent2); border-radius: 0 9px 9px 0;
+    padding: 10px 12px; font-size: 13px; color: var(--text); white-space: pre-wrap; }
+  .copybtn { font: inherit; font-size: 11.5px; font-weight: 600; color: var(--text2);
+    background: transparent; border: 0.5px solid var(--border); border-radius: 7px;
+    padding: 5px 10px; margin-top: 7px; cursor: pointer; }
+
+  .actions { display: flex; gap: 8px; margin-top: 14px; }
+  .btn { flex: 1; font: inherit; font-size: 14px; font-weight: 600; text-align: center;
+    text-decoration: none; border-radius: 10px; padding: 12px 14px; cursor: pointer;
+    border: 0.5px solid var(--border); background: transparent; color: var(--text); }
+  .btn.primary { flex: 2; border: none; color: #fff;
+    background: linear-gradient(180deg, var(--accent2), var(--accent)); }
+  .btn.undo { color: var(--amber); border-color: transparent; background: var(--amber-bg); }
+
+  .hint { font-size: 11.5px; color: var(--text3); text-align: center;
+    margin-top: 10px; padding: 0 8px; }
+  .empty { text-align: center; color: var(--text3); font-size: 13.5px;
+    padding: 46px 16px; }
+  .empty .big { font-size: 26px; margin-bottom: 8px; }
+  .toast { position: fixed; left: 50%; bottom: calc(env(safe-area-inset-bottom) + 20px);
+    transform: translateX(-50%) translateY(20px); background: #222; color: #fff;
+    font-size: 13px; padding: 10px 16px; border-radius: 10px; opacity: 0;
+    transition: all .25s ease; pointer-events: none; z-index: 50; }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 </style>
 </head>
 <body>
 
-<h1>Job monitor</h1>
-<div class="sub" id="updated">Loading…</div>
+<header>
+  <div class="hbar">
+    <div class="logo">V</div>
+    <div class="htext">
+      <h1>Jobs</h1>
+      <div class="sub" id="updated">Loading…</div>
+    </div>
+    <button class="install" id="install">Install app</button>
+  </div>
+</header>
 
-<div class="stats">
-  <div class="stat"><b id="s-new">–</b><span>New matches</span></div>
-  <div class="stat"><b id="s-applied">–</b><span>Applied</span></div>
-  <div class="stat"><b id="s-total">–</b><span>Total found</span></div>
+<div class="wrap">
+  <div class="tabs">
+    <button class="tab on" data-tab="new">New <span class="n" id="c-new"></span></button>
+    <button class="tab" data-tab="applied">Applied <span class="n" id="c-applied"></span></button>
+    <button class="tab" data-tab="skipped">Skipped <span class="n" id="c-skipped"></span></button>
+  </div>
+
+  <div class="list" id="list"><div class="empty">Loading jobs…</div></div>
 </div>
 
-<div class="label">Ready to apply</div>
-<div id="list-new"><div class="empty">Loading jobs…</div></div>
-
-<div class="label">Handled</div>
-<div id="list-done"><div class="empty">Nothing yet</div></div>
+<div class="toast" id="toast"></div>
 
 <script>
-const LS = "jobstatus";  // {jobId: "applied"|"skipped"}
+const LS = "jobstatus";                       // { jobId: "applied" | "skipped" }
 const getStatus = () => JSON.parse(localStorage.getItem(LS) || "{}");
 const setStatus = (id, s) => {
-  const m = getStatus(); m[id] = s;
-  localStorage.setItem(LS, JSON.stringify(m)); render();
+  const m = getStatus();
+  if (s === null) delete m[id]; else m[id] = s;
+  localStorage.setItem(LS, JSON.stringify(m));
+  render();
 };
 
 let DATA = { jobs: [], updated: "" };
+let TAB = "new";
 
-function esc(s) {
-  return (s || "").replace(/[&<>"]/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;" }[c]));
+const esc = (s) => (s || "").replace(/[&<>"]/g, (c) =>
+  ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+function toast(msg) {
+  const t = document.getElementById("toast");
+  t.textContent = msg; t.classList.add("show");
+  clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove("show"), 1800);
 }
 
 function gmailLink(j) {
   const to = encodeURIComponent(j.apply_email || "");
-  const su = encodeURIComponent(j.email_subject || ("Application — " + j.title));
+  const su = encodeURIComponent(j.email_subject || ("Application — " + (j.title || "")));
   const bo = encodeURIComponent(j.email_body || "");
   return `https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${su}&body=${bo}`;
 }
 
 function copyText(btn, text) {
-  navigator.clipboard.writeText(text).then(() => {
-    const old = btn.textContent; btn.textContent = "Copied";
-    setTimeout(() => btn.textContent = old, 1500);
-  });
+  navigator.clipboard.writeText(text || "").then(() => toast("Copied to clipboard"));
 }
 
-function isToday(str) {
-  return (str || "").slice(0, 10) === new Date().toISOString().slice(0, 10);
-}
+const isToday = (str) =>
+  (str || "").slice(0, 10) === new Date().toISOString().slice(0, 10);
 
-function card(j, done) {
+function card(j, state) {
   const el = document.createElement("div");
-  el.className = "card" + (done ? " done" : "");
+  el.className = "card";
+  const hasMail = !!j.apply_email;
+  const applyLabel = hasMail ? "Apply by email" : "Apply on VDAB";
+  const applyHref = hasMail ? gmailLink(j) : (j.url || "#");
+
   el.innerHTML = `
-    <div class="top">
-      <div>
+    <div class="top" data-act="toggle">
+      <div style="flex:1">
         <div class="title">${esc(j.title)}</div>
         <div class="co">${esc(j.company)} · ${esc(j.location)}</div>
+        <div class="tags">
+          ${state === "applied" ? '<span class="tag applied">✓ Applied</span>' : ""}
+          ${state !== "applied" && isToday(j.found_at) ? '<span class="tag new">New today</span>' : ""}
+          ${hasMail ? '<span class="tag mail">Direct email</span>' : ""}
+          <span class="tag">Found ${esc((j.found_at || "").slice(0, 10))}</span>
+        </div>
       </div>
-      <div class="score">${j.match_score || "–"}%</div>
-    </div>
-    <div class="tags">
-      ${isToday(j.found_at) ? '<span class="tag new">New today</span>' : ""}
-      <span class="tag">Found ${esc((j.found_at || "").slice(0, 10))}</span>
-      ${j.apply_email ? '<span class="tag">Direct email</span>' : ""}
+      <div class="score">${(j.match_score ?? "–")}%</div>
     </div>
     <div class="body">
       <div class="sec"><div class="h">Why it matches</div><div class="t">${esc(j.reason)}</div></div>
-      <div class="sec"><div class="h">Application email</div>
-        <div class="quote">${esc(j.email_body)}</div>
-        <button class="copybtn" data-copy="email">Copy email</button>
+      <div class="sec"><div class="h">Application email${hasMail ? " → " + esc(j.apply_email) : ""}</div>
+        <div class="quote">${esc(j.email_subject ? j.email_subject + "\n\n" : "")}${esc(j.email_body)}</div>
+        <button class="copybtn" data-act="copy-email">Copy email</button>
       </div>
       <div class="sec"><div class="h">Cover letter</div>
         <div class="quote">${esc(j.cover_letter)}</div>
-        <button class="copybtn" data-copy="cover">Copy cover letter</button>
+        <button class="copybtn" data-act="copy-cover">Copy cover letter</button>
       </div>
       <div class="sec"><div class="h">CV highlights for this job</div>
         <div class="t">${esc(j.cv_highlights)}</div>
+        <button class="copybtn" data-act="copy-cv">Copy highlights</button>
       </div>
-      <div class="row">
-        <a class="btn primary" data-act="apply" href="${gmailLink(j)}" target="_blank" rel="noopener">Open email draft</a>
-        <a class="btn" href="${esc(j.url)}" target="_blank" rel="noopener">View on VDAB</a>
-        ${done ? "" : '<button data-act="skip">Skip</button>'}
+      <div class="actions">
+        ${state === "applied"
+          ? `<a class="btn" href="${esc(j.url)}" target="_blank" rel="noopener">View on VDAB</a>
+             <button class="btn undo" data-act="unapply">Mark not applied</button>`
+          : `<a class="btn primary" data-act="apply" href="${esc(applyHref)}" target="_blank" rel="noopener">${applyLabel}</a>
+             ${state === "skipped"
+               ? '<button class="btn" data-act="unskip">Un-skip</button>'
+               : '<button class="btn" data-act="skip">Skip</button>'}`}
       </div>
+      ${state !== "applied"
+        ? `<div class="hint">${hasMail
+            ? "Opens Gmail with your letter pre-filled — review it, then hit Send."
+            : "This job takes applications on VDAB. Your letter &amp; email above are ready to paste."}</div>`
+        : ""}
     </div>`;
 
-  el.addEventListener("click", e => {
-    const act = e.target.dataset.act, cp = e.target.dataset.copy;
-    if (cp === "email") return copyText(e.target, j.email_body || "");
-    if (cp === "cover") return copyText(e.target, j.cover_letter || "");
-    if (act === "apply") { setTimeout(() => setStatus(j.id, "applied"), 400); return; }
-    if (act === "skip") { setStatus(j.id, "skipped"); return; }
-    if (e.target.closest("a,button")) return;
-    el.classList.toggle("open");
+  el.addEventListener("click", (e) => {
+    const act = (e.target.closest("[data-act]") || {}).dataset?.act;
+    if (!act) return;
+    if (act === "toggle") { el.classList.toggle("open"); return; }
+    if (act === "copy-email") return copyText(e.target,
+      (j.email_subject ? j.email_subject + "\n\n" : "") + (j.email_body || ""));
+    if (act === "copy-cover") return copyText(e.target, j.cover_letter);
+    if (act === "copy-cv") return copyText(e.target, j.cv_highlights);
+    if (act === "apply") { setTimeout(() => setStatus(j.id, "applied"), 300);
+      toast(j.apply_email ? "Opening Gmail…" : "Opening VDAB…"); return; }
+    if (act === "skip") { setStatus(j.id, "skipped"); toast("Skipped"); return; }
+    if (act === "unskip" || act === "unapply") { setStatus(j.id, null); return; }
   });
   return el;
 }
 
 function render() {
   const st = getStatus();
-  const fresh = DATA.jobs.filter(j => !st[j.id]);
-  const done = DATA.jobs.filter(j => st[j.id]);
+  const buckets = { new: [], applied: [], skipped: [] };
+  for (const j of DATA.jobs) {
+    const s = st[j.id];
+    if (s === "applied") buckets.applied.push(j);
+    else if (s === "skipped") buckets.skipped.push(j);
+    else buckets.new.push(j);
+  }
 
-  document.getElementById("s-new").textContent = fresh.length;
-  document.getElementById("s-applied").textContent =
-    Object.values(st).filter(v => v === "applied").length;
-  document.getElementById("s-total").textContent = DATA.jobs.length;
+  document.getElementById("c-new").textContent = buckets.new.length || "";
+  document.getElementById("c-applied").textContent = buckets.applied.length || "";
+  document.getElementById("c-skipped").textContent = buckets.skipped.length || "";
   document.getElementById("updated").textContent =
-    DATA.updated ? "Bot last ran: " + DATA.updated : "No data yet — the bot hasn't run.";
+    DATA.updated ? "Updated " + DATA.updated : "No data yet — the bot hasn't run.";
 
-  const ln = document.getElementById("list-new"); ln.innerHTML = "";
-  if (!fresh.length) ln.innerHTML = '<div class="empty">No new matches right now.<br>The bot checks VDAB every hour.</div>';
-  fresh.forEach(j => ln.appendChild(card(j, false)));
+  document.querySelectorAll(".tab").forEach((t) =>
+    t.classList.toggle("on", t.dataset.tab === TAB));
 
-  const ld = document.getElementById("list-done"); ld.innerHTML = "";
-  if (!done.length) ld.innerHTML = '<div class="empty">Nothing yet</div>';
-  done.forEach(j => ld.appendChild(card(j, true)));
+  const list = document.getElementById("list");
+  list.innerHTML = "";
+  const jobs = buckets[TAB];
+  if (!jobs.length) {
+    const msg = {
+      new: ["🔍", "No new matches right now.<br>The bot checks VDAB every hour."],
+      applied: ["📮", "Jobs you apply to show up here."],
+      skipped: ["🗂️", "Nothing skipped."],
+    }[TAB];
+    list.innerHTML = `<div class="empty"><div class="big">${msg[0]}</div>${msg[1]}</div>`;
+    return;
+  }
+  const state = TAB === "new" ? null : TAB;
+  jobs.forEach((j) => list.appendChild(card(j, state)));
 }
 
+document.querySelectorAll(".tab").forEach((t) =>
+  t.addEventListener("click", () => { TAB = t.dataset.tab; render(); }));
+
 fetch("jobs.json?t=" + Date.now())
-  .then(r => r.json())
-  .then(d => { DATA = d; render(); })
-  .catch(() => {
-    document.getElementById("updated").textContent = "Could not load jobs.json yet.";
-  });
+  .then((r) => r.json())
+  .then((d) => { DATA = d; render(); })
+  .catch(() => { document.getElementById("updated").textContent = "Could not load jobs.json."; });
+
+// ---- PWA: install prompt + service worker ----
+let deferredPrompt = null;
+const installBtn = document.getElementById("install");
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault(); deferredPrompt = e; installBtn.style.display = "inline-block";
+});
+installBtn.addEventListener("click", async () => {
+  if (!deferredPrompt) return;
+  deferredPrompt.prompt();
+  await deferredPrompt.userChoice;
+  deferredPrompt = null; installBtn.style.display = "none";
+});
+window.addEventListener("appinstalled", () => { installBtn.style.display = "none"; });
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () =>
+    navigator.serviceWorker.register("sw.js").catch(() => {}));
+}
 </script>
 </body>
 </html>
