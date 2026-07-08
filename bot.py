@@ -278,16 +278,19 @@ def _process_jobs(browser, new_links, seen, jobs, cv_text):
     matched = 0
     for url, job_id in new_links:
         print(f"\nChecking job {job_id}: {url}")
-        seen.add(job_id)
 
         job_text, apply_email = fetch_job_detail(browser, url, job_id)
         if not job_text:
-            continue
+            print("  (could not read job — will retry next run)")
+            continue  # don't mark seen; a transient render failure gets another chance
 
         verdict = check_job(job_text)
         if not verdict:
-            print("  Skipped (AI check failed)")
-            continue
+            print("  Skipped (AI check failed — will retry next run)")
+            continue  # Gemini hiccup; don't mark seen so it's retried
+
+        # We got a real verdict (pass or fail) — safe to not process it again.
+        seen.add(job_id)
         if not verdict.get("pass"):
             print(f"  FILTERED OUT: {verdict.get('reason')}")
             continue
