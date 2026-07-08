@@ -149,10 +149,27 @@ def find_job_links(search_url):
     return found
 
 
+_dumped = False
+
+
 def fetch_job_detail(url, job_id):
     """Fetch one job's server-rendered HTML fragment from VDAB and return its
     readable text + any apply email."""
-    global _working_api_tmpl
+    global _working_api_tmpl, _dumped
+
+    if not _dumped:
+        _dumped = True
+        for probe in (
+            f"https://www.vdab.be/embed/vindeenjob/vacatures/{job_id}?preview=true",
+            f"https://www.vdab.be/rest/vindeenjob/v3/vacatures/{job_id}",
+        ):
+            try:
+                pr = requests.get(probe, headers={**HEADERS, "Accept": "*/*"}, timeout=60)
+                print(f"  RAWDUMP {probe} -> {pr.status_code} "
+                      f"ctype={pr.headers.get('content-type','')} len={len(pr.text)}")
+                print(f"  RAWDUMP body[:1500]: {pr.text[:1500]!r}")
+            except Exception as e:
+                print(f"  RAWDUMP {probe} -> error {e}")
 
     # Try the known-good endpoint first, then fall back to the candidates.
     templates = []
