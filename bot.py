@@ -246,23 +246,21 @@ def fetch_job_detail(browser, url, job_id):
 
 # ---------------------------------------------------------------- AI steps
 
-def check_job(job_text):
-    """Ask Gemini whether this job is open to an English speaker. The ONLY
-    criterion is language — no sector/market preference at all."""
-    prompt = f"""You are a job-language filter for a candidate who speaks fluent English
-but NOT Dutch or French. Judge this Belgian job posting on ONE thing: can an
-English speaker realistically do this job and apply in English?
+def evaluate_job(job_text, cv_text):
+    """One Gemini call: judge if the job is open to an English speaker AND, if
+    so, write the full application documents. Halves the number of API calls
+    (important on the free tier). Returns the parsed JSON dict (or None)."""
+    prompt = f"""You help a candidate who speaks fluent English but NOT Dutch or French.
 
-PASS if EITHER is true:
-- English is required, preferred, or accepted as a working language; OR
-- The posting itself is written in English / clearly aimed at English speakers.
-Also PASS as long as Dutch or French is not strictly mandatory ("a plus" / "nice
-to have" is fine).
+STEP 1 — Decide if this Belgian job is open to an English speaker:
+- PASS if English is required/preferred/accepted, OR the posting is written in
+  English, AND Dutch or French is not strictly mandatory ("a plus" is fine).
+- FAIL only if Dutch or French is genuinely required, or the role is unworkable
+  without it. Do NOT judge sector, seniority, salary, or experience.
 
-FAIL only if Dutch or French is genuinely required (e.g. daily client contact in
-Dutch, "Nederlands is een must"), or the role is unworkable without it.
-
-Do NOT judge sector, seniority, salary, or experience — any field is fine.
+STEP 2 — ONLY if it passes, write application documents based STRICTLY on the
+real CV below. Never invent experience, education, or skills not in the CV.
+English, professional but warm, no clichés. If it fails, leave those fields "".
 
 Reply ONLY with JSON:
 {{
@@ -271,39 +269,24 @@ Reply ONLY with JSON:
   "title": "the job title",
   "company": "the company name or 'Unknown'",
   "location": "city or 'Unknown'",
-  "match_score": 0-100 (how clearly this job is open to an English-only speaker)
+  "match_score": 0-100 (how clearly this job is open to an English-only speaker),
+  "email_subject": "short email subject line (or '')",
+  "email_body": "complete application email 120-180 words ending with the signature block (or '')",
+  "cover_letter": "full cover letter 250-350 words (or '')",
+  "cv_highlights": "5 bullet points as one newline-separated string, most relevant CV points for THIS job (or '')"
 }}
 
-JOB POSTING:
-{job_text[:8000]}"""
-    return ask_gemini(prompt, expect_json=True)
-
-
-def generate_documents(job_text, cv_text, job_info):
-    """Generate tailored application documents for a matched job."""
-    prompt = f"""You are an expert career writer. Write application documents for this job,
-based ONLY on the real CV below. NEVER invent experience, education, or skills
-that are not in the CV. Write in English, professional but warm, no clichés.
-
-Reply ONLY with JSON:
-{{
-  "email_subject": "short email subject line",
-  "email_body": "complete application email, 120-180 words, ready to send, ends with the signature block",
-  "cover_letter": "full cover letter, 250-350 words",
-  "cv_highlights": "5 bullet points (as one string, newline separated) reordering the CV's most relevant points for THIS job"
-}}
-
-THE JOB ({job_info.get('title')} at {job_info.get('company')}):
-{job_text[:6000]}
+Signature block to end email_body with:
+Baver Ok
++32 470 42 48 36
+baverok@gmail.com
+linkedin.com/in/baverok
 
 THE REAL CV:
 {cv_text}
 
-Signature block to use at the end of email_body:
-Baver Ok
-+32 470 42 48 36
-baverok@gmail.com
-linkedin.com/in/baverok"""
+JOB POSTING:
+{job_text[:8000]}"""
     return ask_gemini(prompt, expect_json=True)
 
 
@@ -361,9 +344,9 @@ def _process_jobs(browser, new_links, seen, jobs, cv_text):
             print("  (could not read job — will retry next run)")
             continue  # don't mark seen; a transient render failure gets another chance
 
-        verdict = check_job(job_text)
+        verdict = evaluate_job(job_text, cv_text)
         if not verdict:
-            print("  Skipped (AI check failed — will retry next run)")
+            print("  Skipped (AI call failed — will retry next run)")
             continue  # Gemini hiccup; don't mark seen so it's retried
 
         # We got a real verdict (pass or fail) — safe to not process it again.
@@ -373,11 +356,6 @@ def _process_jobs(browser, new_links, seen, jobs, cv_text):
             continue
 
         print(f"  MATCH ({verdict.get('match_score')}%): {verdict.get('title')}")
-        docs = generate_documents(job_text, cv_text, verdict)
-        if not docs:
-            print("  Skipped (document generation failed)")
-            continue
-
         jobs["jobs"].insert(0, {
             "id": job_id,
             "url": url,
@@ -389,7 +367,10 @@ def _process_jobs(browser, new_links, seen, jobs, cv_text):
             "apply_email": apply_email or "",
             "found_at": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M"),
             "status": "new",
-            **docs,
+            "email_subject": verdict.get("email_subject", ""),
+            "email_body": verdict.get("email_body", ""),
+            "cover_letter": verdict.get("cover_letter", ""),
+            "cv_highlights": verdict.get("cv_highlights", ""),
         })
         matched += 1
 
