@@ -24,11 +24,10 @@ from playwright.sync_api import sync_playwright
 # ---------------------------------------------------------------- settings
 
 SEARCH_URLS = [
-    # VDAB search pages to monitor. Add or change keywords freely.
+    # VDAB's whole "English jobs" listing — every vacancy open to English
+    # speakers, across all sectors (no market filter). Paged through in the
+    # browser by collect_links(), so we get far more than the first page.
     "https://www.vdab.be/vindeenjob/jobs/english-jobs",
-    "https://www.vdab.be/vindeenjob/jobs/digital-marketing",
-    "https://www.vdab.be/vindeenjob/jobs/marketing-english",
-    "https://www.vdab.be/vindeenjob/jobs/seo",
 ]
 
 JOBS_FILE = "docs/jobs.json"      # matched jobs (dashboard reads this)
@@ -113,30 +112,82 @@ def send_telegram(message):
 
 # ---------------------------------------------------------------- scraping
 
-def find_job_links(search_url):
-    """Return a set of (job_url, job_id) found on one VDAB search page."""
+def _dismiss_cookies(page):
+    for sel in (
+        "#onetrust-accept-btn-handler",
+        'button:has-text("Alle cookies aanvaarden")',
+        'button:has-text("Aanvaarden")',
+        'button:has-text("Accepteren")',
+        'button:has-text("Accept all")',
+    ):
+        try:
+            page.click(sel, timeout=1500)
+            return
+        except Exception:
+            pass
+
+
+def collect_links(browser, search_url, cap=400):
+    """Load a VDAB search in a real browser and page/scroll through it to
+    collect as many (job_url, job_id) pairs as possible — not just the first
+    page. Returns a set of pairs."""
+    page = browser.new_page(
+        user_agent=HEADERS["User-Agent"],
+        locale="nl-BE",
+        extra_http_headers={"Accept-Language": HEADERS["Accept-Language"]},
+    )
+    found = {}
     try:
-        r = requests.get(search_url, headers=HEADERS, timeout=60)
-        r.raise_for_status()
+        page.goto(search_url, wait_until="domcontentloaded", timeout=45000)
+        _dismiss_cookies(page)
+        page.wait_for_timeout(1500)
+
+        last, stagnant, i = -1, 0, 0
+        for i in range(80):
+            hrefs = page.eval_on_selector_all(
+                "a[href*='/vindeenjob/vacatures/']",
+                "els => els.map(e => e.getAttribute('href'))",
+            )
+            for h in hrefs:
+                m = re.search(r"/vindeenjob/vacatures/(\d+)", h or "")
+                if m:
+                    url = h if h.startswith("http") else "https://www.vdab.be" + h
+                    found[m.group(1)] = url.split("?")[0]
+
+            if len(found) >= cap:
+                break
+
+            # Prefer an explicit "show more" control; otherwise infinite-scroll.
+            clicked = False
+            for sel in (
+                'button:has-text("Toon meer")',
+                'button:has-text("Meer resultaten")',
+                'button:has-text("Meer vacatures")',
+                'button:has-text("Load more")',
+            ):
+                try:
+                    page.click(sel, timeout=1200)
+                    clicked = True
+                    break
+                except Exception:
+                    pass
+            if not clicked:
+                page.mouse.wheel(0, 26000)
+            page.wait_for_timeout(1300)
+
+            if len(found) == last:
+                stagnant += 1
+                if stagnant >= 4:  # nothing new for a while → end of list
+                    break
+            else:
+                stagnant, last = 0, len(found)
+
+        print(f"  collect: {len(found)} unique links after {i + 1} passes")
     except Exception as e:
-        print(f"  Could not load {search_url}: {e}")
-        return set()
-
-    soup = BeautifulSoup(r.text, "html.parser")
-    found = set()
-    for a in soup.find_all("a", href=True):
-        href = a["href"]
-        m = re.search(r"/vindeenjob/vacatures/(\d+)", href)
-        if m:
-            job_id = m.group(1)
-            url = href if href.startswith("http") else "https://www.vdab.be" + href
-            found.add((url.split("?")[0], job_id))
-
-    if not found:
-        # Log a snippet so we can debug if VDAB changes their page structure
-        print(f"  WARNING: 0 job links found on {search_url}")
-        print(f"  Page starts with: {r.text[:300]!r}")
-    return found
+        print(f"  collect error {search_url}: {e}")
+    finally:
+        page.close()
+    return {(u, jid) for jid, u in found.items()}
 
 
 def fetch_job_detail(browser, url, job_id):
@@ -185,14 +236,22 @@ def fetch_job_detail(browser, url, job_id):
 # ---------------------------------------------------------------- AI steps
 
 def check_job(job_text):
-    """Ask Gemini whether this job passes Baver's criteria."""
-    prompt = f"""You are a strict job-filtering assistant. Analyze this Belgian job posting.
+    """Ask Gemini whether this job is open to an English speaker. The ONLY
+    criterion is language — no sector/market preference at all."""
+    prompt = f"""You are a job-language filter for a candidate who speaks fluent English
+but NOT Dutch or French. Judge this Belgian job posting on ONE thing: can an
+English speaker realistically do this job and apply in English?
 
-CRITERIA (ALL must be true to pass):
-1. Dutch (Nederlands) is NOT required. If Dutch is listed as required, needed, or the posting is clearly aimed at Dutch speakers only, FAIL it. ("Dutch is a plus/nice to have" is OK.)
-2. French (Frans) is NOT required. (Same rule: "a plus" is OK.)
-3. English is required or the posting is written for English speakers.
-4. Experience: either no experience required, OR the posting does not mention any years-of-experience requirement at all. If it demands 2+ years experience explicitly, FAIL it.
+PASS if EITHER is true:
+- English is required, preferred, or accepted as a working language; OR
+- The posting itself is written in English / clearly aimed at English speakers.
+Also PASS as long as Dutch or French is not strictly mandatory ("a plus" / "nice
+to have" is fine).
+
+FAIL only if Dutch or French is genuinely required (e.g. daily client contact in
+Dutch, "Nederlands is een must"), or the role is unworkable without it.
+
+Do NOT judge sector, seniority, salary, or experience — any field is fine.
 
 Reply ONLY with JSON:
 {{
@@ -201,7 +260,7 @@ Reply ONLY with JSON:
   "title": "the job title",
   "company": "the company name or 'Unknown'",
   "location": "city or 'Unknown'",
-  "match_score": 0-100 (how well it fits a junior digital marketer with SEO/WordPress/content skills)
+  "match_score": 0-100 (how clearly this job is open to an English-only speaker)
 }}
 
 JOB POSTING:
@@ -247,22 +306,21 @@ def main():
     seen = set(load_json(SEEN_FILE, []))
     jobs = load_json(JOBS_FILE, {"updated": "", "jobs": []})
 
-    print("Collecting job links from VDAB...")
-    all_links = set()
-    for url in SEARCH_URLS:
-        links = find_job_links(url)
-        print(f"  {len(links)} links on {url}")
-        all_links |= links
-        time.sleep(2)  # be polite to VDAB's servers
-
-    new_links = [(u, i) for (u, i) in all_links if i not in seen]
-    print(f"{len(all_links)} total, {len(new_links)} new")
-    new_links = new_links[:MAX_NEW_PER_RUN]
-
     matched = 0
     with sync_playwright() as pw:
         browser = pw.chromium.launch(args=["--no-sandbox"])
         try:
+            print("Collecting job links from VDAB...")
+            all_links = set()
+            for url in SEARCH_URLS:
+                links = collect_links(browser, url)
+                print(f"  {len(links)} links from {url}")
+                all_links |= links
+
+            new_links = [(u, i) for (u, i) in all_links if i not in seen]
+            print(f"{len(all_links)} total in listing, {len(new_links)} not yet seen")
+            new_links = new_links[:MAX_NEW_PER_RUN]
+
             matched = _process_jobs(browser, new_links, seen, jobs, cv_text)
         finally:
             browser.close()
