@@ -155,7 +155,7 @@ def fetch_job_detail(url):
     if mail_link:
         apply_email = mail_link["href"].replace("mailto:", "").split("?")[0]
 
-       print(f"  DEBUG: fetched {len(text)} chars of visible text. First 500 chars:\n{text[:500]!r}")
+          print(f"  DEBUG: fetched {len(text)} chars of visible text. First 500 chars:\n{text[:500]!r}")
     return text[:15000], apply_email
 
 
