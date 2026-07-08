@@ -52,7 +52,7 @@ HEADERS = {
     "Accept-Language": "nl-BE,nl;q=0.9,en;q=0.8",
 }
 
-MAX_NEW_PER_RUN = 10  # safety cap so one run never floods Gemini's free tier
+MAX_NEW_PER_RUN = 6  # cap AI-prepared jobs per run so we don't exhaust Gemini's free tier
 
 
 # ---------------------------------------------------------------- helpers
@@ -111,6 +111,15 @@ def send_telegram(message):
 
 
 # ---------------------------------------------------------------- scraping
+
+def _slug_title(url):
+    """Turn a VDAB job URL (.../vacatures/{id}/{slug}) into a readable title."""
+    m = re.search(r"/vacatures/\d+/([^/?#]+)", url)
+    if not m:
+        return "Vacature"
+    words = m.group(1).replace("-", " ").strip()
+    return (words[:1].upper() + words[1:]) if words else "Vacature"
+
 
 def _dismiss_cookies(page):
     for sel in (
@@ -318,6 +327,14 @@ def main():
                 links = collect_links(browser, url)
                 print(f"  {len(links)} links from {url}")
                 all_links |= links
+
+            # Breadth: record EVERY English job we can see, right away — a
+            # lightweight browsable listing (title derived from the URL slug),
+            # independent of the slower AI "ready to apply" pipeline below.
+            jobs["listing"] = sorted(
+                ({"id": i, "url": u, "title": _slug_title(u)} for (u, i) in all_links),
+                key=lambda j: j["id"], reverse=True,
+            )[:300]
 
             new_links = [(u, i) for (u, i) in all_links if i not in seen]
             print(f"{len(all_links)} total in listing, {len(new_links)} not yet seen")

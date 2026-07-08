@@ -64,10 +64,11 @@
 
   .tabs { display: flex; gap: 4px; background: var(--card); border: 0.5px solid var(--border);
     border-radius: 11px; padding: 4px; margin: 14px 0 4px; box-shadow: var(--shadow); }
-  .tab { flex: 1; text-align: center; font-size: 13px; font-weight: 600; color: var(--text2);
-    padding: 8px 4px; border-radius: 8px; cursor: pointer; border: none; background: transparent; }
+  .tab { flex: 1; text-align: center; font-size: 12.5px; font-weight: 600; color: var(--text2);
+    padding: 8px 2px; border-radius: 8px; cursor: pointer; border: none; background: transparent;
+    white-space: nowrap; }
   .tab.on { background: var(--accent-bg); color: var(--accent); }
-  .tab .n { font-size: 11px; opacity: .7; margin-left: 3px; }
+  .tab .n { font-size: 10.5px; opacity: .7; margin-left: 2px; }
 
   .list { margin-top: 12px; }
   .card { background: var(--card); border: 0.5px solid var(--border); border-radius: 14px;
@@ -133,7 +134,8 @@
 
 <div class="wrap">
   <div class="tabs">
-    <button class="tab on" data-tab="new">New <span class="n" id="c-new"></span></button>
+    <button class="tab on" data-tab="new">Ready <span class="n" id="c-new"></span></button>
+    <button class="tab" data-tab="all">All jobs <span class="n" id="c-all"></span></button>
     <button class="tab" data-tab="applied">Applied <span class="n" id="c-applied"></span></button>
     <button class="tab" data-tab="skipped">Skipped <span class="n" id="c-skipped"></span></button>
   </div>
@@ -246,6 +248,22 @@ function card(j, state) {
   return el;
 }
 
+function listingCard(j) {
+  const el = document.createElement("div");
+  el.className = "card";
+  el.innerHTML = `
+    <div class="top">
+      <div style="flex:1">
+        <div class="title">${esc(j.title)}</div>
+        <div class="co">VDAB · #${esc(j.id)}</div>
+      </div>
+    </div>
+    <div class="actions">
+      <a class="btn primary" href="${esc(j.url)}" target="_blank" rel="noopener">Open on VDAB</a>
+    </div>`;
+  return el;
+}
+
 function render() {
   const st = getStatus();
   const buckets = { new: [], applied: [], skipped: [] };
@@ -255,8 +273,10 @@ function render() {
     else if (s === "skipped") buckets.skipped.push(j);
     else buckets.new.push(j);
   }
+  const listing = DATA.listing || [];
 
   document.getElementById("c-new").textContent = buckets.new.length || "";
+  document.getElementById("c-all").textContent = listing.length || "";
   document.getElementById("c-applied").textContent = buckets.applied.length || "";
   document.getElementById("c-skipped").textContent = buckets.skipped.length || "";
   document.getElementById("updated").textContent =
@@ -267,10 +287,22 @@ function render() {
 
   const list = document.getElementById("list");
   list.innerHTML = "";
+
+  if (TAB === "all") {
+    if (!listing.length) {
+      list.innerHTML = '<div class="empty"><div class="big">🌐</div>Building the English-jobs list…<br>The bot fills this each hour.</div>';
+      return;
+    }
+    list.insertAdjacentHTML("beforeend",
+      `<div class="hint" style="margin:2px 0 12px">Every English-friendly job on VDAB right now. Tap one to view it; the “Ready” tab has the ones with a letter &amp; email already written.</div>`);
+    listing.forEach((j) => list.appendChild(listingCard(j)));
+    return;
+  }
+
   const jobs = buckets[TAB];
   if (!jobs.length) {
     const msg = {
-      new: ["🔍", "No new matches right now.<br>The bot checks VDAB every hour."],
+      new: ["🔍", "No prepared matches yet.<br>Check the “All jobs” tab for the full English list."],
       applied: ["📮", "Jobs you apply to show up here."],
       skipped: ["🗂️", "Nothing skipped."],
     }[TAB];
