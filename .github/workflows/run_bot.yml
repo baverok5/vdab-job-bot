@@ -1,6 +1,13 @@
 name: VDAB job bot
 
 on:
+  push:
+    branches: [main]
+    paths:
+      # Only re-run when the code changes — NOT when the bot commits its
+      # own results (docs/jobs.json, seen.json), which would cause a loop.
+      - "bot.py"
+      - ".github/workflows/run_bot.yml"
   schedule:
     - cron: "15 6-20 * * *"
   workflow_dispatch: {}
