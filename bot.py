@@ -127,23 +127,31 @@ def _dismiss_cookies(page):
             pass
 
 
-def collect_links(browser, search_url, cap=400):
+MORE_BTN = (
+    "button:has-text('Toon meer'), button:has-text('Meer resultaten'), "
+    "button:has-text('Meer vacatures'), button:has-text('Load more')"
+)
+
+
+def collect_links(browser, search_url, cap=250, budget_s=75):
     """Load a VDAB search in a real browser and page/scroll through it to
     collect as many (job_url, job_id) pairs as possible — not just the first
-    page. Returns a set of pairs."""
+    page. Bounded by `cap` links and `budget_s` seconds. Returns a set of pairs."""
     page = browser.new_page(
         user_agent=HEADERS["User-Agent"],
         locale="nl-BE",
         extra_http_headers={"Accept-Language": HEADERS["Accept-Language"]},
     )
     found = {}
+    t0 = time.time()
+    passes = 0
     try:
-        page.goto(search_url, wait_until="domcontentloaded", timeout=45000)
+        page.goto(search_url, wait_until="domcontentloaded", timeout=30000)
         _dismiss_cookies(page)
         page.wait_for_timeout(1500)
 
-        last, stagnant, i = -1, 0, 0
-        for i in range(80):
+        last, stagnant = -1, 0
+        for passes in range(1, 61):
             hrefs = page.eval_on_selector_all(
                 "a[href*='/vindeenjob/vacatures/']",
                 "els => els.map(e => e.getAttribute('href'))",
@@ -154,35 +162,29 @@ def collect_links(browser, search_url, cap=400):
                     url = h if h.startswith("http") else "https://www.vdab.be" + h
                     found[m.group(1)] = url.split("?")[0]
 
-            if len(found) >= cap:
+            if len(found) >= cap or time.time() - t0 > budget_s:
                 break
 
-            # Prefer an explicit "show more" control; otherwise infinite-scroll.
-            clicked = False
-            for sel in (
-                'button:has-text("Toon meer")',
-                'button:has-text("Meer resultaten")',
-                'button:has-text("Meer vacatures")',
-                'button:has-text("Load more")',
-            ):
+            # Instant check (no per-try timeout) for a "load more" button;
+            # click it if present, otherwise infinite-scroll.
+            btn = page.query_selector(MORE_BTN)
+            if btn:
                 try:
-                    page.click(sel, timeout=1200)
-                    clicked = True
-                    break
+                    btn.click(timeout=1500)
                 except Exception:
-                    pass
-            if not clicked:
+                    page.mouse.wheel(0, 26000)
+            else:
                 page.mouse.wheel(0, 26000)
-            page.wait_for_timeout(1300)
+            page.wait_for_timeout(1100)
 
             if len(found) == last:
                 stagnant += 1
-                if stagnant >= 4:  # nothing new for a while → end of list
+                if stagnant >= 3:  # nothing new for a while → end of list
                     break
             else:
                 stagnant, last = 0, len(found)
 
-        print(f"  collect: {len(found)} unique links after {i + 1} passes")
+        print(f"  collect: {len(found)} links, {passes} passes, {int(time.time() - t0)}s")
     except Exception as e:
         print(f"  collect error {search_url}: {e}")
     finally:
@@ -200,7 +202,7 @@ def fetch_job_detail(browser, url, job_id):
         extra_http_headers={"Accept-Language": HEADERS["Accept-Language"]},
     )
     try:
-        page.goto(url, wait_until="domcontentloaded", timeout=45000)
+        page.goto(url, wait_until="domcontentloaded", timeout=30000)
         # Wait until the SPA has actually rendered the posting (body fills up),
         # rather than the near-empty "Toepassing laden..." loading shell.
         try:
