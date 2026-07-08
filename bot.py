@@ -53,7 +53,7 @@ HEADERS = {
     "Accept-Language": "nl-BE,nl;q=0.9,en;q=0.8",
 }
 
-MAX_NEW_PER_RUN = 8  # safety cap so one run never floods Gemini's free tier
+MAX_NEW_PER_RUN = 25  # safety cap so one run never floods Gemini's free tier
 
 
 # ---------------------------------------------------------------- helpers
