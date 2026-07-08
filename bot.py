@@ -145,17 +145,32 @@ def fetch_job_detail(url):
         print(f"  Could not load job page {url}: {e}")
         return None, None
 
-    soup = BeautifulSoup(r.text, "html.parser")
+    raw = r.text
+
+    # --- DIAGNOSTIC: locate where the real job data lives (SPA vs JSON-LD vs API)
+    print(f"  DEBUG raw_html_len={len(raw)} "
+          f"ld_json={'application/ld+json' in raw} "
+          f"JobPosting={'JobPosting' in raw} "
+          f"NEXT_DATA={'__NEXT_DATA__' in raw} "
+          f"window_state={'window.__' in raw}")
+    for hit in re.findall(r'https?://[^\s"\'<>]*(?:vacature|api|rest)[^\s"\'<>]*', raw)[:6]:
+        print(f"  DEBUG url_in_page: {hit}")
+    for i, block in enumerate(
+        re.findall(r'<script[^>]*application/ld\+json[^>]*>(.*?)</script>', raw, re.S)[:2]
+    ):
+        print(f"  DEBUG ld_json[{i}] (first 600): {block.strip()[:600]!r}")
+    # --- end diagnostic
+
+    soup = BeautifulSoup(raw, "html.parser")
     for tag in soup(["script", "style", "nav", "footer", "header"]):
         tag.decompose()
     text = re.sub(r"\n{3,}", "\n\n", soup.get_text("\n", strip=True))
 
     apply_email = None
-    mail_link = BeautifulSoup(r.text, "html.parser").select_one('a[href^="mailto:"]')
+    mail_link = BeautifulSoup(raw, "html.parser").select_one('a[href^="mailto:"]')
     if mail_link:
         apply_email = mail_link["href"].replace("mailto:", "").split("?")[0]
 
-    print(f"  DEBUG: fetched {len(text)} chars of visible text. First 500 chars:\n{text[:500]!r}")
     return text[:15000], apply_email
 
 
