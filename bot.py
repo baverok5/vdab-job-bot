@@ -29,14 +29,14 @@ SEARCH_URLS = [
     "https://www.vdab.be/vindeenjob/jobs/seo",
 ]
 
-# VDAB is a JavaScript app; job pages have no content in their HTML. The real
-# data comes from a JSON API. We try these candidate endpoints in order and
-# use the first that returns usable job data. {id} is the numeric vacancy id.
-API_CANDIDATES = [
-    "https://www.vdab.be/api/ui/v1/vindeenjob/vacatures/{id}",
-    "https://www.vdab.be/api/ui/v1/vacatures/{id}",
-    "https://www.vdab.be/vindeenjob/api/v1/vacatures/{id}",
-    "https://www.vdab.be/rest/vindeenjob/v3/vacatures/{id}",
+# VDAB's public job pages are a JavaScript app whose HTML has no job content.
+# But the site exposes server-rendered HTML *fragments* for each vacancy (used
+# to embed jobs elsewhere) — discovered in VDAB's own JS bundle. These DO
+# contain the full posting. {id} is the numeric vacancy id. First that works wins.
+DETAIL_CANDIDATES = [
+    "https://www.vdab.be/include/vindeenjob/vacatures/{id}",
+    "https://www.vdab.be/embed/vindeenjob/vacatures/{id}?preview=true",
+    "https://www.vdab.be/embed/vindeenjob/vacatures/{id}",
 ]
 
 JOBS_FILE = "docs/jobs.json"      # matched jobs (dashboard reads this)
@@ -63,9 +63,8 @@ HEADERS = {
 
 MAX_NEW_PER_RUN = 8  # safety cap so one run never floods Gemini's free tier
 
-# Remembers which API endpoint worked, so later jobs skip straight to it.
+# Remembers which detail endpoint worked, so later jobs skip straight to it.
 _working_api_tmpl = None
-_discovered = False  # run the JS-bundle API discovery only once per run
 
 
 # ---------------------------------------------------------------- helpers
@@ -122,26 +121,6 @@ def send_telegram(message):
         print(f"  Telegram error: {e}")
 
 
-def _json_to_text(obj):
-    """Flatten a JSON structure into readable text (all string/number leaves)."""
-    parts = []
-
-    def walk(o):
-        if isinstance(o, dict):
-            for v in o.values():
-                walk(v)
-        elif isinstance(o, list):
-            for v in o:
-                walk(v)
-        elif isinstance(o, (str, int, float)):
-            s = str(o).strip()
-            if s:
-                parts.append(s)
-
-    walk(obj)
-    return "\n".join(parts)
-
-
 # ---------------------------------------------------------------- scraping
 
 def find_job_links(search_url):
@@ -170,74 +149,48 @@ def find_job_links(search_url):
     return found
 
 
-def _discover_api(page_url):
-    """One-off: download VDAB's JS bundles and print every API-looking string,
-    so we can learn the exact vacancy endpoint the site itself calls."""
-    try:
-        html = requests.get(page_url, headers=HEADERS, timeout=60).text
-    except Exception as e:
-        print(f"  DISCOVER: could not load page: {e}")
-        return
-    scripts = re.findall(r'<script[^>]+src="([^"]+)"', html)
-    print(f"  DISCOVER: {len(scripts)} script srcs on page")
-    hints = set()
-    for src in scripts:
-        js_url = src if src.startswith("http") else "https://www.vdab.be" + src
-        try:
-            js = requests.get(js_url, headers=HEADERS, timeout=60).text
-        except Exception:
-            continue
-        for m in re.findall(
-            r'["\'`]([^"\'`]*(?:vacature|/rest/|/api/|vindeenjob)[^"\'`]*)["\'`]', js
-        ):
-            if 3 < len(m) < 120:
-                hints.add(m)
-    for h in sorted(hints)[:80]:
-        print(f"  DISCOVER hint: {h}")
-    print(f"  DISCOVER: {len(hints)} unique hints total")
-
-
 def fetch_job_detail(url, job_id):
-    """Fetch one job's data from VDAB's JSON API. Returns (text, apply_email)."""
-    global _working_api_tmpl, _discovered
-
-    if not _discovered:
-        _discovered = True
-        _discover_api(url)
-
-    api_headers = {**HEADERS, "Accept": "application/json", "Referer": url}
+    """Fetch one job's server-rendered HTML fragment from VDAB and return its
+    readable text + any apply email."""
+    global _working_api_tmpl
 
     # Try the known-good endpoint first, then fall back to the candidates.
     templates = []
     if _working_api_tmpl:
         templates.append(_working_api_tmpl)
-    templates += [t for t in API_CANDIDATES if t != _working_api_tmpl]
+    templates += [t for t in DETAIL_CANDIDATES if t != _working_api_tmpl]
 
     for tmpl in templates:
-        api_url = tmpl.format(id=job_id)
+        detail_url = tmpl.format(id=job_id)
         try:
-            r = requests.get(api_url, headers=api_headers, timeout=60)
+            r = requests.get(detail_url, headers=HEADERS, timeout=60)
         except Exception as e:
-            print(f"  API {api_url} -> error {e}")
+            print(f"  detail {detail_url} -> error {e}")
             continue
 
-        ctype = r.headers.get("content-type", "")
-        print(f"  API {api_url} -> {r.status_code} ({ctype}, {len(r.text)} bytes)")
+        if r.status_code != 200:
+            print(f"  detail {detail_url} -> {r.status_code}")
+            continue
 
-        if r.status_code == 200 and "json" in ctype.lower():
-            try:
-                data = r.json()
-            except Exception as e:
-                print(f"  (could not parse JSON: {e})")
-                continue
-            text = _json_to_text(data)
-            if len(text) > 300:  # sanity check: real job data, not an empty stub
-                _working_api_tmpl = tmpl
-                m = re.search(r"[\w.+-]+@[\w-]+\.[\w.-]+", text)
-                apply_email = m.group(0) if m else None
-                return text[:15000], apply_email
+        soup = BeautifulSoup(r.text, "html.parser")
+        for tag in soup(["script", "style", "nav", "footer", "header"]):
+            tag.decompose()
+        text = re.sub(r"\n{3,}", "\n\n", soup.get_text("\n", strip=True))
+        print(f"  detail {detail_url} -> 200, {len(text)} chars of text")
 
-    print(f"  Could not fetch job data via API for {job_id}")
+        # The empty SPA shell yields ~230 chars ending in "Toepassing laden...".
+        # A real fragment has far more, so this cleanly tells them apart.
+        if len(text) > 300 and "Toepassing laden" not in text:
+            _working_api_tmpl = tmpl
+            apply_email = None
+            mail_link = BeautifulSoup(r.text, "html.parser").select_one(
+                'a[href^="mailto:"]'
+            )
+            if mail_link:
+                apply_email = mail_link["href"].replace("mailto:", "").split("?")[0]
+            return text[:15000], apply_email
+
+    print(f"  Could not fetch job detail for {job_id}")
     return None, None
 
 
