@@ -175,19 +175,38 @@ def collect_links(browser, search_url, cap=250, budget_s=75):
                 break
 
             # Instant check (no per-try timeout) for a "load more" button;
-            # click it if present, otherwise infinite-scroll.
+            # click it if present, otherwise scroll to the bottom to trigger
+            # lazy-loading of the next page of results.
             btn = page.query_selector(MORE_BTN)
             if btn:
                 try:
                     btn.click(timeout=1500)
                 except Exception:
-                    page.mouse.wheel(0, 26000)
+                    pass
             else:
-                page.mouse.wheel(0, 26000)
-            page.wait_for_timeout(1100)
+                try:
+                    page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
+                    page.evaluate(
+                        "const a=[...document.querySelectorAll(\"a[href*='/vindeenjob/vacatures/']\")].pop();"
+                        "if(a)a.scrollIntoView({block:'end'});"
+                    )
+                except Exception:
+                    pass
+            page.wait_for_timeout(1300)
 
             if len(found) == last:
                 stagnant += 1
+                if stagnant == 2:  # about to give up — log how VDAB paginates
+                    try:
+                        cues = page.eval_on_selector_all(
+                            "a, button",
+                            "els => els.map(e => (e.innerText||'').trim())"
+                            ".filter(t => t && /meer|volgende|pagina|next|resultaten|\\d+/i.test(t))"
+                            ".slice(0, 25)",
+                        )
+                        print(f"  pager cues: {cues}")
+                    except Exception as e:
+                        print(f"  pager cue error: {e}")
                 if stagnant >= 3:  # nothing new for a while → end of list
                     break
             else:
