@@ -3,7 +3,7 @@ VDAB Job Bot — finds English-only, no-experience jobs and prepares application
 
 How it works (runs on GitHub Actions every hour):
 1. Scrapes VDAB job search results for English-language jobs
-2. For each NEW job: fetches the full description
+2. For each NEW job: fetches the full description from VDAB's JSON API
 3. Asks Gemini: "Does this need Dutch/French? Does it require experience?"
 4. If it passes: Gemini writes a tailored cover letter + email + CV summary
 5. Saves everything to docs/jobs.json (shown on the dashboard)
@@ -27,6 +27,16 @@ SEARCH_URLS = [
     "https://www.vdab.be/vindeenjob/jobs/digital-marketing",
     "https://www.vdab.be/vindeenjob/jobs/marketing-english",
     "https://www.vdab.be/vindeenjob/jobs/seo",
+]
+
+# VDAB is a JavaScript app; job pages have no content in their HTML. The real
+# data comes from a JSON API. We try these candidate endpoints in order and
+# use the first that returns usable job data. {id} is the numeric vacancy id.
+API_CANDIDATES = [
+    "https://www.vdab.be/api/ui/v1/vindeenjob/vacatures/{id}",
+    "https://www.vdab.be/api/ui/v1/vacatures/{id}",
+    "https://www.vdab.be/vindeenjob/api/v1/vacatures/{id}",
+    "https://www.vdab.be/rest/vindeenjob/v3/vacatures/{id}",
 ]
 
 JOBS_FILE = "docs/jobs.json"      # matched jobs (dashboard reads this)
@@ -53,6 +63,9 @@ HEADERS = {
 
 MAX_NEW_PER_RUN = 8  # safety cap so one run never floods Gemini's free tier
 
+# Remembers which API endpoint worked, so later jobs skip straight to it.
+_working_api_tmpl = None
+
 
 # ---------------------------------------------------------------- helpers
 
@@ -78,7 +91,7 @@ def ask_gemini(prompt, expect_json=False):
     for attempt in range(3):
         try:
             r = requests.post(GEMINI_URL, json=body, timeout=90)
-            if r.status_code == 429:          # rate limited — wait and retry
+            if r.status_code in (429, 503):   # rate limited / busy — wait, retry
                 time.sleep(30 * (attempt + 1))
                 continue
             r.raise_for_status()
@@ -106,6 +119,26 @@ def send_telegram(message):
         )
     except Exception as e:
         print(f"  Telegram error: {e}")
+
+
+def _json_to_text(obj):
+    """Flatten a JSON structure into readable text (all string/number leaves)."""
+    parts = []
+
+    def walk(o):
+        if isinstance(o, dict):
+            for v in o.values():
+                walk(v)
+        elif isinstance(o, list):
+            for v in o:
+                walk(v)
+        elif isinstance(o, (str, int, float)):
+            s = str(o).strip()
+            if s:
+                parts.append(s)
+
+    walk(obj)
+    return "\n".join(parts)
 
 
 # ---------------------------------------------------------------- scraping
@@ -136,42 +169,44 @@ def find_job_links(search_url):
     return found
 
 
-def fetch_job_detail(url):
-    """Fetch one job page and return its readable text + any apply email."""
-    try:
-        r = requests.get(url, headers=HEADERS, timeout=60)
-        r.raise_for_status()
-    except Exception as e:
-        print(f"  Could not load job page {url}: {e}")
-        return None, None
+def fetch_job_detail(url, job_id):
+    """Fetch one job's data from VDAB's JSON API. Returns (text, apply_email)."""
+    global _working_api_tmpl
 
-    raw = r.text
+    api_headers = {**HEADERS, "Accept": "application/json", "Referer": url}
 
-    # --- DIAGNOSTIC: locate where the real job data lives (SPA vs JSON-LD vs API)
-    print(f"  DEBUG raw_html_len={len(raw)} "
-          f"ld_json={'application/ld+json' in raw} "
-          f"JobPosting={'JobPosting' in raw} "
-          f"NEXT_DATA={'__NEXT_DATA__' in raw} "
-          f"window_state={'window.__' in raw}")
-    for hit in re.findall(r'https?://[^\s"\'<>]*(?:vacature|api|rest)[^\s"\'<>]*', raw)[:6]:
-        print(f"  DEBUG url_in_page: {hit}")
-    for i, block in enumerate(
-        re.findall(r'<script[^>]*application/ld\+json[^>]*>(.*?)</script>', raw, re.S)[:2]
-    ):
-        print(f"  DEBUG ld_json[{i}] (first 600): {block.strip()[:600]!r}")
-    # --- end diagnostic
+    # Try the known-good endpoint first, then fall back to the candidates.
+    templates = []
+    if _working_api_tmpl:
+        templates.append(_working_api_tmpl)
+    templates += [t for t in API_CANDIDATES if t != _working_api_tmpl]
 
-    soup = BeautifulSoup(raw, "html.parser")
-    for tag in soup(["script", "style", "nav", "footer", "header"]):
-        tag.decompose()
-    text = re.sub(r"\n{3,}", "\n\n", soup.get_text("\n", strip=True))
+    for tmpl in templates:
+        api_url = tmpl.format(id=job_id)
+        try:
+            r = requests.get(api_url, headers=api_headers, timeout=60)
+        except Exception as e:
+            print(f"  API {api_url} -> error {e}")
+            continue
 
-    apply_email = None
-    mail_link = BeautifulSoup(raw, "html.parser").select_one('a[href^="mailto:"]')
-    if mail_link:
-        apply_email = mail_link["href"].replace("mailto:", "").split("?")[0]
+        ctype = r.headers.get("content-type", "")
+        print(f"  API {api_url} -> {r.status_code} ({ctype}, {len(r.text)} bytes)")
 
-    return text[:15000], apply_email
+        if r.status_code == 200 and "json" in ctype.lower():
+            try:
+                data = r.json()
+            except Exception as e:
+                print(f"  (could not parse JSON: {e})")
+                continue
+            text = _json_to_text(data)
+            if len(text) > 300:  # sanity check: real job data, not an empty stub
+                _working_api_tmpl = tmpl
+                m = re.search(r"[\w.+-]+@[\w-]+\.[\w.-]+", text)
+                apply_email = m.group(0) if m else None
+                return text[:15000], apply_email
+
+    print(f"  Could not fetch job data via API for {job_id}")
+    return None, None
 
 
 # ---------------------------------------------------------------- AI steps
@@ -256,7 +291,7 @@ def main():
         print(f"\nChecking job {job_id}: {url}")
         seen.add(job_id)
 
-        job_text, apply_email = fetch_job_detail(url)
+        job_text, apply_email = fetch_job_detail(url, job_id)
         if not job_text:
             continue
 
