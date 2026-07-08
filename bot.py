@@ -65,6 +65,7 @@ MAX_NEW_PER_RUN = 8  # safety cap so one run never floods Gemini's free tier
 
 # Remembers which API endpoint worked, so later jobs skip straight to it.
 _working_api_tmpl = None
+_discovered = False  # run the JS-bundle API discovery only once per run
 
 
 # ---------------------------------------------------------------- helpers
@@ -169,9 +170,40 @@ def find_job_links(search_url):
     return found
 
 
+def _discover_api(page_url):
+    """One-off: download VDAB's JS bundles and print every API-looking string,
+    so we can learn the exact vacancy endpoint the site itself calls."""
+    try:
+        html = requests.get(page_url, headers=HEADERS, timeout=60).text
+    except Exception as e:
+        print(f"  DISCOVER: could not load page: {e}")
+        return
+    scripts = re.findall(r'<script[^>]+src="([^"]+)"', html)
+    print(f"  DISCOVER: {len(scripts)} script srcs on page")
+    hints = set()
+    for src in scripts:
+        js_url = src if src.startswith("http") else "https://www.vdab.be" + src
+        try:
+            js = requests.get(js_url, headers=HEADERS, timeout=60).text
+        except Exception:
+            continue
+        for m in re.findall(
+            r'["\'`]([^"\'`]*(?:vacature|/rest/|/api/|vindeenjob)[^"\'`]*)["\'`]', js
+        ):
+            if 3 < len(m) < 120:
+                hints.add(m)
+    for h in sorted(hints)[:80]:
+        print(f"  DISCOVER hint: {h}")
+    print(f"  DISCOVER: {len(hints)} unique hints total")
+
+
 def fetch_job_detail(url, job_id):
     """Fetch one job's data from VDAB's JSON API. Returns (text, apply_email)."""
-    global _working_api_tmpl
+    global _working_api_tmpl, _discovered
+
+    if not _discovered:
+        _discovered = True
+        _discover_api(url)
 
     api_headers = {**HEADERS, "Accept": "application/json", "Referer": url}
 
