@@ -138,33 +138,13 @@ def _dismiss_cookies(page):
             pass
 
 
-MORE_BTN = (
-    "button:has-text('Toon meer'), button:has-text('Meer resultaten'), "
-    "button:has-text('Meer vacatures'), button:has-text('Load more')"
-)
+NEXT_BTN = "a:has-text('Volgende'), button:has-text('Volgende')"
 
 
-SCROLL_ALL_JS = """() => {
-  window.scrollTo(0, document.body.scrollHeight);
-  // Scroll every scrollable container to its bottom — VDAB's result list may
-  // live inside a nested scroll area, not the window.
-  for (const el of document.querySelectorAll('*')) {
-    const s = getComputedStyle(el);
-    if ((s.overflowY === 'auto' || s.overflowY === 'scroll') &&
-        el.scrollHeight > el.clientHeight + 40) {
-      el.scrollTop = el.scrollHeight;
-    }
-  }
-  const links = document.querySelectorAll("a[href*='/vindeenjob/vacatures/']");
-  const last = links[links.length - 1];
-  if (last) last.scrollIntoView({block: 'end'});
-}"""
-
-
-def collect_links(browser, search_url, cap=400, budget_s=120):
-    """Load a VDAB search in a real browser and page/scroll through it to
-    collect as many (job_url, job_id) pairs as possible — not just the first
-    page. Bounded by `cap` links and `budget_s` seconds. Returns a set of pairs."""
+def collect_links(browser, search_url, cap=1400, budget_s=210, max_pages=70):
+    """Walk VDAB's real search results page by page (clicking the "Volgende"
+    next button) collecting (job_url, job_id) pairs. VDAB uses numbered
+    pagination, not infinite scroll. Bounded by cap links / budget / max_pages."""
     page = browser.new_page(
         user_agent=HEADERS["User-Agent"],
         locale="nl-BE",
@@ -172,60 +152,47 @@ def collect_links(browser, search_url, cap=400, budget_s=120):
     )
     found = {}
     t0 = time.time()
-    passes = 0
+    pages_done = 0
     try:
         page.goto(search_url, wait_until="domcontentloaded", timeout=30000)
         _dismiss_cookies(page)
-        page.wait_for_timeout(2000)
+        page.wait_for_timeout(1800)
 
-        last, stagnant = -1, 0
-        for passes in range(1, 121):
+        stagnant = 0
+        for pages_done in range(1, max_pages + 1):
             hrefs = page.eval_on_selector_all(
                 "a[href*='/vindeenjob/vacatures/']",
                 "els => els.map(e => e.getAttribute('href'))",
             )
+            before = len(found)
             for h in hrefs:
                 m = re.search(r"/vindeenjob/vacatures/(\d+)", h or "")
                 if m:
                     url = h if h.startswith("http") else "https://www.vdab.be" + h
                     found[m.group(1)] = url.split("?")[0]
+            added = len(found) - before
 
             if len(found) >= cap or time.time() - t0 > budget_s:
                 break
 
-            # Click a "load more" button if present; always also scroll every
-            # scrollable container to trigger lazy-loading of the next page.
-            btn = page.query_selector(MORE_BTN)
-            if btn:
-                try:
-                    btn.click(timeout=1500)
-                except Exception:
-                    pass
+            nxt = page.query_selector(NEXT_BTN)
+            if not nxt:
+                break
             try:
-                page.evaluate(SCROLL_ALL_JS)
+                nxt.scroll_into_view_if_needed(timeout=1500)
+                nxt.click(timeout=2500)
             except Exception:
-                pass
-            page.wait_for_timeout(1400)
+                break
+            page.wait_for_timeout(1500)
 
-            if len(found) == last:
+            if added == 0:  # a page added nothing new → we've reached the end
                 stagnant += 1
-                if stagnant == 2:  # about to give up — log how VDAB paginates
-                    try:
-                        cues = page.eval_on_selector_all(
-                            "a, button",
-                            "els => els.map(e => (e.innerText||'').trim())"
-                            ".filter(t => t && /meer|volgende|pagina|next|resultaten|\\d+/i.test(t))"
-                            ".slice(0, 25)",
-                        )
-                        print(f"  pager cues: {cues}")
-                    except Exception as e:
-                        print(f"  pager cue error: {e}")
-                if stagnant >= 3:  # nothing new for a while → end of list
+                if stagnant >= 2:
                     break
             else:
-                stagnant, last = 0, len(found)
+                stagnant = 0
 
-        print(f"  collect: {len(found)} links, {passes} passes, {int(time.time() - t0)}s")
+        print(f"  collect: {len(found)} links, {pages_done} pages, {int(time.time() - t0)}s")
     except Exception as e:
         print(f"  collect error {search_url}: {e}")
     finally:
@@ -349,7 +316,7 @@ def main():
             jobs["listing"] = sorted(
                 ({"id": i, "url": u, "title": _slug_title(u)} for (u, i) in all_links),
                 key=lambda j: j["id"], reverse=True,
-            )[:300]
+            )[:1400]
 
             new_links = [(u, i) for (u, i) in all_links if i not in seen]
             print(f"{len(all_links)} total in listing, {len(new_links)} not yet seen")
