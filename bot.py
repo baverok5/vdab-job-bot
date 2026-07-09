@@ -24,9 +24,11 @@ from playwright.sync_api import sync_playwright
 # ---------------------------------------------------------------- settings
 
 SEARCH_URLS = [
-    # VDAB's whole "English jobs" listing — every vacancy open to English
-    # speakers, across all sectors (no market filter). Paged through in the
-    # browser by collect_links(), so we get far more than the first page.
+    # VDAB's real job search, keyword "english" — the full result set (the
+    # curated /jobs/english-jobs page only ever shows 28). Paged through in the
+    # browser by collect_links(). The /jobs/english-jobs page is kept as a
+    # second source so nothing curated is lost.
+    "https://www.vdab.be/vindeenjob/vacatures?trefwoord=english",
     "https://www.vdab.be/vindeenjob/jobs/english-jobs",
 ]
 
