@@ -54,7 +54,7 @@ HEADERS = {
     "Accept-Language": "nl-BE,nl;q=0.9,en;q=0.8",
 }
 
-MAX_NEW_PER_RUN = 0  # TEMP: skip AI this run to test pagination fast; restore after
+MAX_NEW_PER_RUN = 6  # cap AI-prepared jobs per run so we don't exhaust Gemini's free tier
 
 
 # ---------------------------------------------------------------- helpers
