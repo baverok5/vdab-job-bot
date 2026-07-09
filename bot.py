@@ -355,6 +355,7 @@ def main():
 
 def _process_jobs(browser, new_links, seen, jobs, cv_text):
     matched = 0
+    ai_fails = 0
     for url, job_id in new_links:
         print(f"\nChecking job {job_id}: {url}")
 
@@ -365,8 +366,15 @@ def _process_jobs(browser, new_links, seen, jobs, cv_text):
 
         verdict = evaluate_job(job_text, cv_text)
         if not verdict:
+            ai_fails += 1
             print("  Skipped (AI call failed — will retry next run)")
+            if ai_fails >= 3:
+                # Gemini is down/quota-exhausted — stop wasting time this run.
+                # The job listing is already saved, so breadth is unaffected.
+                print("  Gemini unavailable — stopping AI for this run (listing still updated).")
+                break
             continue  # Gemini hiccup; don't mark seen so it's retried
+        ai_fails = 0
 
         # We got a real verdict (pass or fail) — safe to not process it again.
         seen.add(job_id)
