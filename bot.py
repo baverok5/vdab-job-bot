@@ -54,7 +54,21 @@ HEADERS = {
     "Accept-Language": "nl-BE,nl;q=0.9,en;q=0.8",
 }
 
-MAX_NEW_PER_RUN = 6  # cap AI-prepared jobs per run so we don't exhaust Gemini's free tier
+MAX_NEW_PER_RUN = 15  # cap AI-prepared jobs per run so we don't exhaust Gemini's free tier
+
+# Jobs to always exclude (candidate only has a B driver's licence and does not
+# want cleaning/domestic roles). Matched against the job title/slug.
+EXCLUDE_RX = re.compile(
+    r"poets|huishoud|schoonma|kuis|cleaner|cleaning|household\s*help|"
+    r"domestic|"                                    # cleaning / household
+    r"truck\s*driver|vrachtwagen|\bce[-\s]?(driver|chauffeur|truck)|"
+    r"chauffeur\s*ce|rijbewijs\s*c\b|rijbewijs\s*ce|\bc/ce\b|\bce\b\s*truck",  # C/CE truck
+    re.I,
+)
+
+
+def is_excluded(title):
+    return bool(EXCLUDE_RX.search(title or ""))
 
 
 # ---------------------------------------------------------------- helpers
@@ -245,6 +259,36 @@ def fetch_job_detail(browser, url, job_id):
 
 # ---------------------------------------------------------------- AI steps
 
+def generate_application(job_text, cv_text, job_info=None):
+    """On-demand: write the full application email + cover letter + CV
+    highlights for ONE job the user chose to apply to. Used by prepare.py."""
+    job_info = job_info or {}
+    prompt = f"""You are an expert career writer. Write application documents for this job,
+based ONLY on the real CV below. NEVER invent experience, education, or skills
+not in the CV. English, professional but warm, no clichés.
+
+Reply ONLY with JSON:
+{{
+  "email_subject": "short email subject line",
+  "email_body": "complete application email, 120-180 words, ready to send, ends with the signature block",
+  "cover_letter": "full cover letter, 250-350 words",
+  "cv_highlights": "5 bullet points (one newline-separated string) reordering the CV's most relevant points for THIS job"
+}}
+
+THE JOB ({job_info.get('title', '')} at {job_info.get('company', '')}):
+{job_text[:6000]}
+
+THE REAL CV:
+{cv_text}
+
+Signature block to end email_body with:
+Baver Ok
++32 470 42 48 36
+baverok@gmail.com
+linkedin.com/in/baverok"""
+    return ask_gemini(prompt, expect_json=True)
+
+
 def evaluate_job(job_text, cv_text):
     """One lightweight Gemini call: judge if the job is open to an English
     speaker and, if so, summarise the job and why it fits the candidate.
@@ -252,11 +296,14 @@ def evaluate_job(job_text, cv_text):
     the user taps Apply, so we don't spend tokens on jobs they never apply to."""
     prompt = f"""You help a candidate who speaks fluent English but NOT Dutch or French.
 
-STEP 1 — Decide if this Belgian job is open to an English speaker:
-- PASS if English is required/preferred/accepted, OR the posting is written in
-  English, AND Dutch or French is not strictly mandatory ("a plus" is fine).
-- FAIL only if Dutch or French is genuinely required, or the role is unworkable
-  without it. Do NOT judge sector, seniority, salary, or experience.
+STEP 1 — Decide if this Belgian job fits. PASS only if ALL are true:
+- English is required/preferred/accepted, OR the posting is written in English,
+  AND Dutch or French is not strictly mandatory ("a plus" is fine).
+- It is NOT a cleaning / domestic-help role (poetshulp, huishoudhulp, schoonmaak,
+  cleaner, household help).
+- It does NOT require a truck / C / CE driving licence. A car (B) licence or no
+  licence is fine; anything needing C, CE, or truck/lorry driving → FAIL.
+Otherwise FAIL. Do NOT judge seniority, salary, or years of experience.
 
 STEP 2 — ONLY if it passes, summarise the job and why it suits the candidate,
 using the real CV below. Never invent experience/skills not in the CV.
@@ -302,16 +349,22 @@ def main():
                 print(f"  {len(links)} links from {url}")
                 all_links |= links
 
-            # Breadth: record EVERY English job we can see, right away — a
-            # lightweight browsable listing (title derived from the URL slug),
-            # independent of the slower AI "ready to apply" pipeline below.
-            jobs["listing"] = sorted(
-                ({"id": i, "url": u, "title": _slug_title(u)} for (u, i) in all_links),
-                key=lambda j: j["id"], reverse=True,
-            )[:1400]
+            # Breadth: record every English job we can see (title from the URL
+            # slug), minus the ones the candidate never wants (cleaning + C/CE
+            # truck roles). Independent of the slower AI pipeline below.
+            listing = [
+                {"id": i, "url": u, "title": _slug_title(u)}
+                for (u, i) in all_links if not is_excluded(_slug_title(u))
+            ]
+            listing.sort(key=lambda j: j["id"], reverse=True)
+            jobs["listing"] = listing[:1400]
 
-            new_links = [(u, i) for (u, i) in all_links if i not in seen]
-            print(f"{len(all_links)} total in listing, {len(new_links)} not yet seen")
+            new_links = [
+                (u, i) for (u, i) in all_links
+                if i not in seen and not is_excluded(_slug_title(u))
+            ]
+            print(f"{len(all_links)} total, {len(jobs['listing'])} after filter, "
+                  f"{len(new_links)} not yet seen")
             new_links = new_links[:MAX_NEW_PER_RUN]
 
             matched = _process_jobs(browser, new_links, seen, jobs, cv_text)
@@ -319,7 +372,8 @@ def main():
             browser.close()
 
     jobs["updated"] = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
-    jobs["jobs"] = jobs["jobs"][:100]  # keep the file small
+    # Drop any previously-saved matches that no longer fit (cleaning / truck).
+    jobs["jobs"] = [j for j in jobs["jobs"] if not is_excluded(j.get("title", ""))][:100]
     save_json(JOBS_FILE, jobs)
     save_json(SEEN_FILE, sorted(seen))
     print(f"\nDone. {matched} new match(es) this run.")

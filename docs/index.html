@@ -196,6 +196,67 @@ function bullets(str) {
   return `<ul class="bl">${items.map((i) => `<li>${esc(i)}</li>`).join("")}</ul>`;
 }
 
+// ---- Phase 2: on-demand letter generation ----
+const WK_LS = "workerUrl";
+const getWorker = () => localStorage.getItem(WK_LS) || "";
+function ensureWorker() {
+  let w = getWorker();
+  if (!w) {
+    w = (prompt("One-time setup: paste your Cloudflare Worker URL for on-demand letters (see worker/README.md).") || "").trim();
+    if (w) localStorage.setItem(WK_LS, w);
+  }
+  return w;
+}
+
+function gmailFor(j, d) {
+  const to = encodeURIComponent(d.apply_email || j.apply_email || "");
+  const su = encodeURIComponent(d.email_subject || ("Application — " + (j.title || "")));
+  const bo = encodeURIComponent(d.email_body || "");
+  return `https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${su}&body=${bo}`;
+}
+
+function renderPrepared(j, d, box) {
+  box.innerHTML = `
+    <div class="sec"><div class="h">Application email</div>
+      <div class="quote">${esc(d.email_subject ? d.email_subject + "\n\n" : "")}${esc(d.email_body)}</div></div>
+    <div class="sec"><div class="h">Cover letter</div>
+      <div class="quote">${esc(d.cover_letter)}</div></div>
+    <a class="btn primary" href="${gmailFor(j, d)}" target="_blank" rel="noopener"
+       onclick="try{localStorage.setItem('jobstatus', JSON.stringify(Object.assign(JSON.parse(localStorage.getItem('jobstatus')||'{}'), {'${j.id}':'applied'})))}catch(e){}">
+       Open in Gmail to send</a>`;
+}
+
+async function prepareJob(j, box) {
+  const worker = ensureWorker();
+  if (!worker) { box.innerHTML = '<div class="hint">On-demand letters need the Worker set up first.</div>'; return; }
+  box.innerHTML = '<div class="hint">Writing your letter… this takes ~1–2 min. You can leave and come back.</div>';
+  try {
+    const r = await fetch(worker, {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ job_id: j.id, url: j.url }),
+    });
+    if (!r.ok) throw new Error("trigger " + r.status);
+  } catch (e) {
+    box.innerHTML = '<div class="hint">Could not start generation — check the Worker URL (tap again to re-enter it).</div>';
+    localStorage.removeItem(WK_LS);
+    return;
+  }
+  const started = Date.now();
+  const poll = async () => {
+    try {
+      const pr = await fetch(`prepared/${j.id}.json?t=` + Date.now(), { cache: "no-store" });
+      if (pr.ok) {
+        const d = await pr.json();
+        if (d.status === "ready") return renderPrepared(j, d, box);
+        if (d.status === "error") { box.innerHTML = '<div class="hint">Couldn’t read this job to write a letter. Try “Open on VDAB”.</div>'; return; }
+      }
+    } catch {}
+    if (Date.now() - started > 200000) { box.innerHTML = '<div class="hint">Still working — reopen this job in a minute to see the letter.</div>'; return; }
+    setTimeout(poll, 4000);
+  };
+  setTimeout(poll, 8000);
+}
+
 function card(j, state) {
   const el = document.createElement("div");
   el.className = "card";
@@ -226,19 +287,20 @@ function card(j, state) {
         ${state === "applied"
           ? `<a class="btn" href="${esc(j.url)}" target="_blank" rel="noopener">View on VDAB</a>
              <button class="btn undo" data-act="unapply">Mark not applied</button>`
-          : `<a class="btn primary" data-act="apply" href="${esc(j.url)}" target="_blank" rel="noopener">Apply on VDAB</a>
+          : `<button class="btn primary" data-act="generate">✍️ Write my letter</button>
+             <a class="btn" href="${esc(j.url)}" target="_blank" rel="noopener">VDAB</a>
              ${state === "skipped"
                ? '<button class="btn" data-act="unskip">Un-skip</button>'
                : '<button class="btn" data-act="skip">Skip</button>'}`}
       </div>
+      <div class="prep"></div>
     </div>`;
 
   el.addEventListener("click", (e) => {
     const act = (e.target.closest("[data-act]") || {}).dataset?.act;
     if (!act) return;
     if (act === "toggle") { el.classList.toggle("open"); return; }
-    if (act === "apply") { setTimeout(() => setStatus(j.id, "applied"), 300);
-      toast("Opening VDAB…"); return; }
+    if (act === "generate") { prepareJob(j, el.querySelector(".prep")); return; }
     if (act === "skip") { setStatus(j.id, "skipped"); toast("Skipped"); return; }
     if (act === "unskip" || act === "unapply") { setStatus(j.id, null); return; }
   });
@@ -256,8 +318,14 @@ function listingCard(j) {
       </div>
     </div>
     <div class="actions">
-      <a class="btn primary" href="${esc(j.url)}" target="_blank" rel="noopener">Open on VDAB</a>
-    </div>`;
+      <button class="btn primary" data-act="generate">✍️ Write my letter</button>
+      <a class="btn" href="${esc(j.url)}" target="_blank" rel="noopener">VDAB</a>
+    </div>
+    <div class="prep"></div>`;
+  el.addEventListener("click", (e) => {
+    const act = (e.target.closest("[data-act]") || {}).dataset?.act;
+    if (act === "generate") prepareJob(j, el.querySelector(".prep"));
+  });
   return el;
 }
 
@@ -355,8 +423,27 @@ installBtn.addEventListener("click", async () => {
 window.addEventListener("appinstalled", () => { installBtn.style.display = "none"; });
 
 if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () =>
-    navigator.serviceWorker.register("sw.js").catch(() => {}));
+  let reloaded = false;
+  navigator.serviceWorker.addEventListener("controllerchange", () => {
+    if (reloaded) return; reloaded = true; location.reload();
+  });
+  window.addEventListener("load", async () => {
+    try {
+      const reg = await navigator.serviceWorker.register("sw.js", { updateViaCache: "none" });
+      reg.update();
+      reg.addEventListener("updatefound", () => {
+        const nw = reg.installing;
+        if (!nw) return;
+        nw.addEventListener("statechange", () => {
+          // A new version installed while an old one controls the page:
+          // activate it immediately so the user gets the update.
+          if (nw.state === "installed" && navigator.serviceWorker.controller) {
+            nw.postMessage("skip-waiting");
+          }
+        });
+      });
+    } catch {}
+  });
 }
 </script>
 </body>

@@ -1,7 +1,7 @@
 // Service worker for the VDAB Job Applier PWA.
 // Network-first for the app shell + data so updates always reach the phone
 // (previously the shell was cache-first, which pinned users to an old UI).
-const CACHE = "vjobs-v3";
+const CACHE = "vjobs-v4";
 const SHELL = [
   "./",
   "./index.html",
@@ -10,6 +10,10 @@ const SHELL = [
   "./icon-512.png",
   "./apple-touch-icon.png",
 ];
+
+self.addEventListener("message", (e) => {
+  if (e.data === "skip-waiting") self.skipWaiting();
+});
 
 self.addEventListener("install", (e) => {
   e.waitUntil(

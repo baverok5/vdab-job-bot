@@ -1,0 +1,51 @@
+name: Prepare application
+
+# Triggered on demand (from the app, via the Cloudflare Worker proxy) to write
+# a tailored letter + email for one job the user chose to apply to.
+on:
+  workflow_dispatch:
+    inputs:
+      job_id:
+        description: "VDAB vacancy id"
+        required: true
+      url:
+        description: "Full VDAB job URL"
+        required: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: prepare-${{ github.event.inputs.job_id }}
+  cancel-in-progress: true
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          pip install requests beautifulsoup4 playwright
+          python -m playwright install --with-deps chromium
+
+      - name: Generate application
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          JOB_ID: ${{ github.event.inputs.job_id }}
+          JOB_URL: ${{ github.event.inputs.url }}
+        run: python -u prepare.py
+
+      - name: Commit result
+        run: |
+          git config user.name "job-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add docs/prepared
+          git diff --cached --quiet || git commit -m "Prepare application ${{ github.event.inputs.job_id }}"
+          git pull --rebase --autostash origin main || true
+          git push
