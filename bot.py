@@ -52,7 +52,7 @@ HEADERS = {
     "Accept-Language": "nl-BE,nl;q=0.9,en;q=0.8",
 }
 
-MAX_NEW_PER_RUN = 6  # cap AI-prepared jobs per run so we don't exhaust Gemini's free tier
+MAX_NEW_PER_RUN = 0  # TEMP: skip AI this run to test pagination fast; restore after
 
 
 # ---------------------------------------------------------------- helpers
@@ -142,7 +142,24 @@ MORE_BTN = (
 )
 
 
-def collect_links(browser, search_url, cap=250, budget_s=75):
+SCROLL_ALL_JS = """() => {
+  window.scrollTo(0, document.body.scrollHeight);
+  // Scroll every scrollable container to its bottom — VDAB's result list may
+  // live inside a nested scroll area, not the window.
+  for (const el of document.querySelectorAll('*')) {
+    const s = getComputedStyle(el);
+    if ((s.overflowY === 'auto' || s.overflowY === 'scroll') &&
+        el.scrollHeight > el.clientHeight + 40) {
+      el.scrollTop = el.scrollHeight;
+    }
+  }
+  const links = document.querySelectorAll("a[href*='/vindeenjob/vacatures/']");
+  const last = links[links.length - 1];
+  if (last) last.scrollIntoView({block: 'end'});
+}"""
+
+
+def collect_links(browser, search_url, cap=400, budget_s=120):
     """Load a VDAB search in a real browser and page/scroll through it to
     collect as many (job_url, job_id) pairs as possible — not just the first
     page. Bounded by `cap` links and `budget_s` seconds. Returns a set of pairs."""
@@ -157,10 +174,10 @@ def collect_links(browser, search_url, cap=250, budget_s=75):
     try:
         page.goto(search_url, wait_until="domcontentloaded", timeout=30000)
         _dismiss_cookies(page)
-        page.wait_for_timeout(1500)
+        page.wait_for_timeout(2000)
 
         last, stagnant = -1, 0
-        for passes in range(1, 61):
+        for passes in range(1, 121):
             hrefs = page.eval_on_selector_all(
                 "a[href*='/vindeenjob/vacatures/']",
                 "els => els.map(e => e.getAttribute('href'))",
@@ -174,25 +191,19 @@ def collect_links(browser, search_url, cap=250, budget_s=75):
             if len(found) >= cap or time.time() - t0 > budget_s:
                 break
 
-            # Instant check (no per-try timeout) for a "load more" button;
-            # click it if present, otherwise scroll to the bottom to trigger
-            # lazy-loading of the next page of results.
+            # Click a "load more" button if present; always also scroll every
+            # scrollable container to trigger lazy-loading of the next page.
             btn = page.query_selector(MORE_BTN)
             if btn:
                 try:
                     btn.click(timeout=1500)
                 except Exception:
                     pass
-            else:
-                try:
-                    page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
-                    page.evaluate(
-                        "const a=[...document.querySelectorAll(\"a[href*='/vindeenjob/vacatures/']\")].pop();"
-                        "if(a)a.scrollIntoView({block:'end'});"
-                    )
-                except Exception:
-                    pass
-            page.wait_for_timeout(1300)
+            try:
+                page.evaluate(SCROLL_ALL_JS)
+            except Exception:
+                pass
+            page.wait_for_timeout(1400)
 
             if len(found) == last:
                 stagnant += 1
