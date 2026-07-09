@@ -92,6 +92,8 @@
   .sec .h { font-size: 10.5px; font-weight: 700; text-transform: uppercase;
     letter-spacing: .06em; color: var(--text3); margin-bottom: 5px; }
   .sec .t { font-size: 13.5px; color: var(--text2); white-space: pre-wrap; }
+  .bl { margin: 0; padding-left: 18px; }
+  .bl li { font-size: 13.5px; color: var(--text2); line-height: 1.55; margin-bottom: 4px; }
   .quote { background: var(--bg); border: 0.5px solid var(--border2);
     border-left: 2.5px solid var(--accent2); border-radius: 0 9px 9px 0;
     padding: 10px 12px; font-size: 13px; color: var(--text); white-space: pre-wrap; }
@@ -186,6 +188,14 @@ function copyText(btn, text) {
 const isToday = (str) =>
   (str || "").slice(0, 10) === new Date().toISOString().slice(0, 10);
 
+function bullets(str) {
+  const items = (str || "").split(/\n+/)
+    .map((s) => s.replace(/^[-•*·\d.]+\s*/, "").trim())
+    .filter(Boolean);
+  if (!items.length) return "";
+  return `<ul class="bl">${items.map((i) => `<li>${esc(i)}</li>`).join("")}</ul>`;
+}
+
 function card(j, state) {
   const el = document.createElement("div");
   el.className = "card";
@@ -208,45 +218,27 @@ function card(j, state) {
       <div class="score">${(j.match_score ?? "–")}%</div>
     </div>
     <div class="body">
-      <div class="sec"><div class="h">Why it matches</div><div class="t">${esc(j.reason)}</div></div>
-      <div class="sec"><div class="h">Application email${hasMail ? " → " + esc(j.apply_email) : ""}</div>
-        <div class="quote">${esc(j.email_subject ? j.email_subject + "\n\n" : "")}${esc(j.email_body)}</div>
-        <button class="copybtn" data-act="copy-email">Copy email</button>
-      </div>
-      <div class="sec"><div class="h">Cover letter</div>
-        <div class="quote">${esc(j.cover_letter)}</div>
-        <button class="copybtn" data-act="copy-cover">Copy cover letter</button>
-      </div>
-      <div class="sec"><div class="h">CV highlights for this job</div>
-        <div class="t">${esc(j.cv_highlights)}</div>
-        <button class="copybtn" data-act="copy-cv">Copy highlights</button>
-      </div>
+      <div class="sec"><div class="h">Why it's good for you</div>
+        ${bullets(j.why_good) || `<div class="t">${esc(j.reason)}</div>`}</div>
+      <div class="sec"><div class="h">Job details</div>
+        ${bullets(j.details) || `<div class="t">${esc(j.reason)}</div>`}</div>
       <div class="actions">
         ${state === "applied"
           ? `<a class="btn" href="${esc(j.url)}" target="_blank" rel="noopener">View on VDAB</a>
              <button class="btn undo" data-act="unapply">Mark not applied</button>`
-          : `<a class="btn primary" data-act="apply" href="${esc(applyHref)}" target="_blank" rel="noopener">${applyLabel}</a>
+          : `<a class="btn primary" data-act="apply" href="${esc(j.url)}" target="_blank" rel="noopener">Apply on VDAB</a>
              ${state === "skipped"
                ? '<button class="btn" data-act="unskip">Un-skip</button>'
                : '<button class="btn" data-act="skip">Skip</button>'}`}
       </div>
-      ${state !== "applied"
-        ? `<div class="hint">${hasMail
-            ? "Opens Gmail with your letter pre-filled — review it, then hit Send."
-            : "This job takes applications on VDAB. Your letter &amp; email above are ready to paste."}</div>`
-        : ""}
     </div>`;
 
   el.addEventListener("click", (e) => {
     const act = (e.target.closest("[data-act]") || {}).dataset?.act;
     if (!act) return;
     if (act === "toggle") { el.classList.toggle("open"); return; }
-    if (act === "copy-email") return copyText(e.target,
-      (j.email_subject ? j.email_subject + "\n\n" : "") + (j.email_body || ""));
-    if (act === "copy-cover") return copyText(e.target, j.cover_letter);
-    if (act === "copy-cv") return copyText(e.target, j.cv_highlights);
     if (act === "apply") { setTimeout(() => setStatus(j.id, "applied"), 300);
-      toast(j.apply_email ? "Opening Gmail…" : "Opening VDAB…"); return; }
+      toast("Opening VDAB…"); return; }
     if (act === "skip") { setStatus(j.id, "skipped"); toast("Skipped"); return; }
     if (act === "unskip" || act === "unapply") { setStatus(j.id, null); return; }
   });

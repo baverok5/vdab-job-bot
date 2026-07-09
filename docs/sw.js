@@ -1,7 +1,7 @@
 // Service worker for the VDAB Job Applier PWA.
-// App shell is cached for offline/instant load; jobs.json is network-first
-// so you always see the freshest matches (falling back to cache when offline).
-const CACHE = "vjobs-v2";
+// Network-first for the app shell + data so updates always reach the phone
+// (previously the shell was cache-first, which pinned users to an old UI).
+const CACHE = "vjobs-v3";
 const SHELL = [
   "./",
   "./index.html",
@@ -25,24 +25,27 @@ self.addEventListener("activate", (e) => {
   );
 });
 
+function networkFirst(request) {
+  return fetch(request)
+    .then((r) => {
+      const copy = r.clone();
+      caches.open(CACHE).then((c) => c.put(request, copy));
+      return r;
+    })
+    .catch(() => caches.match(request).then((r) => r || caches.match("./index.html")));
+}
+
 self.addEventListener("fetch", (e) => {
   if (e.request.method !== "GET") return;
   const url = new URL(e.request.url);
+  const isHTML = e.request.mode === "navigate" ||
+    url.pathname.endsWith("/") || url.pathname.endsWith("index.html");
 
-  // Fresh data first for the job feed.
-  if (url.pathname.endsWith("jobs.json")) {
-    e.respondWith(
-      fetch(e.request)
-        .then((r) => {
-          const copy = r.clone();
-          caches.open(CACHE).then((c) => c.put(e.request, copy));
-          return r;
-        })
-        .catch(() => caches.match(e.request))
-    );
+  // App shell (HTML) and data: always try the network first so the UI updates.
+  if (isHTML || url.pathname.endsWith("jobs.json")) {
+    e.respondWith(networkFirst(e.request));
     return;
   }
-
-  // Cache-first for the app shell.
+  // Static assets (icons, manifest): cache-first is fine.
   e.respondWith(caches.match(e.request).then((r) => r || fetch(e.request)));
 });

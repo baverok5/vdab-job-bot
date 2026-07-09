@@ -246,9 +246,10 @@ def fetch_job_detail(browser, url, job_id):
 # ---------------------------------------------------------------- AI steps
 
 def evaluate_job(job_text, cv_text):
-    """One Gemini call: judge if the job is open to an English speaker AND, if
-    so, write the full application documents. Halves the number of API calls
-    (important on the free tier). Returns the parsed JSON dict (or None)."""
+    """One lightweight Gemini call: judge if the job is open to an English
+    speaker and, if so, summarise the job and why it fits the candidate.
+    Does NOT write the email/cover letter — those are generated on demand when
+    the user taps Apply, so we don't spend tokens on jobs they never apply to."""
     prompt = f"""You help a candidate who speaks fluent English but NOT Dutch or French.
 
 STEP 1 — Decide if this Belgian job is open to an English speaker:
@@ -257,29 +258,20 @@ STEP 1 — Decide if this Belgian job is open to an English speaker:
 - FAIL only if Dutch or French is genuinely required, or the role is unworkable
   without it. Do NOT judge sector, seniority, salary, or experience.
 
-STEP 2 — ONLY if it passes, write application documents based STRICTLY on the
-real CV below. Never invent experience, education, or skills not in the CV.
-English, professional but warm, no clichés. If it fails, leave those fields "".
+STEP 2 — ONLY if it passes, summarise the job and why it suits the candidate,
+using the real CV below. Never invent experience/skills not in the CV.
 
 Reply ONLY with JSON:
 {{
   "pass": true or false,
-  "reason": "one short sentence explaining the decision",
+  "reason": "one short sentence on the language decision",
   "title": "the job title",
   "company": "the company name or 'Unknown'",
   "location": "city or 'Unknown'",
   "match_score": 0-100 (how clearly this job is open to an English-only speaker),
-  "email_subject": "short email subject line (or '')",
-  "email_body": "complete application email 120-180 words ending with the signature block (or '')",
-  "cover_letter": "full cover letter 250-350 words (or '')",
-  "cv_highlights": "5 bullet points as one newline-separated string, most relevant CV points for THIS job (or '')"
+  "details": "4-6 short bullets (one newline-separated string) of the key job facts: role, main tasks, contract type, schedule, language, pay if stated (or '')",
+  "why_good": "3-5 short bullets (one newline-separated string) on why THIS job is a good fit for the candidate, grounded in the CV (or '')"
 }}
-
-Signature block to end email_body with:
-Baver Ok
-+32 470 42 48 36
-baverok@gmail.com
-linkedin.com/in/baverok
 
 THE REAL CV:
 {cv_text}
@@ -374,10 +366,8 @@ def _process_jobs(browser, new_links, seen, jobs, cv_text):
             "apply_email": apply_email or "",
             "found_at": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M"),
             "status": "new",
-            "email_subject": verdict.get("email_subject", ""),
-            "email_body": verdict.get("email_body", ""),
-            "cover_letter": verdict.get("cover_letter", ""),
-            "cv_highlights": verdict.get("cv_highlights", ""),
+            "details": verdict.get("details", ""),
+            "why_good": verdict.get("why_good", ""),
         })
         matched += 1
 
@@ -386,8 +376,7 @@ def _process_jobs(browser, new_links, seen, jobs, cv_text):
             f"{verdict.get('title')} — {verdict.get('company')}\n"
             f"{verdict.get('location')}\n\n"
             f"{verdict.get('reason')}\n\n"
-            f'<a href="{url}">View on VDAB</a>\n'
-            f"Documents are ready on your dashboard."
+            f'<a href="{url}">View on VDAB</a>'
         )
         time.sleep(5)  # pace Gemini free-tier requests
 
