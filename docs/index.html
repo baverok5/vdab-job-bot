@@ -142,6 +142,7 @@
   <div class="tabs">
     <button class="tab on" data-tab="new">Ready <span class="n" id="c-new"></span></button>
     <button class="tab" data-tab="all">All jobs <span class="n" id="c-all"></span></button>
+    <button class="tab" data-tab="rejected">Not a fit <span class="n" id="c-rejected"></span></button>
     <button class="tab" data-tab="applied">Applied <span class="n" id="c-applied"></span></button>
     <button class="tab" data-tab="skipped">Skipped <span class="n" id="c-skipped"></span></button>
   </div>
@@ -329,6 +330,39 @@ function listingCard(j) {
   return el;
 }
 
+// A "not a fit" card: shows exactly which experience / licence / qualification
+// the CV is missing for this job, so you can audit the filtering.
+function rejectedCard(j) {
+  const el = document.createElement("div");
+  el.className = "card";
+  el.innerHTML = `
+    <div class="top" data-act="toggle">
+      <div style="flex:1">
+        <div class="title">${esc(j.title)}</div>
+        <div class="co">${esc(j.company)} · ${esc(j.location)}</div>
+        <div class="tags">
+          <span class="tag">Not a fit</span>
+          <span class="tag">Found ${esc((j.found_at || "").slice(0, 10))}</span>
+        </div>
+      </div>
+      <div class="score">${(j.match_score ?? "–")}%</div>
+    </div>
+    <div class="body">
+      <div class="sec"><div class="h">Why it's not for you</div>
+        ${bullets(j.why_bad) || `<div class="t">${esc(j.reason)}</div>`}</div>
+      <div class="sec"><div class="h">Job details</div>
+        ${bullets(j.details) || `<div class="t">${esc(j.reason)}</div>`}</div>
+      <div class="actions">
+        <a class="btn" href="${esc(j.url)}" target="_blank" rel="noopener">View on VDAB anyway</a>
+      </div>
+    </div>`;
+  el.addEventListener("click", (e) => {
+    const act = (e.target.closest("[data-act]") || {}).dataset?.act;
+    if (act === "toggle") el.classList.toggle("open");
+  });
+  return el;
+}
+
 function render() {
   const st = getStatus();
   const buckets = { new: [], applied: [], skipped: [] };
@@ -339,9 +373,11 @@ function render() {
     else buckets.new.push(j);
   }
   const listing = DATA.listing || [];
+  const rejected = DATA.rejected || [];
 
   document.getElementById("c-new").textContent = buckets.new.length || "";
   document.getElementById("c-all").textContent = listing.length || "";
+  document.getElementById("c-rejected").textContent = rejected.length || "";
   document.getElementById("c-applied").textContent = buckets.applied.length || "";
   document.getElementById("c-skipped").textContent = buckets.skipped.length || "";
   document.getElementById("updated").textContent =
@@ -383,6 +419,17 @@ function render() {
     }
     renderList(shown);
     if (SEARCH_Q) fld.focus();
+    return;
+  }
+
+  if (TAB === "rejected") {
+    if (!rejected.length) {
+      list.innerHTML = '<div class="empty"><div class="big">🧹</div>Nothing filtered out yet.<br>Jobs that need experience, a licence or a qualification you don’t have show up here — with the reason.</div>';
+      return;
+    }
+    list.insertAdjacentHTML("beforeend",
+      `<div class="hint" style="margin:2px 0 12px">${rejected.length} jobs filtered out because your CV is missing what they require. Tap one to see exactly what was missing.</div>`);
+    rejected.forEach((j) => list.appendChild(rejectedCard(j)));
     return;
   }
 

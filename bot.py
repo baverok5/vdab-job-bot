@@ -63,6 +63,12 @@ HEADERS = {
 
 MAX_NEW_PER_RUN = 25  # cap AI-evaluated jobs per run (flash-lite's daily quota is large)
 
+# Bump this whenever the fit criteria in evaluate_job change. Saved matches that
+# were judged under an older version get re-vetted (a one-time migration) so the
+# pool reflects the newest rules instead of leaving stale bad matches around.
+CRITERIA_VERSION = 2
+REJECTED_CAP = 60     # keep the most recent "not a fit" jobs for the audit tab
+
 # Jobs to always exclude (candidate only has a B driver's licence and does not
 # want cleaning/domestic roles). Matched against the job title/slug.
 EXCLUDE_RX = re.compile(
@@ -76,6 +82,30 @@ EXCLUDE_RX = re.compile(
 
 def is_excluded(title):
     return bool(EXCLUDE_RX.search(title or ""))
+
+
+# Roles the candidate clearly can't do, recognisable from the title alone:
+# skilled/manual trades, licensed, medical, aviation, production-line work.
+# Cheap pre-filter so we never spend the scarce Gemini quota on obvious non-fits
+# — and so they can't sneak back into the pool. Nuanced cases (senior / finance /
+# analyst / engineer titles) are left to evaluate_job, which actually reads the CV.
+INELIGIBLE_RX = re.compile(
+    r"machine\s*operator|machineoperator|production\s*(operator|worker)|"
+    r"productiemedewerker|productie[-\s]?operator|meat\s*sector|slacht|"
+    r"\bgrinder\b|\bwelder\b|\blasser\b|\bcnc\b|heftruck|reachtruck|forklift|"
+    r"maintenance\s*technician|onderhoudstechnicus|onderhoudstechnieker|"
+    r"medical\s*technologist|laborant|\bnurse\b|verpleeg|"
+    r"first\s*officer|\bpilot\b|piloot|cabin\s*crew|"
+    r"\bwelding\b|metaalbewerker",
+    re.I,
+)
+
+INELIGIBLE_REASON = ("This role needs hands-on trade/production experience, a "
+                     "licence, or a qualification your CV doesn't show.")
+
+
+def is_ineligible(title):
+    return bool(INELIGIBLE_RX.search(title or ""))
 
 
 # ---------------------------------------------------------------- helpers
@@ -315,35 +345,75 @@ linkedin.com/in/baverok"""
     return ask_gemini(prompt, expect_json=True)
 
 
+# A blunt, honest summary of what the candidate can and cannot realistically
+# apply to, so the model stops stretching ("web dev → can operate machines").
+# Grounded strictly in cv.md.
+CANDIDATE_PROFILE = """WHO THE CANDIDATE IS (be strict, do not stretch):
+- Early-career / junior. Real experience: digital marketing & SEO intern
+  (WordPress/Elementor, on-page SEO, keyword research, content writing, Google
+  Analytics/Ads, SEMrush/Ahrefs), a junior front-end developer stint
+  (AngularJS/JavaScript, 2018-2019), and GENERAL warehouse/logistics work
+  (order-picking / high-volume handling — NOT operating production machinery).
+- Coursework in Applied Computer Science (no completed degree stated).
+- Languages: English (professional), Turkish (native), Dutch A2 (learning),
+  no French.
+
+WHAT THE CANDIDATE DOES NOT HAVE (jobs needing these must FAIL):
+- No experience operating/setting production or CNC machines, no metalworking,
+  welding, grinding, assembly, manufacturing, or skilled manual trade.
+- No trade licences/certificates: no forklift/reachtruck cert, no C/CE licence,
+  no electrical/mechanical/technical qualification, no nursing/medical/lab
+  certification, no pilot licence, no professional finance/accounting
+  certification.
+- No specialised professional background: not a finance/KYC/compliance/treasury/
+  tax analyst, not an engineer, not R&D, not medical/healthcare, not aviation.
+- Not senior. No "Senior / Lead / Manager / Director / Head" roles and nothing
+  demanding several years of dedicated professional experience."""
+
+
 def evaluate_job(job_text, cv_text):
-    """One lightweight Gemini call: judge if the job is open to an English
-    speaker and, if so, summarise the job and why it fits the candidate.
-    Does NOT write the email/cover letter — those are generated on demand when
-    the user taps Apply, so we don't spend tokens on jobs they never apply to."""
-    prompt = f"""You help a candidate who speaks fluent English but NOT Dutch or French.
+    """One Gemini call: judge whether the candidate could REALISTICALLY apply
+    (language + genuine eligibility), and if so summarise the fit. If not, say
+    plainly why it's not for them (why_bad). Does NOT write the email/cover
+    letter — those are generated on demand when the user taps Apply."""
+    prompt = f"""You screen Belgian job postings for one specific candidate.
 
-STEP 1 — Decide if this Belgian job fits. PASS only if ALL are true:
-- English is required/preferred/accepted, OR the posting is written in English,
-  AND Dutch or French is not strictly mandatory ("a plus" is fine).
-- It is NOT a cleaning / domestic-help role (poetshulp, huishoudhulp, schoonmaak,
-  cleaner, household help).
-- It does NOT require a truck / C / CE driving licence. A car (B) licence or no
-  licence is fine; anything needing C, CE, or truck/lorry driving → FAIL.
-Otherwise FAIL. Do NOT judge seniority, salary, or years of experience.
+{CANDIDATE_PROFILE}
 
-STEP 2 — ONLY if it passes, summarise the job and why it suits the candidate,
-using the real CV below. Never invent experience/skills not in the CV.
+STEP 1 — Decide PASS/FAIL. FAIL the job if ANY of these is true:
+- LANGUAGE: Dutch or French is a hard requirement (more than "a plus"), and the
+  role is not otherwise open to an English speaker.
+- EXPERIENCE the CV lacks: the posting expects prior hands-on experience the
+  candidate doesn't have — e.g. machine/production/CNC operator, metalwork,
+  welding, grinding, assembly, manufacturing, construction, electrical,
+  mechanical, maintenance-technician, or any skilled manual trade.
+- LICENCE / CERTIFICATE / DIPLOMA the CV lacks (forklift, C/CE, nursing,
+  medical/lab, pilot, professional finance/engineering qualification, etc.).
+- SENIORITY the CV lacks: titled Senior/Lead/Manager/Director/Head, or requiring
+  several years of professional experience in the field.
+- SPECIALISED background the CV lacks: finance/KYC/compliance/treasury/tax,
+  engineering, R&D, medical/healthcare, aviation, licensed professions.
+- Cleaning / domestic-help role (poetshulp, huishoudhulp, schoonmaak, cleaner).
+
+PASS only if the role plausibly matches THIS CV: junior/entry-level office,
+digital marketing / SEO / content, web / WordPress, junior front-end, general
+warehouse & logistics, customer service, sales/admin/data-entry support, or
+genuinely "no experience needed" roles — AND it does not require Dutch/French.
+When unsure whether the candidate qualifies, FAIL (be strict, not generous).
+
+STEP 2 — Summarise, honestly, either way.
 
 Reply ONLY with JSON:
 {{
   "pass": true or false,
-  "reason": "one short sentence on the language decision",
+  "reason": "one short sentence: the single main reason for the pass/fail decision",
   "title": "the job title",
   "company": "the company name or 'Unknown'",
   "location": "city or 'Unknown'",
-  "match_score": 0-100 (how clearly this job is open to an English-only speaker),
-  "details": "4-6 short bullets (one newline-separated string) of the key job facts: role, main tasks, contract type, schedule, language, pay if stated (or '')",
-  "why_good": "3-5 short bullets (one newline-separated string) on why THIS job is a good fit for the candidate, grounded in the CV (or '')"
+  "match_score": 0-100 (how well the candidate's ACTUAL CV fits this job; a job that requires experience/licences/seniority they lack must score low even if it's in English),
+  "details": "4-6 short bullets (one newline-separated string): role, main tasks, contract type, schedule, language, pay if stated (or '')",
+  "why_good": "if pass: 3-5 short bullets (one newline-separated string) on why it fits, grounded ONLY in the real CV. If fail: ''",
+  "why_bad": "if fail: 2-4 short bullets (one newline-separated string) naming exactly which required experience / licence / qualification / seniority / language the candidate is MISSING for this job. If pass: ''"
 }}
 
 THE REAL CV:
@@ -363,11 +433,17 @@ def main():
     cv_text = open(CV_FILE, encoding="utf-8").read()
     seen = set(load_json(SEEN_FILE, []))
     jobs = load_json(JOBS_FILE, {"updated": "", "jobs": []})
+    jobs.setdefault("rejected", [])   # "not a fit" pool (with why_bad reasons)
 
     matched = 0
     with sync_playwright() as pw:
         browser = pw.chromium.launch(args=["--no-sandbox"])
         try:
+            # First: re-check already-saved matches under the current criteria,
+            # so jobs that only ever passed the old language-only filter (e.g.
+            # machine operator, senior analyst) get moved to "not a fit".
+            revet_saved(browser, jobs, cv_text)
+
             print("Collecting job links from VDAB...")
             all_links = set()
             for url in SEARCH_URLS:
@@ -380,7 +456,8 @@ def main():
             # truck roles). Independent of the slower AI pipeline below.
             listing = [
                 {"id": i, "url": u, "title": _slug_title(u)}
-                for (u, i) in all_links if not is_excluded(_slug_title(u))
+                for (u, i) in all_links
+                if not is_excluded(_slug_title(u)) and not is_ineligible(_slug_title(u))
             ]
             listing.sort(key=lambda j: j["id"], reverse=True)
             jobs["listing"] = listing[:1400]
@@ -388,6 +465,7 @@ def main():
             new_links = [
                 (u, i) for (u, i) in all_links
                 if i not in seen and not is_excluded(_slug_title(u))
+                and not is_ineligible(_slug_title(u))
             ]
             print(f"{len(all_links)} total, {len(jobs['listing'])} after filter, "
                   f"{len(new_links)} not yet seen")
@@ -398,11 +476,93 @@ def main():
             browser.close()
 
     jobs["updated"] = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
-    # Drop any previously-saved matches that no longer fit (cleaning / truck).
-    jobs["jobs"] = [j for j in jobs["jobs"] if not is_excluded(j.get("title", ""))][:100]
+    # Drop cleaning/truck matches entirely (never wanted); move clearly-ineligible
+    # trade/licensed matches into the "not a fit" pool with a reason.
+    kept = []
+    for j in jobs["jobs"]:
+        title = j.get("title", "")
+        if is_excluded(title):
+            continue
+        if is_ineligible(title):
+            j["why_bad"] = j.get("why_bad") or INELIGIBLE_REASON
+            j["reason"] = j["why_bad"].split("\n")[0]
+            j["match_score"] = min(j.get("match_score", 0), 20)
+            jobs["rejected"].insert(0, j)
+            continue
+        kept.append(j)
+    jobs["jobs"] = kept[:100]
+    jobs["rejected"] = jobs.get("rejected", [])[:REJECTED_CAP]
     save_json(JOBS_FILE, jobs)
     save_json(SEEN_FILE, sorted(seen))
-    print(f"\nDone. {matched} new match(es) this run.")
+    print(f"\nDone. {matched} new match(es) this run. "
+          f"{len(jobs['jobs'])} in Ready, {len(jobs['rejected'])} not-a-fit.")
+
+
+def _apply_verdict(jobs, job_id, url, verdict, apply_email, found_at=None):
+    """Place a job into the matched pool or the 'rejected' (not-a-fit) pool
+    based on the verdict, de-duplicating by id across both pools so a job never
+    appears twice or lingers in the wrong list after being re-evaluated.
+    Returns True if it landed in the matched pool."""
+    entry = {
+        "id": job_id,
+        "url": url,
+        "title": verdict.get("title", "Unknown"),
+        "company": verdict.get("company", "Unknown"),
+        "location": verdict.get("location", "Unknown"),
+        "match_score": verdict.get("match_score", 0),
+        "reason": verdict.get("reason", ""),
+        "apply_email": apply_email or "",
+        "found_at": found_at or datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M"),
+        "status": "new",
+        "details": verdict.get("details", ""),
+        "why_good": verdict.get("why_good", ""),
+        "why_bad": verdict.get("why_bad", ""),
+        "cv_fit_v": CRITERIA_VERSION,
+    }
+    jobs["jobs"] = [j for j in jobs["jobs"] if j.get("id") != job_id]
+    jobs["rejected"] = [j for j in jobs.get("rejected", []) if j.get("id") != job_id]
+    if verdict.get("pass"):
+        jobs["jobs"].insert(0, entry)
+        return True
+    jobs["rejected"].insert(0, entry)
+    return False
+
+
+def revet_saved(browser, jobs, cv_text, budget=20):
+    """Re-check already-saved matches against the current criteria version.
+    Jobs that no longer qualify move to the 'rejected' pool with a why_bad
+    explanation; ones that still fit get refreshed. Only touches jobs stamped
+    with an older CRITERIA_VERSION, so it's a one-time migration per bump."""
+    stale = [j for j in jobs["jobs"] if j.get("cv_fit_v") != CRITERIA_VERSION][:budget]
+    if not stale:
+        return 0
+    print(f"\nRe-vetting {len(stale)} saved match(es) against criteria v{CRITERIA_VERSION}...")
+    moved = 0
+    for j in stale:
+        job_id, url = j.get("id"), j.get("url")
+        print(f"\nRe-vetting {job_id}: {j.get('title')}")
+        job_text, apply_email = fetch_job_detail(browser, url, job_id)
+        if not job_text:
+            print("  (could not read — leaving as-is for now)")
+            continue
+        try:
+            verdict = evaluate_job(job_text, cv_text)
+        except QuotaExhausted:
+            print("  Gemini quota exhausted — stopping re-vet for this run.")
+            break
+        if not verdict:
+            print("  (AI call failed — leaving as-is)")
+            continue
+        kept = _apply_verdict(jobs, job_id, url, verdict,
+                              apply_email or j.get("apply_email"),
+                              found_at=j.get("found_at"))
+        print(f"  {'KEPT' if kept else 'MOVED TO NOT-A-FIT'} "
+              f"({verdict.get('match_score')}%): {verdict.get('reason')}")
+        if not kept:
+            moved += 1
+        time.sleep(2)
+    print(f"Re-vet done: {moved} moved to not-a-fit.")
+    return moved
 
 
 def _process_jobs(browser, new_links, seen, jobs, cv_text):
@@ -434,25 +594,12 @@ def _process_jobs(browser, new_links, seen, jobs, cv_text):
 
         # We got a real verdict (pass or fail) — safe to not process it again.
         seen.add(job_id)
-        if not verdict.get("pass"):
-            print(f"  FILTERED OUT: {verdict.get('reason')}")
+        kept = _apply_verdict(jobs, job_id, url, verdict, apply_email)
+        if not kept:
+            print(f"  NOT A FIT: {verdict.get('reason')}")
             continue
 
         print(f"  MATCH ({verdict.get('match_score')}%): {verdict.get('title')}")
-        jobs["jobs"].insert(0, {
-            "id": job_id,
-            "url": url,
-            "title": verdict.get("title", "Unknown"),
-            "company": verdict.get("company", "Unknown"),
-            "location": verdict.get("location", "Unknown"),
-            "match_score": verdict.get("match_score", 0),
-            "reason": verdict.get("reason", ""),
-            "apply_email": apply_email or "",
-            "found_at": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M"),
-            "status": "new",
-            "details": verdict.get("details", ""),
-            "why_good": verdict.get("why_good", ""),
-        })
         matched += 1
 
         send_telegram(
