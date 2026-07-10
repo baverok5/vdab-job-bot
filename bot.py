@@ -623,6 +623,9 @@ def main():
         """Persist current progress and push it, so a long run that dies partway
         (or is stopped) keeps everything screened so far. Best-effort: never let a
         git hiccup crash the scan."""
+        # Refresh the timestamp on every checkpoint so the app shows the scan is
+        # live and working, not frozen at the last full-run's time.
+        jobs["updated"] = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
         save_json(JOBS_FILE, jobs)
         save_json(SEEN_FILE, sorted(seen))
         save_json(SCREEN_FILE, {"title_no": sorted(title_no), "shortlist": sorted(shortlist)})
