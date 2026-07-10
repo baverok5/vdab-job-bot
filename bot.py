@@ -134,8 +134,8 @@ CHECKPOINT_EVERY = 25  # save + git-push progress this often so a long run can't
 # Bump this whenever the fit criteria in evaluate_job change. Saved matches that
 # were judged under an older version get re-vetted (a one-time migration) so the
 # pool reflects the newest rules instead of leaving stale bad matches around.
-CRITERIA_VERSION = 6
-REJECTED_CAP = 120    # keep the most recent "not a fit" jobs for the audit tab
+CRITERIA_VERSION = 7
+REJECTED_CAP = 2000   # show (almost) every not-a-fit so coverage is auditable
 
 # Jobs to always exclude (candidate only has a B driver's licence and does not
 # want cleaning/domestic roles). Matched against the job title/slug.
@@ -548,10 +548,18 @@ def evaluate_job(job_text, cv_text):
 STEP 1 — Decide PASS/FAIL for this early-career candidate. Be inclusive for
 accessible roles, but keep the hard walls.
 
+LANGUAGE (special handling — do NOT hard-fail on Dutch alone):
+- If the role requires FRENCH at any level → FAIL (the candidate has no French).
+- If it is in English / accepts English / needs only A2 or basic Dutch or Dutch
+  "a plus" → language is fine, NOT a stretch.
+- If it requires Dutch ABOVE A2 (good / fluent / native / "zeer goed") but the job
+  OTHERWISE fits (goal-field or accessible role, under 2 years, no mandatory
+  degree, not senior/trade, no French) → do NOT fail. PASS it as a STRETCH: set
+  "dutch_stretch": true and cap match_score at 35. The candidate is improving his
+  Dutch and wants to see these to decide.
+
 FAIL the job if ANY of these is true (hard walls — no exceptions):
-- LANGUAGE: the role requires FLUENT / professional / native Dutch, or ANY
-  French. (Jobs in English, or that accept English, or that need only BASIC /
-  elementary Dutch — A2 — or Dutch "as a plus" are FINE: the candidate has A2.)
+- FRENCH required at any level (see LANGUAGE above).
 - EXPERIENCE: the role clearly requires 2+ years of dedicated experience. (Up to
   ~2 years is acceptable — the candidate has ~4 months; just score it lower.)
 - SKILLED TRADE / PRODUCTION / MANUAL role: machine/production/CNC operator,
@@ -597,9 +605,10 @@ Reply ONLY with JSON:
   "title": "the job title",
   "company": "the company name or 'Unknown'",
   "location": "city or 'Unknown'",
-  "match_score": 0-100 — 75-100 = clearly qualified; 50-74 = can apply, minor gaps; 30-49 = a reach (wants a bit more experience than the CV shows) but still worth trying; below 30 should usually be a FAIL,
+  "match_score": 0-100 — 75-100 = clearly qualified; 50-74 = can apply, minor gaps; 30-49 = a reach; a dutch_stretch job is capped at 35,
+  "dutch_stretch": true or false — true ONLY when the job would fit but requires Dutch above A2 (and no French); false otherwise,
   "details": "4-6 short bullets (one newline-separated string): role, main tasks, contract type, schedule, language, pay if stated (or '')",
-  "why_good": "if pass: 3-5 short bullets (one newline-separated string) on why it fits, grounded ONLY in the real CV. If fail: ''",
+  "why_good": "if pass: 3-5 short bullets (one newline-separated string) on why it fits, grounded ONLY in the real CV; for a dutch_stretch job also state plainly that it needs stronger Dutch than A2. If fail: ''",
   "why_bad": "if fail: 2-4 short bullets (one newline-separated string) naming exactly which required experience / licence / qualification / seniority / language the candidate is MISSING for this job. If pass: ''"
 }}
 
@@ -681,8 +690,8 @@ def main():
                 # on the broad rotating searches to keep the run's length sane.
                 priority = url in PRIORITY_SEARCH_URLS
                 links = collect_links(browser, url,
-                                      budget_s=130 if priority else 60,
-                                      max_pages=70 if priority else 30)
+                                      budget_s=240 if priority else 60,
+                                      max_pages=150 if priority else 30)
                 print(f"  {len(links)} links from {url}")
                 all_links |= links
 
@@ -695,10 +704,10 @@ def main():
                 if is_excluded(t) or is_ineligible(t):
                     continue
                 listing[i] = {"id": i, "url": u, "title": t}
-            # Keep the newest ~4000 in the browse list the phone downloads (bigger
-            # would bloat jobs.json); the funnel state below tracks what's screened.
+            # Keep the newest ~8000 in the browse list so marketing jobs aren't
+            # evicted before they're screened; the funnel state tracks progress.
             jobs["listing"] = sorted(
-                listing.values(), key=lambda j: j["id"], reverse=True)[:4000]
+                listing.values(), key=lambda j: j["id"], reverse=True)[:8000]
             by_id = {j["id"]: j for j in jobs["listing"]}
             checkpoint()   # save the freshly-collected listing before screening
 
@@ -777,6 +786,7 @@ def _apply_verdict(jobs, job_id, url, verdict, apply_email, found_at=None):
         "details": verdict.get("details", ""),
         "why_good": verdict.get("why_good", ""),
         "why_bad": verdict.get("why_bad", ""),
+        "dutch_stretch": bool(verdict.get("dutch_stretch")),
         "cv_fit_v": CRITERIA_VERSION,
     }
     jobs["jobs"] = [j for j in jobs["jobs"] if j.get("id") != job_id]

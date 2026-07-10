@@ -120,7 +120,9 @@
   .cathead:first-child { margin-top: 6px; }
   .cathead .cnt { font-weight: 600; font-size: 11px; color: var(--text3); }
   .cathead.fav { color: var(--accent); }
+  .cathead.nl { color: var(--amber); margin-top: 26px; }
   .cathead .rule { flex: 1; height: 1px; background: var(--border2); }
+  .tag.nl { background: var(--amber-bg); color: var(--amber); border-color: transparent; font-weight: 600; }
   .mkt { display: flex; align-items: center; gap: 8px; cursor: pointer;
     background: var(--card); border: 0.5px solid var(--border); border-radius: 10px;
     padding: 11px 13px; margin: 4px 0 4px; box-shadow: var(--shadow);
@@ -286,6 +288,7 @@ function card(j, state) {
         <div class="co">${esc(j.company)} · ${esc(j.location)}</div>
         <div class="tags">
           ${state === "applied" ? '<span class="tag applied">✓ Applied</span>' : ""}
+          ${j.dutch_stretch ? '<span class="tag nl">🇳🇱 Needs better Dutch</span>' : ""}
           ${state !== "applied" && isToday(j.found_at) ? '<span class="tag new">New today</span>' : ""}
           ${hasMail ? '<span class="tag mail">Direct email</span>' : ""}
           <span class="tag">Found ${esc((j.found_at || "").slice(0, 10))}</span>
@@ -477,11 +480,7 @@ function render() {
     return;
   }
   if (TAB === "new") {
-    // Group Ready jobs by category, favourite category first, highest score first.
-    const groups = {};
-    jobs.forEach((j) => { (groups[categorize(j)] ||= []).push(j); });
-    const mktCount = (groups.marketing || []).length;
-
+    const mktCount = jobs.filter((j) => categorize(j) === "marketing").length;
     list.insertAdjacentHTML("beforeend",
       `<label class="mkt${MKT_ONLY ? " on" : ""}"><input type="checkbox" id="mktonly" ${MKT_ONLY ? "checked" : ""}>
         <span>🎯 Marketing / SEO / web only</span>${mktCount ? `<span class="cnt">${mktCount}</span>` : ""}</label>`);
@@ -491,17 +490,31 @@ function render() {
       render();
     });
 
-    const cats = MKT_ONLY ? CATS.filter((c) => c.key === "marketing") : CATS;
-    cats.forEach((c) => {
-      const arr = (groups[c.key] || []).sort((a, b) => (b.match_score || 0) - (a.match_score || 0));
-      if (!arr.length) return;
+    // Split into jobs you fit now vs. jobs that fit except they want stronger Dutch.
+    const fitsNow = jobs.filter((j) => !j.dutch_stretch);
+    const stretch = jobs.filter((j) => j.dutch_stretch);
+    const renderCats = (arr) => {
+      const groups = {};
+      arr.forEach((j) => { (groups[categorize(j)] ||= []).push(j); });
+      (MKT_ONLY ? CATS.filter((c) => c.key === "marketing") : CATS).forEach((c) => {
+        const g = (groups[c.key] || []).sort((a, b) => (b.match_score || 0) - (a.match_score || 0));
+        if (!g.length) return;
+        list.insertAdjacentHTML("beforeend",
+          `<div class="cathead${c.fav ? " fav" : ""}">${c.label}<span class="cnt">${g.length}</span><span class="rule"></span></div>`);
+        g.forEach((j) => list.appendChild(card(j, null)));
+      });
+    };
+
+    renderCats(fitsNow);
+    if (stretch.length) {
       list.insertAdjacentHTML("beforeend",
-        `<div class="cathead${c.fav ? " fav" : ""}">${c.label}<span class="cnt">${arr.length}</span><span class="rule"></span></div>`);
-      arr.forEach((j) => list.appendChild(card(j, null)));
-    });
-    if (MKT_ONLY && !mktCount)
+        `<div class="cathead nl">🇳🇱 Needs better Dutch <span class="cnt">${stretch.length}</span><span class="rule"></span></div>
+         <div class="hint" style="text-align:left;margin:0 4px 8px">These fit your profile but want Dutch above your A2 — worth a look as you improve it.</div>`);
+      renderCats(stretch);
+    }
+    if (!fitsNow.length && !stretch.length || (MKT_ONLY && !mktCount))
       list.insertAdjacentHTML("beforeend",
-        '<div class="empty"><div class="big">🎯</div>No marketing / SEO / web matches yet.<br>The bot searches for these first every run — turn the toggle off to see other jobs meanwhile.</div>');
+        '<div class="empty"><div class="big">🎯</div>No matches in this view yet.<br>The scan is still working through the marketing jobs — check back soon.</div>');
     return;
   }
   const state = TAB === "new" ? null : TAB;
