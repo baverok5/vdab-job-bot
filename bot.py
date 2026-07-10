@@ -45,8 +45,24 @@ SEARCH_URLS = (
 # and the accumulated listing keeps growing.
 SEARCHES_PER_RUN = int(os.environ.get("SEARCHES_PER_RUN", "5"))
 
+# Title pre-screen: the AI reads plain job titles in cheap batches (no page
+# render) to shortlist the ones worth a full look, so rendering + full screening
+# is spent only on plausible jobs. This is what lets coverage scale.
+TITLE_SCREEN_CAP = int(os.environ.get("TITLE_SCREEN_CAP", "600"))  # titles/run
+TITLE_BATCH = 40                                                   # titles per AI call
+
+CANDIDATE_ONELINE = (
+    "Early-career. Fits accessible junior/entry roles: office/admin, customer "
+    "service, digital marketing/SEO/content, junior web/front-end, sales/admin "
+    "support, general warehouse/logistics. NOT skilled trades or production/"
+    "machine operators, NOT senior/manager/director, NOT licensed professions "
+    "(nurse/pilot/etc.), NOT specialist-degree roles (engineer/accountant/data "
+    "scientist/doctor/lawyer). Speaks English + Turkish, Dutch only A2, no French."
+)
+
 JOBS_FILE = "docs/jobs.json"      # matched jobs (dashboard reads this)
-SEEN_FILE = "seen.json"           # every job ID we already processed
+SEEN_FILE = "seen.json"           # every job ID we fully evaluated (render + AI)
+SCREEN_FILE = "screen.json"       # cheap title-screen state: shortlist + rejects
 CV_FILE = "cv.md"                 # your master CV
 
 GEMINI_KEY = os.environ.get("GEMINI_API_KEY", "")
@@ -442,6 +458,52 @@ WHAT THE CANDIDATE DOES NOT HAVE (jobs needing these must FAIL):
   demanding several years of dedicated professional experience."""
 
 
+def title_prescreen(titles):
+    """Cheap batch filter over plain job titles (no page render). Returns the set
+    of indices (into `titles`) worth a full look. Deliberately inclusive — it only
+    drops titles that are clearly non-fits; the full evaluate_job does the precise
+    language/experience call. On any parse/quota failure it keeps the batch, so no
+    job is ever silently lost at this stage."""
+    keep = set()
+    for start in range(0, len(titles), TITLE_BATCH):
+        batch = titles[start:start + TITLE_BATCH]
+        numbered = "\n".join(f"{i+1}. {t}" for i, t in enumerate(batch))
+        prompt = f"""Belgian job titles. Decide which are worth a full check for this candidate.
+CANDIDATE: {CANDIDATE_ONELINE}
+
+KEEP a title if it could plausibly be an accessible junior/entry/office/admin/
+customer-service/marketing/SEO/content/web/sales-support/warehouse/logistics role.
+DROP only titles that are clearly: a skilled trade or production/machine operator;
+a senior/lead/manager/director/head role; a licensed profession (nurse, pilot,
+etc.); or a role obviously needing a specialist degree (engineer, accountant,
+data scientist, doctor, lawyer). When unsure, KEEP.
+
+Reply ONLY as JSON: {{"keep": [the numbers to keep]}}.
+TITLES:
+{numbered}"""
+        try:
+            res = ask_llm(prompt, expect_json=True, provider=EVAL_PROVIDER,
+                          gemini_model=GEMINI_EVAL_MODEL)
+        except QuotaExhausted:
+            print("  Title screen: quota exhausted — keeping the rest for next run.")
+            for i in range(len(batch)):
+                keep.add(start + i)
+            break
+        if not res or "keep" not in res:
+            for i in range(len(batch)):    # safe: don't lose jobs on a parse miss
+                keep.add(start + i)
+            continue
+        for num in res.get("keep", []):
+            try:
+                idx = int(num) - 1
+            except (TypeError, ValueError):
+                continue
+            if 0 <= idx < len(batch):
+                keep.add(start + idx)
+        time.sleep(1)
+    return keep
+
+
 def evaluate_job(job_text, cv_text):
     """One Gemini call: judge whether the candidate could REALISTICALLY apply
     (language + genuine eligibility), and if so summarise the fit. If not, say
@@ -514,6 +576,9 @@ def main():
     seen = set(load_json(SEEN_FILE, []))
     jobs = load_json(JOBS_FILE, {"updated": "", "jobs": []})
     jobs.setdefault("rejected", [])   # "not a fit" pool (with why_bad reasons)
+    screen = load_json(SCREEN_FILE, {"title_no": [], "shortlist": []})
+    title_no = set(screen.get("title_no", []))     # dropped at the cheap title stage
+    shortlist = set(screen.get("shortlist", []))   # passed title stage, await full eval
 
     matched = 0
     with sync_playwright() as pw:
@@ -548,15 +613,30 @@ def main():
                 listing[i] = {"id": i, "url": u, "title": t}
             jobs["listing"] = sorted(
                 listing.values(), key=lambda j: j["id"], reverse=True)[:20000]
+            by_id = {j["id"]: j for j in jobs["listing"]}
 
-            # Draw the jobs to screen from the whole accumulated listing (not just
-            # this run's slice), so the backfill steadily drains everything unseen.
-            new_links = [(j["url"], j["id"]) for j in jobs["listing"]
-                         if j["id"] not in seen][:MAX_NEW_PER_RUN]
-            print(f"{len(all_links)} collected this run, {len(jobs['listing'])} in listing, "
-                  f"{len(new_links)} queued to screen")
+            # Cheap title pre-screen: shortlist plausible titles, drop clear
+            # non-fits — WITHOUT rendering — so the expensive render+full-eval is
+            # spent only on jobs worth it. This is what makes wide coverage cheap.
+            cand = [j for j in jobs["listing"]
+                    if j["id"] not in seen and j["id"] not in title_no
+                    and j["id"] not in shortlist][:TITLE_SCREEN_CAP]
+            if cand:
+                print(f"Title pre-screening {len(cand)} titles...")
+                kept = title_prescreen([c["title"] for c in cand])
+                for i, c in enumerate(cand):
+                    (shortlist if i in kept else title_no).add(c["id"])
+                print(f"  shortlisted {len(kept)}, dropped {len(cand) - len(kept)} at title stage")
+
+            # Full render + AI evaluation, drawn from the shortlist only.
+            new_links = [(by_id[i]["url"], i) for i in sorted(shortlist, reverse=True)
+                         if i in by_id and i not in seen][:MAX_NEW_PER_RUN]
+            print(f"{len(all_links)} collected, {len(jobs['listing'])} in listing, "
+                  f"{len(shortlist)} shortlisted, {len(title_no)} title-dropped, "
+                  f"{len(new_links)} queued for full screening")
 
             matched = _process_jobs(browser, new_links, seen, jobs, cv_text)
+            shortlist -= seen   # drop the ones we just fully evaluated
         finally:
             browser.close()
 
@@ -579,8 +659,10 @@ def main():
     jobs["rejected"] = jobs.get("rejected", [])[:REJECTED_CAP]
     save_json(JOBS_FILE, jobs)
     save_json(SEEN_FILE, sorted(seen))
+    save_json(SCREEN_FILE, {"title_no": sorted(title_no), "shortlist": sorted(shortlist)})
     print(f"\nDone. {matched} new match(es) this run. "
-          f"{len(jobs['jobs'])} in Ready, {len(jobs['rejected'])} not-a-fit.")
+          f"{len(jobs['jobs'])} in Ready, {len(jobs['rejected'])} not-a-fit. "
+          f"Screen state: {len(shortlist)} shortlisted, {len(title_no)} title-dropped.")
 
 
 def _apply_verdict(jobs, job_id, url, verdict, apply_email, found_at=None):
