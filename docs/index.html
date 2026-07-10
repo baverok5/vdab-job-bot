@@ -115,6 +115,12 @@
   .filter:focus { border-color: var(--accent2); }
   .hint { font-size: 11.5px; color: var(--text3); text-align: center;
     margin-top: 10px; padding: 0 8px; }
+  .cathead { display: flex; align-items: center; gap: 7px; margin: 20px 4px 9px;
+    font-size: 12.5px; font-weight: 700; color: var(--text); letter-spacing: -.01em; }
+  .cathead:first-child { margin-top: 6px; }
+  .cathead .cnt { font-weight: 600; font-size: 11px; color: var(--text3); }
+  .cathead.fav { color: var(--accent); }
+  .cathead .rule { flex: 1; height: 1px; background: var(--border2); }
   .empty { text-align: center; color: var(--text3); font-size: 13.5px;
     padding: 46px 16px; }
   .empty .big { font-size: 26px; margin-bottom: 8px; }
@@ -363,6 +369,25 @@ function rejectedCard(j) {
   return el;
 }
 
+// Job categories, in the order they appear in Ready. The first one — the kind of
+// work you actually want (digital marketing / SEO / web) — is shown at the top.
+const CATS = [
+  { key: "marketing", label: "🎯 Digital marketing, SEO & web", fav: true,
+    rx: /seo|marketing|content|wordpress|\bweb\b|website|social ?media|digital|copywrit|communicat|\bbrand|growth/i },
+  { key: "office", label: "🗂️ Office & admin",
+    rx: /admin|assistant|office|data ?entry|reception|secretar|back[-\s]?office|payroll|\bhr\b|management support/i },
+  { key: "cs", label: "📞 Customer service & sales",
+    rx: /customer|client|\bservice|\bsales|account|commercial|helpdesk|call ?cent|support|advisor|inside sales/i },
+  { key: "logistics", label: "📦 Logistics & warehouse",
+    rx: /logistic|warehouse|packag|freight|supply|order ?pick|magazij|inventory|\bstock|forwarder|dispatch/i },
+  { key: "other", label: "💼 Other roles", rx: null },
+];
+function categorize(j) {
+  const t = (j.title || "") + " " + (j.why_good || "");
+  for (const c of CATS) if (c.rx && c.rx.test(t)) return c.key;
+  return "other";
+}
+
 function render() {
   const st = getStatus();
   const buckets = { new: [], applied: [], skipped: [] };
@@ -441,6 +466,19 @@ function render() {
       skipped: ["🗂️", "Nothing skipped."],
     }[TAB];
     list.innerHTML = `<div class="empty"><div class="big">${msg[0]}</div>${msg[1]}</div>`;
+    return;
+  }
+  if (TAB === "new") {
+    // Group Ready jobs by category, favourite category first, highest score first.
+    const groups = {};
+    jobs.forEach((j) => { (groups[categorize(j)] ||= []).push(j); });
+    CATS.forEach((c) => {
+      const arr = (groups[c.key] || []).sort((a, b) => (b.match_score || 0) - (a.match_score || 0));
+      if (!arr.length) return;
+      list.insertAdjacentHTML("beforeend",
+        `<div class="cathead${c.fav ? " fav" : ""}">${c.label}<span class="cnt">${arr.length}</span><span class="rule"></span></div>`);
+      arr.forEach((j) => list.appendChild(card(j, null)));
+    });
     return;
   }
   const state = TAB === "new" ? null : TAB;
