@@ -134,7 +134,7 @@ CHECKPOINT_EVERY = 25  # save + git-push progress this often so a long run can't
 # Bump this whenever the fit criteria in evaluate_job change. Saved matches that
 # were judged under an older version get re-vetted (a one-time migration) so the
 # pool reflects the newest rules instead of leaving stale bad matches around.
-CRITERIA_VERSION = 7
+CRITERIA_VERSION = 8
 REJECTED_CAP = 2000   # show (almost) every not-a-fit so coverage is auditable
 
 # Jobs to always exclude (candidate only has a B driver's licence and does not
@@ -548,15 +548,20 @@ def evaluate_job(job_text, cv_text):
 STEP 1 — Decide PASS/FAIL for this early-career candidate. Be inclusive for
 accessible roles, but keep the hard walls.
 
-LANGUAGE (special handling — do NOT hard-fail on Dutch alone):
-- If the role requires FRENCH at any level → FAIL (the candidate has no French).
-- If it is in English / accepts English / needs only A2 or basic Dutch or Dutch
-  "a plus" → language is fine, NOT a stretch.
-- If it requires Dutch ABOVE A2 (good / fluent / native / "zeer goed") but the job
-  OTHERWISE fits (goal-field or accessible role, under 2 years, no mandatory
-  degree, not senior/trade, no French) → do NOT fail. PASS it as a STRETCH: set
-  "dutch_stretch": true and cap match_score at 35. The candidate is improving his
-  Dutch and wants to see these to decide.
+LANGUAGE (read the must-haves / talenkennis section CAREFULLY — postings are in
+Dutch/French, so recognise the wording):
+- FRENCH required at ANY level → FAIL. Trigger words: "Frans", "français",
+  "goede/basis kennis Frans", "bonne connaissance du français", "tweetalig
+  NL/FR", "NL/FR", "FR/NL", "Nederlands én Frans". (Candidate has NO French.)
+- English / accepts English / only A2 or basic Dutch / Dutch "een pluspunt" →
+  language is fine, NOT a stretch.
+- Dutch required ABOVE A2 but NO French and the job otherwise fits → do NOT fail;
+  PASS as a STRETCH with "dutch_stretch": true and match_score ≤ 35. Trigger
+  words for above-A2 Dutch: "vlot Nederlands", "vloeiend Nederlands", "zeer goed
+  Nederlands", "uitstekend Nederlands", "goede kennis Nederlands", "sterke kennis
+  Nederlands", "moedertaal Nederlands", "Nederlandstalig".
+- IMPORTANT: a job that needs BOTH fluent Dutch AND French (e.g. "Vlot Nederlands,
+  goede kennis Frans en Engels") requires French → FAIL, not a stretch.
 
 FAIL the job if ANY of these is true (hard walls — no exceptions):
 - FRENCH required at any level (see LANGUAGE above).
@@ -743,7 +748,7 @@ def main():
             # saved pool under the current criteria (e.g. move Dutch-required
             # marketing jobs into the stretch section). Small budget so it never
             # starves the new-job screening above.
-            revet_saved(browser, jobs, cv_text, budget=40, checkpoint=checkpoint)
+            revet_saved(browser, jobs, cv_text, budget=80, checkpoint=checkpoint)
         finally:
             browser.close()
 
