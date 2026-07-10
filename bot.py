@@ -29,21 +29,36 @@ from playwright.sync_api import sync_playwright
 # across runs, so coverage keeps growing instead of being capped at one search.
 # We deliberately do NOT scan all ~200k VDAB jobs: ~95% require Dutch/French, so
 # rendering+screening them would burn the budget on guaranteed rejections.
-SEARCH_TERMS = [
-    "english", "english speaking", "fluent english", "international",
-    "customer service", "content", "digital marketing", "seo",
-    "logistics", "warehouse", "sales support", "administrative",
-    "junior", "data entry", "front-end",
+def _search(term):
+    return f"https://www.vdab.be/vindeenjob/vacatures?trefwoord={term.replace(' ', '%20')}"
+
+# The kind of work the candidate actually wants — searched FIRST on every run so
+# marketing/SEO/web jobs are found and screened before anything else.
+PRIORITY_SEARCH_URLS = [
+    _search(t) for t in
+    ("digital marketing", "seo", "marketing", "wordpress", "content marketing",
+     "social media")
 ]
-SEARCH_URLS = (
-    [f"https://www.vdab.be/vindeenjob/vacatures?trefwoord={t.replace(' ', '%20')}"
-     for t in SEARCH_TERMS]
+# Everything else, walked a rotating slice at a time (collection is slow).
+ROTATING_SEARCH_URLS = (
+    [_search(t) for t in
+     ("english", "english speaking", "fluent english", "international",
+      "customer service", "content", "copywriter", "communication",
+      "logistics", "warehouse", "sales support", "administrative",
+      "junior", "data entry", "front-end")]
     + ["https://www.vdab.be/vindeenjob/jobs/english-jobs"]
 )
-# Collection is expensive (a browser paging through results), so each run only
-# walks a rotating slice of the searches; over several runs they all get covered
-# and the accumulated listing keeps growing.
-SEARCHES_PER_RUN = int(os.environ.get("SEARCHES_PER_RUN", "5"))
+SEARCHES_PER_RUN = int(os.environ.get("SEARCHES_PER_RUN", "4"))
+
+# Titles that look like the candidate's target field — screened first so they
+# reach the Ready tab ahead of the filler jobs.
+MARKETING_RX = re.compile(
+    r"seo|marketing|content|wordpress|copywrit|social\s*media|communicat|"
+    r"digital|\bweb\b|website|growth|\bbrand", re.I)
+
+
+def is_marketing(title):
+    return bool(MARKETING_RX.search(title or ""))
 
 # Title pre-screen: the AI reads plain job titles in cheap batches (no page
 # render) to shortlist the ones worth a full look, so rendering + full screening
@@ -120,7 +135,8 @@ EXCLUDE_RX = re.compile(
     r"poets|huishoud|schoonma|kuis|cleaner|cleaning|household\s*help|"
     r"domestic|"                                    # cleaning / household
     r"truck\s*driver|vrachtwagen|\bce[-\s]?(driver|chauffeur|truck)|"
-    r"chauffeur\s*ce|rijbewijs\s*c\b|rijbewijs\s*ce|\bc/ce\b|\bce\b\s*truck",  # C/CE truck
+    r"chauffeur\s*ce|rijbewijs\s*c\b|rijbewijs\s*ce|\bc/ce\b|\bce\b\s*truck|"  # C/CE truck
+    r"\bstudent|jobstudent|studenten|vakantie(job|werk)|vacation\s*job",  # student jobs
     re.I,
 )
 
@@ -589,13 +605,16 @@ def main():
             # machine operator, senior analyst) get moved to "not a fit".
             revet_saved(browser, jobs, cv_text)
 
-            # Walk a rotating slice of the searches this run (collection is slow),
-            # so over successive runs every search term is covered.
+            # Always search the target field (marketing/SEO/web) first, then walk
+            # a rotating slice of the rest so every term is covered over time.
             cursor = jobs.get("search_cursor", 0)
-            n = len(SEARCH_URLS)
-            todays = [SEARCH_URLS[(cursor + k) % n] for k in range(min(SEARCHES_PER_RUN, n))]
-            jobs["search_cursor"] = (cursor + len(todays)) % n
-            print(f"Collecting from {len(todays)} search(es) this run...")
+            n = len(ROTATING_SEARCH_URLS)
+            rot = [ROTATING_SEARCH_URLS[(cursor + k) % n]
+                   for k in range(min(SEARCHES_PER_RUN, n))]
+            jobs["search_cursor"] = (cursor + len(rot)) % n
+            todays = PRIORITY_SEARCH_URLS + rot
+            print(f"Collecting from {len(todays)} search(es) this run "
+                  f"({len(PRIORITY_SEARCH_URLS)} priority + {len(rot)} rotating)...")
             all_links = set()
             for url in todays:
                 links = collect_links(browser, url)
@@ -622,7 +641,10 @@ def main():
             # spent only on jobs worth it. This is what makes wide coverage cheap.
             cand = [j for j in jobs["listing"]
                     if j["id"] not in seen and j["id"] not in title_no
-                    and j["id"] not in shortlist][:TITLE_SCREEN_CAP]
+                    and j["id"] not in shortlist]
+            # Screen target-field titles first, then newest.
+            cand.sort(key=lambda j: (not is_marketing(j["title"]), -j["id"]))
+            cand = cand[:TITLE_SCREEN_CAP]
             if cand:
                 print(f"Title pre-screening {len(cand)} titles...")
                 kept = title_prescreen([c["title"] for c in cand])
@@ -630,9 +652,11 @@ def main():
                     (shortlist if i in kept else title_no).add(c["id"])
                 print(f"  shortlisted {len(kept)}, dropped {len(cand) - len(kept)} at title stage")
 
-            # Full render + AI evaluation, drawn from the shortlist only.
-            new_links = [(by_id[i]["url"], i) for i in sorted(shortlist, reverse=True)
-                         if i in by_id and i not in seen][:MAX_NEW_PER_RUN]
+            # Full render + AI evaluation, drawn from the shortlist only —
+            # target-field (marketing/SEO/web) titles first, then newest.
+            ready_ids = [i for i in shortlist if i in by_id and i not in seen]
+            ready_ids.sort(key=lambda i: (not is_marketing(by_id[i]["title"]), -i))
+            new_links = [(by_id[i]["url"], i) for i in ready_ids][:MAX_NEW_PER_RUN]
             print(f"{len(all_links)} collected, {len(jobs['listing'])} in listing, "
                   f"{len(shortlist)} shortlisted, {len(title_no)} title-dropped, "
                   f"{len(new_links)} queued for full screening")
