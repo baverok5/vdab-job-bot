@@ -126,7 +126,7 @@ HEADERS = {
     "Accept-Language": "nl-BE,nl;q=0.9,en;q=0.8",
 }
 
-MAX_NEW_PER_RUN = int(os.environ.get("MAX_NEW_PER_RUN", "400"))  # big chunk per run; progress is checkpointed
+MAX_NEW_PER_RUN = int(os.environ.get("MAX_NEW_PER_RUN", "300"))  # big chunk per run; progress is checkpointed
 CHECKPOINT_EVERY = 25  # save + git-push progress this often so a long run can't lose its work
 
 # Bump this whenever the fit criteria in evaluate_job change. Saved matches that
@@ -635,8 +635,11 @@ def main():
                  "commit", "-q", "-m", "Update jobs (checkpoint)"],
                 check=False, capture_output=True)
             if r.returncode == 0:
-                subprocess.run(["git", "push", "-q"], check=False, capture_output=True)
-                print("  [checkpoint pushed]")
+                # HEAD:main works even if checkout left us on a detached HEAD.
+                p = subprocess.run(["git", "push", "origin", "HEAD:main"],
+                                   check=False, capture_output=True, text=True)
+                print("  [checkpoint pushed]" if p.returncode == 0
+                      else f"  [checkpoint push failed: {p.stderr.strip()[:200]}]")
         except Exception as e:
             print(f"  (checkpoint push skipped: {e})")
 
@@ -666,8 +669,8 @@ def main():
                 # on the broad rotating searches to keep the run's length sane.
                 priority = url in PRIORITY_SEARCH_URLS
                 links = collect_links(browser, url,
-                                      budget_s=220 if priority else 90,
-                                      max_pages=140 if priority else 55)
+                                      budget_s=130 if priority else 60,
+                                      max_pages=70 if priority else 30)
                 print(f"  {len(links)} links from {url}")
                 all_links |= links
 
@@ -685,6 +688,7 @@ def main():
             jobs["listing"] = sorted(
                 listing.values(), key=lambda j: j["id"], reverse=True)[:4000]
             by_id = {j["id"]: j for j in jobs["listing"]}
+            checkpoint()   # save the freshly-collected listing before screening
 
             # Cheap title pre-screen: shortlist plausible titles, drop clear
             # non-fits — WITHOUT rendering — so the expensive render+full-eval is
