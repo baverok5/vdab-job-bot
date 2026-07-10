@@ -23,14 +23,27 @@ from playwright.sync_api import sync_playwright
 
 # ---------------------------------------------------------------- settings
 
-SEARCH_URLS = [
-    # VDAB's real job search, keyword "english" — the full result set (the
-    # curated /jobs/english-jobs page only ever shows 28). Paged through in the
-    # browser by collect_links(). The /jobs/english-jobs page is kept as a
-    # second source so nothing curated is lost.
-    "https://www.vdab.be/vindeenjob/vacatures?trefwoord=english",
-    "https://www.vdab.be/vindeenjob/jobs/english-jobs",
+# Several searches, not just "english", to widen the net for jobs open to an
+# English speaker (many don't literally contain the word "english"). We collect
+# titles+URLs cheaply here; the AI then screens each one. The list accumulates
+# across runs, so coverage keeps growing instead of being capped at one search.
+# We deliberately do NOT scan all ~200k VDAB jobs: ~95% require Dutch/French, so
+# rendering+screening them would burn the budget on guaranteed rejections.
+SEARCH_TERMS = [
+    "english", "english speaking", "fluent english", "international",
+    "customer service", "content", "digital marketing", "seo",
+    "logistics", "warehouse", "sales support", "administrative",
+    "junior", "data entry", "front-end",
 ]
+SEARCH_URLS = (
+    [f"https://www.vdab.be/vindeenjob/vacatures?trefwoord={t.replace(' ', '%20')}"
+     for t in SEARCH_TERMS]
+    + ["https://www.vdab.be/vindeenjob/jobs/english-jobs"]
+)
+# Collection is expensive (a browser paging through results), so each run only
+# walks a rotating slice of the searches; over several runs they all get covered
+# and the accumulated listing keeps growing.
+SEARCHES_PER_RUN = int(os.environ.get("SEARCHES_PER_RUN", "5"))
 
 JOBS_FILE = "docs/jobs.json"      # matched jobs (dashboard reads this)
 SEEN_FILE = "seen.json"           # every job ID we already processed
@@ -268,7 +281,7 @@ def _dismiss_cookies(page):
 NEXT_BTN = "a:has-text('Volgende'), button:has-text('Volgende')"
 
 
-def collect_links(browser, search_url, cap=1400, budget_s=95, max_pages=45):
+def collect_links(browser, search_url, cap=5000, budget_s=60, max_pages=35):
     """Walk VDAB's real search results page by page (clicking the "Volgende"
     next button) collecting (job_url, job_id) pairs. VDAB uses numbered
     pagination, not infinite scroll. Bounded by cap links / budget / max_pages."""
@@ -511,32 +524,37 @@ def main():
             # machine operator, senior analyst) get moved to "not a fit".
             revet_saved(browser, jobs, cv_text)
 
-            print("Collecting job links from VDAB...")
+            # Walk a rotating slice of the searches this run (collection is slow),
+            # so over successive runs every search term is covered.
+            cursor = jobs.get("search_cursor", 0)
+            n = len(SEARCH_URLS)
+            todays = [SEARCH_URLS[(cursor + k) % n] for k in range(min(SEARCHES_PER_RUN, n))]
+            jobs["search_cursor"] = (cursor + len(todays)) % n
+            print(f"Collecting from {len(todays)} search(es) this run...")
             all_links = set()
-            for url in SEARCH_URLS:
+            for url in todays:
                 links = collect_links(browser, url)
                 print(f"  {len(links)} links from {url}")
                 all_links |= links
 
-            # Breadth: record every English job we can see (title from the URL
-            # slug), minus the ones the candidate never wants (cleaning + C/CE
-            # truck roles). Independent of the slower AI pipeline below.
-            listing = [
-                {"id": i, "url": u, "title": _slug_title(u)}
-                for (u, i) in all_links
-                if not is_excluded(_slug_title(u)) and not is_ineligible(_slug_title(u))
-            ]
-            listing.sort(key=lambda j: j["id"], reverse=True)
-            jobs["listing"] = listing[:1400]
+            # Accumulate the master listing across runs (union by id), dropping
+            # roles the candidate never wants. This is what keeps coverage growing
+            # instead of being pinned to a single search's results.
+            listing = {j["id"]: j for j in jobs.get("listing", [])}
+            for (u, i) in all_links:
+                t = _slug_title(u)
+                if is_excluded(t) or is_ineligible(t):
+                    continue
+                listing[i] = {"id": i, "url": u, "title": t}
+            jobs["listing"] = sorted(
+                listing.values(), key=lambda j: j["id"], reverse=True)[:20000]
 
-            new_links = [
-                (u, i) for (u, i) in all_links
-                if i not in seen and not is_excluded(_slug_title(u))
-                and not is_ineligible(_slug_title(u))
-            ]
-            print(f"{len(all_links)} total, {len(jobs['listing'])} after filter, "
-                  f"{len(new_links)} not yet seen")
-            new_links = new_links[:MAX_NEW_PER_RUN]
+            # Draw the jobs to screen from the whole accumulated listing (not just
+            # this run's slice), so the backfill steadily drains everything unseen.
+            new_links = [(j["url"], j["id"]) for j in jobs["listing"]
+                         if j["id"] not in seen][:MAX_NEW_PER_RUN]
+            print(f"{len(all_links)} collected this run, {len(jobs['listing'])} in listing, "
+                  f"{len(new_links)} queued to screen")
 
             matched = _process_jobs(browser, new_links, seen, jobs, cv_text)
         finally:
