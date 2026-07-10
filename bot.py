@@ -655,7 +655,7 @@ def main():
                     if j["id"] not in seen and j["id"] not in title_no
                     and j["id"] not in shortlist]
             # Screen target-field titles first, then newest.
-            cand.sort(key=lambda j: (not is_marketing(j["title"]), -j["id"]))
+            cand.sort(key=lambda j: (not is_marketing(j["title"]), -int(j["id"])))
             cand = cand[:TITLE_SCREEN_CAP]
             if cand:
                 print(f"Title pre-screening {len(cand)} titles...")
@@ -667,7 +667,7 @@ def main():
             # Full render + AI evaluation, drawn from the shortlist only —
             # target-field (marketing/SEO/web) titles first, then newest.
             ready_ids = [i for i in shortlist if i in by_id and i not in seen]
-            ready_ids.sort(key=lambda i: (not is_marketing(by_id[i]["title"]), -i))
+            ready_ids.sort(key=lambda i: (not is_marketing(by_id[i]["title"]), -int(i)))
             new_links = [(by_id[i]["url"], i) for i in ready_ids][:MAX_NEW_PER_RUN]
             print(f"{len(all_links)} collected, {len(jobs['listing'])} in listing, "
                   f"{len(shortlist)} shortlisted, {len(title_no)} title-dropped, "
