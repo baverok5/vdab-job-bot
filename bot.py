@@ -757,7 +757,10 @@ def main():
             jobs["rejected"].insert(0, j)
             continue
         kept.append(j)
-    jobs["jobs"] = kept[:100]
+    # Clean fits first, then "needs better Dutch" stretch jobs; keep plenty so the
+    # stretch section isn't truncated. Within each, highest score first.
+    kept.sort(key=lambda j: (bool(j.get("dutch_stretch")), -int(j.get("match_score", 0) or 0)))
+    jobs["jobs"] = kept[:600]
     jobs["rejected"] = jobs.get("rejected", [])[:REJECTED_CAP]
     save_json(JOBS_FILE, jobs)
     save_json(SEEN_FILE, sorted(seen))
