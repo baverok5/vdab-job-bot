@@ -37,10 +37,17 @@ SEEN_FILE = "seen.json"           # every job ID we already processed
 CV_FILE = "cv.md"                 # your master CV
 
 GEMINI_KEY = os.environ.get("GEMINI_API_KEY", "")
-GEMINI_MODEL = "gemini-2.5-flash"
-GEMINI_URL = (
+# Two models on purpose:
+#  - EVAL is the high-volume yes/no language filter run every hour on dozens of
+#    jobs. flash-lite has a much bigger free daily quota (~1000 req/day vs ~250
+#    for flash), so the hourly bot stops hitting 429 quota walls by evening.
+#  - WRITE is only used on demand when you actually apply, so quality matters
+#    more than volume — it stays on the stronger flash model.
+GEMINI_EVAL_MODEL = os.environ.get("GEMINI_EVAL_MODEL", "gemini-2.5-flash-lite")
+GEMINI_WRITE_MODEL = os.environ.get("GEMINI_WRITE_MODEL", "gemini-2.5-flash")
+GEMINI_URL_TMPL = (
     "https://generativelanguage.googleapis.com/v1beta/models/"
-    f"{GEMINI_MODEL}:generateContent?key={GEMINI_KEY}"
+    "{model}:generateContent?key=" + GEMINI_KEY
 )
 
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "")
@@ -54,7 +61,7 @@ HEADERS = {
     "Accept-Language": "nl-BE,nl;q=0.9,en;q=0.8",
 }
 
-MAX_NEW_PER_RUN = 15  # cap AI-prepared jobs per run so we don't exhaust Gemini's free tier
+MAX_NEW_PER_RUN = 25  # cap AI-evaluated jobs per run (flash-lite's daily quota is large)
 
 # Jobs to always exclude (candidate only has a B driver's licence and does not
 # want cleaning/domestic roles). Matched against the job title/slug.
@@ -87,17 +94,34 @@ def save_json(path, data):
         json.dump(data, f, ensure_ascii=False, indent=1)
 
 
-def ask_gemini(prompt, expect_json=False):
-    """Send a prompt to Gemini, return the text reply (or parsed JSON)."""
+class QuotaExhausted(Exception):
+    """Raised when Gemini keeps returning 429 — the daily/per-minute quota is spent,
+    so retrying just burns more of it. Callers stop the run gracefully."""
+
+
+def ask_gemini(prompt, expect_json=False, model=None):
+    """Send a prompt to Gemini, return the text reply (or parsed JSON).
+
+    On a 429 we retry only briefly. A 429 usually means the free-tier quota is
+    exhausted, in which case hammering it 4× (the old behaviour) wasted ~2 min
+    and 4 requests per job for nothing — so we raise QuotaExhausted fast and let
+    the run bail while the listing/pool it already has stays intact."""
+    url = GEMINI_URL_TMPL.format(model=model or GEMINI_WRITE_MODEL)
     body = {"contents": [{"parts": [{"text": prompt}]}]}
     if expect_json:
         body["generationConfig"] = {"responseMimeType": "application/json"}
-    for attempt in range(4):
+    rate_limited = 0
+    for attempt in range(3):
         try:
-            r = requests.post(GEMINI_URL, json=body, timeout=90)
-            if r.status_code in (429, 503):   # rate limited / busy — brief wait, retry
-                # 429 (quota) deserves a longer pause than a transient 503 blip.
-                time.sleep((12 if r.status_code == 429 else 5) * (attempt + 1))
+            r = requests.post(url, json=body, timeout=60)
+            if r.status_code == 429:            # quota / rate limit
+                rate_limited += 1
+                if rate_limited >= 2:           # two in a row → quota is gone
+                    raise QuotaExhausted()
+                time.sleep(6)                   # one short retry for a per-minute blip
+                continue
+            if r.status_code == 503:            # server busy — transient
+                time.sleep(4 * (attempt + 1))
                 continue
             r.raise_for_status()
             text = r.json()["candidates"][0]["content"]["parts"][0]["text"]
@@ -105,9 +129,11 @@ def ask_gemini(prompt, expect_json=False):
                 text = re.sub(r"^```(json)?|```$", "", text.strip(), flags=re.M)
                 return json.loads(text)
             return text
+        except QuotaExhausted:
+            raise
         except Exception as e:
             print(f"  Gemini error (attempt {attempt+1}): {e}")
-            time.sleep(4)
+            time.sleep(3)
     return None
 
 
@@ -155,7 +181,7 @@ def _dismiss_cookies(page):
 NEXT_BTN = "a:has-text('Volgende'), button:has-text('Volgende')"
 
 
-def collect_links(browser, search_url, cap=1400, budget_s=210, max_pages=70):
+def collect_links(browser, search_url, cap=1400, budget_s=95, max_pages=45):
     """Walk VDAB's real search results page by page (clicking the "Volgende"
     next button) collecting (job_url, job_id) pairs. VDAB uses numbered
     pagination, not infinite scroll. Bounded by cap links / budget / max_pages."""
@@ -325,7 +351,7 @@ THE REAL CV:
 
 JOB POSTING:
 {job_text[:8000]}"""
-    return ask_gemini(prompt, expect_json=True)
+    return ask_gemini(prompt, expect_json=True, model=GEMINI_EVAL_MODEL)
 
 
 # ---------------------------------------------------------------- main
@@ -390,14 +416,18 @@ def _process_jobs(browser, new_links, seen, jobs, cv_text):
             print("  (could not read job — will retry next run)")
             continue  # don't mark seen; a transient render failure gets another chance
 
-        verdict = evaluate_job(job_text, cv_text)
+        try:
+            verdict = evaluate_job(job_text, cv_text)
+        except QuotaExhausted:
+            # Free-tier quota is spent — stop now instead of burning time/quota.
+            # The listing + already-banked matches stay intact for the dashboard.
+            print("  Gemini quota exhausted — stopping AI for this run (listing still updated).")
+            break
         if not verdict:
             ai_fails += 1
             print("  Skipped (AI call failed — will retry next run)")
-            if ai_fails >= 3:
-                # Gemini is down/quota-exhausted — stop wasting time this run.
-                # The job listing is already saved, so breadth is unaffected.
-                print("  Gemini unavailable — stopping AI for this run (listing still updated).")
+            if ai_fails >= 4:
+                print("  Too many AI failures — stopping AI for this run.")
                 break
             continue  # Gemini hiccup; don't mark seen so it's retried
         ai_fails = 0
@@ -432,7 +462,7 @@ def _process_jobs(browser, new_links, seen, jobs, cv_text):
             f"{verdict.get('reason')}\n\n"
             f'<a href="{url}">View on VDAB</a>'
         )
-        time.sleep(5)  # pace Gemini free-tier requests
+        time.sleep(2)  # light pacing to stay under the per-minute request rate
 
     return matched
 
