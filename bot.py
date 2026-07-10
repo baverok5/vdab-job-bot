@@ -77,13 +77,13 @@ HEADERS = {
     "Accept-Language": "nl-BE,nl;q=0.9,en;q=0.8",
 }
 
-MAX_NEW_PER_RUN = int(os.environ.get("MAX_NEW_PER_RUN", "60"))  # paid engines have no tiny daily cap
+MAX_NEW_PER_RUN = int(os.environ.get("MAX_NEW_PER_RUN", "150"))  # paid engines have no tiny daily cap
 
 # Bump this whenever the fit criteria in evaluate_job change. Saved matches that
 # were judged under an older version get re-vetted (a one-time migration) so the
 # pool reflects the newest rules instead of leaving stale bad matches around.
-CRITERIA_VERSION = 2
-REJECTED_CAP = 60     # keep the most recent "not a fit" jobs for the audit tab
+CRITERIA_VERSION = 3
+REJECTED_CAP = 120    # keep the most recent "not a fit" jobs for the audit tab
 
 # Jobs to always exclude (candidate only has a B driver's licence and does not
 # want cleaning/domestic roles). Matched against the job title/slug.
@@ -438,28 +438,34 @@ def evaluate_job(job_text, cv_text):
 
 {CANDIDATE_PROFILE}
 
-STEP 1 — Decide PASS/FAIL. FAIL the job if ANY of these is true:
+STEP 1 — Decide PASS/FAIL for this early-career candidate. Be inclusive for
+accessible roles, but keep the hard walls.
+
+FAIL the job if ANY of these is true (hard walls — no exceptions):
 - LANGUAGE: Dutch or French is a hard requirement (more than "a plus"), and the
   role is not otherwise open to an English speaker.
-- EXPERIENCE the CV lacks: the posting expects prior hands-on experience the
-  candidate doesn't have — e.g. machine/production/CNC operator, metalwork,
-  welding, grinding, assembly, manufacturing, construction, electrical,
-  mechanical, maintenance-technician, or any skilled manual trade.
-- LICENCE / CERTIFICATE / DIPLOMA the CV lacks (forklift, C/CE, nursing,
-  medical/lab, pilot, professional finance/engineering qualification, etc.).
-- SENIORITY the CV lacks: titled Senior/Lead/Manager/Director/Head, or requiring
-  several years of professional experience in the field.
-- SPECIALISED background the CV lacks: finance/KYC/compliance/treasury/tax,
-  engineering, R&D, medical/healthcare, aviation, licensed professions.
+- SKILLED TRADE / PRODUCTION / MANUAL role: machine/production/CNC operator,
+  metalwork, welding, grinding, assembly, manufacturing, chocolatier, print/line
+  operator, construction, electrical, mechanical, maintenance technician.
+- LICENCE / CERTIFICATE the CV lacks: forklift/reachtruck, C/CE, nursing,
+  medical/lab, pilot, professional finance/engineering certification.
+- MANDATORY SPECIALIST DEGREE: the role clearly requires a specific degree the
+  candidate doesn't have — engineering, finance/accounting, data science,
+  software/IT, science, law, medicine.
+- SENIORITY: titled Senior / Lead / Manager / Director / Head, OR requiring
+  roughly 3+ years of dedicated professional experience in a specialist field.
 - Cleaning / domestic-help role (poetshulp, huishoudhulp, schoonmaak, cleaner).
 
-PASS only if the role plausibly matches THIS CV: junior/entry-level office,
-digital marketing / SEO / content, web / WordPress, junior front-end, general
-warehouse & logistics, customer service, sales/admin/data-entry support, or
-genuinely "no experience needed" roles — AND it does not require Dutch/French.
-When unsure whether the candidate qualifies, FAIL (be strict, not generous).
+Otherwise PASS — the candidate may apply even if it's a stretch. Treat as PASS
+the accessible roles: customer service, administration / office support,
+reception, data entry, sales / account / commercial support, digital marketing /
+SEO / content, junior web or front-end, general warehouse & logistics, and
+"no experience needed" roles — EVEN IF they ask for ~1-2 years of experience or
+"some experience" (just score it lower). For these accessible roles, when unsure,
+PASS with a low score rather than fail.
 
-STEP 2 — Summarise, honestly, either way.
+STEP 2 — Summarise, honestly, either way. For a PASS that is a stretch, still say
+in why_good what the candidate would be leaning on and note the gap frankly.
 
 Reply ONLY with JSON:
 {{
@@ -468,7 +474,7 @@ Reply ONLY with JSON:
   "title": "the job title",
   "company": "the company name or 'Unknown'",
   "location": "city or 'Unknown'",
-  "match_score": 0-100 (how well the candidate's ACTUAL CV fits this job; a job that requires experience/licences/seniority they lack must score low even if it's in English),
+  "match_score": 0-100 — 75-100 = clearly qualified; 50-74 = can apply, minor gaps; 30-49 = a reach (wants a bit more experience than the CV shows) but still worth trying; below 30 should usually be a FAIL,
   "details": "4-6 short bullets (one newline-separated string): role, main tasks, contract type, schedule, language, pay if stated (or '')",
   "why_good": "if pass: 3-5 short bullets (one newline-separated string) on why it fits, grounded ONLY in the real CV. If fail: ''",
   "why_bad": "if fail: 2-4 short bullets (one newline-separated string) naming exactly which required experience / licence / qualification / seniority / language the candidate is MISSING for this job. If pass: ''"
@@ -589,12 +595,13 @@ def _apply_verdict(jobs, job_id, url, verdict, apply_email, found_at=None):
     return False
 
 
-def revet_saved(browser, jobs, cv_text, budget=20):
-    """Re-check already-saved matches against the current criteria version.
-    Jobs that no longer qualify move to the 'rejected' pool with a why_bad
-    explanation; ones that still fit get refreshed. Only touches jobs stamped
-    with an older CRITERIA_VERSION, so it's a one-time migration per bump."""
-    stale = [j for j in jobs["jobs"] if j.get("cv_fit_v") != CRITERIA_VERSION][:budget]
+def revet_saved(browser, jobs, cv_text, budget=40):
+    """Re-check saved jobs (both matched AND rejected) against the current
+    criteria version. Ones that no longer fit move to 'rejected'; ones that now
+    fit (e.g. after loosening the rules) move back to matched. Only touches jobs
+    stamped with an older CRITERIA_VERSION, so it's a one-time migration per bump."""
+    stale = [j for j in (jobs["jobs"] + jobs.get("rejected", []))
+             if j.get("cv_fit_v") != CRITERIA_VERSION][:budget]
     if not stale:
         return 0
     print(f"\nRe-vetting {len(stale)} saved match(es) against criteria v{CRITERIA_VERSION}...")
@@ -617,12 +624,11 @@ def revet_saved(browser, jobs, cv_text, budget=20):
         kept = _apply_verdict(jobs, job_id, url, verdict,
                               apply_email or j.get("apply_email"),
                               found_at=j.get("found_at"))
-        print(f"  {'KEPT' if kept else 'MOVED TO NOT-A-FIT'} "
+        print(f"  {'FITS' if kept else 'NOT A FIT'} "
               f"({verdict.get('match_score')}%): {verdict.get('reason')}")
-        if not kept:
-            moved += 1
-        time.sleep(2)
-    print(f"Re-vet done: {moved} moved to not-a-fit.")
+        moved += 1
+        time.sleep(1)
+    print(f"Re-vet done: {moved} re-checked.")
     return moved
 
 

@@ -17,7 +17,9 @@ permissions:
 
 concurrency:
   group: job-bot
-  cancel-in-progress: true
+  # Queue runs instead of cancelling — a long backfill run must not be killed
+  # (and lose its progress) by the next scheduled run firing.
+  cancel-in-progress: false
 
 jobs:
   run:
