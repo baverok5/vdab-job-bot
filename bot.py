@@ -14,6 +14,7 @@ How it works (runs on GitHub Actions every hour):
 import json
 import os
 import re
+import subprocess
 import time
 from datetime import datetime, timezone
 
@@ -65,7 +66,7 @@ def is_marketing(title):
 # Title pre-screen: the AI reads plain job titles in cheap batches (no page
 # render) to shortlist the ones worth a full look, so rendering + full screening
 # is spent only on plausible jobs. This is what lets coverage scale.
-TITLE_SCREEN_CAP = int(os.environ.get("TITLE_SCREEN_CAP", "600"))  # titles/run
+TITLE_SCREEN_CAP = int(os.environ.get("TITLE_SCREEN_CAP", "1500"))  # titles/run
 TITLE_BATCH = 40                                                   # titles per AI call
 
 CANDIDATE_ONELINE = (
@@ -125,7 +126,8 @@ HEADERS = {
     "Accept-Language": "nl-BE,nl;q=0.9,en;q=0.8",
 }
 
-MAX_NEW_PER_RUN = int(os.environ.get("MAX_NEW_PER_RUN", "150"))  # paid engines have no tiny daily cap
+MAX_NEW_PER_RUN = int(os.environ.get("MAX_NEW_PER_RUN", "400"))  # big chunk per run; progress is checkpointed
+CHECKPOINT_EVERY = 25  # save + git-push progress this often so a long run can't lose its work
 
 # Bump this whenever the fit criteria in evaluate_job change. Saved matches that
 # were judged under an older version get re-vetted (a one-time migration) so the
@@ -617,6 +619,27 @@ def main():
     title_no = set(screen.get("title_no", []))     # dropped at the cheap title stage
     shortlist = set(screen.get("shortlist", []))   # passed title stage, await full eval
 
+    def checkpoint():
+        """Persist current progress and push it, so a long run that dies partway
+        (or is stopped) keeps everything screened so far. Best-effort: never let a
+        git hiccup crash the scan."""
+        save_json(JOBS_FILE, jobs)
+        save_json(SEEN_FILE, sorted(seen))
+        save_json(SCREEN_FILE, {"title_no": sorted(title_no), "shortlist": sorted(shortlist)})
+        try:
+            subprocess.run(["git", "add", JOBS_FILE, SEEN_FILE, SCREEN_FILE],
+                           check=False, capture_output=True)
+            r = subprocess.run(
+                ["git", "-c", "user.name=job-bot",
+                 "-c", "user.email=bot@users.noreply.github.com",
+                 "commit", "-q", "-m", "Update jobs (checkpoint)"],
+                check=False, capture_output=True)
+            if r.returncode == 0:
+                subprocess.run(["git", "push", "-q"], check=False, capture_output=True)
+                print("  [checkpoint pushed]")
+        except Exception as e:
+            print(f"  (checkpoint push skipped: {e})")
+
     matched = 0
     with sync_playwright() as pw:
         browser = pw.chromium.launch(args=["--no-sandbox"])
@@ -624,7 +647,7 @@ def main():
             # First: re-check already-saved matches under the current criteria,
             # so jobs that only ever passed the old language-only filter (e.g.
             # machine operator, senior analyst) get moved to "not a fit".
-            revet_saved(browser, jobs, cv_text)
+            revet_saved(browser, jobs, cv_text, budget=200, checkpoint=checkpoint)
 
             # Always search the target field (marketing/SEO/web) first, then walk
             # a rotating slice of the rest so every term is covered over time.
@@ -643,8 +666,8 @@ def main():
                 # on the broad rotating searches to keep the run's length sane.
                 priority = url in PRIORITY_SEARCH_URLS
                 links = collect_links(browser, url,
-                                      budget_s=100 if priority else 40,
-                                      max_pages=70 if priority else 22)
+                                      budget_s=220 if priority else 90,
+                                      max_pages=140 if priority else 55)
                 print(f"  {len(links)} links from {url}")
                 all_links |= links
 
@@ -688,7 +711,8 @@ def main():
                   f"{len(shortlist)} shortlisted, {len(title_no)} title-dropped, "
                   f"{len(new_links)} queued for full screening")
 
-            matched = _process_jobs(browser, new_links, seen, jobs, cv_text)
+            matched = _process_jobs(browser, new_links, seen, jobs, cv_text,
+                                    checkpoint=checkpoint)
             shortlist -= seen   # drop the ones we just fully evaluated
         finally:
             browser.close()
@@ -748,7 +772,7 @@ def _apply_verdict(jobs, job_id, url, verdict, apply_email, found_at=None):
     return False
 
 
-def revet_saved(browser, jobs, cv_text, budget=40):
+def revet_saved(browser, jobs, cv_text, budget=40, checkpoint=None):
     """Re-check saved jobs (both matched AND rejected) against the current
     criteria version. Ones that no longer fit move to 'rejected'; ones that now
     fit (e.g. after loosening the rules) move back to matched. Only touches jobs
@@ -780,14 +804,17 @@ def revet_saved(browser, jobs, cv_text, budget=40):
         print(f"  {'FITS' if kept else 'NOT A FIT'} "
               f"({verdict.get('match_score')}%): {verdict.get('reason')}")
         moved += 1
+        if checkpoint and moved % CHECKPOINT_EVERY == 0:
+            checkpoint()
         time.sleep(1)
     print(f"Re-vet done: {moved} re-checked.")
     return moved
 
 
-def _process_jobs(browser, new_links, seen, jobs, cv_text):
+def _process_jobs(browser, new_links, seen, jobs, cv_text, checkpoint=None):
     matched = 0
     ai_fails = 0
+    processed = 0
     for url, job_id in new_links:
         print(f"\nChecking job {job_id}: {url}")
 
@@ -814,22 +841,24 @@ def _process_jobs(browser, new_links, seen, jobs, cv_text):
 
         # We got a real verdict (pass or fail) — safe to not process it again.
         seen.add(job_id)
+        processed += 1
         kept = _apply_verdict(jobs, job_id, url, verdict, apply_email)
-        if not kept:
+        if kept:
+            print(f"  MATCH ({verdict.get('match_score')}%): {verdict.get('title')}")
+            matched += 1
+            send_telegram(
+                f"<b>New job match ({verdict.get('match_score')}%)</b>\n"
+                f"{verdict.get('title')} — {verdict.get('company')}\n"
+                f"{verdict.get('location')}\n\n"
+                f"{verdict.get('reason')}\n\n"
+                f'<a href="{url}">View on VDAB</a>'
+            )
+        else:
             print(f"  NOT A FIT: {verdict.get('reason')}")
-            continue
 
-        print(f"  MATCH ({verdict.get('match_score')}%): {verdict.get('title')}")
-        matched += 1
-
-        send_telegram(
-            f"<b>New job match ({verdict.get('match_score')}%)</b>\n"
-            f"{verdict.get('title')} — {verdict.get('company')}\n"
-            f"{verdict.get('location')}\n\n"
-            f"{verdict.get('reason')}\n\n"
-            f'<a href="{url}">View on VDAB</a>'
-        )
-        time.sleep(2)  # light pacing to stay under the per-minute request rate
+        if checkpoint and processed % CHECKPOINT_EVERY == 0:
+            checkpoint()
+        time.sleep(1)  # light pacing to stay under the per-minute request rate
 
     return matched
 

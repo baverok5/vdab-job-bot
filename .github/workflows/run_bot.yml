@@ -9,7 +9,9 @@ on:
       - "bot.py"
       - ".github/workflows/run_bot.yml"
   schedule:
-    - cron: "15 6-20 * * *"
+    # Comprehensive runs are long (deep paging + reading each posting), so run a
+    # few times a day rather than hourly. Progress is checkpointed within each run.
+    - cron: "0 5,11,17,23 * * *"
   workflow_dispatch: {}
 
 permissions:
