@@ -121,6 +121,13 @@
   .cathead .cnt { font-weight: 600; font-size: 11px; color: var(--text3); }
   .cathead.fav { color: var(--accent); }
   .cathead .rule { flex: 1; height: 1px; background: var(--border2); }
+  .mkt { display: flex; align-items: center; gap: 8px; cursor: pointer;
+    background: var(--card); border: 0.5px solid var(--border); border-radius: 10px;
+    padding: 11px 13px; margin: 4px 0 4px; box-shadow: var(--shadow);
+    font-size: 13.5px; font-weight: 600; color: var(--text2); user-select: none; }
+  .mkt.on { border-color: var(--accent2); color: var(--accent); background: var(--accent-bg); }
+  .mkt input { width: 17px; height: 17px; accent-color: var(--accent2); margin: 0; }
+  .mkt .cnt { margin-left: auto; font-size: 12px; color: var(--text3); font-weight: 700; }
   .empty { text-align: center; color: var(--text3); font-size: 13.5px;
     padding: 46px 16px; }
   .empty .big { font-size: 26px; margin-bottom: 8px; }
@@ -171,6 +178,7 @@ const setStatus = (id, s) => {
 let DATA = { jobs: [], updated: "" };
 let TAB = "new";
 let SEARCH_Q = "";
+let MKT_ONLY = localStorage.getItem("mktOnly") === "1";
 
 const esc = (s) => (s || "").replace(/[&<>"]/g, (c) =>
   ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
@@ -472,13 +480,28 @@ function render() {
     // Group Ready jobs by category, favourite category first, highest score first.
     const groups = {};
     jobs.forEach((j) => { (groups[categorize(j)] ||= []).push(j); });
-    CATS.forEach((c) => {
+    const mktCount = (groups.marketing || []).length;
+
+    list.insertAdjacentHTML("beforeend",
+      `<label class="mkt${MKT_ONLY ? " on" : ""}"><input type="checkbox" id="mktonly" ${MKT_ONLY ? "checked" : ""}>
+        <span>🎯 Marketing / SEO / web only</span>${mktCount ? `<span class="cnt">${mktCount}</span>` : ""}</label>`);
+    document.getElementById("mktonly").addEventListener("change", (e) => {
+      MKT_ONLY = e.target.checked;
+      localStorage.setItem("mktOnly", MKT_ONLY ? "1" : "");
+      render();
+    });
+
+    const cats = MKT_ONLY ? CATS.filter((c) => c.key === "marketing") : CATS;
+    cats.forEach((c) => {
       const arr = (groups[c.key] || []).sort((a, b) => (b.match_score || 0) - (a.match_score || 0));
       if (!arr.length) return;
       list.insertAdjacentHTML("beforeend",
         `<div class="cathead${c.fav ? " fav" : ""}">${c.label}<span class="cnt">${arr.length}</span><span class="rule"></span></div>`);
       arr.forEach((j) => list.appendChild(card(j, null)));
     });
+    if (MKT_ONLY && !mktCount)
+      list.insertAdjacentHTML("beforeend",
+        '<div class="empty"><div class="big">🎯</div>No marketing / SEO / web matches yet.<br>The bot searches for these first every run — turn the toggle off to see other jobs meanwhile.</div>');
     return;
   }
   const state = TAB === "new" ? null : TAB;

@@ -36,8 +36,9 @@ def _search(term):
 # marketing/SEO/web jobs are found and screened before anything else.
 PRIORITY_SEARCH_URLS = [
     _search(t) for t in
-    ("digital marketing", "seo", "marketing", "wordpress", "content marketing",
-     "social media")
+    ("digital marketing", "marketing", "seo", "wordpress", "web design",
+     "web developer", "content", "social media", "online marketing",
+     "e-commerce", "communication", "copywriter")
 ]
 # Everything else, walked a rotating slice at a time (collection is slow).
 ROTATING_SEARCH_URLS = (
@@ -48,13 +49,14 @@ ROTATING_SEARCH_URLS = (
       "junior", "data entry", "front-end")]
     + ["https://www.vdab.be/vindeenjob/jobs/english-jobs"]
 )
-SEARCHES_PER_RUN = int(os.environ.get("SEARCHES_PER_RUN", "4"))
+SEARCHES_PER_RUN = int(os.environ.get("SEARCHES_PER_RUN", "3"))
 
 # Titles that look like the candidate's target field — screened first so they
 # reach the Ready tab ahead of the filler jobs.
 MARKETING_RX = re.compile(
-    r"seo|marketing|content|wordpress|copywrit|social\s*media|communicat|"
-    r"digital|\bweb\b|website|growth|\bbrand", re.I)
+    r"seo\b|sea\b|sem\b|marketing|marketeer|marketer|content|wordpress|copywrit|"
+    r"social\s*media|communicat|digital|\bweb\b|website|web\s*design|webdesign|"
+    r"front[-\s]?end|\bux\b|\bui\b|e-?commerce|growth|\bbrand|campaign|advertis", re.I)
 
 
 def is_marketing(title):
@@ -67,12 +69,14 @@ TITLE_SCREEN_CAP = int(os.environ.get("TITLE_SCREEN_CAP", "600"))  # titles/run
 TITLE_BATCH = 40                                                   # titles per AI call
 
 CANDIDATE_ONELINE = (
-    "Early-career. Fits accessible junior/entry roles: office/admin, customer "
-    "service, digital marketing/SEO/content, junior web/front-end, sales/admin "
-    "support, general warehouse/logistics. NOT skilled trades or production/"
-    "machine operators, NOT senior/manager/director, NOT licensed professions "
-    "(nurse/pilot/etc.), NOT specialist-degree roles (engineer/accountant/data "
-    "scientist/doctor/lawyer). Speaks English + Turkish, Dutch only A2, no French."
+    "Early-career, ~4 months experience. GOAL FIELD (keep eagerly): digital "
+    "marketing, SEO/SEA, content, copywriting, social media, WordPress/web/web "
+    "design, front-end, e-commerce, online marketing, communication. Also fits: "
+    "office/admin, customer service, reception, data entry, sales/commercial "
+    "support, warehouse/logistics. NOT skilled trades/production/machine "
+    "operators, NOT senior/manager/director, NOT licensed professions, NOT "
+    "specialist-degree roles, NOT 2+ years required. English + Turkish, Dutch A2 "
+    "(basic Dutch OK), no French."
 )
 
 JOBS_FILE = "docs/jobs.json"      # matched jobs (dashboard reads this)
@@ -126,7 +130,7 @@ MAX_NEW_PER_RUN = int(os.environ.get("MAX_NEW_PER_RUN", "150"))  # paid engines 
 # Bump this whenever the fit criteria in evaluate_job change. Saved matches that
 # were judged under an older version get re-vetted (a one-time migration) so the
 # pool reflects the newest rules instead of leaving stale bad matches around.
-CRITERIA_VERSION = 3
+CRITERIA_VERSION = 4
 REJECTED_CAP = 120    # keep the most recent "not a fit" jobs for the audit tab
 
 # Jobs to always exclude (candidate only has a B driver's licence and does not
@@ -313,7 +317,7 @@ def _dismiss_cookies(page):
 NEXT_BTN = "a:has-text('Volgende'), button:has-text('Volgende')"
 
 
-def collect_links(browser, search_url, cap=5000, budget_s=60, max_pages=35):
+def collect_links(browser, search_url, cap=5000, budget_s=40, max_pages=25):
     """Walk VDAB's real search results page by page (clicking the "Volgende"
     next button) collecting (job_url, job_id) pairs. VDAB uses numbered
     pagination, not infinite scroll. Bounded by cap links / budget / max_pages."""
@@ -451,27 +455,33 @@ linkedin.com/in/baverok"""
 # A blunt, honest summary of what the candidate can and cannot realistically
 # apply to, so the model stops stretching ("web dev → can operate machines").
 # Grounded strictly in cv.md.
-CANDIDATE_PROFILE = """WHO THE CANDIDATE IS (be strict, do not stretch):
-- Early-career / junior. Real experience: digital marketing & SEO intern
-  (WordPress/Elementor, on-page SEO, keyword research, content writing, Google
-  Analytics/Ads, SEMrush/Ahrefs), a junior front-end developer stint
-  (AngularJS/JavaScript, 2018-2019), and GENERAL warehouse/logistics work
-  (order-picking / high-volume handling — NOT operating production machinery).
-- Coursework in Applied Computer Science (no completed degree stated).
-- Languages: English (professional), Turkish (native), Dutch A2 (learning),
-  no French.
+CANDIDATE_PROFILE = """WHO THE CANDIDATE IS:
+- Early-career. GOAL FIELD: digital marketing / SEO / content / WordPress & web /
+  web design. Real experience: a ~3-month digital-marketing & SEO internship plus
+  ~1 month on the job (WordPress/Elementor, on-page SEO, keyword research, content
+  writing, Google Analytics/Ads, SEMrush/Ahrefs), an older junior front-end dev
+  stint (AngularJS/JavaScript), and general warehouse/logistics work.
+- Coursework in Applied Computer Science (no completed degree).
+- Languages: English (professional), Turkish (native), Dutch A2 / basic
+  (improving), no French.
 
-WHAT THE CANDIDATE DOES NOT HAVE (jobs needing these must FAIL):
-- No experience operating/setting production or CNC machines, no metalworking,
-  welding, grinding, assembly, manufacturing, or skilled manual trade.
-- No trade licences/certificates: no forklift/reachtruck cert, no C/CE licence,
-  no electrical/mechanical/technical qualification, no nursing/medical/lab
-  certification, no pilot licence, no professional finance/accounting
-  certification.
-- No specialised professional background: not a finance/KYC/compliance/treasury/
-  tax analyst, not an engineer, not R&D, not medical/healthcare, not aviation.
-- Not senior. No "Senior / Lead / Manager / Director / Head" roles and nothing
-  demanding several years of dedicated professional experience."""
+EXPERIENCE RULE (important): the candidate has only ~4 months of professional
+experience. Jobs asking for UP TO ~2 years are acceptable (a reach, score lower).
+Jobs that clearly require 2+ years of dedicated experience → FAIL.
+
+LANGUAGE RULE: the candidate works in English and has A2 (basic) Dutch. PASS jobs
+that are in English, accept English, or need only BASIC/elementary Dutch (A2) or
+Dutch "as a plus". FAIL jobs that require FLUENT/professional/native Dutch or any
+French.
+
+WHAT THE CANDIDATE CANNOT DO (must FAIL):
+- Skilled trades / production / machine operation / metalwork / construction.
+- Roles needing a licence/certificate (forklift, C/CE, nursing, medical/lab,
+  pilot, professional finance/engineering cert).
+- Roles needing a specialist degree (engineer, accountant, data scientist,
+  doctor, lawyer) or a specialised senior background (finance/tax/KYC, R&D,
+  medical, aviation).
+- Senior / Lead / Manager / Director / Head roles, or anything needing 2+ years."""
 
 
 def title_prescreen(titles):
@@ -533,8 +543,11 @@ STEP 1 — Decide PASS/FAIL for this early-career candidate. Be inclusive for
 accessible roles, but keep the hard walls.
 
 FAIL the job if ANY of these is true (hard walls — no exceptions):
-- LANGUAGE: Dutch or French is a hard requirement (more than "a plus"), and the
-  role is not otherwise open to an English speaker.
+- LANGUAGE: the role requires FLUENT / professional / native Dutch, or ANY
+  French. (Jobs in English, or that accept English, or that need only BASIC /
+  elementary Dutch — A2 — or Dutch "as a plus" are FINE: the candidate has A2.)
+- EXPERIENCE: the role clearly requires 2+ years of dedicated experience. (Up to
+  ~2 years is acceptable — the candidate has ~4 months; just score it lower.)
 - SKILLED TRADE / PRODUCTION / MANUAL role: machine/production/CNC operator,
   metalwork, welding, grinding, assembly, manufacturing, chocolatier, print/line
   operator, construction, electrical, mechanical, maintenance technician.
@@ -543,17 +556,16 @@ FAIL the job if ANY of these is true (hard walls — no exceptions):
 - MANDATORY SPECIALIST DEGREE: the role clearly requires a specific degree the
   candidate doesn't have — engineering, finance/accounting, data science,
   software/IT, science, law, medicine.
-- SENIORITY: titled Senior / Lead / Manager / Director / Head, OR requiring
-  roughly 3+ years of dedicated professional experience in a specialist field.
-- Cleaning / domestic-help role (poetshulp, huishoudhulp, schoonmaak, cleaner).
+- SENIORITY: titled Senior / Lead / Manager / Director / Head.
+- Cleaning / domestic-help / student job.
 
-Otherwise PASS — the candidate may apply even if it's a stretch. Treat as PASS
-the accessible roles: customer service, administration / office support,
-reception, data entry, sales / account / commercial support, digital marketing /
-SEO / content, junior web or front-end, general warehouse & logistics, and
-"no experience needed" roles — EVEN IF they ask for ~1-2 years of experience or
-"some experience" (just score it lower). For these accessible roles, when unsure,
-PASS with a low score rather than fail.
+Otherwise PASS — the candidate may apply even if it's a stretch. Especially KEEP
+anything in or near the GOAL FIELD: digital marketing, SEO/SEA, content,
+copywriting, social media, WordPress / web / web design, front-end, e-commerce,
+online marketing, communication. Also PASS accessible roles: customer service,
+administration / office support, reception, data entry, sales / commercial
+support, general warehouse & logistics, and "no experience needed" roles. When
+unsure, PASS with a low score rather than fail.
 
 STEP 2 — Summarise, honestly, either way. For a PASS that is a stretch, still say
 in why_good what the candidate would be leaning on and note the gap frankly.
