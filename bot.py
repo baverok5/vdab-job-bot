@@ -668,10 +668,9 @@ def main():
     with sync_playwright() as pw:
         browser = pw.chromium.launch(args=["--no-sandbox"])
         try:
-            # First: re-check already-saved matches under the current criteria,
-            # so jobs that only ever passed the old language-only filter (e.g.
-            # machine operator, senior analyst) get moved to "not a fit".
-            revet_saved(browser, jobs, cv_text, budget=200, checkpoint=checkpoint)
+            # Priority order: screen NEW marketing jobs first (below); re-vet the
+            # already-saved pool LAST with a small budget. Screening the shortlist
+            # is what actually surfaces new jobs, so it must not be starved.
 
             # Always search the target field (marketing/SEO/web) first, then walk
             # a rotating slice of the rest so every term is covered over time.
@@ -685,13 +684,13 @@ def main():
                   f"({len(PRIORITY_SEARCH_URLS)} priority + {len(rot)} rotating)...")
             all_links = set()
             for url in todays:
-                # Page DEEP on the marketing/goal-field searches so we actually
-                # cover them (VDAB has ~1000 "digital marketing" jobs); stay lean
-                # on the broad rotating searches to keep the run's length sane.
+                # Light collection: the listing is already comprehensive, so we
+                # only need the newest results each run. Keep it fast so the run's
+                # time goes to SCREENING the shortlist, not re-collecting.
                 priority = url in PRIORITY_SEARCH_URLS
                 links = collect_links(browser, url,
-                                      budget_s=240 if priority else 60,
-                                      max_pages=150 if priority else 30)
+                                      budget_s=45 if priority else 25,
+                                      max_pages=25 if priority else 12)
                 print(f"  {len(links)} links from {url}")
                 all_links |= links
 
@@ -739,6 +738,12 @@ def main():
             matched = _process_jobs(browser, new_links, seen, jobs, cv_text,
                                     checkpoint=checkpoint)
             shortlist -= seen   # drop the ones we just fully evaluated
+
+            # LAST, with whatever time/quota remains: re-check a small slice of the
+            # saved pool under the current criteria (e.g. move Dutch-required
+            # marketing jobs into the stretch section). Small budget so it never
+            # starves the new-job screening above.
+            revet_saved(browser, jobs, cv_text, budget=40, checkpoint=checkpoint)
         finally:
             browser.close()
 
