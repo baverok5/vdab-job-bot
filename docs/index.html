@@ -121,8 +121,10 @@
   .cathead .cnt { font-weight: 600; font-size: 11px; color: var(--text3); }
   .cathead.fav { color: var(--accent); }
   .cathead.nl { color: var(--amber); margin-top: 26px; }
+  .cathead.intern { color: var(--green); margin-top: 26px; }
   .cathead .rule { flex: 1; height: 1px; background: var(--border2); }
   .tag.nl { background: var(--amber-bg); color: var(--amber); border-color: transparent; font-weight: 600; }
+  .tag.intern { background: var(--green-bg); color: var(--green); border-color: transparent; font-weight: 600; }
   .mkt { display: flex; align-items: center; gap: 8px; cursor: pointer;
     background: var(--card); border: 0.5px solid var(--border); border-radius: 10px;
     padding: 11px 13px; margin: 4px 0 4px; box-shadow: var(--shadow);
@@ -288,6 +290,7 @@ function card(j, state) {
         <div class="co">${esc(j.company)} · ${esc(j.location)}</div>
         <div class="tags">
           ${state === "applied" ? '<span class="tag applied">✓ Applied</span>' : ""}
+          ${j.internship ? '<span class="tag intern">🎓 Internship</span>' : ""}
           ${j.dutch_stretch ? '<span class="tag nl">🇳🇱 Needs better Dutch</span>' : ""}
           ${state !== "applied" && isToday(j.found_at) ? '<span class="tag new">New today</span>' : ""}
           ${hasMail ? '<span class="tag mail">Direct email</span>' : ""}
@@ -490,9 +493,12 @@ function render() {
       render();
     });
 
-    // Split into jobs you fit now vs. jobs that fit except they want stronger Dutch.
-    const fitsNow = jobs.filter((j) => !j.dutch_stretch);
-    const stretch = jobs.filter((j) => j.dutch_stretch);
+    // Internships get their own category; regular jobs split into fit-now vs.
+    // needs-better-Dutch.
+    const interns = jobs.filter((j) => j.internship);
+    const regular = jobs.filter((j) => !j.internship);
+    const fitsNow = regular.filter((j) => !j.dutch_stretch);
+    const stretch = regular.filter((j) => j.dutch_stretch);
     const renderCats = (arr) => {
       const groups = {};
       arr.forEach((j) => { (groups[categorize(j)] ||= []).push(j); });
@@ -512,7 +518,13 @@ function render() {
          <div class="hint" style="text-align:left;margin:0 4px 8px">These fit your profile but want Dutch above your A2 — worth a look as you improve it.</div>`);
       renderCats(stretch);
     }
-    if (!fitsNow.length && !stretch.length || (MKT_ONLY && !mktCount))
+    if (interns.length) {
+      list.insertAdjacentHTML("beforeend",
+        `<div class="cathead intern">🎓 Internships <span class="cnt">${interns.length}</span><span class="rule"></span></div>
+         <div class="hint" style="text-align:left;margin:0 4px 8px">Internships / stages — kept even if they ask for more, since you learn on the job.</div>`);
+      renderCats(interns);
+    }
+    if (!fitsNow.length && !stretch.length && !interns.length || (MKT_ONLY && !mktCount))
       list.insertAdjacentHTML("beforeend",
         '<div class="empty"><div class="big">🎯</div>No matches in this view yet.<br>The scan is still working through the marketing jobs — check back soon.</div>');
     return;

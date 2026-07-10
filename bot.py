@@ -40,7 +40,9 @@ PRIORITY_SEARCH_URLS = [
     ("digital marketing", "marketing", "seo", "sea", "google ads", "wordpress",
      "web design", "web developer", "webshop", "content", "content marketing",
      "social media", "online marketing", "growth marketing", "e-commerce",
-     "e-mail marketing", "communication", "copywriter", "marketing assistant")
+     "e-mail marketing", "communication", "copywriter", "marketing assistant",
+     "stage marketing", "internship marketing", "stage communicatie",
+     "web design stage", "digital", "creative")
 ]
 # Everything else, walked a rotating slice at a time (collection is slow).
 ROTATING_SEARCH_URLS = (
@@ -134,7 +136,7 @@ CHECKPOINT_EVERY = 25  # save + git-push progress this often so a long run can't
 # Bump this whenever the fit criteria in evaluate_job change. Saved matches that
 # were judged under an older version get re-vetted (a one-time migration) so the
 # pool reflects the newest rules instead of leaving stale bad matches around.
-CRITERIA_VERSION = 8
+CRITERIA_VERSION = 9
 REJECTED_CAP = 2000   # show (almost) every not-a-fit so coverage is auditable
 
 # Jobs to always exclude (candidate only has a B driver's licence and does not
@@ -563,10 +565,22 @@ Dutch/French, so recognise the wording):
 - IMPORTANT: a job that needs BOTH fluent Dutch AND French (e.g. "Vlot Nederlands,
   goede kennis Frans en Engels") requires French → FAIL, not a stretch.
 
-FAIL the job if ANY of these is true (hard walls — no exceptions):
+INTERNSHIP: if this posting is an internship / stage / stagiair(e) / traineeship,
+set "internship": true and be LENIENT — an intern learns on the job, so do NOT
+fail it for lacking years of experience, a degree, or specific software/skills.
+(Still FAIL an internship only if it requires French.) A professional internship
+is NOT the same as a "studentenjob / jobstudent / vakantiejob" side-job (those
+are still excluded).
+
+FAIL the job if ANY of these is true (hard walls — no exceptions, but the
+INTERNSHIP leniency above overrides the experience/degree/skill walls):
 - FRENCH required at any level (see LANGUAGE above).
 - EXPERIENCE: the role clearly requires 2+ years of dedicated experience. (Up to
   ~2 years is acceptable — the candidate has ~4 months; just score it lower.)
+- DESIGN SOFTWARE the CV lacks: it requires hands-on experience with Adobe
+  Illustrator / InDesign / Photoshop, or professional graphic / print design. The
+  candidate's design is WEB only (WordPress/Elementor/Canva), NOT graphic design.
+  (A web-design / WordPress / UX role is fine; a graphic/print-design role is not.)
 - SKILLED TRADE / PRODUCTION / MANUAL role: machine/production/CNC operator,
   metalwork, welding, grinding, assembly, manufacturing, chocolatier, print/line
   operator, construction, electrical, mechanical, maintenance technician.
@@ -580,7 +594,7 @@ FAIL the job if ANY of these is true (hard walls — no exceptions):
   "Bachelor: ...", "vereist diploma", "must hold a Bachelor/Master" — that is a
   hard requirement → FAIL.
 - SENIORITY: titled Senior / Lead / Manager / Director / Head.
-- Cleaning / domestic-help / student job.
+- Cleaning / domestic-help / studentenjob side-job.
 
 DEGREE NUANCE (this matters): only KEEP a degree-mentioning job when the degree
 is NOT strictly mandatory — i.e. it says "bachelor OR equivalent by experience",
@@ -612,6 +626,7 @@ Reply ONLY with JSON:
   "location": "city or 'Unknown'",
   "match_score": 0-100 — 75-100 = clearly qualified; 50-74 = can apply, minor gaps; 30-49 = a reach; a dutch_stretch job is capped at 35,
   "dutch_stretch": true or false — true ONLY when the job would fit but requires Dutch above A2 (and no French); false otherwise,
+  "internship": true or false — true if this is an internship / stage / traineeship,
   "details": "4-6 short bullets (one newline-separated string): role, main tasks, contract type, schedule, language, pay if stated (or '')",
   "why_good": "if pass: 3-5 short bullets (one newline-separated string) on why it fits, grounded ONLY in the real CV; for a dutch_stretch job also state plainly that it needs stronger Dutch than A2. If fail: ''",
   "why_bad": "if fail: 2-4 short bullets (one newline-separated string) naming exactly which required experience / licence / qualification / seniority / language the candidate is MISSING for this job. If pass: ''"
@@ -800,6 +815,7 @@ def _apply_verdict(jobs, job_id, url, verdict, apply_email, found_at=None):
         "why_good": verdict.get("why_good", ""),
         "why_bad": verdict.get("why_bad", ""),
         "dutch_stretch": bool(verdict.get("dutch_stretch")),
+        "internship": bool(verdict.get("internship")),
         "cv_fit_v": CRITERIA_VERSION,
     }
     jobs["jobs"] = [j for j in jobs["jobs"] if j.get("id") != job_id]
