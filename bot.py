@@ -37,9 +37,10 @@ def _search(term):
 # marketing/SEO/web jobs are found and screened before anything else.
 PRIORITY_SEARCH_URLS = [
     _search(t) for t in
-    ("digital marketing", "marketing", "seo", "wordpress", "web design",
-     "web developer", "content", "social media", "online marketing",
-     "e-commerce", "communication", "copywriter")
+    ("digital marketing", "marketing", "seo", "sea", "google ads", "wordpress",
+     "web design", "web developer", "webshop", "content", "content marketing",
+     "social media", "online marketing", "growth marketing", "e-commerce",
+     "e-mail marketing", "communication", "copywriter", "marketing assistant")
 ]
 # Everything else, walked a rotating slice at a time (collection is slow).
 ROTATING_SEARCH_URLS = (
@@ -55,9 +56,10 @@ SEARCHES_PER_RUN = int(os.environ.get("SEARCHES_PER_RUN", "3"))
 # Titles that look like the candidate's target field — screened first so they
 # reach the Ready tab ahead of the filler jobs.
 MARKETING_RX = re.compile(
-    r"seo\b|sea\b|sem\b|marketing|marketeer|marketer|content|wordpress|copywrit|"
-    r"social\s*media|communicat|digital|\bweb\b|website|web\s*design|webdesign|"
-    r"front[-\s]?end|\bux\b|\bui\b|e-?commerce|growth|\bbrand|campaign|advertis", re.I)
+    r"seo\b|sea\b|sem\b|google\s*ads|marketing|marketeer|marketer|content|"
+    r"wordpress|copywrit|social\s*media|communicat|digital|\bweb\b|website|"
+    r"web\s*design|webdesign|webshop|front[-\s]?end|\bux\b|\bui\b|e-?commerce|"
+    r"growth|\bbrand|campaign|advertis", re.I)
 
 
 def is_marketing(title):
@@ -132,7 +134,7 @@ CHECKPOINT_EVERY = 25  # save + git-push progress this often so a long run can't
 # Bump this whenever the fit criteria in evaluate_job change. Saved matches that
 # were judged under an older version get re-vetted (a one-time migration) so the
 # pool reflects the newest rules instead of leaving stale bad matches around.
-CRITERIA_VERSION = 5
+CRITERIA_VERSION = 6
 REJECTED_CAP = 120    # keep the most recent "not a fit" jobs for the audit tab
 
 # Jobs to always exclude (candidate only has a B driver's licence and does not
@@ -480,11 +482,11 @@ WHAT THE CANDIDATE CANNOT DO (must FAIL):
 - Skilled trades / production / machine operation / metalwork / construction.
 - Roles needing a licence/certificate (forklift, C/CE, nursing, medical/lab,
   pilot, professional finance/engineering cert).
-- Roles that STRICTLY require an unrelated specialist degree with no
-  "or equivalent experience" option (engineer, doctor, nurse, lawyer, licensed
-  accountant), or a specialised senior background (finance/tax/KYC, R&D, medical,
-  aviation). A bachelor "or equivalent by experience", or a marketing /
-  communication / business / IT bachelor, does NOT disqualify — keep those.
+- Roles that require a completed bachelor or master degree (ANY field — the
+  candidate has NO degree) unless the posting explicitly accepts "or equivalent
+  by experience" or lists the degree only as a plus. A stated required diploma
+  (e.g. "STUDIEVEREISTEN: Master: Marketing") disqualifies.
+- Specialised senior backgrounds (finance/tax/KYC, R&D, medical, aviation).
 - Senior / Lead / Manager / Director / Head roles, or anything needing 2+ years."""
 
 
@@ -557,26 +559,33 @@ FAIL the job if ANY of these is true (hard walls — no exceptions):
   operator, construction, electrical, mechanical, maintenance technician.
 - LICENCE / CERTIFICATE the CV lacks: forklift/reachtruck, C/CE, nursing,
   medical/lab, pilot, professional finance/engineering certification.
-- HARD UNRELATED DEGREE: the role STRICTLY requires a specific degree in an
-  unrelated technical/professional field (engineering, medicine, nursing,
-  pharmacy, law, accounting) AND does NOT accept equivalent experience.
+- REQUIRED DEGREE the candidate lacks: the candidate has NO completed degree
+  (only some coursework). So FAIL if the posting HARD-REQUIRES a completed
+  bachelor OR master (ANY field, including marketing/communication/business) and
+  does NOT offer an "or equivalent by experience" route. Watch for an explicit
+  study-requirement field — e.g. "STUDIEVEREISTEN: Master: Marketing",
+  "Bachelor: ...", "vereist diploma", "must hold a Bachelor/Master" — that is a
+  hard requirement → FAIL.
 - SENIORITY: titled Senior / Lead / Manager / Director / Head.
 - Cleaning / domestic-help / student job.
 
-DO NOT FAIL a job just because it mentions a bachelor/degree. If it says
-"bachelor OR equivalent by experience", or asks for a general / marketing /
-communication / business / IT bachelor, PASS it (score to taste) — the candidate
-wants to see and decide on these himself.
+DEGREE NUANCE (this matters): only KEEP a degree-mentioning job when the degree
+is NOT strictly mandatory — i.e. it says "bachelor OR equivalent by experience",
+or the degree is "a plus" / "preferred", or no specific completed diploma is
+actually required. A firm "Master/Bachelor in X required" with no experience
+alternative must FAIL, even for a marketing role.
 
 Otherwise PASS — the candidate may apply even if it's a stretch. Especially KEEP
 anything in or near the GOAL FIELD: digital marketing, SEO/SEA, content,
 copywriting, social media, WordPress / web / web design, front-end, e-commerce,
-online marketing, communication. For GOAL-FIELD jobs be MAXIMALLY inclusive —
-pass unless a hard wall above truly applies (fluent Dutch/French, 2+ years, a
-skilled trade/licence, or an unrelated specialist degree with no experience
-option). Also PASS accessible roles: customer service, administration / office
-support, reception, data entry, sales / commercial support, general warehouse &
-logistics, and "no experience needed" roles. When unsure, PASS with a low score.
+online marketing, communication. For GOAL-FIELD jobs be inclusive — pass unless a
+hard wall above truly applies (fluent Dutch/French, 2+ years, a skilled
+trade/licence, seniority, or a mandatory bachelor/master with no experience
+alternative). Also PASS accessible roles: customer service, administration /
+office support, reception, data entry, sales / commercial support, general
+warehouse & logistics, and "no experience needed" roles. When unsure about an
+accessible role, PASS with a low score; when a required degree is clearly stated
+with no experience route, FAIL.
 
 STEP 2 — Summarise, honestly, either way. For a PASS that is a stretch, still say
 in why_good what the candidate would be leaning on and note the gap frankly.
