@@ -130,7 +130,7 @@ MAX_NEW_PER_RUN = int(os.environ.get("MAX_NEW_PER_RUN", "150"))  # paid engines 
 # Bump this whenever the fit criteria in evaluate_job change. Saved matches that
 # were judged under an older version get re-vetted (a one-time migration) so the
 # pool reflects the newest rules instead of leaving stale bad matches around.
-CRITERIA_VERSION = 4
+CRITERIA_VERSION = 5
 REJECTED_CAP = 120    # keep the most recent "not a fit" jobs for the audit tab
 
 # Jobs to always exclude (candidate only has a B driver's licence and does not
@@ -478,9 +478,11 @@ WHAT THE CANDIDATE CANNOT DO (must FAIL):
 - Skilled trades / production / machine operation / metalwork / construction.
 - Roles needing a licence/certificate (forklift, C/CE, nursing, medical/lab,
   pilot, professional finance/engineering cert).
-- Roles needing a specialist degree (engineer, accountant, data scientist,
-  doctor, lawyer) or a specialised senior background (finance/tax/KYC, R&D,
-  medical, aviation).
+- Roles that STRICTLY require an unrelated specialist degree with no
+  "or equivalent experience" option (engineer, doctor, nurse, lawyer, licensed
+  accountant), or a specialised senior background (finance/tax/KYC, R&D, medical,
+  aviation). A bachelor "or equivalent by experience", or a marketing /
+  communication / business / IT bachelor, does NOT disqualify — keep those.
 - Senior / Lead / Manager / Director / Head roles, or anything needing 2+ years."""
 
 
@@ -500,9 +502,9 @@ CANDIDATE: {CANDIDATE_ONELINE}
 KEEP a title if it could plausibly be an accessible junior/entry/office/admin/
 customer-service/marketing/SEO/content/web/sales-support/warehouse/logistics role.
 DROP only titles that are clearly: a skilled trade or production/machine operator;
-a senior/lead/manager/director/head role; a licensed profession (nurse, pilot,
-etc.); or a role obviously needing a specialist degree (engineer, accountant,
-data scientist, doctor, lawyer). When unsure, KEEP.
+a senior/lead/manager/director/head role; or a licensed/degree profession
+(engineer, doctor, nurse, lawyer, licensed accountant). Do NOT drop a title just
+because it might want a bachelor. When unsure, KEEP.
 
 Reply ONLY as JSON: {{"keep": [the numbers to keep]}}.
 TITLES:
@@ -553,19 +555,26 @@ FAIL the job if ANY of these is true (hard walls — no exceptions):
   operator, construction, electrical, mechanical, maintenance technician.
 - LICENCE / CERTIFICATE the CV lacks: forklift/reachtruck, C/CE, nursing,
   medical/lab, pilot, professional finance/engineering certification.
-- MANDATORY SPECIALIST DEGREE: the role clearly requires a specific degree the
-  candidate doesn't have — engineering, finance/accounting, data science,
-  software/IT, science, law, medicine.
+- HARD UNRELATED DEGREE: the role STRICTLY requires a specific degree in an
+  unrelated technical/professional field (engineering, medicine, nursing,
+  pharmacy, law, accounting) AND does NOT accept equivalent experience.
 - SENIORITY: titled Senior / Lead / Manager / Director / Head.
 - Cleaning / domestic-help / student job.
+
+DO NOT FAIL a job just because it mentions a bachelor/degree. If it says
+"bachelor OR equivalent by experience", or asks for a general / marketing /
+communication / business / IT bachelor, PASS it (score to taste) — the candidate
+wants to see and decide on these himself.
 
 Otherwise PASS — the candidate may apply even if it's a stretch. Especially KEEP
 anything in or near the GOAL FIELD: digital marketing, SEO/SEA, content,
 copywriting, social media, WordPress / web / web design, front-end, e-commerce,
-online marketing, communication. Also PASS accessible roles: customer service,
-administration / office support, reception, data entry, sales / commercial
-support, general warehouse & logistics, and "no experience needed" roles. When
-unsure, PASS with a low score rather than fail.
+online marketing, communication. For GOAL-FIELD jobs be MAXIMALLY inclusive —
+pass unless a hard wall above truly applies (fluent Dutch/French, 2+ years, a
+skilled trade/licence, or an unrelated specialist degree with no experience
+option). Also PASS accessible roles: customer service, administration / office
+support, reception, data entry, sales / commercial support, general warehouse &
+logistics, and "no experience needed" roles. When unsure, PASS with a low score.
 
 STEP 2 — Summarise, honestly, either way. For a PASS that is a stretch, still say
 in why_good what the candidate would be leaning on and note the gap frankly.
@@ -629,7 +638,13 @@ def main():
                   f"({len(PRIORITY_SEARCH_URLS)} priority + {len(rot)} rotating)...")
             all_links = set()
             for url in todays:
-                links = collect_links(browser, url)
+                # Page DEEP on the marketing/goal-field searches so we actually
+                # cover them (VDAB has ~1000 "digital marketing" jobs); stay lean
+                # on the broad rotating searches to keep the run's length sane.
+                priority = url in PRIORITY_SEARCH_URLS
+                links = collect_links(browser, url,
+                                      budget_s=100 if priority else 40,
+                                      max_pages=70 if priority else 22)
                 print(f"  {len(links)} links from {url}")
                 all_links |= links
 
