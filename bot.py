@@ -611,8 +611,10 @@ def main():
                 if is_excluded(t) or is_ineligible(t):
                     continue
                 listing[i] = {"id": i, "url": u, "title": t}
+            # Keep the newest ~4000 in the browse list the phone downloads (bigger
+            # would bloat jobs.json); the funnel state below tracks what's screened.
             jobs["listing"] = sorted(
-                listing.values(), key=lambda j: j["id"], reverse=True)[:20000]
+                listing.values(), key=lambda j: j["id"], reverse=True)[:4000]
             by_id = {j["id"]: j for j in jobs["listing"]}
 
             # Cheap title pre-screen: shortlist plausible titles, drop clear

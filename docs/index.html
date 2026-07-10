@@ -383,7 +383,7 @@ const CATS = [
   { key: "other", label: "💼 Other roles", rx: null },
 ];
 function categorize(j) {
-  const t = (j.title || "") + " " + (j.why_good || "");
+  const t = j.title || "";   // title only — reasoning text would mislabel things
   for (const c of CATS) if (c.rx && c.rx.test(t)) return c.key;
   return "other";
 }
