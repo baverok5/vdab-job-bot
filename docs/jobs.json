@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-10 07:11 UTC",
+ "updated": "2026-07-10 07:18 UTC",
  "jobs": [
   {
    "id": "74090956",
@@ -3874,6 +3874,16 @@
    "title": "Orderpicker"
   },
   {
+   "id": "73959341",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/73959341/cloud-system-engineer",
+   "title": "Cloud system engineer"
+  },
+  {
+   "id": "73959340",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/73959340/net-architect",
+   "title": "Net architect"
+  },
+  {
    "id": "73959339",
    "url": "https://www.vdab.be/vindeenjob/vacatures/73959339/fullstack-net-developer",
    "title": "Fullstack net developer"
@@ -3989,6 +3999,11 @@
    "title": "Business analyst"
   },
   {
+   "id": "73959258",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/73959258/ai-engineer",
+   "title": "Ai engineer"
+  },
+  {
    "id": "73959256",
    "url": "https://www.vdab.be/vindeenjob/vacatures/73959256/functional-analyst-supply-chain-microsoft-dynamics-365",
    "title": "Functional analyst supply chain microsoft dynamics 365"
@@ -4017,6 +4032,11 @@
    "id": "73959238",
    "url": "https://www.vdab.be/vindeenjob/vacatures/73959238/ai-engineer",
    "title": "Ai engineer"
+  },
+  {
+   "id": "73959237",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/73959237/sap-data-migration-consultant-medior-senior",
+   "title": "Sap data migration consultant medior senior"
   },
   {
    "id": "73959235",
@@ -4062,6 +4082,11 @@
    "id": "73959226",
    "url": "https://www.vdab.be/vindeenjob/vacatures/73959226/sap-backend-consultant-medior-senior",
    "title": "Sap backend consultant medior senior"
+  },
+  {
+   "id": "73959225",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/73959225/sap-data-engineer-medior-senior",
+   "title": "Sap data engineer medior senior"
   },
   {
    "id": "73959221",
@@ -4687,6 +4712,11 @@
    "id": "73914634",
    "url": "https://www.vdab.be/vindeenjob/vacatures/73914634/functional-analyst",
    "title": "Functional analyst"
+  },
+  {
+   "id": "73914632",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/73914632/cloud-solution-architect",
+   "title": "Cloud solution architect"
   },
   {
    "id": "73914618",
