@@ -50,6 +50,22 @@ GEMINI_URL_TMPL = (
     "{model}:generateContent?key=" + GEMINI_KEY
 )
 
+# DeepSeek (OpenAI-compatible) — paid but very cheap and, unlike Gemini's free
+# tier, no tiny daily request cap. When a key is present it becomes the default
+# engine for the high-volume job evaluation, so the bot can screen the whole
+# English job set instead of ~25 jobs/day. ~$0.0005 per job → $5 ≈ 8-10k jobs.
+DEEPSEEK_API_KEY = os.environ.get("DEEPSEEK_API_KEY", "")
+DEEPSEEK_MODEL = os.environ.get("DEEPSEEK_MODEL", "deepseek-chat")
+DEEPSEEK_URL = "https://api.deepseek.com/chat/completions"
+
+# Which engine screens jobs / writes letters. Prefer DeepSeek for the heavy
+# screening when its key exists; letters stay on Gemini when that key exists
+# (on-demand + rare, so the free tier is plenty) and fall back otherwise.
+EVAL_PROVIDER = os.environ.get(
+    "EVAL_PROVIDER", "deepseek" if DEEPSEEK_API_KEY else "gemini")
+WRITE_PROVIDER = os.environ.get(
+    "WRITE_PROVIDER", "gemini" if GEMINI_KEY else "deepseek")
+
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "")
 TELEGRAM_CHAT = os.environ.get("TELEGRAM_CHAT_ID", "")
 
@@ -61,7 +77,7 @@ HEADERS = {
     "Accept-Language": "nl-BE,nl;q=0.9,en;q=0.8",
 }
 
-MAX_NEW_PER_RUN = 25  # cap AI-evaluated jobs per run (flash-lite's daily quota is large)
+MAX_NEW_PER_RUN = int(os.environ.get("MAX_NEW_PER_RUN", "60"))  # paid engines have no tiny daily cap
 
 # Bump this whenever the fit criteria in evaluate_job change. Saved matches that
 # were judged under an older version get re-vetted (a one-time migration) so the
@@ -165,6 +181,47 @@ def ask_gemini(prompt, expect_json=False, model=None):
             print(f"  Gemini error (attempt {attempt+1}): {e}")
             time.sleep(3)
     return None
+
+
+def ask_deepseek(prompt, expect_json=False):
+    """Call DeepSeek's OpenAI-compatible chat endpoint. Returns text or parsed
+    JSON. DeepSeek is paid (cheap) with no tiny daily cap, so no QuotaExhausted
+    dance — a 429 here is a brief rate blip, not a wall."""
+    headers = {"Authorization": f"Bearer {DEEPSEEK_API_KEY}",
+               "Content-Type": "application/json"}
+    body = {
+        "model": DEEPSEEK_MODEL,
+        "messages": [{"role": "user", "content": prompt}],
+        "temperature": 0.2,
+        "stream": False,
+    }
+    if expect_json:
+        body["response_format"] = {"type": "json_object"}
+    for attempt in range(4):
+        try:
+            r = requests.post(DEEPSEEK_URL, headers=headers, json=body, timeout=120)
+            if r.status_code == 429:
+                time.sleep(4 * (attempt + 1))
+                continue
+            r.raise_for_status()
+            text = r.json()["choices"][0]["message"]["content"]
+            if expect_json:
+                text = re.sub(r"^```(json)?|```$", "", text.strip(), flags=re.M)
+                return json.loads(text)
+            return text
+        except Exception as e:
+            print(f"  DeepSeek error (attempt {attempt+1}): {e}")
+            time.sleep(3)
+    return None
+
+
+def ask_llm(prompt, expect_json=False, provider=None, gemini_model=None):
+    """Route a prompt to the chosen engine. DeepSeek for cheap high-volume
+    screening; Gemini otherwise (with the caller's chosen Gemini model)."""
+    provider = provider or EVAL_PROVIDER
+    if provider == "deepseek" and DEEPSEEK_API_KEY:
+        return ask_deepseek(prompt, expect_json)
+    return ask_gemini(prompt, expect_json, model=gemini_model or GEMINI_WRITE_MODEL)
 
 
 def send_telegram(message):
@@ -342,7 +399,8 @@ Baver Ok
 +32 470 42 48 36
 baverok@gmail.com
 linkedin.com/in/baverok"""
-    return ask_gemini(prompt, expect_json=True)
+    return ask_llm(prompt, expect_json=True, provider=WRITE_PROVIDER,
+                   gemini_model=GEMINI_WRITE_MODEL)
 
 
 # A blunt, honest summary of what the candidate can and cannot realistically
@@ -421,14 +479,17 @@ THE REAL CV:
 
 JOB POSTING:
 {job_text[:8000]}"""
-    return ask_gemini(prompt, expect_json=True, model=GEMINI_EVAL_MODEL)
+    return ask_llm(prompt, expect_json=True, provider=EVAL_PROVIDER,
+                   gemini_model=GEMINI_EVAL_MODEL)
 
 
 # ---------------------------------------------------------------- main
 
 def main():
-    if not GEMINI_KEY:
-        raise SystemExit("GEMINI_API_KEY is not set — add it as a GitHub secret.")
+    if not GEMINI_KEY and not DEEPSEEK_API_KEY:
+        raise SystemExit("No AI key set — add GEMINI_API_KEY or DEEPSEEK_API_KEY as a GitHub secret.")
+    print(f"Engines: eval={EVAL_PROVIDER}, write={WRITE_PROVIDER}, "
+          f"max_new_per_run={MAX_NEW_PER_RUN}")
 
     cv_text = open(CV_FILE, encoding="utf-8").read()
     seen = set(load_json(SEEN_FILE, []))
