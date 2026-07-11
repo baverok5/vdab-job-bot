@@ -123,6 +123,11 @@
   .cathead.nl { color: var(--amber); margin-top: 26px; }
   .cathead.intern { color: var(--green); margin-top: 26px; }
   .cathead .rule { flex: 1; height: 1px; background: var(--border2); }
+  .cathead.tog { cursor: pointer; -webkit-tap-highlight-color: transparent; }
+  .cathead .chev { font-size: 12px; color: var(--text3); transition: transform .15s ease; margin-left: 2px; }
+  .cathead.tog.open .chev { transform: rotate(90deg); }
+  .catbody { display: none; }
+  .catbody.open { display: block; }
   .tag.nl { background: var(--amber-bg); color: var(--amber); border-color: transparent; font-weight: 600; }
   .tag.intern { background: var(--green-bg); color: var(--green); border-color: transparent; font-weight: 600; }
   .mkt { display: flex; align-items: center; gap: 8px; cursor: pointer;
@@ -558,15 +563,35 @@ function render() {
     const regular = jobs.filter((j) => !isIntern(j));
     const fitsNow = regular.filter((j) => !j.dutch_stretch);
     const stretch = regular.filter((j) => j.dutch_stretch);
-    const renderCats = (arr) => {
+    // Each category is a collapsible section — closed by default, tap the
+    // header (chevron on the right) to expand. Open state is remembered for the
+    // session so acting on a job doesn't re-collapse everything.
+    const OPEN = (window.__openCats ||= new Set());
+    const addSection = (key, headClass, headInner, jobsArr, bodyPrefix) => {
+      const head = document.createElement("div");
+      head.className = "cathead tog" + (headClass ? " " + headClass : "");
+      head.innerHTML = `${headInner}<span class="rule"></span><span class="chev">▸</span>`;
+      const body = document.createElement("div");
+      body.className = "catbody";
+      if (bodyPrefix) body.insertAdjacentHTML("beforeend", bodyPrefix);
+      jobsArr.forEach((j) => body.appendChild(card(j, null)));
+      if (OPEN.has(key)) { head.classList.add("open"); body.classList.add("open"); }
+      head.addEventListener("click", () => {
+        const open = head.classList.toggle("open");
+        body.classList.toggle("open", open);
+        open ? OPEN.add(key) : OPEN.delete(key);
+      });
+      list.appendChild(head);
+      list.appendChild(body);
+    };
+    const renderCats = (arr, ns) => {
       const groups = {};
       arr.forEach((j) => { (groups[categorize(j)] ||= []).push(j); });
       (MKT_ONLY ? CATS.filter((c) => c.key === "marketing") : CATS).forEach((c) => {
         const g = (groups[c.key] || []).sort((a, b) => (b.match_score || 0) - (a.match_score || 0));
         if (!g.length) return;
-        list.insertAdjacentHTML("beforeend",
-          `<div class="cathead${c.fav ? " fav" : ""}">${c.label}<span class="cnt">${g.length}</span><span class="rule"></span></div>`);
-        g.forEach((j) => list.appendChild(card(j, null)));
+        addSection((ns || "") + "cat:" + c.key, c.fav ? "fav" : "",
+          `${c.label}<span class="cnt">${g.length}</span>`, g);
       });
     };
 
@@ -574,21 +599,20 @@ function render() {
     // rendered, not the hidden total.
     const inView = (arr) => MKT_ONLY ? arr.filter((j) => categorize(j) === "marketing") : arr;
 
-    renderCats(fitsNow);
+    renderCats(fitsNow, "");
     const shownStretch = inView(stretch);
     if (shownStretch.length) {
       list.insertAdjacentHTML("beforeend",
         `<div class="cathead nl">🇳🇱 Needs better Dutch <span class="cnt">${shownStretch.length}</span><span class="rule"></span></div>
          <div class="hint" style="text-align:left;margin:0 4px 8px">These fit your profile but want fluent Dutch (you are at B1) — worth a look as you improve it.</div>`);
-      renderCats(stretch);
+      renderCats(stretch, "nl:");
     }
     const shownInterns = inView(interns);
     if (shownInterns.length) {
-      list.insertAdjacentHTML("beforeend",
-        `<div class="cathead intern">🎓 Internships <span class="cnt">${shownInterns.length}</span><span class="rule"></span></div>
-         <div class="hint" style="text-align:left;margin:0 4px 8px">Internships / stages (“stage” = internship) — kept even if they ask for more, since you learn on the job.</div>`);
-      shownInterns.slice().sort((a, b) => (b.match_score || 0) - (a.match_score || 0))
-        .forEach((j) => list.appendChild(card(j, null)));
+      addSection("intern", "intern",
+        `🎓 Internships <span class="cnt">${shownInterns.length}</span>`,
+        shownInterns.slice().sort((a, b) => (b.match_score || 0) - (a.match_score || 0)),
+        `<div class="hint" style="text-align:left;margin:0 4px 8px">Internships / stages (“stage” = internship) — kept even if they ask for more, since you learn on the job.</div>`);
     }
     if (!fitsNow.length && !stretch.length && !interns.length || (MKT_ONLY && !mktCount))
       list.insertAdjacentHTML("beforeend",
