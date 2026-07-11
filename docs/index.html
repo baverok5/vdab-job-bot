@@ -267,15 +267,21 @@ function renderPrepared(j, d, box) {
     <div class="sec"><div class="h">Cover letter</div>
       <div class="quote">${esc(d.cover_letter)}</div>
       <button class="copybtn" data-copy="letter">Copy cover letter</button></div>
-    ${d.cv_highlights ? `<div class="sec"><div class="h">CV highlights for this job</div>${bullets(d.cv_highlights)}</div>` : ""}
+    ${d.tailored_cv ? `<div class="sec"><div class="h">Tailored CV for this job</div>
+      <div class="quote" style="max-height:260px;overflow-y:auto">${esc(d.tailored_cv)}</div>
+      <button class="copybtn" data-copy="cv">Copy tailored CV</button></div>`
+      : (d.cv_highlights ? `<div class="sec"><div class="h">CV highlights for this job</div>${bullets(d.cv_highlights)}</div>` : "")}
     <a class="btn primary" href="${gmailFor(j, d)}" target="_blank" rel="noopener"
        onclick="try{localStorage.setItem('jobstatus', JSON.stringify(Object.assign(JSON.parse(localStorage.getItem('jobstatus')||'{}'), {'${j.id}':'applied'})))}catch(e){}">
        ${hasMail ? "Open in Gmail to send" : "Open Gmail (add recipient)"}</a>`;
   box.querySelectorAll(".copybtn").forEach((b) => b.addEventListener("click", (e) => {
     e.stopPropagation();
-    copyText(b, b.dataset.copy === "email"
-      ? (d.email_subject ? d.email_subject + "\n\n" : "") + (d.email_body || "")
-      : (d.cover_letter || ""));
+    const texts = {
+      email: (d.email_subject ? d.email_subject + "\n\n" : "") + (d.email_body || ""),
+      letter: d.cover_letter || "",
+      cv: d.tailored_cv || "",
+    };
+    copyText(b, texts[b.dataset.copy] || "");
   }));
 }
 
