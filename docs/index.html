@@ -353,7 +353,7 @@ function card(j, state) {
         <div class="tags">
           ${state === "applied" ? '<span class="tag applied">✓ Applied</span>' : ""}
           ${j.internship ? '<span class="tag intern">🎓 Internship</span>' : ""}
-          ${j.dutch_stretch ? '<span class="tag nl">🇳🇱 Needs better Dutch</span>' : ""}
+          ${needsBetterDutch(j) ? '<span class="tag nl">🇳🇱 Needs better Dutch</span>' : ""}
           ${state !== "applied" && isToday(j.found_at) ? '<span class="tag new">New today</span>' : ""}
           ${hasMail ? '<span class="tag mail">Direct email</span>' : ""}
           <span class="tag">Found ${esc((j.found_at || "").slice(0, 10))}</span>
@@ -464,6 +464,20 @@ function categorize(j) {
   const t = j.title || "";   // title only — reasoning text would mislabel things
   for (const c of CATS) if (c.rx && c.rx.test(t)) return c.key;
   return "other";
+}
+
+// A job "needs better Dutch" if the AI flagged it OR the posting asks for fluent
+// Dutch (zeer goed / very good / vlot / vloeiend / moedertaal). The evaluator
+// sometimes extracts "Dutch (very good)" into the details but still forgets to
+// set the flag, so we re-derive it from the text here.
+// Match the fluent level ONLY when it binds directly to Dutch — "Dutch (very
+// good)", "Nederlands (zeer goed)", "vlot Nederlands", "fluent Dutch" — so a job
+// that wants very-good ENGLISH but only good/B1 Dutch is NOT flagged.
+const DUTCH_FLUENT =
+  /(nederlands|dutch)\s*[\(:]\s*\(?\s*(zeer goede?|very good|vlot|vloeiend|moedertaal|uitstekend|near[\s-]?native|native|fluent)|(vlot|vloeiend|moedertaal|uitstekend|fluent|native|zeer goede?|very good)\s+(nederlands|dutch)/i;
+function needsBetterDutch(j) {
+  return !!j.dutch_stretch ||
+    DUTCH_FLUENT.test(`${j.details || ""} ${j.why_bad || ""} ${j.reason || ""}`);
 }
 
 function render() {
@@ -625,7 +639,8 @@ function render() {
       const groups = {};
       arr.forEach((j) => { (groups[categorize(j)] ||= []).push(j); });
       (MKT_ONLY ? CATS.filter((c) => c.key === "marketing") : CATS).forEach((c) => {
-        const g = (groups[c.key] || []).sort((a, b) => (b.match_score || 0) - (a.match_score || 0));
+        const g = (groups[c.key] || []).sort((a, b) =>
+          (needsBetterDutch(a) - needsBetterDutch(b)) || (b.match_score || 0) - (a.match_score || 0));
         if (!g.length) return;
         addSection((ns || "") + "cat:" + c.key, c.fav ? "fav" : "",
           `${c.label}<span class="cnt">${g.length}</span>`, g);
