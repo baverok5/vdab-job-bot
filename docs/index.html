@@ -221,6 +221,36 @@ function bullets(str) {
 const WK_LS = "workerUrl";
 const getWorker = () => localStorage.getItem(WK_LS) || "";
 
+// ---- 📮 Gmail draft: posting a comment on PR #1 wakes Claude's session, which
+// then creates the application draft in your Gmail for exactly this job.
+const PAT_LS = "ghSignalPat";
+const SIGNAL_PR = 1;
+function ensurePat() {
+  let t = localStorage.getItem(PAT_LS) || "";
+  if (!t) {
+    t = (prompt("One-time setup: paste your GitHub token (fine-grained, ONLY the vdab-job-bot repo, with Issues + Pull requests read/write). It stays on this phone.") || "").trim();
+    if (t) localStorage.setItem(PAT_LS, t);
+  }
+  return t;
+}
+async function pingClaude(j, box) {
+  const t = ensurePat();
+  if (!t) { box.innerHTML = '<div class="hint">The Gmail button needs the one-time GitHub token.</div>'; return; }
+  box.innerHTML = '<div class="hint">📮 Pinging Claude…</div>';
+  try {
+    const r = await fetch(`https://api.github.com/repos/baverok5/vdab-job-bot/issues/${SIGNAL_PR}/comments`, {
+      method: "POST",
+      headers: { "Authorization": "Bearer " + t, "Accept": "application/vnd.github+json", "Content-Type": "application/json" },
+      body: JSON.stringify({ body: `draft-job: ${j.id} — ${j.title}${j.apply_email ? " → " + j.apply_email : " (no direct email)"}` }),
+    });
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    box.innerHTML = '<div class="hint">📮 Sent! Claude is creating the draft — check Gmail → Drafts in a few minutes.</div>';
+  } catch (e) {
+    localStorage.removeItem(PAT_LS);
+    box.innerHTML = '<div class="hint">Ping failed — tap again and re-enter the token.</div>';
+  }
+}
+
 function gmailFor(j, d) {
   const to = encodeURIComponent(d.apply_email || j.apply_email || "");
   const su = encodeURIComponent(d.email_subject || ("Application — " + (j.title || "")));
@@ -324,7 +354,8 @@ function card(j, state) {
         ${state === "applied"
           ? `<a class="btn" href="${esc(j.url)}" target="_blank" rel="noopener">View on VDAB</a>
              <button class="btn undo" data-act="unapply">Mark not applied</button>`
-          : `<button class="btn primary" data-act="generate">✍️ Write my letter</button>
+          : `<button class="btn primary" data-act="generate">✍️ Letter</button>
+             <button class="btn" data-act="gmail">📮 Gmail</button>
              <a class="btn" href="${esc(j.url)}" target="_blank" rel="noopener">VDAB</a>
              ${state === "skipped"
                ? '<button class="btn" data-act="unskip">Un-skip</button>'
@@ -338,6 +369,7 @@ function card(j, state) {
     if (!act) return;
     if (act === "toggle") { el.classList.toggle("open"); return; }
     if (act === "generate") { prepareJob(j, el.querySelector(".prep")); return; }
+    if (act === "gmail") { el.classList.add("open"); pingClaude(j, el.querySelector(".prep")); return; }
     if (act === "skip") { setStatus(j.id, "skipped"); toast("Skipped"); return; }
     if (act === "unskip" || act === "unapply") { setStatus(j.id, null); return; }
   });
