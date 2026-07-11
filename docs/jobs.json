@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-11 18:03 UTC",
+ "updated": "2026-07-11 18:19 UTC",
  "jobs": [
   {
    "id": "74043230",
@@ -1912,9 +1912,19 @@
  ],
  "listing": [
   {
+   "id": "74152203",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74152203/dierenartsassistente",
+   "title": "Dierenartsassistente"
+  },
+  {
    "id": "74152144",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74152144/vastgoedconsulent-vast-contract",
    "title": "Vastgoedconsulent vast contract"
+  },
+  {
+   "id": "74152115",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74152115/international-service-engineer-machinebouw",
+   "title": "International service engineer machinebouw"
   },
   {
    "id": "74152032",
@@ -2765,6 +2775,16 @@
    "id": "74150873",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74150873/sales-adviseur-25-automotive",
    "title": "Sales adviseur 25 automotive"
+  },
+  {
+   "id": "74150776",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74150776/front-office-customer-service-medewerker-metaalsector",
+   "title": "Front office customer service medewerker metaalsector"
+  },
+  {
+   "id": "74150751",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74150751/service-technieker-servicewagen-12-adv-dagen-internationa",
+   "title": "Service technieker servicewagen 12 adv dagen internationa"
   },
   {
    "id": "74150223",
@@ -41890,26 +41910,6 @@
    "id": "73810850",
    "url": "https://www.vdab.be/vindeenjob/vacatures/73810850/ago-technics-project-administrator-funderingstechnieken-vlaanderen",
    "title": "Ago technics project administrator funderingstechnieken vlaanderen"
-  },
-  {
-   "id": "73810827",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/73810827/ago-technics-procesoperator",
-   "title": "Ago technics procesoperator"
-  },
-  {
-   "id": "73810826",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/73810826/ago-technics-service-en-spare-parts-coordinator",
-   "title": "Ago technics service en spare parts coordinator"
-  },
-  {
-   "id": "73810825",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/73810825/ago-technics-projectleider-3d-cad-engineer",
-   "title": "Ago technics projectleider 3d cad engineer"
-  },
-  {
-   "id": "73810822",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/73810822/ago-technics-technisch-operator-inpak-voeding-vast-contract",
-   "title": "Ago technics technisch operator inpak voeding vast contract"
   }
  ],
  "rejected": [
@@ -82258,5 +82258,5 @@
    "cv_fit_v": 7
   }
  ],
- "search_cursor": 3
+ "search_cursor": 6
 }
