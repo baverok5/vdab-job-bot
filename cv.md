@@ -3,7 +3,7 @@ Digital Marketing · SEO · GEO · Content · Web
 Zwijndrecht, Belgium | +32 470 42 48 36 | baverok@gmail.com | linkedin.com/in/baverok
 
 ## Profile
-Junior digital marketer with a technical foundation in web design, SEO, and GEO (Generative Engine Optimization). At Episto, I run on-page SEO, keyword-targeted content, and full-cycle WordPress site build and maintenance for client sites. On my own project (mirook.com) I've applied structured data, entity optimization, and technical SEO/GEO audits to improve visibility across both traditional and AI-powered search engines. Comfortable across content management, social media coordination, and performance reporting; quick to pick up new tools and platforms, and growing into analytics, e-commerce content management, and campaign support. Based in Zwijndrecht, next to Antwerp. Works in English and Turkish; Dutch: A2, currently taking classes.
+Junior digital marketer with a technical foundation in web design, SEO, and GEO (Generative Engine Optimization). At Episto, I run on-page SEO, keyword-targeted content, and full-cycle WordPress site build and maintenance for client sites. On my own project (mirook.com) I've applied structured data, entity optimization, and technical SEO/GEO audits to improve visibility across both traditional and AI-powered search engines. Comfortable across content management, social media coordination, and performance reporting; quick to pick up new tools and platforms, and growing into analytics, e-commerce content management, and campaign support. Based in Zwijndrecht, next to Antwerp. Works in English and Turkish; Dutch: B1, currently taking classes to improve further.
 
 ## Core skills
 - SEO & GEO: on-page SEO, keyword research, technical SEO audits, structured data / JSON-LD schema, entity optimization, GEO & AEO (AI search visibility)
@@ -11,7 +11,7 @@ Junior digital marketer with a technical foundation in web design, SEO, and GEO 
 - Web & build: WordPress, Elementor, Astra theme, responsive web design, Canva, AI-assisted content tools
 - Analytics & reporting: Google Analytics, Google Search Console, SEMrush, Ahrefs, Google Ads
 - Social: social media content & integration
-- Languages: English (professional), Turkish (native), Dutch (A2, in progress)
+- Languages: English (professional), Turkish (native), Dutch (B1)
 
 ## Experience
 
