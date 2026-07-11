@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-11 18:19 UTC",
+ "updated": "2026-07-11 23:59 UTC",
  "jobs": [
   {
    "id": "74043230",
@@ -1912,6 +1912,16 @@
  ],
  "listing": [
   {
+   "id": "74152216",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74152216/sales-assistant-voor-onze-winkel-shop-more-in-kampenhout-18uur",
+   "title": "Sales assistant voor onze winkel shop more in kampenhout 18uur"
+  },
+  {
+   "id": "74152215",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74152215/flexi-voor-onze-winkel-shop-more-in-kampenhout",
+   "title": "Flexi voor onze winkel shop more in kampenhout"
+  },
+  {
    "id": "74152203",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74152203/dierenartsassistente",
    "title": "Dierenartsassistente"
@@ -2765,6 +2775,11 @@
    "id": "74151186",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74151186/transportplanner-juniors-welkom",
    "title": "Transportplanner juniors welkom"
+  },
+  {
+   "id": "74151182",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74151182/continuous-improvement-engineer-logistics",
+   "title": "Continuous improvement engineer logistics"
   },
   {
    "id": "74150956",
@@ -41895,21 +41910,6 @@
    "id": "73810921",
    "url": "https://www.vdab.be/vindeenjob/vacatures/73810921/ago-technics-technische-trainer",
    "title": "Ago technics technische trainer"
-  },
-  {
-   "id": "73810904",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/73810904/warehouse-operator-2-ploegen",
-   "title": "Warehouse operator 2 ploegen"
-  },
-  {
-   "id": "73810859",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/73810859/net-blazor-software-developer",
-   "title": "Net blazor software developer"
-  },
-  {
-   "id": "73810850",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/73810850/ago-technics-project-administrator-funderingstechnieken-vlaanderen",
-   "title": "Ago technics project administrator funderingstechnieken vlaanderen"
   }
  ],
  "rejected": [
@@ -82258,5 +82258,5 @@
    "cv_fit_v": 7
   }
  ],
- "search_cursor": 6
+ "search_cursor": 9
 }
