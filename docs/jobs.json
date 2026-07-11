@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-11 08:51 UTC",
+ "updated": "2026-07-11 09:14 UTC",
  "jobs": [
   {
    "id": "73855329",
@@ -1172,6 +1172,11 @@
    "title": "Administratief bediende sales support"
   },
   {
+   "id": "74148648",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74148648/assistant-e-administratif-ve",
+   "title": "Assistant e administratif ve"
+  },
+  {
    "id": "74148610",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74148610/technik-utrzymania-ruchu",
    "title": "Technik utrzymania ruchu"
@@ -1220,6 +1225,11 @@
    "id": "74148523",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74148523/captain-for-tugboat",
    "title": "Captain for tugboat"
+  },
+  {
+   "id": "74148519",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74148519/warehouse-associate-pharma",
+   "title": "Warehouse associate pharma"
   },
   {
    "id": "74148518",
@@ -25947,6 +25957,11 @@
    "title": "Marketing assistant"
   },
   {
+   "id": "73989462",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/73989462/service-advisor-automotive",
+   "title": "Service advisor automotive"
+  },
+  {
    "id": "73989366",
    "url": "https://www.vdab.be/vindeenjob/vacatures/73989366/assistent-teamleader-warehouse-temse",
    "title": "Assistent teamleader warehouse temse"
@@ -35802,6 +35817,11 @@
    "title": "Credit administrator"
   },
   {
+   "id": "73903597",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/73903597/junior-projectleider-technieken-bedrijfswagen",
+   "title": "Junior projectleider technieken bedrijfswagen"
+  },
+  {
    "id": "73903573",
    "url": "https://www.vdab.be/vindeenjob/vacatures/73903573/full-stack-net-developer",
    "title": "Full stack net developer"
@@ -41080,26 +41100,6 @@
    "id": "73791702",
    "url": "https://www.vdab.be/vindeenjob/vacatures/73791702/monteur-constructions-metalliques",
    "title": "Monteur constructions metalliques"
-  },
-  {
-   "id": "73791681",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/73791681/planner",
-   "title": "Planner"
-  },
-  {
-   "id": "73791669",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/73791669/sales-representative-digital-solutions",
-   "title": "Sales representative digital solutions"
-  },
-  {
-   "id": "73791599",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/73791599/verkoper-melle-oostakker",
-   "title": "Verkoper melle oostakker"
-  },
-  {
-   "id": "73791564",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/73791564/technisch-account-manager",
-   "title": "Technisch account manager"
   }
  ],
  "rejected": [
@@ -66501,5 +66501,5 @@
    "cv_fit_v": 7
   }
  ],
- "search_cursor": 10
+ "search_cursor": 13
 }
