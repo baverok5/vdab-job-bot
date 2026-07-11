@@ -734,9 +734,13 @@ def main():
     with sync_playwright() as pw:
         browser = pw.chromium.launch(args=["--no-sandbox"])
         try:
-            # Priority order: screen NEW marketing jobs first (below); re-vet the
-            # already-saved pool LAST with a small budget. Screening the shortlist
-            # is what actually surfaces new jobs, so it must not be starved.
+            # FIRST: write letters for any matched job still missing one, so the
+            # app's letter button and Gmail drafts are ready minutes into the run
+            # instead of hours (user shouldn't wait on the long screening pass).
+            backfill_letters(browser, jobs, cv_text, budget=40, checkpoint=checkpoint)
+
+            # Then: screen NEW marketing jobs (below); re-vet the already-saved
+            # pool LAST with a small budget so screening is never starved.
 
             # Always search the target field (marketing/SEO/web) first, then walk
             # a rotating slice of the rest so every term is covered over time.
@@ -810,10 +814,6 @@ def main():
             # marketing jobs into the stretch section). Small budget so it never
             # starves the new-job screening above.
             revet_saved(browser, jobs, cv_text, budget=80, checkpoint=checkpoint)
-
-            # Make sure every matched job has its letter pre-written, so the
-            # app's "Write my letter" button is instant with no setup.
-            backfill_letters(browser, jobs, cv_text, budget=30, checkpoint=checkpoint)
         finally:
             browser.close()
 
