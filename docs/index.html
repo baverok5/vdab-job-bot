@@ -572,17 +572,27 @@ function render() {
       render();
     });
 
-    // Internships get their own category; regular jobs split into fit-now vs.
-    // needs-better-Dutch.
     // A job only counts as an internship if the AI flagged it AND the title
     // actually says so — the model sometimes mis-flags regular jobs (e.g. a
     // "Customer Hero" role) as internships.
     const INTERN_RE = /(stage|stagi|intern|trainee)/i;
     const isIntern = (j) => j.internship && INTERN_RE.test(j.title || "");
-    const interns = jobs.filter(isIntern);
-    const regular = jobs.filter((j) => !isIntern(j));
-    const fitsNow = regular.filter((j) => !j.dutch_stretch);
-    const stretch = regular.filter((j) => j.dutch_stretch);
+
+    // Drop true duplicate postings — same title AND company (VDAB sometimes
+    // lists the exact same job twice). Keep the highest-scored copy. Generic
+    // titles shared by DIFFERENT companies are left as separate jobs.
+    const dedup = new Map();
+    jobs.forEach((j) => {
+      const k = (j.title || "").trim().toLowerCase() + "|" + (j.company || "").trim().toLowerCase();
+      const prev = dedup.get(k);
+      if (!prev || (j.match_score || 0) > (prev.match_score || 0)) dedup.set(k, j);
+    });
+    const uniq = [...dedup.values()];
+    const interns = uniq.filter(isIntern);
+    // One list per category: fits-now and needs-better-Dutch jobs share the same
+    // category (Dutch-stretch ones keep their 🇳🇱 tag and sink to the bottom by
+    // score), so category headers are no longer repeated.
+    const regular = uniq.filter((j) => !isIntern(j));
     // Each category is a collapsible section — closed by default, tap the
     // header (chevron on the right) to expand. Open state is remembered for the
     // session so acting on a job doesn't re-collapse everything.
@@ -626,14 +636,7 @@ function render() {
     // rendered, not the hidden total.
     const inView = (arr) => MKT_ONLY ? arr.filter((j) => categorize(j) === "marketing") : arr;
 
-    renderCats(fitsNow, "");
-    const shownStretch = inView(stretch);
-    if (shownStretch.length) {
-      list.insertAdjacentHTML("beforeend",
-        `<div class="cathead nl">🇳🇱 Needs better Dutch <span class="cnt">${shownStretch.length}</span><span class="rule"></span></div>
-         <div class="hint" style="text-align:left;margin:0 4px 8px">These fit your profile but want fluent Dutch (you are at B1) — worth a look as you improve it.</div>`);
-      renderCats(stretch, "nl:");
-    }
+    renderCats(regular, "");
     const shownInterns = inView(interns);
     if (shownInterns.length) {
       addSection("intern", "intern",
@@ -641,7 +644,7 @@ function render() {
         shownInterns.slice().sort((a, b) => (b.match_score || 0) - (a.match_score || 0)),
         `<div class="hint" style="text-align:left;margin:0 4px 8px">Internships / stages (“stage” = internship) — kept even if they ask for more, since you learn on the job.</div>`);
     }
-    if (!fitsNow.length && !stretch.length && !interns.length || (MKT_ONLY && !mktCount))
+    if ((!regular.length && !interns.length) || (MKT_ONLY && !mktCount))
       list.insertAdjacentHTML("beforeend",
         '<div class="empty"><div class="big">🎯</div>No matches in this view yet.<br>The scan is still working through the marketing jobs — check back soon.</div>');
     return;
