@@ -565,18 +565,25 @@ function render() {
       });
     };
 
+    // With the marketing toggle on, section counts show what is actually
+    // rendered, not the hidden total.
+    const inView = (arr) => MKT_ONLY ? arr.filter((j) => categorize(j) === "marketing") : arr;
+
     renderCats(fitsNow);
-    if (stretch.length) {
+    const shownStretch = inView(stretch);
+    if (shownStretch.length) {
       list.insertAdjacentHTML("beforeend",
-        `<div class="cathead nl">🇳🇱 Needs better Dutch <span class="cnt">${stretch.length}</span><span class="rule"></span></div>
+        `<div class="cathead nl">🇳🇱 Needs better Dutch <span class="cnt">${shownStretch.length}</span><span class="rule"></span></div>
          <div class="hint" style="text-align:left;margin:0 4px 8px">These fit your profile but want fluent Dutch (you are at B1) — worth a look as you improve it.</div>`);
       renderCats(stretch);
     }
-    if (interns.length) {
+    const shownInterns = inView(interns);
+    if (shownInterns.length) {
       list.insertAdjacentHTML("beforeend",
-        `<div class="cathead intern">🎓 Internships <span class="cnt">${interns.length}</span><span class="rule"></span></div>
-         <div class="hint" style="text-align:left;margin:0 4px 8px">Internships / stages — kept even if they ask for more, since you learn on the job.</div>`);
-      renderCats(interns);
+        `<div class="cathead intern">🎓 Internships <span class="cnt">${shownInterns.length}</span><span class="rule"></span></div>
+         <div class="hint" style="text-align:left;margin:0 4px 8px">Internships / stages ("stage" = internship) — kept even if they ask for more, since you learn on the job.</div>`);
+      shownInterns.slice().sort((a, b) => (b.match_score || 0) - (a.match_score || 0))
+        .forEach((j) => list.appendChild(card(j, null)));
     }
     if (!fitsNow.length && !stretch.length && !interns.length || (MKT_ONLY && !mktCount))
       list.insertAdjacentHTML("beforeend",
