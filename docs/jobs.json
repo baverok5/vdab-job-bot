@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-11 14:01 UTC",
+ "updated": "2026-07-11 14:16 UTC",
  "jobs": [
   {
    "id": "73855329",
@@ -1462,6 +1462,11 @@
  ],
  "listing": [
   {
+   "id": "74152144",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74152144/vastgoedconsulent-vast-contract",
+   "title": "Vastgoedconsulent vast contract"
+  },
+  {
    "id": "74152032",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74152032/filiaalleider-techniek-commercie-brugge",
    "title": "Filiaalleider techniek commercie brugge"
@@ -2360,6 +2365,11 @@
    "id": "74149673",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74149673/tweetalige-klantendienstmedewerker-nl-fr",
    "title": "Tweetalige klantendienstmedewerker nl fr"
+  },
+  {
+   "id": "74149511",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74149511/driver-ce-national",
+   "title": "Driver ce national"
   },
   {
    "id": "74149358",
@@ -41450,16 +41460,6 @@
    "id": "73810822",
    "url": "https://www.vdab.be/vindeenjob/vacatures/73810822/ago-technics-technisch-operator-inpak-voeding-vast-contract",
    "title": "Ago technics technisch operator inpak voeding vast contract"
-  },
-  {
-   "id": "73810821",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/73810821/ago-technics-technisch-operator-2-ploegen-vast-contract",
-   "title": "Ago technics technisch operator 2 ploegen vast contract"
-  },
-  {
-   "id": "73810820",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/73810820/ago-technics-technieker-dagdienst",
-   "title": "Ago technics technieker dagdienst"
   }
  ],
  "rejected": [
@@ -77308,5 +77308,5 @@
    "cv_fit_v": 7
   }
  ],
- "search_cursor": 0
+ "search_cursor": 3
 }
