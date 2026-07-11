@@ -215,17 +215,11 @@ function bullets(str) {
   return `<ul class="bl">${items.map((i) => `<li>${esc(i)}</li>`).join("")}</ul>`;
 }
 
-// ---- Phase 2: on-demand letter generation ----
+// ---- Letters: the bot pre-writes an email + cover letter for every matched
+// job (docs/prepared/<id>.json); the button just loads it. The optional
+// Cloudflare Worker is only used if a URL was configured manually — no popup.
 const WK_LS = "workerUrl";
 const getWorker = () => localStorage.getItem(WK_LS) || "";
-function ensureWorker() {
-  let w = getWorker();
-  if (!w) {
-    w = (prompt("One-time setup: paste your Cloudflare Worker URL for on-demand letters (see worker/README.md).") || "").trim();
-    if (w) localStorage.setItem(WK_LS, w);
-  }
-  return w;
-}
 
 function gmailFor(j, d) {
   const to = encodeURIComponent(d.apply_email || j.apply_email || "");
@@ -235,19 +229,42 @@ function gmailFor(j, d) {
 }
 
 function renderPrepared(j, d, box) {
+  const hasMail = !!(d.apply_email || j.apply_email);
   box.innerHTML = `
-    <div class="sec"><div class="h">Application email</div>
-      <div class="quote">${esc(d.email_subject ? d.email_subject + "\n\n" : "")}${esc(d.email_body)}</div></div>
+    <div class="sec"><div class="h">Application email ${hasMail ? "→ " + esc(d.apply_email || j.apply_email) : "(no direct email — apply via VDAB)"}</div>
+      <div class="quote">${esc(d.email_subject ? d.email_subject + "\n\n" : "")}${esc(d.email_body)}</div>
+      <button class="copybtn" data-copy="email">Copy email</button></div>
     <div class="sec"><div class="h">Cover letter</div>
-      <div class="quote">${esc(d.cover_letter)}</div></div>
+      <div class="quote">${esc(d.cover_letter)}</div>
+      <button class="copybtn" data-copy="letter">Copy cover letter</button></div>
+    ${d.cv_highlights ? `<div class="sec"><div class="h">CV highlights for this job</div>${bullets(d.cv_highlights)}</div>` : ""}
     <a class="btn primary" href="${gmailFor(j, d)}" target="_blank" rel="noopener"
        onclick="try{localStorage.setItem('jobstatus', JSON.stringify(Object.assign(JSON.parse(localStorage.getItem('jobstatus')||'{}'), {'${j.id}':'applied'})))}catch(e){}">
-       Open in Gmail to send</a>`;
+       ${hasMail ? "Open in Gmail to send" : "Open Gmail (add recipient)"}</a>`;
+  box.querySelectorAll(".copybtn").forEach((b) => b.addEventListener("click", (e) => {
+    e.stopPropagation();
+    copyText(b, b.dataset.copy === "email"
+      ? (d.email_subject ? d.email_subject + "\n\n" : "") + (d.email_body || "")
+      : (d.cover_letter || ""));
+  }));
 }
 
 async function prepareJob(j, box) {
-  const worker = ensureWorker();
-  if (!worker) { box.innerHTML = '<div class="hint">On-demand letters need the Worker set up first.</div>'; return; }
+  box.innerHTML = '<div class="hint">Loading your letter…</div>';
+  // The bot pre-writes letters for every match — just fetch it.
+  try {
+    const pr = await fetch(`prepared/${j.id}.json?t=` + Date.now(), { cache: "no-store" });
+    if (pr.ok) {
+      const d = await pr.json();
+      if (d.status === "ready") return renderPrepared(j, d, box);
+    }
+  } catch {}
+  // Not written yet (brand-new match) — optional Worker can generate on demand.
+  const worker = getWorker();
+  if (!worker) {
+    box.innerHTML = '<div class="hint">✍️ Letter not written yet — the bot writes letters for every matched job on its next run (a few times a day). Check back soon.</div>';
+    return;
+  }
   box.innerHTML = '<div class="hint">Writing your letter… this takes ~1–2 min. You can leave and come back.</div>';
   try {
     const r = await fetch(worker, {
@@ -256,8 +273,7 @@ async function prepareJob(j, box) {
     });
     if (!r.ok) throw new Error("trigger " + r.status);
   } catch (e) {
-    box.innerHTML = '<div class="hint">Could not start generation — check the Worker URL (tap again to re-enter it).</div>';
-    localStorage.removeItem(WK_LS);
+    box.innerHTML = '<div class="hint">Could not start generation — letter will appear after the bot’s next run instead.</div>';
     return;
   }
   const started = Date.now();

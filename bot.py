@@ -88,6 +88,7 @@ JOBS_FILE = "docs/jobs.json"      # matched jobs (dashboard reads this)
 SEEN_FILE = "seen.json"           # every job ID we fully evaluated (render + AI)
 SCREEN_FILE = "screen.json"       # cheap title-screen state: shortlist + rejects
 CV_FILE = "cv.md"                 # your master CV
+PREPARED_DIR = "docs/prepared"    # pre-written email + cover letter per match
 
 GEMINI_KEY = os.environ.get("GEMINI_API_KEY", "")
 # Two models on purpose:
@@ -111,13 +112,13 @@ DEEPSEEK_API_KEY = os.environ.get("DEEPSEEK_API_KEY", "")
 DEEPSEEK_MODEL = os.environ.get("DEEPSEEK_MODEL", "deepseek-chat")
 DEEPSEEK_URL = "https://api.deepseek.com/chat/completions"
 
-# Which engine screens jobs / writes letters. Prefer DeepSeek for the heavy
-# screening when its key exists; letters stay on Gemini when that key exists
-# (on-demand + rare, so the free tier is plenty) and fall back otherwise.
+# Which engine screens jobs / writes letters. Prefer DeepSeek for both when its
+# key exists: letters are now pre-written for EVERY match (dozens per run), which
+# would blow through Gemini's tiny free daily quota.
 EVAL_PROVIDER = os.environ.get(
     "EVAL_PROVIDER", "deepseek" if DEEPSEEK_API_KEY else "gemini")
 WRITE_PROVIDER = os.environ.get(
-    "WRITE_PROVIDER", "gemini" if GEMINI_KEY else "deepseek")
+    "WRITE_PROVIDER", "deepseek" if DEEPSEEK_API_KEY else "gemini")
 
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "")
 TELEGRAM_CHAT = os.environ.get("TELEGRAM_CHAT_ID", "")
@@ -458,6 +459,35 @@ linkedin.com/in/baverok"""
                    gemini_model=GEMINI_WRITE_MODEL)
 
 
+def write_letter(job_id, url, job_text, apply_email, cv_text, info=None):
+    """Pre-write the application email + cover letter for one matched job and
+    save it where the app's '✍️ Write my letter' button reads it
+    (docs/prepared/<id>.json). Returns True on success. Never raises — a failed
+    letter must not break the screening run; the next run retries it."""
+    out = os.path.join(PREPARED_DIR, f"{job_id}.json")
+    try:
+        docs = generate_application(job_text, cv_text, info)
+    except QuotaExhausted:
+        return False
+    if not docs:
+        return False
+    save_json(out, {
+        "id": job_id,
+        "url": url,
+        "status": "ready",
+        "apply_email": apply_email or "",
+        "email_subject": docs.get("email_subject", ""),
+        "email_body": docs.get("email_body", ""),
+        "cover_letter": docs.get("cover_letter", ""),
+        "cv_highlights": docs.get("cv_highlights", ""),
+    })
+    return True
+
+
+def has_letter(job_id):
+    return os.path.exists(os.path.join(PREPARED_DIR, f"{job_id}.json"))
+
+
 # A blunt, honest summary of what the candidate can and cannot realistically
 # apply to, so the model stops stretching ("web dev → can operate machines").
 # Grounded strictly in cv.md.
@@ -668,7 +698,7 @@ def main():
         save_json(SEEN_FILE, sorted(seen))
         save_json(SCREEN_FILE, {"title_no": sorted(title_no), "shortlist": sorted(shortlist)})
         try:
-            subprocess.run(["git", "add", JOBS_FILE, SEEN_FILE, SCREEN_FILE],
+            subprocess.run(["git", "add", JOBS_FILE, SEEN_FILE, SCREEN_FILE, PREPARED_DIR],
                            check=False, capture_output=True)
             r = subprocess.run(
                 ["git", "-c", "user.name=job-bot",
@@ -764,6 +794,10 @@ def main():
             # marketing jobs into the stretch section). Small budget so it never
             # starves the new-job screening above.
             revet_saved(browser, jobs, cv_text, budget=80, checkpoint=checkpoint)
+
+            # Make sure every matched job has its letter pre-written, so the
+            # app's "Write my letter" button is instant with no setup.
+            backfill_letters(browser, jobs, cv_text, budget=30, checkpoint=checkpoint)
         finally:
             browser.close()
 
@@ -858,12 +892,47 @@ def revet_saved(browser, jobs, cv_text, budget=40, checkpoint=None):
                               found_at=j.get("found_at"))
         print(f"  {'FITS' if kept else 'NOT A FIT'} "
               f"({verdict.get('match_score')}%): {verdict.get('reason')}")
+        if kept and not has_letter(job_id):
+            if write_letter(job_id, url, job_text,
+                            apply_email or j.get("apply_email"), cv_text,
+                            {"title": verdict.get("title", ""),
+                             "company": verdict.get("company", "")}):
+                print("  ✍️ letter written")
         moved += 1
         if checkpoint and moved % CHECKPOINT_EVERY == 0:
             checkpoint()
         time.sleep(1)
     print(f"Re-vet done: {moved} re-checked.")
     return moved
+
+
+def backfill_letters(browser, jobs, cv_text, budget=30, checkpoint=None):
+    """Write letters for matched jobs that don't have one yet (e.g. matched
+    before letters existed). Best fits first; re-renders the posting to get its
+    text. Budgeted so it never starves the screening pass."""
+    todo = [j for j in jobs["jobs"] if not has_letter(j.get("id"))]
+    todo.sort(key=lambda j: (bool(j.get("dutch_stretch")),
+                             -int(j.get("match_score", 0) or 0)))
+    todo = todo[:budget]
+    if not todo:
+        return 0
+    print(f"\nWriting letters for {len(todo)} matched job(s) without one...")
+    done = 0
+    for j in todo:
+        job_id, url = j.get("id"), j.get("url")
+        job_text, apply_email = fetch_job_detail(browser, url, job_id)
+        if not job_text:
+            continue
+        if write_letter(job_id, url, job_text,
+                        apply_email or j.get("apply_email"), cv_text,
+                        {"title": j.get("title", ""), "company": j.get("company", "")}):
+            done += 1
+            print(f"  ✍️ {j.get('title', '')[:50]}")
+            if checkpoint and done % 10 == 0:
+                checkpoint()
+        time.sleep(1)
+    print(f"Letters done: {done}.")
+    return done
 
 
 def _process_jobs(browser, new_links, seen, jobs, cv_text, checkpoint=None):
@@ -901,6 +970,12 @@ def _process_jobs(browser, new_links, seen, jobs, cv_text, checkpoint=None):
         if kept:
             print(f"  MATCH ({verdict.get('match_score')}%): {verdict.get('title')}")
             matched += 1
+            # Pre-write the application letter now, while we have the posting
+            # text in hand — the app's button then works instantly, no setup.
+            if write_letter(job_id, url, job_text, apply_email, cv_text,
+                            {"title": verdict.get("title", ""),
+                             "company": verdict.get("company", "")}):
+                print("  ✍️ letter written")
             send_telegram(
                 f"<b>New job match ({verdict.get('match_score')}%)</b>\n"
                 f"{verdict.get('title')} — {verdict.get('company')}\n"
