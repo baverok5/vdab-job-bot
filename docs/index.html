@@ -128,6 +128,11 @@
   .cathead.tog.open .chev { transform: rotate(90deg); }
   .catbody { display: none; }
   .catbody.open { display: block; }
+  .loadmore { display: block; width: 100%; margin: 10px 0 4px; padding: 11px;
+    background: var(--card); color: var(--text); border: 0.5px solid var(--border);
+    border-radius: 12px; font: inherit; font-size: 13px; font-weight: 600;
+    cursor: pointer; -webkit-tap-highlight-color: transparent; }
+  .loadmore:active { opacity: .6; }
   .tag.nl { background: var(--amber-bg); color: var(--amber); border-color: transparent; font-weight: 600; }
   .tag.intern { background: var(--green-bg); color: var(--green); border-color: transparent; font-weight: 600; }
   .mkt { display: flex; align-items: center; gap: 8px; cursor: pointer;
@@ -487,6 +492,25 @@ function render() {
   const list = document.getElementById("list");
   list.innerHTML = "";
 
+  // Render long lists in batches with a "Load more" button so tapping a tab
+  // never has to build hundreds of cards at once (which caused the lag).
+  function appendPaged(container, items, makeEl, batch = 20) {
+    let i = 0;
+    const more = document.createElement("button");
+    more.className = "loadmore";
+    const step = () => {
+      const frag = document.createDocumentFragment();
+      const end = Math.min(i + batch, items.length);
+      for (; i < end; i++) frag.appendChild(makeEl(items[i]));
+      container.insertBefore(frag, more);
+      if (i >= items.length) more.remove();
+      else more.textContent = `Load more (${items.length - i} more)`;
+    };
+    more.addEventListener("click", step);
+    container.appendChild(more);
+    step();
+  }
+
   if (TAB === "all") {
     if (!listing.length) {
       list.innerHTML = '<div class="empty"><div class="big">🌐</div>Building the English-jobs list…<br>The bot fills this each hour.</div>';
@@ -505,15 +529,11 @@ function render() {
       return qq ? listing.filter((j) => (j.title || "").toLowerCase().includes(qq)) : listing;
     }
     function renderList(items) {
-      [...list.querySelectorAll(".card, .hint, .empty")].forEach((n) => n.remove());
+      [...list.querySelectorAll(".card, .hint, .empty, .loadmore")].forEach((n) => n.remove());
       list.insertAdjacentHTML("beforeend",
         `<div class="hint" style="margin:2px 0 12px">${items.length} of ${listing.length} English jobs. Tap “Open on VDAB” to view; the “Ready” tab has the ones with a letter already written.</div>`);
       if (!items.length) { list.insertAdjacentHTML("beforeend", '<div class="empty">No jobs match that filter.</div>'); return; }
-      const frag = document.createDocumentFragment();
-      items.slice(0, 400).forEach((j) => frag.appendChild(listingCard(j)));
-      list.appendChild(frag);
-      if (items.length > 400)
-        list.insertAdjacentHTML("beforeend", `<div class="hint">Showing first 400 — type to narrow down.</div>`);
+      appendPaged(list, items, listingCard, 25);
     }
     renderList(shown);
     if (SEARCH_Q) fld.focus();
@@ -527,7 +547,7 @@ function render() {
     }
     list.insertAdjacentHTML("beforeend",
       `<div class="hint" style="margin:2px 0 12px">${rejected.length} jobs filtered out because your CV is missing what they require. Tap one to see exactly what was missing.</div>`);
-    rejected.forEach((j) => list.appendChild(rejectedCard(j)));
+    appendPaged(list, rejected, rejectedCard, 20);
     return;
   }
 
@@ -573,13 +593,20 @@ function render() {
       head.innerHTML = `${headInner}<span class="rule"></span><span class="chev">▸</span>`;
       const body = document.createElement("div");
       body.className = "catbody";
-      if (bodyPrefix) body.insertAdjacentHTML("beforeend", bodyPrefix);
-      jobsArr.forEach((j) => body.appendChild(card(j, null)));
-      if (OPEN.has(key)) { head.classList.add("open"); body.classList.add("open"); }
+      // Build the cards only the first time the section is opened, in batches —
+      // collapsed categories cost nothing, so the Ready tab opens instantly.
+      let built = false;
+      const build = () => {
+        if (built) return;
+        built = true;
+        if (bodyPrefix) body.insertAdjacentHTML("beforeend", bodyPrefix);
+        appendPaged(body, jobsArr, (j) => card(j, null), 15);
+      };
+      if (OPEN.has(key)) { head.classList.add("open"); body.classList.add("open"); build(); }
       head.addEventListener("click", () => {
         const open = head.classList.toggle("open");
         body.classList.toggle("open", open);
-        open ? OPEN.add(key) : OPEN.delete(key);
+        if (open) { OPEN.add(key); build(); } else OPEN.delete(key);
       });
       list.appendChild(head);
       list.appendChild(body);
@@ -620,7 +647,7 @@ function render() {
     return;
   }
   const state = TAB === "new" ? null : TAB;
-  jobs.forEach((j) => list.appendChild(card(j, state)));
+  appendPaged(list, jobs, (j) => card(j, state), 20);
 }
 
 document.querySelectorAll(".tab").forEach((t) =>
