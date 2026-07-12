@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-12 19:13 UTC",
+ "updated": "2026-07-12 20:30 UTC",
  "jobs": [
   {
    "id": "73964392",
@@ -4481,6 +4481,11 @@
    "id": "74152526",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74152526/boutique-sales-associate",
    "title": "Boutique sales associate"
+  },
+  {
+   "id": "74152341",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74152341/customer-service-medewerker",
+   "title": "Customer service medewerker"
   },
   {
    "id": "74152338",
@@ -40353,6 +40358,11 @@
    "title": "Business analyst"
   },
   {
+   "id": "73901642",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/73901642/customer-service-medewerker",
+   "title": "Customer service medewerker"
+  },
+  {
    "id": "73901629",
    "url": "https://www.vdab.be/vindeenjob/vacatures/73901629/deviseur-euse",
    "title": "Deviseur euse"
@@ -44456,16 +44466,6 @@
    "id": "73811420",
    "url": "https://www.vdab.be/vindeenjob/vacatures/73811420/recruiter-met-bedrijfswagen-adecco-oostende-vast-contract",
    "title": "Recruiter met bedrijfswagen adecco oostende vast contract"
-  },
-  {
-   "id": "73811401",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/73811401/junior-sales-account-support-benelux",
-   "title": "Junior sales account support benelux"
-  },
-  {
-   "id": "73811395",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/73811395/ago-technics-elektricien",
-   "title": "Ago technics elektricien"
   }
  ],
  "rejected": [
@@ -80470,5 +80470,5 @@
    "cv_fit_v": 9
   }
  ],
- "search_cursor": 2
+ "search_cursor": 7
 }
