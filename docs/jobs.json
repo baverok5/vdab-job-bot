@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-12 21:30 UTC",
+ "updated": "2026-07-12 22:52 UTC",
  "jobs": [
   {
    "id": "74087007",
@@ -4378,6 +4378,11 @@
  ],
  "listing": [
   {
+   "id": "74152766",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74152766/junior-communicatie-projectcoordinator-m-v-x",
+   "title": "Junior communicatie projectcoordinator m v x"
+  },
+  {
    "id": "74152638",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74152638/flexi-growth-marketeer",
    "title": "Flexi growth marketeer"
@@ -4391,6 +4396,11 @@
    "id": "74152526",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74152526/boutique-sales-associate",
    "title": "Boutique sales associate"
+  },
+  {
+   "id": "74152522",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74152522/warehouse-manager",
+   "title": "Warehouse manager"
   },
   {
    "id": "74152341",
@@ -5376,6 +5386,11 @@
    "id": "74149511",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74149511/driver-ce-national",
    "title": "Driver ce national"
+  },
+  {
+   "id": "74149360",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74149360/chauffeur-c-ce-m-v-x",
+   "title": "Chauffeur c ce m v x"
   },
   {
    "id": "74149358",
@@ -44361,21 +44376,6 @@
    "id": "73811443",
    "url": "https://www.vdab.be/vindeenjob/vacatures/73811443/warehouse-operator",
    "title": "Warehouse operator"
-  },
-  {
-   "id": "73811431",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/73811431/loketbediende",
-   "title": "Loketbediende"
-  },
-  {
-   "id": "73811426",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/73811426/technical-support-en-inside-sales",
-   "title": "Technical support en inside sales"
-  },
-  {
-   "id": "73811420",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/73811420/recruiter-met-bedrijfswagen-adecco-oostende-vast-contract",
-   "title": "Recruiter met bedrijfswagen adecco oostende vast contract"
   }
  ],
  "rejected": [
@@ -80380,5 +80380,5 @@
    "cv_fit_v": 9
   }
  ],
- "search_cursor": 7
+ "search_cursor": 12
 }
