@@ -137,7 +137,7 @@ CHECKPOINT_EVERY = 25  # save + git-push progress this often so a long run can't
 # Bump this whenever the fit criteria in evaluate_job change. Saved matches that
 # were judged under an older version get re-vetted (a one-time migration) so the
 # pool reflects the newest rules instead of leaving stale bad matches around.
-CRITERIA_VERSION = 11
+CRITERIA_VERSION = 12
 REJECTED_CAP = 2000   # show (almost) every not-a-fit so coverage is auditable
 
 # Jobs to always exclude (candidate only has a B driver's licence and does not
@@ -623,16 +623,19 @@ INTERNSHIP leniency above overrides the experience/degree/skill walls):
 - FRENCH required at any level (see LANGUAGE above).
 - EXPERIENCE: the role clearly requires 2+ years of dedicated experience. (Up to
   ~2 years is acceptable — the candidate has ~4 months; just score it lower.)
-- DESIGN SOFTWARE / GRAPHIC DESIGN the CV lacks: the posting requires graphic
-  design skills or Adobe tools the candidate does NOT have — Adobe Illustrator /
-  InDesign / Photoshop / Creative Suite, OR it names "grafisch design",
-  "grafische vormgeving", "graphic design", "print design", "vormgeving" as a
-  required skill. Treat this as a HARD FAIL whenever graphic design is listed as a
-  requirement — especially with "(must)", "vereist", "noodzakelijk", "sterke
-  kennis" — EVEN IF the visual tasks (visuals, brochures, banners, beeldmateriaal)
-  look doable in Canva. The candidate does WEB design only
-  (WordPress/Elementor/Canva), NOT graphic design. (A web-design / WordPress / UX /
-  Canva-only role is fine; a role that requires graphic design is not.)
+- DESIGN SOFTWARE / GRAPHIC DESIGN the CV lacks: FAIL only when the posting
+  EXPLICITLY REQUIRES graphic-design competency or professional design software the
+  candidate does not have — it names Adobe Illustrator / InDesign / Photoshop /
+  Creative Suite as required, OR lists "grafisch design", "grafische vormgeving",
+  "graphic design", "print design", "grafisch vormgever" as a required skill (e.g.
+  "sterke kennis van grafisch design (must)"). Do NOT invent this reason: producing
+  visuals, social-media graphics, banners, brochures, beeldmateriaal or simple
+  video is Canva-doable and the candidate CAN do it — such tasks alone are NOT a
+  reason to fail, and unrelated things (e.g. applying screen protectors, product
+  photos) are NOT graphic design. The candidate does WEB design + Canva
+  (WordPress/Elementor/Canva), not professional graphic design. A web / WordPress /
+  UX / content / social-media / customer-service role that merely produces visuals
+  is FINE; only a clearly stated graphic-design / Adobe requirement fails.
 - SKILLED TRADE / PRODUCTION / MANUAL role: machine/production/CNC operator,
   metalwork, welding, grinding, assembly, manufacturing, chocolatier, print/line
   operator, construction, electrical, mechanical, maintenance technician.
