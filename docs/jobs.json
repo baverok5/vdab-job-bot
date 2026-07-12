@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-12 01:00 UTC",
+ "updated": "2026-07-12 07:39 UTC",
  "jobs": [
   {
    "id": "74006699",
@@ -2524,6 +2524,11 @@
  ],
  "listing": [
   {
+   "id": "74152338",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74152338/support-officer",
+   "title": "Support officer"
+  },
+  {
    "id": "74152216",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74152216/sales-assistant-voor-onze-winkel-shop-more-in-kampenhout-18uur",
    "title": "Sales assistant voor onze winkel shop more in kampenhout 18uur"
@@ -2892,6 +2897,11 @@
    "id": "74151850",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74151850/projectleider-ramen-deuren-a-z",
    "title": "Projectleider ramen deuren a z"
+  },
+  {
+   "id": "74151849",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74151849/sales-support-officer-familiebedrijf",
+   "title": "Sales support officer familiebedrijf"
   },
   {
    "id": "74151848",
@@ -3374,6 +3384,11 @@
    "title": "Design automation engineer r d eplan"
   },
   {
+   "id": "74151375",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74151375/warehouse-assistant-39u-week-doorgroei-ardooie",
+   "title": "Warehouse assistant 39u week doorgroei ardooie"
+  },
+  {
    "id": "74151281",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74151281/teamleader",
    "title": "Teamleader"
@@ -3394,6 +3409,16 @@
    "title": "Continuous improvement engineer logistics"
   },
   {
+   "id": "74151145",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74151145/warehouse-supervisor-logistiek",
+   "title": "Warehouse supervisor logistiek"
+  },
+  {
+   "id": "74150961",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74150961/warehouse-coordinator-lagom",
+   "title": "Warehouse coordinator lagom"
+  },
+  {
    "id": "74150956",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74150956/automatisatietechnieker-4000",
    "title": "Automatisatietechnieker 4000"
@@ -3402,6 +3427,11 @@
    "id": "74150873",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74150873/sales-adviseur-25-automotive",
    "title": "Sales adviseur 25 automotive"
+  },
+  {
+   "id": "74150780",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74150780/sales-support-medewerker-metaal",
+   "title": "Sales support medewerker metaal"
   },
   {
    "id": "74150776",
@@ -42492,36 +42522,6 @@
    "id": "73810999",
    "url": "https://www.vdab.be/vindeenjob/vacatures/73810999/ago-technics-mekanieker-elektromekanieker",
    "title": "Ago technics mekanieker elektromekanieker"
-  },
-  {
-   "id": "73810984",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/73810984/ago-technics-storingstechnieker-vaste-nacht",
-   "title": "Ago technics storingstechnieker vaste nacht"
-  },
-  {
-   "id": "73810978",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/73810978/ago-technics-technieker-procesautomatisatie",
-   "title": "Ago technics technieker procesautomatisatie"
-  },
-  {
-   "id": "73810973",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/73810973/project-consultant-oost-vlaanderen",
-   "title": "Project consultant oost vlaanderen"
-  },
-  {
-   "id": "73810932",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/73810932/project-consultant-west-vlaanderen",
-   "title": "Project consultant west vlaanderen"
-  },
-  {
-   "id": "73810923",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/73810923/ago-technics-shiftleader",
-   "title": "Ago technics shiftleader"
-  },
-  {
-   "id": "73810921",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/73810921/ago-technics-technische-trainer",
-   "title": "Ago technics technische trainer"
   }
  ],
  "rejected": [
@@ -78526,5 +78526,5 @@
    "cv_fit_v": 9
   }
  ],
- "search_cursor": 9
+ "search_cursor": 12
 }
