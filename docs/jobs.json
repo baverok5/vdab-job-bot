@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-12 13:14 UTC",
+ "updated": "2026-07-12 18:06 UTC",
  "jobs": [
   {
    "id": "74006699",
@@ -3910,8 +3910,18 @@
  ],
  "listing": [
   {
+   "id": "74152638",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74152638/flexi-growth-marketeer",
+   "title": "Flexi growth marketeer"
+  },
+  {
    "id": "74152552",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74152552/boutique-sales-associate",
+   "title": "Boutique sales associate"
+  },
+  {
+   "id": "74152526",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74152526/boutique-sales-associate",
    "title": "Boutique sales associate"
   },
   {
@@ -43898,16 +43908,6 @@
    "id": "73811395",
    "url": "https://www.vdab.be/vindeenjob/vacatures/73811395/ago-technics-elektricien",
    "title": "Ago technics elektricien"
-  },
-  {
-   "id": "73811394",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/73811394/ago-technics-operator-2-ploegen-regio-hoogstraten",
-   "title": "Ago technics operator 2 ploegen regio hoogstraten"
-  },
-  {
-   "id": "73811390",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/73811390/sales-assistant",
-   "title": "Sales assistant"
   }
  ],
  "rejected": [
@@ -79912,5 +79912,5 @@
    "cv_fit_v": 9
   }
  ],
- "search_cursor": 15
+ "search_cursor": 2
 }
