@@ -610,8 +610,9 @@ function render() {
     // score), so category headers are no longer repeated.
     const regular = uniq.filter((j) => !isIntern(j));
     // Each category is a collapsible section — closed by default, tap the
-    // header (chevron on the right) to expand. Open state is remembered for the
-    // session so acting on a job doesn't re-collapse everything.
+    // header (chevron on the right) to expand. Accordion: opening one section
+    // closes any other that is open. The single open section is remembered for
+    // the session so acting on a job doesn't re-collapse it.
     const OPEN = (window.__openCats ||= new Set());
     const addSection = (key, headClass, headInner, jobsArr, bodyPrefix) => {
       const head = document.createElement("div");
@@ -630,9 +631,15 @@ function render() {
       };
       if (OPEN.has(key)) { head.classList.add("open"); body.classList.add("open"); build(); }
       head.addEventListener("click", () => {
-        const open = head.classList.toggle("open");
-        body.classList.toggle("open", open);
-        if (open) { OPEN.add(key); build(); } else OPEN.delete(key);
+        if (head.classList.contains("open")) {
+          head.classList.remove("open"); body.classList.remove("open"); OPEN.delete(key);
+        } else {
+          // accordion — collapse whatever else is open first
+          OPEN.clear();
+          list.querySelectorAll(".cathead.tog.open").forEach((h) => h.classList.remove("open"));
+          list.querySelectorAll(".catbody.open").forEach((b) => b.classList.remove("open"));
+          head.classList.add("open"); body.classList.add("open"); OPEN.add(key); build();
+        }
       });
       list.appendChild(head);
       list.appendChild(body);

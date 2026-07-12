@@ -53,7 +53,7 @@ ROTATING_SEARCH_URLS = (
       "junior", "data entry", "front-end")]
     + ["https://www.vdab.be/vindeenjob/jobs/english-jobs"]
 )
-SEARCHES_PER_RUN = int(os.environ.get("SEARCHES_PER_RUN", "3"))
+SEARCHES_PER_RUN = int(os.environ.get("SEARCHES_PER_RUN", "5"))
 
 # Titles that look like the candidate's target field — screened first so they
 # reach the Ready tab ahead of the filler jobs.
@@ -137,7 +137,7 @@ CHECKPOINT_EVERY = 25  # save + git-push progress this often so a long run can't
 # Bump this whenever the fit criteria in evaluate_job change. Saved matches that
 # were judged under an older version get re-vetted (a one-time migration) so the
 # pool reflects the newest rules instead of leaving stale bad matches around.
-CRITERIA_VERSION = 10
+CRITERIA_VERSION = 11
 REJECTED_CAP = 2000   # show (almost) every not-a-fit so coverage is auditable
 
 # Jobs to always exclude (candidate only has a B driver's licence and does not
@@ -623,10 +623,16 @@ INTERNSHIP leniency above overrides the experience/degree/skill walls):
 - FRENCH required at any level (see LANGUAGE above).
 - EXPERIENCE: the role clearly requires 2+ years of dedicated experience. (Up to
   ~2 years is acceptable — the candidate has ~4 months; just score it lower.)
-- DESIGN SOFTWARE the CV lacks: it requires hands-on experience with Adobe
-  Illustrator / InDesign / Photoshop, or professional graphic / print design. The
-  candidate's design is WEB only (WordPress/Elementor/Canva), NOT graphic design.
-  (A web-design / WordPress / UX role is fine; a graphic/print-design role is not.)
+- DESIGN SOFTWARE / GRAPHIC DESIGN the CV lacks: the posting requires graphic
+  design skills or Adobe tools the candidate does NOT have — Adobe Illustrator /
+  InDesign / Photoshop / Creative Suite, OR it names "grafisch design",
+  "grafische vormgeving", "graphic design", "print design", "vormgeving" as a
+  required skill. Treat this as a HARD FAIL whenever graphic design is listed as a
+  requirement — especially with "(must)", "vereist", "noodzakelijk", "sterke
+  kennis" — EVEN IF the visual tasks (visuals, brochures, banners, beeldmateriaal)
+  look doable in Canva. The candidate does WEB design only
+  (WordPress/Elementor/Canva), NOT graphic design. (A web-design / WordPress / UX /
+  Canva-only role is fine; a role that requires graphic design is not.)
 - SKILLED TRADE / PRODUCTION / MANUAL role: machine/production/CNC operator,
   metalwork, welding, grinding, assembly, manufacturing, chocolatier, print/line
   operator, construction, electrical, mechanical, maintenance technician.
