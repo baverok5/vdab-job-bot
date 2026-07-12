@@ -470,11 +470,13 @@ function categorize(j) {
 // Dutch (zeer goed / very good / vlot / vloeiend / moedertaal). The evaluator
 // sometimes extracts "Dutch (very good)" into the details but still forgets to
 // set the flag, so we re-derive it from the text here.
-// Match the fluent level ONLY when it binds directly to Dutch — "Dutch (very
-// good)", "Nederlands (zeer goed)", "vlot Nederlands", "fluent Dutch" — so a job
-// that wants very-good ENGLISH but only good/B1 Dutch is NOT flagged.
+// Flag a job as "needs better Dutch" when the posting asks for Dutch at "good"
+// level or above — VDAB's "Goed" (≈B2) and "Zeer goed" (≈C1) are both a stretch
+// at B1. We only match a level bound DIRECTLY to Dutch (structured
+// "Dutch (Goed)" / "Nederlands (Zeer goed)" form, or "vlot/fluent Dutch") so a
+// job that wants good/very-good ENGLISH but only basic Dutch is NOT flagged.
 const DUTCH_FLUENT =
-  /(nederlands|dutch)\s*[\(:]\s*\(?\s*(zeer goede?|very good|vlot|vloeiend|moedertaal|uitstekend|near[\s-]?native|native|fluent)|(vlot|vloeiend|moedertaal|uitstekend|fluent|native|zeer goede?|very good)\s+(nederlands|dutch)/i;
+  /(nederlands|dutch)\s*[\(:]\s*\(?\s*(zeer goede?|very good|goede?|good|vlot|vloeiend|moedertaal|uitstekend|near[\s-]?native|native|fluent)|(vlot|vloeiend|moedertaal|uitstekend|fluent|native|zeer goede?|very good)\s+(nederlands|dutch)/i;
 function needsBetterDutch(j) {
   return !!j.dutch_stretch ||
     DUTCH_FLUENT.test(`${j.details || ""} ${j.why_bad || ""} ${j.reason || ""}`);
