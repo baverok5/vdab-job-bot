@@ -208,6 +208,9 @@ function brusselsUpdated(s) {
 }
 let SEARCH_Q = "";
 let MKT_ONLY = localStorage.getItem("mktOnly") === "1";
+// Hide jobs that need better Dutch than B1 — on by default (a B1 speaker can't
+// realistically land a "good/excellent Dutch required" role). Toggle in the tab.
+let HIDE_DUTCH = localStorage.getItem("hideDutch") !== "0";
 
 const esc = (s) => (s || "").replace(/[&<>"]/g, (c) =>
   ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
@@ -636,16 +639,6 @@ function render() {
     return;
   }
   if (TAB === "new") {
-    const mktCount = jobs.filter((j) => categorize(j) === "marketing").length;
-    list.insertAdjacentHTML("beforeend",
-      `<label class="mkt${MKT_ONLY ? " on" : ""}"><input type="checkbox" id="mktonly" ${MKT_ONLY ? "checked" : ""}>
-        <span>🎯 Marketing / SEO / web only</span>${mktCount ? `<span class="cnt">${mktCount}</span>` : ""}</label>`);
-    document.getElementById("mktonly").addEventListener("change", (e) => {
-      MKT_ONLY = e.target.checked;
-      localStorage.setItem("mktOnly", MKT_ONLY ? "1" : "");
-      render();
-    });
-
     // A job only counts as an internship if the AI flagged it AND the title
     // actually says so — the model sometimes mis-flags regular jobs (e.g. a
     // "Customer Hero" role) as internships.
@@ -662,11 +655,33 @@ function render() {
       if (!prev || (j.match_score || 0) > (prev.match_score || 0)) dedup.set(k, j);
     });
     const uniq = [...dedup.values()];
-    const interns = uniq.filter(isIntern);
-    // One list per category: fits-now and needs-better-Dutch jobs share the same
-    // category (Dutch-stretch ones keep their 🇳🇱 tag and sink to the bottom by
-    // score), so category headers are no longer repeated.
-    const regular = uniq.filter((j) => !isIntern(j));
+
+    // Two independent filters for the Ready tab. Counts come from the deduped
+    // set so the badges match what would actually show/hide.
+    const mktCount = uniq.filter((j) => categorize(j) === "marketing").length;
+    const dutchCount = uniq.filter(needsBetterDutch).length;
+    list.insertAdjacentHTML("beforeend",
+      `<label class="mkt${MKT_ONLY ? " on" : ""}"><input type="checkbox" id="mktonly" ${MKT_ONLY ? "checked" : ""}>
+        <span>🎯 Marketing / SEO / web only</span>${mktCount ? `<span class="cnt">${mktCount}</span>` : ""}</label>
+       <label class="mkt${HIDE_DUTCH ? " on" : ""}"><input type="checkbox" id="hidedutch" ${HIDE_DUTCH ? "checked" : ""}>
+        <span>🇳🇱 Hide jobs needing better Dutch</span>${dutchCount ? `<span class="cnt">${dutchCount}</span>` : ""}</label>`);
+    document.getElementById("mktonly").addEventListener("change", (e) => {
+      MKT_ONLY = e.target.checked;
+      localStorage.setItem("mktOnly", MKT_ONLY ? "1" : "");
+      render();
+    });
+    document.getElementById("hidedutch").addEventListener("change", (e) => {
+      HIDE_DUTCH = e.target.checked;
+      localStorage.setItem("hideDutch", HIDE_DUTCH ? "1" : "0");
+      render();
+    });
+
+    // With the Dutch filter on, drop every job that needs better Dutch than B1
+    // — regular roles AND internships — so they're gone from the list, not just
+    // sorted to the bottom.
+    const visible = HIDE_DUTCH ? uniq.filter((j) => !needsBetterDutch(j)) : uniq;
+    const interns = visible.filter(isIntern);
+    const regular = visible.filter((j) => !isIntern(j));
     // Each category is a collapsible section — closed by default, tap the
     // header (chevron on the right) to expand. Accordion: opening one section
     // closes any other that is open. The single open section is remembered for
@@ -726,9 +741,13 @@ function render() {
         shownInterns.slice().sort((a, b) => (b.match_score || 0) - (a.match_score || 0)),
         `<div class="hint" style="text-align:left;margin:0 4px 8px">Internships / stages (“stage” = internship) — kept even if they ask for more, since you learn on the job.</div>`);
     }
-    if ((!regular.length && !interns.length) || (MKT_ONLY && !mktCount))
-      list.insertAdjacentHTML("beforeend",
-        '<div class="empty"><div class="big">🎯</div>No matches in this view yet.<br>The scan is still working through the marketing jobs — check back soon.</div>');
+    if (!regular.length && !interns.length) {
+      const allHidByDutch = HIDE_DUTCH && dutchCount > 0 &&
+        uniq.filter((j) => !needsBetterDutch(j) && (!MKT_ONLY || categorize(j) === "marketing")).length === 0;
+      list.insertAdjacentHTML("beforeend", allHidByDutch
+        ? `<div class="empty"><div class="big">🇳🇱</div>Every match here needs better Dutch than B1.<br>Untick “Hide jobs needing better Dutch” above to see the ${dutchCount} hidden.</div>`
+        : '<div class="empty"><div class="big">🎯</div>No matches in this view yet.<br>The scan is still working through the marketing jobs — check back soon.</div>');
+    }
     return;
   }
   const state = TAB === "new" ? null : TAB;
