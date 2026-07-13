@@ -42,7 +42,16 @@ PRIORITY_SEARCH_URLS = [
      "social media", "online marketing", "growth marketing", "e-commerce",
      "e-mail marketing", "communication", "copywriter", "marketing assistant",
      "stage marketing", "internship marketing", "stage communicatie",
-     "web design stage", "digital", "creative")
+     "web design stage", "digital", "creative",
+     # Belgian spelling ("marketeer") + digital-marketing subfields the old list
+     # missed, plus English-intersection terms — most Flemish marketing roles
+     # need Dutch, so we cast a wider net to grow the English-friendly subset.
+     "marketeer", "digital marketeer", "content marketeer", "performance marketing",
+     "marketing automation", "paid media", "google analytics", "marketing officer",
+     "marketing coordinator", "junior marketing", "campaign", "advertising",
+     "employer branding", "crm marketing", "conversion", "brand", "media",
+     "marketing english", "international marketing", "growth hacker",
+     "digital strategist", "influencer marketing")
 ]
 # Everything else, walked a rotating slice at a time (collection is slow).
 ROTATING_SEARCH_URLS = (
@@ -70,7 +79,7 @@ def is_marketing(title):
 # Title pre-screen: the AI reads plain job titles in cheap batches (no page
 # render) to shortlist the ones worth a full look, so rendering + full screening
 # is spent only on plausible jobs. This is what lets coverage scale.
-TITLE_SCREEN_CAP = int(os.environ.get("TITLE_SCREEN_CAP", "1500"))  # titles/run
+TITLE_SCREEN_CAP = int(os.environ.get("TITLE_SCREEN_CAP", "2200"))  # titles/run
 TITLE_BATCH = 40                                                   # titles per AI call
 
 CANDIDATE_ONELINE = (
