@@ -137,7 +137,7 @@ CHECKPOINT_EVERY = 25  # save + git-push progress this often so a long run can't
 # Bump this whenever the fit criteria in evaluate_job change. Saved matches that
 # were judged under an older version get re-vetted (a one-time migration) so the
 # pool reflects the newest rules instead of leaving stale bad matches around.
-CRITERIA_VERSION = 12
+CRITERIA_VERSION = 13
 REJECTED_CAP = 2000   # show (almost) every not-a-fit so coverage is auditable
 
 # Jobs to always exclude (candidate only has a B driver's licence and does not
@@ -418,10 +418,34 @@ def fetch_job_detail(browser, url, job_id):
         print(f"  (page did not render real content for {job_id})")
         return None, None
 
-    apply_email = None
-    mail_link = BeautifulSoup(html, "html.parser").select_one('a[href^="mailto:"]')
-    if mail_link:
-        apply_email = mail_link["href"].replace("mailto:", "").split("?")[0]
+    soup = BeautifulSoup(html, "html.parser")
+    emails = []
+    # Clickable mailto: links are the most reliable signal.
+    for a in soup.select('a[href^="mailto:"]'):
+        addr = a.get("href", "").replace("mailto:", "").split("?")[0].strip()
+        if addr:
+            emails.append(addr)
+    # ...but VDAB postings very often list the application address as PLAIN TEXT
+    # at the bottom ("Solliciteer via voornaam@bedrijf.be"), with NO mailto link.
+    # The old code only read mailto links, so those jobs came back with an empty
+    # recipient and the app's Gmail button had nowhere to send. Also scan the
+    # rendered text so we catch the plain-text addresses too.
+    for m in re.findall(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}", text):
+        emails.append(m)
+    # Dedupe case-insensitively, drop VDAB's own / noise addresses, keep order
+    # (so a real mailto beats a stray text match). Keep up to two — some
+    # postings list two contacts.
+    seen_e, clean = set(), []
+    for e in emails:
+        el = e.strip().strip(".,;:()<>[]").lower()
+        if not el or el in seen_e:
+            continue
+        if any(bad in el for bad in ("vdab.be", "example.", "noreply", "no-reply",
+                                     "sentry", ".png", ".jpg", ".gif", ".svg")):
+            continue
+        seen_e.add(el)
+        clean.append(el)
+    apply_email = ", ".join(clean[:2]) if clean else None
 
     return text[:15000], apply_email
 
@@ -501,6 +525,26 @@ def has_letter(job_id):
         return bool(d.get("tailored_cv")) and d.get("fmt") == 2
     except (FileNotFoundError, json.JSONDecodeError):
         return False
+
+
+def _sync_letter_email(job_id, apply_email):
+    """Patch an already-written letter's recipient when we later recover the
+    application address (the first scrape missed a plain-text email). Without
+    this, a job with an existing letter would keep an empty recipient in its
+    prepared file even after jobs.json gets backfilled."""
+    if not apply_email:
+        return
+    p = os.path.join(PREPARED_DIR, f"{job_id}.json")
+    try:
+        d = json.load(open(p, encoding="utf-8"))
+    except (FileNotFoundError, json.JSONDecodeError):
+        return
+    if (d.get("apply_email") or "").strip():
+        return  # already has one — don't overwrite
+    d["apply_email"] = apply_email
+    with open(p, "w", encoding="utf-8") as f:
+        json.dump(d, f, ensure_ascii=False, indent=2)
+    print(f"  📧 backfilled recipient for {job_id}: {apply_email}")
 
 
 # A blunt, honest summary of what the candidate can and cannot realistically
@@ -942,6 +986,9 @@ def revet_saved(browser, jobs, cv_text, budget=40, checkpoint=None):
                             {"title": verdict.get("title", ""),
                              "company": verdict.get("company", "")}):
                 print("  ✍️ letter written")
+        elif kept and apply_email:
+            # Letter already exists — just backfill a recipient we newly found.
+            _sync_letter_email(job_id, apply_email)
         moved += 1
         if checkpoint and moved % CHECKPOINT_EVERY == 0:
             checkpoint()
@@ -967,6 +1014,8 @@ def backfill_letters(browser, jobs, cv_text, budget=30, checkpoint=None):
         job_text, apply_email = fetch_job_detail(browser, url, job_id)
         if not job_text:
             continue
+        if apply_email and not (j.get("apply_email") or "").strip():
+            j["apply_email"] = apply_email  # keep the card's recipient in sync
         if write_letter(job_id, url, job_text,
                         apply_email or j.get("apply_email"), cv_text,
                         {"title": j.get("title", ""), "company": j.get("company", "")}):
