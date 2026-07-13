@@ -506,8 +506,17 @@ function categorize(j) {
 // at B1. We only match a level bound DIRECTLY to Dutch (structured
 // "Dutch (Goed)" / "Nederlands (Zeer goed)" form, or "vlot/fluent Dutch") so a
 // job that wants good/very-good ENGLISH but only basic Dutch is NOT flagged.
-const DUTCH_FLUENT =
-  /(nederlands|dutch)\s*[\(:]\s*\(?\s*(zeer goede?|very good|goede?|good|vlot|vloeiend|moedertaal|uitstekend|near[\s-]?native|native|fluent)|(vlot|vloeiend|moedertaal|uitstekend|fluent|native|zeer goede?|very good)\s+(nederlands|dutch)/i;
+// A level bound to Dutch at "good" (≈B2) or above is a stretch at B1. Include
+// the English words the bot normalises to ("excellent", "proficient"…) — not
+// just the Dutch ones — since details are stored in English (that's why
+// "Dutch (excellent)" was slipping through). Levels at/below B1 (medium, basic,
+// starter) are deliberately NOT here.
+const DUTCH_LEVEL =
+  "zeer goede?|very good|goede?|good|excellent|uitstekend|proficient|professional|advanced|thorough|strong|vlot|vloeiend|moedertaal|mother[\\s-]?tongue|near[\\s-]?native|native|fluent|high[\\s-]?level|hoog niveau";
+const DUTCH_FLUENT = new RegExp(
+  `(nederlands|dutch)\\s*[\\(:]\\s*\\(?\\s*(${DUTCH_LEVEL})|(${DUTCH_LEVEL})\\s+(nederlands|dutch)`,
+  "i",
+);
 // Dutch as a REQUIRED working language (e.g. "English and Dutch required") is
 // also a stretch at B1, even with no explicit fluency word. Scan clause by
 // clause so a neighbouring "French is a plus" or "English required, Dutch a
