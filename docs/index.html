@@ -191,6 +191,20 @@ const setStatus = (id, s) => {
 
 let DATA = { jobs: [], updated: "" };
 let TAB = "new";
+
+// The bot stamps docs/jobs.json in UTC ("2026-07-13 06:00 UTC"); show it in
+// Brussels local time (handles CET/CEST automatically).
+function brusselsUpdated(s) {
+  const m = /^(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2})/.exec(s || "");
+  if (!m) return s || "";
+  const d = new Date(Date.UTC(+m[1], +m[2] - 1, +m[3], +m[4], +m[5]));
+  try {
+    return d.toLocaleString("en-GB", {
+      timeZone: "Europe/Brussels", day: "2-digit", month: "short",
+      year: "numeric", hour: "2-digit", minute: "2-digit", hour12: false,
+    }) + " (Brussels)";
+  } catch (e) { return s; }
+}
 let SEARCH_Q = "";
 let MKT_ONLY = localStorage.getItem("mktOnly") === "1";
 
@@ -500,7 +514,7 @@ function render() {
   document.getElementById("c-applied").textContent = buckets.applied.length || "";
   document.getElementById("c-skipped").textContent = buckets.skipped.length || "";
   document.getElementById("updated").textContent =
-    DATA.updated ? "Updated " + DATA.updated : "No data yet — the bot hasn't run.";
+    DATA.updated ? "Updated " + brusselsUpdated(DATA.updated) : "No data yet — the bot hasn't run.";
 
   document.querySelectorAll(".tab").forEach((t) =>
     t.classList.toggle("on", t.dataset.tab === TAB));
