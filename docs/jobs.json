@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-13 07:31 UTC",
+ "updated": "2026-07-13 07:52 UTC",
  "jobs": [
   {
    "id": "74016341",
@@ -3748,9 +3748,34 @@
  ],
  "listing": [
   {
+   "id": "74154390",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74154390/office-assistant",
+   "title": "Office assistant"
+  },
+  {
+   "id": "74154372",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74154372/erp-analyst-dynamics-365-business-central",
+   "title": "Erp analyst dynamics 365 business central"
+  },
+  {
+   "id": "74154223",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74154223/franstalige-marketingmedewerker-waregem",
+   "title": "Franstalige marketingmedewerker waregem"
+  },
+  {
+   "id": "74154203",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74154203/boekhouder",
+   "title": "Boekhouder"
+  },
+  {
    "id": "74154010",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74154010/senior-dossierbeheerder-modern-digitaal-kantoor",
    "title": "Senior dossierbeheerder modern digitaal kantoor"
+  },
+  {
+   "id": "74154009",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74154009/junior-accountant-sterke-begeleiding",
+   "title": "Junior accountant sterke begeleiding"
   },
   {
    "id": "74154004",
@@ -3806,6 +3831,11 @@
    "id": "74153798",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74153798/klantenadviseur-belfius-regio-gent",
    "title": "Klantenadviseur belfius regio gent"
+  },
+  {
+   "id": "74153759",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74153759/comptable-assistant-e-de-direction-societe-familiale-4500",
+   "title": "Comptable assistant e de direction societe familiale 4500"
   },
   {
    "id": "74153746",
@@ -5594,8 +5624,8 @@
   },
   {
    "id": "74144607",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74144607/senior-net-developer",
-   "title": "Senior net developer"
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74144607/atcon-global-senior-net-developer",
+   "title": "Atcon global senior net developer"
   },
   {
    "id": "74144594",
@@ -28553,6 +28583,11 @@
    "title": "Randstad digital senior backend software engineer"
   },
   {
+   "id": "74000910",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74000910/egov-select-java-analyst-developer",
+   "title": "Egov select java analyst developer"
+  },
+  {
    "id": "74000908",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74000908/smals-ux-designer-researcher",
    "title": "Smals ux designer researcher"
@@ -33763,6 +33798,11 @@
    "title": "Ruby developer"
   },
   {
+   "id": "73959267",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/73959267/fullstack-developer-react-net",
+   "title": "Fullstack developer react net"
+  },
+  {
    "id": "73959266",
    "url": "https://www.vdab.be/vindeenjob/vacatures/73959266/infrastructure-project-manager",
    "title": "Infrastructure project manager"
@@ -37763,6 +37803,11 @@
    "title": "It security specialist f5 awaf palo alto expert"
   },
   {
+   "id": "73914510",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/73914510/react-react-native-developer",
+   "title": "React react native developer"
+  },
+  {
    "id": "73914503",
    "url": "https://www.vdab.be/vindeenjob/vacatures/73914503/senior-backend-java-developer-gent",
    "title": "Senior backend java developer gent"
@@ -38706,6 +38751,11 @@
    "id": "73911860",
    "url": "https://www.vdab.be/vindeenjob/vacatures/73911860/product-marketing-specialist",
    "title": "Product marketing specialist"
+  },
+  {
+   "id": "73911787",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/73911787/medior-senior-software-developer",
+   "title": "Medior senior software developer"
   },
   {
    "id": "73911692",
@@ -43696,56 +43746,6 @@
    "id": "73815127",
    "url": "https://www.vdab.be/vindeenjob/vacatures/73815127/office-assistant",
    "title": "Office assistant"
-  },
-  {
-   "id": "73814815",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/73814815/used-car-manager-mechelen-herent",
-   "title": "Used car manager mechelen herent"
-  },
-  {
-   "id": "73814660",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/73814660/technisch-operator-verrebroek",
-   "title": "Technisch operator verrebroek"
-  },
-  {
-   "id": "73814194",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/73814194/technology-digital-risk-advisor",
-   "title": "Technology digital risk advisor"
-  },
-  {
-   "id": "73814073",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/73814073/customer-service-medewerker-en-ordercoordinator",
-   "title": "Customer service medewerker en ordercoordinator"
-  },
-  {
-   "id": "73814061",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/73814061/warehouse-operator-gezocht-in-2-ploegen-te-beringen",
-   "title": "Warehouse operator gezocht in 2 ploegen te beringen"
-  },
-  {
-   "id": "73814046",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/73814046/ago-technics-operator-3-ploegen",
-   "title": "Ago technics operator 3 ploegen"
-  },
-  {
-   "id": "73814036",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/73814036/sales-support-medewerker",
-   "title": "Sales support medewerker"
-  },
-  {
-   "id": "73814023",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/73814023/system-sales-coordinator",
-   "title": "System sales coordinator"
-  },
-  {
-   "id": "73813962",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/73813962/junior-mechanisch-ontwerper",
-   "title": "Junior mechanisch ontwerper"
-  },
-  {
-   "id": "73813905",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/73813905/lift-technician-f-x-m",
-   "title": "Lift technician f x m"
   }
  ],
  "rejected": [
@@ -83098,5 +83098,5 @@
    "cv_fit_v": 10
   }
  ],
- "search_cursor": 11
+ "search_cursor": 0
 }
