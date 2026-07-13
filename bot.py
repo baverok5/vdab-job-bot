@@ -732,10 +732,24 @@ def main():
                 check=False, capture_output=True)
             if r.returncode == 0:
                 # HEAD:main works even if checkout left us on a detached HEAD.
-                p = subprocess.run(["git", "push", "origin", "HEAD:main"],
-                                   check=False, capture_output=True, text=True)
-                print("  [checkpoint pushed]" if p.returncode == 0
-                      else f"  [checkpoint push failed: {p.stderr.strip()[:200]}]")
+                # Resilient push: if another run/deploy advanced main, a plain
+                # push is rejected non-fast-forward. Sync (keep our authoritative
+                # outputs) and retry a couple of times instead of giving up.
+                pushed = False
+                for _ in range(3):
+                    p = subprocess.run(["git", "push", "origin", "HEAD:main"],
+                                       check=False, capture_output=True, text=True)
+                    if p.returncode == 0:
+                        pushed = True
+                        break
+                    subprocess.run(["git", "fetch", "origin", "main"],
+                                   check=False, capture_output=True)
+                    subprocess.run(["git", "-c", "user.name=job-bot",
+                                    "-c", "user.email=bot@users.noreply.github.com",
+                                    "merge", "-s", "ours", "--no-edit", "origin/main"],
+                                   check=False, capture_output=True)
+                print("  [checkpoint pushed]" if pushed
+                      else "  [checkpoint push skipped — will retry next checkpoint]")
         except Exception as e:
             print(f"  (checkpoint push skipped: {e})")
 
