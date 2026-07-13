@@ -296,9 +296,12 @@ function renderPrepared(j, d, box) {
       <div class="quote" style="max-height:260px;overflow-y:auto">${esc(d.tailored_cv)}</div>
       <button class="copybtn" data-copy="cv">Copy tailored CV</button></div>`
       : (d.cv_highlights ? `<div class="sec"><div class="h">CV highlights for this job</div>${bullets(d.cv_highlights)}</div>` : "")}
-    <a class="btn primary" href="${gmailFor(j, d)}" target="_blank" rel="noopener"
-       onclick="try{localStorage.setItem('jobstatus', JSON.stringify(Object.assign(JSON.parse(localStorage.getItem('jobstatus')||'{}'), {'${j.id}':'applied'})))}catch(e){}">
-       ${hasMail ? "Open in Gmail to send" : "Open Gmail (add recipient)"}</a>`;
+    ${hasMail
+      ? `<button class="btn primary" data-prep="draft">📮 Create Gmail draft (CV + letter attached)</button>
+         <div class="pingstat hint" style="text-align:left;margin-top:8px"></div>
+         <a class="btn" style="margin-top:8px" href="${gmailFor(j, d)}" target="_blank" rel="noopener">Plain Gmail compose (text only, no files)</a>`
+      : `<a class="btn primary" href="${esc(j.url)}" target="_blank" rel="noopener">Apply on VDAB →</a>
+         <div class="hint" style="text-align:left;margin-top:8px">No direct email on this job — apply on VDAB and upload the CV / paste the letter above.</div>`}`;
   box.querySelectorAll(".copybtn").forEach((b) => b.addEventListener("click", (e) => {
     e.stopPropagation();
     const texts = {
@@ -308,6 +311,11 @@ function renderPrepared(j, d, box) {
     };
     copyText(b, texts[b.dataset.copy] || "");
   }));
+  const draftBtn = box.querySelector('[data-prep="draft"]');
+  if (draftBtn) draftBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    pingClaude(j, box.querySelector(".pingstat"));  // real draft with PDFs, via Claude
+  });
 }
 
 async function prepareJob(j, box) {

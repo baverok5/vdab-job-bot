@@ -55,13 +55,15 @@ jobs:
           git commit -m "Update jobs $(date -u +'%Y-%m-%d %H:%M')"
           # Resilient push: if another run (or a deploy) advanced main while we
           # worked, a plain push is rejected non-fast-forward and the whole job
-          # would fail — discarding this run's results. Instead, sync and retry;
-          # our freshly regenerated outputs are authoritative, so keep ours.
+          # would fail — discarding this run's results. Instead, sync and retry.
+          # Use -X ours (NOT -s ours): keep OUR version only on real conflicts
+          # (the data files two runs both touch) while PRESERVING unrelated
+          # changes from main — e.g. a frontend/app deploy that landed mid-run.
           for i in 1 2 3 4 5; do
             git push origin HEAD:main && { echo "pushed"; exit 0; }
             echo "push rejected — syncing with remote (attempt $i)"
             git fetch origin main
-            git merge -s ours --no-edit origin/main || true
+            git merge -X ours --no-edit origin/main || { git merge --abort || true; }
             sleep $((RANDOM % 6 + 3))
           done
           echo "push still failing after retries" >&2

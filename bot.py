@@ -744,10 +744,15 @@ def main():
                         break
                     subprocess.run(["git", "fetch", "origin", "main"],
                                    check=False, capture_output=True)
-                    subprocess.run(["git", "-c", "user.name=job-bot",
-                                    "-c", "user.email=bot@users.noreply.github.com",
-                                    "merge", "-s", "ours", "--no-edit", "origin/main"],
-                                   check=False, capture_output=True)
+                    # -X ours (not -s ours): resolve conflicts in OUR favour but
+                    # keep unrelated changes from main (e.g. a mid-run app deploy).
+                    m = subprocess.run(["git", "-c", "user.name=job-bot",
+                                        "-c", "user.email=bot@users.noreply.github.com",
+                                        "merge", "-X", "ours", "--no-edit", "origin/main"],
+                                       check=False, capture_output=True)
+                    if m.returncode != 0:
+                        subprocess.run(["git", "merge", "--abort"],
+                                       check=False, capture_output=True)
                 print("  [checkpoint pushed]" if pushed
                       else "  [checkpoint push skipped — will retry next checkpoint]")
         except Exception as e:
