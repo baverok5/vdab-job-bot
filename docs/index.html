@@ -508,9 +508,27 @@ function categorize(j) {
 // job that wants good/very-good ENGLISH but only basic Dutch is NOT flagged.
 const DUTCH_FLUENT =
   /(nederlands|dutch)\s*[\(:]\s*\(?\s*(zeer goede?|very good|goede?|good|vlot|vloeiend|moedertaal|uitstekend|near[\s-]?native|native|fluent)|(vlot|vloeiend|moedertaal|uitstekend|fluent|native|zeer goede?|very good)\s+(nederlands|dutch)/i;
+// Dutch as a REQUIRED working language (e.g. "English and Dutch required") is
+// also a stretch at B1, even with no explicit fluency word. Scan clause by
+// clause so a neighbouring "French is a plus" or "English required, Dutch a
+// plus" can't leak the requirement onto Dutch; skip basic-Dutch, either/or
+// ("English or Dutch"), and jobs the bot already cleared as B1-acceptable.
+function dutchRequired(t) {
+  const s = t.toLowerCase();
+  if (/\bb1\b[^.;\n]{0,40}(acceptable|\bok\b|voldoende|is fine|sufficient|conversational is acceptable)/.test(s)) return false;
+  for (const c of s.split(/[.;\n,]/)) {
+    if (!/\b(nederlands|dutch)\b/.test(c)) continue;
+    if (!/\b(vereist|verplicht|noodzakelijk|required)\b/.test(c)) continue;
+    if (/\bno\s+\w+\s+required\b|\bgeen\s+\w+/.test(c)) continue; // "no French required"
+    if (/\b(basic|basis|notions?|elementair|beperkte?|passieve?)\b[^,]*\b(nederlands|dutch)\b/.test(c)) continue;
+    if (/\b(english|engels|frans|french|russian)\s+(or|of)\s+(dutch|nederlands)\b|\b(dutch|nederlands)\s+(or|of)\s+(english|engels|frans|french)\b/.test(c)) continue;
+    return true;
+  }
+  return false;
+}
 function needsBetterDutch(j) {
-  return !!j.dutch_stretch ||
-    DUTCH_FLUENT.test(`${j.details || ""} ${j.why_bad || ""} ${j.reason || ""}`);
+  const t = `${j.details || ""} ${j.why_bad || ""} ${j.reason || ""}`;
+  return !!j.dutch_stretch || DUTCH_FLUENT.test(t) || dutchRequired(t);
 }
 
 function render() {
