@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-13 07:06 UTC",
+ "updated": "2026-07-13 07:24 UTC",
  "jobs": [
   {
    "id": "74144770",
@@ -4090,6 +4090,11 @@
  ],
  "listing": [
   {
+   "id": "74154010",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74154010/senior-dossierbeheerder-modern-digitaal-kantoor",
+   "title": "Senior dossierbeheerder modern digitaal kantoor"
+  },
+  {
    "id": "74154004",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74154004/graphic-designer-visual-content-creator",
    "title": "Graphic designer visual content creator"
@@ -4098,6 +4103,16 @@
    "id": "74153961",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74153961/zorgkundige",
    "title": "Zorgkundige"
+  },
+  {
+   "id": "74153949",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74153949/teamleader-productie-2-ploegen-kruisem",
+   "title": "Teamleader productie 2 ploegen kruisem"
+  },
+  {
+   "id": "74153944",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74153944/net-developer-c-asp-net",
+   "title": "Net developer c asp net"
   },
   {
    "id": "74153933",
@@ -23098,6 +23113,11 @@
    "id": "74044073",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74044073/technieker-dagploeg-dendermonde",
    "title": "Technieker dagploeg dendermonde"
+  },
+  {
+   "id": "74044057",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74044057/teamleader-internal-sales-aalter",
+   "title": "Teamleader internal sales aalter"
   },
   {
    "id": "74043997",
@@ -44068,26 +44088,6 @@
    "id": "73813905",
    "url": "https://www.vdab.be/vindeenjob/vacatures/73813905/lift-technician-f-x-m",
    "title": "Lift technician f x m"
-  },
-  {
-   "id": "73813456",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/73813456/technical-lead-agii-via-vlaanderen-connect",
-   "title": "Technical lead agii via vlaanderen connect"
-  },
-  {
-   "id": "73813429",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/73813429/marketing-assistant",
-   "title": "Marketing assistant"
-  },
-  {
-   "id": "73813408",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/73813408/customer-service-officer",
-   "title": "Customer service officer"
-  },
-  {
-   "id": "73813249",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/73813249/oracle-apex-developer",
-   "title": "Oracle apex developer"
   }
  ],
  "rejected": [
@@ -83080,5 +83080,5 @@
    "cv_fit_v": 10
   }
  ],
- "search_cursor": 6
+ "search_cursor": 11
 }
