@@ -136,6 +136,7 @@
   .loadmore:active { opacity: .6; }
   .tag.nl { background: var(--amber-bg); color: var(--amber); border-color: transparent; font-weight: 600; }
   .tag.intern { background: var(--green-bg); color: var(--green); border-color: transparent; font-weight: 600; }
+  .tag.stretch { background: var(--accent-bg); color: var(--accent); border-color: transparent; font-weight: 600; }
   .mkt { display: flex; align-items: center; gap: 8px; cursor: pointer;
     background: var(--card); border: 0.5px solid var(--border); border-radius: 10px;
     padding: 11px 13px; margin: 4px 0 4px; box-shadow: var(--shadow);
@@ -380,6 +381,7 @@ function card(j, state) {
           ${state === "applied" ? '<span class="tag applied">✓ Applied</span>' : ""}
           ${j.internship ? '<span class="tag intern">🎓 Internship</span>' : ""}
           ${needsBetterDutch(j) ? '<span class="tag nl">🇳🇱 Needs better Dutch</span>' : ""}
+          ${j.exp_stretch ? '<span class="tag stretch">💪 Stretch — worth a shot</span>' : ""}
           ${state !== "applied" && isToday(j.found_at) ? '<span class="tag new">New today</span>' : ""}
           ${hasMail ? '<span class="tag mail">Direct email</span>' : ""}
           <span class="tag">Found ${esc((j.found_at || "").slice(0, 10))}</span>
