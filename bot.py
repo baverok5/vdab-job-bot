@@ -392,10 +392,128 @@ def collect_links(browser, search_url, cap=5000, budget_s=40, max_pages=25):
     return {(u, jid) for jid, u in found.items()}
 
 
+# ---- LinkedIn (secondary source) -------------------------------------------
+# LinkedIn has no open API and blocks scrapers hard (HTTP 999/429 on datacenter
+# IPs like GitHub Actions). The only public path is the "jobs-guest" endpoints,
+# which return listings + descriptions WITHOUT login. Best-effort: every failure
+# is swallowed so the VDAB run is never affected, and on a rate-limit block we
+# back off for the rest of the run. LinkedIn ids are ~10 digits (VDAB ~8), so
+# they don't collide; jobs carry src="linkedin" and are applied to via LinkedIn.
+LINKEDIN_KEYWORDS = [
+    "digital marketing", "digital marketeer", "seo", "content marketeer",
+    "social media marketing", "online marketing", "growth marketing",
+    "marketing", "communications",
+]
+LI_GUEST_SEARCH = ("https://www.linkedin.com/jobs-guest/jobs/api/"
+                   "seeMoreJobPostings/search")
+LI_GUEST_JOB = "https://www.linkedin.com/jobs-guest/jobs/api/jobPosting/"
+LI_HEADERS = {
+    "User-Agent": HEADERS["User-Agent"],
+    "Accept": "text/html,application/xhtml+xml",
+    "Accept-Language": "en-US,en;q=0.9,nl;q=0.8",
+    "X-Requested-With": "XMLHttpRequest",
+}
+
+
+def _li_job_id(card):
+    urn = card.get("data-entity-urn", "") or ""
+    m = re.search(r"jobPosting:(\d+)", urn)
+    if m:
+        return m.group(1)
+    a = card.select_one("a[href*='/jobs/view/']")
+    if a and a.get("href"):
+        m = re.search(r"/jobs/view/(?:[^/?]*-)?(\d+)", a["href"])
+        if m:
+            return m.group(1)
+    return None
+
+
+def collect_linkedin(keywords=None, pages_per_kw=3, budget_s=90):
+    """Scrape LinkedIn's public guest job search for Belgium. Returns
+    {id: {id,url,title,company,location,src}}. Swallows all errors; backs off
+    on a rate-limit/blocked response so we don't get the IP fully banned."""
+    keywords = keywords or LINKEDIN_KEYWORDS
+    found, t0 = {}, time.time()
+    for kw in keywords:
+        if time.time() - t0 > budget_s:
+            break
+        for pg in range(pages_per_kw):
+            if time.time() - t0 > budget_s:
+                break
+            try:
+                r = requests.get(LI_GUEST_SEARCH,
+                                 params={"keywords": kw, "location": "Belgium",
+                                         "f_TPR": "r2592000", "start": pg * 10},
+                                 headers=LI_HEADERS, timeout=25)
+            except Exception as e:
+                print(f"  linkedin search error ({kw}): {e}")
+                break
+            if r.status_code in (429, 999, 403):
+                print(f"  linkedin blocked (HTTP {r.status_code}) — backing off for this run")
+                return found
+            if r.status_code != 200 or not r.text.strip():
+                break
+            soup = BeautifulSoup(r.text, "html.parser")
+            added = 0
+            for c in soup.select("li"):
+                jid = _li_job_id(c)
+                if not jid or jid in found:
+                    continue
+                te = c.select_one(".base-search-card__title, h3")
+                title = te.get_text(strip=True) if te else ""
+                if not title:
+                    continue
+                ce = c.select_one(".base-search-card__subtitle, h4")
+                le = c.select_one(".job-search-card__location")
+                found[jid] = {
+                    "id": jid,
+                    "url": f"https://www.linkedin.com/jobs/view/{jid}",
+                    "title": title,
+                    "company": ce.get_text(strip=True) if ce else "",
+                    "location": le.get_text(strip=True) if le else "",
+                    "src": "linkedin",
+                }
+                added += 1
+            print(f"  linkedin '{kw}' p{pg}: +{added} (total {len(found)})")
+            if added == 0:
+                break
+            time.sleep(1.5)
+    print(f"  linkedin: collected {len(found)} jobs in {int(time.time() - t0)}s")
+    return found
+
+
+def fetch_linkedin_detail(job_id):
+    """Fetch one LinkedIn guest job description (no login). Returns (text, email)."""
+    jid = str(job_id)
+    try:
+        r = requests.get(LI_GUEST_JOB + jid, headers=LI_HEADERS, timeout=25)
+    except Exception as e:
+        print(f"  linkedin detail error {jid}: {e}")
+        return None, None
+    if r.status_code != 200 or not r.text.strip():
+        print(f"  linkedin detail {jid}: HTTP {r.status_code}")
+        return None, None
+    soup = BeautifulSoup(r.text, "html.parser")
+    node = soup.select_one(".show-more-less-html__markup, .description__text")
+    text = (node.get_text("\n", strip=True) if node
+            else soup.get_text("\n", strip=True))
+    text = re.sub(r"\n{3,}", "\n\n", text).strip()
+    time.sleep(1)  # be gentle — LinkedIn rate-limits aggressively
+    if len(text) < 200:
+        return None, None
+    emails = re.findall(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}", text)
+    clean = [e for e in emails if not any(
+        b in e.lower() for b in ("linkedin.com", "example.", "noreply", "no-reply"))]
+    return text[:15000], (clean[0] if clean else None)
+
+
 def fetch_job_detail(browser, url, job_id):
     """Render one job page in a headless browser and return its readable text
     + any apply email. VDAB is a JS app with a bot-protected API, so a real
-    browser is the only reliable way to see the posting."""
+    browser is the only reliable way to see the posting. LinkedIn jobs use the
+    guest HTTP endpoint instead (no browser render)."""
+    if "linkedin.com" in (url or ""):
+        return fetch_linkedin_detail(job_id)
     page = browser.new_page(
         user_agent=HEADERS["User-Agent"],
         locale="nl-BE",
@@ -851,11 +969,27 @@ def main():
                 print(f"  {len(links)} links from {url}")
                 all_links |= links
 
+            # Secondary source: LinkedIn public guest search (marketing/SEO/
+            # content keywords, Belgium). Best-effort — a block is swallowed and
+            # the VDAB results stand on their own.
+            li_meta = collect_linkedin()
+            for _m in li_meta.values():
+                all_links.add((_m["url"], _m["id"]))
+
             # Accumulate the master listing across runs (union by id), dropping
             # roles the candidate never wants. This is what keeps coverage growing
             # instead of being pinned to a single search's results.
             listing = {j["id"]: j for j in jobs.get("listing", [])}
             for (u, i) in all_links:
+                m = li_meta.get(i)
+                if m:  # LinkedIn item — use its real title/company/location
+                    if is_excluded(m["title"]) or is_ineligible(m["title"]):
+                        continue
+                    listing[i] = {"id": i, "url": u, "title": m["title"],
+                                  "company": m.get("company", ""),
+                                  "location": m.get("location", ""),
+                                  "src": "linkedin"}
+                    continue
                 t = _slug_title(u)
                 if is_excluded(t) or is_ineligible(t):
                     continue

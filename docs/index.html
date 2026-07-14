@@ -304,8 +304,8 @@ function renderPrepared(j, d, box) {
       ? `<button class="btn primary" data-prep="draft">📮 Create Gmail draft (CV + letter attached)</button>
          <div class="pingstat hint" style="text-align:left;margin-top:8px"></div>
          <a class="btn" style="margin-top:8px" href="${gmailFor(j, d)}" target="_blank" rel="noopener">Plain Gmail compose (text only, no files)</a>`
-      : `<a class="btn primary" href="${esc(j.url)}" target="_blank" rel="noopener">Apply on VDAB →</a>
-         <div class="hint" style="text-align:left;margin-top:8px">No direct email on this job — apply on VDAB and upload the CV / paste the letter above.</div>`}`;
+      : `<a class="btn primary" href="${esc(j.url)}" target="_blank" rel="noopener">Apply on ${srcOf(j)} →</a>
+         <div class="hint" style="text-align:left;margin-top:8px">No direct email on this job — apply on ${srcOf(j)} and upload the CV / paste the letter above.</div>`}`;
   box.querySelectorAll(".copybtn").forEach((b) => b.addEventListener("click", (e) => {
     e.stopPropagation();
     const texts = {
@@ -369,7 +369,7 @@ function card(j, state) {
   const el = document.createElement("div");
   el.className = "card";
   const hasMail = !!j.apply_email;
-  const applyLabel = hasMail ? "Apply by email" : "Apply on VDAB";
+  const applyLabel = hasMail ? "Apply by email" : ("Apply on " + srcOf(j));
   const applyHref = hasMail ? gmailLink(j) : (j.url || "#");
 
   el.innerHTML = `
@@ -396,7 +396,7 @@ function card(j, state) {
         ${bullets(j.details) || `<div class="t">${esc(j.reason)}</div>`}</div>
       <div class="actions">
         ${state === "applied"
-          ? `<a class="btn" href="${esc(j.url)}" target="_blank" rel="noopener">View on VDAB</a>
+          ? `<a class="btn" href="${esc(j.url)}" target="_blank" rel="noopener">View on ${srcOf(j)}</a>
              <button class="btn undo" data-act="unapply">Mark not applied</button>`
           : `<button class="btn primary" data-act="generate">✍️ Letter</button>
              <button class="btn" data-act="gmail">📮 Gmail</button>
@@ -428,19 +428,24 @@ function card(j, state) {
   return el;
 }
 
+// Which board a job came from — VDAB or the LinkedIn secondary source.
+function srcOf(j) {
+  return (j && (j.src === "linkedin" || /linkedin\.com/.test(j.url || ""))) ? "LinkedIn" : "VDAB";
+}
 function listingCard(j) {
   const el = document.createElement("div");
   el.className = "card";
+  const src = srcOf(j);
   el.innerHTML = `
     <div class="top">
       <div style="flex:1">
         <div class="title">${esc(j.title)}</div>
-        <div class="co">VDAB · #${esc(j.id)}</div>
+        <div class="co">${src}${j.company ? " · " + esc(j.company) : ""}${j.location ? " · " + esc(j.location) : ""}</div>
       </div>
     </div>
     <div class="actions">
       <button class="btn primary" data-act="generate">✍️ Write my letter</button>
-      <a class="btn" href="${esc(j.url)}" target="_blank" rel="noopener">VDAB</a>
+      <a class="btn" href="${esc(j.url)}" target="_blank" rel="noopener">${src}</a>
     </div>
     <div class="prep"></div>`;
   el.addEventListener("click", (e) => {
@@ -473,7 +478,7 @@ function rejectedCard(j) {
       <div class="sec"><div class="h">Job details</div>
         ${bullets(j.details) || `<div class="t">${esc(j.reason)}</div>`}</div>
       <div class="actions">
-        <a class="btn" href="${esc(j.url)}" target="_blank" rel="noopener">View on VDAB anyway</a>
+        <a class="btn" href="${esc(j.url)}" target="_blank" rel="noopener">View on ${srcOf(j)} anyway</a>
       </div>
     </div>`;
   el.addEventListener("click", (e) => {
@@ -625,7 +630,7 @@ function render() {
     function renderList(items) {
       [...list.querySelectorAll(".card, .hint, .empty, .loadmore")].forEach((n) => n.remove());
       list.insertAdjacentHTML("beforeend",
-        `<div class="hint" style="margin:2px 0 12px">${items.length}${MKT_ONLY ? " marketing" : ""} of ${listing.length} jobs — tap “Open on VDAB” to view. The “Ready” tab has the ones with a letter already written.</div>`);
+        `<div class="hint" style="margin:2px 0 12px">${items.length}${MKT_ONLY ? " marketing" : ""} of ${listing.length} jobs (VDAB + LinkedIn) — tap the source button to view. The “Ready” tab has the ones with a letter already written.</div>`);
       if (!items.length) { list.insertAdjacentHTML("beforeend", '<div class="empty">No jobs match that filter.</div>'); return; }
       appendPaged(list, items, listingCard, 25);
     }
