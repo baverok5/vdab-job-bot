@@ -70,7 +70,7 @@ MARKETING_RX = re.compile(
     r"seo\b|sea\b|sem\b|google\s*ads|marketing|marketeer|marketer|content|"
     r"wordpress|copywrit|social\s*media|communicat|digital|\bweb\b|website|"
     r"web\s*design|webdesign|webshop|front[-\s]?end|\bux\b|\bui\b|e-?commerce|"
-    r"growth|\bbrand|campaign|advertis", re.I)
+    r"growth|\bbrand(?:ing|s)?\b|campaign|advertis", re.I)
 
 
 def is_marketing(title):
@@ -839,9 +839,11 @@ def main():
                 # only need the newest results each run. Keep it fast so the run's
                 # time goes to SCREENING the shortlist, not re-collecting.
                 priority = url in PRIORITY_SEARCH_URLS
+                # Page marketing searches deeper (they're the target field — we
+                # want the FULL result set), fillers stay light.
                 links = collect_links(browser, url,
-                                      budget_s=45 if priority else 25,
-                                      max_pages=25 if priority else 12)
+                                      budget_s=75 if priority else 25,
+                                      max_pages=40 if priority else 12)
                 print(f"  {len(links)} links from {url}")
                 all_links |= links
 
@@ -854,10 +856,15 @@ def main():
                 if is_excluded(t) or is_ineligible(t):
                     continue
                 listing[i] = {"id": i, "url": u, "title": t}
-            # Keep the newest ~8000 in the browse list so marketing jobs aren't
-            # evicted before they're screened; the funnel state tracks progress.
-            jobs["listing"] = sorted(
-                listing.values(), key=lambda j: j["id"], reverse=True)[:8000]
+            # Keep EVERY marketing/SEO/web listing we've ever collected (the
+            # candidate's target field — never evict it) PLUS the newest ~8000 of
+            # everything else, so the browse list covers all digital-marketing
+            # jobs on VDAB, not just a recent window that fillers push them out of.
+            allv = list(listing.values())
+            mkt = [j for j in allv if is_marketing(j["title"])]
+            rest = sorted((j for j in allv if not is_marketing(j["title"])),
+                          key=lambda j: j["id"], reverse=True)[:8000]
+            jobs["listing"] = sorted(mkt + rest, key=lambda j: j["id"], reverse=True)
             by_id = {j["id"]: j for j in jobs["listing"]}
             checkpoint()   # save the freshly-collected listing before screening
 

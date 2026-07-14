@@ -485,7 +485,9 @@ function rejectedCard(j) {
 // work you actually want (digital marketing / SEO / web) — is shown at the top.
 const CATS = [
   { key: "marketing", label: "🎯 Digital marketing, SEO & web", fav: true,
-    rx: /seo|marketing|content|wordpress|\bweb\b|website|social ?media|digital|copywrit|communicat|\bbrand|growth/i },
+    // \bbrand(ing|s)?\b — matches "brand"/"branding" but NOT Dutch fire words
+    // (brandveiligheid, brandhaspel, brandblusser…) that polluted the list.
+    rx: /seo|marketing|marketeer|content|wordpress|\bweb\b|website|social ?media|digital|copywrit|communicat|\bbrand(ing|s)?\b|growth|advertis|campaign|\bsea\b|google ?ads/i },
   { key: "office", label: "🗂️ Office & admin",
     rx: /admin|assistant|office|data ?entry|reception|secretar|back[-\s]?office|payroll|\bhr\b|management support/i },
   { key: "cs", label: "📞 Customer service & sales",
@@ -590,29 +592,42 @@ function render() {
 
   if (TAB === "all") {
     if (!listing.length) {
-      list.innerHTML = '<div class="empty"><div class="big">🌐</div>Building the English-jobs list…<br>The bot fills this each hour.</div>';
+      list.innerHTML = '<div class="empty"><div class="big">🌐</div>Building the jobs list…<br>The bot fills this each hour.</div>';
       return;
     }
-    const q = SEARCH_Q.trim().toLowerCase();
-    const shown = q ? listing.filter((j) => (j.title || "").toLowerCase().includes(q)) : listing;
+    // Marketing-only toggle (shares MKT_ONLY with the Ready tab) so you can
+    // browse EVERY digital-marketing / SEO / web listing the bot has collected
+    // from VDAB in one place — not just the ones with a letter written.
+    const mktCount = listing.filter((j) => categorize(j) === "marketing").length;
+    list.insertAdjacentHTML("beforeend",
+      `<label class="mkt${MKT_ONLY ? " on" : ""}" style="margin-bottom:10px">
+        <input type="checkbox" id="mktonly-all" ${MKT_ONLY ? "checked" : ""}>
+        <span>🎯 Digital marketing, SEO & web only</span>${mktCount ? `<span class="cnt">${mktCount}</span>` : ""}</label>`);
+    document.getElementById("mktonly-all").addEventListener("change", (e) => {
+      MKT_ONLY = e.target.checked;
+      localStorage.setItem("mktOnly", MKT_ONLY ? "1" : "");
+      render();
+    });
+    const base = () => MKT_ONLY ? listing.filter((j) => categorize(j) === "marketing") : listing;
     list.insertAdjacentHTML("beforeend",
       `<input id="filter" class="filter" type="search" inputmode="search"
-        placeholder="Filter ${listing.length} English jobs (e.g. developer, sales, driver)…"
+        placeholder="Filter ${base().length} jobs (e.g. marketeer, seo, social media)…"
         value="${esc(SEARCH_Q)}">`);
     const fld = document.getElementById("filter");
-    fld.addEventListener("input", () => { SEARCH_Q = fld.value; renderList(shownAfterInput()); });
-    function shownAfterInput() {
+    function currentItems() {
       const qq = fld.value.trim().toLowerCase();
-      return qq ? listing.filter((j) => (j.title || "").toLowerCase().includes(qq)) : listing;
+      const b = base();
+      return qq ? b.filter((j) => (j.title || "").toLowerCase().includes(qq)) : b;
     }
+    fld.addEventListener("input", () => { SEARCH_Q = fld.value; renderList(currentItems()); });
     function renderList(items) {
       [...list.querySelectorAll(".card, .hint, .empty, .loadmore")].forEach((n) => n.remove());
       list.insertAdjacentHTML("beforeend",
-        `<div class="hint" style="margin:2px 0 12px">${items.length} of ${listing.length} English jobs. Tap “Open on VDAB” to view; the “Ready” tab has the ones with a letter already written.</div>`);
+        `<div class="hint" style="margin:2px 0 12px">${items.length}${MKT_ONLY ? " marketing" : ""} of ${listing.length} jobs — tap “Open on VDAB” to view. The “Ready” tab has the ones with a letter already written.</div>`);
       if (!items.length) { list.insertAdjacentHTML("beforeend", '<div class="empty">No jobs match that filter.</div>'); return; }
       appendPaged(list, items, listingCard, 25);
     }
-    renderList(shown);
+    renderList(currentItems());
     if (SEARCH_Q) fld.focus();
     return;
   }
