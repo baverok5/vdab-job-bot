@@ -138,6 +138,8 @@
   .tag.intern { background: var(--green-bg); color: var(--green); border-color: transparent; font-weight: 600; }
   .tag.stretch { background: var(--accent-bg); color: var(--accent); border-color: transparent; font-weight: 600; }
   .tag.li { background: rgba(10,102,194,.16); color: #4aa3ff; border-color: transparent; font-weight: 600; }
+  .tag.design { background: var(--amber-bg); color: var(--amber); border-color: transparent; font-weight: 600; }
+  .tag.seo { background: var(--green-bg); color: var(--green); border-color: transparent; font-weight: 700; }
   .btn.li-apply { background: #0a66c2; color: #fff; border-color: transparent; font-weight: 700; }
   .mkt { display: flex; align-items: center; gap: 8px; cursor: pointer;
     background: var(--card); border: 0.5px solid var(--border); border-radius: 10px;
@@ -387,6 +389,8 @@ function card(j, state) {
           ${j.internship ? '<span class="tag intern">🎓 Internship</span>' : ""}
           ${needsBetterDutch(j) ? '<span class="tag nl">🇳🇱 Needs better Dutch</span>' : ""}
           ${j.exp_stretch ? '<span class="tag stretch">💪 Stretch — worth a shot</span>' : ""}
+          ${designStretch(j) ? '<span class="tag design">🎨 Design-heavy — stretch</span>' : ""}
+          ${isSEO(j) ? '<span class="tag seo">🔎 SEO</span>' : ""}
           ${state !== "applied" && isToday(j.found_at) ? '<span class="tag new">New today</span>' : ""}
           ${hasMail ? '<span class="tag mail">Direct email</span>' : ""}
           ${srcOf(j) === "LinkedIn" ? '<span class="tag li">🔗 LinkedIn</span>' : ""}
@@ -575,6 +579,23 @@ function needsBetterDutch(j) {
   // job the candidate actually qualifies for (e.g. "Dutch (medium) — B1 sufficient").
   if (/\bb1\b[^.;\n]{0,45}(sufficient|acceptable|voldoende|is fine|enough|\bok\b)|(sufficient|acceptable|voldoende|enough)[^.;\n]{0,20}\bb1\b/i.test(t)) return false;
   return !!j.dutch_stretch || DUTCH_FLUENT.test(t) || dutchRequired(t) || dutchProductive(t);
+}
+
+// SEO-focused roles — the candidate's strongest area — surfaced first in Ready.
+const SEO_RX = /\bseo\b|\bsea\b|\bsem\b|search engine|zoekmachine|google ads|google analytics|search console|semrush|ahrefs|\bgeo\b/i;
+function isSEO(j) {
+  return SEO_RX.test(`${j.title || ""} ${j.details || ""} ${j.why_good || ""} ${j.reason || ""}`);
+}
+// Graphic-design / Canva-heavy roles are a stretch (candidate does web + basic
+// Canva, not pro graphic design). Flag but don't hide. Web/UX/UI design is NOT
+// counted (that's a real skill) — only Canva + graphic-design tools/skills.
+const DESIGN_RX = /\bcanva\b|graphic design|grafisch\w*|grafische|vormgev\w*|photoshop|illustrator|indesign|\badobe\b|creative suite|beeldbewerking|motion design/i;
+function designStretch(j) {
+  return DESIGN_RX.test(`${j.title || ""} ${j.details || ""} ${j.why_good || ""} ${j.why_bad || ""} ${j.reason || ""}`);
+}
+// Any reason a Ready job is a "worth a shot" stretch rather than a clean fit.
+function isStretch(j) {
+  return needsBetterDutch(j) || !!j.exp_stretch || designStretch(j);
 }
 
 function render() {
@@ -768,8 +789,12 @@ function render() {
       const groups = {};
       arr.forEach((j) => { (groups[categorize(j)] ||= []).push(j); });
       (MKT_ONLY ? CATS.filter((c) => c.key === "marketing") : CATS).forEach((c) => {
+        // Clean fits first, stretch jobs (Dutch / experience / design-heavy)
+        // last; among clean fits, SEO roles float to the top; then by score.
         const g = (groups[c.key] || []).sort((a, b) =>
-          (needsBetterDutch(a) - needsBetterDutch(b)) || (b.match_score || 0) - (a.match_score || 0));
+          (isStretch(a) - isStretch(b)) ||
+          (isSEO(b) - isSEO(a)) ||
+          (b.match_score || 0) - (a.match_score || 0));
         if (!g.length) return;
         addSection((ns || "") + "cat:" + c.key, c.fav ? "fav" : "",
           `${c.label}<span class="cnt">${g.length}</span>`, g);
