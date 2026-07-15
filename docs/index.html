@@ -137,6 +137,8 @@
   .tag.nl { background: var(--amber-bg); color: var(--amber); border-color: transparent; font-weight: 600; }
   .tag.intern { background: var(--green-bg); color: var(--green); border-color: transparent; font-weight: 600; }
   .tag.stretch { background: var(--accent-bg); color: var(--accent); border-color: transparent; font-weight: 600; }
+  .tag.li { background: rgba(10,102,194,.16); color: #4aa3ff; border-color: transparent; font-weight: 600; }
+  .btn.li-apply { background: #0a66c2; color: #fff; border-color: transparent; font-weight: 700; }
   .mkt { display: flex; align-items: center; gap: 8px; cursor: pointer;
     background: var(--card); border: 0.5px solid var(--border); border-radius: 10px;
     padding: 11px 13px; margin: 4px 0 4px; box-shadow: var(--shadow);
@@ -290,7 +292,7 @@ function gmailFor(j, d) {
 function renderPrepared(j, d, box) {
   const hasMail = !!(d.apply_email || j.apply_email);
   box.innerHTML = `
-    <div class="sec"><div class="h">Application email ${hasMail ? "→ " + esc(d.apply_email || j.apply_email) : "(no direct email — apply via VDAB)"}</div>
+    <div class="sec"><div class="h">Application email ${hasMail ? "→ " + esc(d.apply_email || j.apply_email) : "(no direct email — apply via " + srcOf(j) + ")"}</div>
       <div class="quote">${esc(d.email_subject ? d.email_subject + "\n\n" : "")}${esc(d.email_body)}</div>
       <button class="copybtn" data-copy="email">Copy email</button></div>
     <div class="sec"><div class="h">Cover letter</div>
@@ -304,8 +306,11 @@ function renderPrepared(j, d, box) {
       ? `<button class="btn primary" data-prep="draft">📮 Create Gmail draft (CV + letter attached)</button>
          <div class="pingstat hint" style="text-align:left;margin-top:8px"></div>
          <a class="btn" style="margin-top:8px" href="${gmailFor(j, d)}" target="_blank" rel="noopener">Plain Gmail compose (text only, no files)</a>`
-      : `<a class="btn primary" href="${esc(j.url)}" target="_blank" rel="noopener">Apply on ${srcOf(j)} →</a>
-         <div class="hint" style="text-align:left;margin-top:8px">No direct email on this job — apply on ${srcOf(j)} and upload the CV / paste the letter above.</div>`}`;
+      : (srcOf(j) === "LinkedIn"
+        ? `<a class="btn primary li-apply" href="${esc(j.url)}" target="_blank" rel="noopener">⚡ Easy Apply on LinkedIn →</a>
+           <div class="hint" style="text-align:left;margin-top:8px">Opens the job in the LinkedIn app — tap Easy Apply there. Copy the letter above to paste if it asks for a message.</div>`
+        : `<a class="btn primary" href="${esc(j.url)}" target="_blank" rel="noopener">Apply on VDAB →</a>
+           <div class="hint" style="text-align:left;margin-top:8px">No direct email on this job — apply on VDAB and upload the CV / paste the letter above.</div>`)}`;
   box.querySelectorAll(".copybtn").forEach((b) => b.addEventListener("click", (e) => {
     e.stopPropagation();
     const texts = {
@@ -384,6 +389,7 @@ function card(j, state) {
           ${j.exp_stretch ? '<span class="tag stretch">💪 Stretch — worth a shot</span>' : ""}
           ${state !== "applied" && isToday(j.found_at) ? '<span class="tag new">New today</span>' : ""}
           ${hasMail ? '<span class="tag mail">Direct email</span>' : ""}
+          ${srcOf(j) === "LinkedIn" ? '<span class="tag li">🔗 LinkedIn</span>' : ""}
           <span class="tag">Found ${esc((j.found_at || "").slice(0, 10))}</span>
         </div>
       </div>
@@ -399,8 +405,10 @@ function card(j, state) {
           ? `<a class="btn" href="${esc(j.url)}" target="_blank" rel="noopener">View on ${srcOf(j)}</a>
              <button class="btn undo" data-act="unapply">Mark not applied</button>`
           : `<button class="btn primary" data-act="generate">✍️ Letter</button>
-             <button class="btn" data-act="gmail">📮 Gmail</button>
-             <a class="btn" href="${esc(j.url)}" target="_blank" rel="noopener">VDAB</a>
+             ${srcOf(j) === "LinkedIn"
+               ? `<a class="btn primary li-apply" href="${esc(j.url)}" target="_blank" rel="noopener">⚡ Easy Apply</a>`
+               : `<button class="btn" data-act="gmail">📮 Gmail</button>
+                  <a class="btn" href="${esc(j.url)}" target="_blank" rel="noopener">VDAB</a>`}
              <button class="btn applied-btn" data-act="apply">✓ Applied</button>
              ${state === "skipped"
                ? '<button class="btn" data-act="unskip">Un-skip</button>'
