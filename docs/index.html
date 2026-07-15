@@ -532,7 +532,7 @@ function categorize(j) {
 // "Dutch (excellent)" was slipping through). Levels at/below B1 (medium, basic,
 // starter) are deliberately NOT here.
 const DUTCH_LEVEL =
-  "zeer goede?|very good|goede?|good|excellent|uitstekend|proficient|professional|advanced|thorough|strong|vlot|vloeiend|moedertaal|mother[\\s-]?tongue|near[\\s-]?native|native|fluent|high[\\s-]?level|hoog niveau";
+  "zeer goede?|very good|goede?|good|excellent|uitstekend|proficient|professional|advanced|thorough|strong|vlot|vloeiend|moedertaal|mother[\\s-]?tongue|near[\\s-]?native|native|fluent|high[\\s-]?level|hoog niveau|medium|gemiddelde?|intermediate|\\bb2\\b|\\bc1\\b|\\bc2\\b";
 const DUTCH_FLUENT = new RegExp(
   `(nederlands|dutch)\\s*[\\(:]\\s*\\(?\\s*(${DUTCH_LEVEL})|(${DUTCH_LEVEL})\\s+(nederlands|dutch)`,
   "i",
@@ -555,9 +555,26 @@ function dutchRequired(t) {
   }
   return false;
 }
+// A role that needs you to actively SPEAK / WRITE / communicate in Dutch needs
+// solid Dutch (a productive skill, well above B1), e.g. "You speak and write
+// Dutch and English well." Flag it unless Dutch is only basic or "a plus".
+function dutchProductive(t) {
+  const s = t.toLowerCase();
+  for (const c of s.split(/[.;\n]/)) {
+    if (!/\b(nederlands|dutch)\b/.test(c)) continue;
+    if (!/\b(speak|spoken|spreek|spreken|spreekt|write|written|schrijf|schrijven|schrijft|communicat|converse|verbal|mondeling|schriftelijk)\b/.test(c)) continue;
+    if (/\b(basic|basis|notions?|elementair|beperkte?|passieve?)\b/.test(c)) continue;
+    if (/\b(dutch|nederlands)\b[^.;\n]{0,15}\b(a plus|pluspunt|is a plus|nice[\s-]?to)\b/.test(c)) continue;
+    return true;
+  }
+  return false;
+}
 function needsBetterDutch(j) {
   const t = `${j.details || ""} ${j.why_bad || ""} ${j.reason || ""}`;
-  return !!j.dutch_stretch || DUTCH_FLUENT.test(t) || dutchRequired(t);
+  // If the posting/eval explicitly clears B1 as enough, trust it — don't hide a
+  // job the candidate actually qualifies for (e.g. "Dutch (medium) — B1 sufficient").
+  if (/\bb1\b[^.;\n]{0,45}(sufficient|acceptable|voldoende|is fine|enough|\bok\b)|(sufficient|acceptable|voldoende|enough)[^.;\n]{0,20}\bb1\b/i.test(t)) return false;
+  return !!j.dutch_stretch || DUTCH_FLUENT.test(t) || dutchRequired(t) || dutchProductive(t);
 }
 
 function render() {

@@ -1,7 +1,7 @@
 // Service worker for the VDAB Job Applier PWA.
 // Network-first for the app shell + data so updates always reach the phone
 // (previously the shell was cache-first, which pinned users to an old UI).
-const CACHE = "vjobs-v29";
+const CACHE = "vjobs-v30";
 const SHELL = [
   "./",
   "./index.html",
