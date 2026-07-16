@@ -584,14 +584,19 @@ function needsBetterDutch(j) {
 // SEO-focused roles — the candidate's strongest area — surfaced first in Ready.
 const SEO_RX = /\bseo\b|\bsea\b|\bsem\b|search engine|zoekmachine|google ads|google analytics|search console|semrush|ahrefs|\bgeo\b/i;
 function isSEO(j) {
-  return SEO_RX.test(`${j.title || ""} ${j.details || ""} ${j.why_good || ""} ${j.reason || ""}`);
+  // Classify on the JOB's own content only (title + role/tasks). Never on
+  // why_good/reason — those describe the candidate's fit and almost always
+  // name the candidate's own SEO skills, which falsely tags non-SEO jobs.
+  return SEO_RX.test(`${j.title || ""} ${j.details || ""}`);
 }
 // Graphic-design / Canva-heavy roles are a stretch (candidate does web + basic
 // Canva, not pro graphic design). Flag but don't hide. Web/UX/UI design is NOT
 // counted (that's a real skill) — only Canva + graphic-design tools/skills.
 const DESIGN_RX = /\bcanva\b|graphic design|grafisch\w*|grafische|vormgev\w*|photoshop|illustrator|indesign|\badobe\b|creative suite|beeldbewerking|motion design/i;
 function designStretch(j) {
-  return DESIGN_RX.test(`${j.title || ""} ${j.details || ""} ${j.why_good || ""} ${j.why_bad || ""} ${j.reason || ""}`);
+  // Same rule as isSEO: judge the job itself (title + role/tasks), not the
+  // fit narrative, which names the candidate's Canva skills and false-flags.
+  return DESIGN_RX.test(`${j.title || ""} ${j.details || ""}`);
 }
 // Any reason a Ready job is a "worth a shot" stretch rather than a clean fit.
 function isStretch(j) {
