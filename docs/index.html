@@ -410,7 +410,8 @@ function card(j, state) {
              <button class="btn undo" data-act="unapply">Mark not applied</button>`
           : `<button class="btn primary" data-act="generate">✍️ Letter</button>
              ${srcOf(j) === "LinkedIn"
-               ? `<a class="btn primary li-apply" href="${esc(j.url)}" target="_blank" rel="noopener">⚡ Easy Apply</a>`
+               ? `${hasMail ? '<button class="btn" data-act="gmail">📮 Gmail</button>' : ""}
+                  <a class="btn primary li-apply" href="${esc(j.url)}" target="_blank" rel="noopener">⚡ Easy Apply</a>`
                : `<button class="btn" data-act="gmail">📮 Gmail</button>
                   <a class="btn" href="${esc(j.url)}" target="_blank" rel="noopener">VDAB</a>`}
              <button class="btn applied-btn" data-act="apply">✓ Applied</button>
@@ -603,10 +604,19 @@ function isStretch(j) {
   return needsBetterDutch(j) || !!j.exp_stretch || designStretch(j);
 }
 
+// Manual override: job ids to hide from Ready immediately. Used for postings
+// with an unreachable requirement (e.g. a school internship convention that
+// only enrolled students can get) that the bot's re-vet hasn't dropped yet.
+// The bot fix screens these out going forward; this just spares the wait.
+const HIDE_IDS = new Set([
+  "4441666977", // Bellerose "Marketing - Media & CRM Intern" — needs a school internship convention
+]);
+
 function render() {
   const st = getStatus();
   const buckets = { new: [], applied: [], skipped: [] };
   for (const j of DATA.jobs) {
+    if (HIDE_IDS.has(String(j.id))) continue;
     const s = st[j.id];
     if (s === "applied") buckets.applied.push(j);
     else if (s === "skipped") buckets.skipped.push(j);
