@@ -146,7 +146,7 @@ CHECKPOINT_EVERY = 25  # save + git-push progress this often so a long run can't
 # Bump this whenever the fit criteria in evaluate_job change. Saved matches that
 # were judged under an older version get re-vetted (a one-time migration) so the
 # pool reflects the newest rules instead of leaving stale bad matches around.
-CRITERIA_VERSION = 14
+CRITERIA_VERSION = 15
 REJECTED_CAP = 2000   # show (almost) every not-a-fit so coverage is auditable
 
 # Jobs to always exclude (candidate only has a B driver's licence and does not
@@ -785,9 +785,20 @@ Dutch/French, so recognise the wording):
 INTERNSHIP: if this posting is an internship / stage / stagiair(e) / traineeship,
 set "internship": true and be LENIENT — an intern learns on the job, so do NOT
 fail it for lacking years of experience, a degree, or specific software/skills.
-(Still FAIL an internship only if it requires French.) A professional internship
-is NOT the same as a "studentenjob / jobstudent / vakantiejob" side-job (those
-are still excluded).
+(Still FAIL an internship only if it requires French, OR requires a school
+internship convention — see next.) A professional internship is NOT the same as a
+"studentenjob / jobstudent / vakantiejob" side-job (those are still excluded).
+- SCHOOL-CONVENTION internships → FAIL. The candidate is NOT an enrolled student,
+  so any internship that requires a school internship agreement / convention, or
+  that the applicant currently be a student, is out of reach. Trigger words (any
+  language): "internship convention", "internship agreement", "convention through
+  school", "school convention", "tripartite agreement", "must be enrolled",
+  "enrolled student", "student status required", "you must be a student",
+  "stageovereenkomst", "stage-overeenkomst", "schoolstage", "via je (hoge)school",
+  "ingeschreven student", "onderwijsinstelling vereist", "je bent student",
+  "convention de stage". A paid/professional internship open to non-students
+  (no school agreement mentioned) is still FINE — only fail when a school
+  convention or current student status is actually required.
 
 FAIL the job if ANY of these is true (hard walls — no exceptions, but the
 INTERNSHIP leniency above overrides the experience/degree/skill walls):
@@ -823,6 +834,8 @@ INTERNSHIP leniency above overrides the experience/degree/skill walls):
   "Bachelor: ...", "vereist diploma", "must hold a Bachelor/Master" — that is a
   hard requirement → FAIL.
 - SENIORITY: titled Senior / Lead / Manager / Director / Head.
+- SCHOOL INTERNSHIP CONVENTION or current-student status required (see INTERNSHIP
+  above) — the candidate is not enrolled in a school and cannot provide one.
 - Cleaning / domestic-help / studentenjob side-job.
 
 DEGREE NUANCE (this matters): only KEEP a degree-mentioning job when the degree
