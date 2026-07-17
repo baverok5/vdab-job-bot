@@ -101,6 +101,8 @@
     background: transparent; border: 0.5px solid var(--border); border-radius: 7px;
     padding: 5px 10px; margin-top: 7px; cursor: pointer; }
 
+  .dlrow .dlbtns { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .dlrow .dlbtns .btn { flex: 1 1 auto; }
   .actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
   .btn { flex: 1 1 auto; min-width: 84px; font: inherit; font-size: 14px; font-weight: 600; text-align: center;
     text-decoration: none; border-radius: 10px; padding: 12px 14px; cursor: pointer;
@@ -237,6 +239,73 @@ function copyText(btn, text) {
   navigator.clipboard.writeText(text || "").then(() => toast("Copied to clipboard"));
 }
 
+// Build a simple A4 PDF from plain text — no library, works offline. Helvetica
+// (WinAnsi), word-wrapped and paginated. Good enough to upload a letter/CV.
+function buildPdf(text) {
+  const FS = 11, LEAD = 15, X = 56, TOP = 786, BOTTOM = 56, MAXCH = 92;
+  const raw = String(text || "")
+    .replace(/\r/g, "")
+    .replace(/[‘’]/g, "'").replace(/[“”]/g, '"')
+    .replace(/[–—]/g, "-").replace(/…/g, "...");
+  const lines = [];
+  for (const p of raw.split("\n")) {
+    if (!p.trim()) { lines.push(""); continue; }
+    let cur = "";
+    for (const word of p.split(/\s+/)) {
+      const cand = cur ? cur + " " + word : word;
+      if (cand.length > MAXCH) {
+        if (cur) lines.push(cur);
+        if (word.length > MAXCH) {
+          let w = word;
+          while (w.length > MAXCH) { lines.push(w.slice(0, MAXCH)); w = w.slice(MAXCH); }
+          cur = w;
+        } else cur = word;
+      } else cur = cand;
+    }
+    lines.push(cur);
+  }
+  const perPage = Math.floor((TOP - BOTTOM) / LEAD);
+  const pages = [];
+  for (let i = 0; i < lines.length; i += perPage) pages.push(lines.slice(i, i + perPage));
+  if (!pages.length) pages.push([""]);
+  const esc = (s) => s.replace(/[^\x00-\xFF]/g, "?")
+    .replace(/\\/g, "\\\\").replace(/\(/g, "\\(").replace(/\)/g, "\\)");
+  const n = pages.length, obj = [];
+  obj[1] = "<< /Type /Catalog /Pages 2 0 R >>";
+  const kids = []; for (let i = 0; i < n; i++) kids.push((5 + i * 2) + " 0 R");
+  obj[2] = "<< /Type /Pages /Kids [" + kids.join(" ") + "] /Count " + n + " >>";
+  obj[3] = "<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>";
+  for (let i = 0; i < n; i++) {
+    let s = "BT\n/F1 " + FS + " Tf\n" + LEAD + " TL\n" + X + " " + TOP + " Td\n";
+    for (const ln of pages[i]) s += "(" + esc(ln) + ") Tj\nT*\n";
+    s += "ET";
+    obj[4 + i * 2] = "<< /Length " + s.length + " >>\nstream\n" + s + "\nendstream";
+    obj[5 + i * 2] = "<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] " +
+      "/Resources << /Font << /F1 3 0 R >> >> /Contents " + (4 + i * 2) + " 0 R >>";
+  }
+  const total = 3 + n * 2, off = [];
+  let pdf = "%PDF-1.4\n";
+  for (let k = 1; k <= total; k++) { off[k] = pdf.length; pdf += k + " 0 obj\n" + obj[k] + "\nendobj\n"; }
+  const xref = pdf.length;
+  pdf += "xref\n0 " + (total + 1) + "\n0000000000 65535 f \n";
+  for (let k = 1; k <= total; k++) pdf += String(off[k]).padStart(10, "0") + " 00000 n \n";
+  pdf += "trailer\n<< /Size " + (total + 1) + " /Root 1 0 R >>\nstartxref\n" + xref + "\n%%EOF";
+  const bytes = new Uint8Array(pdf.length);
+  for (let i = 0; i < pdf.length; i++) bytes[i] = pdf.charCodeAt(i) & 0xff;
+  return new Blob([bytes], { type: "application/pdf" });
+}
+
+function downloadTextPdf(text, filename) {
+  if (!text || !text.trim()) { toast("Nothing to download yet"); return; }
+  const url = URL.createObjectURL(buildPdf(text));
+  const a = document.createElement("a");
+  a.href = url; a.download = filename;
+  document.body.appendChild(a); a.click();
+  setTimeout(() => { URL.revokeObjectURL(url); a.remove(); }, 1500);
+  toast("PDF downloaded");
+}
+const safeName = (s) => (s || "job").replace(/[\/\\:*?"<>|]+/g, "-").replace(/\s+/g, " ").trim().slice(0, 45);
+
 const isToday = (str) =>
   (str || "").slice(0, 10) === new Date().toISOString().slice(0, 10);
 
@@ -293,7 +362,14 @@ function gmailFor(j, d) {
 
 function renderPrepared(j, d, box) {
   const hasMail = !!(d.apply_email || j.apply_email);
+  const cvText = d.tailored_cv || d.cv_highlights || "";
   box.innerHTML = `
+    <div class="sec dlrow">
+      <div class="h">Download to upload / attach</div>
+      <div class="dlbtns">
+        <button class="btn primary" data-dl="letter">⬇️ Cover letter (PDF)</button>
+        ${cvText ? '<button class="btn primary" data-dl="cv">⬇️ CV (PDF)</button>' : ""}
+      </div></div>
     <div class="sec"><div class="h">Application email ${hasMail ? "→ " + esc(d.apply_email || j.apply_email) : "(no direct email — apply via " + srcOf(j) + ")"}</div>
       <div class="quote">${esc(d.email_subject ? d.email_subject + "\n\n" : "")}${esc(d.email_body)}</div>
       <button class="copybtn" data-copy="email">Copy email</button></div>
@@ -323,6 +399,12 @@ function renderPrepared(j, d, box) {
       cv: d.tailored_cv || "",
     };
     copyText(b, texts[b.dataset.copy] || "");
+  }));
+  const nm = safeName(j.title);
+  box.querySelectorAll("[data-dl]").forEach((b) => b.addEventListener("click", (e) => {
+    e.stopPropagation();
+    if (b.dataset.dl === "letter") downloadTextPdf(d.cover_letter || "", "Cover letter - " + nm + ".pdf");
+    else downloadTextPdf(cvText, "CV - " + nm + ".pdf");
   }));
   const draftBtn = box.querySelector('[data-prep="draft"]');
   if (draftBtn) draftBtn.addEventListener("click", (e) => {
