@@ -147,6 +147,10 @@ CHECKPOINT_EVERY = 25  # save + git-push progress this often so a long run can't
 # were judged under an older version get re-vetted (a one-time migration) so the
 # pool reflects the newest rules instead of leaving stale bad matches around.
 CRITERIA_VERSION = 16
+# Sentinel returned by the detail fetchers when a posting exists but is closed
+# (LinkedIn "No longer accepting applications"). Distinct from None (= unreadable,
+# retry later) so callers actively drop it instead of leaving it in Ready.
+LI_CLOSED = "__CLOSED__"
 REJECTED_CAP = 2000   # show (almost) every not-a-fit so coverage is auditable
 
 # Jobs to always exclude (candidate only has a B driver's licence and does not
@@ -493,6 +497,11 @@ def fetch_linkedin_detail(job_id):
     if r.status_code != 200 or not r.text.strip():
         print(f"  linkedin detail {jid}: HTTP {r.status_code}")
         return None, None
+    # Closed postings still render but no longer take applications — drop them.
+    page_l = r.text.lower()
+    if "no longer accepting applications" in page_l or "closed-job" in page_l:
+        print(f"  linkedin detail {jid}: closed (no longer accepting applications)")
+        return LI_CLOSED, None
     soup = BeautifulSoup(r.text, "html.parser")
     node = soup.select_one(".show-more-less-html__markup, .description__text")
     text = (node.get_text("\n", strip=True) if node
@@ -1125,6 +1134,15 @@ def _apply_verdict(jobs, job_id, url, verdict, apply_email, found_at=None):
     return False
 
 
+def _drop_job(jobs, job_id):
+    """Remove a job from BOTH the matched and rejected pools (e.g. a posting that
+    has closed). It stays in `seen`, so it is not re-collected on later runs."""
+    n0 = len(jobs["jobs"]) + len(jobs.get("rejected", []))
+    jobs["jobs"] = [j for j in jobs["jobs"] if j.get("id") != job_id]
+    jobs["rejected"] = [j for j in jobs.get("rejected", []) if j.get("id") != job_id]
+    return n0 != len(jobs["jobs"]) + len(jobs.get("rejected", []))
+
+
 def revet_saved(browser, jobs, cv_text, budget=40, checkpoint=None):
     """Re-check saved jobs (both matched AND rejected) against the current
     criteria version. Ones that no longer fit move to 'rejected'; ones that now
@@ -1140,6 +1158,13 @@ def revet_saved(browser, jobs, cv_text, budget=40, checkpoint=None):
         job_id, url = j.get("id"), j.get("url")
         print(f"\nRe-vetting {job_id}: {j.get('title')}")
         job_text, apply_email = fetch_job_detail(browser, url, job_id)
+        if job_text == LI_CLOSED:
+            _drop_job(jobs, job_id)
+            print("  CLOSED — removed (no longer accepting applications)")
+            moved += 1
+            if checkpoint and moved % CHECKPOINT_EVERY == 0:
+                checkpoint()
+            continue
         if not job_text:
             print("  (could not read — leaving as-is for now)")
             continue
@@ -1188,6 +1213,10 @@ def backfill_letters(browser, jobs, cv_text, budget=30, checkpoint=None):
     for j in todo:
         job_id, url = j.get("id"), j.get("url")
         job_text, apply_email = fetch_job_detail(browser, url, job_id)
+        if job_text == LI_CLOSED:
+            _drop_job(jobs, job_id)
+            print(f"  CLOSED — removed {j.get('title','')[:50]}")
+            continue
         if not job_text:
             continue
         if apply_email and not (j.get("apply_email") or "").strip():
@@ -1212,6 +1241,10 @@ def _process_jobs(browser, new_links, seen, jobs, cv_text, checkpoint=None):
         print(f"\nChecking job {job_id}: {url}")
 
         job_text, apply_email = fetch_job_detail(browser, url, job_id)
+        if job_text == LI_CLOSED:
+            print("  (closed — no longer accepting applications; skipping)")
+            seen.add(job_id)  # settled state, no point re-checking
+            continue
         if not job_text:
             print("  (could not read job — will retry next run)")
             continue  # don't mark seen; a transient render failure gets another chance
