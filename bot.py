@@ -146,7 +146,7 @@ CHECKPOINT_EVERY = 25  # save + git-push progress this often so a long run can't
 # Bump this whenever the fit criteria in evaluate_job change. Saved matches that
 # were judged under an older version get re-vetted (a one-time migration) so the
 # pool reflects the newest rules instead of leaving stale bad matches around.
-CRITERIA_VERSION = 15
+CRITERIA_VERSION = 16
 REJECTED_CAP = 2000   # show (almost) every not-a-fit so coverage is auditable
 
 # Jobs to always exclude (candidate only has a B driver's licence and does not
@@ -501,8 +501,15 @@ def fetch_linkedin_detail(job_id):
     time.sleep(1)  # be gentle — LinkedIn rate-limits aggressively
     if len(text) < 200:
         return None, None
-    emails = re.findall(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}", text)
-    clean = [e for e in emails if not any(
+    # Emails hide two ways: as visible text, or inside a mailto: link whose
+    # anchor text is "apply here" (so the plain-text regex misses it). Grab both.
+    mailtos = []
+    for a in soup.select('a[href^="mailto:"]'):
+        addr = a.get("href", "")[7:].split("?")[0].strip()
+        if addr:
+            mailtos.append(addr)
+    emails = mailtos + re.findall(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}", text)
+    clean = [e for e in emails if "@" in e and not any(
         b in e.lower() for b in ("linkedin.com", "example.", "noreply", "no-reply"))]
     return text[:15000], (clean[0] if clean else None)
 

@@ -309,8 +309,10 @@ function renderPrepared(j, d, box) {
          <div class="pingstat hint" style="text-align:left;margin-top:8px"></div>
          <a class="btn" style="margin-top:8px" href="${gmailFor(j, d)}" target="_blank" rel="noopener">Plain Gmail compose (text only, no files)</a>`
       : (srcOf(j) === "LinkedIn"
-        ? `<a class="btn primary li-apply" href="${esc(j.url)}" target="_blank" rel="noopener">⚡ Easy Apply on LinkedIn →</a>
-           <div class="hint" style="text-align:left;margin-top:8px">Opens the job in the LinkedIn app — tap Easy Apply there. Copy the letter above to paste if it asks for a message.</div>`
+        ? `<button class="btn primary" data-prep="draft">📮 Create Gmail draft (CV + letter attached)</button>
+           <div class="pingstat hint" style="text-align:left;margin-top:8px"></div>
+           <a class="btn li-apply" style="margin-top:8px" href="${esc(j.url)}" target="_blank" rel="noopener">⚡ Easy Apply on LinkedIn →</a>
+           <div class="hint" style="text-align:left;margin-top:8px">If the posting lists an email in its description, tap 📮 and I'll build the draft. Otherwise use Easy Apply — copy the letter above to paste.</div>`
         : `<a class="btn primary" href="${esc(j.url)}" target="_blank" rel="noopener">Apply on VDAB →</a>
            <div class="hint" style="text-align:left;margin-top:8px">No direct email on this job — apply on VDAB and upload the CV / paste the letter above.</div>`)}`;
   box.querySelectorAll(".copybtn").forEach((b) => b.addEventListener("click", (e) => {
@@ -410,7 +412,7 @@ function card(j, state) {
              <button class="btn undo" data-act="unapply">Mark not applied</button>`
           : `<button class="btn primary" data-act="generate">✍️ Letter</button>
              ${srcOf(j) === "LinkedIn"
-               ? `${hasMail ? '<button class="btn" data-act="gmail">📮 Gmail</button>' : ""}
+               ? `<button class="btn" data-act="gmail">📮 Gmail</button>
                   <a class="btn primary li-apply" href="${esc(j.url)}" target="_blank" rel="noopener">⚡ Easy Apply</a>`
                : `<button class="btn" data-act="gmail">📮 Gmail</button>
                   <a class="btn" href="${esc(j.url)}" target="_blank" rel="noopener">VDAB</a>`}
