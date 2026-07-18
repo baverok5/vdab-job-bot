@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-18 07:20 UTC",
+ "updated": "2026-07-18 07:50 UTC",
  "jobs": [
   {
    "id": "4440766673",
@@ -53524,6 +53524,44 @@
  ],
  "rejected": [
   {
+   "id": "4430394051",
+   "url": "https://www.linkedin.com/jobs/view/4430394051",
+   "title": "Marketing / Campaigning Intern",
+   "company": "McDonald's Restaurants Belgium HQ",
+   "location": "Diegem, Brussels Area",
+   "match_score": 0,
+   "reason": "Requires native Dutch or French and fluent in the other language; candidate has B1 Dutch and no French.",
+   "apply_email": "ines.honshoven@be.mcd.com",
+   "found_at": "2026-07-17 08:53",
+   "status": "new",
+   "details": "Role: Marketing intern\nTasks: Assist in campaign coordination, collaborate with cross-functional teams, work with agencies, create marketing content, support project management, prepare launch materials\nContract: Internship (at least 3 months, starting September)\nSchedule: Full-time\nLanguage: Native Dutch or French + fluent in the other + English\nPay: Not stated",
+   "why_good": "",
+   "why_bad": "Requires native Dutch or French and fluent in the other language\nCandidate has B1 Dutch and no French\nAlso requires pursuing a Bachelor's or Master's degree (candidate has no degree and is not a student)",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": true,
+   "cv_fit_v": 16
+  },
+  {
+   "id": "4442172619",
+   "url": "https://www.linkedin.com/jobs/view/4442172619",
+   "title": "Content Marketeer",
+   "company": "Unknown",
+   "location": "Veurne",
+   "match_score": 0,
+   "reason": "French required at any level",
+   "apply_email": "",
+   "found_at": "2026-07-18 07:20",
+   "status": "new",
+   "details": "Role: Content Marketeer\nMain tasks: create photo/video content from A to Z, develop creative content formats, manage content calendar, bring authentic stories to life, analyze results\nContract type: full-time\nSchedule: 40h/week, gliding hours\nLanguage: perfect Dutch + sufficient French\nPay: market-conform salary + meal vouchers",
+   "why_good": "",
+   "why_bad": "Requires French (the candidate has no French)\nRequires perfect Dutch (candidate has B1)\nRequires experience in content marketing (candidate has ~4 months)",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "cv_fit_v": 16
+  },
+  {
    "id": "74194629",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74194629/folderbezorges-gezocht-voor-het-bedelen-van-reclamefolders-in-de-regio-meer",
    "title": "Folderbezorger",
@@ -57511,25 +57549,6 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 15
-  },
-  {
-   "id": "4430394051",
-   "url": "https://www.linkedin.com/jobs/view/4430394051",
-   "title": "Marketing / Campaigning Intern",
-   "company": "McDonald's Restaurants Belgium HQ",
-   "location": "Diegem, Brussels Area",
-   "match_score": 0,
-   "reason": "Requires native Dutch or French with fluent other language; candidate has B1 Dutch and no French.",
-   "apply_email": "ines.honshoven@be.mcd.com",
-   "found_at": "2026-07-17 08:53",
-   "status": "new",
-   "details": "Role: Marketing intern supporting campaign coordination and execution\nTasks: Assist in campaign planning, collaborate with cross-functional teams, work with agencies, create marketing content, prepare launch materials\nContract: Internship (at least 3 months, starting September)\nSchedule: Full-time\nLanguage: Native Dutch or French + fluent other language + English\nPay: Not stated",
-   "why_good": "",
-   "why_bad": "Requires native Dutch or French with fluent other language; candidate has B1 Dutch and no French.\nRequires current enrollment in a Bachelor's or Master's degree; candidate is not enrolled.\nInternship likely requires school convention (pursuing degree).",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": true,
    "cv_fit_v": 15
   },
   {
@@ -91175,24 +91194,6 @@
    "details": "Customer service coordinator for fire safety company\nAdministrative follow-up, order processing, contract management\nPermanent contract, full-time, day shift\nStart ASAP\nLanguages: Dutch (very good), French (very good)\nSalary: €3200-€3600 gross/month",
    "why_good": "",
    "why_bad": "Requires very good French (zeer goed)\nRequires at least 2 years of experience (candidate has ~4 months)\nRequires academic bachelor degree (candidate has no degree)\nRole is senior/coordinator level, not entry-level",
-   "dutch_stretch": false,
-   "internship": false,
-   "cv_fit_v": 13
-  },
-  {
-   "id": "74153518",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74153518/binnendienstmedewerker",
-   "title": "Binnendienstmedewerker",
-   "company": "Unique Gent",
-   "location": "MERELBEKE-MELLE",
-   "match_score": 0,
-   "reason": "French required at 'Zeer goed' level, candidate has no French.",
-   "apply_email": "",
-   "found_at": "2026-07-13 20:30",
-   "status": "new",
-   "details": "Role: internal sales support, order processing, CRM/ERP.\nContract: interim with option for permanent, full-time, day shift.\nLanguages: Dutch (very good), French (very good), English (very good).\nEducation: academic bachelor or equivalent by experience.\nExperience: limited (<2 years).",
-   "why_good": "",
-   "why_bad": "French required at 'Zeer goed' level, candidate has no French.\nRole is internal sales, not in candidate's goal field.\nAcademic bachelor required (candidate has no degree, but 'or equivalent by experience' is mentioned; however French requirement alone fails).",
    "dutch_stretch": false,
    "internship": false,
    "cv_fit_v": 13
