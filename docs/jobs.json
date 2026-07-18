@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-18 07:50 UTC",
+ "updated": "2026-07-18 11:50 UTC",
  "jobs": [
   {
    "id": "4440766673",
@@ -50994,6 +50994,14 @@
    "title": "Commercieel bediende met passie voor social media"
   },
   {
+   "id": "4442435981",
+   "url": "https://www.linkedin.com/jobs/view/4442435981",
+   "title": "Content Creator",
+   "company": "Aarambha IT Research Center",
+   "location": "On, Walloon Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4442172619",
    "url": "https://www.linkedin.com/jobs/view/4442172619",
    "title": "Content Marketeer",
@@ -91199,5 +91207,5 @@
    "cv_fit_v": 13
   }
  ],
- "search_cursor": 7
+ "search_cursor": 12
 }
