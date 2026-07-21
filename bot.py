@@ -37,7 +37,9 @@ def _search(term):
 # marketing/SEO/web jobs are found and screened before anything else.
 PRIORITY_SEARCH_URLS = [
     _search(t) for t in
-    ("digital marketing", "marketing", "seo", "sea", "google ads", "wordpress",
+    ("digital marketing", "marketing", "seo", "seo specialist", "seo manager",
+     "search engine optimization", "zoekmachine optimalisatie", "content manager",
+     "sea", "google ads", "wordpress",
      "web design", "web developer", "webshop", "content", "content marketing",
      "social media", "online marketing", "growth marketing", "e-commerce",
      "e-mail marketing", "communication", "copywriter", "marketing assistant",
@@ -407,8 +409,12 @@ def collect_links(browser, search_url, cap=5000, budget_s=40, max_pages=25):
 # back off for the rest of the run. LinkedIn ids are ~10 digits (VDAB ~8), so
 # they don't collide; jobs carry src="linkedin" and are applied to via LinkedIn.
 LINKEDIN_KEYWORDS = [
-    "digital marketing", "digital marketeer", "seo", "content marketeer",
-    "social media marketing", "online marketing", "growth marketing",
+    # SEO first + several variants so we never miss an SEO posting (distinct
+    # LinkedIn queries return different result sets), then the adjacent fields.
+    "seo", "seo specialist", "seo manager", "search engine optimization",
+    "seo consultant", "content marketing", "content manager", "copywriter",
+    "digital marketing", "digital marketeer", "online marketing",
+    "social media", "growth marketing", "sea", "google ads", "e-commerce",
     "marketing", "communications",
 ]
 LI_GUEST_SEARCH = ("https://www.linkedin.com/jobs-guest/jobs/api/"
@@ -435,7 +441,7 @@ def _li_job_id(card):
     return None
 
 
-def collect_linkedin(keywords=None, pages_per_kw=3, budget_s=90):
+def collect_linkedin(keywords=None, pages_per_kw=5, budget_s=170):
     """Scrape LinkedIn's public guest job search for Belgium. Returns
     {id: {id,url,title,company,location,src}}. Swallows all errors; backs off
     on a rate-limit/blocked response so we don't get the IP fully banned."""
