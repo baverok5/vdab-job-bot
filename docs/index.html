@@ -142,6 +142,9 @@
   .tag.li { background: rgba(10,102,194,.16); color: #4aa3ff; border-color: transparent; font-weight: 600; }
   .tag.design { background: var(--amber-bg); color: var(--amber); border-color: transparent; font-weight: 600; }
   .tag.seo { background: var(--green-bg); color: var(--green); border-color: transparent; font-weight: 700; }
+  .tag.content { background: rgba(10,102,194,.16); color: #4aa3ff; border-color: transparent; font-weight: 600; }
+  .tag.paid { background: rgba(139,92,246,.18); color: #b794f6; border-color: transparent; font-weight: 600; }
+  .tag.social { background: var(--amber-bg); color: var(--amber); border-color: transparent; font-weight: 600; }
   .btn.li-apply { background: #0a66c2; color: #fff; border-color: transparent; font-weight: 700; }
   .mkt { display: flex; align-items: center; gap: 8px; cursor: pointer;
     background: var(--card); border: 0.5px solid var(--border); border-radius: 10px;
@@ -475,6 +478,9 @@ function card(j, state) {
           ${j.exp_stretch ? '<span class="tag stretch">💪 Stretch — worth a shot</span>' : ""}
           ${designStretch(j) ? '<span class="tag design">🎨 Design-heavy — stretch</span>' : ""}
           ${isSEO(j) ? '<span class="tag seo">🔎 SEO</span>' : ""}
+          ${isContent(j) ? '<span class="tag content">✍️ Content</span>' : ""}
+          ${isPaid(j) ? '<span class="tag paid">📣 Paid / online mktg</span>' : ""}
+          ${isSocial(j) ? '<span class="tag social">📱 Social media</span>' : ""}
           ${state !== "applied" && isToday(j.found_at) ? '<span class="tag new">New today</span>' : ""}
           ${hasMail ? '<span class="tag mail">Direct email</span>' : ""}
           ${srcOf(j) === "LinkedIn" ? '<span class="tag li">🔗 LinkedIn</span>' : ""}
@@ -674,6 +680,17 @@ function isSEO(j) {
   // name the candidate's own SEO skills, which falsely tags non-SEO jobs.
   return SEO_RX.test(`${j.title || ""} ${j.details || ""}`);
 }
+// Sub-field labels so each Ready/All job shows which marketing area it is —
+// SEO (the candidate's strong field, above) vs content, social media (a field
+// the candidate has NOT worked in), and paid/online-marketing. Classified on the
+// job's own content only (title + role/tasks), same rule as isSEO.
+const CONTENT_RX = /\bcontent\b|copywrit|redacti|redacteur|tekstschrijv|\bblog\b|storytell|editorial|contentmarketing/i;
+function isContent(j) { return CONTENT_RX.test(`${j.title || ""} ${j.details || ""}`); }
+const SOCIAL_RX = /social media|sociale media|community manage|community manager|\bsocial\b|instagram|tiktok|\bfacebook\b|influencer/i;
+function isSocial(j) { return SOCIAL_RX.test(`${j.title || ""} ${j.details || ""}`); }
+const PAID_RX = /google ads|\bsea\b|\bsem\b|paid media|paid social|performance marketing|\bppc\b|advertis|adverteren|e-?mail marketing|marketing automation|\bcrm\b|conversion|growth hack/i;
+function isPaid(j) { return PAID_RX.test(`${j.title || ""} ${j.details || ""}`); }
+
 // Graphic-design / Canva-heavy roles are a stretch (candidate does web + basic
 // Canva, not pro graphic design). Flag but don't hide. Web/UX/UI design is NOT
 // counted (that's a real skill) — only Canva + graphic-design tools/skills.
