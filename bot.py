@@ -146,7 +146,10 @@ CHECKPOINT_EVERY = 25  # save + git-push progress this often so a long run can't
 # Bump this whenever the fit criteria in evaluate_job change. Saved matches that
 # were judged under an older version get re-vetted (a one-time migration) so the
 # pool reflects the newest rules instead of leaving stale bad matches around.
-CRITERIA_VERSION = 16
+CRITERIA_VERSION = 17
+# Bump when the cheap title-screen rules change, to force a one-time re-screen of
+# every previously title-dropped job under the new rules.
+TITLE_SCREEN_VERSION = 2
 # Sentinel returned by the detail fetchers when a posting exists but is closed
 # (LinkedIn "No longer accepting applications"). Distinct from None (= unreadable,
 # retry later) so callers actively drop it instead of leaving it in Ready.
@@ -721,7 +724,8 @@ WHAT THE CANDIDATE CANNOT DO (must FAIL):
   by experience" or lists the degree only as a plus. A stated required diploma
   (e.g. "STUDIEVEREISTEN: Master: Marketing") disqualifies.
 - Specialised senior backgrounds (finance/tax/KYC, R&D, medical, aviation).
-- Senior / Lead / Manager / Director / Head roles, or anything needing 2+ years."""
+- Senior / Lead / Director / Head leadership roles (a plain "<function> Manager"
+  in marketing/SEO/content is NOT auto-excluded), or anything needing 5+ years."""
 
 
 def title_prescreen(titles):
@@ -740,9 +744,14 @@ CANDIDATE: {CANDIDATE_ONELINE}
 KEEP a title if it could plausibly be an accessible junior/entry/office/admin/
 customer-service/marketing/SEO/content/web/sales-support/warehouse/logistics role.
 DROP only titles that are clearly: a skilled trade or production/machine operator;
-a senior/lead/manager/director/head role; or a licensed/degree profession
-(engineer, doctor, nurse, lawyer, licensed accountant). Do NOT drop a title just
-because it might want a bachelor. When unsure, KEEP.
+a TRUE leadership role (Senior, Sr., Lead, Team Lead, Head of, Director, VP, Chief,
+Principal); or a licensed/degree profession (engineer, doctor, nurse, lawyer,
+licensed accountant). IMPORTANT: do NOT drop a "<function> Manager / Specialist /
+Coordinator" title in marketing / SEO / content / social / digital / web /
+e-commerce / campaign / brand / community / account — e.g. "SEO Manager",
+"Marketing Manager", "Content Manager", "Social Media Manager" are usually
+individual-contributor or first-line roles and MUST be kept for a full check.
+Do NOT drop a title just because it might want a bachelor. When unsure, KEEP.
 
 Reply ONLY as JSON: {{"keep": [the numbers to keep]}}.
 TITLES:
@@ -849,7 +858,13 @@ INTERNSHIP leniency above overrides the experience/degree/skill walls):
   study-requirement field — e.g. "STUDIEVEREISTEN: Master: Marketing",
   "Bachelor: ...", "vereist diploma", "must hold a Bachelor/Master" — that is a
   hard requirement → FAIL.
-- SENIORITY: titled Senior / Lead / Manager / Director / Head.
+- SENIORITY: a TRUE leadership title FAILs — Senior / Sr. / Lead / Team Lead /
+  Head of / Director / VP / Vice President / Chief / C-level / Principal. BUT do
+  NOT fail on the word "Manager" alone: a "<function> Manager" in marketing / SEO /
+  content / social / digital / web / e-commerce / campaign / brand / community /
+  account (e.g. "SEO Manager", "Marketing Manager", "Content Manager") is usually
+  an individual-contributor / first-line role — judge it on its real requirements
+  (if it asks for a few years' experience, PASS as exp_stretch, do NOT hard-fail).
 - SCHOOL INTERNSHIP CONVENTION or current-student status required (see INTERNSHIP
   above) — the candidate is not enrolled in a school and cannot provide one.
 - Cleaning / domestic-help / studentenjob side-job.
@@ -915,6 +930,13 @@ def main():
     screen = load_json(SCREEN_FILE, {"title_no": [], "shortlist": []})
     title_no = set(screen.get("title_no", []))     # dropped at the cheap title stage
     shortlist = set(screen.get("shortlist", []))   # passed title stage, await full eval
+    # When the title-screen rules change (e.g. now keeping "<function> Manager"
+    # marketing roles), wipe the dropped set once so every past title is re-screened
+    # under the new rules and newly-eligible roles resurface.
+    if screen.get("title_screen_v") != TITLE_SCREEN_VERSION:
+        print(f"Title-screen rules updated (v{TITLE_SCREEN_VERSION}) — re-screening "
+              f"{len(title_no)} previously dropped titles.")
+        title_no = set()
 
     def checkpoint():
         """Persist current progress and push it, so a long run that dies partway
@@ -925,7 +947,7 @@ def main():
         jobs["updated"] = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
         save_json(JOBS_FILE, jobs)
         save_json(SEEN_FILE, sorted(seen))
-        save_json(SCREEN_FILE, {"title_no": sorted(title_no), "shortlist": sorted(shortlist)})
+        save_json(SCREEN_FILE, {"title_no": sorted(title_no), "shortlist": sorted(shortlist), "title_screen_v": TITLE_SCREEN_VERSION})
         try:
             subprocess.run(["git", "add", JOBS_FILE, SEEN_FILE, SCREEN_FILE, PREPARED_DIR],
                            check=False, capture_output=True)
@@ -1095,7 +1117,7 @@ def main():
     jobs["rejected"] = jobs.get("rejected", [])[:REJECTED_CAP]
     save_json(JOBS_FILE, jobs)
     save_json(SEEN_FILE, sorted(seen))
-    save_json(SCREEN_FILE, {"title_no": sorted(title_no), "shortlist": sorted(shortlist)})
+    save_json(SCREEN_FILE, {"title_no": sorted(title_no), "shortlist": sorted(shortlist), "title_screen_v": TITLE_SCREEN_VERSION})
     print(f"\nDone. {matched} new match(es) this run. "
           f"{len(jobs['jobs'])} in Ready, {len(jobs['rejected'])} not-a-fit. "
           f"Screen state: {len(shortlist)} shortlisted, {len(title_no)} title-dropped.")
