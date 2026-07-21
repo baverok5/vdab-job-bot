@@ -40,7 +40,8 @@ PRIORITY_SEARCH_URLS = [
     ("digital marketing", "marketing", "seo", "seo specialist", "seo manager",
      "search engine optimization", "zoekmachine optimalisatie", "content manager",
      "sea", "google ads", "wordpress",
-     "web design", "web developer", "webshop", "content", "content marketing",
+     "web design", "web designer", "webdesigner", "ux designer", "ui designer",
+     "front-end", "webflow", "web developer", "webshop", "content", "content marketing",
      "social media", "online marketing", "growth marketing", "e-commerce",
      "e-mail marketing", "communication", "copywriter", "marketing assistant",
      "stage marketing", "internship marketing", "stage communicatie",
@@ -148,7 +149,7 @@ CHECKPOINT_EVERY = 25  # save + git-push progress this often so a long run can't
 # Bump this whenever the fit criteria in evaluate_job change. Saved matches that
 # were judged under an older version get re-vetted (a one-time migration) so the
 # pool reflects the newest rules instead of leaving stale bad matches around.
-CRITERIA_VERSION = 17
+CRITERIA_VERSION = 18
 # Bump when the cheap title-screen rules change, to force a one-time re-screen of
 # every previously title-dropped job under the new rules.
 TITLE_SCREEN_VERSION = 2
@@ -415,6 +416,10 @@ LINKEDIN_KEYWORDS = [
     "seo consultant", "content marketing", "content manager", "copywriter",
     "digital marketing", "digital marketeer", "online marketing",
     "social media", "growth marketing", "sea", "google ads", "e-commerce",
+    # Web / UX / front-end design — the candidate's WordPress/Elementor/Canva
+    # background fits these, and they're often LinkedIn-only (missed before).
+    "web designer", "web design", "wordpress", "ux designer", "ui designer",
+    "front-end", "webflow",
     "marketing", "communications",
 ]
 LI_GUEST_SEARCH = ("https://www.linkedin.com/jobs-guest/jobs/api/"
@@ -852,6 +857,14 @@ INTERNSHIP leniency above overrides the experience/degree/skill walls):
   (WordPress/Elementor/Canva), not professional graphic design. A web / WordPress /
   UX / content / social-media / customer-service role that merely produces visuals
   is FINE; only a clearly stated graphic-design / Adobe requirement fails.
+  IMPORTANT — WEB / UX / UI / front-end DESIGNER roles: naming Figma, Adobe XD,
+  Sketch, or "Adobe Creative Suite" as a *design tool* is NORMAL for web/UX work
+  and is NOT a graphic-design hard-fail — the candidate does web design and can
+  pick these up, especially when the posting says "and/or", "familiarity",
+  "willing to learn", "a plus", or "basic". A "portfolio" request is likewise NOT
+  a hard fail (the candidate has real web/WordPress work at mirook.com). Basic
+  HTML/CSS "familiarity or interest" is fine too — it is NOT a developer wall.
+  Treat such a web-design role as a PASS (exp_stretch if it asks for ~2+ years).
 - SKILLED TRADE / PRODUCTION / MANUAL role: machine/production/CNC operator,
   metalwork, welding, grinding, assembly, manufacturing, chocolatier, print/line
   operator, construction, electrical, mechanical, maintenance technician.
