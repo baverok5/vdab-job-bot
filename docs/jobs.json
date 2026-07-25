@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-25 13:22 UTC",
+ "updated": "2026-07-25 18:26 UTC",
  "jobs": [
   {
    "id": "74233469",
@@ -7699,6 +7699,26 @@
  ],
  "listing": [
   {
+   "id": "74243442",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74243442/customer-care-agent",
+   "title": "Customer care agent"
+  },
+  {
+   "id": "74243435",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74243435/stage-hr-recruitment",
+   "title": "Stage hr recruitment"
+  },
+  {
+   "id": "74243434",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74243434/ay-boekhouder",
+   "title": "Ay boekhouder"
+  },
+  {
+   "id": "74243429",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74243429/tijdelijk-brand-marketing-project-coordinator",
+   "title": "Tijdelijk brand marketing project coordinator"
+  },
+  {
    "id": "74243414",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74243414/customer-service-medewerker",
    "title": "Customer service medewerker"
@@ -8992,6 +9012,11 @@
    "id": "74242376",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74242376/sprinkler-testtechnieker-32-verlofdagen-eigen-bestelwagen",
    "title": "Sprinkler testtechnieker 32 verlofdagen eigen bestelwagen"
+  },
+  {
+   "id": "74242355",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74242355/service-technieker-servicewagen-12-adv-dagen-internationa",
+   "title": "Service technieker servicewagen 12 adv dagen internationa"
   },
   {
    "id": "74242323",
@@ -51087,26 +51112,6 @@
    "id": "74032802",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74032802/assistent-ploegbaas-warehouse",
    "title": "Assistent ploegbaas warehouse"
-  },
-  {
-   "id": "74032758",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74032758/elektromechanieker-storingstechnieker-plc",
-   "title": "Elektromechanieker storingstechnieker plc"
-  },
-  {
-   "id": "74032741",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74032741/sales-support-medewerker",
-   "title": "Sales support medewerker"
-  },
-  {
-   "id": "74032671",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74032671/storingstechnieker",
-   "title": "Storingstechnieker"
-  },
-  {
-   "id": "74032485",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74032485/technieker",
-   "title": "Technieker"
   },
   {
    "id": "74032248",
@@ -97444,5 +97449,5 @@
    "cv_fit_v": 18
   }
  ],
- "search_cursor": 2
+ "search_cursor": 7
 }
