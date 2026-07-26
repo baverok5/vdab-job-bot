@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-26 08:07 UTC",
+ "updated": "2026-07-26 12:32 UTC",
  "jobs": [
   {
    "id": "74233469",
@@ -7699,6 +7699,26 @@
  ],
  "listing": [
   {
+   "id": "74243908",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74243908/qa-verantwoordelijke",
+   "title": "Qa verantwoordelijke"
+  },
+  {
+   "id": "74243847",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74243847/grafisch-ontwerper",
+   "title": "Grafisch ontwerper"
+  },
+  {
+   "id": "74243843",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74243843/technieker",
+   "title": "Technieker"
+  },
+  {
+   "id": "74243823",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74243823/sales-professional-aluminium-ramen-deuren",
+   "title": "Sales professional aluminium ramen deuren"
+  },
+  {
    "id": "74243728",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74243728/sales-planning-officer",
    "title": "Sales planning officer"
@@ -7757,6 +7777,11 @@
    "id": "74243577",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74243577/commercieel-medewerker",
    "title": "Commercieel medewerker"
+  },
+  {
+   "id": "74243570",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74243570/customer-service-medewerker",
+   "title": "Customer service medewerker"
   },
   {
    "id": "74243555",
@@ -11107,6 +11132,11 @@
    "id": "74231156",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74231156/recruitment-consultant",
    "title": "Recruitment consultant"
+  },
+  {
+   "id": "74231122",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74231122/assistent-project-manager-security",
+   "title": "Assistent project manager security"
   },
   {
    "id": "74231121",
@@ -51084,39 +51114,9 @@
    "title": "Business developer account manager"
   },
   {
-   "id": "74033893",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74033893/verkoopmedewerker-ster-stylist-e-damesafdeling",
-   "title": "Verkoopmedewerker ster stylist e damesafdeling"
-  },
-  {
-   "id": "74033846",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74033846/expediteur-uitzonderlijk-vervoer",
-   "title": "Expediteur uitzonderlijk vervoer"
-  },
-  {
-   "id": "74033842",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74033842/verkoopmedewerker-ster-stylist-e-herenafdeling",
-   "title": "Verkoopmedewerker ster stylist e herenafdeling"
-  },
-  {
    "id": "74033822",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74033822/marketing-en-communicatie-coordinator",
    "title": "Marketing en communicatie coordinator"
-  },
-  {
-   "id": "74033791",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74033791/recruitment-coordinator",
-   "title": "Recruitment coordinator"
-  },
-  {
-   "id": "74033788",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74033788/inside-sales-medewerker-internationaal",
-   "title": "Inside sales medewerker internationaal"
-  },
-  {
-   "id": "74033776",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74033776/customer-service-medewerker",
-   "title": "Customer service medewerker"
   },
   {
    "id": "74032248",
@@ -54044,6 +54044,14 @@
    "title": "Commercieel bediende met passie voor social media"
   },
   {
+   "id": "4445396767",
+   "url": "https://www.linkedin.com/jobs/view/4445396767",
+   "title": "Webdesigner, Front-End Developer",
+   "company": "Softedge studio",
+   "location": "Namur, Walloon Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4445320917",
    "url": "https://www.linkedin.com/jobs/view/4445320917",
    "title": "Founding Creator and Social Media Associate",
@@ -55513,6 +55521,14 @@
    "title": "B2B Marketeer",
    "company": "ITZU Talent Recruitment",
    "location": "Hasselt, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4441575926",
+   "url": "https://www.linkedin.com/jobs/view/4441575926",
+   "title": "Frontend React Developer",
+   "company": "In4Matic",
+   "location": "Dessel, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -59265,6 +59281,14 @@
    "title": "E-commerce Webmaster",
    "company": "Rubio Monocoat",
    "location": "Izegem, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4407604906",
+   "url": "https://www.linkedin.com/jobs/view/4407604906",
+   "title": "Junior Brand Manager Neuroscience",
+   "company": "Ipsen",
+   "location": "Brussels, Brussels Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -97502,5 +97526,5 @@
    "cv_fit_v": 18
   }
  ],
- "search_cursor": 1
+ "search_cursor": 6
 }
