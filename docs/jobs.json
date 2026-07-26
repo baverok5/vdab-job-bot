@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-26 12:33 UTC",
+ "updated": "2026-07-26 18:30 UTC",
  "jobs": [
   {
    "id": "74233469",
@@ -7699,6 +7699,11 @@
  ],
  "listing": [
   {
+   "id": "74243974",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74243974/flexi-growth-marketeer",
+   "title": "Flexi growth marketeer"
+  },
+  {
    "id": "74243908",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74243908/qa-verantwoordelijke",
    "title": "Qa verantwoordelijke"
@@ -7717,6 +7722,11 @@
    "id": "74243823",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74243823/sales-professional-aluminium-ramen-deuren",
    "title": "Sales professional aluminium ramen deuren"
+  },
+  {
+   "id": "74243730",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74243730/supply-logistics-coordinator",
+   "title": "Supply logistics coordinator"
   },
   {
    "id": "74243728",
@@ -51109,11 +51119,6 @@
    "title": "Commercieel binnendienst medewerker"
   },
   {
-   "id": "74033915",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74033915/business-developer-account-manager",
-   "title": "Business developer account manager"
-  },
-  {
    "id": "74033822",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74033822/marketing-en-communicatie-coordinator",
    "title": "Marketing en communicatie coordinator"
@@ -54164,6 +54169,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4444907370",
+   "url": "https://www.linkedin.com/jobs/view/4444907370",
+   "title": "Marketing & Communication Manager - Professional Clients - HQ Brussels",
+   "company": "BNP Paribas",
+   "location": "Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4444901443",
    "url": "https://www.linkedin.com/jobs/view/4444901443",
    "title": "Digital Communication Officer",
@@ -54852,6 +54865,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4442515590",
+   "url": "https://www.linkedin.com/jobs/view/4442515590",
+   "title": "B2B Growth Lead",
+   "company": "VONK",
+   "location": "Kontich, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4442512006",
    "url": "https://www.linkedin.com/jobs/view/4442512006",
    "title": "E-COMMERCE METRIC ANALYST",
@@ -55183,6 +55204,14 @@
    "id": "4442488971",
    "url": "https://www.linkedin.com/jobs/view/4442488971",
    "title": "SEO SEA SMO Manager H/F",
+   "company": "DigitalPharmaSummit",
+   "location": "Bruges Metropolitan Area",
+   "src": "linkedin"
+  },
+  {
+   "id": "4442487997",
+   "url": "https://www.linkedin.com/jobs/view/4442487997",
+   "title": "(Digital) Marketing Manager",
    "company": "DigitalPharmaSummit",
    "location": "Bruges Metropolitan Area",
    "src": "linkedin"
@@ -57713,6 +57742,14 @@
    "title": "Senior Internal Communications Specialist",
    "company": "ILIAS Solutions",
    "location": "Diegem, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4435514800",
+   "url": "https://www.linkedin.com/jobs/view/4435514800",
+   "title": "Marketing intern",
+   "company": "OutKept",
+   "location": "Ghent, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -97526,5 +97563,5 @@
    "cv_fit_v": 18
   }
  ],
- "search_cursor": 6
+ "search_cursor": 11
 }
