@@ -145,6 +145,7 @@
   .tag.content { background: rgba(10,102,194,.16); color: #4aa3ff; border-color: transparent; font-weight: 600; }
   .tag.paid { background: rgba(139,92,246,.18); color: #b794f6; border-color: transparent; font-weight: 600; }
   .tag.social { background: var(--amber-bg); color: var(--amber); border-color: transparent; font-weight: 600; }
+  .tag.lang { background: var(--card); color: var(--muted); font-weight: 600; }
   .btn.li-apply { background: #0a66c2; color: #fff; border-color: transparent; font-weight: 700; }
   .mkt { display: flex; align-items: center; gap: 8px; cursor: pointer;
     background: var(--card); border: 0.5px solid var(--border); border-radius: 10px;
@@ -225,6 +226,34 @@ let HIDE_DUTCH = localStorage.getItem("hideDutch") !== "0";
 const esc = (s) => (s || "").replace(/[&<>"]/g, (c) =>
   ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
+// ---- posting language -----------------------------------------------------
+// The bot decides this from the REAL posting text and stamps it on the job
+// (jobs.json) and on the prepared letter. The app must not try to work it out
+// itself: `details` is an English AI summary of the job, so every posting would
+// look English. null = not known yet (older jobs) → show the letter untouched.
+function langOf(j, d) { return (d && d.lang) || (j && j.lang) || null; }
+
+// Letters written before this feature are bilingual: Dutch, then a separator,
+// then English. When the language IS known, show only the matching half so the
+// employer reads one clean letter; when it is not, leave the text as it is.
+// New letters (fmt 3) are single-language already, so this is a no-op for them.
+const LANG_SPLIT = /\n?-{2,}\s*english version\s*-{2,}\n?/i;
+function pickLang(text, lang) {
+  const s = String(text || "");
+  if (!lang) return s;
+  const parts = s.split(LANG_SPLIT);
+  if (parts.length < 2) return s.trim();
+  return (lang === "en" ? parts[1] : parts[0]).trim();
+}
+
+// The stored subject follows the letter's language. An old Dutch-only subject
+// on an English posting gets a plain English one instead.
+function subjectFor(j, d, lang) {
+  const s = ((d && d.email_subject) || "").trim();
+  if (lang === "en" && /^sollicitatie/i.test(s)) return "Application — " + (j.title || "");
+  return s;
+}
+
 function toast(msg) {
   const t = document.getElementById("toast");
   t.textContent = msg; t.classList.add("show");
@@ -232,9 +261,10 @@ function toast(msg) {
 }
 
 function gmailLink(j) {
+  const lang = langOf(j, j);
   const to = encodeURIComponent(j.apply_email || "");
-  const su = encodeURIComponent(j.email_subject || ("Application — " + (j.title || "")));
-  const bo = encodeURIComponent(j.email_body || "");
+  const su = encodeURIComponent(subjectFor(j, j, lang) || ("Application — " + (j.title || "")));
+  const bo = encodeURIComponent(pickLang(j.email_body, lang));
   return `https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${su}&body=${bo}`;
 }
 
@@ -346,7 +376,7 @@ async function pingClaude(j, box) {
     const r = await fetch(`https://api.github.com/repos/baverok5/vdab-job-bot/issues/${SIGNAL_PR}/comments`, {
       method: "POST",
       headers: { "Authorization": "Bearer " + t, "Accept": "application/vnd.github+json", "Content-Type": "application/json" },
-      body: JSON.stringify({ body: `draft-job: ${j.id} — ${j.title}${j.apply_email ? " → " + j.apply_email : " (no direct email)"}` }),
+      body: JSON.stringify({ body: `draft-job: ${j.id} — ${j.title}${j.apply_email ? " → " + j.apply_email : " (no direct email)"} [lang: ${langOf(j, null) || "?"}]` }),
     });
     if (!r.ok) throw new Error("HTTP " + r.status);
     box.innerHTML = '<div class="hint">📮 Sent! Claude is creating the draft — check Gmail → Drafts in a few minutes.</div>';
@@ -357,15 +387,23 @@ async function pingClaude(j, box) {
 }
 
 function gmailFor(j, d) {
+  const lang = langOf(j, d);
   const to = encodeURIComponent(d.apply_email || j.apply_email || "");
-  const su = encodeURIComponent(d.email_subject || ("Application — " + (j.title || "")));
-  const bo = encodeURIComponent(d.email_body || "");
+  const su = encodeURIComponent(subjectFor(j, d, lang) || ("Application — " + (j.title || "")));
+  const bo = encodeURIComponent(pickLang(d.email_body, lang));
   return `https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${su}&body=${bo}`;
 }
 
 function renderPrepared(j, d, box) {
   const hasMail = !!(d.apply_email || j.apply_email);
-  const cvText = d.tailored_cv || d.cv_highlights || "";
+  // Match the posting: a Dutch vacancy gets Dutch documents, an English one
+  // English documents — for VDAB and LinkedIn alike, and for the Gmail draft.
+  const lang = langOf(j, d);
+  const subject = subjectFor(j, d, lang);
+  const body = pickLang(d.email_body, lang);
+  const letter = pickLang(d.cover_letter, lang);
+  const cv = pickLang(d.tailored_cv, lang);
+  const cvText = cv || pickLang(d.cv_highlights, lang);
   box.innerHTML = `
     <div class="sec dlrow">
       <div class="h">Download to upload / attach</div>
@@ -373,16 +411,16 @@ function renderPrepared(j, d, box) {
         <button class="btn primary" data-dl="letter">⬇️ Cover letter (PDF)</button>
         ${cvText ? '<button class="btn primary" data-dl="cv">⬇️ CV (PDF)</button>' : ""}
       </div></div>
-    <div class="sec"><div class="h">Application email ${hasMail ? "→ " + esc(d.apply_email || j.apply_email) : "(no direct email — apply via " + srcOf(j) + ")"}</div>
-      <div class="quote">${esc(d.email_subject ? d.email_subject + "\n\n" : "")}${esc(d.email_body)}</div>
+    <div class="sec"><div class="h">Application email ${hasMail ? "→ " + esc(d.apply_email || j.apply_email) : "(no direct email — apply via " + srcOf(j) + ")"} <span class="tag lang">${lang === "en" ? "🇬🇧 English" : "🇳🇱 Nederlands"}</span></div>
+      <div class="quote">${esc(subject ? subject + "\n\n" : "")}${esc(body)}</div>
       <button class="copybtn" data-copy="email">Copy email</button></div>
     <div class="sec"><div class="h">Cover letter</div>
-      <div class="quote">${esc(d.cover_letter)}</div>
+      <div class="quote">${esc(letter)}</div>
       <button class="copybtn" data-copy="letter">Copy cover letter</button></div>
-    ${d.tailored_cv ? `<div class="sec"><div class="h">Tailored CV for this job</div>
-      <div class="quote" style="max-height:260px;overflow-y:auto">${esc(d.tailored_cv)}</div>
+    ${cv ? `<div class="sec"><div class="h">Tailored CV for this job</div>
+      <div class="quote" style="max-height:260px;overflow-y:auto">${esc(cv)}</div>
       <button class="copybtn" data-copy="cv">Copy tailored CV</button></div>`
-      : (d.cv_highlights ? `<div class="sec"><div class="h">CV highlights for this job</div>${bullets(d.cv_highlights)}</div>` : "")}
+      : (cvText ? `<div class="sec"><div class="h">CV highlights for this job</div>${bullets(cvText)}</div>` : "")}
     ${hasMail
       ? `<button class="btn primary" data-prep="draft">📮 Create Gmail draft (CV + letter attached)</button>
          <div class="pingstat hint" style="text-align:left;margin-top:8px"></div>
@@ -397,16 +435,16 @@ function renderPrepared(j, d, box) {
   box.querySelectorAll(".copybtn").forEach((b) => b.addEventListener("click", (e) => {
     e.stopPropagation();
     const texts = {
-      email: (d.email_subject ? d.email_subject + "\n\n" : "") + (d.email_body || ""),
-      letter: d.cover_letter || "",
-      cv: d.tailored_cv || "",
+      email: (subject ? subject + "\n\n" : "") + body,
+      letter: letter,
+      cv: cv,
     };
     copyText(b, texts[b.dataset.copy] || "");
   }));
   const nm = safeName(j.title);
   box.querySelectorAll("[data-dl]").forEach((b) => b.addEventListener("click", (e) => {
     e.stopPropagation();
-    if (b.dataset.dl === "letter") downloadTextPdf(d.cover_letter || "", "Cover letter - " + nm + ".pdf");
+    if (b.dataset.dl === "letter") downloadTextPdf(letter, "Cover letter - " + nm + ".pdf");
     else downloadTextPdf(cvText, "CV - " + nm + ".pdf");
   }));
   const draftBtn = box.querySelector('[data-prep="draft"]');

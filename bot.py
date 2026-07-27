@@ -609,26 +609,71 @@ def fetch_job_detail(browser, url, job_id):
 
 # ---------------------------------------------------------------- AI steps
 
-def generate_application(job_text, cv_text, job_info=None):
+# Distinctive stopwords — only words that belong to ONE of the two languages.
+# Shared spellings (we, in, is, of, team, ...) are deliberately left out, they
+# carry no signal. The same two lists live in docs/index.html so the app and the
+# bot always agree on a posting's language.
+_NL_WORDS = {
+    "de", "het", "een", "van", "en", "met", "voor", "wij", "jij", "jouw", "je",
+    "ons", "onze", "bij", "naar", "niet", "ook", "wordt", "worden", "zijn",
+    "heeft", "hebben", "dat", "deze", "die", "als", "maar", "kennis", "ervaring",
+    "functie", "vacature", "werken", "medewerker", "opleiding", "taken",
+    "profiel", "aanbod", "binnen", "jaar", "sollicitatie", "solliciteren",
+    "zoeken", "bieden", "klanten", "bedrijf", "werk", "goede",
+}
+_EN_WORDS = {
+    "the", "and", "you", "your", "our", "with", "for", "will", "are", "this",
+    "have", "role", "experience", "skills", "work", "working", "about", "join",
+    "looking", "candidate", "responsibilities", "requirements", "offer",
+    "knowledge", "company", "years", "strong", "ability", "including", "please",
+    "apply", "we're", "you'll",
+}
+
+
+def job_lang(*parts):
+    """'en' if the posting is written in English, else 'nl'.
+
+    Flanders is Dutch-first, so Dutch is the default: English only wins on a
+    clear majority of distinctive stopwords. That keeps a Dutch posting with a
+    few English buzzwords ("SEO specialist", "content marketing") in Dutch."""
+    words = re.findall(r"[a-z']+", " ".join(p or "" for p in parts).lower())
+    nl = sum(1 for w in words if w in _NL_WORDS)
+    en = sum(1 for w in words if w in _EN_WORDS)
+    return "en" if en > nl * 1.3 and en >= 8 else "nl"
+
+
+def generate_application(job_text, cv_text, job_info=None, lang="nl"):
     """On-demand: write the full application email + cover letter + CV
-    highlights for ONE job the user chose to apply to. Used by prepare.py."""
+    highlights for ONE job the user chose to apply to. Used by prepare.py.
+
+    `lang` follows the posting: a Dutch vacancy gets Dutch documents, an English
+    one gets English documents — the employer reads what they wrote in."""
     job_info = job_info or {}
+    if lang == "en":
+        style = """This posting is written in ENGLISH, so write EVERY document in
+ENGLISH ONLY — no Dutch, and no "--- English version ---" separator."""
+        fields = """  "email_subject": "short subject line in English (e.g. Application - <role>)",
+  "email_body": "the complete application email in ENGLISH (110-160 words) ending with the signature block",
+  "cover_letter": "the full cover letter in ENGLISH (250-330 words)","""
+    else:
+        style = """This posting is written in DUTCH and the employer is Flemish, so
+write EVERY document in DUTCH ONLY — no English, and no "--- English version ---"
+separator. Natural, correct Nederlands (the candidate has B1 Dutch and gets help
+with writing — that is normal)."""
+        fields = """  "email_subject": "short subject line in Dutch (e.g. Sollicitatie — <functie>)",
+  "email_body": "the complete application email in DUTCH (110-160 words) ending with the signature block",
+  "cover_letter": "the full cover letter (motivatiebrief) in DUTCH (250-330 words)","""
     prompt = f"""You are an expert career writer. Write application documents for this job,
 based ONLY on the real CV below. NEVER invent experience, education, or skills
-not in the CV. Professional but warm, no clichés. The employer is Flemish: every
-document is written in DUTCH first, then the same content in ENGLISH below a
-"--- English version ---" separator. Natural, correct Nederlands (the candidate
-has B1 Dutch and gets help with writing — that is normal). Write all web
+not in the CV. Professional but warm, no clichés. {style} Write all web
 addresses as bare text (mirook.com, linkedin.com/in/baverok) — never markdown
 links, never http(s):// prefixes.
 
 Reply ONLY with JSON:
 {{
-  "email_subject": "short subject line in Dutch (e.g. Sollicitatie — <functie>)",
-  "email_body": "the complete application email in DUTCH (110-160 words) ending with the signature block, then '--- English version ---', then the same email in English, also ending with the signature block",
-  "cover_letter": "the full cover letter (motivatiebrief) in DUTCH (250-330 words), then '--- English version ---', then the English version",
+{fields}
   "cv_highlights": "5 bullet points (one newline-separated string) reordering the CV's most relevant points for THIS job",
-  "tailored_cv": "the FULL CV tailored to THIS job, as plain text with the same sections (name/contact, PROFILE, CORE SKILLS, EXPERIENCE, PROJECTS, EDUCATION). Reorder skills and bullets so the most relevant for this job come first, and reword the profile paragraph toward this role. Keep every fact identical to the real CV — same employers, dates, titles, tools; NOTHING invented, nothing removed except trimming clearly irrelevant bullets."
+  "tailored_cv": "the FULL CV tailored to THIS job, written in the SAME language as the documents above, as plain text with the same sections (name/contact, PROFILE, CORE SKILLS, EXPERIENCE, PROJECTS, EDUCATION). Reorder skills and bullets so the most relevant for this job come first, and reword the profile paragraph toward this role. Keep every fact identical to the real CV — same employers, dates, titles, tools; NOTHING invented, nothing removed except trimming clearly irrelevant bullets."
 }}
 
 THE JOB ({job_info.get('title', '')} at {job_info.get('company', '')}):
@@ -652,8 +697,10 @@ def write_letter(job_id, url, job_text, apply_email, cv_text, info=None):
     (docs/prepared/<id>.json). Returns True on success. Never raises — a failed
     letter must not break the screening run; the next run retries it."""
     out = os.path.join(PREPARED_DIR, f"{job_id}.json")
+    info = info or {}
+    lang = job_lang(info.get("title"), job_text)
     try:
-        docs = generate_application(job_text, cv_text, info)
+        docs = generate_application(job_text, cv_text, info, lang)
     except QuotaExhausted:
         return False
     if not docs:
@@ -663,23 +710,29 @@ def write_letter(job_id, url, job_text, apply_email, cv_text, info=None):
         "url": url,
         "status": "ready",
         "apply_email": apply_email or "",
+        "lang": lang,
         "email_subject": docs.get("email_subject", ""),
         "email_body": docs.get("email_body", ""),
         "cover_letter": docs.get("cover_letter", ""),
         "cv_highlights": docs.get("cv_highlights", ""),
         "tailored_cv": docs.get("tailored_cv", ""),
-        "fmt": 2,
+        "fmt": 3,
     })
     return True
 
 
 def has_letter(job_id):
     """A letter counts as complete only if it includes the tailored CV — older
-    letters without one get regenerated by backfill_letters."""
+    letters without one get regenerated by backfill_letters.
+
+    fmt 2 letters are the old bilingual ones (Dutch + '--- English version ---'
+    + English). They no longer count: backfill_letters re-reads the posting and
+    rewrites them in the posting's OWN language (fmt 3). Until a letter's turn
+    comes the app keeps showing the bilingual text, which still works."""
     p = os.path.join(PREPARED_DIR, f"{job_id}.json")
     try:
         d = json.load(open(p, encoding="utf-8"))
-        return bool(d.get("tailored_cv")) and d.get("fmt") == 2
+        return bool(d.get("tailored_cv")) and d.get("fmt", 0) >= 3
     except (FileNotFoundError, json.JSONDecodeError):
         return False
 
@@ -1142,11 +1195,16 @@ def main():
           f"Screen state: {len(shortlist)} shortlisted, {len(title_no)} title-dropped.")
 
 
-def _apply_verdict(jobs, job_id, url, verdict, apply_email, found_at=None):
+def _apply_verdict(jobs, job_id, url, verdict, apply_email, found_at=None,
+                   lang=None):
     """Place a job into the matched pool or the 'rejected' (not-a-fit) pool
     based on the verdict, de-duplicating by id across both pools so a job never
     appears twice or lingers in the wrong list after being re-evaluated.
-    Returns True if it landed in the matched pool."""
+    Returns True if it landed in the matched pool.
+
+    `lang` is the posting's own language ('nl'/'en'). It has to be recorded
+    here, from the real posting text: `details` is an English AI summary, so the
+    app cannot work the language out from jobs.json on its own."""
     entry = {
         "id": job_id,
         "url": url,
@@ -1164,6 +1222,7 @@ def _apply_verdict(jobs, job_id, url, verdict, apply_email, found_at=None):
         "dutch_stretch": bool(verdict.get("dutch_stretch")),
         "exp_stretch": bool(verdict.get("exp_stretch")),
         "internship": bool(verdict.get("internship")),
+        "lang": lang or "nl",
         "cv_fit_v": CRITERIA_VERSION,
     }
     jobs["jobs"] = [j for j in jobs["jobs"] if j.get("id") != job_id]
@@ -1219,7 +1278,8 @@ def revet_saved(browser, jobs, cv_text, budget=40, checkpoint=None):
             continue
         kept = _apply_verdict(jobs, job_id, url, verdict,
                               apply_email or j.get("apply_email"),
-                              found_at=j.get("found_at"))
+                              found_at=j.get("found_at"),
+                              lang=job_lang(j.get("title"), job_text))
         print(f"  {'FITS' if kept else 'NOT A FIT'} "
               f"({verdict.get('match_score')}%): {verdict.get('reason')}")
         if kept and not has_letter(job_id):
@@ -1262,6 +1322,9 @@ def backfill_letters(browser, jobs, cv_text, budget=30, checkpoint=None):
             continue
         if apply_email and not (j.get("apply_email") or "").strip():
             j["apply_email"] = apply_email  # keep the card's recipient in sync
+        # We have the real posting here — record its language on the card too,
+        # so the app can label it without re-reading the posting.
+        j["lang"] = job_lang(j.get("title"), job_text)
         if write_letter(job_id, url, job_text,
                         apply_email or j.get("apply_email"), cv_text,
                         {"title": j.get("title", ""), "company": j.get("company", "")}):
@@ -1309,7 +1372,8 @@ def _process_jobs(browser, new_links, seen, jobs, cv_text, checkpoint=None):
         # We got a real verdict (pass or fail) — safe to not process it again.
         seen.add(job_id)
         processed += 1
-        kept = _apply_verdict(jobs, job_id, url, verdict, apply_email)
+        kept = _apply_verdict(jobs, job_id, url, verdict, apply_email,
+                              lang=job_lang(verdict.get("title"), job_text))
         if kept:
             print(f"  MATCH ({verdict.get('match_score')}%): {verdict.get('title')}")
             matched += 1
