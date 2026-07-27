@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-27 20:11 UTC",
+ "updated": "2026-07-27 20:51 UTC",
  "jobs": [
   {
    "id": "74233469",
@@ -14607,6 +14607,11 @@
    "id": "74220954",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74220954/monteur-industriele-installaties-met-wagen",
    "title": "Monteur industriele installaties met wagen"
+  },
+  {
+   "id": "74220891",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74220891/customer-service-officer-hamont-vast-contract",
+   "title": "Customer service officer hamont vast contract"
   },
   {
    "id": "74220877",
@@ -51184,11 +51189,6 @@
    "title": "Sopra steria java developer"
   },
   {
-   "id": "74043379",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74043379/sopra-steria-functional-analyst",
-   "title": "Sopra steria functional analyst"
-  },
-  {
    "id": "74043232",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74043232/allround-marketeer",
    "title": "Allround marketeer"
@@ -54239,6 +54239,14 @@
    "title": "Commercieel bediende met passie voor social media"
   },
   {
+   "id": "4446115470",
+   "url": "https://www.linkedin.com/jobs/view/4446115470",
+   "title": "Digital Allround Marketeer FR/NL- FR",
+   "company": "BSH Home Appliances Belgium",
+   "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4445990243",
    "url": "https://www.linkedin.com/jobs/view/4445990243",
    "title": "UX Designer - Researcher",
@@ -54284,6 +54292,14 @@
    "title": "Growth Marketer",
    "company": "Tryve",
    "location": "Antwerp, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4445953485",
+   "url": "https://www.linkedin.com/jobs/view/4445953485",
+   "title": "CRM & Marketing Automation Expert",
+   "company": "Propaganda Group",
+   "location": "Leuven, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -54444,6 +54460,14 @@
    "title": "Web Support Coordinator",
    "company": "June20",
    "location": "Antwerp, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4445180245",
+   "url": "https://www.linkedin.com/jobs/view/4445180245",
+   "title": "Thesis / Internship - UI/UX Engineer",
+   "company": "Barco",
+   "location": "Kortrijk, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -55148,6 +55172,14 @@
    "title": "Social Media Content Creator",
    "company": "Dakwerken SCV",
    "location": "Nijlen, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4443004661",
+   "url": "https://www.linkedin.com/jobs/view/4443004661",
+   "title": "Marketing coördinator - Glijdend uurrooster",
+   "company": "Belgie Vacature",
+   "location": "Veurne, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -98073,5 +98105,5 @@
    "cv_fit_v": 18
   }
  ],
- "search_cursor": 4
+ "search_cursor": 9
 }
