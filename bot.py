@@ -220,6 +220,12 @@ class QuotaExhausted(Exception):
     so retrying just burns more of it. Callers stop the run gracefully."""
 
 
+class DeepSeekOutOfCredit(Exception):
+    """Raised on DeepSeek's 402 Payment Required — the prepaid balance is empty.
+    Unlike a 429 this never clears by itself, so ask_llm switches to Gemini for
+    the rest of the run rather than failing every call."""
+
+
 def ask_gemini(prompt, expect_json=False, model=None):
     """Send a prompt to Gemini, return the text reply (or parsed JSON).
 
@@ -278,24 +284,56 @@ def ask_deepseek(prompt, expect_json=False):
             if r.status_code == 429:
                 time.sleep(4 * (attempt + 1))
                 continue
+            # 402 = the prepaid balance is empty. Retrying cannot fix that, and
+            # every later call would burn 4 more attempts while the run quietly
+            # screens nothing. Raise so ask_llm can switch to Gemini instead.
+            if r.status_code == 402:
+                raise DeepSeekOutOfCredit(
+                    "DeepSeek returned 402 Payment Required — the account balance is empty.")
             r.raise_for_status()
             text = r.json()["choices"][0]["message"]["content"]
             if expect_json:
                 text = re.sub(r"^```(json)?|```$", "", text.strip(), flags=re.M)
                 return json.loads(text)
             return text
+        except DeepSeekOutOfCredit:
+            raise
         except Exception as e:
             print(f"  DeepSeek error (attempt {attempt+1}): {e}")
             time.sleep(3)
     return None
 
 
+# Set once a 402 is seen, so the rest of the run goes straight to Gemini instead
+# of re-discovering the empty balance on every single call.
+_DEEPSEEK_DEAD = False
+
+
 def ask_llm(prompt, expect_json=False, provider=None, gemini_model=None):
     """Route a prompt to the chosen engine. DeepSeek for cheap high-volume
-    screening; Gemini otherwise (with the caller's chosen Gemini model)."""
+    screening; Gemini otherwise (with the caller's chosen Gemini model).
+
+    If DeepSeek's balance runs out mid-run it would otherwise fail every call
+    and the run would screen nothing while still reporting success — the bot
+    looked healthy for three days that way. Fall back to Gemini instead: its
+    free tier is small, so far fewer jobs get through, but the feed keeps
+    moving until the balance is topped up."""
+    global _DEEPSEEK_DEAD
     provider = provider or EVAL_PROVIDER
-    if provider == "deepseek" and DEEPSEEK_API_KEY:
-        return ask_deepseek(prompt, expect_json)
+    if provider == "deepseek" and DEEPSEEK_API_KEY and not _DEEPSEEK_DEAD:
+        try:
+            return ask_deepseek(prompt, expect_json)
+        except DeepSeekOutOfCredit as e:
+            _DEEPSEEK_DEAD = True
+            print(f"  ⚠️  {e}\n"
+                  f"  ⚠️  Falling back to Gemini for the rest of this run "
+                  f"(small free quota — top up DeepSeek to restore full speed).")
+            send_telegram(
+                "<b>⚠️ DeepSeek balance empty</b>\nThe job bot fell back to "
+                "Gemini's small free quota, so far fewer jobs get screened per "
+                "run. Top up DeepSeek to restore full speed.")
+    if not GEMINI_KEY:
+        return None
     return ask_gemini(prompt, expect_json, model=gemini_model or GEMINI_WRITE_MODEL)
 
 
