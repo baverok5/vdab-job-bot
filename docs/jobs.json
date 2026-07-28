@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-28 18:52 UTC",
+ "updated": "2026-07-28 18:53 UTC",
  "jobs": [
   {
    "id": "4445916700",
@@ -60686,6 +60686,26 @@
  ],
  "rejected": [
   {
+   "id": "4446359009",
+   "url": "https://www.linkedin.com/jobs/view/4446359009",
+   "title": "Sportsbook Content Executive",
+   "company": "Entain",
+   "location": "Brussels",
+   "match_score": 0,
+   "reason": "Job requires fluency in French, which the candidate does not possess.",
+   "apply_email": "",
+   "found_at": "2026-07-28 18:53",
+   "status": "new",
+   "details": "Role: Sportsbook Content Executive. Main tasks: Deploy website content, oversee homepage and sports pages content, manage carousel banners, plan content promotion, collaborate with various teams. Contract type: Full-time (38 hours/week). Schedule: 5 days/week. Language: English, French, and Dutch fluency required. Pay: Not specified, but attractive compensation package with benefits.",
+   "why_good": "",
+   "why_bad": "The job explicitly requires fluency in French, which the candidate lacks.\nThe job requires at least 3 years of experience in the online sports betting sector, exceeding the candidate's ~4 months of relevant experience.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "en",
+   "cv_fit_v": 18
+  },
+  {
    "id": "4445274190",
    "url": "https://www.linkedin.com/jobs/view/4445274190",
    "title": "Conversational AI Designer and Content Specialist",
@@ -98685,25 +98705,6 @@
    "details": "Role: Compliance & Product Officer\nMain tasks: Ensure product compliance with REACH, CLP, RoHS, etc.; manage technical documentation; support audits\nContract: Interim with option for permanent, full-time, day work\nLanguage: Dutch (good) and English\nPay: Not stated",
    "why_good": "",
    "why_bad": "Requires at least 3 years of experience in Product Compliance, Regulatory Affairs, or similar\nRequires a bachelor or master in Chemistry or equivalent by experience, but candidate has no chemistry background\nRole is specialized in compliance/regulatory, far from candidate's digital marketing field\nCandidate has no experience with REACH, CLP, or safety data sheets",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "cv_fit_v": 18
-  },
-  {
-   "id": "74196475",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74196475/supply-chain-manager",
-   "title": "Supply Chain Manager",
-   "company": "S&you",
-   "location": "Comines-Warneton",
-   "match_score": 0,
-   "reason": "Requires French at medium level, which the candidate does not have.",
-   "apply_email": "",
-   "found_at": "2026-07-21 13:17",
-   "status": "new",
-   "details": "Role: Supply Chain Manager leading a team of 6\nTasks: production planning, forecasting, purchasing, logistics, inventory management, coaching team\nContract: permanent, full-time, day work\nLanguage: Dutch (good), English (medium), French (medium)\nPay: €5000-5500/month gross",
-   "why_good": "",
-   "why_bad": "French required at medium level (candidate has no French)\nRequires bachelor or master degree (candidate has no degree)\nRequires at least 10 years experience (candidate has ~4 months)\nSenior leadership role (people manager, reports to CEO)",
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
