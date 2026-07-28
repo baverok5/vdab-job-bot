@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-28 13:33 UTC",
+ "updated": "2026-07-28 13:34 UTC",
  "jobs": [
   {
    "id": "4445916700",
@@ -5882,6 +5882,26 @@
    "dutch_stretch": true,
    "exp_stretch": false,
    "internship": false,
+   "cv_fit_v": 18
+  },
+  {
+   "id": "4446176560",
+   "url": "https://www.linkedin.com/jobs/view/4446176560",
+   "title": "Content Creator",
+   "company": "Unknown",
+   "location": "Unknown",
+   "match_score": 65,
+   "reason": "The role aligns well with the candidate's digital marketing and content creation skills, and the experience requirement is flexible.",
+   "apply_email": "",
+   "found_at": "2026-07-28 13:34",
+   "status": "new",
+   "details": "Full-time, on-site role creating digital content across websites, blogs, and social media.\nRequires B1 Dutch (or better), English proficiency, and familiarity with MS Word, Canva, and Meta Business Suite.\nContract type: Full-time.\nSchedule: On-site, fast-paced environment.",
+   "why_good": "Fits the candidate's goal field of digital marketing and content creation.\nExperience requirement of 1-3 years is a stretch, but the candidate has ~4 months of relevant experience.\nFamiliarity with Canva and general web content creation aligns with the role's requirements.\nEnglish is the primary language, and Dutch B1 is acceptable for this role.",
+   "why_bad": "",
+   "dutch_stretch": false,
+   "exp_stretch": true,
+   "internship": false,
+   "lang": "en",
    "cv_fit_v": 18
   },
   {
