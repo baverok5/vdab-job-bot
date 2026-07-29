@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-28 18:53 UTC",
+ "updated": "2026-07-29 00:35 UTC",
  "jobs": [
   {
    "id": "4445916700",
@@ -1858,7 +1858,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74080270",
@@ -1877,7 +1878,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74159999",
@@ -1896,7 +1898,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74071171",
@@ -1915,7 +1918,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "73952565",
@@ -1934,7 +1938,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "4441476153",
@@ -1953,7 +1958,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": true,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "en"
   },
   {
    "id": "4433040452",
@@ -7912,6 +7918,96 @@
  ],
  "listing": [
   {
+   "id": "74262749",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74262749/technieker-alarmsystemen",
+   "title": "Technieker alarmsystemen"
+  },
+  {
+   "id": "74262737",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74262737/polyvalent-elektricien",
+   "title": "Polyvalent elektricien"
+  },
+  {
+   "id": "74262584",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74262584/digital-marketing-real-estate-sector-dutch-native",
+   "title": "Digital marketing real estate sector dutch native"
+  },
+  {
+   "id": "74262572",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74262572/ecommerce-manager-retail-sector",
+   "title": "Ecommerce manager retail sector"
+  },
+  {
+   "id": "74262570",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74262570/international-inside-sales-industry-wallonia",
+   "title": "International inside sales industry wallonia"
+  },
+  {
+   "id": "74262568",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74262568/hr-recruiter-maldegem",
+   "title": "Hr recruiter maldegem"
+  },
+  {
+   "id": "74262567",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74262567/junior-hr-officer-with-company-car",
+   "title": "Junior hr officer with company car"
+  },
+  {
+   "id": "74262553",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74262553/projectcoordinator",
+   "title": "Projectcoordinator"
+  },
+  {
+   "id": "74262252",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74262252/support-officer",
+   "title": "Support officer"
+  },
+  {
+   "id": "74262245",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74262245/commercial-event-manager",
+   "title": "Commercial event manager"
+  },
+  {
+   "id": "74262238",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74262238/logistiek-operations-coordinator",
+   "title": "Logistiek operations coordinator"
+  },
+  {
+   "id": "74262236",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74262236/customer-support-medewerker",
+   "title": "Customer support medewerker"
+  },
+  {
+   "id": "74262209",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74262209/medewerker-databeheer",
+   "title": "Medewerker databeheer"
+  },
+  {
+   "id": "74262200",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74262200/vertegenwoordiger",
+   "title": "Vertegenwoordiger"
+  },
+  {
+   "id": "74262166",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74262166/toonbankverkoper",
+   "title": "Toonbankverkoper"
+  },
+  {
+   "id": "74262136",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74262136/ploegchef-2-pl-nacht",
+   "title": "Ploegchef 2 pl nacht"
+  },
+  {
+   "id": "74262033",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74262033/brand-en-gas-technieker",
+   "title": "Brand en gas technieker"
+  },
+  {
+   "id": "74261925",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74261925/accountmanager-regio-kempen",
+   "title": "Accountmanager regio kempen"
+  },
+  {
    "id": "74261859",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74261859/productmanager",
    "title": "Productmanager"
@@ -7925,6 +8021,11 @@
    "id": "74261770",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74261770/handlanger-brand-en-waterschadesanering-m-v-x",
    "title": "Handlanger brand en waterschadesanering m v x"
+  },
+  {
+   "id": "74261654",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74261654/maintenance-planner-tot-65-000-wagen",
+   "title": "Maintenance planner tot 65 000 wagen"
   },
   {
    "id": "74261638",
@@ -7960,6 +8061,11 @@
    "id": "74261550",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74261550/customer-support-specialist-logistiek",
    "title": "Customer support specialist logistiek"
+  },
+  {
+   "id": "74261530",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74261530/customer-service-medewerker",
+   "title": "Customer service medewerker"
   },
   {
    "id": "74261522",
@@ -8000,6 +8106,11 @@
    "id": "74261270",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74261270/key-account-manager",
    "title": "Key account manager"
+  },
+  {
+   "id": "74261254",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74261254/technieker-2-ploegen",
+   "title": "Technieker 2 ploegen"
   },
   {
    "id": "74261232",
@@ -8050,6 +8161,11 @@
    "id": "74261074",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74261074/digital-360-media-marketer",
    "title": "Digital 360 media marketer"
+  },
+  {
+   "id": "74261061",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74261061/technieker-vaste-nacht",
+   "title": "Technieker vaste nacht"
   },
   {
    "id": "74261039",
@@ -8177,9 +8293,24 @@
    "title": "Marketing en administratief medewerker"
   },
   {
+   "id": "74259842",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74259842/technisch-verantwoordelijke-productieomgeving",
+   "title": "Technisch verantwoordelijke productieomgeving"
+  },
+  {
    "id": "74259815",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74259815/recruiter",
    "title": "Recruiter"
+  },
+  {
+   "id": "74259788",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74259788/storingstechnieker-vaste-nacht-vast-contract-snelle-opstart",
+   "title": "Storingstechnieker vaste nacht vast contract snelle opstart"
+  },
+  {
+   "id": "74259733",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74259733/elektromechanieker-2-ploegen",
+   "title": "Elektromechanieker 2 ploegen"
   },
   {
    "id": "74259629",
@@ -8200,6 +8331,11 @@
    "id": "74259566",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74259566/verantwoordelijke-toonzaal",
    "title": "Verantwoordelijke toonzaal"
+  },
+  {
+   "id": "74259551",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74259551/logistiek-administratief-coordinator",
+   "title": "Logistiek administratief coordinator"
   },
   {
    "id": "74259531",
@@ -8297,6 +8433,11 @@
    "title": "Operator branderij"
   },
   {
+   "id": "74259076",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74259076/manual-worker",
+   "title": "Manual worker"
+  },
+  {
    "id": "74259068",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74259068/sales-support-medewerker",
    "title": "Sales support medewerker"
@@ -8345,6 +8486,11 @@
    "id": "74258853",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74258853/schadebeheerder-thuiswerk",
    "title": "Schadebeheerder thuiswerk"
+  },
+  {
+   "id": "74258817",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74258817/supply-chain-manager-belgische-topspeler",
+   "title": "Supply chain manager belgische topspeler"
   },
   {
    "id": "74258813",
@@ -8837,6 +8983,11 @@
    "title": "Fullstack shopify developer"
   },
   {
+   "id": "74255548",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74255548/commercieel-administratief-medewerker",
+   "title": "Commercieel administratief medewerker"
+  },
+  {
    "id": "74255533",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74255533/reiniging-na-brand",
    "title": "Reiniging na brand"
@@ -8850,6 +9001,11 @@
    "id": "74255436",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74255436/renewi-zoekt-sales-representative-regio-oost-west-vlaanderen-met-oa-wagen-41-dagen-verlof",
    "title": "Renewi zoekt sales representative regio oost west vlaanderen met oa wagen 41 dagen verlof"
+  },
+  {
+   "id": "74255430",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74255430/technieker-2-ploegen",
+   "title": "Technieker 2 ploegen"
   },
   {
    "id": "74255429",
@@ -8897,6 +9053,11 @@
    "title": "Warehouse supervisor"
   },
   {
+   "id": "74255317",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74255317/aankoop-assistent",
+   "title": "Aankoop assistent"
+  },
+  {
    "id": "74255312",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74255312/categorie-manager",
    "title": "Categorie manager"
@@ -8932,6 +9093,11 @@
    "title": "Samples administrative coordinator"
   },
   {
+   "id": "74255168",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74255168/meubelmaker",
+   "title": "Meubelmaker"
+  },
+  {
    "id": "74255144",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74255144/internal-sales-representative-b2b-i-dottignies",
    "title": "Internal sales representative b2b i dottignies"
@@ -8965,6 +9131,11 @@
    "id": "74255042",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74255042/external-sales-advisor",
    "title": "External sales advisor"
+  },
+  {
+   "id": "74255040",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74255040/external-sales-industry",
+   "title": "External sales industry"
   },
   {
    "id": "74255036",
@@ -9012,6 +9183,11 @@
    "title": "Assistent e winkelverantwoordelijke multi brand store"
   },
   {
+   "id": "74254838",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74254838/project-engineer",
+   "title": "Project engineer"
+  },
+  {
    "id": "74254837",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74254837/technische-coordinator",
    "title": "Technische coordinator"
@@ -9030,6 +9206,11 @@
    "id": "74254663",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74254663/warehouse-operator",
    "title": "Warehouse operator"
+  },
+  {
+   "id": "74254657",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74254657/dierenartsassitent-e",
+   "title": "Dierenartsassitent e"
   },
   {
    "id": "74254571",
@@ -9775,6 +9956,11 @@
    "id": "74250306",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74250306/allround-technieker-onderhoud-storingen-in-lommel-tot-23-euro-u",
    "title": "Allround technieker onderhoud storingen in lommel tot 23 euro u"
+  },
+  {
+   "id": "74250275",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74250275/product-compliance-lead",
+   "title": "Product compliance lead"
   },
   {
    "id": "74250216",
@@ -15540,6 +15726,11 @@
    "id": "74225205",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74225205/ervaren-recruiter-met-bedrijfswagen-antwerpen-gent",
    "title": "Ervaren recruiter met bedrijfswagen antwerpen gent"
+  },
+  {
+   "id": "74225189",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74225189/winkelmedewerker",
+   "title": "Winkelmedewerker"
   },
   {
    "id": "74225167",
@@ -51177,46 +51368,6 @@
    "title": "Chef d equipe production alimentaire"
   },
   {
-   "id": "74055579",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74055579/operational-excellence-manager",
-   "title": "Operational excellence manager"
-  },
-  {
-   "id": "74055567",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74055567/logistiek-operator",
-   "title": "Logistiek operator"
-  },
-  {
-   "id": "74055561",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74055561/junior-office-manager-berchem-pharmacie",
-   "title": "Junior office manager berchem pharmacie"
-  },
-  {
-   "id": "74055560",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74055560/account-manager-bioprocess-pharma-industry-eng",
-   "title": "Account manager bioprocess pharma industry eng"
-  },
-  {
-   "id": "74055556",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74055556/freelance-project-manager-construction-building-projects",
-   "title": "Freelance project manager construction building projects"
-  },
-  {
-   "id": "74055506",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74055506/elektromechanieker",
-   "title": "Elektromechanieker"
-  },
-  {
-   "id": "74055472",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74055472/account-manager",
-   "title": "Account manager"
-  },
-  {
-   "id": "74055431",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74055431/opvoeder-bij-jongeren",
-   "title": "Opvoeder bij jongeren"
-  },
-  {
    "id": "74055385",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74055385/sales-advisor-m-v-x-luxe-multi-brand-store-knokke",
    "title": "Sales advisor m v x luxe multi brand store knokke"
@@ -51232,139 +51383,9 @@
    "title": "Digital marketeer"
   },
   {
-   "id": "74055206",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74055206/office-assistant-pharma-nl-en",
-   "title": "Office assistant pharma nl en"
-  },
-  {
-   "id": "74055151",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74055151/recruiter-pools",
-   "title": "Recruiter pools"
-  },
-  {
-   "id": "74055150",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74055150/technical-support-engineer",
-   "title": "Technical support engineer"
-  },
-  {
-   "id": "74055139",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74055139/sales-engineer",
-   "title": "Sales engineer"
-  },
-  {
-   "id": "74055129",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74055129/elektromechanieker",
-   "title": "Elektromechanieker"
-  },
-  {
-   "id": "74055062",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74055062/commercial-developer",
-   "title": "Commercial developer"
-  },
-  {
-   "id": "74054961",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74054961/ago-technics-supervisor-technische-dienst-productie-giet",
-   "title": "Ago technics supervisor technische dienst productie giet"
-  },
-  {
-   "id": "74054949",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74054949/ago-technics-supervisor-technische-dienst",
-   "title": "Ago technics supervisor technische dienst"
-  },
-  {
-   "id": "74054947",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74054947/consultant-e-en-recrutement-fr-du-supply-chain",
-   "title": "Consultant e en recrutement fr du supply chain"
-  },
-  {
-   "id": "74054902",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74054902/recruiter-pools",
-   "title": "Recruiter pools"
-  },
-  {
-   "id": "74054897",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74054897/technical-support-engineer",
-   "title": "Technical support engineer"
-  },
-  {
-   "id": "74054885",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74054885/customer-service-representative-met-kennis-sap-en-scheepvaart",
-   "title": "Customer service representative met kennis sap en scheepvaart"
-  },
-  {
-   "id": "74054883",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74054883/slager-edegem-kontich",
-   "title": "Slager edegem kontich"
-  },
-  {
-   "id": "74054874",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74054874/kinesitherapeut-of-beweegcoach",
-   "title": "Kinesitherapeut of beweegcoach"
-  },
-  {
-   "id": "74054817",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74054817/sales-engineer",
-   "title": "Sales engineer"
-  },
-  {
-   "id": "74054808",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74054808/zorgkundige",
-   "title": "Zorgkundige"
-  },
-  {
-   "id": "74054775",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74054775/customer-service-representative",
-   "title": "Customer service representative"
-  },
-  {
-   "id": "74054773",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74054773/customer-service-medewerker",
-   "title": "Customer service medewerker"
-  },
-  {
-   "id": "74054771",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74054771/sales-support-frankrijk",
-   "title": "Sales support frankrijk"
-  },
-  {
-   "id": "74054769",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74054769/planner",
-   "title": "Planner"
-  },
-  {
-   "id": "74054707",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74054707/zorgkundige",
-   "title": "Zorgkundige"
-  },
-  {
-   "id": "74054676",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74054676/warehouse-assistant",
-   "title": "Warehouse assistant"
-  },
-  {
    "id": "74054673",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74054673/performance-growth-marketeer-b2b-b2c",
    "title": "Performance growth marketeer b2b b2c"
-  },
-  {
-   "id": "74054670",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74054670/uitvaartconsulent-e",
-   "title": "Uitvaartconsulent e"
-  },
-  {
-   "id": "74054652",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74054652/commercieel-bediende-sales-advisor",
-   "title": "Commercieel bediende sales advisor"
-  },
-  {
-   "id": "74054574",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74054574/monteur-warehouse-trucks",
-   "title": "Monteur warehouse trucks"
-  },
-  {
-   "id": "74054567",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74054567/process-operator",
-   "title": "Process operator"
   },
   {
    "id": "74054253",
@@ -54572,6 +54593,14 @@
    "title": "Commercieel bediende met passie voor social media"
   },
   {
+   "id": "4446519250",
+   "url": "https://www.linkedin.com/jobs/view/4446519250",
+   "title": "Digital & 360 / Media Marketer",
+   "company": "Michael Page",
+   "location": "Berchem, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4446359009",
    "url": "https://www.linkedin.com/jobs/view/4446359009",
    "title": "SPORTSBOOK CONTENT EXECUTIVE",
@@ -55428,6 +55457,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4443872600",
+   "url": "https://www.linkedin.com/jobs/view/4443872600",
+   "title": "Frontend Developer (React/Typescript)",
+   "company": "Movu Robotics",
+   "location": "Lokeren, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4443866092",
    "url": "https://www.linkedin.com/jobs/view/4443866092",
    "title": "Management Trainees (m/v/x) (SEA-invest)",
@@ -55512,7 +55549,7 @@
    "url": "https://www.linkedin.com/jobs/view/4443564873",
    "title": "Content Manager Marketing",
    "company": "Belgie Vacature",
-   "location": "Hasselt, Flemish Region, Belgium",
+   "location": "Liège, Walloon Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -55577,6 +55614,14 @@
    "title": "Freelance Full-Stack Web App Developer",
    "company": "Mindrift",
    "location": "Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4443287097",
+   "url": "https://www.linkedin.com/jobs/view/4443287097",
+   "title": "Marketing & Communication Manager BELUX",
+   "company": "EAGLESTONE Belgium",
+   "location": "Brussels Metropolitan Area",
    "src": "linkedin"
   },
   {
@@ -98711,5 +98756,5 @@
    "cv_fit_v": 18
   }
  ],
- "search_cursor": 13
+ "search_cursor": 2
 }
