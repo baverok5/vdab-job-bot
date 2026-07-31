@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-31 12:33 UTC",
+ "updated": "2026-07-31 13:19 UTC",
  "jobs": [
   {
    "id": "4446772012",
@@ -3821,7 +3821,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74206176",
@@ -3840,7 +3841,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74206082",
@@ -3859,7 +3861,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "73982756",
@@ -6160,7 +6163,8 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "closed_check": "2026-07-31 13:19"
   },
   {
    "id": "4446176560",
@@ -6180,7 +6184,8 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "en",
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "closed_check": "2026-07-31 13:19"
   },
   {
    "id": "4445926118",
@@ -6200,7 +6205,8 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "en",
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "closed_check": "2026-07-31 13:19"
   },
   {
    "id": "4445981685",
@@ -6220,7 +6226,8 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "closed_check": "2026-07-31 13:19"
   },
   {
    "id": "74215964",
@@ -6316,7 +6323,8 @@
    "exp_stretch": true,
    "internship": false,
    "cv_fit_v": 18,
-   "lang": "en"
+   "lang": "en",
+   "closed_check": "2026-07-31 13:19"
   },
   {
    "id": "74233076",
@@ -6449,7 +6457,8 @@
    "dutch_stretch": false,
    "exp_stretch": true,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "closed_check": "2026-07-31 13:19"
   },
   {
    "id": "4446546499",
@@ -6469,7 +6478,8 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "en",
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "closed_check": "2026-07-31 13:19"
   },
   {
    "id": "74234978",
@@ -6487,25 +6497,6 @@
    "why_bad": "",
    "dutch_stretch": true,
    "exp_stretch": false,
-   "internship": false,
-   "cv_fit_v": 18
-  },
-  {
-   "id": "4444491257",
-   "url": "https://www.linkedin.com/jobs/view/4444491257",
-   "title": "Content Creator / Marketing (Social Media)",
-   "company": "Unknown",
-   "location": "Brussels",
-   "match_score": 55,
-   "reason": "Role is in English, no French required, and fits the candidate's content/social media skills.",
-   "apply_email": "",
-   "found_at": "2026-07-24 00:29",
-   "status": "new",
-   "details": "Role: Content Creator / Marketing (Social Media)\nMain tasks: Create original content for social media (short-form video, reels, visuals); build brand presence; turn complex topics into engaging content; experiment with formats; work with founding team.\nContract type: Freelance or student (paid)\nSchedule: Hybrid, in-person preferred\nLanguage: English\nPay: Not stated",
-   "why_good": "Role is in English, no French required.\nCandidate has social media content and integration skills from mirook.com project.\nCandidate is comfortable with content creation and storytelling.\nRole is early-stage and hands-on, suitable for a junior.\nCandidate can leverage digital marketing internship experience.",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": true,
    "internship": false,
    "cv_fit_v": 18
   },
@@ -6564,7 +6555,8 @@
    "dutch_stretch": false,
    "exp_stretch": true,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "closed_check": "2026-07-31 13:19"
   },
   {
    "id": "74201650",
@@ -6659,7 +6651,8 @@
    "dutch_stretch": false,
    "exp_stretch": true,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "closed_check": "2026-07-31 13:19"
   },
   {
    "id": "74104055",
