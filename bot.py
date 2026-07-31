@@ -1150,6 +1150,10 @@ def main():
             # instead of hours (user shouldn't wait on the long screening pass).
             backfill_letters(browser, jobs, cv_text, budget=40, checkpoint=checkpoint)
 
+            # Then drop any matched LinkedIn posting that has closed since we
+            # saved it, so the Ready feed only ever offers jobs you can apply to.
+            sweep_closed(jobs, budget=25, checkpoint=checkpoint)
+
             # Then: screen NEW marketing jobs (below); re-vet the already-saved
             # pool LAST with a small budget so screening is never starved.
 
@@ -1383,6 +1387,42 @@ def revet_saved(browser, jobs, cv_text, budget=40, checkpoint=None):
         time.sleep(1)
     print(f"Re-vet done: {moved} re-checked.")
     return moved
+
+
+def sweep_closed(jobs, budget=25, checkpoint=None):
+    """Re-check matched LinkedIn jobs and drop the ones that stopped accepting
+    applications.
+
+    This needs its own pass. The other two paths that re-read a posting go
+    dormant: revet_saved only touches jobs stamped with an older
+    CRITERIA_VERSION, and backfill_letters only touches jobs still missing a
+    letter — so once the pool is settled, nothing would ever notice a posting
+    closing and the feed would slowly fill with dead jobs again.
+
+    Round-robins by `closed_check` (never-checked first, then oldest), so a
+    small per-run budget still covers the whole feed every day. VDAB is skipped:
+    it takes closed vacancies off its own pages, so they stop resolving anyway."""
+    li = [j for j in jobs["jobs"] if "linkedin.com" in (j.get("url") or "")]
+    if not li:
+        return 0
+    li.sort(key=lambda j: j.get("closed_check") or "")
+    todo = li[:budget]
+    print(f"\nChecking {len(todo)} of {len(li)} LinkedIn match(es) for closed postings...")
+    now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M")
+    dropped = checked = 0
+    for j in todo:
+        state = linkedin_is_closed(j.get("id"))
+        j["closed_check"] = now          # don't retry the same job next run
+        checked += 1
+        if state is True:
+            _drop_job(jobs, j.get("id"))
+            print(f"  dropped (closed): {j.get('title', '')[:60]}")
+            dropped += 1
+        if checkpoint and checked % 10 == 0:
+            checkpoint()
+        time.sleep(1)                    # be gentle — LinkedIn rate-limits
+    print(f"Closed sweep done: {dropped} dropped of {checked} checked.")
+    return dropped
 
 
 def backfill_letters(browser, jobs, cv_text, budget=30, checkpoint=None):
