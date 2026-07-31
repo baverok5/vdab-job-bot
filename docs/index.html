@@ -146,6 +146,7 @@
   .tag.paid { background: rgba(139,92,246,.18); color: #b794f6; border-color: transparent; font-weight: 600; }
   .tag.social { background: var(--amber-bg); color: var(--amber); border-color: transparent; font-weight: 600; }
   .tag.lang { background: var(--card); color: var(--muted); font-weight: 600; }
+  .btn.closed-btn { color: var(--amber); border-color: transparent; background: var(--amber-bg); font-weight: 600; }
   .btn.li-apply { background: #0a66c2; color: #fff; border-color: transparent; font-weight: 700; }
   .mkt { display: flex; align-items: center; gap: 8px; cursor: pointer;
     background: var(--card); border: 0.5px solid var(--border); border-radius: 10px;
@@ -545,7 +546,8 @@ function card(j, state) {
              <button class="btn applied-btn" data-act="apply">✓ Applied</button>
              ${state === "skipped"
                ? '<button class="btn" data-act="unskip">Un-skip</button>'
-               : '<button class="btn" data-act="skip">Skip</button>'}`}
+               : '<button class="btn" data-act="skip">Skip</button>'}
+             <button class="btn closed-btn" data-act="closed">🚫 Closed</button>`}
       </div>
       <div class="prep"></div>
     </div>`;
@@ -564,6 +566,10 @@ function card(j, state) {
     if (act === "gmail") { el.classList.add("open"); pingClaude(j, el.querySelector(".prep")); return; }
     if (act === "apply") { setStatus(j.id, "applied"); toast("Marked as applied ✓"); return; }
     if (act === "skip") { setStatus(j.id, "skipped"); toast("Skipped"); return; }
+    // A posting you found closed on the board. The bot cannot always tell from
+    // outside, so this is the reliable way to kill one: gone from Ready for
+    // good, and it never comes back even if the bot re-matches the id.
+    if (act === "closed") { setStatus(j.id, "closed"); toast("Marked closed — hidden for good"); return; }
     if (act === "unskip" || act === "unapply") { setStatus(j.id, null); return; }
   });
   return el;
@@ -751,6 +757,7 @@ const HIDE_IDS = new Set([
   "4441666977", // Bellerose "Marketing - Media & CRM Intern" — needs a school internship convention
   "4440766673", // AppCritica "Content & SEO Specialist" — closed (no longer accepting applications)
   "4446018825", // Setrex "Digital Marketing Specialist" — closed (no longer accepting applications)
+  "4446752340", // Desh Videsh "Travel Content Writer" — closed (no longer accepting applications)
 ]);
 
 function render() {
@@ -759,6 +766,7 @@ function render() {
   for (const j of DATA.jobs) {
     if (HIDE_IDS.has(String(j.id))) continue;
     const s = st[j.id];
+    if (s === "closed") continue;   // you marked it dead — never show it again
     if (s === "applied") buckets.applied.push(j);
     else if (s === "skipped") buckets.skipped.push(j);
     else buckets.new.push(j);

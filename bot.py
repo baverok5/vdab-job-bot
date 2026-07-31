@@ -549,14 +549,49 @@ def collect_linkedin(keywords=None, pages_per_kw=5, budget_s=170):
     return found
 
 
-def linkedin_is_closed(job_id):
+def linkedin_is_closed(job_id, browser=None):
     """True if LinkedIn's public job page says the posting stopped taking
     applications, False if it clearly still accepts them, None if we could not
     tell (blocked, throttled, login wall, network error).
 
     None is deliberate: an unreadable page must never drop a live job, so the
-    caller keeps anything it cannot positively confirm as closed."""
+    caller keeps anything it cannot positively confirm as closed.
+
+    Plain HTTP gets a stripped page from LinkedIn: the first version of this
+    check read one and reported a genuinely closed posting as open. So when a
+    browser is available, render the page like a real visitor — that is how the
+    banner actually reaches the DOM — and keep raw HTTP only as a fallback."""
     jid = str(job_id)
+    if browser is not None:
+        body = title = ""
+        page = None
+        try:
+            page = browser.new_page(user_agent=HEADERS["User-Agent"], locale="en-US")
+            page.goto(LI_PUBLIC_JOB + jid, timeout=30000, wait_until="domcontentloaded")
+            page.wait_for_timeout(1200)          # let the top card settle
+            body = page.inner_text("body").lower()
+            title = (page.title() or "").lower()
+        except Exception as e:
+            print(f"  linkedin closed-check {jid}: render failed ({e})")
+        finally:
+            if page:
+                try:
+                    page.close()
+                except Exception:
+                    pass
+        if len(body) > 400:
+            hit = next((m for m in LI_CLOSED_MARKERS if m in body), None)
+            if hit:
+                print(f"  linkedin closed-check {jid}: CLOSED (rendered, matched {hit!r})")
+                return True
+            if any(w in body or w in title for w in ("sign in", "join linkedin", "aanmelden")):
+                print(f"  linkedin closed-check {jid}: login wall — cannot tell")
+                return None
+            print(f"  linkedin closed-check {jid}: open (rendered, {len(body)} chars)")
+            return False
+        print(f"  linkedin closed-check {jid}: rendered {len(body)} chars — cannot tell")
+        return None
+
     try:
         r = requests.get(LI_PUBLIC_JOB + jid, headers=LI_HEADERS, timeout=25)
     except Exception as e:
@@ -569,7 +604,7 @@ def linkedin_is_closed(job_id):
     page_l = r.text.lower()
     hit = next((m for m in LI_CLOSED_MARKERS if m in page_l), None)
     if hit:
-        print(f"  linkedin closed-check {jid}: CLOSED (matched {hit!r})")
+        print(f"  linkedin closed-check {jid}: CLOSED (http, matched {hit!r})")
         return True
     return False
 
@@ -1152,7 +1187,7 @@ def main():
 
             # Then drop any matched LinkedIn posting that has closed since we
             # saved it, so the Ready feed only ever offers jobs you can apply to.
-            sweep_closed(jobs, budget=25, checkpoint=checkpoint)
+            sweep_closed(browser, jobs, budget=25, checkpoint=checkpoint)
 
             # Then: screen NEW marketing jobs (below); re-vet the already-saved
             # pool LAST with a small budget so screening is never starved.
@@ -1389,7 +1424,7 @@ def revet_saved(browser, jobs, cv_text, budget=40, checkpoint=None):
     return moved
 
 
-def sweep_closed(jobs, budget=25, checkpoint=None):
+def sweep_closed(browser, jobs, budget=25, checkpoint=None):
     """Re-check matched LinkedIn jobs and drop the ones that stopped accepting
     applications.
 
@@ -1411,7 +1446,7 @@ def sweep_closed(jobs, budget=25, checkpoint=None):
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M")
     dropped = checked = 0
     for j in todo:
-        state = linkedin_is_closed(j.get("id"))
+        state = linkedin_is_closed(j.get("id"), browser=browser)
         j["closed_check"] = now          # don't retry the same job next run
         checked += 1
         if state is True:
