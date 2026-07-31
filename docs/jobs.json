@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-31 13:57 UTC",
+ "updated": "2026-07-31 13:58 UTC",
  "jobs": [
   {
    "id": "4446772012",
@@ -62603,6 +62603,26 @@
  ],
  "rejected": [
   {
+   "id": "4447506896",
+   "url": "https://www.linkedin.com/jobs/view/4447506896",
+   "title": "UX/UI Designer met AI-ervaring",
+   "company": "Octoo",
+   "location": "Unknown",
+   "match_score": 0,
+   "reason": "The job requires a minimum of three years of experience as a designer, which the candidate does not possess.",
+   "apply_email": "info@octoo.be",
+   "found_at": "2026-07-31 13:57",
+   "status": "new",
+   "details": "Role: UX/UI Designer with AI experience\nMain Tasks: Designing digital interactions, AI-driven design process, prototyping, user research, creating prototypes in Figma.\nContract Type: Not specified\nSchedule: Not specified\nLanguage: Dutch (fluent required), English\nPay: Not specified",
+   "why_good": "",
+   "why_bad": "Requires minimum of 3 years of experience as a designer.\nRequires fluent Dutch.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 18
+  },
+  {
    "id": "4447277840",
    "url": "https://www.linkedin.com/jobs/view/4447277840",
    "title": "Business & Data Analyst",
@@ -100629,25 +100649,6 @@
    "details": "Role: Duurzaam infrastructuurbeheer en interne preventie\nTasks: Manage buildings, installations, sustainability projects; coordinate maintenance; act as internal prevention advisor; conduct risk analyses; manage fire safety and emergency plans\nContract: Vaste job, voltijds, dagwerk, onbepaalde duur\nSchedule: Full-time, flexible hours\nLanguage: Dutch (required, not specified level but job is in Dutch)\nPay: min. 3621 - max. 4702 euro bruto per maand",
    "why_good": "",
    "why_bad": "Requires a bachelor degree in a related field (or equivalent by experience) — candidate has no degree\nRequires prevention advisor certificate (level II or III) — candidate does not have this\nRequires at least 2 years of relevant experience — candidate has ~4 months of digital marketing experience, not facility management\nRole is in technical infrastructure and safety prevention, far from candidate's goal field of digital marketing/SEO/web",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "cv_fit_v": 18
-  },
-  {
-   "id": "74194366",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74194366/sales-support-engineer",
-   "title": "Sales Support Engineer",
-   "company": "WaW Hasselt",
-   "location": "Pelt",
-   "match_score": 0,
-   "reason": "French required at basic level",
-   "apply_email": "",
-   "found_at": "2026-07-21 13:21",
-   "status": "new",
-   "details": "Sales Support Engineer\nUitwerken van offertes, afstemmen met engineering, ondersteunen sales\nVaste job, voltijds, dagwerk\nNederlands (zeer goed), Engels (goed), Frans (basis)\nBruto 2800-4000 euro/maand",
-   "why_good": "",
-   "why_bad": "Frans (basis) vereist, kandidaat heeft geen Frans\nMinstens 2 jaar ervaring gevraagd, kandidaat heeft ~4 maanden\nTechnisch inzicht en plannen lezen vereist, niet in CV\nSales Support Engineer rol, niet in doelveld",
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
