@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-31 16:10 UTC",
+ "updated": "2026-07-31 16:11 UTC",
  "jobs": [
   {
    "id": "4446772012",
@@ -6117,6 +6117,26 @@
    "cv_fit_v": 18
   },
   {
+   "id": "4447515466",
+   "url": "https://www.linkedin.com/jobs/view/4447515466",
+   "title": "Marketing Professionals (various roles)",
+   "company": "YER",
+   "location": "Unknown",
+   "match_score": 65,
+   "reason": "The job is open to junior professionals in various marketing fields and does not require French or a specific degree, making it a suitable opportunity.",
+   "apply_email": "",
+   "found_at": "2026-07-31 16:11",
+   "status": "new",
+   "details": "Role: Various marketing positions (Brand Manager, Product Marketing Manager, Trade Marketing Manager, Category Manager, Digital Marketing Manager, E-commerce Marketeer)\nMain tasks: Impactful brand marketing, driving growth, understanding consumers\nContract type: Permanent or project-based\nSchedule: Full-time (implied)\nLanguage: Dutch (implied, but English is likely acceptable given the recruitment agency context and candidate's profile)\nPay if stated: ''",
+   "why_good": "This role is specifically looking for junior professionals in digital marketing and related fields.\nThe company works with leading firms in FMCG, retail, and consumer goods sectors, aligning with the candidate's goal field.\nNo specific degree is hard-required, and the candidate's Applied Computer Science coursework and practical experience can be considered.\nFrench is not a requirement.",
+   "why_bad": "The job title 'Digital Marketing Manager' could imply a level of experience the candidate does not yet possess, although the posting explicitly states 'junior professionals' are welcome.\nWhile not a hard requirement, a strong command of Dutch might be beneficial for client-facing roles within YER's network.",
+   "dutch_stretch": false,
+   "exp_stretch": true,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 18
+  },
+  {
    "id": "4447268583",
    "url": "https://www.linkedin.com/jobs/view/4447268583",
    "title": "Digital Recruitment Marketeer",
@@ -6499,6 +6519,26 @@
    "internship": false,
    "cv_fit_v": 18,
    "closed_check": "2026-07-31 13:19"
+  },
+  {
+   "id": "4447522726",
+   "url": "https://www.linkedin.com/jobs/view/4447522726",
+   "title": "Email Marketing Specialist (Klaviyo)",
+   "company": "Foxelli",
+   "location": "Unknown",
+   "match_score": 55,
+   "reason": "The role aligns well with the candidate's digital marketing skills and allows for growth, though some specific tool experience is a stretch.",
+   "apply_email": "",
+   "found_at": "2026-07-31 16:10",
+   "status": "new",
+   "details": "Role: Email Marketing Specialist (Klaviyo).\nMain Tasks: Executing and automating email marketing campaigns, using AI tools for personalization, managing lists and segmentation, designing email templates.\nContract Type: Not specified.\nSchedule: Fully remote, flexible schedule, with expected overlap with Eastern European Time Zone.\nLanguage: English.\nPay: Up to €2500 after taxes monthly.",
+   "why_good": "Fits the candidate's goal field of digital marketing and content creation.\nLeverages existing skills in SEO, content writing, and web content management.\nOpportunity to gain experience with Klaviyo and AI marketing tools.\nExperience in e-commerce content and campaign execution is a plus.",
+   "why_bad": "Requires mandatory experience with Klaviyo and AI marketing tools, which is not explicitly listed in the candidate's current experience, though they are comfortable picking up new tools.",
+   "dutch_stretch": false,
+   "exp_stretch": true,
+   "internship": false,
+   "lang": "en",
+   "cv_fit_v": 18
   },
   {
    "id": "4446546499",
@@ -62685,6 +62725,26 @@
  ],
  "rejected": [
   {
+   "id": "4447299717",
+   "url": "https://www.linkedin.com/jobs/view/4447299717",
+   "title": "Content & Documentation Manager",
+   "company": "EUROPEAN DYNAMICS",
+   "location": "Brussels, Belgium",
+   "match_score": 0,
+   "reason": "The job requires a university degree and 10 years of relevant working experience.",
+   "apply_email": "",
+   "found_at": "2026-07-31 16:11",
+   "status": "new",
+   "details": "role: Content & Documentation Manager\nmain tasks: defining policies for content/records/archives/information management, system design/development/maintenance, data migration, digital preservation, metadata standards.\ncontract type: competitive remuneration (contract or full benefits)\nschedule: not specified\nlanguage: English (fluent)\npay if stated: ",
+   "why_good": "",
+   "why_bad": "Requires a university degree in IT or relevant discipline.\nRequires minimum 10 years of relevant working experience in IT.\nRequires excellent command of French language.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "en",
+   "cv_fit_v": 18
+  },
+  {
    "id": "4447506896",
    "url": "https://www.linkedin.com/jobs/view/4447506896",
    "title": "UX/UI Designer met AI-ervaring",
@@ -100712,25 +100772,6 @@
    "details": "Role: HR job coach for technical profiles (electricians, mechanics, welders, CNC operators)\nMain tasks: sourcing candidates, matching, writing vacancies, onboarding, client relations\nContract: permanent, full-time, day work\nSchedule: flexible hours, some remote work\nLanguage: Dutch (implied fluent)\nPay: competitive salary, quarterly bonus, meal vouchers, insurance, 32 holidays",
    "why_good": "",
    "why_bad": "Role is HR recruitment for skilled trades/technical profiles, not digital marketing/SEO/content/web\nCandidate has no HR or recruitment experience\nRequires sector knowledge of technical profiles (electricians, mechanics, etc.) which candidate lacks\nImplies fluent Dutch (not B1) and no French requirement but role is outside goal field",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "cv_fit_v": 18
-  },
-  {
-   "id": "74194358",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74194358/duurzaam-infrastructuurbeheer-en-interne-preventie",
-   "title": "Duurzaam infrastructuurbeheer en interne preventie",
-   "company": "Huize Eyckerheyde",
-   "location": "Bornem",
-   "match_score": 0,
-   "reason": "Role requires a bachelor degree in a related field (or equivalent by experience) AND a prevention advisor certificate, plus 2+ years experience in technical/facility management — none of which the candidate has.",
-   "apply_email": "",
-   "found_at": "2026-07-21 13:21",
-   "status": "new",
-   "details": "Role: Duurzaam infrastructuurbeheer en interne preventie\nTasks: Manage buildings, installations, sustainability projects; coordinate maintenance; act as internal prevention advisor; conduct risk analyses; manage fire safety and emergency plans\nContract: Vaste job, voltijds, dagwerk, onbepaalde duur\nSchedule: Full-time, flexible hours\nLanguage: Dutch (required, not specified level but job is in Dutch)\nPay: min. 3621 - max. 4702 euro bruto per maand",
-   "why_good": "",
-   "why_bad": "Requires a bachelor degree in a related field (or equivalent by experience) — candidate has no degree\nRequires prevention advisor certificate (level II or III) — candidate does not have this\nRequires at least 2 years of relevant experience — candidate has ~4 months of digital marketing experience, not facility management\nRole is in technical infrastructure and safety prevention, far from candidate's goal field of digital marketing/SEO/web",
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
