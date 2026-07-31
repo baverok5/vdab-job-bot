@@ -193,12 +193,16 @@
 <div class="toast" id="toast"></div>
 
 <script>
-const LS = "jobstatus";                       // { jobId: "applied" | "skipped" }
+const LS = "jobstatus";                    // { jobId: "applied" | "skipped" | "closed" }
+const LS_AT = "jobstatus_at";              // { jobId: epoch ms the status was set }
 const getStatus = () => JSON.parse(localStorage.getItem(LS) || "{}");
+const getStatusAt = () => JSON.parse(localStorage.getItem(LS_AT) || "{}");
 const setStatus = (id, s) => {
-  const m = getStatus();
-  if (s === null) delete m[id]; else m[id] = s;
+  const m = getStatus(), at = getStatusAt();
+  if (s === null) { delete m[id]; delete at[id]; }
+  else { m[id] = s; at[id] = Date.now(); }   // stamped so Applied can list newest first
   localStorage.setItem(LS, JSON.stringify(m));
+  localStorage.setItem(LS_AT, JSON.stringify(at));
   render();
 };
 
@@ -860,6 +864,14 @@ function render() {
     return;
   }
 
+  // Applied / Skipped: most recent action on top, so the job you just applied
+  // to is the first thing you see and your very first application sits last.
+  // Anything from before stamps existed has no time — those sink to the bottom,
+  // which is right: they are the oldest.
+  if (TAB === "applied" || TAB === "skipped") {
+    const at = getStatusAt();
+    buckets[TAB].sort((a, b) => (at[b.id] || 0) - (at[a.id] || 0));
+  }
   const jobs = buckets[TAB];
   if (!jobs.length) {
     const msg = {
@@ -953,11 +965,12 @@ function render() {
       const groups = {};
       arr.forEach((j) => { (groups[categorize(j)] ||= []).push(j); });
       (MKT_ONLY ? CATS.filter((c) => c.key === "marketing") : CATS).forEach((c) => {
-        // Clean fits first, stretch jobs (Dutch / experience / design-heavy)
-        // last; among clean fits, SEO roles float to the top; then by score.
+        // SEO first, always — it is the goal field, so it leads the section the
+        // moment you unfold it (a stretch SEO role still beats a clean non-SEO
+        // one). Then clean fits before stretch jobs, then by score.
         const g = (groups[c.key] || []).sort((a, b) =>
-          (isStretch(a) - isStretch(b)) ||
           (isSEO(b) - isSEO(a)) ||
+          (isStretch(a) - isStretch(b)) ||
           (b.match_score || 0) - (a.match_score || 0));
         if (!g.length) return;
         addSection((ns || "") + "cat:" + c.key, c.fav ? "fav" : "",
@@ -974,7 +987,8 @@ function render() {
     if (shownInterns.length) {
       addSection("intern", "intern",
         `🎓 Internships <span class="cnt">${shownInterns.length}</span>`,
-        shownInterns.slice().sort((a, b) => (b.match_score || 0) - (a.match_score || 0)),
+        shownInterns.slice().sort((a, b) =>
+          (isSEO(b) - isSEO(a)) || (b.match_score || 0) - (a.match_score || 0)),
         `<div class="hint" style="text-align:left;margin:0 4px 8px">Internships / stages (“stage” = internship) — kept even if they ask for more, since you learn on the job.</div>`);
     }
     if (!regular.length && !interns.length) {
