@@ -463,6 +463,17 @@ LINKEDIN_KEYWORDS = [
 LI_GUEST_SEARCH = ("https://www.linkedin.com/jobs-guest/jobs/api/"
                    "seeMoreJobPostings/search")
 LI_GUEST_JOB = "https://www.linkedin.com/jobs-guest/jobs/api/jobPosting/"
+# The guest endpoint above returns ONLY the description body, so the "No longer
+# accepting applications" banner — which lives in the posting's top card — can
+# never appear in it. That is why closed LinkedIn jobs kept sitting in the feed.
+# The public job page does render that banner for logged-out visitors.
+LI_PUBLIC_JOB = "https://www.linkedin.com/jobs/view/"
+LI_CLOSED_MARKERS = (
+    "no longer accepting applications",
+    "aanvaardt geen sollicitaties meer",
+    "no longer available",
+    "closed-job",
+)
 LI_HEADERS = {
     "User-Agent": HEADERS["User-Agent"],
     "Accept": "text/html,application/xhtml+xml",
@@ -538,8 +549,38 @@ def collect_linkedin(keywords=None, pages_per_kw=5, budget_s=170):
     return found
 
 
-def fetch_linkedin_detail(job_id):
-    """Fetch one LinkedIn guest job description (no login). Returns (text, email)."""
+def linkedin_is_closed(job_id):
+    """True if LinkedIn's public job page says the posting stopped taking
+    applications, False if it clearly still accepts them, None if we could not
+    tell (blocked, throttled, login wall, network error).
+
+    None is deliberate: an unreadable page must never drop a live job, so the
+    caller keeps anything it cannot positively confirm as closed."""
+    jid = str(job_id)
+    try:
+        r = requests.get(LI_PUBLIC_JOB + jid, headers=LI_HEADERS, timeout=25)
+    except Exception as e:
+        print(f"  linkedin closed-check {jid}: unreachable ({e})")
+        return None
+    if r.status_code != 200 or len(r.text) < 2000:
+        print(f"  linkedin closed-check {jid}: HTTP {r.status_code}, "
+              f"{len(r.text)} bytes — cannot tell")
+        return None
+    page_l = r.text.lower()
+    hit = next((m for m in LI_CLOSED_MARKERS if m in page_l), None)
+    if hit:
+        print(f"  linkedin closed-check {jid}: CLOSED (matched {hit!r})")
+        return True
+    return False
+
+
+def fetch_linkedin_detail(job_id, check_closed=False):
+    """Fetch one LinkedIn guest job description (no login). Returns (text, email).
+
+    With check_closed=True it also asks the public page whether the posting is
+    still open — used for jobs already in the feed, so closed ones drop out
+    instead of lingering. It costs one extra request, so the wide screening
+    pass leaves it off."""
     jid = str(job_id)
     try:
         r = requests.get(LI_GUEST_JOB + jid, headers=LI_HEADERS, timeout=25)
@@ -549,10 +590,12 @@ def fetch_linkedin_detail(job_id):
     if r.status_code != 200 or not r.text.strip():
         print(f"  linkedin detail {jid}: HTTP {r.status_code}")
         return None, None
-    # Closed postings still render but no longer take applications — drop them.
+    # The description fragment itself occasionally carries a closed marker.
     page_l = r.text.lower()
-    if "no longer accepting applications" in page_l or "closed-job" in page_l:
-        print(f"  linkedin detail {jid}: closed (no longer accepting applications)")
+    if any(m in page_l for m in LI_CLOSED_MARKERS):
+        print(f"  linkedin detail {jid}: closed (marker in description)")
+        return LI_CLOSED, None
+    if check_closed and linkedin_is_closed(jid) is True:
         return LI_CLOSED, None
     soup = BeautifulSoup(r.text, "html.parser")
     node = soup.select_one(".show-more-less-html__markup, .description__text")
@@ -575,13 +618,17 @@ def fetch_linkedin_detail(job_id):
     return text[:15000], (clean[0] if clean else None)
 
 
-def fetch_job_detail(browser, url, job_id):
+def fetch_job_detail(browser, url, job_id, check_closed=False):
     """Render one job page in a headless browser and return its readable text
     + any apply email. VDAB is a JS app with a bot-protected API, so a real
     browser is the only reliable way to see the posting. LinkedIn jobs use the
-    guest HTTP endpoint instead (no browser render)."""
+    guest HTTP endpoint instead (no browser render).
+
+    check_closed is for jobs already in the feed: it additionally verifies the
+    posting still accepts applications (LinkedIn only — VDAB drops closed
+    vacancies from its own pages)."""
     if "linkedin.com" in (url or ""):
-        return fetch_linkedin_detail(job_id)
+        return fetch_linkedin_detail(job_id, check_closed=check_closed)
     page = browser.new_page(
         user_agent=HEADERS["User-Agent"],
         locale="nl-BE",
@@ -1295,7 +1342,8 @@ def revet_saved(browser, jobs, cv_text, budget=40, checkpoint=None):
     for j in stale:
         job_id, url = j.get("id"), j.get("url")
         print(f"\nRe-vetting {job_id}: {j.get('title')}")
-        job_text, apply_email = fetch_job_detail(browser, url, job_id)
+        job_text, apply_email = fetch_job_detail(browser, url, job_id,
+                                                 check_closed=True)
         if job_text == LI_CLOSED:
             _drop_job(jobs, job_id)
             print("  CLOSED — removed (no longer accepting applications)")
@@ -1351,7 +1399,8 @@ def backfill_letters(browser, jobs, cv_text, budget=30, checkpoint=None):
     done = 0
     for j in todo:
         job_id, url = j.get("id"), j.get("url")
-        job_text, apply_email = fetch_job_detail(browser, url, job_id)
+        job_text, apply_email = fetch_job_detail(browser, url, job_id,
+                                                 check_closed=True)
         if job_text == LI_CLOSED:
             _drop_job(jobs, job_id)
             print(f"  CLOSED — removed {j.get('title','')[:50]}")
