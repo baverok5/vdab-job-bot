@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-31 19:01 UTC",
+ "updated": "2026-07-31 19:02 UTC",
  "jobs": [
   {
    "id": "4446772012",
@@ -6038,6 +6038,26 @@
    "cv_fit_v": 18
   },
   {
+   "id": "4447244679",
+   "url": "https://www.linkedin.com/jobs/view/4447244679",
+   "title": "SEO Specialist",
+   "company": "Ikea",
+   "location": "Unknown",
+   "match_score": 70,
+   "reason": "This role aligns well with the candidate's digital marketing and SEO experience.",
+   "apply_email": "",
+   "found_at": "2026-07-31 19:02",
+   "status": "new",
+   "details": "Role: SEO Specialist\nMain tasks: Maximize organic inbound traffic, define and support SEO strategy, manage link building and keyword strategy, analyze and implement optimization changes, report to Web Manager.\nContract type: Not specified\nSchedule: Not specified\nLanguage: English (posting has French/Dutch but states English is acceptable)\nPay: Not specified",
+   "why_good": "The role is a direct match for the candidate's focus on SEO, keyword research, and content optimization.\nExperience in WordPress and analytics tools (SEMrush, Ahrefs, Google Analytics) is listed as a core skill.\nThe candidate's project work (mirook.com) demonstrates practical application of SEO principles.\nThis role can be considered a stretch due to the experience requirement of ~2 years, which the candidate has not yet fully met.",
+   "why_bad": "The posting asks for a 'deep understanding of mobile strategy and how it relates to SEO' and 'proven SEO experience', which may be more than the candidate's ~4 months of direct experience.\nRequires reporting to a 'Web Manager', which doesn't imply senior leadership but is noted.",
+   "dutch_stretch": false,
+   "exp_stretch": true,
+   "internship": false,
+   "lang": "en",
+   "cv_fit_v": 18
+  },
+  {
    "id": "4446764163",
    "url": "https://www.linkedin.com/jobs/view/4446764163",
    "title": "Content Creator",
@@ -6392,6 +6412,26 @@
    "lang": "en",
    "closed_check": "2026-07-31 18:24",
    "closed_check_v": 2
+  },
+  {
+   "id": "4447521864",
+   "url": "https://www.linkedin.com/jobs/view/4447521864",
+   "title": "Social Media Manager & Content Creator",
+   "company": "FastForwardAmy",
+   "location": "Unknown",
+   "match_score": 60,
+   "reason": "This role aligns well with the candidate's goal field and current skill set, despite a slight experience gap.",
+   "apply_email": "",
+   "found_at": "2026-07-31 19:02",
+   "status": "new",
+   "details": "Role: Social Media Manager & Content Creator\nMain tasks: Creating and scheduling social media posts (carousels, reels, stories), repurposing content, community management, trend spotting, preparing content shoots.\nContract type: Full-time or minimum 4 days/week, freelance or employed is negotiable.\nSchedule: Not specified.\nLanguage: Dutch and English (fluent Dutch required).\nPay if stated: ''",
+   "why_good": "The role is in the candidate's target field (digital marketing/content/web).\nThe candidate has relevant experience in on-page SEO, content writing, WordPress, and using tools like SEMrush and Ahrefs.\nThe tasks involve content creation, social media, and WordPress which are aligned with the candidate's profile.\nCanva and basic editing tools are listed as requirements, which the candidate can handle.\nCanva is explicitly mentioned for carousel creation, aligning with candidate's web design/Canva skills.",
+   "why_bad": "The job requires 1-2 years of experience, while the candidate has ~4 months of professional experience.\nThe job requires fluent Dutch, but the candidate has B1 Dutch (conversational).",
+   "dutch_stretch": false,
+   "exp_stretch": true,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 18
   },
   {
    "id": "74233076",
@@ -62825,6 +62865,26 @@
  ],
  "rejected": [
   {
+   "id": "4447014141",
+   "url": "https://www.linkedin.com/jobs/view/4447014141",
+   "title": "Frontend Developer",
+   "company": "Dev Team",
+   "location": "Unknown",
+   "match_score": 10,
+   "reason": "The job requires significant front-end development experience, particularly with React and React Native, which the candidate lacks.",
+   "apply_email": "",
+   "found_at": "2026-07-31 19:02",
+   "status": "new",
+   "details": "Role: Frontend Developer\nMain tasks: Build modern web and mobile applications using TypeScript, React, and React Native.\nContract type: Full Time\nSchedule: On site\nLanguage: English (implied)\nPay: Not stated",
+   "why_good": "",
+   "why_bad": "Candidate lacks required experience in React, React Native, Next.js, and advanced TypeScript.\nExperience requirement of 2-3 years significantly exceeds candidate's ~4 months of relevant experience.\nNo mention of Angular, which is the candidate's prior front-end experience.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "en",
+   "cv_fit_v": 18
+  },
+  {
    "id": "4447299717",
    "url": "https://www.linkedin.com/jobs/view/4447299717",
    "title": "Content & Documentation Manager",
@@ -100853,25 +100913,6 @@
    "details": "Role: Lab support operator in biotech\nMain tasks: maintain sterile lab environment, prepare workstations/tools/materials, follow protocols\nContract: interim with option for permanent, full-time, day work\nSchedule: 4-on/4-off shift, rotating across 9 shifts (6:00-16:00 to 16:00-02:00 + future night)\nLanguage: Dutch (very good), English (very good)\nPay: competitive salary, shift premium, meal vouchers €7/day",
    "why_good": "",
    "why_bad": "Role is in a biotech/pharma lab environment, not in digital marketing/SEO/content/web\nRequires lab support skills (sterilization, GMP, aseptic techniques) not on CV\nShifts and lab work are outside candidate's career goals\nCandidate has no relevant lab experience or training",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "cv_fit_v": 18
-  },
-  {
-   "id": "74193899",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74193899/hr-consultant-technics-regio-genk",
-   "title": "HR Consultant Technics regio Genk",
-   "company": "Asap",
-   "location": "Genk",
-   "match_score": 0,
-   "reason": "Job is HR recruitment for technical profiles, not in candidate's goal field.",
-   "apply_email": "",
-   "found_at": "2026-07-21 13:21",
-   "status": "new",
-   "details": "Role: HR job coach for technical profiles (electricians, mechanics, welders, CNC operators)\nMain tasks: sourcing candidates, matching, writing vacancies, onboarding, client relations\nContract: permanent, full-time, day work\nSchedule: flexible hours, some remote work\nLanguage: Dutch (implied fluent)\nPay: competitive salary, quarterly bonus, meal vouchers, insurance, 32 holidays",
-   "why_good": "",
-   "why_bad": "Role is HR recruitment for skilled trades/technical profiles, not digital marketing/SEO/content/web\nCandidate has no HR or recruitment experience\nRequires sector knowledge of technical profiles (electricians, mechanics, etc.) which candidate lacks\nImplies fluent Dutch (not B1) and no French requirement but role is outside goal field",
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
