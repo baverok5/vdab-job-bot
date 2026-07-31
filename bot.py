@@ -153,6 +153,11 @@ CRITERIA_VERSION = 18
 # Bump when the cheap title-screen rules change, to force a one-time re-screen of
 # every previously title-dropped job under the new rules.
 TITLE_SCREEN_VERSION = 2
+# Bump when the closed-posting check itself gets smarter, so every job checked by
+# the older, weaker version is queued for a fresh look instead of coasting on a
+# verdict that method could not actually reach. Version 1 read LinkedIn over
+# plain HTTP and called genuinely closed jobs open; version 2 renders the page.
+CLOSED_CHECK_VERSION = 2
 # Sentinel returned by the detail fetchers when a posting exists but is closed
 # (LinkedIn "No longer accepting applications"). Distinct from None (= unreadable,
 # retry later) so callers actively drop it instead of leaving it in Ready.
@@ -549,6 +554,18 @@ def collect_linkedin(keywords=None, pages_per_kw=5, budget_s=170):
     return found
 
 
+def linkedin_guest_gone(job_id):
+    """True only when LinkedIn's guest description endpoint says the posting no
+    longer exists (404/410). Anything else — 200, a rate-limit, a network blip —
+    returns False, because this is used to *drop* jobs and a wrong True throws
+    away a live vacancy."""
+    try:
+        r = requests.get(LI_GUEST_JOB + str(job_id), headers=LI_HEADERS, timeout=20)
+    except Exception:
+        return False
+    return r.status_code in (404, 410)
+
+
 def linkedin_is_closed(job_id, browser=None):
     """True if LinkedIn's public job page says the posting stopped taking
     applications, False if it clearly still accepts them, None if we could not
@@ -585,6 +602,12 @@ def linkedin_is_closed(job_id, browser=None):
                 print(f"  linkedin closed-check {jid}: CLOSED (rendered, matched {hit!r})")
                 return True
             if any(w in body or w in title for w in ("sign in", "join linkedin", "aanmelden")):
+                # The banner lives behind the wall, but a posting that has been
+                # taken down entirely also disappears from the guest endpoint —
+                # and that answer is readable without an account.
+                if linkedin_guest_gone(jid):
+                    print(f"  linkedin closed-check {jid}: GONE (guest endpoint 404)")
+                    return True
                 print(f"  linkedin closed-check {jid}: login wall — cannot tell")
                 return None
             print(f"  linkedin closed-check {jid}: open (rendered, {len(body)} chars)")
@@ -1187,7 +1210,7 @@ def main():
 
             # Then drop any matched LinkedIn posting that has closed since we
             # saved it, so the Ready feed only ever offers jobs you can apply to.
-            sweep_closed(browser, jobs, budget=25, checkpoint=checkpoint)
+            sweep_closed(browser, jobs, budget=40, checkpoint=checkpoint)
 
             # Then: screen NEW marketing jobs (below); re-vet the already-saved
             # pool LAST with a small budget so screening is never starved.
@@ -1424,7 +1447,7 @@ def revet_saved(browser, jobs, cv_text, budget=40, checkpoint=None):
     return moved
 
 
-def sweep_closed(browser, jobs, budget=25, checkpoint=None):
+def sweep_closed(browser, jobs, budget=40, checkpoint=None):
     """Re-check matched LinkedIn jobs and drop the ones that stopped accepting
     applications.
 
@@ -1435,12 +1458,16 @@ def sweep_closed(browser, jobs, budget=25, checkpoint=None):
     closing and the feed would slowly fill with dead jobs again.
 
     Round-robins by `closed_check` (never-checked first, then oldest), so a
-    small per-run budget still covers the whole feed every day. VDAB is skipped:
+    small per-run budget still covers the whole feed every day. Jobs last seen by
+    an older CLOSED_CHECK_VERSION queue with the never-checked ones: their verdict
+    came from a method that could not see the banner at all, so it carries no
+    information and must not keep them at the back of the line. VDAB is skipped:
     it takes closed vacancies off its own pages, so they stop resolving anyway."""
     li = [j for j in jobs["jobs"] if "linkedin.com" in (j.get("url") or "")]
     if not li:
         return 0
-    li.sort(key=lambda j: j.get("closed_check") or "")
+    li.sort(key=lambda j: (j.get("closed_check") or "")
+            if j.get("closed_check_v") == CLOSED_CHECK_VERSION else "")
     todo = li[:budget]
     print(f"\nChecking {len(todo)} of {len(li)} LinkedIn match(es) for closed postings...")
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M")
@@ -1448,6 +1475,7 @@ def sweep_closed(browser, jobs, budget=25, checkpoint=None):
     for j in todo:
         state = linkedin_is_closed(j.get("id"), browser=browser)
         j["closed_check"] = now          # don't retry the same job next run
+        j["closed_check_v"] = CLOSED_CHECK_VERSION
         checked += 1
         if state is True:
             _drop_job(jobs, j.get("id"))
