@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-01 14:14 UTC",
+ "updated": "2026-08-01 14:53 UTC",
  "jobs": [
   {
    "id": "4446772012",
@@ -9886,6 +9886,11 @@
    "title": "Technik utrzymania ruchu"
   },
   {
+   "id": "74291370",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74291370/robot-operator-for-pallet-production",
+   "title": "Robot operator for pallet production"
+  },
+  {
    "id": "74291368",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74291368/electricista-industrial",
    "title": "Electricista industrial"
@@ -9926,6 +9931,11 @@
    "title": "Driver c ce"
   },
   {
+   "id": "74291265",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74291265/supply-chain-officer",
+   "title": "Supply chain officer"
+  },
+  {
    "id": "74291264",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74291264/junior-business-developper-brussel",
    "title": "Junior business developper brussel"
@@ -9936,6 +9946,16 @@
    "title": "Technical customer service officer"
   },
   {
+   "id": "74291256",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74291256/recruitment-consultant-brussels-antwerp-ghent",
+   "title": "Recruitment consultant brussels antwerp ghent"
+  },
+  {
+   "id": "74291254",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74291254/paralegal-native-english-speaker",
+   "title": "Paralegal native english speaker"
+  },
+  {
    "id": "74291213",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74291213/loader-unloader-part-time-2-shifts",
    "title": "Loader unloader part time 2 shifts"
@@ -9944,6 +9964,11 @@
    "id": "74291140",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74291140/service-technieker-op-de-baan",
    "title": "Service technieker op de baan"
+  },
+  {
+   "id": "74291121",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74291121/head-of-information-technology-advanced-manufacturing",
+   "title": "Head of information technology advanced manufacturing"
   },
   {
    "id": "74291067",
@@ -10149,6 +10174,11 @@
    "id": "74290054",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74290054/business-analyst",
    "title": "Business analyst"
+  },
+  {
+   "id": "74290053",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74290053/recruitment-consultant-brussels-antwerp-ghent",
+   "title": "Recruitment consultant brussels antwerp ghent"
   },
   {
    "id": "74290052",
@@ -17069,6 +17099,11 @@
    "id": "74247937",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74247937/software-developer",
    "title": "Software developer"
+  },
+  {
+   "id": "74247875",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74247875/mechanic-assambler-field",
+   "title": "Mechanic assambler field"
   },
   {
    "id": "74247764",
@@ -51731,41 +51766,6 @@
    "title": "Team leader en agroalimentaire i nuit i mouscron"
   },
   {
-   "id": "74092210",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74092210/lesgever-en-stagebegeleider-zorgkundige-in-halle",
-   "title": "Lesgever en stagebegeleider zorgkundige in halle"
-  },
-  {
-   "id": "74092204",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74092204/warehouse-worker",
-   "title": "Warehouse worker"
-  },
-  {
-   "id": "74092187",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74092187/warehouse-operator",
-   "title": "Warehouse operator"
-  },
-  {
-   "id": "74092182",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74092182/technieker",
-   "title": "Technieker"
-  },
-  {
-   "id": "74092181",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74092181/sales-office-medewerker",
-   "title": "Sales office medewerker"
-  },
-  {
-   "id": "74092171",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74092171/customer-service-medewerker",
-   "title": "Customer service medewerker"
-  },
-  {
-   "id": "74092160",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74092160/technieker-dag-40-dagen-verlof-vast-contract",
-   "title": "Technieker dag 40 dagen verlof vast contract"
-  },
-  {
    "id": "74091551",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74091551/digital-process-manager",
    "title": "Digital process manager"
@@ -55624,6 +55624,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4447782652",
+   "url": "https://www.linkedin.com/jobs/view/4447782652",
+   "title": "Social Media Strategist",
+   "company": "signedbyvicken",
+   "location": "On, Walloon Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4447735782",
    "url": "https://www.linkedin.com/jobs/view/4447735782",
    "title": "Máster Oficial en                                \n\t\t\t\t\t\t\t\t\t Marketing Digital y Big Data",
@@ -55664,6 +55672,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4447519688",
+   "url": "https://www.linkedin.com/jobs/view/4447519688",
+   "title": "CRM Marketeer in Antwerpen",
+   "company": "Intergamma",
+   "location": "Antwerp, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4447515466",
    "url": "https://www.linkedin.com/jobs/view/4447515466",
    "title": "Brand & Marketing Professional",
@@ -55672,11 +55688,27 @@
    "src": "linkedin"
   },
   {
+   "id": "4447512924",
+   "url": "https://www.linkedin.com/jobs/view/4447512924",
+   "title": "Internship Marketing",
+   "company": "Belgium Sotheby's International Realty",
+   "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4447506896",
    "url": "https://www.linkedin.com/jobs/view/4447506896",
    "title": "Digital Product Designer",
    "company": "Octoo",
    "location": "Kortrijk, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4447504323",
+   "url": "https://www.linkedin.com/jobs/view/4447504323",
+   "title": "Marketing Intern",
+   "company": "Shimano Europe Group",
+   "location": "Mechelen, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -55728,6 +55760,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4447270650",
+   "url": "https://www.linkedin.com/jobs/view/4447270650",
+   "title": "Social Media & Video Creation Intern",
+   "company": "Trosort",
+   "location": "Ixelles, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4447268583",
    "url": "https://www.linkedin.com/jobs/view/4447268583",
    "title": "Digital Recruitment Marketeer",
@@ -55773,6 +55813,14 @@
    "title": "DUTCH CONTENT & COMMUNITY MANAGER (LIEGE-BELGIUM)",
    "company": "GAMING1",
    "location": "Liège, Walloon Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4447179140",
+   "url": "https://www.linkedin.com/jobs/view/4447179140",
+   "title": "Stage contact center communicatie/marketing (middelbaar/graduaat/bachelor)",
+   "company": "NMBS-SNCB",
+   "location": "Ghent, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -56032,6 +56080,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4446518308",
+   "url": "https://www.linkedin.com/jobs/view/4446518308",
+   "title": "Stagiaire en Marketing et Community Managment",
+   "company": "Oopsly APP",
+   "location": "Tournai, Walloon Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4446499855",
    "url": "https://www.linkedin.com/jobs/view/4446499855",
    "title": "Marketing Communications Manager",
@@ -56064,11 +56120,27 @@
    "src": "linkedin"
   },
   {
+   "id": "4446416642",
+   "url": "https://www.linkedin.com/jobs/view/4446416642",
+   "title": "STAGE :  CHARGÉ.E DE COMMUNICATION DURABILITÉ",
+   "company": "Eiffage Construction BeLux",
+   "location": "Uccle, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4446385976",
    "url": "https://www.linkedin.com/jobs/view/4446385976",
    "title": "Digital Communication Officer",
    "company": "Belgie Vacature",
    "location": "Uccle, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4446362174",
+   "url": "https://www.linkedin.com/jobs/view/4446362174",
+   "title": "Field Marketing Executive – Distribution | Vlaanderen",
+   "company": "Milwaukee Tool Benelux",
+   "location": "Belgium",
    "src": "linkedin"
   },
   {
@@ -56088,6 +56160,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4446327521",
+   "url": "https://www.linkedin.com/jobs/view/4446327521",
+   "title": "Marketing Project Coordinator",
+   "company": "Group Induver",
+   "location": "Antwerp, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4446319783",
    "url": "https://www.linkedin.com/jobs/view/4446319783",
    "title": "UX/AI Conversational designer",
@@ -56101,6 +56181,14 @@
    "title": "Growth lead (Belgium)",
    "company": "BloomUp",
    "location": "Antwerp, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4446310937",
+   "url": "https://www.linkedin.com/jobs/view/4446310937",
+   "title": "Communications Trainee",
+   "company": "AEGEE / European Students' Forum",
+   "location": "Brussels, Brussels Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -56280,6 +56368,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4445965319",
+   "url": "https://www.linkedin.com/jobs/view/4445965319",
+   "title": "Influencer Marketing Internship Opportunity",
+   "company": "Ogilvy Social.Lab Belgium",
+   "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4445961764",
    "url": "https://www.linkedin.com/jobs/view/4445961764",
    "title": "Group Communications Business Partner",
@@ -56384,6 +56480,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4445923097",
+   "url": "https://www.linkedin.com/jobs/view/4445923097",
+   "title": "Brand marketeer",
+   "company": "clearXperts",
+   "location": "Antwerp, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4445916700",
    "url": "https://www.linkedin.com/jobs/view/4445916700",
    "title": "Social Media Manager",
@@ -56432,11 +56536,27 @@
    "src": "linkedin"
   },
   {
+   "id": "4445746288",
+   "url": "https://www.linkedin.com/jobs/view/4445746288",
+   "title": "Marketing- en communicatieverantwoordelijke",
+   "company": "Hanot vending",
+   "location": "Ranst, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4445739842",
    "url": "https://www.linkedin.com/jobs/view/4445739842",
    "title": "Freelance Digital Creative Familie",
    "company": "DPG Media België",
    "location": "Vilvoorde, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4445730381",
+   "url": "https://www.linkedin.com/jobs/view/4445730381",
+   "title": "EMEA Senior Marketing Manager Knees&DTS (m/w/d)",
+   "company": "Zimmer Biomet",
+   "location": "Belgium",
    "src": "linkedin"
   },
   {
@@ -56456,11 +56576,27 @@
    "src": "linkedin"
   },
   {
+   "id": "4445717487",
+   "url": "https://www.linkedin.com/jobs/view/4445717487",
+   "title": "Chief Marketing Officer",
+   "company": "DASSY® workwear",
+   "location": "Bruges Metropolitan Area",
+   "src": "linkedin"
+  },
+  {
    "id": "4445710708",
    "url": "https://www.linkedin.com/jobs/view/4445710708",
    "title": "B2B Campaign Manager",
    "company": "Spring Professional Belgium",
    "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4445709581",
+   "url": "https://www.linkedin.com/jobs/view/4445709581",
+   "title": "Chief Marketing Officer",
+   "company": "Martens & Brijs",
+   "location": "Bruges Metropolitan Area",
    "src": "linkedin"
   },
   {
@@ -56525,6 +56661,22 @@
    "title": "Head of Communications - Building Performance Division",
    "company": "Etex",
    "location": "Zaventem, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4445628841",
+   "url": "https://www.linkedin.com/jobs/view/4445628841",
+   "title": "Marketing Intern",
+   "company": "Peripass",
+   "location": "Ghent, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4445560103",
+   "url": "https://www.linkedin.com/jobs/view/4445560103",
+   "title": "Stage en marketing & événementiel",
+   "company": "Start it Accelerate | @KBC",
+   "location": "Liège, Walloon Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -56672,6 +56824,22 @@
    "src": "linkedin"
   },
   {
+   "id": "4445094135",
+   "url": "https://www.linkedin.com/jobs/view/4445094135",
+   "title": "Digital Business Analyst",
+   "company": "Semetis",
+   "location": "Hoeilaart, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4445091733",
+   "url": "https://www.linkedin.com/jobs/view/4445091733",
+   "title": "Policy Communications and Events Trainee",
+   "company": "Liquid Gas Europe",
+   "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4445089665",
    "url": "https://www.linkedin.com/jobs/view/4445089665",
    "title": "WEBSITE DEVELOPER (PHP)",
@@ -56752,6 +56920,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4444952923",
+   "url": "https://www.linkedin.com/jobs/view/4444952923",
+   "title": "Stage Social Media & Contentcreatie",
+   "company": "Film Fest Gent l 7 → 18 Oct '26.",
+   "location": "Ghent, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4444942110",
    "url": "https://www.linkedin.com/jobs/view/4444942110",
    "title": "CRM Campaign Specialist",
@@ -56773,6 +56949,14 @@
    "title": "Freelance Web Designer",
    "company": "Mindrift",
    "location": "Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4444928605",
+   "url": "https://www.linkedin.com/jobs/view/4444928605",
+   "title": "Marketing & Communication Internship",
+   "company": "Novotel Inle Lake Myat Min",
+   "location": "Brussels Metropolitan Area",
    "src": "linkedin"
   },
   {
@@ -56848,6 +57032,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4444903948",
+   "url": "https://www.linkedin.com/jobs/view/4444903948",
+   "title": "Marketing & Communications Assistant",
+   "company": "QUALITY ASSISTANCE S.A.",
+   "location": "Thuin, Walloon Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4444901443",
    "url": "https://www.linkedin.com/jobs/view/4444901443",
    "title": "Digital Communication Officer",
@@ -56880,11 +57072,35 @@
    "src": "linkedin"
   },
   {
+   "id": "4444797688",
+   "url": "https://www.linkedin.com/jobs/view/4444797688",
+   "title": "Stage Recruitment & Employer Branding",
+   "company": "We fynd",
+   "location": "Grimbergen, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4444795897",
+   "url": "https://www.linkedin.com/jobs/view/4444795897",
+   "title": "Stage Marketing",
+   "company": "We fynd",
+   "location": "Kortrijk, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4444792953",
    "url": "https://www.linkedin.com/jobs/view/4444792953",
    "title": "Marketing & Communicatie Officer",
    "company": "We fynd",
    "location": "Antwerp, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4444791991",
+   "url": "https://www.linkedin.com/jobs/view/4444791991",
+   "title": "Marketing stagiair",
+   "company": "We fynd",
+   "location": "Kontich, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -57048,6 +57264,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4444504841",
+   "url": "https://www.linkedin.com/jobs/view/4444504841",
+   "title": "Marketing Campaign Officer",
+   "company": "DigitalPharmaSummit",
+   "location": "Bruges Metropolitan Area",
+   "src": "linkedin"
+  },
+  {
    "id": "4444504840",
    "url": "https://www.linkedin.com/jobs/view/4444504840",
    "title": "Online Marketeer",
@@ -57088,11 +57312,27 @@
    "src": "linkedin"
   },
   {
+   "id": "4444477028",
+   "url": "https://www.linkedin.com/jobs/view/4444477028",
+   "title": "Brand Management marketing Intern",
+   "company": "We fynd",
+   "location": "Schellebelle, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4444476105",
    "url": "https://www.linkedin.com/jobs/view/4444476105",
    "title": "Internship in Marketing & E-commerce",
    "company": "We fynd",
    "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4444475031",
+   "url": "https://www.linkedin.com/jobs/view/4444475031",
+   "title": "Sales and Marketing",
+   "company": "We fynd",
+   "location": "Rumst, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -57128,6 +57368,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4444470022",
+   "url": "https://www.linkedin.com/jobs/view/4444470022",
+   "title": "Marketing- en communicatiecoördinator",
+   "company": "XAVIES'",
+   "location": "Koekelare, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4444468434",
    "url": "https://www.linkedin.com/jobs/view/4444468434",
    "title": "Front-end developer",
@@ -57152,11 +57400,27 @@
    "src": "linkedin"
   },
   {
+   "id": "4444460069",
+   "url": "https://www.linkedin.com/jobs/view/4444460069",
+   "title": "Stage en Marketing & Communication",
+   "company": "Insens",
+   "location": "Louvain-la-Neuve, Walloon Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4444459979",
    "url": "https://www.linkedin.com/jobs/view/4444459979",
    "title": "Digital Marketeer",
    "company": "We fynd",
    "location": "Antwerp, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4444459957",
+   "url": "https://www.linkedin.com/jobs/view/4444459957",
+   "title": "Trade Retail Marketing Intern",
+   "company": "We fynd",
+   "location": "Schellebelle, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -57248,6 +57512,38 @@
    "src": "linkedin"
   },
   {
+   "id": "4444340736",
+   "url": "https://www.linkedin.com/jobs/view/4444340736",
+   "title": "INTERNATIONAL MARKETING MANAGER SWEET ON THE GO",
+   "company": "La Lorraine Bakery Group",
+   "location": "Haaltert, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4444339421",
+   "url": "https://www.linkedin.com/jobs/view/4444339421",
+   "title": "Sensibilisatiesteward – Communicatie startbaanovereenkomst",
+   "company": "Bruxelles-Propreté | Net Brussel",
+   "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4444334705",
+   "url": "https://www.linkedin.com/jobs/view/4444334705",
+   "title": "Product Marketing Intern",
+   "company": "Octave",
+   "location": "Leuven, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4444332523",
+   "url": "https://www.linkedin.com/jobs/view/4444332523",
+   "title": "Sensibilisatrice/Sensibilisateur-Communication",
+   "company": "Bruxelles-Propreté | Net Brussel",
+   "location": "Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4444319960",
    "url": "https://www.linkedin.com/jobs/view/4444319960",
    "title": "digital marketeer",
@@ -57285,6 +57581,14 @@
    "title": "Contentmanager",
    "company": "Synergie Belgium",
    "location": "Ghent, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4444236432",
+   "url": "https://www.linkedin.com/jobs/view/4444236432",
+   "title": "FULL TIME JUNIOR DIGITAL PROJECT MANAGER (F/M/X; employee or freelance contract)",
+   "company": "DigitalPharmaSummit",
+   "location": "Bruges Metropolitan Area",
    "src": "linkedin"
   },
   {
@@ -57368,6 +57672,22 @@
    "src": "linkedin"
   },
   {
+   "id": "4443929992",
+   "url": "https://www.linkedin.com/jobs/view/4443929992",
+   "title": "Communications Trainee",
+   "company": "Detergents Europe",
+   "location": "Brussels Metropolitan Area",
+   "src": "linkedin"
+  },
+  {
+   "id": "4443924018",
+   "url": "https://www.linkedin.com/jobs/view/4443924018",
+   "title": "Marketing Business Partner - Content",
+   "company": "Orange Cyberdefense",
+   "location": "Brussels Metropolitan Area",
+   "src": "linkedin"
+  },
+  {
    "id": "4443915538",
    "url": "https://www.linkedin.com/jobs/view/4443915538",
    "title": "UX/UI Designer",
@@ -57416,6 +57736,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4443873576",
+   "url": "https://www.linkedin.com/jobs/view/4443873576",
+   "title": "Stagiair E-mail Marketing NL/ENG",
+   "company": "Miele Belgium & Luxembourg",
+   "location": "Asse, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4443872600",
    "url": "https://www.linkedin.com/jobs/view/4443872600",
    "title": "Frontend Developer (React/Typescript)",
@@ -57440,11 +57768,27 @@
    "src": "linkedin"
   },
   {
+   "id": "4443859792",
+   "url": "https://www.linkedin.com/jobs/view/4443859792",
+   "title": "Creative Content Intern",
+   "company": "Delvaux",
+   "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4443789647",
    "url": "https://www.linkedin.com/jobs/view/4443789647",
    "title": "Social Media Manager in the Field",
    "company": "Redstone Advertising",
    "location": "Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4443788850",
+   "url": "https://www.linkedin.com/jobs/view/4443788850",
+   "title": "Marketing Assistant Intern",
+   "company": "Adecco",
+   "location": "Dilbeek, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -57533,6 +57877,14 @@
    "title": "Marketing",
    "company": "Joie de Vivre Expo",
    "location": "Zonnebeke, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4443542958",
+   "url": "https://www.linkedin.com/jobs/view/4443542958",
+   "title": "🇫🇷 Senior Social Media Manager - French Fluent",
+   "company": "Paradox EN",
+   "location": "Belgium",
    "src": "linkedin"
   },
   {
@@ -57648,11 +58000,27 @@
    "src": "linkedin"
   },
   {
+   "id": "4443167847",
+   "url": "https://www.linkedin.com/jobs/view/4443167847",
+   "title": "CJE Digital Aftersales",
+   "company": "ING Belgium",
+   "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4443154620",
    "url": "https://www.linkedin.com/jobs/view/4443154620",
    "title": "Ecommerce Manager (NL) - 3/5 of 4/5",
    "company": "Olivia Jewellery",
    "location": "Antwerp, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4443149223",
+   "url": "https://www.linkedin.com/jobs/view/4443149223",
+   "title": "Marketing & Communication Project Manager",
+   "company": "Trasis",
+   "location": "Ans, Walloon Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -57669,6 +58037,14 @@
    "title": "Marketing Project Manager",
    "company": "Jobgether",
    "location": "Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4443133830",
+   "url": "https://www.linkedin.com/jobs/view/4443133830",
+   "title": "Go-to-market marketeer",
+   "company": "SD Worx Jobs Belgium",
+   "location": "Antwerp Metropolitan Area",
    "src": "linkedin"
   },
   {
@@ -57984,6 +58360,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4442511004",
+   "url": "https://www.linkedin.com/jobs/view/4442511004",
+   "title": "Un(e) expert(e) en digital marketing",
+   "company": "DigitalPharmaSummit",
+   "location": "Bruges Metropolitan Area",
+   "src": "linkedin"
+  },
+  {
    "id": "4442510065",
    "url": "https://www.linkedin.com/jobs/view/4442510065",
    "title": "Interactive Sales et Marketing Manager (H/F)",
@@ -58072,6 +58456,22 @@
    "src": "linkedin"
   },
   {
+   "id": "4442506313",
+   "url": "https://www.linkedin.com/jobs/view/4442506313",
+   "title": "Growth Hacker",
+   "company": "DigitalPharmaSummit",
+   "location": "Bruges Metropolitan Area",
+   "src": "linkedin"
+  },
+  {
+   "id": "4442505935",
+   "url": "https://www.linkedin.com/jobs/view/4442505935",
+   "title": "Stage - Marketingcommunicatie Branding & Campaign",
+   "company": "TUI",
+   "location": "Ostend, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4442505305",
    "url": "https://www.linkedin.com/jobs/view/4442505305",
    "title": "Online Advertising Manager",
@@ -58088,6 +58488,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4442504321",
+   "url": "https://www.linkedin.com/jobs/view/4442504321",
+   "title": "Digital Products Specialist",
+   "company": "DigitalPharmaSummit",
+   "location": "Bruges Metropolitan Area",
+   "src": "linkedin"
+  },
+  {
    "id": "4442501496",
    "url": "https://www.linkedin.com/jobs/view/4442501496",
    "title": "Junior Search Engine Advertising Executive",
@@ -58096,9 +58504,25 @@
    "src": "linkedin"
   },
   {
+   "id": "4442501483",
+   "url": "https://www.linkedin.com/jobs/view/4442501483",
+   "title": "Digital Campaign Manager",
+   "company": "DigitalPharmaSummit",
+   "location": "Bruges Metropolitan Area",
+   "src": "linkedin"
+  },
+  {
    "id": "4442500575",
    "url": "https://www.linkedin.com/jobs/view/4442500575",
    "title": "E-Content Officer",
+   "company": "DigitalPharmaSummit",
+   "location": "Bruges Metropolitan Area",
+   "src": "linkedin"
+  },
+  {
+   "id": "4442500565",
+   "url": "https://www.linkedin.com/jobs/view/4442500565",
+   "title": "Assistant Marketing Direct (H/F)",
    "company": "DigitalPharmaSummit",
    "location": "Bruges Metropolitan Area",
    "src": "linkedin"
@@ -58211,6 +58635,14 @@
    "id": "4442494806",
    "url": "https://www.linkedin.com/jobs/view/4442494806",
    "title": "Online Marketing Teamleader",
+   "company": "DigitalPharmaSummit",
+   "location": "Bruges Metropolitan Area",
+   "src": "linkedin"
+  },
+  {
+   "id": "4442493787",
+   "url": "https://www.linkedin.com/jobs/view/4442493787",
+   "title": "Marketing Officer",
    "company": "DigitalPharmaSummit",
    "location": "Bruges Metropolitan Area",
    "src": "linkedin"
@@ -58400,11 +58832,27 @@
    "src": "linkedin"
   },
   {
+   "id": "4442289530",
+   "url": "https://www.linkedin.com/jobs/view/4442289530",
+   "title": "Marketing / Campaigning Intern",
+   "company": "McDonald's",
+   "location": "Diegem, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4442287914",
    "url": "https://www.linkedin.com/jobs/view/4442287914",
    "title": "Communications Consultant",
    "company": "Sansaone",
    "location": "Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4442181361",
+   "url": "https://www.linkedin.com/jobs/view/4442181361",
+   "title": "Internship in Communications and Marketing – Hair Care Professional (M/F/X) – September 2026",
+   "company": "Henkel",
+   "location": "Brussels, Brussels Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -58680,6 +59128,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4441715509",
+   "url": "https://www.linkedin.com/jobs/view/4441715509",
+   "title": "Marketing / Campaigning Intern",
+   "company": "McDonald's",
+   "location": "Diegem, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4441692000",
    "url": "https://www.linkedin.com/jobs/view/4441692000",
    "title": "Campaign Manager / Casting Agent (NL/FR) | Native Nation",
@@ -58773,6 +59229,14 @@
    "title": "French Technical Product Specialist | Digital Ads - Work In Athens, Greece",
    "company": "Mercier Consultancy MD",
    "location": "Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4441479139",
+   "url": "https://www.linkedin.com/jobs/view/4441479139",
+   "title": "Marketing & Communication Internship",
+   "company": "CBRE Belgium",
+   "location": "Brussels, Brussels Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -59024,6 +59488,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4441045397",
+   "url": "https://www.linkedin.com/jobs/view/4441045397",
+   "title": "Stagiair socialmediamarketing",
+   "company": "Vivaldis",
+   "location": "Antwerp, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4441042174",
    "url": "https://www.linkedin.com/jobs/view/4441042174",
    "title": "Marketing Officer",
@@ -59136,6 +59608,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4440855245",
+   "url": "https://www.linkedin.com/jobs/view/4440855245",
+   "title": "Marketing Assistant",
+   "company": "Belgie Vacature",
+   "location": "Waasmunster, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4440843755",
    "url": "https://www.linkedin.com/jobs/view/4440843755",
    "title": "HR & Communications Coordinator",
@@ -59196,6 +59676,14 @@
    "url": "https://www.linkedin.com/jobs/view/4440718720",
    "title": "Senior SEO Specialist",
    "company": "LYNX Beleggen",
+   "location": "Ghent, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4440695363",
+   "url": "https://www.linkedin.com/jobs/view/4440695363",
+   "title": "Stage Marketing & Communicatie",
+   "company": "Attentia",
    "location": "Ghent, Flemish Region, Belgium",
    "src": "linkedin"
   },
@@ -59304,6 +59792,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4440559815",
+   "url": "https://www.linkedin.com/jobs/view/4440559815",
+   "title": "Sales & Marketing Internship - Alpine",
+   "company": "Renault Group",
+   "location": "Drogenbos, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4440559474",
    "url": "https://www.linkedin.com/jobs/view/4440559474",
    "title": "Customer Content Marketeer",
@@ -59336,6 +59832,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4440528624",
+   "url": "https://www.linkedin.com/jobs/view/4440528624",
+   "title": "Volunteer Participation Hub Communications Intern for Ashoka Belgium with Ashoka - Belgium",
+   "company": "Ashoka",
+   "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4440523897",
    "url": "https://www.linkedin.com/jobs/view/4440523897",
    "title": "React Frontend Developer",
@@ -59365,6 +59869,14 @@
    "title": "Product Marketing Specialist",
    "company": "Louverdrape®",
    "location": "Kortemark, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4440502581",
+   "url": "https://www.linkedin.com/jobs/view/4440502581",
+   "title": "Internship: Internal Communication (Gent)",
+   "company": "ENGIE Belgium",
+   "location": "Ghent, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -59480,11 +59992,27 @@
    "src": "linkedin"
   },
   {
+   "id": "4440067500",
+   "url": "https://www.linkedin.com/jobs/view/4440067500",
+   "title": "Marketing Communications Specialist",
+   "company": "Signify",
+   "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4440046271",
    "url": "https://www.linkedin.com/jobs/view/4440046271",
    "title": "Digital Content Creative Knack Focus",
    "company": "Roularta Media Group",
    "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4440043866",
+   "url": "https://www.linkedin.com/jobs/view/4440043866",
+   "title": "Field Marketing Assistant",
+   "company": "Sarawak Belux",
+   "location": "Dilbeek, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -59584,6 +60112,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4439995864",
+   "url": "https://www.linkedin.com/jobs/view/4439995864",
+   "title": "Stagiair Communicatie / Projectmanagement (september 2026)",
+   "company": "DPG Media België",
+   "location": "Antwerp, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4439994941",
    "url": "https://www.linkedin.com/jobs/view/4439994941",
    "title": "Intern - Digital Marketing",
@@ -59664,6 +60200,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4439839046",
+   "url": "https://www.linkedin.com/jobs/view/4439839046",
+   "title": "Event & Marketingcoördinator",
+   "company": "BOEMM!",
+   "location": "Ghent, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4439836220",
    "url": "https://www.linkedin.com/jobs/view/4439836220",
    "title": "Performance Marketeer",
@@ -59685,6 +60229,14 @@
    "title": "Marketing Project Manager",
    "company": "EOLIS",
    "location": "Brussels Metropolitan Area",
+   "src": "linkedin"
+  },
+  {
+   "id": "4439797390",
+   "url": "https://www.linkedin.com/jobs/view/4439797390",
+   "title": "Marketeer Bio-Planet",
+   "company": "Colruyt Group",
+   "location": "Halle, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -59768,6 +60320,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4439554866",
+   "url": "https://www.linkedin.com/jobs/view/4439554866",
+   "title": "Stagiaire Marketing",
+   "company": "Wondercar Groot-Bijgaarden",
+   "location": "Bruges Metropolitan Area",
+   "src": "linkedin"
+  },
+  {
    "id": "4439546574",
    "url": "https://www.linkedin.com/jobs/view/4439546574",
    "title": "Social Marketing",
@@ -59789,6 +60349,22 @@
    "title": "Business Development & Marketing Director, Orthopaedics",
    "company": "Smith+Nephew",
    "location": "Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4439462233",
+   "url": "https://www.linkedin.com/jobs/view/4439462233",
+   "title": "Marketing Intern (Bilingual)",
+   "company": "EF",
+   "location": "Auderghem, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4439432688",
+   "url": "https://www.linkedin.com/jobs/view/4439432688",
+   "title": "Internship - Internal Communication Assistant au cœur de la Network Business Unit de Proximus",
+   "company": "Proximus Group",
+   "location": "Brussels, Brussels Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -59821,6 +60397,14 @@
    "title": "Go-to-market marketeer",
    "company": "SD Worx",
    "location": "Antwerp, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4439401514",
+   "url": "https://www.linkedin.com/jobs/view/4439401514",
+   "title": "Internship Communication",
+   "company": "Duvel Moortgat",
+   "location": "Puurs, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -59968,6 +60552,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4439084341",
+   "url": "https://www.linkedin.com/jobs/view/4439084341",
+   "title": "Stage : Publicité Digitale Assistant Programmatique",
+   "company": "Rossel France",
+   "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4439077754",
    "url": "https://www.linkedin.com/jobs/view/4439077754",
    "title": "Sales & Growth Manager",
@@ -60008,6 +60600,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4439044629",
+   "url": "https://www.linkedin.com/jobs/view/4439044629",
+   "title": "Volunteer Communications and Community Intern for Ashoka Belgium with Ashoka - Belgium",
+   "company": "Ashoka",
+   "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4439022520",
    "url": "https://www.linkedin.com/jobs/view/4439022520",
    "title": "French Social Media Content Reviewer | Fully Paid Relocation to Sofia, Bulgaria",
@@ -60029,6 +60629,14 @@
    "title": "Marketing & Sales Intern",
    "company": "ACT-ON BELGIUM",
    "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4439014272",
+   "url": "https://www.linkedin.com/jobs/view/4439014272",
+   "title": "Internship Marketing & Communication",
+   "company": "Novotel Inle Lake Myat Min",
+   "location": "Brussels Metropolitan Area",
    "src": "linkedin"
   },
   {
@@ -60152,11 +60760,27 @@
    "src": "linkedin"
   },
   {
+   "id": "4438718514",
+   "url": "https://www.linkedin.com/jobs/view/4438718514",
+   "title": "Stage Marketing Foodservice – Herfst 2026",
+   "company": "Lactalis Belgium",
+   "location": "Brussels Metropolitan Area",
+   "src": "linkedin"
+  },
+  {
    "id": "4438710807",
    "url": "https://www.linkedin.com/jobs/view/4438710807",
    "title": "E-Commerce Specialist - D2C",
    "company": "Groupe SEB",
    "location": "Fleurus, Walloon Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4438652087",
+   "url": "https://www.linkedin.com/jobs/view/4438652087",
+   "title": "Marketingmedewerker",
+   "company": "LICATA VINI",
+   "location": "Diepenbeek, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -60181,6 +60805,14 @@
    "title": "Marketing Division",
    "company": "Dataline",
    "location": "Bruges Metropolitan Area",
+   "src": "linkedin"
+  },
+  {
+   "id": "4438649214",
+   "url": "https://www.linkedin.com/jobs/view/4438649214",
+   "title": "Stage au sein de l’équipe communication - Stage bij het communicatieteam",
+   "company": "Conseil central de surveillance pénitentiaire - Centrale Toezichtsraad voor het Gevangeniswezen",
+   "location": "Brussels Metropolitan Area",
    "src": "linkedin"
   },
   {
@@ -60280,6 +60912,22 @@
    "src": "linkedin"
   },
   {
+   "id": "4438484757",
+   "url": "https://www.linkedin.com/jobs/view/4438484757",
+   "title": "Stage - Marketing & Communicatie (NL/FR)",
+   "company": "Ice Mountain Adventure Park",
+   "location": "Comines, Walloon Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4438480720",
+   "url": "https://www.linkedin.com/jobs/view/4438480720",
+   "title": "Stage / Alternance - Marketing & Communication (NL/FR)",
+   "company": "Ice Mountain Adventure Park",
+   "location": "Comines, Walloon Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4438469917",
    "url": "https://www.linkedin.com/jobs/view/4438469917",
    "title": "Freelance Brand Designer",
@@ -60293,6 +60941,14 @@
    "title": "Digital Growth Marketeer",
    "company": "Securitas Belgium",
    "location": "Machelen, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4438244001",
+   "url": "https://www.linkedin.com/jobs/view/4438244001",
+   "title": "Stage/Internship - Social Media & Content Strategy",
+   "company": "John Cockerill",
+   "location": "Seraing, Walloon Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -60416,6 +61072,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4438080999",
+   "url": "https://www.linkedin.com/jobs/view/4438080999",
+   "title": "Sales & Marketing Traineeship Program",
+   "company": "ADM",
+   "location": "Olen, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4437996551",
    "url": "https://www.linkedin.com/jobs/view/4437996551",
    "title": "Digital Experience Manager",
@@ -60536,11 +61200,27 @@
    "src": "linkedin"
   },
   {
+   "id": "4437572038",
+   "url": "https://www.linkedin.com/jobs/view/4437572038",
+   "title": "Trade Marketing Assistant (INTERNSHIP)",
+   "company": "Baobab Collection",
+   "location": "Wavre, Walloon Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4437567041",
    "url": "https://www.linkedin.com/jobs/view/4437567041",
    "title": "UX Designer Mobile First & WCAG 2.1 (Freelance optional)",
    "company": "EngiFlex",
    "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4437554056",
+   "url": "https://www.linkedin.com/jobs/view/4437554056",
+   "title": "Intern - Digital Marketing",
+   "company": "Q8",
+   "location": "Antwerp, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -60600,6 +61280,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4437381462",
+   "url": "https://www.linkedin.com/jobs/view/4437381462",
+   "title": "Retailmarketing Coördinator M/V",
+   "company": "Meat&More",
+   "location": "Aalter, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4437280919",
    "url": "https://www.linkedin.com/jobs/view/4437280919",
    "title": "SEO Manager",
@@ -60620,6 +61308,14 @@
    "url": "https://www.linkedin.com/jobs/view/4437247752",
    "title": "Brand & Category Manager",
    "company": "pladis Global",
+   "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4437235891",
+   "url": "https://www.linkedin.com/jobs/view/4437235891",
+   "title": "MARKETING & COMMUNICATIONS INTERN (GERMAN-SPEAKING MARKETS)",
+   "company": "Pluxee Belgium",
    "location": "Brussels, Brussels Region, Belgium",
    "src": "linkedin"
   },
@@ -60744,6 +61440,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4437040638",
+   "url": "https://www.linkedin.com/jobs/view/4437040638",
+   "title": "Stagiaire Communication Digitale",
+   "company": "Delvaux",
+   "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4436966429",
    "url": "https://www.linkedin.com/jobs/view/4436966429",
    "title": "Digital Marketing",
@@ -60789,6 +61493,14 @@
    "title": "Content Migration Specialist",
    "company": "ACENSI",
    "location": "Brussels Metropolitan Area",
+   "src": "linkedin"
+  },
+  {
+   "id": "4436759980",
+   "url": "https://www.linkedin.com/jobs/view/4436759980",
+   "title": "Marketing & Clinical Education Coordinator",
+   "company": "BD",
+   "location": "Erembodegem, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -60840,6 +61552,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4436632100",
+   "url": "https://www.linkedin.com/jobs/view/4436632100",
+   "title": "Brand, Campaign & Operations Specialist",
+   "company": "MediaMarkt Belgium",
+   "location": "Strombeek-Bever, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4436525789",
    "url": "https://www.linkedin.com/jobs/view/4436525789",
    "title": "Marketeer",
@@ -60872,6 +61592,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4436459836",
+   "url": "https://www.linkedin.com/jobs/view/4436459836",
+   "title": "Stage (Blog) Content Creator (m/f/x)",
+   "company": "ICI PARIS XL",
+   "location": "Vilvoorde, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4436431401",
    "url": "https://www.linkedin.com/jobs/view/4436431401",
    "title": "Digital Marketeer",
@@ -60885,6 +61613,14 @@
    "title": "[VO2 Brand Experience] - Webmaster E-commerce",
    "company": "VO2 GROUP",
    "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4436369234",
+   "url": "https://www.linkedin.com/jobs/view/4436369234",
+   "title": "Trade marketeer - retail & impuls",
+   "company": "Jet Import",
+   "location": "Lauwe, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -60957,6 +61693,14 @@
    "title": "Manager Communications",
    "company": "MedTech Europe",
    "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4436025861",
+   "url": "https://www.linkedin.com/jobs/view/4436025861",
+   "title": "marketing medewerker",
+   "company": "Groep Van den Braembussche",
+   "location": "Lier, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -61160,6 +61904,22 @@
    "src": "linkedin"
   },
   {
+   "id": "4435414086",
+   "url": "https://www.linkedin.com/jobs/view/4435414086",
+   "title": "Stage (Blog) Content Creator (m/v/x)",
+   "company": "ICI PARIS XL",
+   "location": "Vilvoorde, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4435335496",
+   "url": "https://www.linkedin.com/jobs/view/4435335496",
+   "title": "Internship in Marketing - August 2026 (M/F/X)",
+   "company": "Henkel",
+   "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4435319961",
    "url": "https://www.linkedin.com/jobs/view/4435319961",
    "title": "CONTENT & SOCIAL MEDIA CREATOR - DIERENDONCK GROUP",
@@ -61208,6 +61968,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4435104322",
+   "url": "https://www.linkedin.com/jobs/view/4435104322",
+   "title": "Marketing and Communication Officer Passengers - Stage",
+   "company": "Heetch",
+   "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4435103940",
    "url": "https://www.linkedin.com/jobs/view/4435103940",
    "title": "Digital Allround Marketeer FR/NL- FR",
@@ -61228,6 +61996,14 @@
    "url": "https://www.linkedin.com/jobs/view/4434986909",
    "title": "Marketing Teamlead accounting",
    "company": "Yuki",
+   "location": "Antwerp, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4434983705",
+   "url": "https://www.linkedin.com/jobs/view/4434983705",
+   "title": "Linehub - Online Affiliate Marketeer",
+   "company": "Linehub",
    "location": "Antwerp, Flemish Region, Belgium",
    "src": "linkedin"
   },
@@ -61360,6 +62136,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4434449068",
+   "url": "https://www.linkedin.com/jobs/view/4434449068",
+   "title": "Senior Marketeer",
+   "company": "Lely",
+   "location": "Oostkamp, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4434439950",
    "url": "https://www.linkedin.com/jobs/view/4434439950",
    "title": "Copywriter - Expert",
@@ -61432,6 +62216,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4434128851",
+   "url": "https://www.linkedin.com/jobs/view/4434128851",
+   "title": "Coordinator, Marketing & Communications (Dutch-speaking)",
+   "company": "Herbalife",
+   "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4434124164",
    "url": "https://www.linkedin.com/jobs/view/4434124164",
    "title": "Content & Community Marketeer",
@@ -61448,11 +62240,27 @@
    "src": "linkedin"
   },
   {
+   "id": "4433966751",
+   "url": "https://www.linkedin.com/jobs/view/4433966751",
+   "title": "Graphical Communication Officer",
+   "company": "EG nv/sa",
+   "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4433935998",
    "url": "https://www.linkedin.com/jobs/view/4433935998",
    "title": "Digital Sales & Marketing Specialist",
    "company": "Esri BeLux",
    "location": "Grimbergen, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4433926497",
+   "url": "https://www.linkedin.com/jobs/view/4433926497",
+   "title": "Marketing & Sales Automation Expert & E-mail Marketeer",
+   "company": "BOSS paints",
+   "location": "Waregem, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -61594,7 +62402,7 @@
   {
    "id": "4433084443",
    "url": "https://www.linkedin.com/jobs/view/4433084443",
-   "title": "Marketing Lead (Fulltime)",
+   "title": "Marketing Manager (Fulltime)",
    "company": "FastForwardAmy",
    "location": "Brasschaat, Flemish Region, Belgium",
    "src": "linkedin"
@@ -61720,6 +62528,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4432543262",
+   "url": "https://www.linkedin.com/jobs/view/4432543262",
+   "title": "Stage Marketing & Communicatie 🍋",
+   "company": "Lemon Companies",
+   "location": "Kontich, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4432394212",
    "url": "https://www.linkedin.com/jobs/view/4432394212",
    "title": "Marketingcoördinator",
@@ -61832,6 +62648,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4432221713",
+   "url": "https://www.linkedin.com/jobs/view/4432221713",
+   "title": "Stage communicatie en marketing",
+   "company": "AZ Glorieux",
+   "location": "Ronse, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4432212096",
    "url": "https://www.linkedin.com/jobs/view/4432212096",
    "title": "Freelance social media content creator",
@@ -61920,6 +62744,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4431829509",
+   "url": "https://www.linkedin.com/jobs/view/4431829509",
+   "title": "Marketing Automation Expert",
+   "company": "NMBS-SNCB",
+   "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4431678064",
    "url": "https://www.linkedin.com/jobs/view/4431678064",
    "title": "Chargé de Communication Digitale & Content Marketing (H/F/X)",
@@ -61936,11 +62768,27 @@
    "src": "linkedin"
   },
   {
+   "id": "4431673557",
+   "url": "https://www.linkedin.com/jobs/view/4431673557",
+   "title": "Stage Consumer Health Marketing",
+   "company": "Bayer",
+   "location": "Diegem, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4431668765",
    "url": "https://www.linkedin.com/jobs/view/4431668765",
    "title": "Marketing Lead - Ghent - Peliqan.io",
    "company": "Peliqan",
    "location": "Ghent, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4431666974",
+   "url": "https://www.linkedin.com/jobs/view/4431666974",
+   "title": "Stage Communicatie & Customer Experience (Meewerk- of Afstudeerstage)",
+   "company": "Copaco",
+   "location": "Antwerp, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -62064,6 +62912,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4430862626",
+   "url": "https://www.linkedin.com/jobs/view/4430862626",
+   "title": "Stage Social Media (m/v/x)",
+   "company": "ICI PARIS XL",
+   "location": "Vilvoorde, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4430802412",
    "url": "https://www.linkedin.com/jobs/view/4430802412",
    "title": "Stage UX & CRO BENELUX (m/v/x)",
@@ -62109,6 +62965,14 @@
    "title": "Manager Marketing, Customer Experience and Digital Transformation",
    "company": "Sia",
    "location": "Antwerp, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4430437951",
+   "url": "https://www.linkedin.com/jobs/view/4430437951",
+   "title": "Marketing & Communicatie stagiair(e)",
+   "company": "RusTThuiS vzw",
+   "location": "Ternat, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -62165,6 +63029,14 @@
    "title": "E-commerce en digital marketing medewerk(st)er",
    "company": "CLOSE-UP",
    "location": "Ghent, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4430131805",
+   "url": "https://www.linkedin.com/jobs/view/4430131805",
+   "title": "Junior Office & Marketing Assistant",
+   "company": "Belgie Vacature",
+   "location": "Hasselt, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -62256,6 +63128,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4429533513",
+   "url": "https://www.linkedin.com/jobs/view/4429533513",
+   "title": "Internship: Marketing (B2B)",
+   "company": "threon - strategy delivered",
+   "location": "Ghent, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4429509033",
    "url": "https://www.linkedin.com/jobs/view/4429509033",
    "title": "Freelance Safety Communication Expert",
@@ -62293,6 +63173,14 @@
    "title": "Senior UX Designer (BE)",
    "company": "CluePoints",
    "location": "Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4428995006",
+   "url": "https://www.linkedin.com/jobs/view/4428995006",
+   "title": "Marketing Intern (from September 2026)",
+   "company": "NTT DATA, Inc.",
+   "location": "Diegem, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -62384,6 +63272,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4428480791",
+   "url": "https://www.linkedin.com/jobs/view/4428480791",
+   "title": "INTERN Digital Marketing",
+   "company": "Schneider Electric",
+   "location": "Ukkel, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4428247496",
    "url": "https://www.linkedin.com/jobs/view/4428247496",
    "title": "E-commerce Key Account Manager",
@@ -62450,7 +63346,7 @@
   {
    "id": "4427746524",
    "url": "https://www.linkedin.com/jobs/view/4427746524",
-   "title": "Regional Growth Manager",
+   "title": "Regional Growth Manager - APAC",
    "company": "CoinPoker",
    "location": "Belgium",
    "src": "linkedin"
@@ -62469,6 +63365,30 @@
    "title": "Pure Player Marketing Intern",
    "company": "Levi Strauss & Co.",
    "location": "Ixelles, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4427117275",
+   "url": "https://www.linkedin.com/jobs/view/4427117275",
+   "title": "Marketing Technology Teamlead",
+   "company": "Reynaers Group",
+   "location": "Duffel, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4427106611",
+   "url": "https://www.linkedin.com/jobs/view/4427106611",
+   "title": "Performance Marketing Strategist",
+   "company": "Prominence",
+   "location": "Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4427093734",
+   "url": "https://www.linkedin.com/jobs/view/4427093734",
+   "title": "E-Commerce Growth Strategist",
+   "company": "Prominence",
+   "location": "Belgium",
    "src": "linkedin"
   },
   {
@@ -62512,11 +63432,51 @@
    "src": "linkedin"
   },
   {
+   "id": "4425985947",
+   "url": "https://www.linkedin.com/jobs/view/4425985947",
+   "title": "Campaign- & Performance Marketeer",
+   "company": "Bechtle NV",
+   "location": "Pelt, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4425849597",
+   "url": "https://www.linkedin.com/jobs/view/4425849597",
+   "title": "Communication Internship IBA Foundation",
+   "company": "IBA RadioPharma Solutions",
+   "location": "Louvain-la-Neuve, Walloon Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4425815870",
    "url": "https://www.linkedin.com/jobs/view/4425815870",
    "title": "Growth Marketeer",
    "company": "Decospan",
    "location": "Menen, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4425756340",
+   "url": "https://www.linkedin.com/jobs/view/4425756340",
+   "title": "Marketing & Brand Activation Assistant",
+   "company": "Delhaize Belgium",
+   "location": "Asse, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4425699417",
+   "url": "https://www.linkedin.com/jobs/view/4425699417",
+   "title": "Marketing Associate",
+   "company": "Emma Legal",
+   "location": "Antwerp, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4425633033",
+   "url": "https://www.linkedin.com/jobs/view/4425633033",
+   "title": "Stagiair marketing",
+   "company": "Clips",
+   "location": "Antwerp, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -62528,10 +63488,66 @@
    "src": "linkedin"
   },
   {
+   "id": "4425451557",
+   "url": "https://www.linkedin.com/jobs/view/4425451557",
+   "title": "Stagiair(e) Marketing & Events",
+   "company": "Vibe Group",
+   "location": "Antwerp, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4424767705",
+   "url": "https://www.linkedin.com/jobs/view/4424767705",
+   "title": "Werkstudent Business Development & Social Media (m/w/d) bei der GRILLO Zinc Metals GmbH",
+   "company": "GRILLO Zinc wire",
+   "location": "Duisburg, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4424743075",
+   "url": "https://www.linkedin.com/jobs/view/4424743075",
+   "title": "Growth Marketeer",
+   "company": "Optimile",
+   "location": "Ghent, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4424552946",
+   "url": "https://www.linkedin.com/jobs/view/4424552946",
+   "title": "Marketing Intern",
+   "company": "EF",
+   "location": "Auderghem, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4424437723",
    "url": "https://www.linkedin.com/jobs/view/4424437723",
    "title": "Marketing Internship / Stage (Direct To Consumer)",
    "company": "JDE Peet's",
+   "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4424415257",
+   "url": "https://www.linkedin.com/jobs/view/4424415257",
+   "title": "CONTRAT CIP - CHARGE DE COMMUNICATION (h/f/x)",
+   "company": "Clinic Saint-Jean Brussels",
+   "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4424395677",
+   "url": "https://www.linkedin.com/jobs/view/4424395677",
+   "title": "Stage contact center communicatie/marketing (middelbaar/graduaat/bachelor)",
+   "company": "NMBS-SNCB",
+   "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4424383908",
+   "url": "https://www.linkedin.com/jobs/view/4424383908",
+   "title": "CIP-STAGEAANBOD - Communicatiemedewerker",
+   "company": "Clinic Saint-Jean Brussels",
    "location": "Brussels, Brussels Region, Belgium",
    "src": "linkedin"
   },
@@ -62541,6 +63557,22 @@
    "title": "Digital Merchant",
    "company": "Levi Strauss & Co.",
    "location": "Ixelles, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4423928262",
+   "url": "https://www.linkedin.com/jobs/view/4423928262",
+   "title": "Junior Brand Manager Retail (België)",
+   "company": "Van Geloven",
+   "location": "Geel, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4423646212",
+   "url": "https://www.linkedin.com/jobs/view/4423646212",
+   "title": "Stage en alternance : Communication Digitale & Support au Changement, Belgique – 2026",
+   "company": "GSK",
+   "location": "Wavre, Walloon Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -62560,11 +63592,51 @@
    "src": "linkedin"
   },
   {
+   "id": "4423119905",
+   "url": "https://www.linkedin.com/jobs/view/4423119905",
+   "title": "Stage Social Media",
+   "company": "MediaMarkt Belgium",
+   "location": "Strombeek-Bever, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4423023620",
+   "url": "https://www.linkedin.com/jobs/view/4423023620",
+   "title": "Stage - Business Development & Marketing",
+   "company": "John Cockerill",
+   "location": "Seraing, Walloon Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4422678847",
+   "url": "https://www.linkedin.com/jobs/view/4422678847",
+   "title": "Stagiair(e) Marketing - CRM & Loyalty",
+   "company": "Lidl Belgium & Luxemburg",
+   "location": "Merelbeke, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4422249444",
+   "url": "https://www.linkedin.com/jobs/view/4422249444",
+   "title": "Stagiaire Marketing",
+   "company": "Groupe SEB",
+   "location": "Fleurus, Walloon Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4421946476",
    "url": "https://www.linkedin.com/jobs/view/4421946476",
    "title": "Inside sales - Digital Marketing",
    "company": "FCR Media Belgium",
    "location": "Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4421930090",
+   "url": "https://www.linkedin.com/jobs/view/4421930090",
+   "title": "Digital Business Intern (NL or FR)",
+   "company": "Semetis",
+   "location": "St-Jans-Molenbeek, Brussels Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -62664,6 +63736,22 @@
    "src": "linkedin"
   },
   {
+   "id": "4420107548",
+   "url": "https://www.linkedin.com/jobs/view/4420107548",
+   "title": "INTERNSHIP - B2B Event Marketing & Trade show Strategy (M/F/X)",
+   "company": "HMS Networks",
+   "location": "Nivelles, Walloon Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4419902012",
+   "url": "https://www.linkedin.com/jobs/view/4419902012",
+   "title": "Email marketing Intern (French speaker)",
+   "company": "efficy Group",
+   "location": "Brussels Metropolitan Area",
+   "src": "linkedin"
+  },
+  {
    "id": "4419895433",
    "url": "https://www.linkedin.com/jobs/view/4419895433",
    "title": "Digital Marketing Strateeg",
@@ -62736,6 +63824,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4418097307",
+   "url": "https://www.linkedin.com/jobs/view/4418097307",
+   "title": "Marketing Adviseur IWS",
+   "company": "Indaver",
+   "location": "Beveren, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4418083100",
    "url": "https://www.linkedin.com/jobs/view/4418083100",
    "title": "Front end Software Architect",
@@ -62792,6 +63888,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4414715604",
+   "url": "https://www.linkedin.com/jobs/view/4414715604",
+   "title": "Marketing and Communication Manager",
+   "company": "MSIG Europe",
+   "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4414308574",
    "url": "https://www.linkedin.com/jobs/view/4414308574",
    "title": "Content Marketeer",
@@ -62824,11 +63928,27 @@
    "src": "linkedin"
   },
   {
+   "id": "4413404267",
+   "url": "https://www.linkedin.com/jobs/view/4413404267",
+   "title": "Stage Marketing",
+   "company": "VGD",
+   "location": "Ghent, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4412955764",
    "url": "https://www.linkedin.com/jobs/view/4412955764",
    "title": "Social Media Expert",
    "company": "Samsonite",
    "location": "Oudenaarde, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4412951013",
+   "url": "https://www.linkedin.com/jobs/view/4412951013",
+   "title": "Internship Marketing & Campaign Operations (BE)",
+   "company": "MediaMarkt Belgium",
+   "location": "Strombeek-Bever, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -62864,6 +63984,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4408832888",
+   "url": "https://www.linkedin.com/jobs/view/4408832888",
+   "title": "Trade Marketing Intern Expansion",
+   "company": "AB InBev",
+   "location": "Leuven, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4408772164",
    "url": "https://www.linkedin.com/jobs/view/4408772164",
    "title": "Organic Social Media Manager",
@@ -62880,11 +64008,59 @@
    "src": "linkedin"
   },
   {
+   "id": "4408409671",
+   "url": "https://www.linkedin.com/jobs/view/4408409671",
+   "title": "Stagiair marketing",
+   "company": "Cegeka",
+   "location": "Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4407897954",
+   "url": "https://www.linkedin.com/jobs/view/4407897954",
+   "title": "Brand Activation & Events Intern",
+   "company": "AB InBev",
+   "location": "Leuven, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4407812779",
+   "url": "https://www.linkedin.com/jobs/view/4407812779",
+   "title": "Stage - Externe Communicatie",
+   "company": "Delhaize Belgium",
+   "location": "Asse, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4407604906",
    "url": "https://www.linkedin.com/jobs/view/4407604906",
    "title": "Junior Brand Manager Neuroscience",
    "company": "Ipsen",
    "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4405277541",
+   "url": "https://www.linkedin.com/jobs/view/4405277541",
+   "title": "Stage Copywriting (2026-2027)",
+   "company": "BDO Belgium",
+   "location": "Zaventem, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4405163926",
+   "url": "https://www.linkedin.com/jobs/view/4405163926",
+   "title": "Stage - Communication Externe",
+   "company": "Delhaize Belgium",
+   "location": "Asse, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4405137941",
+   "url": "https://www.linkedin.com/jobs/view/4405137941",
+   "title": "Digital Consumer Marketing Intern",
+   "company": "AB InBev",
+   "location": "Leuven, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -62909,6 +64085,22 @@
    "title": "Front-End Developer",
    "company": "BrightAnalytics",
    "location": "Roeselare, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4402945045",
+   "url": "https://www.linkedin.com/jobs/view/4402945045",
+   "title": "Stage - Organic Social & Influencer Marketing",
+   "company": "TUI",
+   "location": "Ostend, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4402936114",
+   "url": "https://www.linkedin.com/jobs/view/4402936114",
+   "title": "Internship: Internal Communication (Brussels)",
+   "company": "ENGIE Belgium",
+   "location": "Uccle, Brussels Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -62976,6 +64168,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4401402537",
+   "url": "https://www.linkedin.com/jobs/view/4401402537",
+   "title": "Marketing Specialist",
+   "company": "In The Pocket",
+   "location": "Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4400431176",
    "url": "https://www.linkedin.com/jobs/view/4400431176",
    "title": "External Communication Manager Belgium & Luxembourg",
@@ -63040,6 +64240,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4393580778",
+   "url": "https://www.linkedin.com/jobs/view/4393580778",
+   "title": "Stage - interne communicatie (Fabriek en logistiek)",
+   "company": "Volvo Group",
+   "location": "Ghent, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4390352032",
    "url": "https://www.linkedin.com/jobs/view/4390352032",
    "title": "Brand Management Internship",
@@ -63048,11 +64256,35 @@
    "src": "linkedin"
   },
   {
+   "id": "4388136011",
+   "url": "https://www.linkedin.com/jobs/view/4388136011",
+   "title": "Marketing Specialist",
+   "company": "Arrow Electronics",
+   "location": "Machelen, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4384313491",
+   "url": "https://www.linkedin.com/jobs/view/4384313491",
+   "title": "Internship: Internal Communication",
+   "company": "ENGIE Belgium",
+   "location": "Ghent, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4383594670",
    "url": "https://www.linkedin.com/jobs/view/4383594670",
    "title": "Lead Product Manager - Game Content Creation",
    "company": "Super",
    "location": "Aalst, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4378005137",
+   "url": "https://www.linkedin.com/jobs/view/4378005137",
+   "title": "Research internship: consumer marketing, retail & branding (unpaid)",
+   "company": "Vlerick Business School",
+   "location": "Ghent, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -63104,11 +64336,35 @@
    "src": "linkedin"
   },
   {
+   "id": "4343444112",
+   "url": "https://www.linkedin.com/jobs/view/4343444112",
+   "title": "Stage Sea Logistics België",
+   "company": "Kuehne+Nagel",
+   "location": "Antwerp, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4342308956",
+   "url": "https://www.linkedin.com/jobs/view/4342308956",
+   "title": "Marketing Specialist",
+   "company": "Computacenter",
+   "location": "Zaventem, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4335763657",
    "url": "https://www.linkedin.com/jobs/view/4335763657",
    "title": "Functional Analyst / UX Analyst",
    "company": "DEXIS",
    "location": "Antwerp, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4328760809",
+   "url": "https://www.linkedin.com/jobs/view/4328760809",
+   "title": "Internship Proposal — Data Literacy Communications (h/f/x)",
+   "company": "TotalEnergies",
+   "location": "Liège, Walloon Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -63160,6 +64416,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4303697494",
+   "url": "https://www.linkedin.com/jobs/view/4303697494",
+   "title": "Stagiair employer branding & recruitment marketing",
+   "company": "Aertssen Group",
+   "location": "Stabroek, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4099429716",
    "url": "https://www.linkedin.com/jobs/view/4099429716",
    "title": "Stagiair creative content marketeer",
@@ -63173,6 +64437,14 @@
    "title": "Internship - digital marketing",
    "company": "FANTAIL",
    "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "3935385662",
+   "url": "https://www.linkedin.com/jobs/view/3935385662",
+   "title": "Stage - Internal Communication 2026-2027",
+   "company": "Delhaize Belgium",
+   "location": "Asse, Flemish Region, Belgium",
    "src": "linkedin"
   }
  ],
@@ -101250,5 +102522,5 @@
    "cv_fit_v": 18
   }
  ],
- "search_cursor": 13
+ "search_cursor": 2
 }
