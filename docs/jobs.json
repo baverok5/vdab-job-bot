@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-01 00:03 UTC",
+ "updated": "2026-08-01 00:04 UTC",
  "jobs": [
   {
    "id": "4446772012",
@@ -4064,7 +4064,7 @@
    "exp_stretch": false,
    "internship": false,
    "cv_fit_v": 18,
-   "closed_check": "2026-07-31 15:30",
+   "closed_check": "2026-08-01 00:02",
    "closed_check_v": 2
   },
   {
@@ -4123,7 +4123,7 @@
    "exp_stretch": false,
    "internship": false,
    "cv_fit_v": 18,
-   "closed_check": "2026-07-31 15:30",
+   "closed_check": "2026-08-01 00:02",
    "closed_check_v": 2
   },
   {
@@ -4201,7 +4201,7 @@
    "exp_stretch": false,
    "internship": false,
    "cv_fit_v": 18,
-   "closed_check": "2026-07-31 15:30",
+   "closed_check": "2026-08-01 00:02",
    "closed_check_v": 2
   },
   {
@@ -4716,7 +4716,7 @@
    "exp_stretch": false,
    "internship": true,
    "cv_fit_v": 18,
-   "closed_check": "2026-07-31 15:30",
+   "closed_check": "2026-08-01 00:02",
    "closed_check_v": 2
   },
   {
@@ -5098,7 +5098,7 @@
    "exp_stretch": false,
    "internship": false,
    "cv_fit_v": 18,
-   "closed_check": "2026-07-31 15:30",
+   "closed_check": "2026-08-01 00:02",
    "closed_check_v": 2
   },
   {
@@ -5119,7 +5119,7 @@
    "exp_stretch": false,
    "internship": true,
    "cv_fit_v": 18,
-   "closed_check": "2026-07-31 15:30",
+   "closed_check": "2026-08-01 00:02",
    "closed_check_v": 2
   },
   {
@@ -5444,7 +5444,7 @@
    "exp_stretch": false,
    "internship": false,
    "cv_fit_v": 18,
-   "closed_check": "2026-07-31 15:30",
+   "closed_check": "2026-08-01 00:02",
    "closed_check_v": 2
   },
   {
@@ -5617,7 +5617,7 @@
    "exp_stretch": false,
    "internship": false,
    "cv_fit_v": 18,
-   "closed_check": "2026-07-31 15:30",
+   "closed_check": "2026-08-01 00:02",
    "closed_check_v": 2
   },
   {
@@ -6019,7 +6019,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-07-31 15:30",
+   "closed_check": "2026-08-01 00:02",
    "closed_check_v": 2
   },
   {
@@ -6061,28 +6061,6 @@
    "lang": "en",
    "cv_fit_v": 18,
    "closed_check": "2026-08-01 00:02",
-   "closed_check_v": 2
-  },
-  {
-   "id": "4446764163",
-   "url": "https://www.linkedin.com/jobs/view/4446764163",
-   "title": "Content Creator",
-   "company": "Unknown",
-   "location": "On-Site",
-   "match_score": 70,
-   "reason": "The role aligns well with the candidate's digital marketing, content creation, and web skills, with a reasonable experience requirement.",
-   "apply_email": "",
-   "found_at": "2026-07-30 13:08",
-   "status": "new",
-   "details": "Role: Content Creator within a Creative pod. Main tasks: create social media content (Instagram, Facebook, YouTube), develop creative travel content ideas, shoot and edit photos/videos, write copy for posts/blogs/newsletters, collaborate with marketing, maintain content calendars, participate in trips for content creation. Contract type: Full Time. Schedule: Full Time. Language: English (implied by posting and candidate's proficiency). Pay: Not stated.",
-   "why_good": "The candidate has direct experience in content writing for blogs, building websites (WordPress), managing social media content integration, and using tools like Canva. Their experience with SEO content and using analytics tools is relevant. The experience requirement of 0-3 years is suitable given the candidate's ~4 months of relevant experience, making it an exp_stretch case.",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": true,
-   "internship": false,
-   "lang": "en",
-   "cv_fit_v": 18,
-   "closed_check": "2026-07-31 15:30",
    "closed_check_v": 2
   },
   {
