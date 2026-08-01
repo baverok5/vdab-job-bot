@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-01 18:38 UTC",
+ "updated": "2026-08-01 18:47 UTC",
  "jobs": [
   {
    "id": "4446772012",
@@ -4752,7 +4752,8 @@
    "internship": true,
    "cv_fit_v": 18,
    "closed_check": "2026-08-01 15:27",
-   "closed_check_v": 2
+   "closed_check_v": 2,
+   "lang": "en"
   },
   {
    "id": "73971350",
@@ -4771,7 +4772,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74146524",
@@ -4790,7 +4792,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74019673",
@@ -4809,7 +4812,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74084822",
@@ -64795,6 +64799,26 @@
  ],
  "rejected": [
   {
+   "id": "4444501586",
+   "url": "https://www.linkedin.com/jobs/view/4444501586",
+   "title": "Dutch-Speaking Google Ads Specialist!",
+   "company": "Unknown",
+   "location": "Barcelona, Spain",
+   "match_score": 0,
+   "reason": "The job requires C2 Dutch, but the candidate only has B1 Dutch.",
+   "apply_email": "",
+   "found_at": "2026-08-01 18:38",
+   "status": "new",
+   "details": "Role: Google Ads Specialist\nMain Tasks: Onboard clients to Google Ads, guide PPC campaigns, build relationships in the Dutch market, drive revenue growth, manage client portfolio.\nContract Type: Full-time\nSchedule: Hybrid\nLanguage: Dutch (C2 required), English (high level)\nPay: €27,283.75 gross/year",
+   "why_good": "",
+   "why_bad": "Requires C2 level Dutch, candidate has B1.\nRequires 2+ years of experience in Sales, Business Development, or Digital Marketing, candidate has ~4 months.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "en",
+   "cv_fit_v": 18
+  },
+  {
    "id": "4343444112",
    "url": "https://www.linkedin.com/jobs/view/4343444112",
    "title": "Stage Sea Logistics",
@@ -102843,25 +102867,6 @@
    "details": "Role: Support responsible of traiteur service\nTasks: quotes, schedules, webshop orders, communication with butchery/bakery, active work on floor\nContract: interim with option permanent, part-time 16h/week, daytime\nLanguage: Dutch (zeer goed)\nPay: not stated",
    "why_good": "",
    "why_bad": "Requires very good Dutch (zeer goed) - candidate has B1\nRequires at least 2 years experience - candidate has ~4 months\nRole is in traiteur/food service, not digital marketing or web\nRequires administrative and food sector affinity, not candidate's skills",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "cv_fit_v": 18
-  },
-  {
-   "id": "74188922",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74188922/hr-recruiter-konvert-interim",
-   "title": "HR Recruiter",
-   "company": "Konvert Interim",
-   "location": "Kortrijk",
-   "match_score": 0,
-   "reason": "Job requires a professional bachelor degree and 2+ years of HR recruitment experience, which the candidate lacks.",
-   "apply_email": "",
-   "found_at": "2026-07-21 13:24",
-   "status": "new",
-   "details": "Role: HR recruiter (full-cycle recruitment, B2B/B2C)\nContract: permanent, full-time, day work\nStart: as soon as possible\nLanguages: Dutch (very good)\nPay: €2640-€3199 gross/month + benefits",
-   "why_good": "",
-   "why_bad": "Requires a professional bachelor degree (candidate has no degree)\nRequires at least 2 years of relevant experience (candidate has 0 in HR)\nRole is in HR recruitment, not in digital marketing/SEO/content/web\nRequires very good Dutch (candidate has B1 conversational)",
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
