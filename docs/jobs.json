@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-01 17:57 UTC",
+ "updated": "2026-08-01 18:38 UTC",
  "jobs": [
   {
    "id": "4446772012",
@@ -8479,6 +8479,21 @@
   }
  ],
  "listing": [
+  {
+   "id": "74293021",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74293021/management-assistant-office-manager-m-v-x",
+   "title": "Management assistant office manager m v x"
+  },
+  {
+   "id": "74293019",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74293019/sharepoint-spfx-developer-java-spring-boot",
+   "title": "Sharepoint spfx developer java spring boot"
+  },
+  {
+   "id": "74293012",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74293012/customer-service-officer-voltijds",
+   "title": "Customer service officer voltijds"
+  },
   {
    "id": "74293008",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74293008/junior-elektricien",
@@ -51760,21 +51775,6 @@
    "title": "Allround medewerker interieurwinkel voltijds"
   },
   {
-   "id": "74092549",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74092549/business-developer-regio-lokeren-vast-contract",
-   "title": "Business developer regio lokeren vast contract"
-  },
-  {
-   "id": "74092504",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74092504/operator-warehouse-3pl",
-   "title": "Operator warehouse 3pl"
-  },
-  {
-   "id": "74092454",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74092454/customer-service-officer",
-   "title": "Customer service officer"
-  },
-  {
    "id": "74091551",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74091551/digital-process-manager",
    "title": "Digital process manager"
@@ -55625,6 +55625,14 @@
    "title": "Commercieel bediende met passie voor social media"
   },
   {
+   "id": "4447803651",
+   "url": "https://www.linkedin.com/jobs/view/4447803651",
+   "title": "Responsable Marketing digital (H/F)",
+   "company": "DigitalPharmaSummit",
+   "location": "Bruges Metropolitan Area",
+   "src": "linkedin"
+  },
+  {
    "id": "4447785647",
    "url": "https://www.linkedin.com/jobs/view/4447785647",
    "title": "Social Media Manager",
@@ -56257,6 +56265,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4446116214",
+   "url": "https://www.linkedin.com/jobs/view/4446116214",
+   "title": "Marketing Manager",
+   "company": "OPTIMUS IT SERVICES",
+   "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4446115470",
    "url": "https://www.linkedin.com/jobs/view/4446115470",
    "title": "Digital Allround Marketeer FR/NL- FR",
@@ -56550,6 +56566,22 @@
    "title": "Marketing Consultant",
    "company": "clearXperts",
    "location": "Antwerp Metropolitan Area",
+   "src": "linkedin"
+  },
+  {
+   "id": "4445810760",
+   "url": "https://www.linkedin.com/jobs/view/4445810760",
+   "title": "Growth Manager",
+   "company": "Cashfeed",
+   "location": "Ghent, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4445784717",
+   "url": "https://www.linkedin.com/jobs/view/4445784717",
+   "title": "Job | Campaign & Go-to-Market Manager Retail & Personal | Brussel",
+   "company": "Belfius",
+   "location": "Brussels, Brussels Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -57873,6 +57905,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4443648364",
+   "url": "https://www.linkedin.com/jobs/view/4443648364",
+   "title": "Job | Campaign & Go-to-Market Manager Retail & Personal | Bruxelles",
+   "company": "Belfius",
+   "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4443585067",
    "url": "https://www.linkedin.com/jobs/view/4443585067",
    "title": "Frontend Developer",
@@ -57910,6 +57950,14 @@
    "title": "Marketing",
    "company": "Joie de Vivre Expo",
    "location": "Zonnebeke, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4443544949",
+   "url": "https://www.linkedin.com/jobs/view/4443544949",
+   "title": "🇫🇷 Senior Social Media Manager - French Fluent",
+   "company": "Paradox EN",
+   "location": "Brussels, Brussels Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -59057,6 +59105,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4441958324",
+   "url": "https://www.linkedin.com/jobs/view/4441958324",
+   "title": "Verantwoordelijke marketing en communicatie",
+   "company": "Willy Naessens BELGIË / BELGIQUE",
+   "location": "Wortegem-Petegem, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4441955167",
    "url": "https://www.linkedin.com/jobs/view/4441955167",
    "title": "Freelance Web Designer",
@@ -59438,6 +59494,14 @@
    "title": "Communications Intern - Nestlé Europe Government Relations & ESG Engagement",
    "company": "Nestlé",
    "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4441211467",
+   "url": "https://www.linkedin.com/jobs/view/4441211467",
+   "title": "Sea Freight Import Coordinator",
+   "company": "Kuehne+Nagel",
+   "location": "Antwerp, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -61273,6 +61337,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4437570630",
+   "url": "https://www.linkedin.com/jobs/view/4437570630",
+   "title": "Regulatory Counsel, Content",
+   "company": "Google",
+   "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4437567041",
    "url": "https://www.linkedin.com/jobs/view/4437567041",
    "title": "UX Designer Mobile First & WCAG 2.1 (Freelance optional)",
@@ -61350,6 +61422,14 @@
    "title": "Retailmarketing Coördinator M/V",
    "company": "Meat&More",
    "location": "Aalter, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4437290364",
+   "url": "https://www.linkedin.com/jobs/view/4437290364",
+   "title": "Consultant - Strategic Communications and Public Affairs – Energy and Sustainability Policy",
+   "company": "Kekst CNC",
+   "location": "Brussels, Brussels Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -61641,6 +61721,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4436533218",
+   "url": "https://www.linkedin.com/jobs/view/4436533218",
+   "title": "Product Designer – Digital Identity (EUDI) – Remote-First",
+   "company": "EPI Company",
+   "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4436525789",
    "url": "https://www.linkedin.com/jobs/view/4436525789",
    "title": "Marketeer",
@@ -61708,6 +61796,14 @@
    "id": "4436354794",
    "url": "https://www.linkedin.com/jobs/view/4436354794",
    "title": "Communications specialist",
+   "company": "Jet Import",
+   "location": "Lauwe, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4436352840",
+   "url": "https://www.linkedin.com/jobs/view/4436352840",
+   "title": "Digital creative",
    "company": "Jet Import",
    "location": "Lauwe, Flemish Region, Belgium",
    "src": "linkedin"
@@ -62254,6 +62350,14 @@
    "title": "Responsable de magasin - Namur - 18h/sem - remplacement",
    "company": "Maison 123",
    "location": "Namur, Walloon Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4434341079",
+   "url": "https://www.linkedin.com/jobs/view/4434341079",
+   "title": "Web User Experience Specialist",
+   "company": "Cronos Europa",
+   "location": "Brussels, Brussels Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -63353,6 +63457,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4428607634",
+   "url": "https://www.linkedin.com/jobs/view/4428607634",
+   "title": "Creative Marketing Producer",
+   "company": "CapsLock",
+   "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4428502108",
    "url": "https://www.linkedin.com/jobs/view/4428502108",
    "title": "Growth Lead",
@@ -63374,6 +63486,14 @@
    "title": "INTERN Digital Marketing",
    "company": "Schneider Electric",
    "location": "Ukkel, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4428265074",
+   "url": "https://www.linkedin.com/jobs/view/4428265074",
+   "title": "Frontend Engineer / UI Developer (m/w/d)",
+   "company": "unique projects GmbH & Co. KG",
+   "location": "Duisburg, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -63433,6 +63553,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4427940896",
+   "url": "https://www.linkedin.com/jobs/view/4427940896",
+   "title": "SEA-specialist bij agency",
+   "company": "GBL Agency",
+   "location": "Heule, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4427936767",
    "url": "https://www.linkedin.com/jobs/view/4427936767",
    "title": "Fullstack Software Engineer - Frontend T-shaped (x/f/m) - Growth Product",
@@ -63478,6 +63606,14 @@
    "title": "Pure Player Marketing Intern",
    "company": "Levi Strauss & Co.",
    "location": "Ixelles, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4427486641",
+   "url": "https://www.linkedin.com/jobs/view/4427486641",
+   "title": "Web Developer (Python/CSS)",
+   "company": "Syone",
+   "location": "Mons, Walloon Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -63542,6 +63678,14 @@
    "title": "Growth Marketing Manager (ABM)",
    "company": "AI-BLOX | Physical AI computers",
    "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4426697353",
+   "url": "https://www.linkedin.com/jobs/view/4426697353",
+   "title": "DIGITAL PRODUCT DESIGNER",
+   "company": "ERA Cedimmo",
+   "location": "St-Niklaas, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -63633,6 +63777,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4424806674",
+   "url": "https://www.linkedin.com/jobs/view/4424806674",
+   "title": "Digital Product Designer",
+   "company": "Alfabet",
+   "location": "St-Niklaas, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4424767705",
    "url": "https://www.linkedin.com/jobs/view/4424767705",
    "title": "Werkstudent Business Development & Social Media (m/w/d) bei der GRILLO Zinc Metals GmbH",
@@ -63686,6 +63838,14 @@
    "title": "CIP-STAGEAANBOD - Communicatiemedewerker",
    "company": "Clinic Saint-Jean Brussels",
    "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4424004909",
+   "url": "https://www.linkedin.com/jobs/view/4424004909",
+   "title": "Digital Marketer",
+   "company": "EG Hire Global",
+   "location": "Antwerp, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -63758,6 +63918,14 @@
    "title": "Stagiaire Marketing",
    "company": "Groupe SEB",
    "location": "Fleurus, Walloon Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4421956368",
+   "url": "https://www.linkedin.com/jobs/view/4421956368",
+   "title": "INTERNSHIP - UI Design & Design System for a Global Industrial Platform (M/F/X)",
+   "company": "HMS Networks",
+   "location": "Nivelles, Walloon Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -63977,6 +64145,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4417961491",
+   "url": "https://www.linkedin.com/jobs/view/4417961491",
+   "title": "KAM E-commerce & parapharmacy groups",
+   "company": "EG nv/sa",
+   "location": "Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4417952906",
    "url": "https://www.linkedin.com/jobs/view/4417952906",
    "title": "Digital Growth Marketeer - Campagnes & Acquisitie",
@@ -64145,6 +64321,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4408531247",
+   "url": "https://www.linkedin.com/jobs/view/4408531247",
+   "title": "Internship: Internal Communication",
+   "company": "ENGIE Belgium",
+   "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4408409671",
    "url": "https://www.linkedin.com/jobs/view/4408409671",
    "title": "Stagiair marketing",
@@ -64230,6 +64414,14 @@
    "title": "Stage - Organic Social & Influencer Marketing",
    "company": "TUI",
    "location": "Ostend, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4402943010",
+   "url": "https://www.linkedin.com/jobs/view/4402943010",
+   "title": "Internship: Internal Communication",
+   "company": "ENGIE Belgium",
+   "location": "Brussels, Brussels Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -64398,6 +64590,22 @@
    "title": "Marketing Specialist",
    "company": "Arrow Electronics",
    "location": "Machelen, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4384898378",
+   "url": "https://www.linkedin.com/jobs/view/4384898378",
+   "title": "Trade Marketing Intern (Expansion – Indirect Markets)",
+   "company": "AB InBev",
+   "location": "Leuven, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4384317325",
+   "url": "https://www.linkedin.com/jobs/view/4384317325",
+   "title": "Internship: Internal Communication",
+   "company": "ENGIE Belgium",
+   "location": "Ghent, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -102660,6 +102868,6 @@
    "cv_fit_v": 18
   }
  ],
- "search_cursor": 7,
- "li_cursor": 6
+ "search_cursor": 12,
+ "li_cursor": 12
 }
