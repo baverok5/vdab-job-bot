@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-01 15:29 UTC",
+ "updated": "2026-08-01 16:09 UTC",
  "jobs": [
   {
    "id": "4446772012",
@@ -8479,6 +8479,11 @@
  ],
  "listing": [
   {
+   "id": "74293008",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74293008/junior-elektricien",
+   "title": "Junior elektricien"
+  },
+  {
    "id": "74292957",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74292957/accountmanager",
    "title": "Accountmanager"
@@ -9802,6 +9807,11 @@
    "id": "74292414",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74292414/technisch-tekenaar-afwisseling-werfopvolging",
    "title": "Technisch tekenaar afwisseling werfopvolging"
+  },
+  {
+   "id": "74292352",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74292352/service-technieker-servicewagen-12-adv-dagen-internationa",
+   "title": "Service technieker servicewagen 12 adv dagen internationa"
   },
   {
    "id": "74292286",
@@ -12217,6 +12227,11 @@
    "id": "74276738",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74276738/preparateur-de-commandes-en-para-pharmacie",
    "title": "Preparateur de commandes en para pharmacie"
+  },
+  {
+   "id": "74276710",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74276710/customer-service-medewerker-bedrijfswagen-mechelen",
+   "title": "Customer service medewerker bedrijfswagen mechelen"
   },
   {
    "id": "74276678",
@@ -50935,8 +50950,8 @@
   },
   {
    "id": "74097291",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74097291/customer-service-officer",
-   "title": "Customer service officer"
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74097291/customer-service-officer-deeltijds",
+   "title": "Customer service officer deeltijds"
   },
   {
    "id": "74097267",
@@ -51757,21 +51772,6 @@
    "id": "74092454",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74092454/customer-service-officer",
    "title": "Customer service officer"
-  },
-  {
-   "id": "74092329",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74092329/technical-sales-support",
-   "title": "Technical sales support"
-  },
-  {
-   "id": "74092328",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74092328/ago-office-customer-service-assistant-deeltijds-50",
-   "title": "Ago office customer service assistant deeltijds 50"
-  },
-  {
-   "id": "74092287",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74092287/team-leader-en-agroalimentaire-i-nuit-i-mouscron",
-   "title": "Team leader en agroalimentaire i nuit i mouscron"
   },
   {
    "id": "74091551",
@@ -55728,6 +55728,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4447434501",
+   "url": "https://www.linkedin.com/jobs/view/4447434501",
+   "title": "Stage Content Creator",
+   "company": "Armonea",
+   "location": "Mechelen, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4447299717",
    "url": "https://www.linkedin.com/jobs/view/4447299717",
    "title": "Content & Documentation Manager",
@@ -57080,6 +57088,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4444798740",
+   "url": "https://www.linkedin.com/jobs/view/4444798740",
+   "title": "Marketing & Employer Branding stage",
+   "company": "We fynd",
+   "location": "Kontich, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4444797688",
    "url": "https://www.linkedin.com/jobs/view/4444797688",
    "title": "Stage Recruitment & Employer Branding",
@@ -57661,6 +57677,14 @@
    "title": "Senior International Marketeer",
    "company": "Madison Recruitment",
    "location": "Waregem, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4443957948",
+   "url": "https://www.linkedin.com/jobs/view/4443957948",
+   "title": "Copywriting & Sales Process Intern",
+   "company": "AB InBev",
+   "location": "Leuven, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -58880,6 +58904,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4442150171",
+   "url": "https://www.linkedin.com/jobs/view/4442150171",
+   "title": "social media & content creator bij Filmfestival Oostende",
+   "company": "Sociaal Fonds Podiumkunsten (BE)",
+   "location": "Oostende, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4442116177",
    "url": "https://www.linkedin.com/jobs/view/4442116177",
    "title": "Teamlead Digital Marketing",
@@ -59292,6 +59324,14 @@
    "url": "https://www.linkedin.com/jobs/view/4441442585",
    "title": "Copywriter",
    "company": "Asenium Consulting",
+   "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4441438422",
+   "url": "https://www.linkedin.com/jobs/view/4441438422",
+   "title": "Internal Communications Support Intern",
+   "company": "Médecins Sans Frontières Belgium",
    "location": "Brussels, Brussels Region, Belgium",
    "src": "linkedin"
   },
@@ -60109,6 +60149,14 @@
    "title": "Marketing Assistant",
    "company": "Vander Haeghen",
    "location": "Kraainem, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4440001406",
+   "url": "https://www.linkedin.com/jobs/view/4440001406",
+   "title": "Recruitment Marketing & Support Intern",
+   "company": "Médecins Sans Frontières Belgium",
+   "location": "Brussels, Brussels Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -61064,6 +61112,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4438101734",
+   "url": "https://www.linkedin.com/jobs/view/4438101734",
+   "title": "Marketing Officer UNIZO Vlaams-Brabant & Brussel",
+   "company": "UNIZO Holsbeek",
+   "location": "Tielt, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4438087467",
    "url": "https://www.linkedin.com/jobs/view/4438087467",
    "title": "Public Relations & Communications Officer",
@@ -61544,6 +61600,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4436702689",
+   "url": "https://www.linkedin.com/jobs/view/4436702689",
+   "title": "Stage E-commerce",
+   "company": "Xandres",
+   "location": "Ghent Metropolitan Area",
+   "src": "linkedin"
+  },
+  {
    "id": "4436700368",
    "url": "https://www.linkedin.com/jobs/view/4436700368",
    "title": "Teamlead Digital Marketing (Freelance of tijdelijk)",
@@ -61565,6 +61629,14 @@
    "title": "Brand, Campaign & Operations Specialist",
    "company": "MediaMarkt Belgium",
    "location": "Strombeek-Bever, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4436579329",
+   "url": "https://www.linkedin.com/jobs/view/4436579329",
+   "title": "OFFRE DE STAGE : CHARGÉ DE COMMUNICATION (h/f/x)",
+   "company": "Clinic Saint-Jean Brussels",
+   "location": "Brussels, Brussels Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -61821,6 +61893,14 @@
    "title": "Frontend Engineer (React)",
    "company": "Koda Staff",
    "location": "Ghent, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4435661537",
+   "url": "https://www.linkedin.com/jobs/view/4435661537",
+   "title": "marketing data & insights specialist",
+   "company": "Port of Antwerp-Bruges",
+   "location": "Antwerp, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -62832,6 +62912,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4431263683",
+   "url": "https://www.linkedin.com/jobs/view/4431263683",
+   "title": "Stage Allround Marketing Assistent (Tielt) - Uitgeverij Lannoo – najaar 2026",
+   "company": "Uitgeverij Lannoo",
+   "location": "Tielt, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4431236814",
    "url": "https://www.linkedin.com/jobs/view/4431236814",
    "title": "Marketing Automation Specialist",
@@ -63360,6 +63448,22 @@
    "src": "linkedin"
   },
   {
+   "id": "4427634831",
+   "url": "https://www.linkedin.com/jobs/view/4427634831",
+   "title": "Content Marketeer Grafisch",
+   "company": "Belgie Vacature",
+   "location": "St-Truiden, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4427536842",
+   "url": "https://www.linkedin.com/jobs/view/4427536842",
+   "title": "Stagiaire en Communication & Employer Branding",
+   "company": "NSI",
+   "location": "Braine-l’Alleud, Walloon Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4427535650",
    "url": "https://www.linkedin.com/jobs/view/4427535650",
    "title": "UX Designer",
@@ -63400,6 +63504,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4427093422",
+   "url": "https://www.linkedin.com/jobs/view/4427093422",
+   "title": "Marketing Technology Teamlead",
+   "company": "Reynaers Aluminium Belux",
+   "location": "Duffel, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4427050776",
    "url": "https://www.linkedin.com/jobs/view/4427050776",
    "title": "Senior Regional Marketing Manager, EMEA",
@@ -63428,6 +63540,14 @@
    "url": "https://www.linkedin.com/jobs/view/4426839261",
    "title": "Growth Marketing Manager (ABM)",
    "company": "AI-BLOX | Physical AI computers",
+   "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4426563239",
+   "url": "https://www.linkedin.com/jobs/view/4426563239",
+   "title": "Public Affairs and Communications Consultant – Energy and Industrials\nBrussels, Brussels Hoofstedelijk Gewest, Belgium",
+   "company": "Brunswick Investor Brand",
    "location": "Brussels, Brussels Region, Belgium",
    "src": "linkedin"
   },
@@ -63467,6 +63587,14 @@
    "id": "4425756340",
    "url": "https://www.linkedin.com/jobs/view/4425756340",
    "title": "Marketing & Brand Activation Assistant",
+   "company": "Delhaize Belgium",
+   "location": "Asse, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4425743656",
+   "url": "https://www.linkedin.com/jobs/view/4425743656",
+   "title": "Affiliate marketing partner",
    "company": "Delhaize Belgium",
    "location": "Asse, Flemish Region, Belgium",
    "src": "linkedin"
@@ -102531,5 +102659,6 @@
    "cv_fit_v": 18
   }
  ],
- "search_cursor": 2
+ "search_cursor": 7,
+ "li_cursor": 6
 }
