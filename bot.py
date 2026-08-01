@@ -79,6 +79,32 @@ MARKETING_RX = re.compile(
 def is_marketing(title):
     return bool(MARKETING_RX.search(title or ""))
 
+
+# is_marketing is a yes/no flag, and it lumps an SEO internship together with a
+# brand-campaign job. The AI budget only stretches to a handful of full reads per
+# run, so the ORDER inside that yes group decides what actually gets looked at.
+# These tiers spend the budget nearest the candidate's core first.
+_PRIORITY_TIERS = (
+    re.compile(r"\bseo\b|search\s*engine\s*(?:optimi|advertis|market)|\bsea\b|\bsem\b|"
+               r"google\s*ads|zoekmachine", re.I),
+    re.compile(r"digital\s*market|digitale\s*market|online\s*market|marketeer|"
+               r"content|copywrit|social\s*media|e-?commerce|webshop|wordpress|"
+               r"web\s*design|webdesign|front[-\s]?end|\bux\b|\bui\b|growth", re.I),
+    re.compile(r"marketing|communicat|\bbrand(?:ing|s)?\b|campaign|campagne|"
+               r"advertis|\bpr\b", re.I),
+)
+_ENTRY_RX = re.compile(r"\bintern\b|internship|\bstage\b|stagiair|junior|\bjr\.?\b|"
+                       r"trainee|starter|entry[-\s]level", re.I)
+
+
+def title_priority(title):
+    """Lower sorts first. Tier by how close the title is to the target field,
+    then pull entry-level wording half a tier forward — a junior/intern posting
+    is a better use of a scarce full read than a senior one in the same field."""
+    t = title or ""
+    tier = next((n for n, rx in enumerate(_PRIORITY_TIERS) if rx.search(t)), len(_PRIORITY_TIERS))
+    return tier - 0.5 if _ENTRY_RX.search(t) else tier
+
 # Title pre-screen: the AI reads plain job titles in cheap batches (no page
 # render) to shortlist the ones worth a full look, so rendering + full screening
 # is spent only on plausible jobs. This is what lets coverage scale.
@@ -452,11 +478,26 @@ def collect_links(browser, search_url, cap=5000, budget_s=40, max_pages=25):
 # is swallowed so the VDAB run is never affected, and on a rate-limit block we
 # back off for the rest of the run. LinkedIn ids are ~10 digits (VDAB ~8), so
 # they don't collide; jobs carry src="linkedin" and are applied to via LinkedIn.
+# Order matters: the run stops adding keywords once the time budget is spent, so
+# the tail of this list is the part that gets skipped on a slow day. Cheapest and
+# most on-target queries go first.
 LINKEDIN_KEYWORDS = [
     # SEO first + several variants so we never miss an SEO posting (distinct
-    # LinkedIn queries return different result sets), then the adjacent fields.
+    # LinkedIn queries return different result sets).
     "seo", "seo specialist", "seo manager", "search engine optimization",
-    "seo consultant", "content marketing", "content manager", "copywriter",
+    "seo consultant",
+    # Entry-level phrasings, early because they are exactly this candidate's
+    # level and they are cheap: a broad term like "digital marketing" returns
+    # hundreds of Belgian hits and we only read the first pages of it, so an
+    # internship posted weeks ago never surfaced under it. These narrow queries
+    # return few enough results that we see the whole set.
+    "marketing intern", "digital marketing intern", "marketing internship",
+    "seo intern", "content intern", "communications intern",
+    "stage marketing", "stage digitale marketing", "stage communicatie",
+    "marketing stagiair", "junior marketing", "junior digital marketing",
+    "marketing assistant", "marketing medewerker", "trainee marketing",
+    # Then the adjacent fields, broad terms last.
+    "content marketing", "content manager", "copywriter",
     "digital marketing", "digital marketeer", "online marketing",
     "social media", "growth marketing", "sea", "google ads", "e-commerce",
     # Web / UX / front-end design — the candidate's WordPress/Elementor/Canva
@@ -500,22 +541,32 @@ def _li_job_id(card):
     return None
 
 
-def collect_linkedin(keywords=None, pages_per_kw=5, budget_s=170):
+def collect_linkedin(keywords=None, pages_per_kw=8, budget_s=420):
     """Scrape LinkedIn's public guest job search for Belgium. Returns
     {id: {id,url,title,company,location,src}}. Swallows all errors; backs off
-    on a rate-limit/blocked response so we don't get the IP fully banned."""
+    on a rate-limit/blocked response so we don't get the IP fully banned.
+
+    sortBy=DD asks for newest-first. LinkedIn's default is relevance, which for a
+    crawler that only reads the first pages means a fresh posting can sit behind
+    a hundred older "more relevant" ones and never be collected at all."""
     keywords = keywords or LINKEDIN_KEYWORDS
     found, t0 = {}, time.time()
     for kw in keywords:
         if time.time() - t0 > budget_s:
+            print(f"  linkedin: budget spent, {kw!r} onwards skipped this run")
             break
+        dry = 0
         for pg in range(pages_per_kw):
             if time.time() - t0 > budget_s:
                 break
             try:
                 r = requests.get(LI_GUEST_SEARCH,
                                  params={"keywords": kw, "location": "Belgium",
-                                         "f_TPR": "r2592000", "start": pg * 10},
+                                         # 60 days, not 30: postings a month old
+                                         # are still open and were falling off
+                                         # the edge of the window unseen.
+                                         "f_TPR": "r5184000", "sortBy": "DD",
+                                         "start": pg * 10},
                                  headers=LI_HEADERS, timeout=25)
             except Exception as e:
                 print(f"  linkedin search error ({kw}): {e}")
@@ -547,7 +598,11 @@ def collect_linkedin(keywords=None, pages_per_kw=5, budget_s=170):
                 }
                 added += 1
             print(f"  linkedin '{kw}' p{pg}: +{added} (total {len(found)})")
-            if added == 0:
+            # A page of pure duplicates usually means this keyword overlaps one we
+            # already ran, not that its results are exhausted — so give it one
+            # more page before moving on. Two dry pages in a row does mean done.
+            dry = dry + 1 if added == 0 else 0
+            if dry >= 2:
                 break
             time.sleep(1.5)
     print(f"  linkedin: collected {len(found)} jobs in {int(time.time() - t0)}s")
@@ -1206,7 +1261,11 @@ def main():
             # FIRST: write letters for any matched job still missing one, so the
             # app's letter button and Gmail drafts are ready minutes into the run
             # instead of hours (user shouldn't wait on the long screening pass).
-            backfill_letters(browser, jobs, cv_text, budget=40, checkpoint=checkpoint)
+            # Only a few, though: with DeepSeek out of credit the whole run rides
+            # on Gemini's small free quota, and letters used to drain it before a
+            # single new job was screened. The rest of the backfill runs at the
+            # end, on whatever quota screening leaves.
+            backfill_letters(browser, jobs, cv_text, budget=6, checkpoint=checkpoint)
 
             # Then drop any matched LinkedIn posting that has closed since we
             # saved it, so the Ready feed only ever offers jobs you can apply to.
@@ -1283,7 +1342,7 @@ def main():
                     if j["id"] not in seen and j["id"] not in title_no
                     and j["id"] not in shortlist]
             # Screen target-field titles first, then newest.
-            cand.sort(key=lambda j: (not is_marketing(j["title"]), -int(j["id"])))
+            cand.sort(key=lambda j: (title_priority(j["title"]), -int(j["id"])))
             cand = cand[:TITLE_SCREEN_CAP]
             if cand:
                 print(f"Title pre-screening {len(cand)} titles...")
@@ -1293,9 +1352,12 @@ def main():
                 print(f"  shortlisted {len(kept)}, dropped {len(cand) - len(kept)} at title stage")
 
             # Full render + AI evaluation, drawn from the shortlist only —
-            # target-field (marketing/SEO/web) titles first, then newest.
+            # closest to the target field first, then newest. Sorting by "is it
+            # marketing at all" left ~2000 shortlisted jobs in id order, so an SEO
+            # posting from last month sat behind every newer generic marketing one
+            # and, at a couple of reads per run, was never reached.
             ready_ids = [i for i in shortlist if i in by_id and i not in seen]
-            ready_ids.sort(key=lambda i: (not is_marketing(by_id[i]["title"]), -int(i)))
+            ready_ids.sort(key=lambda i: (title_priority(by_id[i]["title"]), -int(i)))
             new_links = [(by_id[i]["url"], i) for i in ready_ids][:MAX_NEW_PER_RUN]
             print(f"{len(all_links)} collected, {len(jobs['listing'])} in listing, "
                   f"{len(shortlist)} shortlisted, {len(title_no)} title-dropped, "
@@ -1304,6 +1366,11 @@ def main():
             matched = _process_jobs(browser, new_links, seen, jobs, cv_text,
                                     checkpoint=checkpoint)
             shortlist -= seen   # drop the ones we just fully evaluated
+
+            # Now the rest of the letter backfill, on the quota screening left
+            # over. Finding a job the candidate can apply to comes before having
+            # its letter pre-written.
+            backfill_letters(browser, jobs, cv_text, budget=40, checkpoint=checkpoint)
 
             # LAST, with whatever time/quota remains: re-check a small slice of the
             # saved pool under the current criteria (e.g. move Dutch-required
