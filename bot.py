@@ -85,8 +85,15 @@ def is_marketing(title):
 # run, so the ORDER inside that yes group decides what actually gets looked at.
 # These tiers spend the budget nearest the candidate's core first.
 _PRIORITY_TIERS = (
-    re.compile(r"\bseo\b|search\s*engine\s*(?:optimi|advertis|market)|\bsea\b|\bsem\b|"
-               r"google\s*ads|zoekmachine", re.I),
+    # "sea" is not usable as a bare word here: Belgian listings are full of "Sea
+    # Logistics" / "Sea Freight" shipping roles, and one of them ("Stage Sea
+    # Logistics") took the single full read a run could afford. Only match SEA
+    # where the surrounding word makes it the marketing discipline.
+    re.compile(r"\bseo\b|search\s*engine\s*(?:optimi|advertis|market)|\bsem\b|"
+               r"\bsea[-\s/&]*(?:seo|specialist|manager|expert|marketeer|consultant|"
+               r"campaign|advertis|social|ads)|(?:seo|sem)[-\s/&]+sea\b|google\s*ads|"
+               r"zoekmachine",
+               re.I),
     re.compile(r"digital\s*market|digitale\s*market|online\s*market|marketeer|"
                r"content|copywrit|social\s*media|e-?commerce|webshop|wordpress|"
                r"web\s*design|webdesign|front[-\s]?end|\bux\b|\bui\b|growth", re.I),
@@ -478,10 +485,11 @@ def collect_links(browser, search_url, cap=5000, budget_s=40, max_pages=25):
 # is swallowed so the VDAB run is never affected, and on a rate-limit block we
 # back off for the rest of the run. LinkedIn ids are ~10 digits (VDAB ~8), so
 # they don't collide; jobs carry src="linkedin" and are applied to via LinkedIn.
-# Order matters: the run stops adding keywords once the time budget is spent, so
-# the tail of this list is the part that gets skipped on a slow day. Cheapest and
-# most on-target queries go first.
-LINKEDIN_KEYWORDS = [
+# Split like the VDAB searches: the on-target queries run every time, the rest
+# rotate a slice per run. Asking for all 40 in one run is ~180 requests, which
+# earned an HTTP 429 and cost us the tail of the list anyway — half the volume
+# per run covers the same ground over two runs without the block.
+LI_PRIORITY_KEYWORDS = [
     # SEO first + several variants so we never miss an SEO posting (distinct
     # LinkedIn queries return different result sets).
     "seo", "seo specialist", "seo manager", "search engine optimization",
@@ -496,10 +504,15 @@ LINKEDIN_KEYWORDS = [
     "stage marketing", "stage digitale marketing", "stage communicatie",
     "marketing stagiair", "junior marketing", "junior digital marketing",
     "marketing assistant", "marketing medewerker", "trainee marketing",
-    # Then the adjacent fields, broad terms last.
+]
+# Adjacent fields and broad terms — a slice of these each run.
+LI_ROTATE_PER_RUN = 6   # 4 runs/day -> every broad term still swept daily
+LI_ROTATING_KEYWORDS = [
     "content marketing", "content manager", "copywriter",
     "digital marketing", "digital marketeer", "online marketing",
-    "social media", "growth marketing", "sea", "google ads", "e-commerce",
+    # "sea" alone returns sea-freight jobs; the marketing sense needs a partner
+    # word. "google ads" covers the same discipline cleanly.
+    "social media", "growth marketing", "sea specialist", "google ads", "e-commerce",
     # Web / UX / front-end design — the candidate's WordPress/Elementor/Canva
     # background fits these, and they're often LinkedIn-only (missed before).
     "web designer", "web design", "wordpress", "ux designer", "ui designer",
@@ -541,7 +554,7 @@ def _li_job_id(card):
     return None
 
 
-def collect_linkedin(keywords=None, pages_per_kw=8, budget_s=420):
+def collect_linkedin(keywords=None, pages_per_kw=6, budget_s=420):
     """Scrape LinkedIn's public guest job search for Belgium. Returns
     {id: {id,url,title,company,location,src}}. Swallows all errors; backs off
     on a rate-limit/blocked response so we don't get the IP fully banned.
@@ -549,7 +562,7 @@ def collect_linkedin(keywords=None, pages_per_kw=8, budget_s=420):
     sortBy=DD asks for newest-first. LinkedIn's default is relevance, which for a
     crawler that only reads the first pages means a fresh posting can sit behind
     a hundred older "more relevant" ones and never be collected at all."""
-    keywords = keywords or LINKEDIN_KEYWORDS
+    keywords = keywords or (LI_PRIORITY_KEYWORDS + LI_ROTATING_KEYWORDS)
     found, t0 = {}, time.time()
     for kw in keywords:
         if time.time() - t0 > budget_s:
@@ -604,7 +617,7 @@ def collect_linkedin(keywords=None, pages_per_kw=8, budget_s=420):
             dry = dry + 1 if added == 0 else 0
             if dry >= 2:
                 break
-            time.sleep(1.5)
+            time.sleep(2.2)   # gentler: 1.5s over ~180 requests drew a 429
     print(f"  linkedin: collected {len(found)} jobs in {int(time.time() - t0)}s")
     return found
 
@@ -1300,8 +1313,15 @@ def main():
 
             # Secondary source: LinkedIn public guest search (marketing/SEO/
             # content keywords, Belgium). Best-effort — a block is swallowed and
-            # the VDAB results stand on their own.
-            li_meta = collect_linkedin()
+            # the VDAB results stand on their own. The on-target keywords run
+            # every time; the broader ones rotate a slice per run so one run
+            # never fires enough requests to earn a rate-limit block.
+            li_cur = jobs.get("li_cursor", 0)
+            li_n = len(LI_ROTATING_KEYWORDS)
+            li_rot = [LI_ROTATING_KEYWORDS[(li_cur + k) % li_n]
+                      for k in range(min(LI_ROTATE_PER_RUN, li_n))]
+            jobs["li_cursor"] = (li_cur + len(li_rot)) % li_n
+            li_meta = collect_linkedin(LI_PRIORITY_KEYWORDS + li_rot)
             for _m in li_meta.values():
                 all_links.add((_m["url"], _m["id"]))
 
