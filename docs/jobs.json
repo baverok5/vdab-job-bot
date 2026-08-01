@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-01 14:53 UTC",
+ "updated": "2026-08-01 15:00 UTC",
  "jobs": [
   {
    "id": "4446772012",
@@ -4570,7 +4570,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "73971367",
@@ -4589,7 +4590,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74105394",
@@ -4608,7 +4610,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74013750",
@@ -4627,7 +4630,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74204285",
@@ -4646,7 +4650,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "73967944",
@@ -4665,7 +4670,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74199987",
@@ -4684,7 +4690,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74066998",
@@ -4703,7 +4710,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74050600",
@@ -64450,6 +64458,26 @@
  ],
  "rejected": [
   {
+   "id": "4343444112",
+   "url": "https://www.linkedin.com/jobs/view/4343444112",
+   "title": "Stage Sea Logistics",
+   "company": "Kuehne+Nagel",
+   "location": "Antwerpen",
+   "match_score": 0,
+   "reason": "The internship requires a logistics education background which the candidate does not possess.",
+   "apply_email": "",
+   "found_at": "2026-08-01 14:53",
+   "status": "new",
+   "details": "Stage in Sea Logistics\n4-5 days per week\nAntwerpen\nFocus on operations, documentation, customs, and customer care within freight forwarding.\nContract type: Stage",
+   "why_good": "",
+   "why_bad": "Required current education in Logistics (e.g., Graduaat Transport & Logistiek, Bachelor Supply Chain Management) or similar.\nThe candidate has coursework in Applied Computer Science, not Logistics.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": true,
+   "lang": "nl",
+   "cv_fit_v": 18
+  },
+  {
    "id": "4445702048",
    "url": "https://www.linkedin.com/jobs/view/4445702048",
    "title": "Product Manager",
@@ -102497,25 +102525,6 @@
    "details": "Role: HR recruiter (full-cycle recruitment, B2B/B2C)\nContract: permanent, full-time, day work\nStart: as soon as possible\nLanguages: Dutch (very good)\nPay: €2640-€3199 gross/month + benefits",
    "why_good": "",
    "why_bad": "Requires a professional bachelor degree (candidate has no degree)\nRequires at least 2 years of relevant experience (candidate has 0 in HR)\nRole is in HR recruitment, not in digital marketing/SEO/content/web\nRequires very good Dutch (candidate has B1 conversational)",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "cv_fit_v": 18
-  },
-  {
-   "id": "74189254",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74189254/facility-manager-industriel",
-   "title": "Facility Manager Industriel",
-   "company": "S&you",
-   "location": "Peruwelz",
-   "match_score": 0,
-   "reason": "French required and role is industrial facility management, not in candidate's field",
-   "apply_email": "",
-   "found_at": "2026-07-21 13:24",
-   "status": "new",
-   "details": "Role: Facility Manager Industriel\nTasks: manage industrial infrastructure, coordinate maintenance, supervise contractors, ensure safety/compliance\nContract: permanent, full-time, day work\nLanguage: French required (good), Dutch/English a plus\nPay: not stated",
-   "why_good": "",
-   "why_bad": "French required at good level (candidate has no French)\nRole is industrial facility management, not in candidate's goal field\nRequires significant experience in industrial environment\nRequires Master degree (no experience alternative mentioned)",
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
