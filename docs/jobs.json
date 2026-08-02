@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-02 07:32 UTC",
+ "updated": "2026-08-02 08:13 UTC",
  "jobs": [
   {
    "id": "4446772012",
@@ -8511,6 +8511,11 @@
  ],
  "listing": [
   {
+   "id": "74293327",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74293327/elektricien-machinebouw",
+   "title": "Elektricien machinebouw"
+  },
+  {
    "id": "74293197",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74293197/ploegchef-bouw-met-bestelwagen",
    "title": "Ploegchef bouw met bestelwagen"
@@ -8544,6 +8549,11 @@
    "id": "74293119",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74293119/commercieel-medewerker",
    "title": "Commercieel medewerker"
+  },
+  {
+   "id": "74293111",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74293111/customer-service-medewerker",
+   "title": "Customer service medewerker"
   },
   {
    "id": "74293021",
@@ -10244,6 +10254,11 @@
    "id": "74290619",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74290619/technisch-commercieel-medewerker",
    "title": "Technisch commercieel medewerker"
+  },
+  {
+   "id": "74290612",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74290612/customer-service-medewerker",
+   "title": "Customer service medewerker"
   },
   {
    "id": "74290607",
@@ -51791,21 +51806,6 @@
    "title": "Talent acquisition partner willebroek"
   },
   {
-   "id": "74092876",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74092876/billing-support-english-international-market",
-   "title": "Billing support english international market"
-  },
-  {
-   "id": "74092838",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74092838/business-developer-regio-lokeren-vast-contract",
-   "title": "Business developer regio lokeren vast contract"
-  },
-  {
-   "id": "74092832",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74092832/customer-care-expert-digitaal-zaterdagshift-nl-fr-antwerpen",
-   "title": "Customer care expert digitaal zaterdagshift nl fr antwerpen"
-  },
-  {
    "id": "74092785",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74092785/marketing-sales-automation-expert-e-mail-marketeer",
    "title": "Marketing sales automation expert e mail marketeer"
@@ -55661,6 +55661,14 @@
    "title": "Commercieel bediende met passie voor social media"
   },
   {
+   "id": "4447810642",
+   "url": "https://www.linkedin.com/jobs/view/4447810642",
+   "title": "Vendor Marketing Specialist",
+   "company": "Veracomp (obecnie Exclusive Networks Poland)",
+   "location": "Duffel, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4447803651",
    "url": "https://www.linkedin.com/jobs/view/4447803651",
    "title": "Responsable Marketing digital (H/F)",
@@ -56058,6 +56066,14 @@
    "title": "Freelance Full-Stack Web App Developer",
    "company": "Mindrift",
    "location": "Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4446582283",
+   "url": "https://www.linkedin.com/jobs/view/4446582283",
+   "title": "Vendor Marketing Specialist",
+   "company": "Exclusive Networks",
+   "location": "Duffel, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -56605,6 +56621,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4445834712",
+   "url": "https://www.linkedin.com/jobs/view/4445834712",
+   "title": "Communicatieve campagne manager",
+   "company": "Winwinner",
+   "location": "Ghent, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4445810760",
    "url": "https://www.linkedin.com/jobs/view/4445810760",
    "title": "Growth Manager",
@@ -56981,6 +57005,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4444977067",
+   "url": "https://www.linkedin.com/jobs/view/4444977067",
+   "title": "Senior Consultant (Communicatie / Public Affairs)",
+   "company": "Gosselin & de Walque",
+   "location": "Brussels Metropolitan Area",
+   "src": "linkedin"
+  },
+  {
    "id": "4444969851",
    "url": "https://www.linkedin.com/jobs/view/4444969851",
    "title": "B2B Campaign Specialist (project 6m consultancy/ Freelance",
@@ -57026,6 +57058,14 @@
    "title": "CRM Campaign Specialist",
    "company": "TUI",
    "location": "Zaventem, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4444941810",
+   "url": "https://www.linkedin.com/jobs/view/4444941810",
+   "title": "Product Marketing Manager",
+   "company": "Comarch",
+   "location": "Brussels, Brussels Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -57973,6 +58013,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4443588363",
+   "url": "https://www.linkedin.com/jobs/view/4443588363",
+   "title": "Marketing STAGE 2026 - Foodservice",
+   "company": "Pietercil Foodservice",
+   "location": "Ternat, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4443585067",
    "url": "https://www.linkedin.com/jobs/view/4443585067",
    "title": "Frontend Developer",
@@ -58077,6 +58125,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4443323169",
+   "url": "https://www.linkedin.com/jobs/view/4443323169",
+   "title": "Trade Marketeer",
+   "company": "QLEVR.",
+   "location": "Aalst, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4443292238",
    "url": "https://www.linkedin.com/jobs/view/4443292238",
    "title": "Marketing Creative (Social Media & E-mailmarketing & websites",
@@ -58098,6 +58154,14 @@
    "title": "French Speaking Content Moderator - Work In Sofia, Bulgaria",
    "company": "Mercier Consultancy MD",
    "location": "Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4443271171",
+   "url": "https://www.linkedin.com/jobs/view/4443271171",
+   "title": "Office & Communications Manager",
+   "company": "CloudPoint",
+   "location": "Antwerp Metropolitan Area",
    "src": "linkedin"
   },
   {
@@ -58376,6 +58440,14 @@
    "id": "4442619636",
    "url": "https://www.linkedin.com/jobs/view/4442619636",
    "title": "FRONTEND ENGINEER - TECHNOLOGY DEPARTMENT (LIEGE-BELGIUM)",
+   "company": "GAMING1",
+   "location": "Liège, Walloon Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4442618884",
+   "url": "https://www.linkedin.com/jobs/view/4442618884",
+   "title": "DUTCH CAMPAIGN MANAGER (LIEGE-BELGIUM)",
    "company": "GAMING1",
    "location": "Liège, Walloon Region, Belgium",
    "src": "linkedin"
@@ -59445,6 +59517,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4441445959",
+   "url": "https://www.linkedin.com/jobs/view/4441445959",
+   "title": "Brand Manager BE/FR/LU",
+   "company": "HG International",
+   "location": "Ghent, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4441442585",
    "url": "https://www.linkedin.com/jobs/view/4441442585",
    "title": "Copywriter",
@@ -59466,6 +59546,14 @@
    "title": "SEO Content Storyteller",
    "company": "EOLIS",
    "location": "Brussels Metropolitan Area",
+   "src": "linkedin"
+  },
+  {
+   "id": "4441359022",
+   "url": "https://www.linkedin.com/jobs/view/4441359022",
+   "title": "Event Marketing Manager",
+   "company": "Materialise",
+   "location": "Leuven, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -60106,6 +60194,14 @@
    "title": "SEA Expert",
    "company": "Publicis Groupe Belgium",
    "location": "Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4440241142",
+   "url": "https://www.linkedin.com/jobs/view/4440241142",
+   "title": "Communications Manager",
+   "company": "Wolf Oil Corporation",
+   "location": "Hemiksem, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -60904,6 +61000,14 @@
    "id": "4438971784",
    "url": "https://www.linkedin.com/jobs/view/4438971784",
    "title": "Senior Social Media",
+   "company": "Bestam - Best Asia Marketing Company",
+   "location": "On, Walloon Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4438971783",
+   "url": "https://www.linkedin.com/jobs/view/4438971783",
+   "title": "Influencer Marketing Manager",
    "company": "Bestam - Best Asia Marketing Company",
    "location": "On, Walloon Region, Belgium",
    "src": "linkedin"
@@ -63349,6 +63453,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4429854284",
+   "url": "https://www.linkedin.com/jobs/view/4429854284",
+   "title": "Marketing Automation Expert  _FR",
+   "company": "NMBS-SNCB",
+   "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4429839407",
    "url": "https://www.linkedin.com/jobs/view/4429839407",
    "title": "PR & Content Specialist",
@@ -63490,6 +63602,14 @@
    "title": "Product Designer L1 (Consumer Facing / Marketing) (Bangkok - Based)",
    "company": "Agoda",
    "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4428817091",
+   "url": "https://www.linkedin.com/jobs/view/4428817091",
+   "title": "Affiliate marketing partner",
+   "company": "Delhaize Belgium",
+   "location": "Asse, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -64490,6 +64610,14 @@
    "title": "Digital Consumer Marketing Intern",
    "company": "AB InBev",
    "location": "Leuven, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4404344543",
+   "url": "https://www.linkedin.com/jobs/view/4404344543",
+   "title": "Brand Manager Benelux (Medical Devices)",
+   "company": "Danone",
+   "location": "Brussels Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -103001,6 +103129,6 @@
    "cv_fit_v": 18
   }
  ],
- "search_cursor": 1,
- "li_cursor": 18
+ "search_cursor": 6,
+ "li_cursor": 4
 }
