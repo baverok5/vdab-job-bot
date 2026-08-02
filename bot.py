@@ -740,6 +740,85 @@ def board_url_is_posting(path, board=None):
     return bool(BOARD_SLUG_RX.search(path))
 
 
+# Jobs that are simply not in Belgium. LinkedIn's Belgium search returns plenty
+# of them — a Vietnamese-language SEO post, a Barcelona agency role, call-centre
+# work in Lisbon. They are only worth showing if the work can actually be done
+# from here, which means remote AND in English.
+BE_PLACE_RX = re.compile(
+    r"belgi|brussel|bruxelles|vlaan|flemish|wallon|antwerp|gent\b|ghent|leuven|louvain|"
+    r"li[eè]ge|charleroi|brugge|bruges|hasselt|mechelen|namur|namen|kortrijk|aalst|genk|"
+    r"oostende|ostend|sint-niklaas|roeselare|turnhout|zaventem|diegem|waterloo|wavre|"
+    r"mons|tournai|ieper|lier\b|herentals|deinze|dendermonde|halle|vilvoorde|tienen|"
+    r"geel\b|mol\b|beveren|wilrijk|berchem|kontich|aartselaar|edegem|schoten|ranst|"
+    r"limburg|brabant|hainaut|west-vl|oost-vl|kempen|ardennes|eupen|arlon|verviers", re.I)
+FOREIGN_PLACE_RX = re.compile(
+    r"\b(spain|espa[nñ]a|portugal|greece|france|germany|deutschland|netherlands|holland|"
+    r"austria|[oö]sterreich|vietnam|vi[eệ]t\s*nam|india|poland|polska|romania|bulgaria|"
+    r"czech|hungary|turkey|t[uü]rkiye|morocco|egypt|u\.?a\.?e\.?|united arab|"
+    r"united states|u\.?s\.?a\.?|canada|brazil|mexico|philippines|indonesia|malaysia|"
+    r"singapore|china|japan|korea|ukraine|serbia|croatia|slovenia|slovakia|lithuania|"
+    r"latvia|estonia|finland|sweden|norway|denmark|iceland|ireland|united kingdom|"
+    r"england|scotland|switzerland|italy|italia|malta|cyprus|israel|south africa|"
+    r"nigeria|kenya|argentina|colombia|chile|peru|australia|new zealand|pakistan|"
+    r"bangladesh|sri lanka|nepal|thailand|taiwan|hong kong|"
+    r"barcelona|madrid|valencia|sevilla|lisbon|lisboa|porto|athens|thessaloniki|"
+    r"paris|lyon|marseille|bordeaux|toulouse|nantes|berlin|munich|m[uü]nchen|hamburg|"
+    r"cologne|k[oö]ln|frankfurt|d[uü]sseldorf|stuttgart|amsterdam|rotterdam|utrecht|"
+    r"eindhoven|the hague|den haag|maastricht|breda|tilburg|vienna|wien|zurich|z[uü]rich|"
+    r"geneva|gen[eè]ve|basel|london|manchester|birmingham|dublin|milan|milano|rome|roma|"
+    r"turin|naples|warsaw|warszawa|krak[oó]w|bucharest|sofia|prague|praha|budapest|"
+    r"istanbul|ankara|izmir|hanoi|ho chi minh|saigon|bangalore|bengaluru|mumbai|"
+    r"new delhi|hyderabad|chennai|cairo|casablanca|tunis|lagos|nairobi|"
+    r"s[aã]o paulo|buenos aires|toronto|vancouver|new york|san francisco|dubai)\b", re.I)
+# Writing systems no Belgian vacancy uses. This is what catches a posting whose
+# location field says "Unknown" but whose title is Vietnamese.
+NONLOCAL_SCRIPT_RX = re.compile(
+    "[ĂăƠơƯưẠ-ỹĐđ]"   # Vietnamese
+    "|[Ѐ-ӿ֐-׿؀-ۿ]"                        # Cyrillic/Hebrew/Arabic
+    "|[ऀ-ॿ฀-๿]"                                     # Devanagari/Thai
+    "|[぀-ヿ一-鿿가-힯]")                       # JP/CN/KR
+REMOTE_RX = re.compile(r"\bremote\b|work from home|telewerk|thuiswerk|\banywhere\b|"
+                       r"\bhybrid\b", re.I)
+ENGLISH_OK_RX = re.compile(r"\benglish\b|\bengels\b", re.I)
+
+
+def is_far_away(title, company, location):
+    """Is this posting outside Belgium?"""
+    if NONLOCAL_SCRIPT_RX.search(f"{title or ''} {company or ''} {location or ''}"):
+        return True
+    if BE_PLACE_RX.search(location or ""):
+        return False
+    return bool(FOREIGN_PLACE_RX.search(location or "")
+                or FOREIGN_PLACE_RX.search(company or ""))
+
+
+def job_is_reachable(job):
+    """Somewhere abroad is only worth offering if you could do it from Belgium:
+    remote, and in English."""
+    if not is_far_away(job.get("title"), job.get("company"), job.get("location")):
+        return True
+    blob = f"{job.get('location') or ''} {job.get('details') or ''}"
+    return bool(REMOTE_RX.search(blob) and ENGLISH_OK_RX.search(blob))
+
+
+def drop_unreachable_matches(jobs):
+    """Move abroad-and-not-remote matches out of Ready."""
+    keep, dropped = [], 0
+    for j in jobs.get("jobs", []):
+        if job_is_reachable(j):
+            keep.append(j)
+            continue
+        j["why_bad"] = (f"Not in Belgium ({j.get('location') or 'location unclear'}) "
+                        f"and not an English-language remote role.")
+        j["reason"] = j["why_bad"]
+        jobs.setdefault("rejected", []).insert(0, j)
+        dropped += 1
+    if dropped:
+        jobs["jobs"] = keep
+        print(f"  dropped {dropped} match(es) abroad without remote+English from Ready")
+    return dropped
+
+
 def drop_stale_matches(jobs):
     """Take LinkedIn postings too old to still be open out of Ready. They keep
     their evaluation in `rejected`, so nothing is re-screened from scratch, but
@@ -1582,6 +1661,7 @@ def main():
             # LinkedIn copy is the one already wired into the app. What survives
             # is the set you can ONLY apply to on that board.
             drop_stale_matches(jobs)
+            drop_unreachable_matches(jobs)
             bad_board = prune_board_listings(jobs)
             if bad_board:
                 for _s in (shortlist, title_no):
@@ -1668,6 +1748,18 @@ def main():
                 shortlist -= set(stale)
                 print(f"  skipped {len(stale)} LinkedIn posting(s) older than "
                       f"{LI_MAX_AGE_DAYS} days (almost certainly closed)")
+            # Abroad and not advertised as remote: don't spend a read on it. The
+            # listing already carries the location, so this costs nothing.
+            away = [i for i in ready_ids
+                    if is_far_away(by_id[i].get("title"), by_id[i].get("company"),
+                                   by_id[i].get("location"))
+                    and not REMOTE_RX.search(by_id[i].get("location") or "")]
+            if away:
+                ready_ids = [i for i in ready_ids if i not in set(away)]
+                title_no |= set(away)
+                shortlist -= set(away)
+                print(f"  skipped {len(away)} posting(s) outside Belgium "
+                      f"with no remote option")
             ready_ids.sort(key=lambda i: (title_priority(by_id[i]["title"]), -int(i)))
             new_links = [(by_id[i]["url"], i) for i in ready_ids][:MAX_NEW_PER_RUN]
             print(f"{len(all_links)} collected, {len(jobs['listing'])} in listing, "
