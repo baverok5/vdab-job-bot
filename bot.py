@@ -686,13 +686,15 @@ JOB_BOARDS = [
                "https://www.stepstone.be/jobs/digital-marketing",
                "https://www.stepstone.be/jobs/seo",
                "https://www.stepstone.be/jobs/content"]},
+    # Two attempts each, both evidence-based, both dead. jobsinbrussels.com went
+    # from 181 links to serving the runner a page with zero anchors — it is
+    # blocking us or rendering entirely in JS. findajobinbelgium.com links only
+    # /search and /alllocations, never a posting. Left in with a single cheap
+    # page each in case they change; they cost a couple of seconds a run.
     {"name": "jobsinbrussels.com",
-     "pages": ["https://www.jobsinbrussels.com/jobs/Marketing%20Sales",
-               "https://www.jobsinbrussels.com/search?q=marketing",
-               "https://www.jobsinbrussels.com/search?q=SEO"]},
+     "pages": ["https://www.jobsinbrussels.com/search?q=marketing"]},
     {"name": "findajobinbelgium.com",
-     "pages": ["http://www.findajobinbelgium.com/search?language=English+only",
-               "http://www.findajobinbelgium.com/"]},
+     "pages": ["http://www.findajobinbelgium.com/search?language=English+only"]},
 ]
 # Generic shape of a job-detail URL across boards: a /job/, /vacature/, /vacancy/,
 # /offre/... segment followed by a slug with some substance to it.
@@ -733,6 +735,13 @@ def dedupe_key(title, company):
     c = re.sub(r"[^a-z0-9]+", " ", (company or "").lower()).strip()
     c = re.sub(r"\b(nv|sa|bv|bvba|sprl|srl|vzw|asbl|group|belgium|belgie)\b", "", c).strip()
     return f"{t}|{c}" if t and c else None
+
+
+def _full(parts):
+    """Path plus query, for the link census. jobinbelgium.com linked 141 things
+    that all share the path /vacancies/ — the difference between them has to be
+    in the query string, and a census that drops it can't show that."""
+    return parts.path + (f"?{parts.query}" if parts.query else "")
 
 
 def board_url_is_posting(path, board=None):
@@ -924,13 +933,13 @@ def collect_boards(browser, budget_s=BOARD_BUDGET_S):
                     # corrected instead of guessed at a second time.
                     seg = "/".join(parts.path.split("/")[:3]) or "/"
                     host_paths[seg] += 1
-                    host_examples.setdefault(seg, parts.path)
+                    host_examples.setdefault(seg, _full(parts))
                     continue
                 # Looks like a job URL, but the board's own browse pages and
                 # career-advice articles sit under the same prefix.
                 if not board_url_is_posting(parts.path, board):
                     host_paths[seg] += 1
-                    host_examples.setdefault(seg, parts.path)
+                    host_examples.setdefault(seg, _full(parts))
                     continue
                 href = urlunsplit((parts.scheme, parts.netloc, parts.path,
                                    parts.query, ""))
