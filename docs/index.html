@@ -779,13 +779,37 @@ const HIDE_IDS = new Set([
   "4446752340", // Desh Videsh "Travel Content Writer" — closed (no longer accepting applications)
 ]);
 
+// How old a LinkedIn posting is, in days. LinkedIn hands out job ids in order,
+// so the gap between a job's id and the newest id we hold IS its age — measured
+// at ~496,570 ids/day between 14 Jul and 1 Aug 2026. This matters because the
+// banner that says "no longer accepting applications" is invisible to the bot
+// (LinkedIn shows GitHub's servers a login wall), and a months-old posting is
+// almost always closed. "Internship Digital marketing" at Fantail sat in Ready
+// looking new today; by its id it was posted over two years ago.
+const LI_IDS_PER_DAY = 496570;
+const LI_MAX_AGE_DAYS = 45;
+let NEWEST_LI_ID = 0;
+function liAgeDays(j) {
+  if (!/linkedin\.com/.test(j.url || "") && j.src !== "linkedin") return 0;
+  const id = parseInt(j.id, 10);
+  if (!NEWEST_LI_ID || !id) return 0;
+  return (NEWEST_LI_ID - id) / LI_IDS_PER_DAY;
+}
+const isStale = (j) => liAgeDays(j) > LI_MAX_AGE_DAYS;
+
 function render() {
   const st = getStatus();
+  NEWEST_LI_ID = Math.max(0, ...[...(DATA.jobs || []), ...(DATA.listing || [])]
+    .filter((j) => /linkedin\.com/.test(j.url || ""))
+    .map((j) => parseInt(j.id, 10) || 0));
   const buckets = { new: [], applied: [], skipped: [] };
   for (const j of DATA.jobs) {
     if (HIDE_IDS.has(String(j.id))) continue;
     const s = st[j.id];
     if (s === "closed") continue;   // you marked it dead — never show it again
+    // Too old to still be open: keep it out of Ready, but leave it visible if
+    // you already acted on it, so your Applied history stays intact.
+    if (!s && isStale(j)) continue;
     if (s === "applied") buckets.applied.push(j);
     else if (s === "skipped") buckets.skipped.push(j);
     else buckets.new.push(j);

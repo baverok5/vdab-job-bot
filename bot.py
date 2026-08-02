@@ -180,6 +180,33 @@ HEADERS = {
 }
 
 MAX_NEW_PER_RUN = int(os.environ.get("MAX_NEW_PER_RUN", "300"))  # big chunk per run; progress is checkpointed
+
+# LinkedIn issues job ids in order, so the gap between a posting's id and the
+# newest id we hold is its age — measured at ~496,570 ids/day between 14 Jul and
+# 1 Aug 2026. This is the only reliable staleness signal available: the "no
+# longer accepting applications" banner is invisible from GitHub's runners
+# (LinkedIn answers them with a login wall), and a months-old posting is almost
+# always closed. A 45-day gate keeps a genuinely open 5-week-old internship while
+# dropping the likes of a 2-year-old listing that surfaced looking "new today".
+LI_IDS_PER_DAY = 496570
+LI_MAX_AGE_DAYS = int(os.environ.get("LI_MAX_AGE_DAYS", "45"))
+
+
+def li_age_days(job_id, newest_id):
+    """Estimated age in days of a LinkedIn posting; 0 for anything else."""
+    try:
+        jid = int(job_id)
+    except (TypeError, ValueError):
+        return 0.0
+    if not newest_id or jid < 1_000_000_000:      # VDAB (8) / board (9) ids
+        return 0.0
+    return max(0.0, (newest_id - jid) / LI_IDS_PER_DAY)
+
+
+def newest_linkedin_id(jobs):
+    ids = [int(j["id"]) for j in list(jobs.get("listing", [])) + list(jobs.get("jobs", []))
+           if str(j.get("id", "")).isdigit() and int(j["id"]) >= 1_000_000_000]
+    return max(ids) if ids else 0
 CHECKPOINT_EVERY = 25  # save + git-push progress this often so a long run can't lose its work
 
 # Bump this whenever the fit criteria in evaluate_job change. Saved matches that
@@ -711,6 +738,30 @@ def board_url_is_posting(path, board=None):
     if own:
         return bool(re.search(own, path, re.I))
     return bool(BOARD_SLUG_RX.search(path))
+
+
+def drop_stale_matches(jobs):
+    """Take LinkedIn postings too old to still be open out of Ready. They keep
+    their evaluation in `rejected`, so nothing is re-screened from scratch, but
+    they stop being offered as something to apply to."""
+    newest = newest_linkedin_id(jobs)
+    if not newest:
+        return 0
+    keep, dropped = [], 0
+    for j in jobs.get("jobs", []):
+        age = li_age_days(j.get("id"), newest)
+        if age > LI_MAX_AGE_DAYS:
+            j["why_bad"] = (f"Posted about {int(age)} days ago — LinkedIn postings "
+                            f"this old are no longer accepting applications.")
+            j["reason"] = j["why_bad"]
+            jobs.setdefault("rejected", []).insert(0, j)
+            dropped += 1
+            continue
+        keep.append(j)
+    if dropped:
+        jobs["jobs"] = keep
+        print(f"  dropped {dropped} match(es) older than {LI_MAX_AGE_DAYS} days from Ready")
+    return dropped
 
 
 def prune_board_listings(jobs):
@@ -1530,6 +1581,7 @@ def main():
             # that also exists on LinkedIn is dropped here — same job, and the
             # LinkedIn copy is the one already wired into the app. What survives
             # is the set you can ONLY apply to on that board.
+            drop_stale_matches(jobs)
             bad_board = prune_board_listings(jobs)
             if bad_board:
                 for _s in (shortlist, title_no):
@@ -1606,6 +1658,16 @@ def main():
             # posting from last month sat behind every newer generic marketing one
             # and, at a couple of reads per run, was never reached.
             ready_ids = [i for i in shortlist if i in by_id and i not in seen]
+            # A posting too old to still be open is not worth a read, and must
+            # never reach Ready — the feed is for jobs you can apply to today.
+            newest_li = newest_linkedin_id(jobs)
+            stale = [i for i in ready_ids if li_age_days(i, newest_li) > LI_MAX_AGE_DAYS]
+            if stale:
+                ready_ids = [i for i in ready_ids if i not in set(stale)]
+                title_no |= set(stale)          # don't re-queue them next run
+                shortlist -= set(stale)
+                print(f"  skipped {len(stale)} LinkedIn posting(s) older than "
+                      f"{LI_MAX_AGE_DAYS} days (almost certainly closed)")
             ready_ids.sort(key=lambda i: (title_priority(by_id[i]["title"]), -int(i)))
             new_links = [(by_id[i]["url"], i) for i in ready_ids][:MAX_NEW_PER_RUN]
             print(f"{len(all_links)} collected, {len(jobs['listing'])} in listing, "
