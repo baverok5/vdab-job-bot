@@ -667,18 +667,25 @@ JOB_BOARDS = [
     # No "www." on this one — that hostname does not resolve at all, which is
     # what the first run's "failed" was. Listing paths below are the site's own.
     {"name": "englishjobs.be",
+     # This board doesn't host postings: every vacancy is a /clickout/<hash>
+     # redirect to the employer's own page, which is where applying happens
+     # anyway. Rendering the redirect lands on the real posting.
+     "job_rx": r"^/clickout(?:_alt)?/[0-9a-f]{6,}",
      "pages": ["https://englishjobs.be/jobs/marketing",
                "https://englishjobs.be/jobs/intern_internship",
                "https://englishjobs.be/in/brussels/marketing"]},
     {"name": "jobinbelgium.com",
+     # Postings live under /vacancies/<slug> — 141 of them on the search page.
+     "job_rx": r"^/vacancies/[^/]{3,}",
      "pages": ["https://www.jobinbelgium.com/",
                "https://www.jobinbelgium.com/jobs/",
                "https://www.jobinbelgium.com/?s=marketing"]},
     {"name": "stepstone.be",
-     # No job_rx override: the first run proved /vacatures-- is not what this
-     # site links now, so let the generic matcher and the diagnostic speak.
+     # Confirmed working: /jobs--<Title>-<City>-<Company>--<id>-inline.html.
      "pages": ["https://www.stepstone.be/jobs/marketing",
-               "https://www.stepstone.be/jobs/digital-marketing"]},
+               "https://www.stepstone.be/jobs/digital-marketing",
+               "https://www.stepstone.be/jobs/seo",
+               "https://www.stepstone.be/jobs/content"]},
     {"name": "jobsinbrussels.com",
      "pages": ["https://www.jobsinbrussels.com/jobs/Marketing%20Sales",
                "https://www.jobsinbrussels.com/search?q=marketing",
@@ -900,6 +907,7 @@ def collect_boards(browser, budget_s=BOARD_BUDGET_S):
             anchors = soup.select("a[href]")
             added, sample = 0, []
             host_paths = Counter()          # same-host paths, for the miss diagnostic
+            host_examples = {}              # one full path per shape, as evidence
             for a in anchors:
                 href = urljoin(url, (a.get("href") or "").strip())
                 parts = urlsplit(href)
@@ -916,11 +924,13 @@ def collect_boards(browser, budget_s=BOARD_BUDGET_S):
                     # corrected instead of guessed at a second time.
                     seg = "/".join(parts.path.split("/")[:3]) or "/"
                     host_paths[seg] += 1
+                    host_examples.setdefault(seg, parts.path)
                     continue
                 # Looks like a job URL, but the board's own browse pages and
                 # career-advice articles sit under the same prefix.
                 if not board_url_is_posting(parts.path, board):
                     host_paths[seg] += 1
+                    host_examples.setdefault(seg, parts.path)
                     continue
                 href = urlunsplit((parts.scheme, parts.netloc, parts.path,
                                    parts.query, ""))
@@ -947,6 +957,14 @@ def collect_boards(browser, budget_s=BOARD_BUDGET_S):
                 print(f"  board {host}: {url} -> +0  "
                       f"[{len(anchors)} links, {sum(host_paths.values())} on-site] "
                       f"paths: {top or 'none on-site'}")
+                # Frequency alone hides the postings: a vacancy URL appears once,
+                # so it never reaches the top of that list while nav links do.
+                # Print full one-off paths too — that is where the real posting
+                # shape shows up.
+                ones = [p for seg, p in host_examples.items() if host_paths[seg] == 1]
+                if ones:
+                    print("      one-off paths: "
+                          + " | ".join(p[:70] for p in ones[:6]))
             time.sleep(1.5)
         print(f"  board {host}: {got} postings")
     print(f"  boards: collected {len(found)} postings in {int(time.time() - t0)}s")
