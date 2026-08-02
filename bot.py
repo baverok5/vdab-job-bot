@@ -637,33 +637,38 @@ def collect_linkedin(keywords=None, pages_per_kw=6, budget_s=420):
 # board shares. Each board logs what it fetched and the first titles it found,
 # so the run log says exactly which config needs correcting.
 JOB_BOARDS = [
+    # No "www." on this one — that hostname does not resolve at all, which is
+    # what the first run's "failed" was. Listing paths below are the site's own.
     {"name": "englishjobs.be",
-     "pages": ["https://www.englishjobs.be/",
-               "https://www.englishjobs.be/jobs",
-               "https://www.englishjobs.be/jobs?search=marketing"]},
+     "pages": ["https://englishjobs.be/jobs/marketing",
+               "https://englishjobs.be/jobs/intern_internship",
+               "https://englishjobs.be/in/brussels/marketing"]},
     {"name": "jobinbelgium.com",
      "pages": ["https://www.jobinbelgium.com/",
-               "https://www.jobinbelgium.com/jobs",
-               "https://www.jobinbelgium.com/jobs?q=marketing"]},
+               "https://www.jobinbelgium.com/jobs/",
+               "https://www.jobinbelgium.com/?s=marketing"]},
     {"name": "stepstone.be",
+     # No job_rx override: the first run proved /vacatures-- is not what this
+     # site links now, so let the generic matcher and the diagnostic speak.
      "pages": ["https://www.stepstone.be/jobs/marketing",
-               "https://www.stepstone.be/jobs/seo",
-               "https://www.stepstone.be/jobs/digital-marketing"],
-     # Stepstone detail URLs are /vacatures--... (nl) or /offres-d-emploi--... (fr)
-     "job_rx": r"/(?:vacatures|offres-d-emploi)--"},
+               "https://www.stepstone.be/jobs/digital-marketing"]},
     {"name": "jobsinbrussels.com",
-     "pages": ["https://www.jobsinbrussels.com/",
-               "https://www.jobsinbrussels.com/jobs",
-               "https://www.jobsinbrussels.com/search?q=marketing"]},
+     "pages": ["https://www.jobsinbrussels.com/jobs/Marketing%20Sales",
+               "https://www.jobsinbrussels.com/search?q=marketing",
+               "https://www.jobsinbrussels.com/search?q=SEO"]},
     {"name": "findajobinbelgium.com",
-     "pages": ["https://www.findajobinbelgium.com/",
-               "https://www.findajobinbelgium.com/jobs"]},
+     "pages": ["http://www.findajobinbelgium.com/search?language=English+only",
+               "http://www.findajobinbelgium.com/"]},
 ]
 # Generic shape of a job-detail URL across boards: a /job/, /vacature/, /vacancy/,
 # /offre/... segment followed by a slug with some substance to it.
 BOARD_JOB_RX = re.compile(
     r"/(?:job|jobs|vacature|vacatures|vacancy|vacancies|offre|offres|emploi|"
     r"emplois|position|opening|listing)[a-z-]*[-/][^?#]{8,}", re.I)
+# A posting's URL ends in a slug naming the role, or an id. A category page
+# ("/jobs/Administrative", "/jobs/Marketing%20Sales") does not — and the first
+# run collected 29 of those from jobsinbrussels.com as if they were vacancies.
+BOARD_SLUG_RX = re.compile(r"(?:[a-z0-9]+[-_+]){2,}[a-z0-9]+|\d{4,}", re.I)
 BOARD_PER_PAGE = 60          # links kept per listing page
 BOARD_BUDGET_S = 240
 
@@ -709,7 +714,11 @@ def collect_boards(browser, budget_s=BOARD_BUDGET_S):
                 page.wait_for_timeout(1500)     # let the listing hydrate
                 html = page.content()
             except Exception as e:
-                print(f"  board {host}: {url} failed ({type(e).__name__})")
+                # The message matters: ERR_NAME_NOT_RESOLVED (wrong domain) and a
+                # timeout are different problems, and the type name alone said
+                # nothing on the first run.
+                print(f"  board {host}: {url} failed — "
+                      f"{' '.join(str(e).split())[:130]}")
                 continue
             finally:
                 if page:
@@ -736,6 +745,12 @@ def collect_boards(browser, budget_s=BOARD_BUDGET_S):
                     # the real posting URLs look like — the config can then be
                     # corrected instead of guessed at a second time.
                     seg = "/".join(parts.path.split("/")[:3]) or "/"
+                    host_paths[seg] += 1
+                    continue
+                # Looks like a job URL, but a board's own category pages sit
+                # under the same prefix. Require a last segment that names a
+                # role (several words) or carries an id.
+                if not BOARD_SLUG_RX.search(parts.path.rstrip("/").split("/")[-1]):
                     host_paths[seg] += 1
                     continue
                 href = urlunsplit((parts.scheme, parts.netloc, parts.path,
