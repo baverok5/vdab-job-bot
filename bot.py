@@ -17,6 +17,7 @@ import os
 import re
 import subprocess
 import time
+from collections import Counter
 from datetime import datetime, timezone
 from urllib.parse import urljoin, urlsplit, urlunsplit
 
@@ -717,15 +718,25 @@ def collect_boards(browser, budget_s=BOARD_BUDGET_S):
                     except Exception:
                         pass
             soup = BeautifulSoup(html, "html.parser")
+            anchors = soup.select("a[href]")
             added, sample = 0, []
-            for a in soup.select("a[href]"):
+            host_paths = Counter()          # same-host paths, for the miss diagnostic
+            for a in anchors:
                 href = urljoin(url, (a.get("href") or "").strip())
                 parts = urlsplit(href)
                 if parts.scheme not in ("http", "https"):
                     continue
+                if not parts.netloc.endswith(host):
+                    continue
                 # Match on the PATH only. Matching the whole URL would fire on
                 # the hostname itself for a board like "jobs-in-brussels.com".
-                if not parts.netloc.endswith(host) or not rx.search(parts.path):
+                if not rx.search(parts.path):
+                    # Record the shape (first two path segments) of the links we
+                    # skipped, so a run where nothing matches still reveals what
+                    # the real posting URLs look like — the config can then be
+                    # corrected instead of guessed at a second time.
+                    seg = "/".join(parts.path.split("/")[:3]) or "/"
+                    host_paths[seg] += 1
                     continue
                 href = urlunsplit((parts.scheme, parts.netloc, parts.path,
                                    parts.query, ""))
@@ -743,8 +754,15 @@ def collect_boards(browser, budget_s=BOARD_BUDGET_S):
                 if added >= BOARD_PER_PAGE:
                     break
             got += added
-            print(f"  board {host}: {url} -> +{added}"
-                  + (f" e.g. {sample}" if sample else " (no job links matched)"))
+            if added:
+                print(f"  board {host}: {url} -> +{added} e.g. {sample}")
+            else:
+                # No posting matched: was the page even reachable (anchor count),
+                # and what internal-link shapes did it actually carry?
+                top = [f"{seg}({n})" for seg, n in host_paths.most_common(6)]
+                print(f"  board {host}: {url} -> +0  "
+                      f"[{len(anchors)} links, {sum(host_paths.values())} on-site] "
+                      f"paths: {top or 'none on-site'}")
             time.sleep(1.5)
         print(f"  board {host}: {got} postings")
     print(f"  boards: collected {len(found)} postings in {int(time.time() - t0)}s")
