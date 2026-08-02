@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-02 14:12 UTC",
+ "updated": "2026-08-02 14:15 UTC",
  "jobs": [
   {
    "id": "4444924902",
@@ -8542,7 +8542,8 @@
    "internship": false,
    "cv_fit_v": 18,
    "closed_check": "2026-08-02 12:44",
-   "closed_check_v": 2
+   "closed_check_v": 2,
+   "lang": "en"
   },
   {
    "id": "74231451",
@@ -8561,7 +8562,8 @@
    "dutch_stretch": false,
    "exp_stretch": true,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "4444718723",
@@ -8582,7 +8584,8 @@
    "internship": false,
    "cv_fit_v": 18,
    "closed_check": "2026-08-02 12:44",
-   "closed_check_v": 2
+   "closed_check_v": 2,
+   "lang": "nl"
   },
   {
    "id": "74224774",
@@ -8620,7 +8623,8 @@
    "dutch_stretch": false,
    "exp_stretch": true,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "4443154620",
@@ -8662,7 +8666,8 @@
    "internship": false,
    "cv_fit_v": 18,
    "closed_check": "2026-08-02 12:44",
-   "closed_check_v": 2
+   "closed_check_v": 2,
+   "lang": "en"
   },
   {
    "id": "73990720",
@@ -8795,7 +8800,8 @@
    "dutch_stretch": false,
    "exp_stretch": true,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74182477",
@@ -8814,7 +8820,8 @@
    "dutch_stretch": false,
    "exp_stretch": true,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74171643",
@@ -8833,7 +8840,8 @@
    "dutch_stretch": false,
    "exp_stretch": true,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74210905",
@@ -8930,7 +8938,8 @@
    "internship": false,
    "cv_fit_v": 18,
    "closed_check": "2026-08-02 12:44",
-   "closed_check_v": 2
+   "closed_check_v": 2,
+   "lang": "en"
   },
   {
    "id": "74102645",
@@ -9084,7 +9093,8 @@
    "internship": false,
    "cv_fit_v": 18,
    "closed_check": "2026-08-02 12:44",
-   "closed_check_v": 2
+   "closed_check_v": 2,
+   "lang": "en"
   },
   {
    "id": "73955479",
