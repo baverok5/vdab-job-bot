@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-02 00:32 UTC",
+ "updated": "2026-08-02 00:40 UTC",
  "jobs": [
   {
    "id": "4446772012",
@@ -210,6 +210,26 @@
    "internship": true,
    "cv_fit_v": 18,
    "lang": "nl"
+  },
+  {
+   "id": "4443910902",
+   "url": "https://www.linkedin.com/jobs/view/4443910902",
+   "title": "Nhân viên Content SEO",
+   "company": "Oreni Việt Nam",
+   "location": "Unknown",
+   "match_score": 70,
+   "reason": "The job is a content SEO role that aligns well with the candidate's experience and goals, with no hard-fail criteria met.",
+   "apply_email": "info@oreni.vn",
+   "found_at": "2026-08-02 00:32",
+   "status": "new",
+   "details": "Role: Content SEO Staff\nMain tasks: Create and manage website content, write SEO-optimized articles for health and beauty, ideate and write product/news content, adhere to content plans.\nContract type: Full-time (Monday-Saturday)\nSchedule: Full-time (Monday-Saturday)\nLanguage: Vietnamese (implied by job posting language, English is likely acceptable for the candidate)",
+   "why_good": "Directly aligns with the candidate's core skills in SEO, content writing, and WordPress.\nIncludes keyword research and content creation, which are key strengths.\nThe role is junior-level, suitable for early-career professionals.\nCandidate has proven experience in on-page SEO and content writing.",
+   "why_bad": "",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 18
   },
   {
    "id": "4446018825",
@@ -4832,7 +4852,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74197803",
@@ -4851,7 +4872,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74181054",
@@ -4870,7 +4892,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74181955",
@@ -4889,7 +4912,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "73934911",
@@ -4908,7 +4932,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "en"
   },
   {
    "id": "73952519",
