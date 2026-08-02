@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-02 14:08 UTC",
+ "updated": "2026-08-02 14:12 UTC",
  "jobs": [
   {
    "id": "4444924902",
@@ -6715,7 +6715,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74221684",
@@ -6734,7 +6735,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74214950",
@@ -6753,7 +6755,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74182250",
@@ -6772,7 +6775,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74149803",
@@ -6791,7 +6795,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74234404",
@@ -8389,7 +8394,8 @@
    "internship": false,
    "cv_fit_v": 18,
    "closed_check": "2026-08-02 11:06",
-   "closed_check_v": 2
+   "closed_check_v": 2,
+   "lang": "nl"
   },
   {
    "id": "74105067",
