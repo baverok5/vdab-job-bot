@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-02 10:59 UTC",
+ "updated": "2026-08-02 11:03 UTC",
  "jobs": [
   {
    "id": "4444924902",
@@ -5850,7 +5850,8 @@
    "internship": true,
    "cv_fit_v": 18,
    "closed_check": "2026-08-02 09:27",
-   "closed_check_v": 2
+   "closed_check_v": 2,
+   "lang": "en"
   },
   {
    "id": "73996386",
@@ -5869,7 +5870,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74030415",
@@ -5888,7 +5890,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74144770",
@@ -5907,7 +5910,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "73962422",
@@ -5926,7 +5930,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74044396",
@@ -5945,7 +5950,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74190303",
@@ -5964,7 +5970,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74092876",
@@ -5983,7 +5990,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74119881",
@@ -6002,7 +6010,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74019661",
@@ -6021,7 +6030,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74018996",
