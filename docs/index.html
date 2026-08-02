@@ -797,6 +797,30 @@ function liAgeDays(j) {
 }
 const isStale = (j) => liAgeDays(j) > LI_MAX_AGE_DAYS;
 
+// Jobs that simply aren't in Belgium. LinkedIn's Belgium search returns plenty
+// of them — a Vietnamese-language SEO post, a Barcelona agency role, call-centre
+// work in Lisbon. Worth showing only if the work is doable from here: remote,
+// and in English.
+const BE_PLACE = /belgi|brussel|bruxelles|vlaan|flemish|wallon|antwerp|gent\b|ghent|leuven|louvain|li[eè]ge|charleroi|brugge|bruges|hasselt|mechelen|namur|namen|kortrijk|aalst|genk|oostende|ostend|sint-niklaas|roeselare|turnhout|zaventem|diegem|waterloo|wavre|mons|tournai|ieper|lier\b|herentals|deinze|dendermonde|halle|vilvoorde|tienen|geel\b|mol\b|beveren|wilrijk|berchem|kontich|aartselaar|edegem|schoten|ranst|limburg|brabant|hainaut|west-vl|oost-vl|kempen|ardennes|eupen|arlon|verviers/i;
+const FOREIGN_PLACE = /\b(spain|espa[nñ]a|portugal|greece|france|germany|deutschland|netherlands|holland|austria|[oö]sterreich|vietnam|vi[eệ]t\s*nam|india|poland|polska|romania|bulgaria|czech|hungary|turkey|t[uü]rkiye|morocco|egypt|united arab|united states|u\.?s\.?a\.?|canada|brazil|mexico|philippines|indonesia|malaysia|singapore|china|japan|korea|ukraine|serbia|croatia|slovenia|slovakia|lithuania|latvia|estonia|finland|sweden|norway|denmark|iceland|ireland|united kingdom|england|scotland|switzerland|italy|italia|malta|cyprus|israel|south africa|nigeria|kenya|argentina|colombia|chile|peru|australia|new zealand|pakistan|bangladesh|sri lanka|nepal|thailand|taiwan|hong kong|barcelona|madrid|valencia|sevilla|lisbon|lisboa|porto|athens|thessaloniki|paris|lyon|marseille|bordeaux|toulouse|nantes|berlin|munich|m[uü]nchen|hamburg|cologne|k[oö]ln|frankfurt|d[uü]sseldorf|stuttgart|amsterdam|rotterdam|utrecht|eindhoven|the hague|den haag|maastricht|breda|tilburg|vienna|wien|zurich|z[uü]rich|geneva|gen[eè]ve|basel|london|manchester|birmingham|dublin|milan|milano|rome|roma|turin|naples|warsaw|warszawa|krak[oó]w|bucharest|sofia|prague|praha|budapest|istanbul|ankara|izmir|hanoi|ho chi minh|saigon|bangalore|bengaluru|mumbai|new delhi|hyderabad|chennai|cairo|casablanca|tunis|lagos|nairobi|s[aã]o paulo|buenos aires|toronto|vancouver|new york|san francisco|dubai)\b/i;
+// Writing systems no Belgian vacancy uses — catches a posting whose location
+// says "Unknown" but whose title is Vietnamese.
+const NONLOCAL_SCRIPT = /[ĂăƠơƯưẠ-ỹĐđ]|[Ѐ-ӿ֐-׿؀-ۿ]|[ऀ-ॿ฀-๿]|[぀-ヿ一-鿿가-힯]/;
+const REMOTE_OK = /\bremote\b|work from home|telewerk|thuiswerk|\banywhere\b|\bhybrid\b/i;
+const ENGLISH_OK = /\benglish\b|\bengels\b/i;
+
+function isFarAway(j) {
+  const loc = j.location || "";
+  if (NONLOCAL_SCRIPT.test(`${j.title || ""} ${j.company || ""} ${loc}`)) return true;
+  if (BE_PLACE.test(loc)) return false;
+  return FOREIGN_PLACE.test(loc) || FOREIGN_PLACE.test(j.company || "");
+}
+function isUnreachable(j) {
+  if (!isFarAway(j)) return false;
+  const blob = `${j.location || ""} ${j.details || ""}`;
+  return !(REMOTE_OK.test(blob) && ENGLISH_OK.test(blob));
+}
+
 function render() {
   const st = getStatus();
   NEWEST_LI_ID = Math.max(0, ...[...(DATA.jobs || []), ...(DATA.listing || [])]
@@ -809,7 +833,7 @@ function render() {
     if (s === "closed") continue;   // you marked it dead — never show it again
     // Too old to still be open: keep it out of Ready, but leave it visible if
     // you already acted on it, so your Applied history stays intact.
-    if (!s && isStale(j)) continue;
+    if (!s && (isStale(j) || isUnreachable(j))) continue;
     if (s === "applied") buckets.applied.push(j);
     else if (s === "skipped") buckets.skipped.push(j);
     else buckets.new.push(j);
