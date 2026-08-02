@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-01 15:00 UTC",
+ "updated": "2026-08-02 08:30 UTC",
  "jobs": [
   {
    "id": "4446772012",
@@ -20,7 +20,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 14:12",
+   "closed_check": "2026-08-02 07:30",
    "closed_check_v": 2
   },
   {
@@ -42,8 +42,88 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 14:12",
+   "closed_check": "2026-08-02 07:30",
    "closed_check_v": 2
+  },
+  {
+   "id": "4441045397",
+   "url": "https://www.linkedin.com/jobs/view/4441045397",
+   "title": "Stage: creatieve content marketeer",
+   "company": "Unknown",
+   "location": "Antwerpen",
+   "match_score": 85,
+   "reason": "This is a paid internship that aligns with the candidate's goal field and requires no French.",
+   "apply_email": "",
+   "found_at": "2026-08-02 08:17",
+   "status": "new",
+   "details": "Internship in creative content marketing\nMain tasks: social media content creation (visuals, video), photography/videography, campaign ideation, copywriting\nContract type: Voluntary, unpaid internship\nSchedule: Minimum 8 weeks, flexible period (during school terms or summer vacation)\nLanguage: Dutch (implied, as the posting is in Dutch and doesn't mention English acceptance)\nPay: Unpaid",
+   "why_good": "This is an internship, so experience and degree requirements are waived.\nIt's in the goal field of content marketing and digital creativity.\nThe candidate has relevant experience in content creation (writing, WordPress) and web design.\nNo French is required.",
+   "why_bad": "",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": true,
+   "lang": "nl",
+   "cv_fit_v": 18
+  },
+  {
+   "id": "4444471245",
+   "url": "https://www.linkedin.com/jobs/view/4444471245",
+   "title": "Stage E-commerce",
+   "company": "Van de Velde",
+   "location": "Unknown",
+   "match_score": 85,
+   "reason": "This is a paid internship opportunity in e-commerce and digital marketing, aligning well with the candidate's goals and experience.",
+   "apply_email": "",
+   "found_at": "2026-08-02 08:16",
+   "status": "new",
+   "details": "Internship Role: E-commerce Intern\nMain Tasks: Email marketing (newsletters, B2C mailings), website optimization (daily checks, seasonal updates), SEO optimization of web pages and blog posts, competitor analysis.\nContract Type: Paid internship (BIS contract if graduated).\nSchedule: 6 months, starting August 26, 2024.\nLanguage: Dutch and English required.\nPay: Paid.",
+   "why_good": "Internship role in e-commerce and digital marketing, closely matching the candidate's GOAL FIELD.\nIncludes tasks like website optimization and SEO, directly relevant to the candidate's recent experience at Episto and on mirooks.com.\nThe candidate has professional English and B1 Dutch, which is sufficient for a role requiring Dutch and English.\nAs an internship, it's lenient on experience requirements and doesn't require a degree, fitting the candidate's profile.\nThis is a paid/professional internship, not a student-only one requiring a school convention.",
+   "why_bad": "",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": true,
+   "lang": "nl",
+   "cv_fit_v": 18
+  },
+  {
+   "id": "4445536896",
+   "url": "https://www.linkedin.com/jobs/view/4445536896",
+   "title": "Digital Marketing & Growth Intern",
+   "company": "Zerwaste",
+   "location": "Unknown",
+   "match_score": 85,
+   "reason": "This is a paid internship in digital marketing that fits the candidate's goals and experience level.",
+   "apply_email": "",
+   "found_at": "2026-08-02 08:15",
+   "status": "new",
+   "details": "Internship role with a minimum of 6 months.\nFocus on online content creation, inbound campaigns, user experience improvement, and marketing concepts.\nTasks include content creation (articles, videos, photos), researching growth hacking techniques, and managing corporate events.\nRole is in English, with a requirement for native Dutch or French (candidate has B1 Dutch).\nContract type, schedule, and pay are not specified.",
+   "why_good": "- Internship role in the desired field of digital marketing.\n- Focus on content creation, SEO, and web aspects aligns with candidate's experience.\n- Practical experience is valuable for an early-career candidate.\n- The role explicitly mentions coaching from senior profiles.",
+   "why_bad": "- Requires native Dutch or French, but candidate only has B1 Dutch and no French.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": true,
+   "lang": "en",
+   "cv_fit_v": 18
+  },
+  {
+   "id": "4447270650",
+   "url": "https://www.linkedin.com/jobs/view/4447270650",
+   "title": "Social Media Manager",
+   "company": "Trosort",
+   "location": "Hybrid / Remote",
+   "match_score": 85,
+   "reason": "This is an unpaid internship role focused on social media and content creation, which aligns well with the candidate's goal field and skills, despite the lack of formal degree.",
+   "apply_email": "matteo@trosort.com",
+   "found_at": "2026-08-02 08:14",
+   "status": "new",
+   "details": "Role: Social Media Manager (internship).\nMain tasks: Manage and grow social media channels (TikTok, Instagram, Facebook, Shorts), create video content, write lead-generating posts.\nContract type: Unpaid (for portfolio/university credit).\nSchedule: Not specified.\nLanguage: English (implied, as the posting doesn't specify language requirements and mentions a team to support).\nPay: Unpaid.",
+   "why_good": "Matches goal field (digital marketing, content, web).\nLeverages experience in content writing and social media coordination.\nOpportunity to build and manage channels from scratch, aligning with autonomy and creative ownership criteria.\nPortfolio and drive are valued over formal degrees, fitting candidate's profile.",
+   "why_bad": "",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": true,
+   "lang": "en",
+   "cv_fit_v": 18
   },
   {
    "id": "4447268512",
@@ -64,7 +144,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 12:04",
+   "closed_check": "2026-08-01 23:50",
    "closed_check_v": 2
   },
   {
@@ -86,7 +166,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 14:12",
+   "closed_check": "2026-08-02 07:30",
    "closed_check_v": 2
   },
   {
@@ -108,7 +188,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 14:12",
+   "closed_check": "2026-08-02 07:30",
    "closed_check_v": 2
   },
   {
@@ -212,6 +292,68 @@
    "lang": "nl"
   },
   {
+   "id": "4444904700",
+   "url": "https://www.linkedin.com/jobs/view/4444904700",
+   "title": "Digital marketing / Sales Support Trainee",
+   "company": "Foodm",
+   "location": "Unknown",
+   "match_score": 70,
+   "reason": "The role aligns well with the candidate's digital marketing and web development skills and requires conversational Dutch.",
+   "apply_email": "",
+   "found_at": "2026-08-02 08:16",
+   "status": "new",
+   "details": "Internship role focusing on website, ads, landing pages, Hubspot, and lead generation.\nContract type not specified.\nSchedule not specified.\nLanguages: Dutch, English.\nPay not stated.",
+   "why_good": "- Role is in digital marketing and sales support, aligning with candidate's goal field.\n- Requires WordPress and Canva, which candidate has experience with.\n- Language requirement is Dutch (conversational) and English, fitting candidate's B1 Dutch.\n- Explicitly mentions experimentation and learning on the job, suitable for early-career.",
+   "why_bad": "",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": true,
+   "lang": "nl",
+   "cv_fit_v": 18
+  },
+  {
+   "id": "4444952923",
+   "url": "https://www.linkedin.com/jobs/view/4444952923",
+   "title": "STAGIAIR (X/M/V) SOCIAL MEDIA & CONTENT CREATOR",
+   "company": "Film Fest Gent",
+   "location": "Unknown",
+   "match_score": 70,
+   "reason": "This is a paid internship in social media and content creation, fitting the candidate's goal field and being an accessible role.",
+   "apply_email": "astrid@filmfestival.be",
+   "found_at": "2026-08-02 08:15",
+   "status": "new",
+   "details": "Role: Intern Social Media & Content Creator.\nMain tasks: Creating social media content (photo/video/graphics), writing copy, managing social channels, translating festival news into creative formats.\nContract type: Internship assignment (mid-August to October 2026).\nSchedule: Flexible, occasional evening and weekend work.\nLanguage: Dutch and English.\nPay: Not stated.",
+   "why_good": "Fits the candidate's goal field in digital marketing, content creation, and web design (social media aspects).\nThe candidate has experience with content writing, social media integration, and using tools like Canva.\nIt's an internship, so experience and degree requirements are lenient.\nTasks include content creation, writing, and managing social media, which align with the candidate's skills.",
+   "why_bad": "",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": true,
+   "lang": "nl",
+   "cv_fit_v": 18
+  },
+  {
+   "id": "4443910902",
+   "url": "https://www.linkedin.com/jobs/view/4443910902",
+   "title": "Nhân viên Content SEO",
+   "company": "Oreni Việt Nam",
+   "location": "Unknown",
+   "match_score": 70,
+   "reason": "The job is a content SEO role that aligns well with the candidate's experience and goals, with no hard-fail criteria met.",
+   "apply_email": "info@oreni.vn",
+   "found_at": "2026-08-02 00:32",
+   "status": "new",
+   "details": "Role: Content SEO Staff\nMain tasks: Create and manage website content, write SEO-optimized articles for health and beauty, ideate and write product/news content, adhere to content plans.\nContract type: Full-time (Monday-Saturday)\nSchedule: Full-time (Monday-Saturday)\nLanguage: Vietnamese (implied by job posting language, English is likely acceptable for the candidate)",
+   "why_good": "Directly aligns with the candidate's core skills in SEO, content writing, and WordPress.\nIncludes keyword research and content creation, which are key strengths.\nThe role is junior-level, suitable for early-career professionals.\nCandidate has proven experience in on-page SEO and content writing.",
+   "why_bad": "",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 18,
+   "closed_check": "2026-08-02 07:30",
+   "closed_check_v": 2
+  },
+  {
    "id": "4446018825",
    "url": "https://www.linkedin.com/jobs/view/4446018825",
    "title": "Digital Marketing Specialist",
@@ -230,7 +372,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 12:04",
+   "closed_check": "2026-08-01 23:50",
    "closed_check_v": 2
   },
   {
@@ -292,7 +434,7 @@
    "internship": false,
    "cv_fit_v": 18,
    "lang": "nl",
-   "closed_check": "2026-08-01 12:04",
+   "closed_check": "2026-08-01 23:50",
    "closed_check_v": 2
   },
   {
@@ -434,7 +576,7 @@
    "internship": true,
    "cv_fit_v": 18,
    "lang": "en",
-   "closed_check": "2026-08-01 12:04",
+   "closed_check": "2026-08-01 23:50",
    "closed_check_v": 2
   },
   {
@@ -996,7 +1138,7 @@
    "internship": false,
    "cv_fit_v": 18,
    "lang": "en",
-   "closed_check": "2026-08-01 12:04",
+   "closed_check": "2026-08-01 23:50",
    "closed_check_v": 2
   },
   {
@@ -1018,7 +1160,7 @@
    "internship": true,
    "cv_fit_v": 18,
    "lang": "en",
-   "closed_check": "2026-08-01 12:04",
+   "closed_check": "2026-08-01 23:50",
    "closed_check_v": 2
   },
   {
@@ -1280,7 +1422,7 @@
    "internship": true,
    "cv_fit_v": 18,
    "lang": "en",
-   "closed_check": "2026-08-01 12:04",
+   "closed_check": "2026-08-01 23:50",
    "closed_check_v": 2
   },
   {
@@ -1302,7 +1444,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 12:04",
+   "closed_check": "2026-08-01 23:50",
    "closed_check_v": 2
   },
   {
@@ -1564,7 +1706,7 @@
    "internship": false,
    "cv_fit_v": 18,
    "lang": "nl",
-   "closed_check": "2026-08-01 12:04",
+   "closed_check": "2026-08-01 23:50",
    "closed_check_v": 2
   },
   {
@@ -1706,7 +1848,7 @@
    "internship": false,
    "cv_fit_v": 18,
    "lang": "nl",
-   "closed_check": "2026-08-01 12:04",
+   "closed_check": "2026-08-01 23:50",
    "closed_check_v": 2
   },
   {
@@ -1968,7 +2110,7 @@
    "internship": false,
    "cv_fit_v": 18,
    "lang": "en",
-   "closed_check": "2026-08-01 12:04",
+   "closed_check": "2026-08-01 23:50",
    "closed_check_v": 2
   },
   {
@@ -1990,7 +2132,7 @@
    "internship": false,
    "cv_fit_v": 18,
    "lang": "en",
-   "closed_check": "2026-08-01 12:04",
+   "closed_check": "2026-08-01 23:50",
    "closed_check_v": 2
   },
   {
@@ -2112,7 +2254,7 @@
    "internship": true,
    "cv_fit_v": 18,
    "lang": "en",
-   "closed_check": "2026-08-01 12:04",
+   "closed_check": "2026-08-01 23:50",
    "closed_check_v": 2
   },
   {
@@ -2134,7 +2276,7 @@
    "internship": false,
    "cv_fit_v": 18,
    "lang": "en",
-   "closed_check": "2026-08-01 12:04",
+   "closed_check": "2026-08-01 23:50",
    "closed_check_v": 2
   },
   {
@@ -2396,7 +2538,7 @@
    "internship": false,
    "cv_fit_v": 18,
    "lang": "en",
-   "closed_check": "2026-08-01 12:04",
+   "closed_check": "2026-08-01 23:50",
    "closed_check_v": 2
   },
   {
@@ -2618,7 +2760,7 @@
    "internship": false,
    "cv_fit_v": 18,
    "lang": "en",
-   "closed_check": "2026-08-01 12:04",
+   "closed_check": "2026-08-01 23:50",
    "closed_check_v": 2
   },
   {
@@ -2660,7 +2802,7 @@
    "internship": false,
    "cv_fit_v": 18,
    "lang": "en",
-   "closed_check": "2026-08-01 12:04",
+   "closed_check": "2026-08-01 23:50",
    "closed_check_v": 2
   },
   {
@@ -3062,7 +3204,7 @@
    "internship": false,
    "cv_fit_v": 18,
    "lang": "nl",
-   "closed_check": "2026-08-01 12:04",
+   "closed_check": "2026-08-01 23:50",
    "closed_check_v": 2
   },
   {
@@ -3544,7 +3686,7 @@
    "internship": true,
    "cv_fit_v": 18,
    "lang": "en",
-   "closed_check": "2026-08-01 12:04",
+   "closed_check": "2026-08-01 23:50",
    "closed_check_v": 2
   },
   {
@@ -4065,7 +4207,7 @@
    "exp_stretch": false,
    "internship": false,
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 12:04",
+   "closed_check": "2026-08-01 23:50",
    "closed_check_v": 2,
    "lang": "en"
   },
@@ -4127,7 +4269,7 @@
    "exp_stretch": false,
    "internship": false,
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 12:04",
+   "closed_check": "2026-08-01 23:50",
    "closed_check_v": 2,
    "lang": "nl"
   },
@@ -4209,7 +4351,7 @@
    "exp_stretch": false,
    "internship": false,
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 12:04",
+   "closed_check": "2026-08-01 23:50",
    "closed_check_v": 2,
    "lang": "en"
   },
@@ -4730,7 +4872,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "4429558435",
@@ -4750,8 +4893,9 @@
    "exp_stretch": false,
    "internship": true,
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 12:04",
-   "closed_check_v": 2
+   "closed_check": "2026-08-01 23:50",
+   "closed_check_v": 2,
+   "lang": "en"
   },
   {
    "id": "73971350",
@@ -4770,7 +4914,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74146524",
@@ -4789,7 +4934,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74019673",
@@ -4808,7 +4954,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74084822",
@@ -4827,7 +4974,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74197803",
@@ -4846,7 +4994,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74181054",
@@ -4865,7 +5014,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74181955",
@@ -4884,7 +5034,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "73934911",
@@ -4903,7 +5054,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "en"
   },
   {
    "id": "73952519",
@@ -4922,7 +5074,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74064656",
@@ -4941,7 +5094,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "73977690",
@@ -4960,7 +5114,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74013624",
@@ -4979,7 +5134,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74037736",
@@ -4998,7 +5154,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74128965",
@@ -5017,7 +5174,8 @@
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74030376",
@@ -5132,7 +5290,7 @@
    "exp_stretch": false,
    "internship": false,
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 12:04",
+   "closed_check": "2026-08-01 23:50",
    "closed_check_v": 2
   },
   {
@@ -5153,7 +5311,7 @@
    "exp_stretch": false,
    "internship": true,
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 12:04",
+   "closed_check": "2026-08-01 23:50",
    "closed_check_v": 2
   },
   {
@@ -5478,7 +5636,7 @@
    "exp_stretch": false,
    "internship": false,
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 12:04",
+   "closed_check": "2026-08-01 23:50",
    "closed_check_v": 2
   },
   {
@@ -5651,7 +5809,7 @@
    "exp_stretch": false,
    "internship": false,
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 12:04",
+   "closed_check": "2026-08-01 23:50",
    "closed_check_v": 2
   },
   {
@@ -6053,7 +6211,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 12:04",
+   "closed_check": "2026-08-01 23:50",
    "closed_check_v": 2
   },
   {
@@ -6094,7 +6252,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 12:04",
+   "closed_check": "2026-08-01 23:50",
    "closed_check_v": 2
   },
   {
@@ -6116,7 +6274,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 12:04",
+   "closed_check": "2026-08-01 23:50",
    "closed_check_v": 2
   },
   {
@@ -6138,7 +6296,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 12:04",
+   "closed_check": "2026-08-01 23:50",
    "closed_check_v": 2
   },
   {
@@ -6180,6 +6338,26 @@
    "cv_fit_v": 18
   },
   {
+   "id": "74240959",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74240959/sea-social-ads-specialist",
+   "title": "SEA & Social Ads Specialist",
+   "company": "Jobat",
+   "location": "WAREGEM",
+   "match_score": 65,
+   "reason": "The role fits the candidate's goal field and experience, with minimal gaps.",
+   "apply_email": "",
+   "found_at": "2026-08-02 08:14",
+   "status": "new",
+   "details": "Role: SEA & Social Ads Specialist.\nMain Tasks: Managing Google Ads and social advertising, setting up tracking, analyzing campaigns, advising clients.\nContract Type: Permanent, full-time, day work.\nSchedule: Day work.\nLanguage: Dutch (implied, no French)\nPay: Not stated.",
+   "why_good": "The role is directly in the candidate's goal field of digital marketing and performance marketing.\nIt requires experience with Google Ads, Meta Ads, and Analytics, which aligns with the candidate's SEMrush, Ahrefs, Google Analytics, and Google Ads experience.\nIt states 'Ervaring: niet van belang' (Experience: not relevant) and 'Bachelor or equivalent by experience', making it accessible despite the candidate's short work history.",
+   "why_bad": "",
+   "dutch_stretch": false,
+   "exp_stretch": true,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 18
+  },
+  {
    "id": "4447515466",
    "url": "https://www.linkedin.com/jobs/view/4447515466",
    "title": "Marketing Professionals (various roles)",
@@ -6198,7 +6376,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 14:12",
+   "closed_check": "2026-08-02 07:30",
    "closed_check_v": 2
   },
   {
@@ -6220,7 +6398,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 12:04",
+   "closed_check": "2026-08-01 23:50",
    "closed_check_v": 2
   },
   {
@@ -6242,7 +6420,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 12:04",
+   "closed_check": "2026-08-01 23:50",
    "closed_check_v": 2
   },
   {
@@ -6264,7 +6442,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 12:04",
+   "closed_check": "2026-08-01 23:50",
    "closed_check_v": 2
   },
   {
@@ -6286,7 +6464,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 12:04",
+   "closed_check": "2026-08-01 23:50",
    "closed_check_v": 2
   },
   {
@@ -6308,7 +6486,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 12:04",
+   "closed_check": "2026-08-01 23:50",
    "closed_check_v": 2
   },
   {
@@ -6330,7 +6508,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 12:04",
+   "closed_check": "2026-08-01 23:50",
    "closed_check_v": 2
   },
   {
@@ -6352,7 +6530,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 14:12",
+   "closed_check": "2026-08-02 07:30",
    "closed_check_v": 2
   },
   {
@@ -6450,7 +6628,7 @@
    "internship": false,
    "cv_fit_v": 18,
    "lang": "en",
-   "closed_check": "2026-08-01 14:12",
+   "closed_check": "2026-08-02 07:30",
    "closed_check_v": 2
   },
   {
@@ -6472,7 +6650,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 12:04",
+   "closed_check": "2026-08-01 23:50",
    "closed_check_v": 2
   },
   {
@@ -6494,7 +6672,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 14:12",
+   "closed_check": "2026-08-02 07:30",
    "closed_check_v": 2
   },
   {
@@ -6629,7 +6807,7 @@
    "exp_stretch": true,
    "internship": false,
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 14:12",
+   "closed_check": "2026-08-02 07:30",
    "closed_check_v": 2,
    "lang": "en"
   },
@@ -6652,7 +6830,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 14:12",
+   "closed_check": "2026-08-02 07:30",
    "closed_check_v": 2
   },
   {
@@ -6674,7 +6852,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 14:12",
+   "closed_check": "2026-08-02 07:30",
    "closed_check_v": 2
   },
   {
@@ -6752,7 +6930,7 @@
    "exp_stretch": true,
    "internship": false,
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 14:12",
+   "closed_check": "2026-08-02 07:30",
    "closed_check_v": 2
   },
   {
@@ -6849,7 +7027,7 @@
    "exp_stretch": true,
    "internship": false,
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 14:12",
+   "closed_check": "2026-08-02 07:30",
    "closed_check_v": 2
   },
   {
@@ -6927,7 +7105,7 @@
    "exp_stretch": true,
    "internship": false,
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 14:12",
+   "closed_check": "2026-08-02 07:30",
    "closed_check_v": 2
   },
   {
@@ -6986,7 +7164,7 @@
    "exp_stretch": true,
    "internship": false,
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 14:12",
+   "closed_check": "2026-08-02 07:30",
    "closed_check_v": 2
   },
   {
@@ -7007,7 +7185,7 @@
    "exp_stretch": true,
    "internship": false,
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 14:12",
+   "closed_check": "2026-08-02 07:30",
    "closed_check_v": 2
   },
   {
@@ -7066,7 +7244,7 @@
    "exp_stretch": true,
    "internship": false,
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 14:12",
+   "closed_check": "2026-08-02 07:30",
    "closed_check_v": 2
   },
   {
@@ -7087,7 +7265,7 @@
    "exp_stretch": true,
    "internship": false,
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 14:12",
+   "closed_check": "2026-08-02 07:30",
    "closed_check_v": 2
   },
   {
@@ -7146,7 +7324,7 @@
    "exp_stretch": true,
    "internship": false,
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 14:12",
+   "closed_check": "2026-08-02 07:30",
    "closed_check_v": 2
   },
   {
@@ -7243,7 +7421,7 @@
    "exp_stretch": true,
    "internship": false,
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 14:12",
+   "closed_check": "2026-08-02 07:30",
    "closed_check_v": 2
   },
   {
@@ -7264,7 +7442,7 @@
    "exp_stretch": true,
    "internship": false,
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 14:12",
+   "closed_check": "2026-08-02 07:30",
    "closed_check_v": 2
   },
   {
@@ -7285,7 +7463,7 @@
    "exp_stretch": true,
    "internship": false,
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 14:12",
+   "closed_check": "2026-08-02 07:30",
    "closed_check_v": 2
   },
   {
@@ -7306,7 +7484,7 @@
    "exp_stretch": true,
    "internship": false,
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 14:12",
+   "closed_check": "2026-08-02 07:30",
    "closed_check_v": 2
   },
   {
@@ -7327,7 +7505,7 @@
    "exp_stretch": true,
    "internship": false,
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 14:12",
+   "closed_check": "2026-08-02 07:30",
    "closed_check_v": 2
   },
   {
@@ -7349,7 +7527,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 12:04",
+   "closed_check": "2026-08-01 23:50",
    "closed_check_v": 2
   },
   {
@@ -7408,8 +7586,28 @@
    "exp_stretch": true,
    "internship": false,
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 14:12",
+   "closed_check": "2026-08-02 07:30",
    "closed_check_v": 2
+  },
+  {
+   "id": "74241978",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74241978/sea-social-ads-specialist",
+   "title": "SEA & Social Ads Specialist",
+   "company": "Office Roeselare",
+   "location": "WAREGEM",
+   "match_score": 40,
+   "reason": "The role is a good fit for the candidate's digital marketing goals and experience, although it requires more experience than they currently have.",
+   "apply_email": "",
+   "found_at": "2026-08-02 08:13",
+   "status": "new",
+   "details": "Role: SEA & Social Ads Specialist.\nMain tasks: Manage Google Ads and social advertising, set up tracking, analyze campaigns, advise clients.\nContract type: Permanent, full-time, day shift.\nSchedule: Flexible working hours.\nLanguage: Good knowledge of Dutch required (candidate has B1).\nPay: €2500 - €3500 gross per month.",
+   "why_good": "The role aligns perfectly with the candidate's goal field of digital marketing and SEO.\nThe candidate has practical experience with Google Ads, Google Analytics, SEMrush, and Ahrefs, which are relevant tools.\nThe job explicitly states 'Bachelor or equivalent by experience', making the candidate eligible despite not having a completed degree.\nThe candidate's experience in on-page SEO, content writing, and WordPress aligns with the broader digital marketing context.\nThe candidate has conversational Dutch (B1), which meets the 'Goed' requirement as stated.",
+   "why_bad": "",
+   "dutch_stretch": false,
+   "exp_stretch": true,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 18
   },
   {
    "id": "4445910660",
@@ -7430,7 +7628,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 14:12",
+   "closed_check": "2026-08-02 07:30",
    "closed_check_v": 2
   },
   {
@@ -7470,7 +7668,7 @@
    "exp_stretch": true,
    "internship": false,
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 14:12",
+   "closed_check": "2026-08-02 07:30",
    "closed_check_v": 2
   },
   {
@@ -7491,7 +7689,7 @@
    "exp_stretch": true,
    "internship": false,
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 14:12",
+   "closed_check": "2026-08-02 07:30",
    "closed_check_v": 2
   },
   {
@@ -7551,7 +7749,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 12:04",
+   "closed_check": "2026-08-02 07:30",
    "closed_check_v": 2
   },
   {
@@ -7573,7 +7771,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 14:12",
+   "closed_check": "2026-08-02 07:30",
    "closed_check_v": 2
   },
   {
@@ -7595,7 +7793,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 14:12",
+   "closed_check": "2026-08-02 07:30",
    "closed_check_v": 2
   },
   {
@@ -7617,7 +7815,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 14:12",
+   "closed_check": "2026-08-02 07:30",
    "closed_check_v": 2
   },
   {
@@ -7638,7 +7836,7 @@
    "exp_stretch": true,
    "internship": false,
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 14:12",
+   "closed_check": "2026-08-02 07:30",
    "closed_check_v": 2
   },
   {
@@ -7678,7 +7876,7 @@
    "exp_stretch": true,
    "internship": false,
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 14:12",
+   "closed_check": "2026-08-02 07:30",
    "closed_check_v": 2
   },
   {
@@ -7737,7 +7935,7 @@
    "exp_stretch": true,
    "internship": false,
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 14:12",
+   "closed_check": "2026-08-02 07:30",
    "closed_check_v": 2
   },
   {
@@ -7758,7 +7956,7 @@
    "exp_stretch": true,
    "internship": false,
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 14:12",
+   "closed_check": "2026-08-02 07:30",
    "closed_check_v": 2
   },
   {
@@ -8026,7 +8224,7 @@
    "exp_stretch": true,
    "internship": false,
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 14:12",
+   "closed_check": "2026-08-02 07:30",
    "closed_check_v": 2
   },
   {
@@ -8180,7 +8378,7 @@
    "exp_stretch": true,
    "internship": false,
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 14:12",
+   "closed_check": "2026-08-02 07:30",
    "closed_check_v": 2
   },
   {
@@ -8258,7 +8456,7 @@
    "exp_stretch": true,
    "internship": false,
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 14:12",
+   "closed_check": "2026-08-01 17:55",
    "closed_check_v": 2
   },
   {
@@ -8279,7 +8477,7 @@
    "exp_stretch": true,
    "internship": false,
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 14:12",
+   "closed_check": "2026-08-01 17:55",
    "closed_check_v": 2
   },
   {
@@ -8300,7 +8498,7 @@
    "exp_stretch": true,
    "internship": false,
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 14:12",
+   "closed_check": "2026-08-01 23:50",
    "closed_check_v": 2
   },
   {
@@ -8378,7 +8576,7 @@
    "exp_stretch": true,
    "internship": false,
    "cv_fit_v": 18,
-   "closed_check": "2026-08-01 07:43",
+   "closed_check": "2026-08-02 07:30",
    "closed_check_v": 2
   },
   {
@@ -8478,6 +8676,71 @@
   }
  ],
  "listing": [
+  {
+   "id": "74293327",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74293327/elektricien-machinebouw",
+   "title": "Elektricien machinebouw"
+  },
+  {
+   "id": "74293197",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74293197/ploegchef-bouw-met-bestelwagen",
+   "title": "Ploegchef bouw met bestelwagen"
+  },
+  {
+   "id": "74293196",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74293196/ploegchef-plaatser-brandcompartimentering",
+   "title": "Ploegchef plaatser brandcompartimentering"
+  },
+  {
+   "id": "74293160",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74293160/recruiter-bedrijfswagen",
+   "title": "Recruiter bedrijfswagen"
+  },
+  {
+   "id": "74293158",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74293158/hr-communicatie-officer",
+   "title": "Hr communicatie officer"
+  },
+  {
+   "id": "74293156",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74293156/internal-sales-medewerker",
+   "title": "Internal sales medewerker"
+  },
+  {
+   "id": "74293138",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74293138/project-manager",
+   "title": "Project manager"
+  },
+  {
+   "id": "74293119",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74293119/commercieel-medewerker",
+   "title": "Commercieel medewerker"
+  },
+  {
+   "id": "74293111",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74293111/customer-service-medewerker",
+   "title": "Customer service medewerker"
+  },
+  {
+   "id": "74293021",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74293021/management-assistant-office-manager-m-v-x",
+   "title": "Management assistant office manager m v x"
+  },
+  {
+   "id": "74293019",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74293019/sharepoint-spfx-developer-java-spring-boot",
+   "title": "Sharepoint spfx developer java spring boot"
+  },
+  {
+   "id": "74293012",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74293012/customer-service-officer-voltijds",
+   "title": "Customer service officer voltijds"
+  },
+  {
+   "id": "74293008",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74293008/junior-elektricien",
+   "title": "Junior elektricien"
+  },
   {
    "id": "74292957",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74292957/accountmanager",
@@ -9804,6 +10067,11 @@
    "title": "Technisch tekenaar afwisseling werfopvolging"
   },
   {
+   "id": "74292352",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74292352/service-technieker-servicewagen-12-adv-dagen-internationa",
+   "title": "Service technieker servicewagen 12 adv dagen internationa"
+  },
+  {
    "id": "74292286",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74292286/elektromechanieker-dagwerk-ardooie-modern",
    "title": "Elektromechanieker dagwerk ardooie modern"
@@ -10154,6 +10422,11 @@
    "title": "Technisch commercieel medewerker"
   },
   {
+   "id": "74290612",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74290612/customer-service-medewerker",
+   "title": "Customer service medewerker"
+  },
+  {
    "id": "74290607",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74290607/vertegenwoordiger",
    "title": "Vertegenwoordiger"
@@ -10402,6 +10675,11 @@
    "id": "74288607",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74288607/recruiter",
    "title": "Recruiter"
+  },
+  {
+   "id": "74288565",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74288565/data-analist",
+   "title": "Data analist"
   },
   {
    "id": "74288504",
@@ -11247,6 +11525,11 @@
    "id": "74282476",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74282476/marketing-officer-franstalig",
    "title": "Marketing officer franstalig"
+  },
+  {
+   "id": "74282452",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74282452/customer-service-team-leader",
+   "title": "Customer service team leader"
   },
   {
    "id": "74282359",
@@ -12217,6 +12500,11 @@
    "id": "74276738",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74276738/preparateur-de-commandes-en-para-pharmacie",
    "title": "Preparateur de commandes en para pharmacie"
+  },
+  {
+   "id": "74276710",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74276710/customer-service-medewerker-bedrijfswagen-mechelen",
+   "title": "Customer service medewerker bedrijfswagen mechelen"
   },
   {
    "id": "74276678",
@@ -17884,9 +18172,24 @@
    "title": "Junior office marketing assistant"
   },
   {
+   "id": "74243654",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74243654/ploegchef",
+   "title": "Ploegchef"
+  },
+  {
    "id": "74243653",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74243653/ploegchef-brandcompartimentering",
    "title": "Ploegchef brandcompartimentering"
+  },
+  {
+   "id": "74243652",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74243652/ploegchef-met-camionette-regio-lendelede",
+   "title": "Ploegchef met camionette regio lendelede"
+  },
+  {
+   "id": "74243651",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74243651/ploegchef-bouw",
+   "title": "Ploegchef bouw"
   },
   {
    "id": "74243641",
@@ -24532,6 +24835,11 @@
    "id": "74214155",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74214155/ploegchef-2-pl-nacht",
    "title": "Ploegchef 2 pl nacht"
+  },
+  {
+   "id": "74214108",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74214108/service-manager",
+   "title": "Service manager"
   },
   {
    "id": "74214001",
@@ -49964,6 +50272,11 @@
    "title": "Sales assistant"
   },
   {
+   "id": "74100097",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74100097/customer-service-representative",
+   "title": "Customer service representative"
+  },
+  {
    "id": "74100033",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74100033/customer-service-medewerker",
    "title": "Customer service medewerker"
@@ -50935,8 +51248,8 @@
   },
   {
    "id": "74097291",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74097291/customer-service-officer",
-   "title": "Customer service officer"
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74097291/customer-service-officer-deeltijds",
+   "title": "Customer service officer deeltijds"
   },
   {
    "id": "74097267",
@@ -51659,119 +51972,9 @@
    "title": "Talent acquisition partner willebroek"
   },
   {
-   "id": "74092876",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74092876/billing-support-english-international-market",
-   "title": "Billing support english international market"
-  },
-  {
-   "id": "74092838",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74092838/business-developer-regio-lokeren-vast-contract",
-   "title": "Business developer regio lokeren vast contract"
-  },
-  {
-   "id": "74092832",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74092832/customer-care-expert-digitaal-zaterdagshift-nl-fr-antwerpen",
-   "title": "Customer care expert digitaal zaterdagshift nl fr antwerpen"
-  },
-  {
-   "id": "74092822",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74092822/procurement-specialist",
-   "title": "Procurement specialist"
-  },
-  {
-   "id": "74092814",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74092814/sales-support-bedrijfswagen",
-   "title": "Sales support bedrijfswagen"
-  },
-  {
-   "id": "74092804",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74092804/storingstechnieker-2-ploegen",
-   "title": "Storingstechnieker 2 ploegen"
-  },
-  {
-   "id": "74092798",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74092798/technical-analyst-supply-chain-erp-logistics",
-   "title": "Technical analyst supply chain erp logistics"
-  },
-  {
    "id": "74092785",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74092785/marketing-sales-automation-expert-e-mail-marketeer",
    "title": "Marketing sales automation expert e mail marketeer"
-  },
-  {
-   "id": "74092772",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74092772/customer-service-officer-english-polish-or-lituanian-or-czech",
-   "title": "Customer service officer english polish or lituanian or czech"
-  },
-  {
-   "id": "74092771",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74092771/automation-engineer",
-   "title": "Automation engineer"
-  },
-  {
-   "id": "74092767",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74092767/customer-support-advisor-english-german-french",
-   "title": "Customer support advisor english german french"
-  },
-  {
-   "id": "74092759",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74092759/customer-support-advisor-english-german-dutch",
-   "title": "Customer support advisor english german dutch"
-  },
-  {
-   "id": "74092717",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74092717/junior-storingstechnieker-2-ploegen-vast-contract",
-   "title": "Junior storingstechnieker 2 ploegen vast contract"
-  },
-  {
-   "id": "74092715",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74092715/technieker-dag-40-dagen-verlof-vast-contract",
-   "title": "Technieker dag 40 dagen verlof vast contract"
-  },
-  {
-   "id": "74092713",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74092713/postbode",
-   "title": "Postbode"
-  },
-  {
-   "id": "74092712",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74092712/customer-service-medewerker",
-   "title": "Customer service medewerker"
-  },
-  {
-   "id": "74092675",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74092675/allround-medewerker-interieurwinkel-voltijds",
-   "title": "Allround medewerker interieurwinkel voltijds"
-  },
-  {
-   "id": "74092549",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74092549/business-developer-regio-lokeren-vast-contract",
-   "title": "Business developer regio lokeren vast contract"
-  },
-  {
-   "id": "74092504",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74092504/operator-warehouse-3pl",
-   "title": "Operator warehouse 3pl"
-  },
-  {
-   "id": "74092454",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74092454/customer-service-officer",
-   "title": "Customer service officer"
-  },
-  {
-   "id": "74092329",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74092329/technical-sales-support",
-   "title": "Technical sales support"
-  },
-  {
-   "id": "74092328",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74092328/ago-office-customer-service-assistant-deeltijds-50",
-   "title": "Ago office customer service assistant deeltijds 50"
-  },
-  {
-   "id": "74092287",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74092287/team-leader-en-agroalimentaire-i-nuit-i-mouscron",
-   "title": "Team leader en agroalimentaire i nuit i mouscron"
   },
   {
    "id": "74091551",
@@ -55624,6 +55827,22 @@
    "title": "Commercieel bediende met passie voor social media"
   },
   {
+   "id": "4447810642",
+   "url": "https://www.linkedin.com/jobs/view/4447810642",
+   "title": "Vendor Marketing Specialist",
+   "company": "Veracomp (obecnie Exclusive Networks Poland)",
+   "location": "Duffel, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4447803651",
+   "url": "https://www.linkedin.com/jobs/view/4447803651",
+   "title": "Responsable Marketing digital (H/F)",
+   "company": "DigitalPharmaSummit",
+   "location": "Bruges Metropolitan Area",
+   "src": "linkedin"
+  },
+  {
    "id": "4447785647",
    "url": "https://www.linkedin.com/jobs/view/4447785647",
    "title": "Social Media Manager",
@@ -55725,6 +55944,14 @@
    "title": "Senior Marketing & Communication Officer",
    "company": "GUBERNA - Instituut voor Bestuurders/Institut des Administrateurs",
    "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4447434501",
+   "url": "https://www.linkedin.com/jobs/view/4447434501",
+   "title": "Stage Content Creator",
+   "company": "Armonea",
+   "location": "Mechelen, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -56008,6 +56235,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4446582283",
+   "url": "https://www.linkedin.com/jobs/view/4446582283",
+   "title": "Vendor Marketing Specialist",
+   "company": "Exclusive Networks",
+   "location": "Duffel, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4446579187",
    "url": "https://www.linkedin.com/jobs/view/4446579187",
    "title": "EMEA Go-to-Market Marketing Project Manager",
@@ -56244,6 +56479,14 @@
    "url": "https://www.linkedin.com/jobs/view/4446157251",
    "title": "Digital Marketing Intern - Nescafé Dolce Gusto",
    "company": "Nestlé",
+   "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4446116214",
+   "url": "https://www.linkedin.com/jobs/view/4446116214",
+   "title": "Marketing Manager",
+   "company": "OPTIMUS IT SERVICES",
    "location": "Brussels, Brussels Region, Belgium",
    "src": "linkedin"
   },
@@ -56544,6 +56787,30 @@
    "src": "linkedin"
   },
   {
+   "id": "4445834712",
+   "url": "https://www.linkedin.com/jobs/view/4445834712",
+   "title": "Communicatieve campagne manager",
+   "company": "Winwinner",
+   "location": "Ghent, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4445810760",
+   "url": "https://www.linkedin.com/jobs/view/4445810760",
+   "title": "Growth Manager",
+   "company": "Cashfeed",
+   "location": "Ghent, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4445784717",
+   "url": "https://www.linkedin.com/jobs/view/4445784717",
+   "title": "Job | Campaign & Go-to-Market Manager Retail & Personal | Brussel",
+   "company": "Belfius",
+   "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4445746288",
    "url": "https://www.linkedin.com/jobs/view/4445746288",
    "title": "Marketing- en communicatieverantwoordelijke",
@@ -56760,6 +57027,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4445284733",
+   "url": "https://www.linkedin.com/jobs/view/4445284733",
+   "title": "Website Specialist – Digital Communication (m/f)",
+   "company": "DigitalPharmaSummit",
+   "location": "Bruges Metropolitan Area",
+   "src": "linkedin"
+  },
+  {
    "id": "4445274190",
    "url": "https://www.linkedin.com/jobs/view/4445274190",
    "title": "Conversational AI Designer and Content Specialist",
@@ -56896,6 +57171,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4444977067",
+   "url": "https://www.linkedin.com/jobs/view/4444977067",
+   "title": "Senior Consultant (Communicatie / Public Affairs)",
+   "company": "Gosselin & de Walque",
+   "location": "Brussels Metropolitan Area",
+   "src": "linkedin"
+  },
+  {
    "id": "4444969851",
    "url": "https://www.linkedin.com/jobs/view/4444969851",
    "title": "B2B Campaign Specialist (project 6m consultancy/ Freelance",
@@ -56941,6 +57224,14 @@
    "title": "CRM Campaign Specialist",
    "company": "TUI",
    "location": "Zaventem, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4444941810",
+   "url": "https://www.linkedin.com/jobs/view/4444941810",
+   "title": "Product Marketing Manager",
+   "company": "Comarch",
+   "location": "Brussels, Brussels Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -57077,6 +57368,14 @@
    "title": "Customer Success Manager Belgium (AI Marketing) - French Speaker",
    "company": "InSpace",
    "location": "Antwerp, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4444798740",
+   "url": "https://www.linkedin.com/jobs/view/4444798740",
+   "title": "Marketing & Employer Branding stage",
+   "company": "We fynd",
+   "location": "Kontich, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -57264,6 +57563,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4444517094",
+   "url": "https://www.linkedin.com/jobs/view/4444517094",
+   "title": "Online Category & Marketing Coördinator",
+   "company": "DigitalPharmaSummit",
+   "location": "Bruges Metropolitan Area",
+   "src": "linkedin"
+  },
+  {
    "id": "4444507677",
    "url": "https://www.linkedin.com/jobs/view/4444507677",
    "title": "Country Marketeer Belgium",
@@ -57397,6 +57704,14 @@
    "title": "Digital Marketeer",
    "company": "We fynd",
    "location": "Antwerp, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4444462943",
+   "url": "https://www.linkedin.com/jobs/view/4444462943",
+   "title": "Stage & vrijwilligersvacature communicatie - sociale media",
+   "company": "We fynd",
+   "location": "Brussels, Brussels Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -57664,6 +57979,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4443957948",
+   "url": "https://www.linkedin.com/jobs/view/4443957948",
+   "title": "Copywriting & Sales Process Intern",
+   "company": "AB InBev",
+   "location": "Leuven, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4443944533",
    "url": "https://www.linkedin.com/jobs/view/4443944533",
    "title": "Customer Service Specialist - Sea Freight Export",
@@ -57848,6 +58171,22 @@
    "src": "linkedin"
   },
   {
+   "id": "4443648364",
+   "url": "https://www.linkedin.com/jobs/view/4443648364",
+   "title": "Job | Campaign & Go-to-Market Manager Retail & Personal | Bruxelles",
+   "company": "Belfius",
+   "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4443588363",
+   "url": "https://www.linkedin.com/jobs/view/4443588363",
+   "title": "Marketing STAGE 2026 - Foodservice",
+   "company": "Pietercil Foodservice",
+   "location": "Ternat, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4443585067",
    "url": "https://www.linkedin.com/jobs/view/4443585067",
    "title": "Frontend Developer",
@@ -57868,7 +58207,7 @@
    "url": "https://www.linkedin.com/jobs/view/4443564873",
    "title": "Content Manager Marketing",
    "company": "Belgie Vacature",
-   "location": "Liège, Walloon Region, Belgium",
+   "location": "Hasselt, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -57885,6 +58224,14 @@
    "title": "Marketing",
    "company": "Joie de Vivre Expo",
    "location": "Zonnebeke, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4443544949",
+   "url": "https://www.linkedin.com/jobs/view/4443544949",
+   "title": "🇫🇷 Senior Social Media Manager - French Fluent",
+   "company": "Paradox EN",
+   "location": "Brussels, Brussels Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -57944,6 +58291,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4443323169",
+   "url": "https://www.linkedin.com/jobs/view/4443323169",
+   "title": "Trade Marketeer",
+   "company": "QLEVR.",
+   "location": "Aalst, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4443292238",
    "url": "https://www.linkedin.com/jobs/view/4443292238",
    "title": "Marketing Creative (Social Media & E-mailmarketing & websites",
@@ -57965,6 +58320,14 @@
    "title": "French Speaking Content Moderator - Work In Sofia, Bulgaria",
    "company": "Mercier Consultancy MD",
    "location": "Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4443271171",
+   "url": "https://www.linkedin.com/jobs/view/4443271171",
+   "title": "Office & Communications Manager",
+   "company": "CloudPoint",
+   "location": "Antwerp Metropolitan Area",
    "src": "linkedin"
   },
   {
@@ -58243,6 +58606,14 @@
    "id": "4442619636",
    "url": "https://www.linkedin.com/jobs/view/4442619636",
    "title": "FRONTEND ENGINEER - TECHNOLOGY DEPARTMENT (LIEGE-BELGIUM)",
+   "company": "GAMING1",
+   "location": "Liège, Walloon Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4442618884",
+   "url": "https://www.linkedin.com/jobs/view/4442618884",
+   "title": "DUTCH CAMPAIGN MANAGER (LIEGE-BELGIUM)",
    "company": "GAMING1",
    "location": "Liège, Walloon Region, Belgium",
    "src": "linkedin"
@@ -58880,11 +59251,27 @@
    "src": "linkedin"
   },
   {
+   "id": "4442150171",
+   "url": "https://www.linkedin.com/jobs/view/4442150171",
+   "title": "social media & content creator bij Filmfestival Oostende",
+   "company": "Sociaal Fonds Podiumkunsten (BE)",
+   "location": "Oostende, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4442116177",
    "url": "https://www.linkedin.com/jobs/view/4442116177",
    "title": "Teamlead Digital Marketing",
    "company": "EOLIS",
    "location": "Antwerp, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4442114181",
+   "url": "https://www.linkedin.com/jobs/view/4442114181",
+   "title": "Senior Digital Marketing Consultant",
+   "company": "Excelya",
+   "location": "Dilbeek, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -59021,6 +59408,14 @@
    "title": "Communications Officer - PALACROS Project",
    "company": "PCE",
    "location": "Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4441958324",
+   "url": "https://www.linkedin.com/jobs/view/4441958324",
+   "title": "Verantwoordelijke marketing en communicatie",
+   "company": "Willy Naessens BELGIË / BELGIQUE",
+   "location": "Wortegem-Petegem, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -59288,10 +59683,26 @@
    "src": "linkedin"
   },
   {
+   "id": "4441445959",
+   "url": "https://www.linkedin.com/jobs/view/4441445959",
+   "title": "Brand Manager BE/FR/LU",
+   "company": "HG International",
+   "location": "Ghent, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4441442585",
    "url": "https://www.linkedin.com/jobs/view/4441442585",
    "title": "Copywriter",
    "company": "Asenium Consulting",
+   "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4441438422",
+   "url": "https://www.linkedin.com/jobs/view/4441438422",
+   "title": "Internal Communications Support Intern",
+   "company": "Médecins Sans Frontières Belgium",
    "location": "Brussels, Brussels Region, Belgium",
    "src": "linkedin"
   },
@@ -59301,6 +59712,14 @@
    "title": "SEO Content Storyteller",
    "company": "EOLIS",
    "location": "Brussels Metropolitan Area",
+   "src": "linkedin"
+  },
+  {
+   "id": "4441359022",
+   "url": "https://www.linkedin.com/jobs/view/4441359022",
+   "title": "Event Marketing Manager",
+   "company": "Materialise",
+   "location": "Leuven, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -59397,6 +59816,14 @@
    "title": "Communications Intern - Nestlé Europe Government Relations & ESG Engagement",
    "company": "Nestlé",
    "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4441211467",
+   "url": "https://www.linkedin.com/jobs/view/4441211467",
+   "title": "Sea Freight Import Coordinator",
+   "company": "Kuehne+Nagel",
+   "location": "Antwerp, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -59936,6 +60363,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4440241142",
+   "url": "https://www.linkedin.com/jobs/view/4440241142",
+   "title": "Communications Manager",
+   "company": "Wolf Oil Corporation",
+   "location": "Hemiksem, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4440235773",
    "url": "https://www.linkedin.com/jobs/view/4440235773",
    "title": "Marketing & Communication Manager",
@@ -60109,6 +60544,14 @@
    "title": "Marketing Assistant",
    "company": "Vander Haeghen",
    "location": "Kraainem, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4440001406",
+   "url": "https://www.linkedin.com/jobs/view/4440001406",
+   "title": "Recruitment Marketing & Support Intern",
+   "company": "Médecins Sans Frontières Belgium",
+   "location": "Brussels, Brussels Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -60728,6 +61171,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4438971783",
+   "url": "https://www.linkedin.com/jobs/view/4438971783",
+   "title": "Influencer Marketing Manager",
+   "company": "Bestam - Best Asia Marketing Company",
+   "location": "On, Walloon Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4438923458",
    "url": "https://www.linkedin.com/jobs/view/4438923458",
    "title": "Marketing Ad Operations, Investor Relations",
@@ -61064,6 +61515,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4438101734",
+   "url": "https://www.linkedin.com/jobs/view/4438101734",
+   "title": "Marketing Officer UNIZO Vlaams-Brabant & Brussel",
+   "company": "UNIZO Holsbeek",
+   "location": "Tielt, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4438087467",
    "url": "https://www.linkedin.com/jobs/view/4438087467",
    "title": "Public Relations & Communications Officer",
@@ -61216,6 +61675,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4437570630",
+   "url": "https://www.linkedin.com/jobs/view/4437570630",
+   "title": "Regulatory Counsel, Content",
+   "company": "Google",
+   "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4437567041",
    "url": "https://www.linkedin.com/jobs/view/4437567041",
    "title": "UX Designer Mobile First & WCAG 2.1 (Freelance optional)",
@@ -61293,6 +61760,14 @@
    "title": "Retailmarketing Coördinator M/V",
    "company": "Meat&More",
    "location": "Aalter, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4437290364",
+   "url": "https://www.linkedin.com/jobs/view/4437290364",
+   "title": "Consultant - Strategic Communications and Public Affairs – Energy and Sustainability Policy",
+   "company": "Kekst CNC",
+   "location": "Brussels, Brussels Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -61544,6 +62019,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4436702689",
+   "url": "https://www.linkedin.com/jobs/view/4436702689",
+   "title": "Stage E-commerce",
+   "company": "Xandres",
+   "location": "Ghent Metropolitan Area",
+   "src": "linkedin"
+  },
+  {
    "id": "4436700368",
    "url": "https://www.linkedin.com/jobs/view/4436700368",
    "title": "Teamlead Digital Marketing (Freelance of tijdelijk)",
@@ -61565,6 +62048,22 @@
    "title": "Brand, Campaign & Operations Specialist",
    "company": "MediaMarkt Belgium",
    "location": "Strombeek-Bever, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4436579329",
+   "url": "https://www.linkedin.com/jobs/view/4436579329",
+   "title": "OFFRE DE STAGE : CHARGÉ DE COMMUNICATION (h/f/x)",
+   "company": "Clinic Saint-Jean Brussels",
+   "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4436533218",
+   "url": "https://www.linkedin.com/jobs/view/4436533218",
+   "title": "Product Designer – Digital Identity (EUDI) – Remote-First",
+   "company": "EPI Company",
+   "location": "Brussels, Brussels Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -61635,6 +62134,14 @@
    "id": "4436354794",
    "url": "https://www.linkedin.com/jobs/view/4436354794",
    "title": "Communications specialist",
+   "company": "Jet Import",
+   "location": "Lauwe, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4436352840",
+   "url": "https://www.linkedin.com/jobs/view/4436352840",
+   "title": "Digital creative",
    "company": "Jet Import",
    "location": "Lauwe, Flemish Region, Belgium",
    "src": "linkedin"
@@ -61821,6 +62328,14 @@
    "title": "Frontend Engineer (React)",
    "company": "Koda Staff",
    "location": "Ghent, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4435661537",
+   "url": "https://www.linkedin.com/jobs/view/4435661537",
+   "title": "marketing data & insights specialist",
+   "company": "Port of Antwerp-Bruges",
+   "location": "Antwerp, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -62173,6 +62688,14 @@
    "title": "Responsable de magasin - Namur - 18h/sem - remplacement",
    "company": "Maison 123",
    "location": "Namur, Walloon Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4434341079",
+   "url": "https://www.linkedin.com/jobs/view/4434341079",
+   "title": "Web User Experience Specialist",
+   "company": "Cronos Europa",
+   "location": "Brussels, Brussels Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -62832,6 +63355,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4431263683",
+   "url": "https://www.linkedin.com/jobs/view/4431263683",
+   "title": "Stage Allround Marketing Assistent (Tielt) - Uitgeverij Lannoo – najaar 2026",
+   "company": "Uitgeverij Lannoo",
+   "location": "Tielt, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4431236814",
    "url": "https://www.linkedin.com/jobs/view/4431236814",
    "title": "Marketing Automation Specialist",
@@ -63088,6 +63619,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4429854284",
+   "url": "https://www.linkedin.com/jobs/view/4429854284",
+   "title": "Marketing Automation Expert  _FR",
+   "company": "NMBS-SNCB",
+   "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4429839407",
    "url": "https://www.linkedin.com/jobs/view/4429839407",
    "title": "PR & Content Specialist",
@@ -63232,6 +63771,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4428817091",
+   "url": "https://www.linkedin.com/jobs/view/4428817091",
+   "title": "Affiliate marketing partner",
+   "company": "Delhaize Belgium",
+   "location": "Asse, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4428809557",
    "url": "https://www.linkedin.com/jobs/view/4428809557",
    "title": "Marketing & Brand Activation Assistant",
@@ -63264,6 +63811,30 @@
    "src": "linkedin"
   },
   {
+   "id": "4428679474",
+   "url": "https://www.linkedin.com/jobs/view/4428679474",
+   "title": "UX Designer Job ID: JP054405",
+   "company": "ITproposal",
+   "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4428645702",
+   "url": "https://www.linkedin.com/jobs/view/4428645702",
+   "title": "Event Tech Coordinator (Cvent Website Builder)",
+   "company": "MCI Brussels",
+   "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4428607634",
+   "url": "https://www.linkedin.com/jobs/view/4428607634",
+   "title": "Creative Marketing Producer",
+   "company": "CapsLock",
+   "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4428502108",
    "url": "https://www.linkedin.com/jobs/view/4428502108",
    "title": "Growth Lead",
@@ -63285,6 +63856,22 @@
    "title": "INTERN Digital Marketing",
    "company": "Schneider Electric",
    "location": "Ukkel, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4428392952",
+   "url": "https://www.linkedin.com/jobs/view/4428392952",
+   "title": "Expert Angular Frontend Developer Job ID: JP054418",
+   "company": "ITproposal",
+   "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4428265074",
+   "url": "https://www.linkedin.com/jobs/view/4428265074",
+   "title": "Frontend Engineer / UI Developer (m/w/d)",
+   "company": "unique projects GmbH & Co. KG",
+   "location": "Duisburg, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -63344,6 +63931,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4427940896",
+   "url": "https://www.linkedin.com/jobs/view/4427940896",
+   "title": "SEA-specialist bij agency",
+   "company": "GBL Agency",
+   "location": "Heule, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4427936767",
    "url": "https://www.linkedin.com/jobs/view/4427936767",
    "title": "Fullstack Software Engineer - Frontend T-shaped (x/f/m) - Growth Product",
@@ -63360,6 +63955,22 @@
    "src": "linkedin"
   },
   {
+   "id": "4427634831",
+   "url": "https://www.linkedin.com/jobs/view/4427634831",
+   "title": "Content Marketeer Grafisch",
+   "company": "Belgie Vacature",
+   "location": "St-Truiden, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4427536842",
+   "url": "https://www.linkedin.com/jobs/view/4427536842",
+   "title": "Stagiaire en Communication & Employer Branding",
+   "company": "NSI",
+   "location": "Braine-l’Alleud, Walloon Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4427535650",
    "url": "https://www.linkedin.com/jobs/view/4427535650",
    "title": "UX Designer",
@@ -63373,6 +63984,14 @@
    "title": "Pure Player Marketing Intern",
    "company": "Levi Strauss & Co.",
    "location": "Ixelles, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4427486641",
+   "url": "https://www.linkedin.com/jobs/view/4427486641",
+   "title": "Web Developer (Python/CSS)",
+   "company": "Syone",
+   "location": "Mons, Walloon Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -63397,6 +64016,14 @@
    "title": "E-Commerce Growth Strategist",
    "company": "Prominence",
    "location": "Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4427093422",
+   "url": "https://www.linkedin.com/jobs/view/4427093422",
+   "title": "Marketing Technology Teamlead",
+   "company": "Reynaers Aluminium Belux",
+   "location": "Duffel, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -63428,6 +64055,30 @@
    "url": "https://www.linkedin.com/jobs/view/4426839261",
    "title": "Growth Marketing Manager (ABM)",
    "company": "AI-BLOX | Physical AI computers",
+   "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4426697353",
+   "url": "https://www.linkedin.com/jobs/view/4426697353",
+   "title": "DIGITAL PRODUCT DESIGNER",
+   "company": "ERA Cedimmo",
+   "location": "St-Niklaas, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4426597532",
+   "url": "https://www.linkedin.com/jobs/view/4426597532",
+   "title": "Front-End Developer (Internship) - B2B SaaS - Brussels",
+   "company": "Novable",
+   "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4426563239",
+   "url": "https://www.linkedin.com/jobs/view/4426563239",
+   "title": "Public Affairs and Communications Consultant – Energy and Industrials\nBrussels, Brussels Hoofstedelijk Gewest, Belgium",
+   "company": "Brunswick Investor Brand",
    "location": "Brussels, Brussels Region, Belgium",
    "src": "linkedin"
   },
@@ -63472,6 +64123,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4425743656",
+   "url": "https://www.linkedin.com/jobs/view/4425743656",
+   "title": "Affiliate marketing partner",
+   "company": "Delhaize Belgium",
+   "location": "Asse, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4425699417",
    "url": "https://www.linkedin.com/jobs/view/4425699417",
    "title": "Marketing Associate",
@@ -63501,6 +64160,14 @@
    "title": "Stagiair(e) Marketing & Events",
    "company": "Vibe Group",
    "location": "Antwerp, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4424806674",
+   "url": "https://www.linkedin.com/jobs/view/4424806674",
+   "title": "Digital Product Designer",
+   "company": "Alfabet",
+   "location": "St-Niklaas, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -63557,6 +64224,14 @@
    "title": "CIP-STAGEAANBOD - Communicatiemedewerker",
    "company": "Clinic Saint-Jean Brussels",
    "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4424004909",
+   "url": "https://www.linkedin.com/jobs/view/4424004909",
+   "title": "Digital Marketer",
+   "company": "EG Hire Global",
+   "location": "Antwerp, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -63629,6 +64304,14 @@
    "title": "Stagiaire Marketing",
    "company": "Groupe SEB",
    "location": "Fleurus, Walloon Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4421956368",
+   "url": "https://www.linkedin.com/jobs/view/4421956368",
+   "title": "INTERNSHIP - UI Design & Design System for a Global Industrial Platform (M/F/X)",
+   "company": "HMS Networks",
+   "location": "Nivelles, Walloon Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -63848,6 +64531,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4417961491",
+   "url": "https://www.linkedin.com/jobs/view/4417961491",
+   "title": "KAM E-commerce & parapharmacy groups",
+   "company": "EG nv/sa",
+   "location": "Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4417952906",
    "url": "https://www.linkedin.com/jobs/view/4417952906",
    "title": "Digital Growth Marketeer - Campagnes & Acquisitie",
@@ -63925,6 +64616,14 @@
    "title": "UX/UI Designer",
    "company": "Wolters Kluwer",
    "location": "Hasselt, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4414095790",
+   "url": "https://www.linkedin.com/jobs/view/4414095790",
+   "title": "Web Solutions Analyst",
+   "company": "Orac",
+   "location": "Ostend, Flemish Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -64016,6 +64715,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4408531247",
+   "url": "https://www.linkedin.com/jobs/view/4408531247",
+   "title": "Internship: Internal Communication",
+   "company": "ENGIE Belgium",
+   "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4408409671",
    "url": "https://www.linkedin.com/jobs/view/4408409671",
    "title": "Stagiair marketing",
@@ -64072,6 +64779,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4404344543",
+   "url": "https://www.linkedin.com/jobs/view/4404344543",
+   "title": "Brand Manager Benelux (Medical Devices)",
+   "company": "Danone",
+   "location": "Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4404038568",
    "url": "https://www.linkedin.com/jobs/view/4404038568",
    "title": "Campaign Manager",
@@ -64101,6 +64816,14 @@
    "title": "Stage - Organic Social & Influencer Marketing",
    "company": "TUI",
    "location": "Ostend, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4402943010",
+   "url": "https://www.linkedin.com/jobs/view/4402943010",
+   "title": "Internship: Internal Communication",
+   "company": "ENGIE Belgium",
+   "location": "Brussels, Brussels Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -64272,6 +64995,22 @@
    "src": "linkedin"
   },
   {
+   "id": "4384898378",
+   "url": "https://www.linkedin.com/jobs/view/4384898378",
+   "title": "Trade Marketing Intern (Expansion – Indirect Markets)",
+   "company": "AB InBev",
+   "location": "Leuven, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4384317325",
+   "url": "https://www.linkedin.com/jobs/view/4384317325",
+   "title": "Internship: Internal Communication",
+   "company": "ENGIE Belgium",
+   "location": "Ghent, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4384313491",
    "url": "https://www.linkedin.com/jobs/view/4384313491",
    "title": "Internship: Internal Communication",
@@ -64300,6 +65039,14 @@
    "url": "https://www.linkedin.com/jobs/view/4374017223",
    "title": "Internship / Stage Brand Manager Assistant",
    "company": "JDE Peet's",
+   "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4373545802",
+   "url": "https://www.linkedin.com/jobs/view/4373545802",
+   "title": "Senior Angular Front End Developer",
+   "company": "Egov Select",
    "location": "Brussels, Brussels Region, Belgium",
    "src": "linkedin"
   },
@@ -64333,6 +65080,14 @@
    "title": "Digital Engagement Functional Analyst",
    "company": "Unilin",
    "location": "Wielsbeke, Flemish Region, Belgium",
+   "src": "linkedin"
+  },
+  {
+   "id": "4355697747",
+   "url": "https://www.linkedin.com/jobs/view/4355697747",
+   "title": "SAP Frontend Consultant (Medior/Senior)",
+   "company": "Capgemini",
+   "location": "Brussels, Brussels Region, Belgium",
    "src": "linkedin"
   },
   {
@@ -64432,6 +65187,14 @@
    "src": "linkedin"
   },
   {
+   "id": "4221342994",
+   "url": "https://www.linkedin.com/jobs/view/4221342994",
+   "title": "Digital Analytics and CRO Consultant",
+   "company": "Keyrus",
+   "location": "Brussels, Brussels Region, Belgium",
+   "src": "linkedin"
+  },
+  {
    "id": "4099429716",
    "url": "https://www.linkedin.com/jobs/view/4099429716",
    "title": "Stagiair creative content marketeer",
@@ -64457,6 +65220,226 @@
   }
  ],
  "rejected": [
+  {
+   "id": "4438244001",
+   "url": "https://www.linkedin.com/jobs/view/4438244001",
+   "title": "Stage en Communication Digitale et Médias Sociaux",
+   "company": "John Cockerill",
+   "location": "Unknown",
+   "match_score": 0,
+   "reason": "The internship requires the candidate to be an enrolled student and to provide a school internship agreement.",
+   "apply_email": "",
+   "found_at": "2026-08-02 08:18",
+   "status": "new",
+   "details": "Internship role in Digital Communication and Social Media.\nMain tasks include evaluating digital channel performance, identifying new platforms, contributing to social media strategy, segmenting audiences, developing employer branding strategy, and producing photo/video content for events.\nContract type: Internship (stage).\nSchedule: Minimum 3 months starting February 2027.\nLanguage: French required, English B2 desired.\nPay: Not stated.",
+   "why_good": "",
+   "why_bad": "The internship requires the candidate to be an enrolled student at IHECS (Master 2 Communication) or equivalent (Master BAC+5).\nIt also explicitly mentions the need for a school internship agreement ('stage conventionné', 'convention de stage').\nThe candidate is not currently an enrolled student and cannot provide a school internship agreement.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": true,
+   "lang": "nl",
+   "cv_fit_v": 18
+  },
+  {
+   "id": "4443859792",
+   "url": "https://www.linkedin.com/jobs/view/4443859792",
+   "title": "Creative Content Intern",
+   "company": "Unknown",
+   "location": "Unknown",
+   "match_score": 0,
+   "reason": "This is an unpaid internship requiring a mandatory school internship agreement, which the candidate cannot provide.",
+   "apply_email": "",
+   "found_at": "2026-08-02 08:17",
+   "status": "new",
+   "details": "Role: Creative Content Intern\nMain tasks: Support brand storytelling, creative research, presentations, content strategy coordination.\nContract type: Unpaid internship\nSchedule: Not specified\nLanguage: English (French is an advantage)\nPay: Unpaid",
+   "why_good": "",
+   "why_bad": "Requires current student status and a mandatory internship agreement from an educational institution.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": true,
+   "lang": "en",
+   "cv_fit_v": 18
+  },
+  {
+   "id": "4443957948",
+   "url": "https://www.linkedin.com/jobs/view/4443957948",
+   "title": "Copywriting & Sales Process Intern",
+   "company": "AB InBev",
+   "location": "Belgium",
+   "match_score": 0,
+   "reason": "The internship requires fluent Dutch and French, which the candidate does not possess.",
+   "apply_email": "",
+   "found_at": "2026-08-02 08:17",
+   "status": "new",
+   "details": "Internship role for a student to gain experience in content creation and sales process support.\nTasks include copywriting, content creation (presentations, video), training development, project management, and field experience.\nInternship duration is flexible, minimum 3 months, minimum 2 days/week.\nUnpaid, with potential for future opportunities.\nLearning opportunities include on-the-job experience, mentorship, and formal training.",
+   "why_good": "",
+   "why_bad": "Requires fluent Dutch and French (candidate has B1 Dutch and no French).\nRequires student status for a school internship convention.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": true,
+   "lang": "en",
+   "cv_fit_v": 18
+  },
+  {
+   "id": "4445180245",
+   "url": "https://www.linkedin.com/jobs/view/4445180245",
+   "title": "UI/UX Engineer",
+   "company": "Barco",
+   "location": "Kortrijk",
+   "match_score": 0,
+   "reason": "The job explicitly requires a Bachelor's degree in a relevant field.",
+   "apply_email": "",
+   "found_at": "2026-08-02 08:15",
+   "status": "new",
+   "details": "Role: UI/UX Engineer\nMain Tasks: Designing intuitive digital experiences, creating wireframes and prototypes, translating designs into front-end code using React/Next.js and three.js.\nContract Type: Full-time (implied)\nSchedule: Full-time (implied)\nLanguage: English (implied, as no Dutch/French specified and the role is technical)\nPay: Not stated",
+   "why_good": "",
+   "why_bad": "Requires a Bachelor's degree in Computer Science, HCI, Design, IT, or related field.\nRequires professional UI/UX tools like Figma, Adobe XD, Sketch.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "en",
+   "cv_fit_v": 18
+  },
+  {
+   "id": "4447434501",
+   "url": "https://www.linkedin.com/jobs/view/4447434501",
+   "title": "Stagiair Recruitment & L&D (m/v/x)",
+   "company": "Armonea",
+   "location": "Unknown",
+   "match_score": 0,
+   "reason": "The internship requires a mandatory school convention, which the candidate cannot provide as they are not currently enrolled in a program.",
+   "apply_email": "",
+   "found_at": "2026-08-02 08:14",
+   "status": "new",
+   "details": "Internship role focusing on content creation for Recruitment and Learning & Development. Tasks include interviewing employees, recording testimonials, and supporting various projects. Contract type: Unpaid internship requiring a school convention. Schedule: Flexible. Language: Dutch. Pay: None specified.",
+   "why_good": "",
+   "why_bad": "Requires a school internship convention and current student status, which the candidate does not have.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": true,
+   "lang": "nl",
+   "cv_fit_v": 18
+  },
+  {
+   "id": "74277639",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74277639/digital-marketeer-seo-sea-social-media",
+   "title": "Digital Marketeer (SEO, SEA & Social Media)",
+   "company": "KEY-TEC BV",
+   "location": "LOKEREN",
+   "match_score": 0,
+   "reason": "The job requires fluent Dutch and French, neither of which the candidate possesses.",
+   "apply_email": "hr@key-tec.be",
+   "found_at": "2026-08-02 08:13",
+   "status": "new",
+   "details": "Role: Digital Marketeer (SEO, SEA & Social Media)\nMain Tasks: Manage SEO, SEA, and social media; create content; run ad campaigns; manage content calendar in HubSpot; analyze data.\nContract Type: Permanent, full-time, day shift.\nSchedule: Dagwerk (day work).\nLanguage: French (Very good), Dutch (Very good), English (Very good).\nPay: Not stated.",
+   "why_good": "",
+   "why_bad": "• Required fluent Dutch and French.\n• Requires at least 2 years of experience in a similar digital marketing role.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 18
+  },
+  {
+   "id": "4401775594",
+   "url": "https://www.linkedin.com/jobs/view/4401775594",
+   "title": "Advertising Specialist / SEA-specialist",
+   "company": "iO",
+   "location": "Unknown",
+   "match_score": 0,
+   "reason": "The job requires 3-5 years of experience, which is beyond the candidate's ~4 months of experience.",
+   "apply_email": "",
+   "found_at": "2026-08-02 08:13",
+   "status": "new",
+   "details": "Role: Advertising Specialist / SEA-specialist. Main tasks: Campaign planning and execution, budget management, reporting, client relationship management, data analysis. Contract type: Full-time (40-hour week). Schedule: Hybrid. Language: Dutch (fluent) and English. Pay: Not stated.",
+   "why_good": "",
+   "why_bad": "Requires 3-5 years of experience, while the candidate has ~4 months.\nRequires fluent Dutch, while the candidate has B1 Dutch.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 18
+  },
+  {
+   "id": "4427940896",
+   "url": "https://www.linkedin.com/jobs/view/4427940896",
+   "title": "SEA Specialist met technische kennis",
+   "company": "GBL Agency",
+   "location": "Unknown",
+   "match_score": 0,
+   "reason": "The job requires a minimum of 3 years of experience in paid advertising, which the candidate does not have.",
+   "apply_email": "",
+   "found_at": "2026-08-02 08:13",
+   "status": "new",
+   "details": "Role: SEA Specialist with technical knowledge.\nMain tasks: Testing Google Ads features, data analysis, campaign analysis, creating dashboards, CRO experience is a plus.\nContract type: Not specified.\nSchedule: Not specified.\nLanguage: Dutch (fluent), English (fluent), French (plus).\nPay: Not specified.",
+   "why_good": "",
+   "why_bad": "Requires at least 3 years of experience in paid advertising.\nRequires fluent Dutch, while the candidate has B1 conversational Dutch.\nRequires strong knowledge of Google Ads, Meta Ads, and other paid platforms, with only limited experience in Google Ads/Analytics.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 18
+  },
+  {
+   "id": "4442732179",
+   "url": "https://www.linkedin.com/jobs/view/4442732179",
+   "title": "SEA Expert",
+   "company": "Synapse",
+   "location": "Unknown",
+   "match_score": 0,
+   "reason": "The job requires fluent French, which the candidate does not have.",
+   "apply_email": "",
+   "found_at": "2026-08-02 08:13",
+   "status": "new",
+   "details": "Role: SEA Expert\nMain tasks: Strategy and operational management of advertising campaigns, analysis and reporting, innovation in digital marketing.\nContract type: CDI\nSchedule: Full-time\nLanguage: French required, English good, Dutch a plus.\nPay: Not stated",
+   "why_good": "",
+   "why_bad": "Requires fluent French, which the candidate does not possess.\nRequires at least 1 year of experience in an agency or client-side, while the candidate has approximately 4 months of relevant experience.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 18
+  },
+  {
+   "id": "4443250258",
+   "url": "https://www.linkedin.com/jobs/view/4443250258",
+   "title": "Onboarding Account Manager",
+   "company": "Unknown",
+   "location": "Barcelona, Spain",
+   "match_score": 0,
+   "reason": "The job requires fluent Dutch, which the candidate does not possess, and is located in Spain.",
+   "apply_email": "",
+   "found_at": "2026-08-02 08:13",
+   "status": "new",
+   "details": "Role: Onboarding Account Manager, B2B Integration Specialist\nMain tasks: Build and optimize PPC campaigns, consult on digital advertising platforms, develop promotional strategies, identify growth opportunities, maintain CRM records\nContract type: Not specified\nSchedule: Hybrid (3 days on-site, 2 days remote)\nLanguage: Dutch (Fluent/C2), English (B2)\nPay if stated: Not specified",
+   "why_good": "",
+   "why_bad": "Requires fluent Dutch (candidate has B1)\nRequires 2+ years of experience in campaign management and account strategy (candidate has ~4 months)\nRequires physical presence in Spain (candidate is in Belgium)",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "en",
+   "cv_fit_v": 18
+  },
+  {
+   "id": "4444501586",
+   "url": "https://www.linkedin.com/jobs/view/4444501586",
+   "title": "Dutch-Speaking Google Ads Specialist!",
+   "company": "Unknown",
+   "location": "Barcelona, Spain",
+   "match_score": 0,
+   "reason": "The job requires C2 Dutch, but the candidate only has B1 Dutch.",
+   "apply_email": "",
+   "found_at": "2026-08-01 18:38",
+   "status": "new",
+   "details": "Role: Google Ads Specialist\nMain Tasks: Onboard clients to Google Ads, guide PPC campaigns, build relationships in the Dutch market, drive revenue growth, manage client portfolio.\nContract Type: Full-time\nSchedule: Hybrid\nLanguage: Dutch (C2 required), English (high level)\nPay: €27,283.75 gross/year",
+   "why_good": "",
+   "why_bad": "Requires C2 level Dutch, candidate has B1.\nRequires 2+ years of experience in Sales, Business Development, or Digital Marketing, candidate has ~4 months.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "en",
+   "cv_fit_v": 18
+  },
   {
    "id": "4343444112",
    "url": "https://www.linkedin.com/jobs/view/4343444112",
@@ -102320,216 +103303,8 @@
    "exp_stretch": false,
    "internship": false,
    "cv_fit_v": 18
-  },
-  {
-   "id": "74188114",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74188114/teamleader-customer-service-bedrijfswagen-antwerpen",
-   "title": "Teamleader Customer Service | bedrijfswagen | Antwerpen",
-   "company": "SELECT HR",
-   "location": "Antwerpen",
-   "match_score": 0,
-   "reason": "Requires French (good knowledge) which the candidate does not have.",
-   "apply_email": "",
-   "found_at": "2026-07-21 13:26",
-   "status": "new",
-   "details": "Teamleader Customer Service\nSturen en coachen van customer support team, procesoptimalisatie, KPI-opvolging\nVaste job, voltijds, dagwerk\nStart zo spoedig mogelijk\nTalen: Nederlands (zeer goed), Frans (goed), Engels (goed)\nSalarispakket met bedrijfswagen, maaltijdcheques, hospitalisatieverzekering, 32 verlofdagen",
-   "why_good": "",
-   "why_bad": "Frans (goed) vereist, kandidaat spreekt geen Frans\nMinstens 5 jaar ervaring in customer support vereist\nBachelor- of masterdiploma vereist\nTeamleader/coaching ervaring vereist",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "cv_fit_v": 18
-  },
-  {
-   "id": "74188287",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74188287/account-manager-voedingssector-vast-contract",
-   "title": "Account manager voedingssector",
-   "company": "Client of Manpower",
-   "location": "Nazareth-De Pinte",
-   "match_score": 0,
-   "reason": "Requires a professional bachelor degree with no experience alternative.",
-   "apply_email": "evelien.vanhauttegem@manpower.be",
-   "found_at": "2026-07-21 13:26",
-   "status": "new",
-   "details": "Account manager in food sector\nManage B2B client portfolio, build relationships, identify opportunities\nPermanent contract, full-time, day work\nLanguages: Dutch (very good), English (very good)\nRequired: professional bachelor degree\nPay: not stated",
-   "why_good": "",
-   "why_bad": "Requires a professional bachelor degree (the candidate has no degree)\nNo mention of 'or equivalent by experience'\nRole is in B2B sales, not in candidate's goal field",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "cv_fit_v": 18
-  },
-  {
-   "id": "74188307",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74188307/junior-preventieadviseur-niveau-2",
-   "title": "Junior preventieadviseur niveau 2",
-   "company": "Asap.be",
-   "location": "Beerse",
-   "match_score": 0,
-   "reason": "Role is a specialized safety/prevention advisor requiring a prevention certificate and technical background in production environments, not in the candidate's goal field.",
-   "apply_email": "turnhout@asap.be",
-   "found_at": "2026-07-21 13:25",
-   "status": "new",
-   "details": "Junior prevention advisor level 2\nAnalyze risks, develop preventive measures for safety/health/ergonomics\nPermanent contract, full-time, day shift\nStart date: 16 July 2026\nDutch: good, English: good\nSalary: €3500-3800 gross/month",
-   "why_good": "",
-   "why_bad": "Requires prevention advisor level 2 certificate (candidate lacks)\nRequires technical background in production/machine safety (candidate has none)\nRole is in safety/prevention, not digital marketing/SEO/web\nRequires strong Dutch (candidate B1 may be insufficient for safety training)",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "cv_fit_v": 18
-  },
-  {
-   "id": "74188431",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74188431/ago-technics-junior-projectleider",
-   "title": "Junior Projectleider",
-   "company": "AGO Technics",
-   "location": "Turnhout",
-   "match_score": 0,
-   "reason": "Requires a Master's degree in Electromechanics and a professional bachelor, which the candidate does not have.",
-   "apply_email": "turnhout.technics@ago.jobs",
-   "found_at": "2026-07-21 13:25",
-   "status": "new",
-   "details": "Role: Projectleider\nMain tasks: Information follow-up, ICT user needs, leading a service, budget management, performance control\nContract: Vaste job, voltijds, dagwerk, onbepaalde duur\nLanguage: Nederlands (Zeer goed)\nPay: Not stated",
-   "why_good": "",
-   "why_bad": "Required degree: Master in Elektromechanica (candidate has no degree)\nRequired professional bachelor (candidate has no degree)\nRole is in ICT project management, not in candidate's goal field",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "cv_fit_v": 18
-  },
-  {
-   "id": "74188582",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74188582/commercieel-teamleider",
-   "title": "Commercieel Teamleider",
-   "company": "AGO Roeselare Office",
-   "location": "Izegem",
-   "match_score": 0,
-   "reason": "Requires a professional bachelor degree with no experience alternative",
-   "apply_email": "roeselare.office@ago.jobs",
-   "found_at": "2026-07-21 13:25",
-   "status": "new",
-   "details": "Role: Commercial Team Leader\nMain tasks: lead sales team, develop client relationships, analyze sales figures\nContract: interim with option for permanent, full-time, day work\nLanguage: Dutch (very good)\nPay: not stated",
-   "why_good": "",
-   "why_bad": "- Requires a professional bachelor degree (no 'or equivalent by experience' mentioned)\n- Requires at least 2 years of experience in a similar role\n- Requires very good Dutch (above B1)\n- Candidate has no degree and only ~4 months of professional experience",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "cv_fit_v": 18
-  },
-  {
-   "id": "74188616",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74188616/strategisch-projectcoordinator",
-   "title": "Strategisch Projectcoördinator",
-   "company": "AGO Roeselare Office",
-   "location": "Handzame",
-   "match_score": 0,
-   "reason": "Requires at least 5 years of experience and a bachelor's degree, which the candidate lacks.",
-   "apply_email": "roeselare.office@ago.jobs",
-   "found_at": "2026-07-21 13:25",
-   "status": "new",
-   "details": "Role: Strategic project coordinator\nTasks: Manage full project lifecycle, translate strategic goals into plans, analyze processes, coordinate stakeholders\nContract: Permanent, full-time, day work\nLanguage: Dutch (very good)\nPay: Not stated",
-   "why_good": "",
-   "why_bad": "Requires at least 5 years of experience (candidate has ~4 months)\nRequires a professional bachelor's degree (candidate has no degree)\nRequires very good Dutch (candidate has B1)\nRole is senior-level project management, not entry-level",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "cv_fit_v": 18
-  },
-  {
-   "id": "74188685",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74188685/learning-development-specialist",
-   "title": "Learning & Development Specialist",
-   "company": "AGO Roeselare Office",
-   "location": "Westrozebeke",
-   "match_score": 0,
-   "reason": "French required at a very good level, which the candidate does not speak.",
-   "apply_email": "roeselare.office@ago.jobs",
-   "found_at": "2026-07-21 13:25",
-   "status": "new",
-   "details": "Role: Learning & Development Specialist\nMain tasks: coordinate training, manage onboarding, optimize processes\nContract: permanent, full-time, day work\nLanguage: French (very good), English (very good), Dutch (very good)\nPay: market-conform salary + benefits",
-   "why_good": "",
-   "why_bad": "French required at 'Zeer goed' level, candidate has no French\nRole is HR/L&D, not in candidate's goal field\nRequires at least 2 years of HR experience, candidate has none\nRequires a professional bachelor or equivalent by experience, candidate has no degree",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "cv_fit_v": 18
-  },
-  {
-   "id": "74188686",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74188686/regionaal-operationeel-verantwoordelijke",
-   "title": "Regionaal Operationeel Verantwoordelijke",
-   "company": "AGO Roeselare Office",
-   "location": "Roeselare",
-   "match_score": 0,
-   "reason": "Requires 5+ years experience and a master's degree, both of which the candidate lacks.",
-   "apply_email": "roeselare.office@ago.jobs",
-   "found_at": "2026-07-21 13:25",
-   "status": "new",
-   "details": "Role: Regional operational manager for a technical service company\nMain tasks: Business development, client relations, team management, project oversight, budget management\nContract: Interim with option for permanent, full-time, day work\nLanguage: Dutch (very good)\nPay: Not stated",
-   "why_good": "",
-   "why_bad": "Requires at least 5 years of relevant experience (candidate has ~4 months)\nRequires a master's degree (candidate has no degree)\nRequires very good Dutch (candidate has B1)\nRequires experience in technical/construction sector (candidate has none)",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "cv_fit_v": 18
-  },
-  {
-   "id": "74188723",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74188723/hr-data-analytics-business-partner",
-   "title": "HR Data & Analytics Business Partner",
-   "company": "AGO Roeselare Office",
-   "location": "Wingene",
-   "match_score": 0,
-   "reason": "Requires French at a very good level, which the candidate does not have.",
-   "apply_email": "roeselare.office@ago.jobs",
-   "found_at": "2026-07-21 13:25",
-   "status": "new",
-   "details": "Role: HR data analysis, dashboards, HRIS, process optimization\nContract: Interim with option for permanent, full-time, day work\nLanguages: Dutch (very good), English (very good), French (very good)\nEducation: Professional bachelor required\nExperience: At least 2 years\nPay: Not stated",
-   "why_good": "",
-   "why_bad": "French required at very good level (candidate has no French)\nRequires a professional bachelor degree (candidate has no degree)\nRequires at least 2 years of HR experience (candidate has no HR experience)",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "cv_fit_v": 18
-  },
-  {
-   "id": "74188813",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74188813/assistent-verantwoordelijke-traiteur",
-   "title": "Assistent Verantwoordelijke Traiteur",
-   "company": "KONVERT INTERIM GENK",
-   "location": "Genk",
-   "match_score": 0,
-   "reason": "Job requires fluent Dutch (zeer goed) and 2+ years experience in a traiteur/administrative role, not in the candidate's goal field.",
-   "apply_email": "",
-   "found_at": "2026-07-21 13:24",
-   "status": "new",
-   "details": "Role: Support responsible of traiteur service\nTasks: quotes, schedules, webshop orders, communication with butchery/bakery, active work on floor\nContract: interim with option permanent, part-time 16h/week, daytime\nLanguage: Dutch (zeer goed)\nPay: not stated",
-   "why_good": "",
-   "why_bad": "Requires very good Dutch (zeer goed) - candidate has B1\nRequires at least 2 years experience - candidate has ~4 months\nRole is in traiteur/food service, not digital marketing or web\nRequires administrative and food sector affinity, not candidate's skills",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "cv_fit_v": 18
-  },
-  {
-   "id": "74188922",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74188922/hr-recruiter-konvert-interim",
-   "title": "HR Recruiter",
-   "company": "Konvert Interim",
-   "location": "Kortrijk",
-   "match_score": 0,
-   "reason": "Job requires a professional bachelor degree and 2+ years of HR recruitment experience, which the candidate lacks.",
-   "apply_email": "",
-   "found_at": "2026-07-21 13:24",
-   "status": "new",
-   "details": "Role: HR recruiter (full-cycle recruitment, B2B/B2C)\nContract: permanent, full-time, day work\nStart: as soon as possible\nLanguages: Dutch (very good)\nPay: €2640-€3199 gross/month + benefits",
-   "why_good": "",
-   "why_bad": "Requires a professional bachelor degree (candidate has no degree)\nRequires at least 2 years of relevant experience (candidate has 0 in HR)\nRole is in HR recruitment, not in digital marketing/SEO/content/web\nRequires very good Dutch (candidate has B1 conversational)",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "cv_fit_v": 18
   }
  ],
- "search_cursor": 2
+ "search_cursor": 6,
+ "li_cursor": 4
 }
