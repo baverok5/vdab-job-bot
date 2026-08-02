@@ -665,10 +665,19 @@ JOB_BOARDS = [
 BOARD_JOB_RX = re.compile(
     r"/(?:job|jobs|vacature|vacatures|vacancy|vacancies|offre|offres|emploi|"
     r"emplois|position|opening|listing)[a-z-]*[-/][^?#]{8,}", re.I)
-# A posting's URL ends in a slug naming the role, or an id. A category page
-# ("/jobs/Administrative", "/jobs/Marketing%20Sales") does not — and the first
-# run collected 29 of those from jobsinbrussels.com as if they were vacancies.
-BOARD_SLUG_RX = re.compile(r"(?:[a-z0-9]+[-_+]){2,}[a-z0-9]+|\d{4,}", re.I)
+# Editorial and browse pages that sit under the same /job... prefix as the real
+# vacancies. Round two pulled in "/blog/job-description/project-manager" and
+# "/blog/job-sector/be-or-become-a-marketing-and-sales-employee" as if they were
+# jobs; they are career-advice articles.
+BOARD_SKIP_RX = re.compile(
+    r"/(?:blog|news|article|advice|guide|tips|about|faq|press|company|companies|"
+    r"employer|employers|recruiter|category|categories|sector|sectors)(?:/|$)", re.I)
+# What actually distinguishes a posting from a browse page: postings carry an id.
+# Slug shape alone is not enough — "/jobs/Government-and-Social-Profit" and
+# "/jobs/construction-material-and-real-estate" are categories that look exactly
+# like role slugs. A board whose postings have no id in the URL needs its own
+# "job_rx" in JOB_BOARDS, taken from the link census the misses print below.
+BOARD_SLUG_RX = re.compile(r"\d{4,}")
 BOARD_PER_PAGE = 60          # links kept per listing page
 BOARD_BUDGET_S = 240
 
@@ -690,6 +699,37 @@ def dedupe_key(title, company):
     c = re.sub(r"[^a-z0-9]+", " ", (company or "").lower()).strip()
     c = re.sub(r"\b(nv|sa|bv|bvba|sprl|srl|vzw|asbl|group|belgium|belgie)\b", "", c).strip()
     return f"{t}|{c}" if t and c else None
+
+
+def board_url_is_posting(path, board=None):
+    """Is this board path one vacancy, rather than a category listing or a
+    career-advice article? A board with a confirmed detail-URL shape says so
+    with its own job_rx; otherwise we fall back to "the URL carries an id"."""
+    if BOARD_SKIP_RX.search(path):
+        return False
+    own = (board or {}).get("job_rx")
+    if own:
+        return bool(re.search(own, path, re.I))
+    return bool(BOARD_SLUG_RX.search(path))
+
+
+def prune_board_listings(jobs):
+    """Drop board entries already saved that the current rules reject. Round two
+    of this feature let blog posts and category pages into the listing, where
+    they would sit forever eating screening budget; this cleans them out on the
+    next run instead of needing a hand-edit of the data file."""
+    by_host = {b["name"]: b for b in JOB_BOARDS}
+    bad = {j["id"] for j in jobs.get("listing", [])
+           if j.get("src") in by_host
+           and not board_url_is_posting(urlsplit(j.get("url", "")).path,
+                                        by_host[j["src"]])}
+    if not bad:
+        return 0
+    jobs["listing"] = [j for j in jobs.get("listing", []) if j["id"] not in bad]
+    jobs["jobs"] = [j for j in jobs.get("jobs", []) if j["id"] not in bad]
+    print(f"  boards: pruned {len(bad)} saved non-vacancy links "
+          f"(category/blog pages)")
+    return bad
 
 
 def collect_boards(browser, budget_s=BOARD_BUDGET_S):
@@ -747,10 +787,9 @@ def collect_boards(browser, budget_s=BOARD_BUDGET_S):
                     seg = "/".join(parts.path.split("/")[:3]) or "/"
                     host_paths[seg] += 1
                     continue
-                # Looks like a job URL, but a board's own category pages sit
-                # under the same prefix. Require a last segment that names a
-                # role (several words) or carries an id.
-                if not BOARD_SLUG_RX.search(parts.path.rstrip("/").split("/")[-1]):
+                # Looks like a job URL, but the board's own browse pages and
+                # career-advice articles sit under the same prefix.
+                if not board_url_is_posting(parts.path, board):
                     host_paths[seg] += 1
                     continue
                 href = urlunsplit((parts.scheme, parts.netloc, parts.path,
@@ -1491,6 +1530,10 @@ def main():
             # that also exists on LinkedIn is dropped here — same job, and the
             # LinkedIn copy is the one already wired into the app. What survives
             # is the set you can ONLY apply to on that board.
+            bad_board = prune_board_listings(jobs)
+            if bad_board:
+                for _s in (shortlist, title_no):
+                    _s -= bad_board
             board_meta = collect_boards(browser)
             if board_meta:
                 known = {dedupe_key(j.get("title"), j.get("company"))
