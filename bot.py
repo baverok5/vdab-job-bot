@@ -11,12 +11,14 @@ How it works (runs on GitHub Actions every hour):
 6. Sends a Telegram message so you know there's a new match
 """
 
+import hashlib
 import json
 import os
 import re
 import subprocess
 import time
 from datetime import datetime, timezone
+from urllib.parse import urljoin, urlsplit, urlunsplit
 
 import requests
 from bs4 import BeautifulSoup
@@ -619,6 +621,133 @@ def collect_linkedin(keywords=None, pages_per_kw=6, budget_s=420):
                 break
             time.sleep(2.2)   # gentler: 1.5s over ~180 requests drew a 429
     print(f"  linkedin: collected {len(found)} jobs in {int(time.time() - t0)}s")
+    return found
+
+
+# ---------------------------------------------------------------------------
+# Third source: the English-language Belgian job boards. LinkedIn and VDAB miss
+# jobs that are only advertised on these, and several of them are where the
+# English-speaking-in-Belgium postings actually live.
+#
+# Their HTML cannot be inspected from here (the sandbox is firewalled from every
+# one of them, same as VDAB and LinkedIn), so this deliberately avoids per-site
+# CSS selectors that I would only be guessing at. Instead it renders a listing
+# page and keeps the links that look like job postings, which is a shape every
+# board shares. Each board logs what it fetched and the first titles it found,
+# so the run log says exactly which config needs correcting.
+JOB_BOARDS = [
+    {"name": "englishjobs.be",
+     "pages": ["https://www.englishjobs.be/",
+               "https://www.englishjobs.be/jobs",
+               "https://www.englishjobs.be/jobs?search=marketing"]},
+    {"name": "jobinbelgium.com",
+     "pages": ["https://www.jobinbelgium.com/",
+               "https://www.jobinbelgium.com/jobs",
+               "https://www.jobinbelgium.com/jobs?q=marketing"]},
+    {"name": "stepstone.be",
+     "pages": ["https://www.stepstone.be/jobs/marketing",
+               "https://www.stepstone.be/jobs/seo",
+               "https://www.stepstone.be/jobs/digital-marketing"],
+     # Stepstone detail URLs are /vacatures--... (nl) or /offres-d-emploi--... (fr)
+     "job_rx": r"/(?:vacatures|offres-d-emploi)--"},
+    {"name": "jobsinbrussels.com",
+     "pages": ["https://www.jobsinbrussels.com/",
+               "https://www.jobsinbrussels.com/jobs",
+               "https://www.jobsinbrussels.com/search?q=marketing"]},
+    {"name": "findajobinbelgium.com",
+     "pages": ["https://www.findajobinbelgium.com/",
+               "https://www.findajobinbelgium.com/jobs"]},
+]
+# Generic shape of a job-detail URL across boards: a /job/, /vacature/, /vacancy/,
+# /offre/... segment followed by a slug with some substance to it.
+BOARD_JOB_RX = re.compile(
+    r"/(?:job|jobs|vacature|vacatures|vacancy|vacancies|offre|offres|emploi|"
+    r"emplois|position|opening|listing)[a-z-]*[-/][^?#]{8,}", re.I)
+BOARD_PER_PAGE = 60          # links kept per listing page
+BOARD_BUDGET_S = 240
+
+
+def board_job_id(url):
+    """Stable numeric id for a board posting. Numeric because the whole pipeline
+    sorts on int(id); 9 digits keeps it clear of VDAB's 8 and LinkedIn's 10."""
+    h = int(hashlib.sha1(url.encode("utf-8")).hexdigest()[:12], 16)
+    return str(100_000_000 + h % 900_000_000)
+
+
+def dedupe_key(title, company):
+    """What counts as 'the same job' across two boards. Titles get punctuation and
+    the usual (m/v/x)-style noise stripped; without a company name the title alone
+    is too weak a key ("Digital Marketing Intern" is a dozen different jobs), so
+    those are kept rather than silently dropped."""
+    t = re.sub(r"\(.*?\)|\bm/v/x\b|\bm/f\b|\bh/f\b", " ", (title or "").lower())
+    t = re.sub(r"[^a-z0-9]+", " ", t).strip()
+    c = re.sub(r"[^a-z0-9]+", " ", (company or "").lower()).strip()
+    c = re.sub(r"\b(nv|sa|bv|bvba|sprl|srl|vzw|asbl|group|belgium|belgie)\b", "", c).strip()
+    return f"{t}|{c}" if t and c else None
+
+
+def collect_boards(browser, budget_s=BOARD_BUDGET_S):
+    """Render each board's listing pages and return {id: {...}} for the postings
+    found. Best-effort per board: one that changes its markup or blocks us logs a
+    line and the others carry on."""
+    found, t0 = {}, time.time()
+    for board in JOB_BOARDS:
+        if time.time() - t0 > budget_s:
+            print(f"  boards: budget spent, {board['name']} onwards skipped this run")
+            break
+        rx = re.compile(board["job_rx"], re.I) if board.get("job_rx") else BOARD_JOB_RX
+        host = board["name"]
+        got = 0
+        for url in board["pages"]:
+            if time.time() - t0 > budget_s:
+                break
+            page = None
+            try:
+                page = browser.new_page(user_agent=HEADERS["User-Agent"], locale="en-GB")
+                page.goto(url, wait_until="domcontentloaded", timeout=30000)
+                page.wait_for_timeout(1500)     # let the listing hydrate
+                html = page.content()
+            except Exception as e:
+                print(f"  board {host}: {url} failed ({type(e).__name__})")
+                continue
+            finally:
+                if page:
+                    try:
+                        page.close()
+                    except Exception:
+                        pass
+            soup = BeautifulSoup(html, "html.parser")
+            added, sample = 0, []
+            for a in soup.select("a[href]"):
+                href = urljoin(url, (a.get("href") or "").strip())
+                parts = urlsplit(href)
+                if parts.scheme not in ("http", "https"):
+                    continue
+                # Match on the PATH only. Matching the whole URL would fire on
+                # the hostname itself for a board like "jobs-in-brussels.com".
+                if not parts.netloc.endswith(host) or not rx.search(parts.path):
+                    continue
+                href = urlunsplit((parts.scheme, parts.netloc, parts.path,
+                                   parts.query, ""))
+                jid = board_job_id(href)
+                if jid in found:
+                    continue
+                title = " ".join((a.get_text(" ", strip=True) or "").split())[:140]
+                if len(title) < 6:              # nav/logo links, not a posting
+                    continue
+                found[jid] = {"id": jid, "url": href, "title": title,
+                              "company": "", "location": "", "src": host}
+                added += 1
+                if len(sample) < 3:
+                    sample.append(title[:48])
+                if added >= BOARD_PER_PAGE:
+                    break
+            got += added
+            print(f"  board {host}: {url} -> +{added}"
+                  + (f" e.g. {sample}" if sample else " (no job links matched)"))
+            time.sleep(1.5)
+        print(f"  board {host}: {got} postings")
+    print(f"  boards: collected {len(found)} postings in {int(time.time() - t0)}s")
     return found
 
 
@@ -1325,19 +1454,43 @@ def main():
             for _m in li_meta.values():
                 all_links.add((_m["url"], _m["id"]))
 
+            # Third source: the English-language Belgian job boards. A posting
+            # that also exists on LinkedIn is dropped here — same job, and the
+            # LinkedIn copy is the one already wired into the app. What survives
+            # is the set you can ONLY apply to on that board.
+            board_meta = collect_boards(browser)
+            if board_meta:
+                known = {dedupe_key(j.get("title"), j.get("company"))
+                         for j in jobs.get("listing", [])}
+                known |= {dedupe_key(m["title"], m.get("company"))
+                          for m in li_meta.values()}
+                known.discard(None)
+                dropped = 0
+                for _m in list(board_meta.values()):
+                    k = dedupe_key(_m["title"], _m.get("company"))
+                    if k and k in known:
+                        board_meta.pop(_m["id"], None)
+                        dropped += 1
+                        continue
+                    if k:
+                        known.add(k)
+                    all_links.add((_m["url"], _m["id"]))
+                print(f"  boards: {len(board_meta)} new, {dropped} already covered "
+                      f"by LinkedIn/VDAB")
+
             # Accumulate the master listing across runs (union by id), dropping
             # roles the candidate never wants. This is what keeps coverage growing
             # instead of being pinned to a single search's results.
             listing = {j["id"]: j for j in jobs.get("listing", [])}
             for (u, i) in all_links:
-                m = li_meta.get(i)
-                if m:  # LinkedIn item — use its real title/company/location
+                m = li_meta.get(i) or board_meta.get(i)
+                if m:  # LinkedIn / job-board item — it carries a real title
                     if is_excluded(m["title"]) or is_ineligible(m["title"]):
                         continue
                     listing[i] = {"id": i, "url": u, "title": m["title"],
                                   "company": m.get("company", ""),
                                   "location": m.get("location", ""),
-                                  "src": "linkedin"}
+                                  "src": m.get("src", "linkedin")}
                     continue
                 t = _slug_title(u)
                 if is_excluded(t) or is_ineligible(t):

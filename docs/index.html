@@ -579,9 +579,24 @@ function card(j, state) {
   return el;
 }
 
-// Which board a job came from — VDAB or the LinkedIn secondary source.
+// Which board a job came from. Beyond VDAB and LinkedIn there are now the
+// English-language Belgian boards, and those must be named properly: "Apply on
+// VDAB" under a job that only exists on EnglishJobs.be would send you nowhere.
+const BOARD_NAMES = {
+  "englishjobs.be": "EnglishJobs.be",
+  "jobinbelgium.com": "JobinBelgium",
+  "stepstone.be": "StepStone",
+  "jobsinbrussels.com": "JobsinBrussels",
+  "findajobinbelgium.com": "FindaJobinBelgium",
+};
 function srcOf(j) {
-  return (j && (j.src === "linkedin" || /linkedin\.com/.test(j.url || ""))) ? "LinkedIn" : "VDAB";
+  if (!j) return "VDAB";
+  if (j.src === "linkedin" || /linkedin\.com/.test(j.url || "")) return "LinkedIn";
+  if (BOARD_NAMES[j.src]) return BOARD_NAMES[j.src];
+  const host = (j.url || "").match(/^https?:\/\/(?:www\.)?([^/]+)/);
+  if (host && BOARD_NAMES[host[1]]) return BOARD_NAMES[host[1]];
+  if (host && !/vdab\.be$/.test(host[1])) return host[1];
+  return "VDAB";
 }
 function listingCard(j) {
   const el = document.createElement("div");
