@@ -1,6 +1,126 @@
 {
- "updated": "2026-08-02 17:19 UTC",
+ "updated": "2026-08-02 17:26 UTC",
  "jobs": [
+  {
+   "id": "4434341079",
+   "url": "https://www.linkedin.com/jobs/view/4434341079",
+   "title": "Web User Experience Specialist",
+   "company": "Cronos Europa",
+   "location": "Unknown",
+   "match_score": 60,
+   "reason": "Role fits candidate's web/UX and digital communication skills; language requirement is English and/or French, which is acceptable as English is sufficient.",
+   "apply_email": "",
+   "found_at": "2026-08-02 17:21",
+   "status": "new",
+   "details": "Role focuses on improving user experience on IT service platforms, data analysis, creating presentations/visuals/web content, and UAT.\nRequires 1-3 years experience, which is a stretch for candidate's ~4 months.\nLanguage: Good command of English and/or French; candidate has English.\nContract type not specified; likely full-time.\nNo pay stated.",
+   "why_good": "Candidate has web design and WordPress experience, plus SEO and content writing skills.\nStrong analytical and reporting skills from SEO audits and Google Analytics.\nComfortable with digital communication and creating web content.\nEnglish is professional, meeting the language requirement.\nExperience requirement is a stretch but not a hard fail; candidate can apply.",
+   "why_bad": "",
+   "dutch_stretch": false,
+   "exp_stretch": true,
+   "internship": false,
+   "lang": "en",
+   "cv_fit_v": 18
+  },
+  {
+   "id": "4437063339",
+   "url": "https://www.linkedin.com/jobs/view/4437063339",
+   "title": "Dutch-speaking Sales Specialist",
+   "company": "Unknown",
+   "location": "Barcelona",
+   "match_score": 60,
+   "reason": "Role fits digital marketing/sales with no French requirement, and candidate's experience is sufficient.",
+   "apply_email": "",
+   "found_at": "2026-08-02 17:21",
+   "status": "new",
+   "details": "Role: Sales Specialist for Google Ads and digital campaigns\nTasks: Engage SMB clients, advise on Google Ads, identify sales opportunities, use Salesforce/Excel\nContract: Full-time, hybrid work, relocation bonus\nLanguage: Dutch C1+ and English B2 minimum\nPay: Competitive salary with performance bonuses",
+   "why_good": "Candidate has digital marketing and SEO internship experience, including Google Ads knowledge.\nStrong English skills (professional) meet the B2 requirement.\nSales and account management experience from warehouse/logistics roles, though not direct sales.\nRelocation to Barcelona is offered, and the role is in the digital marketing field.",
+   "why_bad": "",
+   "dutch_stretch": true,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "en",
+   "cv_fit_v": 18
+  },
+  {
+   "id": "4439158247",
+   "url": "https://www.linkedin.com/jobs/view/4439158247",
+   "title": "Digital Sales Enablement Specialist",
+   "company": "Atlas Copco",
+   "location": "Antwerp, Belgium",
+   "match_score": 55,
+   "reason": "Role fits digital marketing/sales enablement with no hard walls; language is English-friendly and no French required.",
+   "apply_email": "",
+   "found_at": "2026-08-02 17:21",
+   "status": "new",
+   "details": "Support digital sales tools (E-Commerce, CRM, CPQ, Customer Portal) and processes.\nDevelop dashboards, coordinate testing/releases, manage translations, create communication materials.\nHybrid work: 60% on-site in Antwerp, 40% remote.\nFull-time permanent role.\nLanguage: English (implied international environment), no French required.\nCompensation: competitive package with health insurance, paid leave, retirement benefits.",
+   "why_good": "Candidate's digital marketing and SEO background aligns with digital tool enablement and data-driven insights.\nExperience with WordPress, analytics, and content creation supports communication and training materials.\nStrong interest in digital tools and customer-centric solutions matches the role's focus.\nCompany explicitly says 'hire for attitude & train for skill', welcoming partial profile matches.\nEnglish is sufficient; no French required.",
+   "why_bad": "",
+   "dutch_stretch": false,
+   "exp_stretch": true,
+   "internship": false,
+   "lang": "en",
+   "cv_fit_v": 18
+  },
+  {
+   "id": "4441211467",
+   "url": "https://www.linkedin.com/jobs/view/4441211467",
+   "title": "Operational Care Specialist Sea Logistics",
+   "company": "Kuehne+Nagel",
+   "location": "Antwerp",
+   "match_score": 55,
+   "reason": "Role is in logistics, not a skilled trade, and requires only English with Dutch as a plus; candidate's warehouse experience and organizational skills are relevant.",
+   "apply_email": "",
+   "found_at": "2026-08-02 17:20",
+   "status": "new",
+   "details": "Role: Operational Care Specialist for sea freight import\nTasks: scheduling FCL shipments, customs clearance, communication with shipping companies, organizing port acceptance, documentation, compliance\nContract: full-time, permanent\nSchedule: standard office hours\nLanguage: English required, Dutch a plus\nPay: competitive salary, benefits (27 vacation days, meal vouchers, insurance)",
+   "why_good": "Candidate has warehouse/logistics experience at Katoen Natie, showing familiarity with logistics environment.\nRole requires strong organizational skills and attention to detail, which candidate demonstrated in warehouse work.\nEnglish is required and candidate is fluent; Dutch is a plus and candidate has B1.\nNo degree required; experience or studies in freight forwarding preferred but not mandatory.\nNo French required, so language is not a barrier.",
+   "why_bad": "",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "en",
+   "cv_fit_v": 18
+  },
+  {
+   "id": "4443071914",
+   "url": "https://www.linkedin.com/jobs/view/4443071914",
+   "title": "Dutch-speaking Sales Specialist",
+   "company": "Unknown",
+   "location": "Barcelona",
+   "match_score": 55,
+   "reason": "Role fits digital marketing/sales with no French requirement and only 6 months experience asked.",
+   "apply_email": "",
+   "found_at": "2026-08-02 17:20",
+   "status": "new",
+   "details": "Role: Sales Specialist for Google Ads and digital campaigns\nTasks: Engage SMB clients, advise on Google Ads, identify sales opportunities, use Salesforce/Excel\nContract: Full-time, hybrid work, relocation bonus\nLanguage: Dutch C1+ and English B2 minimum\nPay: Competitive salary with performance bonuses",
+   "why_good": "Candidate has digital marketing internship and SEO/Google Ads knowledge\nExperience in sales not required, only 6 months in sales/marketing which candidate has\nEnglish professional, Dutch B1 (conversational) but job requires C1+ — a stretch\nRelocation to Barcelona offered, candidate open to international roles\nStrong communication and client-facing skills from warehouse and front-end roles",
+   "why_bad": "",
+   "dutch_stretch": true,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "en",
+   "cv_fit_v": 18
+  },
+  {
+   "id": "4444579689",
+   "url": "https://www.linkedin.com/jobs/view/4444579689",
+   "title": "RIAT Digital Service Design Officer",
+   "company": "Return and Reintegration Facility (RRF)",
+   "location": "Unknown",
+   "match_score": 55,
+   "reason": "Role fits digital service design and coordination, no hard walls triggered.",
+   "apply_email": "",
+   "found_at": "2026-08-02 17:20",
+   "status": "new",
+   "details": "Supports development of RIAT tool, translating user needs into requirements.\nFacilitates discovery, intake, prioritisation, and coordination with developers and stakeholders.\nWorks under RIAT Senior Project Manager.\nLikely full-time, professional role.\nLanguage: English (EU context).\nPay not stated.",
+   "why_good": "Digital service design and coordination aligns with candidate's digital marketing and web background.\nExperience with WordPress, SEO, and content can support user-centric design and requirements.\nEnglish is the working language, matching candidate's professional proficiency.\nEarly-career role, no seniority or degree hard requirement.\nEU-funded project offers valuable experience in digital service development.",
+   "why_bad": "",
+   "dutch_stretch": false,
+   "exp_stretch": true,
+   "internship": false,
+   "lang": "en",
+   "cv_fit_v": 18
+  },
   {
    "id": "4445228941",
    "url": "https://www.linkedin.com/jobs/view/4445228941",
@@ -8789,7 +8909,8 @@
    "dutch_stretch": true,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74188129",
@@ -8808,7 +8929,8 @@
    "dutch_stretch": true,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74056071",
@@ -8827,7 +8949,8 @@
    "dutch_stretch": true,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "73978058",
@@ -8846,7 +8969,8 @@
    "dutch_stretch": true,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "73887479",
@@ -8865,7 +8989,8 @@
    "dutch_stretch": true,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "73963073",
@@ -8884,7 +9009,8 @@
    "dutch_stretch": true,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "73874310",
@@ -8960,7 +9086,8 @@
    "dutch_stretch": true,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74158752",
@@ -8979,7 +9106,8 @@
    "dutch_stretch": true,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74061236",
@@ -8998,7 +9126,8 @@
    "dutch_stretch": true,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74014872",
@@ -9017,7 +9146,8 @@
    "dutch_stretch": true,
    "exp_stretch": false,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "4430114254",
@@ -66360,6 +66490,126 @@
   }
  ],
  "rejected": [
+  {
+   "id": "4433251637",
+   "url": "https://www.linkedin.com/jobs/view/4433251637",
+   "title": "Senior Digital Sales Expert",
+   "company": "Unknown",
+   "location": "Unknown",
+   "match_score": 0,
+   "reason": "Senior role requiring 5+ years of experience and strategic leadership, which the candidate lacks.",
+   "apply_email": "",
+   "found_at": "2026-08-02 17:22",
+   "status": "new",
+   "details": "Role: Senior Digital Sales Expert\nMain tasks: Increase digital & mobile sales, drive paid and owned traffic, optimize for SEO and conversion, manage campaigns, analyze performance, contribute to experimentation.\nContract type: Not specified\nSchedule: Not specified\nLanguage: Not specified\nPay: Not specified",
+   "why_good": "",
+   "why_bad": "Requires senior-level experience (5+ years) in digital sales and marketing.\nInvolves strategic planning, project management, and leadership responsibilities.\nCandidate has only ~4 months of professional experience, far below the seniority required.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "en",
+   "cv_fit_v": 18
+  },
+  {
+   "id": "4436352840",
+   "url": "https://www.linkedin.com/jobs/view/4436352840",
+   "title": "Digital Creative",
+   "company": "Unknown",
+   "location": "Unknown",
+   "match_score": 0,
+   "reason": "Requires French and a bachelor's degree, plus graphic design skills not in CV.",
+   "apply_email": "",
+   "found_at": "2026-08-02 17:21",
+   "status": "new",
+   "details": "Develop still & moving content for social media and events\nCollaborate with athletes, artists, and freelancers\nProficient in Photoshop, InDesign, Premiere Pro, After Effects\nMinimum 2 years experience\nBachelor's degree in graphic/digital field required\nFluent Dutch, French, and English required",
+   "why_good": "",
+   "why_bad": "Requires French at a fluent level (candidate has no French)\nRequires a bachelor's degree with no alternative (candidate has no degree)\nRequires graphic design software proficiency (Photoshop, InDesign, etc.) not in candidate's skill set\nRequires at least 2 years of experience (candidate has ~4 months)",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 18
+  },
+  {
+   "id": "4436533218",
+   "url": "https://www.linkedin.com/jobs/view/4436533218",
+   "title": "Product Designer - Digital Identity",
+   "company": "EPI",
+   "location": "Remote (Europe)",
+   "match_score": 0,
+   "reason": "Requires 6+ years of product design experience and a senior/lead role, which the candidate lacks.",
+   "apply_email": "",
+   "found_at": "2026-08-02 17:21",
+   "status": "new",
+   "details": "Role: Product Designer for digital identity (EUDI/Wero)\nMain tasks: design identity flows, prototyping, stakeholder management\nContract: full-time, remote-first\nSchedule: remote with quarterly meetups\nLanguage: English required (C1/C2)\nPay: competitive package",
+   "why_good": "",
+   "why_bad": "Requires 6+ years of product design experience (candidate has ~4 months)\nSenior/lead role (Design Lead for Identity) - not entry-level\nRequires advanced Figma proficiency and extensive portfolio\nCandidate's background is in digital marketing/SEO, not product design",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "en",
+   "cv_fit_v": 18
+  },
+  {
+   "id": "4441479397",
+   "url": "https://www.linkedin.com/jobs/view/4441479397",
+   "title": "French Technical Product Specialist | Digital Ads",
+   "company": "Mercier Consultancy Group",
+   "location": "Athens, Greece",
+   "match_score": 0,
+   "reason": "Requires native or fluent French, which the candidate does not have.",
+   "apply_email": "",
+   "found_at": "2026-08-02 17:20",
+   "status": "new",
+   "details": "Role: Technical product specialist for digital ads in retail\nTasks: Provide technical support, troubleshoot ad delivery, optimize campaigns\nContract: Full-time, permanent\nSchedule: On-site in Athens\nLanguage: Native/fluent French required\nPay: Competitive salary, relocation package, health insurance, bonuses",
+   "why_good": "",
+   "why_bad": "Requires native or fluent French (essential) - candidate has no French\nRequires EU passport or work authorization - candidate may not have\nRequires solid understanding of digital advertising platforms - candidate has some but not retail-specific\nRequires prior experience in technical support or product specialist - candidate has limited experience",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "en",
+   "cv_fit_v": 18
+  },
+  {
+   "id": "4442491924",
+   "url": "https://www.linkedin.com/jobs/view/4442491924",
+   "title": "Digital Strategist (m/f)",
+   "company": "Weber Shandwick",
+   "location": "Brussels",
+   "match_score": 0,
+   "reason": "Senior leadership role requiring extensive experience and strategic leadership, far beyond early-career candidate.",
+   "apply_email": "HRBrussels@webershandwick.com",
+   "found_at": "2026-08-02 17:20",
+   "status": "new",
+   "details": "Role: Lead digital offering growth in Brussels office\nTasks: Develop digital strategy, lead new business pitches, manage client relationships, drive innovation\nContract: Full-time\nSchedule: Not specified\nLanguage: English (posting in English)\nPay: Competitive salary",
+   "why_good": "",
+   "why_bad": "Requires proven track record of leading new business and driving growth (senior level)\nRequires extensive experience in digital strategy and client management (5+ years implied)\nLeadership role reporting to CEO, not entry-level",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "en",
+   "cv_fit_v": 18
+  },
+  {
+   "id": "4442511008",
+   "url": "https://www.linkedin.com/jobs/view/4442511008",
+   "title": "Web Project Manager",
+   "company": "Expansion",
+   "location": "Namur region",
+   "match_score": 0,
+   "reason": "The job requires French (the posting is in French and mentions Dutch as a plus, but the working language is French), which the candidate does not speak.",
+   "apply_email": "michel.durso@expansion.be",
+   "found_at": "2026-08-02 17:20",
+   "status": "new",
+   "details": "Role: Web Project Manager at a marketing/communication agency.\nMain tasks: Advise clients on web solutions, manage projects from A to Z (needs analysis, proposals, planning, coordinating webdesigners, deliverables), manage client accounts, detect opportunities.\nContract type: Not specified.\nSchedule: Not specified.\nLanguage: French (posting in French), Dutch is a plus.\nPay: Not specified.",
+   "why_good": "",
+   "why_bad": "The job posting is in French and the working language is French; the candidate has no French.\nThe role requires a university degree (or equivalent) in marketing/communication/business/technical; the candidate has no completed degree.\nThe role asks for at least one year of proven internet experience in a marketing/web department or agency; the candidate has only ~4 months of experience.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 18
+  },
   {
    "id": "4444593490",
    "url": "https://www.linkedin.com/jobs/view/4444593490",
