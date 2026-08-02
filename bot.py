@@ -751,7 +751,7 @@ def collect_boards(browser, budget_s=BOARD_BUDGET_S):
                 # under the same prefix. Require a last segment that names a
                 # role (several words) or carries an id.
                 if not BOARD_SLUG_RX.search(parts.path.rstrip("/").split("/")[-1]):
-                    host_paths["/".join(parts.path.split("/")[:3]) or "/"] += 1
+                    host_paths[seg] += 1
                     continue
                 href = urlunsplit((parts.scheme, parts.netloc, parts.path,
                                    parts.query, ""))
