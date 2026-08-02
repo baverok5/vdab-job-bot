@@ -17,6 +17,7 @@ import os
 import re
 import subprocess
 import time
+from collections import Counter
 from datetime import datetime, timezone
 from urllib.parse import urljoin, urlsplit, urlunsplit
 
@@ -636,8 +637,8 @@ def collect_linkedin(keywords=None, pages_per_kw=6, budget_s=420):
 # board shares. Each board logs what it fetched and the first titles it found,
 # so the run log says exactly which config needs correcting.
 JOB_BOARDS = [
-    # No "www." — that hostname does not resolve at all, which is what the first
-    # run's "failed (Error)" was. The listing paths below are the site's own.
+    # No "www." on this one — that hostname does not resolve at all, which is
+    # what the first run's "failed" was. Listing paths below are the site's own.
     {"name": "englishjobs.be",
      "pages": ["https://englishjobs.be/jobs/marketing",
                "https://englishjobs.be/jobs/intern_internship",
@@ -647,6 +648,8 @@ JOB_BOARDS = [
                "https://www.jobinbelgium.com/jobs/",
                "https://www.jobinbelgium.com/?s=marketing"]},
     {"name": "stepstone.be",
+     # No job_rx override: the first run proved /vacatures-- is not what this
+     # site links now, so let the generic matcher and the diagnostic speak.
      "pages": ["https://www.stepstone.be/jobs/marketing",
                "https://www.stepstone.be/jobs/digital-marketing"]},
     {"name": "jobsinbrussels.com",
@@ -662,9 +665,9 @@ JOB_BOARDS = [
 BOARD_JOB_RX = re.compile(
     r"/(?:job|jobs|vacature|vacatures|vacancy|vacancies|offre|offres|emploi|"
     r"emplois|position|opening|listing)[a-z-]*[-/][^?#]{8,}", re.I)
-# A posting's URL ends in a slug describing the role — several words, or an id.
-# A category page ("/jobs/Administrative", "/jobs/Marketing Sales") does not, and
-# the first run happily collected 29 of those as if they were vacancies.
+# A posting's URL ends in a slug naming the role, or an id. A category page
+# ("/jobs/Administrative", "/jobs/Marketing%20Sales") does not — and the first
+# run collected 29 of those from jobsinbrussels.com as if they were vacancies.
 BOARD_SLUG_RX = re.compile(r"(?:[a-z0-9]+[-_+]){2,}[a-z0-9]+|\d{4,}", re.I)
 BOARD_PER_PAGE = 60          # links kept per listing page
 BOARD_BUDGET_S = 240
@@ -711,11 +714,11 @@ def collect_boards(browser, budget_s=BOARD_BUDGET_S):
                 page.wait_for_timeout(1500)     # let the listing hydrate
                 html = page.content()
             except Exception as e:
-                # The message matters: "ERR_NAME_NOT_RESOLVED" (the domain is
-                # wrong) and a timeout are different problems, and the type name
-                # alone said nothing on the first run.
-                msg = " ".join(str(e).split())[:130]
-                print(f"  board {host}: {url} failed — {msg}")
+                # The message matters: ERR_NAME_NOT_RESOLVED (wrong domain) and a
+                # timeout are different problems, and the type name alone said
+                # nothing on the first run.
+                print(f"  board {host}: {url} failed — "
+                      f"{' '.join(str(e).split())[:130]}")
                 continue
             finally:
                 if page:
@@ -724,28 +727,31 @@ def collect_boards(browser, budget_s=BOARD_BUDGET_S):
                     except Exception:
                         pass
             soup = BeautifulSoup(html, "html.parser")
-            added, sample, shapes = 0, [], {}
-            for a in soup.select("a[href]"):
+            anchors = soup.select("a[href]")
+            added, sample = 0, []
+            host_paths = Counter()          # same-host paths, for the miss diagnostic
+            for a in anchors:
                 href = urljoin(url, (a.get("href") or "").strip())
                 parts = urlsplit(href)
                 if parts.scheme not in ("http", "https"):
                     continue
                 if not parts.netloc.endswith(host):
                     continue
-                # Census of every internal link shape on the page, printed below.
-                # These sites can't be inspected from a dev machine, so this is
-                # how the run itself reports what a posting URL looks like here
-                # instead of the config being guesswork.
-                seg = "/".join(parts.path.strip("/").split("/")[:2]) or "(root)"
-                s = shapes.setdefault(seg, [0, parts.path])
-                s[0] += 1
                 # Match on the PATH only. Matching the whole URL would fire on
                 # the hostname itself for a board like "jobs-in-brussels.com".
                 if not rx.search(parts.path):
+                    # Record the shape (first two path segments) of the links we
+                    # skipped, so a run where nothing matches still reveals what
+                    # the real posting URLs look like — the config can then be
+                    # corrected instead of guessed at a second time.
+                    seg = "/".join(parts.path.split("/")[:3]) or "/"
+                    host_paths[seg] += 1
                     continue
-                # ...and it has to end in something that names a role, or the
-                # board's own category pages come through as vacancies.
+                # Looks like a job URL, but a board's own category pages sit
+                # under the same prefix. Require a last segment that names a
+                # role (several words) or carries an id.
                 if not BOARD_SLUG_RX.search(parts.path.rstrip("/").split("/")[-1]):
+                    host_paths["/".join(parts.path.split("/")[:3]) or "/"] += 1
                     continue
                 href = urlunsplit((parts.scheme, parts.netloc, parts.path,
                                    parts.query, ""))
@@ -763,16 +769,15 @@ def collect_boards(browser, budget_s=BOARD_BUDGET_S):
                 if added >= BOARD_PER_PAGE:
                     break
             got += added
-            print(f"  board {host}: {url} -> +{added}"
-                  + (f" e.g. {sample}" if sample else " (no job links matched)"))
-            if not added:
-                top = sorted(shapes.items(), key=lambda kv: -kv[1][0])[:6]
-                if top:
-                    print("      link shapes seen: "
-                          + "; ".join(f"/{k} x{v[0]} ({v[1][:70]})" for k, v in top))
-                else:
-                    print(f"      no internal links at all "
-                          f"({len(html)} bytes — blocked or JS-only?)")
+            if added:
+                print(f"  board {host}: {url} -> +{added} e.g. {sample}")
+            else:
+                # No posting matched: was the page even reachable (anchor count),
+                # and what internal-link shapes did it actually carry?
+                top = [f"{seg}({n})" for seg, n in host_paths.most_common(6)]
+                print(f"  board {host}: {url} -> +0  "
+                      f"[{len(anchors)} links, {sum(host_paths.values())} on-site] "
+                      f"paths: {top or 'none on-site'}")
             time.sleep(1.5)
         print(f"  board {host}: {got} postings")
     print(f"  boards: collected {len(found)} postings in {int(time.time() - t0)}s")
