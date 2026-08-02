@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-02 12:34 UTC",
+ "updated": "2026-08-02 12:38 UTC",
  "jobs": [
   {
    "id": "4445834712",
@@ -7499,7 +7499,8 @@
    "dutch_stretch": false,
    "exp_stretch": true,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "73905592",
@@ -7577,7 +7578,8 @@
    "dutch_stretch": false,
    "exp_stretch": true,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74196034",
@@ -7596,7 +7598,8 @@
    "dutch_stretch": false,
    "exp_stretch": true,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "4440399938",
@@ -7617,7 +7620,8 @@
    "internship": false,
    "cv_fit_v": 18,
    "closed_check": "2026-08-02 11:06",
-   "closed_check_v": 2
+   "closed_check_v": 2,
+   "lang": "nl"
   },
   {
    "id": "73932868",
@@ -7676,7 +7680,8 @@
    "internship": false,
    "cv_fit_v": 18,
    "closed_check": "2026-08-02 11:06",
-   "closed_check_v": 2
+   "closed_check_v": 2,
+   "lang": "nl"
   },
   {
    "id": "4412955764",
@@ -7697,7 +7702,8 @@
    "internship": false,
    "cv_fit_v": 18,
    "closed_check": "2026-08-02 11:06",
-   "closed_check_v": 2
+   "closed_check_v": 2,
+   "lang": "en"
   },
   {
    "id": "74189694",
@@ -7756,7 +7762,8 @@
    "internship": false,
    "cv_fit_v": 18,
    "closed_check": "2026-08-02 11:06",
-   "closed_check_v": 2
+   "closed_check_v": 2,
+   "lang": "nl"
   },
   {
    "id": "4442921152",
@@ -7777,7 +7784,8 @@
    "internship": false,
    "cv_fit_v": 18,
    "closed_check": "2026-08-02 11:06",
-   "closed_check_v": 2
+   "closed_check_v": 2,
+   "lang": "en"
   },
   {
    "id": "74141941",
@@ -7836,7 +7844,8 @@
    "internship": false,
    "cv_fit_v": 18,
    "closed_check": "2026-08-02 11:06",
-   "closed_check_v": 2
+   "closed_check_v": 2,
+   "lang": "nl"
   },
   {
    "id": "74171361",
@@ -7855,7 +7864,8 @@
    "dutch_stretch": false,
    "exp_stretch": true,
    "internship": false,
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "lang": "nl"
   },
   {
    "id": "74135526",
