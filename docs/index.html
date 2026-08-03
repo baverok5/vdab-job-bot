@@ -61,6 +61,13 @@
     color: #fff; background: var(--accent2); border: none; border-radius: 8px;
     padding: 7px 12px; cursor: pointer; display: none;
   }
+  .sync {
+    margin-left: auto; font: inherit; font-size: 12.5px; font-weight: 600;
+    color: var(--text); background: var(--card); border: 0.5px solid var(--border);
+    border-radius: 8px; padding: 7px 12px; cursor: pointer;
+  }
+  .sync + .install { margin-left: 8px; }
+  .sync.syncing { opacity: .6; }
 
   .tabs { display: flex; gap: 4px; background: var(--card); border: 0.5px solid var(--border);
     border-radius: 11px; padding: 4px; margin: 14px 0 4px; box-shadow: var(--shadow); }
@@ -175,6 +182,7 @@
       <h1>Jobs</h1>
       <div class="sub" id="updated">Loading…</div>
     </div>
+    <button class="sync" id="syncbtn" title="Sync Applied / Skipped / Closed across your phone and computer">⟳ Sync</button>
     <button class="install" id="install">Install app</button>
   </div>
 </header>
@@ -200,10 +208,14 @@ const getStatus = () => JSON.parse(localStorage.getItem(LS) || "{}");
 const getStatusAt = () => JSON.parse(localStorage.getItem(LS_AT) || "{}");
 const setStatus = (id, s) => {
   const m = getStatus(), at = getStatusAt();
-  if (s === null) { delete m[id]; delete at[id]; }
+  // Keep a timestamped tombstone when clearing, so "un-applied / un-skipped"
+  // wins over an older remote status during cross-device merge (otherwise the
+  // stale "applied" would just come back on the next sync).
+  if (s === null) { delete m[id]; at[id] = Date.now(); }
   else { m[id] = s; at[id] = Date.now(); }   // stamped so Applied can list newest first
   localStorage.setItem(LS, JSON.stringify(m));
   localStorage.setItem(LS_AT, JSON.stringify(at));
+  schedulePush();      // mirror this change to the other devices (if a token is set)
   render();
 };
 
@@ -392,6 +404,102 @@ async function pingClaude(j, box) {
   }
 }
 
+// ---- Cross-device sync of Applied / Skipped / Closed ----------------------
+// The per-job status lives in localStorage, which is per-device — so the phone
+// and the computer don't see each other's Applied/Skipped/Closed. To share it
+// without a server, mirror the status map into ONE GitHub issue (JSON in its
+// body) that every device reads and writes with the SAME fine-grained token
+// already used for the Gmail ping. Merge is per-id by timestamp, so the most
+// recent action on any device wins; a cleared status is kept as a tombstone
+// ({s:"", t}) so un-marking a job propagates too.
+const GH_REPO = "https://api.github.com/repos/baverok5/vdab-job-bot";
+const STATE_TITLE = "vjobs-state-store (do not delete)";
+const STATE_ISSUE_LS = "vjobsStateIssue";
+function ghHeaders(t) {
+  return { "Authorization": "Bearer " + t, "Accept": "application/vnd.github+json",
+           "Content-Type": "application/json" };
+}
+function encodeState() {                 // full map incl. tombstones, with timestamps
+  const m = getStatus(), at = getStatusAt(), out = {};
+  for (const id in at) out[id] = { s: m[id] || "", t: at[id] || 0 };
+  return out;
+}
+function stateBody(map) {
+  return "Device-sync store for the Jobs app — auto-managed, do not edit by hand.\n\n"
+    + "```json\n" + JSON.stringify({ v: 1, status: map }) + "\n```";
+}
+function parseState(body) {
+  const mm = /```json\s*([\s\S]*?)```/.exec(body || "");
+  if (!mm) return {};
+  try { return JSON.parse(mm[1]).status || {}; } catch (e) { return {}; }
+}
+async function findStateIssue(t) {
+  const cached = localStorage.getItem(STATE_ISSUE_LS);
+  if (cached) return +cached;
+  const r = await fetch(`${GH_REPO}/issues?state=all&per_page=100`, { headers: ghHeaders(t) });
+  if (r.ok) {
+    const hit = (await r.json()).find((i) => i.title === STATE_TITLE && !i.pull_request);
+    if (hit) { localStorage.setItem(STATE_ISSUE_LS, String(hit.number)); return hit.number; }
+  }
+  const c = await fetch(`${GH_REPO}/issues`, { method: "POST", headers: ghHeaders(t),
+    body: JSON.stringify({ title: STATE_TITLE, body: stateBody(encodeState()) }) });
+  if (!c.ok) throw new Error("create issue " + c.status);
+  const num = (await c.json()).number;
+  localStorage.setItem(STATE_ISSUE_LS, String(num));
+  return num;
+}
+function mergeState(remote) {             // pull remote into local by timestamp
+  const m = getStatus(), at = getStatusAt();
+  let changed = false;
+  for (const id in remote) {
+    const rt = remote[id].t || 0, rs = remote[id].s || "";
+    if (rt > (at[id] || 0)) {
+      at[id] = rt;
+      if (rs) m[id] = rs; else delete m[id];
+      changed = true;
+    }
+  }
+  if (changed) {
+    localStorage.setItem(LS, JSON.stringify(m));
+    localStorage.setItem(LS_AT, JSON.stringify(at));
+  }
+  return changed;
+}
+let SYNC_BUSY = false, SYNC_TIMER = null;
+async function syncNow(t, push) {
+  if (!t || SYNC_BUSY) return false;
+  SYNC_BUSY = true;
+  let ok = false;
+  try {
+    const num = await findStateIssue(t);
+    const r = await fetch(`${GH_REPO}/issues/${num}`, { headers: ghHeaders(t) });
+    if (r.ok) { ok = true; if (mergeState(parseState((await r.json()).body))) render(); }
+    if (push) {                          // write the merged union back
+      const pr = await fetch(`${GH_REPO}/issues/${num}`, { method: "PATCH", headers: ghHeaders(t),
+        body: JSON.stringify({ body: stateBody(encodeState()) }) });
+      ok = ok && pr.ok;
+    }
+  } catch (e) { ok = false; } finally { SYNC_BUSY = false; }
+  return ok;
+}
+function schedulePush() {
+  const t = localStorage.getItem(PAT_LS);
+  if (!t) return;                        // no token yet -> local only, no error
+  clearTimeout(SYNC_TIMER);
+  SYNC_TIMER = setTimeout(() => syncNow(t, true), 1500);
+}
+async function syncDevices() {           // manual button: set token, then pull+push
+  const btn = document.getElementById("syncbtn");
+  const t = ensurePat();
+  if (!t) { toast("Sync needs the one-time GitHub token"); return; }
+  if (btn) btn.classList.add("syncing");
+  toast("Syncing…");
+  const ok = await syncNow(t, true);
+  if (btn) btn.classList.remove("syncing");
+  toast(ok ? "Synced ✓ — Applied/Skipped now match on all devices"
+           : "Sync failed — check the token has Issues read/write");
+}
+
 function gmailFor(j, d) {
   const lang = langOf(j, d);
   const to = encodeURIComponent(d.apply_email || j.apply_email || "");
@@ -439,7 +547,8 @@ ${letter || ""}
 === RULES ===
 - Use the tailored CV and cover letter above; do not invent experience.
 - Answer screening questions truthfully from my details.
-- If something isn't covered above, or needs a file I haven't given you, PAUSE and ask me — do not guess.
+- If the form asks to UPLOAD a CV / cover letter / any document, PAUSE and tell me — I attach the PDF file myself. The CV above is text for filling fields; a file upload needs the actual PDF, which I download from the app's "⬇️ CV (PDF)" / "⬇️ Cover letter (PDF)" buttons. You can't take a file off the clipboard.
+- If something else isn't covered above, PAUSE and ask me — do not guess.
 - Never claim a skill, degree, or years of experience I don't have.
 - Fill everything in, then stop before the final submit so I can review and click submit myself.`;
 }
@@ -1125,6 +1234,20 @@ fetch("jobs.json?t=" + Date.now())
   .then((r) => r.json())
   .then((d) => { DATA = d; render(); })
   .catch(() => { document.getElementById("updated").textContent = "Could not load jobs.json."; });
+
+// Cross-device sync: pull the shared Applied/Skipped/Closed on load and whenever
+// the app regains focus, so the phone and computer stay in step. Silent if no
+// token is set yet — the ⟳ Sync button sets it up on a new device.
+(function () {
+  const syncBtn = document.getElementById("syncbtn");
+  if (syncBtn) syncBtn.addEventListener("click", syncDevices);
+  const t = localStorage.getItem(PAT_LS);
+  if (t) syncNow(t, false);
+  document.addEventListener("visibilitychange", () => {
+    const tok = localStorage.getItem(PAT_LS);
+    if (!document.hidden && tok) syncNow(tok, false);
+  });
+})();
 
 // ---- PWA: install prompt + service worker ----
 let deferredPrompt = null;
