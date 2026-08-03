@@ -536,7 +536,7 @@ function chromeApplyPack(j, d, lang, letter, cv) {
 
 === ME (applicant) ===
 ${APPLICANT}
-My CV PDF (I attach this file to the chat once; download link if you need it): ${CV_PDF_URL}${mail ? "\nThis one applies by email to: " + mail : ""}
+My CV is also online if you ever need to read it: ${CV_PDF_URL} (for upload fields, build the PDF from the CV text below instead — see RULES)${mail ? "\nThis one applies by email to: " + mail : ""}
 
 === JOB ===
 Title: ${j.title || ""}${j.company ? "\nCompany: " + j.company : ""}
@@ -552,8 +552,9 @@ ${letter || ""}
 === RULES ===
 - Use the tailored CV and cover letter above; do not invent experience.
 - Answer screening questions truthfully from my details.
-- For a CV / resume UPLOAD field: attach the CV PDF FILE that I've added to this chat. A browser cannot put a file into an upload field from a link or a script, so do NOT try to fetch ${CV_PDF_URL} and inject it — use the attached file. If no CV file is attached to this chat yet, STOP and ask me to attach it (I download it once from ${CV_PDF_URL}) before going further.
-- The cover letter is usually a text box — paste the cover letter above into it. Only if a step needs the cover letter as a FILE upload, tell me.
+- For a CV / resume UPLOAD field: GENERATE the PDF yourself from the "TAILORED CV" text above (create the file in your own environment, name it "Baver Ok - CV.pdf") and attach that file to the upload field. Do this without asking me. Do NOT try to fetch ${CV_PDF_URL} and inject it — a browser blocks filling an upload field from a link or a script, which is why that fails; building the file yourself and attaching it works.
+- Same for a cover-letter FILE upload: generate a PDF from the "COVER LETTER" text above ("Baver Ok - Cover letter.pdf") and attach it. If the cover letter is a normal text box (the usual case), just paste the text.
+- Keep the PDFs plain and clean: name and contact details at the top, clear section headings, no invented content — use exactly the text above.
 - If something else isn't covered above, PAUSE and ask me — do not guess.
 - Never claim a skill, degree, or years of experience I don't have.
 - Fill everything in, then stop before the final submit so I can review and click submit myself.`;
