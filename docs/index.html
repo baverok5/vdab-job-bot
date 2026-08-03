@@ -400,6 +400,50 @@ function gmailFor(j, d) {
   return `https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${su}&body=${bo}`;
 }
 
+// Standard application answers, used to build the "Copy for Claude for Chrome"
+// pack so the browser agent can fill any form without asking the basics.
+const APPLICANT = `Name: Baver Ok
+Email: baverok@gmail.com
+Phone: +32 470 42 48 36
+Based in: Zwijndrecht (next to Antwerp), Belgium
+LinkedIn: https://www.linkedin.com/in/baverok
+Portfolio: https://mirook.com
+Work permit: Yes — full right to work in Belgium, no visa or sponsorship needed
+Availability: Immediately, no notice period
+Salary: Open / negotiable — any offer within the normal legal range is fine
+Work location: Open to remote (already work fully remote for Episto). Not relocating, but I drive and can commute up to ~200 km/day, so Antwerp / Brussels / Ghent and the wider region are all fine
+Languages: English (professional), Turkish (native), Dutch (B1, improving). No French
+Current role: Junior Digital Marketer at Episto (remote)`;
+
+// Everything Claude for Chrome needs to fill one application: my details, the
+// job, and the CV + cover letter already tailored to it. Ends with rules that
+// keep it honest and stop it before the final submit.
+function chromeApplyPack(j, d, lang, letter, cv) {
+  const mail = d.apply_email || j.apply_email || "";
+  return `TASK: Apply to the job below on my behalf. Fill in the whole application form using my details, CV and cover letter here. Fill everything, then STOP before the final submit and let me review — do NOT submit without my confirmation.
+
+=== ME (applicant) ===
+${APPLICANT}${mail ? "\nThis one applies by email to: " + mail : ""}
+
+=== JOB ===
+Title: ${j.title || ""}${j.company ? "\nCompany: " + j.company : ""}
+Link: ${j.url || ""}
+Application language: ${lang === "en" ? "English" : "Dutch"}
+
+=== TAILORED CV (use this content) ===
+${cv || ""}
+
+=== COVER LETTER (use / paste this) ===
+${letter || ""}
+
+=== RULES ===
+- Use the tailored CV and cover letter above; do not invent experience.
+- Answer screening questions truthfully from my details.
+- If something isn't covered above, or needs a file I haven't given you, PAUSE and ask me — do not guess.
+- Never claim a skill, degree, or years of experience I don't have.
+- Fill everything in, then stop before the final submit so I can review and click submit myself.`;
+}
+
 function renderPrepared(j, d, box) {
   const hasMail = !!(d.apply_email || j.apply_email);
   // Match the posting: a Dutch vacancy gets Dutch documents, an English one
@@ -417,6 +461,8 @@ function renderPrepared(j, d, box) {
         <button class="btn primary" data-dl="letter">⬇️ Cover letter (PDF)</button>
         ${cvText ? '<button class="btn primary" data-dl="cv">⬇️ CV (PDF)</button>' : ""}
       </div></div>
+    <div class="sec"><button class="btn primary copybtn" data-copy="chrome" style="width:100%">🤖 Copy all for Claude for Chrome</button>
+      <div class="hint" style="text-align:left;margin-top:6px">Open the job's application page in Chrome, then paste this into the Claude for Chrome side panel. It fills the form from your CV + letter and stops so you review &amp; submit.</div></div>
     <div class="sec"><div class="h">Application email ${hasMail ? "→ " + esc(d.apply_email || j.apply_email) : "(no direct email — apply via " + srcOf(j) + ")"} <span class="tag lang">${lang === "en" ? "🇬🇧 English" : "🇳🇱 Nederlands"}</span></div>
       <div class="quote">${esc(subject ? subject + "\n\n" : "")}${esc(body)}</div>
       <button class="copybtn" data-copy="email">Copy email</button></div>
@@ -444,6 +490,7 @@ function renderPrepared(j, d, box) {
       email: (subject ? subject + "\n\n" : "") + body,
       letter: letter,
       cv: cv,
+      chrome: chromeApplyPack(j, d, lang, letter, cvText),
     };
     copyText(b, texts[b.dataset.copy] || "");
   }));
