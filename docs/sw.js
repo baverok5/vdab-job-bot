@@ -1,7 +1,7 @@
 // Service worker for the VDAB Job Applier PWA.
 // Network-first for the app shell + data so updates always reach the phone
 // (previously the shell was cache-first, which pinned users to an old UI).
-const CACHE = "vjobs-v53";
+const CACHE = "vjobs-v54";
 const SHELL = [
   "./",
   "./index.html",
@@ -30,7 +30,10 @@ self.addEventListener("activate", (e) => {
 });
 
 function networkFirst(request) {
-  return fetch(request)
+  // cache:"no-store" so the browser's own HTTP cache can't hand back a stale
+  // shell: GitHub Pages serves index.html with max-age, which kept a phone on
+  // an old app version (and so an old sync payload) even after a reload.
+  return fetch(request, { cache: "no-store" })
     .then((r) => {
       const copy = r.clone();
       caches.open(CACHE).then((c) => c.put(request, copy));

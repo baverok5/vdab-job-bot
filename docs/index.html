@@ -202,6 +202,7 @@
 <div class="toast" id="toast"></div>
 
 <script>
+const APP_VERSION = "v54";                 // shown in the header; bump with sw.js CACHE
 const LS = "jobstatus";                    // { jobId: "applied" | "skipped" | "closed" }
 const LS_AT = "jobstatus_at";              // { jobId: epoch ms the status was set }
 const getStatus = () => JSON.parse(localStorage.getItem(LS) || "{}");
@@ -1019,8 +1020,12 @@ function render() {
   document.getElementById("c-rejected").textContent = rejected.length || "";
   document.getElementById("c-applied").textContent = buckets.applied.length || "";
   document.getElementById("c-skipped").textContent = buckets.skipped.length || "";
+  // Show the app version too: a device silently running an old cached shell has
+  // caused real bugs (a stale sync payload), and this makes that visible at a
+  // glance instead of guessable.
   document.getElementById("updated").textContent =
-    DATA.updated ? "Updated " + brusselsUpdated(DATA.updated) : "No data yet — the bot hasn't run.";
+    (DATA.updated ? "Updated " + brusselsUpdated(DATA.updated) : "No data yet — the bot hasn't run.")
+    + "  ·  " + APP_VERSION;
 
   document.querySelectorAll(".tab").forEach((t) =>
     t.classList.toggle("on", t.dataset.tab === TAB));
