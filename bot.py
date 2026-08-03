@@ -72,8 +72,13 @@ SEARCHES_PER_RUN = int(os.environ.get("SEARCHES_PER_RUN", "5"))
 
 # Titles that look like the candidate's target field — screened first so they
 # reach the Ready tab ahead of the filler jobs.
+# NOTE: no bare "sea\b" here — see the _PRIORITY_TIERS comment below. It matched
+# the English word in "Sea Logistics" / "Sea Freight", which pulled shipping
+# roles into the target field and, downstream, onto the Ready tab.
 MARKETING_RX = re.compile(
-    r"seo\b|sea\b|sem\b|google\s*ads|marketing|marketeer|marketer|content|"
+    r"seo\b|sem\b|\bsea[-\s/&]*(?:seo|sem|specialist|manager|expert|marketeer|"
+    r"consultant|campaign|advertis|adverteren|social|ads)\b|(?:seo|sem)[-\s/&]+sea\b|"
+    r"google\s*ads|marketing|marketeer|marketer|content|"
     r"wordpress|copywrit|social\s*media|communicat|digital|\bweb\b|website|"
     r"web\s*design|webdesign|webshop|front[-\s]?end|\bux\b|\bui\b|e-?commerce|"
     r"growth|\bbrand(?:ing|s)?\b|campaign|advertis", re.I)

@@ -202,7 +202,7 @@
 <div class="toast" id="toast"></div>
 
 <script>
-const APP_VERSION = "v54";                 // shown in the header; bump with sw.js CACHE
+const APP_VERSION = "v55";                 // shown in the header; bump with sw.js CACHE
 const LS = "jobstatus";                    // { jobId: "applied" | "skipped" | "closed" }
 const LS_AT = "jobstatus_at";              // { jobId: epoch ms the status was set }
 const getStatus = () => JSON.parse(localStorage.getItem(LS) || "{}");
@@ -830,11 +830,19 @@ function rejectedCard(j) {
 
 // Job categories, in the order they appear in Ready. The first one — the kind of
 // work you actually want (digital marketing / SEO / web) — is shown at the top.
+// "SEA" is Search Engine Advertising — but it is also the ordinary English word
+// in "Sea Logistics" / "sea freight", and Belgian listings are full of those. A
+// bare \bsea\b tagged a Kuehne+Nagel sea-freight role as SEO, filed it under
+// digital marketing and floated it to the top of Ready. Only count SEA where a
+// neighbouring word makes it the marketing discipline (same rule the bot's
+// priority tiers already use).
+const SEA_RX = /\bsea[-\s/&]*(?:seo|sem|specialist|manager|expert|marketeer|consultant|campaign|advertis|adverteren|social|ads)\b|(?:seo|sem)[-\s/&]+sea\b/i;
 const CATS = [
   { key: "marketing", label: "🎯 Digital marketing, SEO & web", fav: true,
     // \bbrand(ing|s)?\b — matches "brand"/"branding" but NOT Dutch fire words
     // (brandveiligheid, brandhaspel, brandblusser…) that polluted the list.
-    rx: /seo|marketing|marketeer|content|wordpress|\bweb\b|website|social ?media|digital|copywrit|communicat|\bbrand(ing|s)?\b|growth|advertis|campaign|\bsea\b|google ?ads/i },
+    rx: /seo|marketing|marketeer|content|wordpress|\bweb\b|website|social ?media|digital|copywrit|communicat|\bbrand(ing|s)?\b|growth|advertis|campaign|google ?ads/i,
+    also: SEA_RX },
   { key: "office", label: "🗂️ Office & admin",
     rx: /admin|assistant|office|data ?entry|reception|secretar|back[-\s]?office|payroll|\bhr\b|management support/i },
   { key: "cs", label: "📞 Customer service & sales",
@@ -845,7 +853,7 @@ const CATS = [
 ];
 function categorize(j) {
   const t = j.title || "";   // title only — reasoning text would mislabel things
-  for (const c of CATS) if (c.rx && c.rx.test(t)) return c.key;
+  for (const c of CATS) if ((c.rx && c.rx.test(t)) || (c.also && c.also.test(t))) return c.key;
   return "other";
 }
 
@@ -910,12 +918,13 @@ function needsBetterDutch(j) {
 }
 
 // SEO-focused roles — the candidate's strongest area — surfaced first in Ready.
-const SEO_RX = /\bseo\b|\bsea\b|\bsem\b|search engine|zoekmachine|google ads|google analytics|search console|semrush|ahrefs|\bgeo\b/i;
+const SEO_RX = /\bseo\b|\bsem\b|search engine|zoekmachine|google ads|google analytics|search console|semrush|ahrefs|\bgeo\b/i;   // SEA handled by SEA_RX (see above)
 function isSEO(j) {
   // Classify on the JOB's own content only (title + role/tasks). Never on
   // why_good/reason — those describe the candidate's fit and almost always
   // name the candidate's own SEO skills, which falsely tags non-SEO jobs.
-  return SEO_RX.test(`${j.title || ""} ${j.details || ""}`);
+  const t = `${j.title || ""} ${j.details || ""}`;
+  return SEO_RX.test(t) || SEA_RX.test(t);
 }
 // Sub-field labels so each Ready/All job shows which marketing area it is —
 // SEO (the candidate's strong field, above) vs content, social media (a field
@@ -925,8 +934,11 @@ const CONTENT_RX = /\bcontent\b|copywrit|redacti|redacteur|tekstschrijv|\bblog\b
 function isContent(j) { return CONTENT_RX.test(`${j.title || ""} ${j.details || ""}`); }
 const SOCIAL_RX = /social media|sociale media|community manage|community manager|\bsocial\b|instagram|tiktok|\bfacebook\b|influencer/i;
 function isSocial(j) { return SOCIAL_RX.test(`${j.title || ""} ${j.details || ""}`); }
-const PAID_RX = /google ads|\bsea\b|\bsem\b|paid media|paid social|performance marketing|\bppc\b|advertis|adverteren|e-?mail marketing|marketing automation|\bcrm\b|conversion|growth hack/i;
-function isPaid(j) { return PAID_RX.test(`${j.title || ""} ${j.details || ""}`); }
+const PAID_RX = /google ads|\bsem\b|paid media|paid social|performance marketing|\bppc\b|advertis|adverteren|e-?mail marketing|marketing automation|\bcrm\b|conversion|growth hack/i;   // SEA handled by SEA_RX
+function isPaid(j) {
+  const t = `${j.title || ""} ${j.details || ""}`;
+  return PAID_RX.test(t) || SEA_RX.test(t);
+}
 
 // Graphic-design / Canva-heavy roles are a stretch (candidate does web + basic
 // Canva, not pro graphic design). Flag but don't hide. Web/UX/UI design is NOT
