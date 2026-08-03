@@ -421,7 +421,13 @@ function ghHeaders(t) {
 }
 function encodeState() {                 // full map incl. tombstones, with timestamps
   const m = getStatus(), at = getStatusAt(), out = {};
-  for (const id in at) out[id] = { s: m[id] || "", t: at[id] || 0 };
+  // Walk BOTH maps: statuses set before this app recorded timestamps exist in
+  // the status map with no entry in the timestamp map, and looping over the
+  // timestamps alone silently dropped them from the sync (they never reached
+  // the other device). Give those a t of 1 — older than any real stamp, so any
+  // later action anywhere still wins — but do carry them across.
+  for (const id in m) out[id] = { s: m[id], t: at[id] || 1 };
+  for (const id in at) if (!(id in out)) out[id] = { s: "", t: at[id] };
   return out;
 }
 function stateBody(map) {
