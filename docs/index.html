@@ -436,8 +436,8 @@ function renderPrepared(j, d, box) {
            <div class="pingstat hint" style="text-align:left;margin-top:8px"></div>
            <a class="btn li-apply" style="margin-top:8px" href="${esc(j.url)}" target="_blank" rel="noopener">⚡ Easy Apply on LinkedIn →</a>
            <div class="hint" style="text-align:left;margin-top:8px">If the posting lists an email in its description, tap 📮 and I'll build the draft. Otherwise use Easy Apply — copy the letter above to paste.</div>`
-        : `<a class="btn primary" href="${esc(j.url)}" target="_blank" rel="noopener">Apply on VDAB →</a>
-           <div class="hint" style="text-align:left;margin-top:8px">No direct email on this job — apply on VDAB and upload the CV / paste the letter above.</div>`)}`;
+        : `<a class="btn primary" href="${esc(j.url)}" target="_blank" rel="noopener">Apply on ${esc(srcOf(j))} →</a>
+           <div class="hint" style="text-align:left;margin-top:8px">No direct email on this job — apply on ${esc(srcOf(j))} and upload the CV / paste the letter above.</div>`)}`;
   box.querySelectorAll(".copybtn").forEach((b) => b.addEventListener("click", (e) => {
     e.stopPropagation();
     const texts = {
@@ -494,7 +494,7 @@ async function prepareJob(j, box) {
       if (pr.ok) {
         const d = await pr.json();
         if (d.status === "ready") return renderPrepared(j, d, box);
-        if (d.status === "error") { box.innerHTML = '<div class="hint">Couldn’t read this job to write a letter. Try “Open on VDAB”.</div>'; return; }
+        if (d.status === "error") { box.innerHTML = `<div class="hint">Couldn’t read this job to write a letter. Try “Open on ${esc(srcOf(j))}”.</div>`; return; }
       }
     } catch {}
     if (Date.now() - started > 200000) { box.innerHTML = '<div class="hint">Still working — reopen this job in a minute to see the letter.</div>'; return; }
@@ -548,7 +548,7 @@ function card(j, state) {
                ? `<button class="btn" data-act="gmail">📮 Gmail</button>
                   <a class="btn primary li-apply" href="${esc(j.url)}" target="_blank" rel="noopener">⚡ Easy Apply</a>`
                : `<button class="btn" data-act="gmail">📮 Gmail</button>
-                  <a class="btn" href="${esc(j.url)}" target="_blank" rel="noopener">VDAB</a>`}
+                  <a class="btn" href="${esc(j.url)}" target="_blank" rel="noopener">${esc(srcOf(j))}</a>`}
              <button class="btn applied-btn" data-act="apply">✓ Applied</button>
              ${state === "skipped"
                ? '<button class="btn" data-act="unskip">Un-skip</button>'
