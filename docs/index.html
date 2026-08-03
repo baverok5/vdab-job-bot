@@ -536,7 +536,7 @@ function chromeApplyPack(j, d, lang, letter, cv) {
 
 === ME (applicant) ===
 ${APPLICANT}
-My CV as a downloadable PDF (attach this file at any CV / resume upload field): ${CV_PDF_URL}${mail ? "\nThis one applies by email to: " + mail : ""}
+My CV PDF (I attach this file to the chat once; download link if you need it): ${CV_PDF_URL}${mail ? "\nThis one applies by email to: " + mail : ""}
 
 === JOB ===
 Title: ${j.title || ""}${j.company ? "\nCompany: " + j.company : ""}
@@ -552,8 +552,8 @@ ${letter || ""}
 === RULES ===
 - Use the tailored CV and cover letter above; do not invent experience.
 - Answer screening questions truthfully from my details.
-- For a CV / resume UPLOAD field: download my CV PDF from the link above (${CV_PDF_URL}) and attach that file. Don't ask me, and don't make your own version.
-- The cover letter is usually a text box — paste the cover letter above into it. Only if a step demands the cover letter as a FILE upload (not text), tell me and I'll attach it.
+- For a CV / resume UPLOAD field: attach the CV PDF FILE that I've added to this chat. A browser cannot put a file into an upload field from a link or a script, so do NOT try to fetch ${CV_PDF_URL} and inject it — use the attached file. If no CV file is attached to this chat yet, STOP and ask me to attach it (I download it once from ${CV_PDF_URL}) before going further.
+- The cover letter is usually a text box — paste the cover letter above into it. Only if a step needs the cover letter as a FILE upload, tell me.
 - If something else isn't covered above, PAUSE and ask me — do not guess.
 - Never claim a skill, degree, or years of experience I don't have.
 - Fill everything in, then stop before the final submit so I can review and click submit myself.`;
