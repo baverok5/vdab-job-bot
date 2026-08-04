@@ -67,42 +67,49 @@ line("Website design, SEO & GEO  ·  work sample by Baver Ok", 10.5, gray=0.35)
 rule(10)
 
 line("THE PROJECT", 10.5, bold=True, gap=10, gray=0.4)
-line("A multi-page WordPress site for a Belgian youth chess champion — built from an empty "
-     "domain to a complete, search-optimised presence. I handled everything: site structure, "
-     "design, content, technical SEO and the social media integration.", 10.5)
+line("mirook.com is the official site of Miro Ok, Belgium's National U10 chess champion. I built "
+     "it from an empty domain into a complete, search-optimised presence: site structure, design, "
+     "content, technical SEO and the social and funding integrations. It is live and I maintain "
+     "it as results come in.", 10.5)
 
 line("WHAT I BUILT", 10.5, bold=True, gap=12, gray=0.4)
 for b in [
-    "Full multi-page site in WordPress using Elementor and the Astra theme — structure, "
-    "layout, responsive design and all page content.",
-    "Instagram and Facebook integration so tournament news reaches the site and the social "
-    "channels together.",
+    "A seven-section site in WordPress (Elementor, Astra) — Home, About, Achievements, "
+    "Tournament Log, Press, FAQ and Contact — with a responsive layout and an English "
+    "language switcher.",
+    "A dated Tournament Log that tracks each event (FIDE World Cadets Cup, Open NK Schaken, "
+    "Open Brasschaat) and an Achievements section presenting results as clear figures: two "
+    "national titles, 49th of 185 at the 2025 World Championships, one adult open win.",
+    "Instagram and Facebook integration, a Ko-fi funding call-to-action for coaching and travel "
+    "costs, and a link out to the official FIDE player profile.",
+    "All site copy, written for two audiences at once: chess federations and press who need "
+    "facts fast, and supporters following the journey.",
 ]:
     line("•  " + b, 10.5, gap=2, indent=10)
 
 line("SEO & GEO WORK", 10.5, bold=True, gap=12, gray=0.4)
 for b in [
     "On-page SEO across every page: titles, headings, internal linking and keyword-targeted copy.",
-    "Structured data in JSON-LD, including SportsEvent markup for tournaments and FAQPage markup, "
-    "so results can appear as rich results rather than plain links.",
-    "Entity and knowledge-graph markup to connect the player to the wider chess entity graph — "
-    "the groundwork search engines and AI assistants use to identify who someone is.",
-    "An llms.txt file so AI-powered search engines can read and cite the site correctly (GEO/AEO), "
-    "not just traditional crawlers.",
-    "Iterative technical SEO/GEO audits, fixing issues and re-auditing each round.",
+    "Structured data in JSON-LD — SportsEvent markup on the tournament entries and FAQPage "
+    "markup on the FAQ — so listings can qualify as rich results instead of plain links.",
+    "Entity and knowledge-graph markup connecting the player to the wider chess entity graph: "
+    "the groundwork search engines and AI assistants use to establish who someone is.",
+    "An llms.txt file so AI-powered search engines can read and cite the site correctly "
+    "(GEO/AEO), not just traditional crawlers.",
+    "Iterative technical SEO/GEO audits — fix, re-audit, repeat.",
 ]:
     line("•  " + b, 10.5, gap=2, indent=10)
 
 line("RESULT", 10.5, bold=True, gap=12, gray=0.4)
-line("The iterative audit cycle measurably raised the site's overall search-health score, and the "
-     "site now serves as the player's primary online presence — visible both in traditional "
-     "search and to AI-powered search engines.", 10.5)
+line("The audit cycle measurably raised the site's overall search-health score. mirook.com is now "
+     "the player's primary online presence and the reference point press and federations are "
+     "pointed to — findable in traditional search and readable by AI-powered search engines.", 10.5)
 
 line("WHY IT'S RELEVANT", 10.5, bold=True, gap=12, gray=0.4)
-line("This project is where I taught myself the work I now do professionally at Episto: writing "
-     "clear content for a real audience, publishing and maintaining it in WordPress, and making "
-     "sure it can actually be found. I ran it end to end — no brief handed to me, no team to "
-     "hand it off to.", 10.5)
+line("This is where I taught myself the work I now do professionally at Episto: writing clear "
+     "content for a real audience, structuring it so it can be found, and publishing and "
+     "maintaining it in WordPress. I ran it end to end — no brief handed to me, no team to hand "
+     "it off to — and it is still running.", 10.5)
 
 rule(14)
 line("Live site: mirook.com    ·    Baver Ok  ·  baverok@gmail.com  ·  "
