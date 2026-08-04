@@ -202,7 +202,7 @@
 <div class="toast" id="toast"></div>
 
 <script>
-const APP_VERSION = "v55";                 // shown in the header; bump with sw.js CACHE
+const APP_VERSION = "v56";                 // shown in the header; bump with sw.js CACHE
 const LS = "jobstatus";                    // { jobId: "applied" | "skipped" | "closed" }
 const LS_AT = "jobstatus_at";              // { jobId: epoch ms the status was set }
 const getStatus = () => JSON.parse(localStorage.getItem(LS) || "{}");
@@ -293,49 +293,142 @@ function copyText(btn, text) {
 
 // Build a simple A4 PDF from plain text — no library, works offline. Helvetica
 // (WinAnsi), word-wrapped and paginated. Good enough to upload a letter/CV.
+// Helvetica widths (1000-unit em) so lines wrap on real width, and so a bold
+// run can be placed right after a normal one on the same line.
+const HW = {" ":278,"!":278,'"':355,"#":556,"$":556,"%":889,"&":667,"'":191,"(":333,")":333,
+"*":389,"+":584,",":278,"-":333,".":278,"/":278,"0":556,"1":556,"2":556,"3":556,"4":556,
+"5":556,"6":556,"7":556,"8":556,"9":556,":":278,";":278,"<":584,"=":584,">":584,"?":556,
+"@":1015,"A":667,"B":667,"C":722,"D":722,"E":667,"F":611,"G":778,"H":722,"I":278,"J":500,
+"K":667,"L":556,"M":833,"N":722,"O":778,"P":667,"Q":778,"R":722,"S":667,"T":611,"U":722,
+"V":667,"W":944,"X":667,"Y":667,"Z":611,"[":278,"\\":278,"]":278,"^":469,"_":556,"`":333,
+"a":556,"b":556,"c":500,"d":556,"e":556,"f":278,"g":556,"h":556,"i":222,"j":222,"k":500,
+"l":222,"m":833,"n":556,"o":556,"p":556,"q":556,"r":333,"s":500,"t":278,"u":556,"v":500,
+"w":722,"x":500,"y":500,"z":500,"{":334,"|":260,"}":334,"~":584,"•":350};
+// Helvetica-Bold is wider per glyph, and by different amounts — estimating it as
+// a flat multiple of the regular widths made every word after a bold one land
+// too far left ("web builderwith"), so it needs its own table.
+const HWB = {" ":278,"!":333,'"':474,"#":556,"$":556,"%":889,"&":722,"'":238,"(":333,")":333,
+"*":389,"+":584,",":278,"-":333,".":278,"/":278,"0":556,"1":556,"2":556,"3":556,"4":556,
+"5":556,"6":556,"7":556,"8":556,"9":556,":":333,";":333,"<":584,"=":584,">":584,"?":611,
+"@":975,"A":722,"B":722,"C":722,"D":722,"E":667,"F":611,"G":778,"H":722,"I":278,"J":556,
+"K":722,"L":611,"M":833,"N":722,"O":778,"P":667,"Q":778,"R":722,"S":667,"T":611,"U":722,
+"V":667,"W":944,"X":667,"Y":667,"Z":611,"[":333,"\\":278,"]":333,"^":584,"_":556,"`":333,
+"a":556,"b":611,"c":556,"d":611,"e":556,"f":333,"g":611,"h":611,"i":278,"j":278,"k":556,
+"l":278,"m":889,"n":611,"o":611,"p":611,"q":611,"r":389,"s":556,"t":333,"u":611,"v":556,
+"w":778,"x":556,"y":556,"z":500,"{":389,"|":280,"}":389,"~":584,"•":350};
+const tw = (s, fs, bold) => {
+  const T = bold ? HWB : HW;
+  let w = 0;
+  for (const c of s) w += (T[c] === undefined ? (bold ? 611 : 556) : T[c]);
+  return w * fs / 1000;
+};
+
+// "plain **bold** plain" -> runs, so emphasis survives into the PDF.
+function mdRuns(s) {
+  const out = [];
+  for (const part of String(s).split(/(\*\*[^*]+\*\*)/g)) {
+    if (!part) continue;
+    const m = /^\*\*([^*]+)\*\*$/.exec(part);
+    out.push(m ? { t: m[1], b: true } : { t: part.replace(/\*\*/g, ""), b: false });
+  }
+  return out.length ? out : [{ t: "", b: false }];
+}
+
+// Markdown as the AI writes it -> readable text. "## Profile" is a heading, not
+// a line that starts with hashes, and "**x**" is emphasis, not asterisks. Used
+// for anything shown on screen, copied, or pasted into an application form.
+function mdPlain(text) {
+  return String(text || "").replace(/\r/g, "").split("\n")
+    .map((l) => l.replace(/^\s{0,3}#{1,6}\s*/, "")
+                 .replace(/^\s*[-*+]\s+/, "•  ")
+                 .replace(/\*\*/g, ""))
+    .join("\n");
+}
+
 function buildPdf(text) {
-  const FS = 11, LEAD = 15, X = 56, TOP = 786, BOTTOM = 56, MAXCH = 92;
+  const X = 56, TOP = 786, BOTTOM = 56, W = 595 - 56 - 56;
   const raw = String(text || "")
     .replace(/\r/g, "")
     .replace(/[‘’]/g, "'").replace(/[“”]/g, '"')
     .replace(/[–—]/g, "-").replace(/…/g, "...");
-  const lines = [];
+
+  // Parse into blocks so a "## Heading" becomes a real bold heading with its
+  // hashes gone, and "- item" becomes a bullet.
+  const blocks = [];
   for (const p of raw.split("\n")) {
-    if (!p.trim()) { lines.push(""); continue; }
-    let cur = "";
-    for (const word of p.split(/\s+/)) {
-      const cand = cur ? cur + " " + word : word;
-      if (cand.length > MAXCH) {
-        if (cur) lines.push(cur);
-        if (word.length > MAXCH) {
-          let w = word;
-          while (w.length > MAXCH) { lines.push(w.slice(0, MAXCH)); w = w.slice(MAXCH); }
-          cur = w;
-        } else cur = word;
-      } else cur = cand;
-    }
-    lines.push(cur);
+    const t = p.trim();
+    if (!t) { blocks.push({ kind: "gap" }); continue; }
+    const h = /^(#{1,6})\s*(.+)$/.exec(t);
+    if (h) { blocks.push({ kind: "h", level: h[1].length, runs: [{ t: h[2].replace(/\*\*/g, ""), b: true }] }); continue; }
+    const li = /^[-*+]\s+(.+)$/.exec(t);
+    if (li) { blocks.push({ kind: "li", runs: mdRuns(li[1]) }); continue; }
+    blocks.push({ kind: "p", runs: mdRuns(t) });
   }
-  const perPage = Math.floor((TOP - BOTTOM) / LEAD);
-  const pages = [];
-  for (let i = 0; i < lines.length; i += perPage) pages.push(lines.slice(i, i + perPage));
-  if (!pages.length) pages.push([""]);
-  const esc = (s) => s.replace(/[^\x00-\xFF]/g, "?")
+
+  // Wrap each block into lines of positioned runs.
+  const out = [];
+  for (const b of blocks) {
+    if (b.kind === "gap") { out.push({ gap: 7 }); continue; }
+    const isH = b.kind === "h";
+    const fs = isH ? (b.level <= 1 ? 17 : 12.5) : 10.5;
+    const lead = fs * 1.35;
+    const indent = b.kind === "li" ? 14 : 0;
+    const maxw = W - indent;
+    if (isH) out.push({ gap: b.level <= 1 ? 2 : 9 });
+    let line = [], x = 0;
+    const push = () => { if (line.length) out.push({ runs: line, fs, lead, indent }); line = []; x = 0; };
+    if (b.kind === "li") line.push({ t: "•  ", b: false, x: -14 });
+    for (const run of b.runs) {
+      for (const word of run.t.split(/(\s+)/)) {
+        if (!word) continue;
+        const wWidth = tw(word, fs, run.b);
+        if (word.trim() && x + wWidth > maxw && x > 0) push();
+        if (x === 0 && !word.trim()) continue;      // no leading space on a new line
+        line.push({ t: word, b: run.b, x });
+        x += wWidth;
+      }
+    }
+    push();
+  }
+
+  // Paginate.
+  const pages = []; let curPage = [], y = TOP;
+  for (const item of out) {
+    if (item.gap) { if (curPage.length) y -= item.gap; continue; }
+    if (y - item.lead < BOTTOM) { pages.push(curPage); curPage = []; y = TOP; }
+    y -= item.lead;
+    curPage.push(Object.assign({}, item, { y }));
+  }
+  if (curPage.length) pages.push(curPage);
+  if (!pages.length) pages.push([]);
+  // The bullet and the quotes/dashes we keep live in WinAnsi above 0xFF in
+  // Unicode — map them to their WinAnsi byte instead of losing them to "?".
+  const WINANSI = { "•": 0x95, "€": 0x80, "‚": 0x82, "„": 0x84, "…": 0x85, "™": 0x99 };
+  const esc = (s) => s.replace(/[^\x00-\xFF]/g, (c) =>
+      (WINANSI[c] !== undefined ? String.fromCharCode(WINANSI[c]) : "?"))
     .replace(/\\/g, "\\\\").replace(/\(/g, "\\(").replace(/\)/g, "\\)");
   const n = pages.length, obj = [];
   obj[1] = "<< /Type /Catalog /Pages 2 0 R >>";
-  const kids = []; for (let i = 0; i < n; i++) kids.push((5 + i * 2) + " 0 R");
+  const kids = []; for (let i = 0; i < n; i++) kids.push((6 + i * 2) + " 0 R");
   obj[2] = "<< /Type /Pages /Kids [" + kids.join(" ") + "] /Count " + n + " >>";
   obj[3] = "<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>";
+  obj[4] = "<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>";
   for (let i = 0; i < n; i++) {
-    let s = "BT\n/F1 " + FS + " Tf\n" + LEAD + " TL\n" + X + " " + TOP + " Td\n";
-    for (const ln of pages[i]) s += "(" + esc(ln) + ") Tj\nT*\n";
+    let s = "BT\n";
+    for (const ln of pages[i]) {
+      for (const r of ln.runs) {
+        if (!r.t.trim()) continue;
+        s += "/" + (r.b ? "F2" : "F1") + " " + ln.fs.toFixed(1) + " Tf\n" +
+             "1 0 0 1 " + (X + (ln.indent || 0) + r.x).toFixed(1) + " " + ln.y.toFixed(1) + " Tm\n" +
+             "(" + esc(r.t) + ") Tj\n";
+      }
+    }
     s += "ET";
-    obj[4 + i * 2] = "<< /Length " + s.length + " >>\nstream\n" + s + "\nendstream";
-    obj[5 + i * 2] = "<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] " +
-      "/Resources << /Font << /F1 3 0 R >> >> /Contents " + (4 + i * 2) + " 0 R >>";
+    obj[5 + i * 2] = "<< /Length " + s.length + " >>\nstream\n" + s + "\nendstream";
+    obj[6 + i * 2] = "<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] " +
+      "/Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents " + (5 + i * 2) + " 0 R >>";
   }
-  const total = 3 + n * 2, off = [];
+  const total = 4 + n * 2, off = [];
   let pdf = "%PDF-1.4\n";
   for (let k = 1; k <= total; k++) { off[k] = pdf.length; pdf += k + " 0 obj\n" + obj[k] + "\nendobj\n"; }
   const xref = pdf.length;
@@ -577,6 +670,10 @@ function renderPrepared(j, d, box) {
   const letter = pickLang(d.cover_letter, lang);
   const cv = pickLang(d.tailored_cv, lang);
   const cvText = cv || pickLang(d.cv_highlights, lang);
+  // The raw markdown feeds buildPdf (it renders the headings and bold). Anything
+  // shown on screen, copied, or pasted into a form gets the readable version —
+  // "## Profile" and "**x**" must never reach an employer as literal characters.
+  const bodyP = mdPlain(body), letterP = mdPlain(letter), cvP = mdPlain(cv);
   box.innerHTML = `
     <div class="sec dlrow">
       <div class="h">Download to upload / attach</div>
@@ -587,13 +684,13 @@ function renderPrepared(j, d, box) {
     <div class="sec"><button class="btn primary copybtn" data-copy="chrome" style="width:100%">🤖 Copy all for Claude for Chrome</button>
       <div class="hint" style="text-align:left;margin-top:6px">Open the job's application page in Chrome, then paste this into the Claude for Chrome side panel. It fills the form from your CV + letter and stops so you review &amp; submit.</div></div>
     <div class="sec"><div class="h">Application email ${hasMail ? "→ " + esc(d.apply_email || j.apply_email) : "(no direct email — apply via " + srcOf(j) + ")"} <span class="tag lang">${lang === "en" ? "🇬🇧 English" : "🇳🇱 Nederlands"}</span></div>
-      <div class="quote">${esc(subject ? subject + "\n\n" : "")}${esc(body)}</div>
+      <div class="quote">${esc(subject ? subject + "\n\n" : "")}${esc(bodyP)}</div>
       <button class="copybtn" data-copy="email">Copy email</button></div>
     <div class="sec"><div class="h">Cover letter</div>
-      <div class="quote">${esc(letter)}</div>
+      <div class="quote">${esc(letterP)}</div>
       <button class="copybtn" data-copy="letter">Copy cover letter</button></div>
     ${cv ? `<div class="sec"><div class="h">Tailored CV for this job</div>
-      <div class="quote" style="max-height:260px;overflow-y:auto">${esc(cv)}</div>
+      <div class="quote" style="max-height:260px;overflow-y:auto">${esc(cvP)}</div>
       <button class="copybtn" data-copy="cv">Copy tailored CV</button></div>`
       : (cvText ? `<div class="sec"><div class="h">CV highlights for this job</div>${bullets(cvText)}</div>` : "")}
     ${hasMail
@@ -610,10 +707,10 @@ function renderPrepared(j, d, box) {
   box.querySelectorAll(".copybtn").forEach((b) => b.addEventListener("click", (e) => {
     e.stopPropagation();
     const texts = {
-      email: (subject ? subject + "\n\n" : "") + body,
-      letter: letter,
-      cv: cv,
-      chrome: chromeApplyPack(j, d, lang, letter, cvText),
+      email: (subject ? subject + "\n\n" : "") + bodyP,
+      letter: letterP,
+      cv: cvP,
+      chrome: chromeApplyPack(j, d, lang, letterP, mdPlain(cvText)),
     };
     copyText(b, texts[b.dataset.copy] || "");
   }));
