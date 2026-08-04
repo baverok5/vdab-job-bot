@@ -202,7 +202,7 @@
 <div class="toast" id="toast"></div>
 
 <script>
-const APP_VERSION = "v56";                 // shown in the header; bump with sw.js CACHE
+const APP_VERSION = "v57";                 // shown in the header; bump with sw.js CACHE
 const LS = "jobstatus";                    // { jobId: "applied" | "skipped" | "closed" }
 const LS_AT = "jobstatus_at";              // { jobId: epoch ms the status was set }
 const getStatus = () => JSON.parse(localStorage.getItem(LS) || "{}");
@@ -632,7 +632,7 @@ const CV_PDF_URL = "https://baverok5.github.io/vdab-job-bot/cv.pdf";
 // keep it honest and stop it before the final submit.
 function chromeApplyPack(j, d, lang, letter, cv) {
   const mail = d.apply_email || j.apply_email || "";
-  return `TASK: Apply to the job below on my behalf. Fill in the whole application form using my details, CV and cover letter here. Fill everything, then STOP before the final submit and let me review — do NOT submit without my confirmation.
+  return `TASK: Apply to the job below on my behalf, start to finish, and SUBMIT it. Work autonomously: do not ask me to confirm anything, do not check in mid-way, do not stop to show me the form. I have already reviewed and approved this application — everything you need is below. Decide and keep going.
 
 === ME (applicant) ===
 ${APPLICANT}
@@ -655,9 +655,11 @@ ${letter || ""}
 - For a CV / resume UPLOAD field: GENERATE the PDF yourself from the "TAILORED CV" text above (create the file in your own environment, name it "Baver Ok - CV.pdf") and attach that file to the upload field. Do this without asking me. Do NOT try to fetch ${CV_PDF_URL} and inject it — a browser blocks filling an upload field from a link or a script, which is why that fails; building the file yourself and attaching it works.
 - Same for a cover-letter FILE upload: generate a PDF from the "COVER LETTER" text above ("Baver Ok - Cover letter.pdf") and attach it. If the cover letter is a normal text box (the usual case), just paste the text.
 - Keep the PDFs plain and clean: name and contact details at the top, clear section headings, no invented content — use exactly the text above.
-- If something else isn't covered above, PAUSE and ask me — do not guess.
-- Never claim a skill, degree, or years of experience I don't have.
-- Fill everything in, then stop before the final submit so I can review and click submit myself.`;
+- NEVER ask me to confirm, review, approve or choose anything — not before submitting, not at any step. No "shall I continue?", no "is this correct?", no showing me the filled form. Just do it.
+- A field not covered above: answer it yourself with the most reasonable answer that stays true to my details. Optional fields you can't answer truthfully: leave blank. Never stop to ask.
+- Cookie banners, "create an account", newsletter checkboxes, multi-step wizards: handle them and continue. If an account is required, register with my email; if it demands a password, generate a strong one and put it in your FINAL message, not a mid-way question.
+- Never claim a skill, degree, or years of experience I don't have — accuracy is a rule you apply yourself, not a reason to ask me.
+- Submit the application. Then, in ONE final message, tell me: submitted or not, the company and role, anything you had to guess, and any password you created.`;
 }
 
 function renderPrepared(j, d, box) {
@@ -682,7 +684,7 @@ function renderPrepared(j, d, box) {
         ${cvText ? '<button class="btn primary" data-dl="cv">⬇️ CV (PDF)</button>' : ""}
       </div></div>
     <div class="sec"><button class="btn primary copybtn" data-copy="chrome" style="width:100%">🤖 Copy all for Claude for Chrome</button>
-      <div class="hint" style="text-align:left;margin-top:6px">Open the job's application page in Chrome, then paste this into the Claude for Chrome side panel. It fills the form from your CV + letter and stops so you review &amp; submit.</div></div>
+      <div class="hint" style="text-align:left;margin-top:6px">Open the job's application page in Chrome, then paste this into the Claude for Chrome side panel. It fills in and <b>submits</b> the application on its own, and reports back at the end.</div></div>
     <div class="sec"><div class="h">Application email ${hasMail ? "→ " + esc(d.apply_email || j.apply_email) : "(no direct email — apply via " + srcOf(j) + ")"} <span class="tag lang">${lang === "en" ? "🇬🇧 English" : "🇳🇱 Nederlands"}</span></div>
       <div class="quote">${esc(subject ? subject + "\n\n" : "")}${esc(bodyP)}</div>
       <button class="copybtn" data-copy="email">Copy email</button></div>
