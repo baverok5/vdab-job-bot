@@ -230,6 +230,12 @@ CLOSED_CHECK_VERSION = 2
 # (LinkedIn "No longer accepting applications"). Distinct from None (= unreadable,
 # retry later) so callers actively drop it instead of leaving it in Ready.
 LI_CLOSED = "__CLOSED__"
+
+# Links that are a tracking redirect rather than a job page — EnglishJobs sends
+# every vacancy through /clickout/<hash>, and rendering one yields no posting
+# text. Reading these can never succeed, so they are retired on the first
+# failure instead of being retried forever.
+REDIRECT_URL_RX = re.compile(r"/clickout(?:_alt)?/|/redirect/|/out\?|/goto/", re.I)
 REJECTED_CAP = 2000   # show (almost) every not-a-fit so coverage is auditable
 
 # Jobs to always exclude (candidate only has a B driver's licence and does not
@@ -2042,8 +2048,25 @@ def _process_jobs(browser, new_links, seen, jobs, cv_text, checkpoint=None):
             seen.add(job_id)  # settled state, no point re-checking
             continue
         if not job_text:
-            print("  (could not read job — will retry next run)")
-            continue  # don't mark seen; a transient render failure gets another chance
+            # A job that can never be read must not come back every run. Left
+            # unbounded this starves the screening budget: one run spent all 300
+            # of its slots on EnglishJobs /clickout/ tracking URLs — which are
+            # redirects, not postings, so they can never render — and finished
+            # with 0 matches and 0 letters while VDAB and LinkedIn got 21 slots
+            # between them. A redirect link is hopeless on the first try; a
+            # normal posting gets a second chance in case the failure was
+            # transient.
+            fails = jobs.setdefault("read_fails", {})
+            hopeless = bool(REDIRECT_URL_RX.search(url))
+            n = fails.get(job_id, 0) + 1
+            if hopeless or n >= 2:
+                fails.pop(job_id, None)
+                seen.add(job_id)          # retire it; stop paying for it every run
+                print(f"  (could not read job — retiring it{' (redirect link)' if hopeless else ''})")
+            else:
+                fails[job_id] = n
+                print("  (could not read job — will retry next run)")
+            continue
 
         try:
             verdict = evaluate_job(job_text, cv_text)
