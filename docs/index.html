@@ -148,6 +148,7 @@
   .tag.stretch { background: var(--accent-bg); color: var(--accent); border-color: transparent; font-weight: 600; }
   .tag.li { background: rgba(10,102,194,.16); color: #4aa3ff; border-color: transparent; font-weight: 600; }
   .tag.board { background: rgba(16,185,129,.18); color: #34d399; border-color: transparent; font-weight: 700; }
+  .tag.en { background: rgba(59,130,246,.18); color: #60a5fa; border-color: transparent; font-weight: 700; }
   .tag.design { background: var(--amber-bg); color: var(--amber); border-color: transparent; font-weight: 600; }
   .tag.seo { background: var(--green-bg); color: var(--green); border-color: transparent; font-weight: 700; }
   .tag.content { background: rgba(10,102,194,.16); color: #4aa3ff; border-color: transparent; font-weight: 600; }
@@ -202,7 +203,7 @@
 <div class="toast" id="toast"></div>
 
 <script>
-const APP_VERSION = "v57";                 // shown in the header; bump with sw.js CACHE
+const APP_VERSION = "v58";                 // shown in the header; bump with sw.js CACHE
 const LS = "jobstatus";                    // { jobId: "applied" | "skipped" | "closed" }
 const LS_AT = "jobstatus_at";              // { jobId: epoch ms the status was set }
 const getStatus = () => JSON.parse(localStorage.getItem(LS) || "{}");
@@ -251,6 +252,19 @@ const esc = (s) => (s || "").replace(/[&<>"]/g, (c) =>
 // itself: `details` is an English AI summary of the job, so every posting would
 // look English. null = not known yet (older jobs) → show the letter untouched.
 function langOf(j, d) { return (d && d.lang) || (j && j.lang) || null; }
+
+// An English-language posting is the one that can actually be answered well with
+// B1 Dutch, so those lead every section. Most jobs carry the language the bot
+// detected; for the rest, judge the wording — Dutch listings are unmistakable
+// ("medewerker", "wij zoeken", "jij"), so anything without those markers is
+// treated as English rather than sunk to the bottom on a missing field.
+const NL_RX = /\b(\w*medewerk\w*|\w*vacature\w*|wij zoeken|we zoeken|gezocht|bedrijf|klant\w*|onze|jouw|jij|voltijds|deeltijds|ervaring|opleiding|functie|verantwoordelijk\w*|sollicit\w*|werkervaring|dienstverband|aanbod|taken|binnen ons|je\b|van de|met een|bediende|commercie\w*|administratie\w*|administratief|binnendienst|adviseur|verkoop|inkoop|magazijn|boekhoud\w*|onderhoud|duurzaam\w*|innovatie|technisch\w*|allround|\bop\b|zelfstandig|begeleid\w*|ondersteun\w*)/i;
+function isEnglishJob(j) {
+  const l = String((j && j.lang) || "").toLowerCase();
+  if (l === "en") return true;
+  if (l) return false;                       // bot said Dutch (or another language)
+  return !NL_RX.test(`${(j && j.title) || ""} ${(j && j.details) || ""}`);
+}
 
 // Letters written before this feature are bilingual: Dutch, then a separator,
 // then English. When the language IS known, show only the matching half so the
@@ -798,6 +812,7 @@ function card(j, state) {
           ${hasMail ? '<span class="tag mail">Direct email</span>' : ""}
           ${srcOf(j) === "LinkedIn" ? '<span class="tag li">🔗 LinkedIn</span>' : ""}
           ${!["LinkedIn", "VDAB"].includes(srcOf(j)) ? `<span class="tag board">🌐 ${esc(srcOf(j))}</span>` : ""}
+          ${isEnglishJob(j) ? '<span class="tag en">🇬🇧 English</span>' : ""}
           <span class="tag">Found ${esc((j.found_at || "").slice(0, 10))}</span>
         </div>
       </div>
@@ -1317,10 +1332,11 @@ function render() {
       const groups = {};
       arr.forEach((j) => { (groups[categorize(j)] ||= []).push(j); });
       (MKT_ONLY ? CATS.filter((c) => c.key === "marketing") : CATS).forEach((c) => {
-        // SEO first, always — it is the goal field, so it leads the section the
-        // moment you unfold it (a stretch SEO role still beats a clean non-SEO
-        // one). Then clean fits before stretch jobs, then by score.
+        // English postings first: with B1 Dutch they are the ones that can
+        // realistically be applied to well, so they lead the section. Then SEO —
+        // the goal field — then clean fits before stretch jobs, then by score.
         const g = (groups[c.key] || []).sort((a, b) =>
+          (isEnglishJob(b) - isEnglishJob(a)) ||
           (isSEO(b) - isSEO(a)) ||
           (isStretch(a) - isStretch(b)) ||
           (b.match_score || 0) - (a.match_score || 0));
@@ -1340,6 +1356,7 @@ function render() {
       addSection("intern", "intern",
         `🎓 Internships <span class="cnt">${shownInterns.length}</span>`,
         shownInterns.slice().sort((a, b) =>
+          (isEnglishJob(b) - isEnglishJob(a)) ||
           (isSEO(b) - isSEO(a)) || (b.match_score || 0) - (a.match_score || 0)),
         `<div class="hint" style="text-align:left;margin:0 4px 8px">Internships / stages (“stage” = internship) — kept even if they ask for more, since you learn on the job.</div>`);
     }
