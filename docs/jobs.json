@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-05 20:12 UTC",
+ "updated": "2026-08-05 20:43 UTC",
  "jobs": [
   {
    "id": "4446772012",
@@ -218,7 +218,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-05 12:47",
+   "closed_check": "2026-08-05 20:42",
    "closed_check_v": 2
   },
   {
@@ -342,46 +342,6 @@
    "cv_fit_v": 18
   },
   {
-   "id": "806323768",
-   "url": "https://europa.eu/eures/portal/jv-se/jv-details/YjEyNjI5YzItNjIyNi00ZGIxLWJlNGQtYjZhY2ZjODJmZTViIDM",
-   "title": "E-commerce & AI Content Medewerker",
-   "company": "Altus",
-   "location": "Unknown",
-   "match_score": 70,
-   "reason": "Role fits digital marketing/SEO/content field, no French required, and experience requirements are flexible.",
-   "apply_email": "sylvie@altus.be",
-   "found_at": "2026-08-05 18:03",
-   "status": "new",
-   "details": "Manage products on webshops; write and optimize product descriptions for SEO; edit photos; use AI tools like ChatGPT; design banners and images; work with Excel/Google Sheets; contribute to AI innovation.\nFull-time position.\nLanguage: Dutch required (vlot Nederlands).\nNo specific pay mentioned.",
-   "why_good": "Directly aligns with digital marketing, SEO, content, and web design skills.\nExperience with WordPress, SEO, and content writing matches core tasks.\nAI interest and willingness to learn are valued; no strict experience requirement.\nDutch B1 is sufficient for 'vlot Nederlands' as it's conversational.\nNo French required.",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18
-  },
-  {
-   "id": "877812460",
-   "url": "https://europa.eu/eures/portal/jv-se/jv-details/MTBjNzhkN2UtZjlhZS00NjczLWJlODgtY2MyMTBkMWM4MjhhIDM",
-   "title": "Digital Marketing Intern",
-   "company": "Unknown",
-   "location": "Unknown",
-   "match_score": 70,
-   "reason": "The job is an English-language digital marketing internship that fits the candidate's skills and experience.",
-   "apply_email": "",
-   "found_at": "2026-08-05 15:20",
-   "status": "new",
-   "details": "Role: Digital Marketing Intern\nMain tasks: Support digital marketing campaigns, content creation, SEO, social media\nContract type: Internship\nSchedule: Full-time\nLanguage: English\nPay: Not specified",
-   "why_good": "The internship is in digital marketing, directly matching the candidate's goal field.\nThe candidate has relevant experience in SEO, content writing, and WordPress.\nThe internship is open to non-students (no school convention mentioned), so the candidate can apply.\nThe language requirement is English, which the candidate speaks professionally.",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": true,
-   "lang": "en",
-   "cv_fit_v": 18
-  },
-  {
    "id": "4445849332",
    "url": "https://www.linkedin.com/jobs/view/4445849332",
    "title": "Webmaster (vrijwilliger)",
@@ -444,7 +404,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-05 12:47",
+   "closed_check": "2026-08-05 20:42",
    "closed_check_v": 2
   },
   {
@@ -466,7 +426,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-05 12:47",
+   "closed_check": "2026-08-05 20:42",
    "closed_check_v": 2
   },
   {
@@ -592,7 +552,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-05 12:47",
+   "closed_check": "2026-08-05 20:42",
    "closed_check_v": 2
   },
   {
@@ -614,7 +574,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-05 12:47",
+   "closed_check": "2026-08-05 20:42",
    "closed_check_v": 2
   },
   {
@@ -636,7 +596,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-05 12:47",
+   "closed_check": "2026-08-05 20:42",
    "closed_check_v": 2
   },
   {
@@ -2342,26 +2302,6 @@
    "closed_check_v": 2
   },
   {
-   "id": "896130455",
-   "url": "https://europa.eu/eures/portal/jv-se/jv-details/NjdiZGJiYTEtMGQxOS00YTU0LTg5ZDMtNzZlOTEzZGUwMTFjIDM",
-   "title": "Logistiek Administratief Medewerker",
-   "company": "Unknown",
-   "location": "Unknown",
-   "match_score": 65,
-   "reason": "Administrative role in logistics, no French required, Dutch/English sufficient, no degree or experience hard requirement.",
-   "apply_email": "",
-   "found_at": "2026-08-05 18:13",
-   "status": "new",
-   "details": "Process work orders and administrative documents\nTrack dossiers from start to finish\nUpdate container data in internal systems\nAttach documents and photos to digital files\nMaintain client contact by phone and email\nMS Office proficiency required\nDutch and English communication required\nOwn transport required",
-   "why_good": "Administrative role fits candidate's organizational skills\nNo French required, Dutch B1 and English professional are sufficient\nNo degree or specific experience required, only general administrative experience\nLogistics background from warehouse work is relevant\nMS Office skills are basic and candidate likely has them",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18
-  },
-  {
    "id": "4448014860",
    "url": "https://www.linkedin.com/jobs/view/4448014860",
    "title": "Marketing & Content",
@@ -3674,66 +3614,6 @@
    "status": "new",
    "details": "Role: B2C salesperson for windows, doors, and facades.\nTasks: advising clients, preparing quotes, following up projects, closing contracts.\nContract: permanent, full-time, day shift.\nStart: as soon as possible.\nLanguage: Dutch (not explicitly required, but likely needed for client communication).\nPay: fixed salary + commission, company car with fuel card.",
    "why_good": "No specific study or experience requirements, so the candidate's lack of degree and short experience are not barriers.\nThe role involves commercial and client-facing tasks, which the candidate can handle with strong communication skills.\nThe candidate's marketing background and web/SEO skills could be an asset in presenting products and understanding customer needs.\nThe job is in the sales/commercial support category, which is accessible for early-career candidates.",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18
-  },
-  {
-   "id": "773157315",
-   "url": "https://europa.eu/eures/portal/jv-se/jv-details/ZmIyZDM0YTctNjMwMy00MzQ0LWI3YTEtMmIyN2Y0Yzc1MTIwIDM",
-   "title": "Sales Support",
-   "company": "Unknown",
-   "location": "Unknown",
-   "match_score": 60,
-   "reason": "Administrative support role fits candidate's skills and language profile; no hard walls triggered.",
-   "apply_email": "",
-   "found_at": "2026-08-05 19:42",
-   "status": "new",
-   "details": "Role: administrative support between sales, production, and clients\nTasks: product admin, database management, client contact, support Sales Manager\nContract: not specified\nSchedule: not specified\nLanguage: Dutch and English required; French is a plus\nPay: market conform salary with benefits",
-   "why_good": "Candidate has administrative and organizational skills from warehouse and digital marketing roles\nStrong English and conversational Dutch (B1) meet the language requirement\nProficient in MS Office and quick to learn new software\nClient-focused and detail-oriented, as shown in previous roles\nNo specific degree required, so candidate's coursework is sufficient",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18
-  },
-  {
-   "id": "849547813",
-   "url": "https://europa.eu/eures/portal/jv-se/jv-details/Mjg4ZjYzMGQtNWIxYS00MzVmLTg4ZGQtZDYzMWU4NjdhZDA3IDM",
-   "title": "Commercieel Medewerker (Binnendienst)",
-   "company": "Unknown",
-   "location": "Dilsen",
-   "match_score": 60,
-   "reason": "Administrative/commercial role requiring Dutch and English, no French required, and degree can be substituted by experience.",
-   "apply_email": "",
-   "found_at": "2026-08-05 19:40",
-   "status": "new",
-   "details": "Customer contact and order processing\nAdministrative support for sales process\nHandling service notifications\nFull-time, likely permanent\nDutch and English required; German/French a plus\nNo salary stated",
-   "why_good": "Administrative and customer-facing role fits candidate's communication and organizational skills\nDutch B1 meets 'goede kennis Nederlands' requirement\nEnglish professional proficiency matches\nDegree requirement accepts equivalent by experience\nNo French required, so language is not a barrier",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18
-  },
-  {
-   "id": "894979399",
-   "url": "https://europa.eu/eures/portal/jv-se/jv-details/ZGZiMzgxZDktMjNkMC00ZjJlLWFkMDItNjk3ZDZmZTk2MzYwIDM",
-   "title": "Technische Klantendienstmedewerker #Thuiswerk",
-   "company": "Unknown",
-   "location": "Hasselt",
-   "match_score": 60,
-   "reason": "Accessible customer service role with no specific study requirements, no French required, and Dutch at B1 is sufficient.",
-   "apply_email": "",
-   "found_at": "2026-08-05 19:39",
-   "status": "new",
-   "details": "Role: Technical customer service representative\nMain tasks: Handle customer inquiries via phone, email, SMS, chat; provide technical support; follow up with customers\nContract type: Interim contract, then WEngage contract\nSchedule: Monday-Friday 8-20, weekends 9-20, shifts communicated 3 weeks in advance\nLanguage: Dutch required (candidate has B1)\nPay: Market-conform salary, meal vouchers after 3 months",
-   "why_good": "Customer service role fits candidate's communication and computer skills.\nNo specific study requirements, so lack of degree is not an issue.\nDutch B1 is sufficient for conversational customer service.\nOpportunity for growth and training aligns with early-career development.\nRemote work option after initial period.",
    "why_bad": "",
    "dutch_stretch": false,
    "exp_stretch": false,
@@ -6166,26 +6046,6 @@
    "cv_fit_v": 18
   },
   {
-   "id": "359136667",
-   "url": "https://europa.eu/eures/portal/jv-se/jv-details/ZDhjYWU2NWQtMGQxNy00NTA4LWEwZGEtOGJhYjVjNjkzMGMzIDM",
-   "title": "Content Designer (Conversational AI)",
-   "company": "Unknown",
-   "location": "Unknown",
-   "match_score": 55,
-   "reason": "Role fits candidate's content/UX writing and conversational AI interest, no hard walls.",
-   "apply_email": "",
-   "found_at": "2026-08-05 18:04",
-   "status": "new",
-   "details": "Design conversational flows and chatbot content\nCreate FAQs, prompts, and user guidance\nCollaborate with UX and AI teams\nHybrid/remote options\nMultilingual skills a plus (French/Dutch/English)",
-   "why_good": "Content writing and user-centered design align with candidate's SEO/content experience\nExperience with WordPress and content management supports content creation\nStrong English and B1 Dutch, plus multilingual interest\nNo degree or specific experience required, open to junior",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "en",
-   "cv_fit_v": 18
-  },
-  {
    "id": "4449121822",
    "url": "https://www.linkedin.com/jobs/view/4449121822",
    "title": "Performance Marketeer",
@@ -8022,26 +7882,6 @@
    "cv_fit_v": 18
   },
   {
-   "id": "774443147",
-   "url": "https://europa.eu/eures/portal/jv-se/jv-details/NDg1Yjc4NjMtMjY4My00ZGQ5LTliNzgtNGE1NjBlNzcyNjMxIDM",
-   "title": "Various profiles (logistics, transport, admin, horeca, sales, marketing, HR, general workers)",
-   "company": "Unknown",
-   "location": "Unknown",
-   "match_score": 50,
-   "reason": "General recruitment agency posting with multiple roles, including marketing and administrative positions, which the candidate could fit.",
-   "apply_email": "",
-   "found_at": "2026-08-05 19:41",
-   "status": "new",
-   "details": "Recruitment agency seeking candidates for various roles in the region.\nRoles include logistics, transport, administrative, horeca, sales, marketing, HR, and general workers.\nOpen to starters and experienced candidates.\nOpportunities for permanent contracts.\nLanguage: Dutch (posting in Dutch, but no specific language requirement stated).",
-   "why_good": "The posting is open to various profiles, including marketing and administrative roles, which align with the candidate's skills.\nThe candidate has experience in logistics (warehouse) and digital marketing, so could fit multiple roles.\nThe agency says 'whether you are just starting or have experience', so the candidate's 4 months of experience is acceptable.\nNo French requirement, and Dutch B1 is likely sufficient for administrative or marketing support roles.",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18
-  },
-  {
    "id": "4448199137",
    "url": "https://www.linkedin.com/jobs/view/4448199137",
    "title": "Unknown",
@@ -9444,26 +9284,6 @@
    "lang": "en"
   },
   {
-   "id": "925484815",
-   "url": "https://europa.eu/eures/portal/jv-se/jv-details/ZTJmZDJhMDgtNmEzZi00ZDliLWI5MzItNmMwYWZjMzk3ZTRkIDM",
-   "title": "Logistiek bediende",
-   "company": "Unknown",
-   "location": "Unknown",
-   "match_score": 55,
-   "reason": "Logistics administrative role fits candidate's warehouse experience and language skills; no hard walls triggered.",
-   "apply_email": "",
-   "found_at": "2026-08-05 18:12",
-   "status": "new",
-   "details": "Support inbound/outbound transport activities\nProcess transport documents, purchase orders, inspections in SAP\nCoordinate daily logistics activities, transport planning, inventory management\nPrefer 1-3 years experience in logistics/administrative role\nKnowledge of SAP required; APO and LIMS a plus\nFluent communication in English and Dutch\nKnowledge of customs, ADR, IATA legislation",
-   "why_good": "Candidate has warehouse/logistics experience at Katoen Natie\nWorks in English and has B1 Dutch, meeting the language requirement\nAdministrative tasks align with candidate's detail-oriented skills\nNo degree required, experience preferred but not mandatory\nPotential to leverage digital skills in a logistics environment",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": true,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18
-  },
-  {
    "id": "4448026434",
    "url": "https://www.linkedin.com/jobs/view/4448026434",
    "title": "Digital Marketing Specialist",
@@ -10586,27 +10406,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 18
-  },
-  {
-   "id": "992322998",
-   "url": "https://europa.eu/eures/portal/jv-se/jv-details/MjcxNzljYjctZTFkZS00MzkwLTk1NjItMWVkMmFlNDA0MTc4IDM",
-   "title": "Logistiek bediende",
-   "company": "Unknown",
-   "location": "Unknown",
-   "match_score": 45,
-   "reason": "Logistics administrative role fits candidate's warehouse experience and language skills; no hard walls.",
-   "apply_email": "",
-   "found_at": "2026-08-05 18:11",
-   "status": "new",
-   "details": "Role: logistics administrative support for inbound/outbound transport\nTasks: process transport documents, purchase orders, inspections in SAP; follow up on legislation, procedures, safety; coordinate daily logistics activities, planning, inventory\nContract: not specified\nSchedule: not specified\nLanguage: Dutch and English required (candidate has B1 Dutch and professional English)\nPay: not specified",
-   "why_good": "Candidate has warehouse/logistics experience from Katoen Natie\nAdministrative tasks align with office support skills\nEnglish and Dutch B1 meet the language requirement\nNo French required\nRelevant to candidate's background and accessible",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": true,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "closed_check": "2026-08-05 20:42",
+   "closed_check_v": 2
   },
   {
    "id": "4447321440",
@@ -10751,7 +10553,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "closed_check": "2026-08-05 20:42",
+   "closed_check_v": 2
   },
   {
    "id": "74311332",
@@ -11086,46 +10890,6 @@
    "closed_check_v": 2
   },
   {
-   "id": "525340731",
-   "url": "https://europa.eu/eures/portal/jv-se/jv-details/MGE2ZGQxNzctNjY0OC00YWNkLTgwNDEtODRmODgxNDgzZWM4IDM",
-   "title": "Digital Marketing & Campaign Specialist",
-   "company": "Danis Group",
-   "location": "Koolskamp, Ruiselede, Zarren, Izegem",
-   "match_score": 35,
-   "reason": "Role fits digital marketing/content, no French required, and experience ask is a stretch but acceptable.",
-   "apply_email": "",
-   "found_at": "2026-08-05 18:04",
-   "status": "new",
-   "details": "Manage content calendar and create content for social media, website, internal comms.\nSet up campaigns and support employer branding.\nGrow social media channels (LinkedIn).\nAnalyze campaign performance and optimize.\nUse AI tools (ChatGPT, Copilot, Canva, CapCut, Midjourney).\nWork across multiple locations.\nContract type not specified.\nSchedule not specified.\nLanguage: Dutch required (vlot en foutloos).\nPay not stated.",
-   "why_good": "Core tasks align with candidate's digital marketing and content experience.\nExperience with analytics and AI tools matches candidate's skills.\nCandidate has social media content creation experience.\nCandidate's Dutch B1 is conversational, but job requires fluent Dutch; still a stretch.\nCandidate has ~4 months experience, job asks for 2 years; still worth applying.",
-   "why_bad": "",
-   "dutch_stretch": true,
-   "exp_stretch": true,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18
-  },
-  {
-   "id": "907497701",
-   "url": "https://europa.eu/eures/portal/jv-se/jv-details/Zjg2MzE1MjgtZTI2NC00ZTg5LWE4YmUtOWFlMTcyYTNiZmMzIDM",
-   "title": "Digital Marketing & Campaign Specialist",
-   "company": "Danis Group",
-   "location": "Koolskamp, Ruiselede, Zarren, Izegem",
-   "match_score": 35,
-   "reason": "Role fits digital marketing/content focus, no French required, and experience ask is a stretch but acceptable.",
-   "apply_email": "",
-   "found_at": "2026-08-05 18:03",
-   "status": "new",
-   "details": "Manage content calendar and create content for social media, website, internal comms.\nSet up campaigns and support employer branding.\nGrow social media channels including LinkedIn.\nAnalyze campaign performance and optimize.\nUse AI tools like ChatGPT, Copilot, Canva, CapCut, Midjourney.\nWork across multiple locations.\nContract type not specified.\nSchedule not specified.\nLanguage: Dutch required (vlot en foutloos Nederlands).\nPay not stated.",
-   "why_good": "Core tasks align with candidate's digital marketing and content experience.\nExperience with analytics and AI tools matches candidate's skills.\nSocial media and content creation are strengths from internship and projects.\nNo French required; Dutch B1 is a stretch but candidate is improving.\nEmployer branding and campaign support are relevant to candidate's goals.",
-   "why_bad": "",
-   "dutch_stretch": true,
-   "exp_stretch": true,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18
-  },
-  {
    "id": "4449111908",
    "url": "https://www.linkedin.com/jobs/view/4449111908",
    "title": "Webshop E-Commerce Administrator",
@@ -11358,7 +11122,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-05 10:59",
+   "closed_check": "2026-08-05 20:42",
    "closed_check_v": 2
   },
   {
@@ -11544,7 +11308,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-05 10:59",
+   "closed_check": "2026-08-05 20:42",
    "closed_check_v": 2
   },
   {
@@ -118440,5 +118204,6 @@
   "743814011": 1,
   "743249828": 1
  },
- "eures_reread_v1": true
+ "eures_reread_v1": true,
+ "eures_reread_v2": true
 }
