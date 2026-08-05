@@ -203,7 +203,7 @@
 <div class="toast" id="toast"></div>
 
 <script>
-const APP_VERSION = "v58";                 // shown in the header; bump with sw.js CACHE
+const APP_VERSION = "v59";                 // shown in the header; bump with sw.js CACHE
 const LS = "jobstatus";                    // { jobId: "applied" | "skipped" | "closed" }
 const LS_AT = "jobstatus_at";              // { jobId: epoch ms the status was set }
 const getStatus = () => JSON.parse(localStorage.getItem(LS) || "{}");
@@ -955,7 +955,15 @@ const CATS = [
   { key: "marketing", label: "🎯 Digital marketing, SEO & web", fav: true,
     // \bbrand(ing|s)?\b — matches "brand"/"branding" but NOT Dutch fire words
     // (brandveiligheid, brandhaspel, brandblusser…) that polluted the list.
-    rx: /seo|marketing|marketeer|content|wordpress|\bweb\b|website|social ?media|digital|copywrit|communicat|\bbrand(ing|s)?\b|growth|advertis|campaign|google ?ads/i,
+    // \bweb\w* not \bweb\b: "Webmaster" / "Webdeveloper" / "Webredacteur" are
+    // single words and were all being filed under "Other" — one of them was a
+    // role Baver actually got interviewed for. e-commerce likewise ("E-commerce
+    // Webmaster" matched nothing here).
+    rx: /seo|marketing|marketeer|content|wordpress|\bweb\w*|website|social ?media|digital|copywrit|communicat|\bbrand(ing|s)?\b|growth|advertis|campaign|google ?ads|e-?commerce|shopify|magento|drupal/i,
+    // …but "web" now also catches warehouse and call-centre jobs that merely
+    // mention a webshop ("Inpakker webshop", "Klantendienst webshop"). Those
+    // belong in their own sections, not in the marketing list.
+    not: /inpak\w*|magazijn\w*|logistiek|heftruck|klantendienst|klantenservice|customer (service|care)|telesales|kassa|chauffeur|schoonmaak|docent|verpak\w*/i,
     also: SEA_RX },
   { key: "office", label: "🗂️ Office & admin",
     rx: /admin|assistant|office|data ?entry|reception|secretar|back[-\s]?office|payroll|\bhr\b|management support/i },
@@ -967,7 +975,10 @@ const CATS = [
 ];
 function categorize(j) {
   const t = j.title || "";   // title only — reasoning text would mislabel things
-  for (const c of CATS) if ((c.rx && c.rx.test(t)) || (c.also && c.also.test(t))) return c.key;
+  for (const c of CATS) {
+    if (c.not && c.not.test(t)) continue;          // wrong field despite the keyword
+    if ((c.rx && c.rx.test(t)) || (c.also && c.also.test(t))) return c.key;
+  }
   return "other";
 }
 

@@ -79,7 +79,10 @@ MARKETING_RX = re.compile(
     r"seo\b|sem\b|\bsea[-\s/&]*(?:seo|sem|specialist|manager|expert|marketeer|"
     r"consultant|campaign|advertis|adverteren|social|ads)\b|(?:seo|sem)[-\s/&]+sea\b|"
     r"google\s*ads|marketing|marketeer|marketer|content|"
-    r"wordpress|copywrit|social\s*media|communicat|digital|\bweb\b|website|"
+    # \bweb\w* not \bweb\b — "Webmaster", "Webdeveloper", "Webredacteur" and
+    # "Webbeheerder" are single words, so a boundary after "web" missed every
+    # one of them even though they are squarely this candidate's field.
+    r"wordpress|copywrit|social\s*media|communicat|digital|\bweb\w*|website|"
     r"web\s*design|webdesign|webshop|front[-\s]?end|\bux\b|\bui\b|e-?commerce|"
     r"growth|\bbrand(?:ing|s)?\b|campaign|advertis", re.I)
 
@@ -220,7 +223,9 @@ CHECKPOINT_EVERY = 25  # save + git-push progress this often so a long run can't
 CRITERIA_VERSION = 18
 # Bump when the cheap title-screen rules change, to force a one-time re-screen of
 # every previously title-dropped job under the new rules.
-TITLE_SCREEN_VERSION = 2
+TITLE_SCREEN_VERSION = 3   # v3: web* compounds count as the target field, so the
+                           # ~4.5k titles dropped under the old rules get re-read
+                           # (a Webmaster role was dropped and never surfaced)
 # Bump when the closed-posting check itself gets smarter, so every job checked by
 # the older, weaker version is queued for a fresh look instead of coasting on a
 # verdict that method could not actually reach. Version 1 read LinkedIn over
@@ -545,6 +550,11 @@ LI_PRIORITY_KEYWORDS = [
     "stage marketing", "stage digitale marketing", "stage communicatie",
     "marketing stagiair", "junior marketing", "junior digital marketing",
     "marketing assistant", "marketing medewerker", "trainee marketing",
+    # "Webmaster" is this candidate's profile almost exactly — WordPress, site
+    # building, on-page SEO — and no query here was reaching it: a real Webmaster
+    # role he interviewed for had never been collected at all. Narrow query, few
+    # results, so it costs almost nothing to run every time.
+    "webmaster",
 ]
 # Adjacent fields and broad terms — a slice of these each run.
 LI_ROTATE_PER_RUN = 6   # 4 runs/day -> every broad term still swept daily
@@ -558,6 +568,9 @@ LI_ROTATING_KEYWORDS = [
     # background fits these, and they're often LinkedIn-only (missed before).
     "web designer", "web design", "wordpress", "ux designer", "ui designer",
     "front-end", "webflow",
+    # Web/e-commerce titles that never say "marketing" or "SEO" but are the same
+    # work — site upkeep, product content, on-page optimisation.
+    "web content", "webshop", "e-commerce manager", "digital specialist",
     "marketing", "communications",
 ]
 LI_GUEST_SEARCH = ("https://www.linkedin.com/jobs-guest/jobs/api/"
