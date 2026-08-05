@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-05 17:19 UTC",
+ "updated": "2026-08-05 17:20 UTC",
  "jobs": [
   {
    "id": "4446772012",
@@ -42,7 +42,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-05 10:59",
+   "closed_check": "2026-08-05 17:18",
    "closed_check_v": 2
   },
   {
@@ -64,7 +64,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-05 10:59",
+   "closed_check": "2026-08-05 17:18",
    "closed_check_v": 2
   },
   {
@@ -86,7 +86,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-05 10:59",
+   "closed_check": "2026-08-05 17:18",
    "closed_check_v": 2
   },
   {
@@ -108,7 +108,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-05 10:59",
+   "closed_check": "2026-08-05 17:18",
    "closed_check_v": 2
   },
   {
@@ -10528,7 +10528,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-05 07:32",
+   "closed_check": "2026-08-05 17:18",
    "closed_check_v": 2
   },
   {
@@ -10568,7 +10568,7 @@
    "exp_stretch": true,
    "internship": false,
    "cv_fit_v": 18,
-   "closed_check": "2026-08-05 07:32",
+   "closed_check": "2026-08-05 17:18",
    "closed_check_v": 2
   },
   {
@@ -10608,28 +10608,6 @@
    "exp_stretch": false,
    "internship": false,
    "cv_fit_v": 18
-  },
-  {
-   "id": "4445991664",
-   "url": "https://www.linkedin.com/jobs/view/4445991664",
-   "title": "Jr. Brand Manager Protein",
-   "company": "Danone",
-   "location": "Unknown",
-   "match_score": 38,
-   "reason": "This role aligns with the candidate's goal field in marketing and accepts their language skills, though it leans towards requiring more experience.",
-   "apply_email": "",
-   "found_at": "2026-08-01 08:24",
-   "status": "new",
-   "details": "Role: Jr. Brand Manager Protein\nMain tasks: Lead HiPRO brand in Belgium, manage brand growth, liaise with cross-functional teams, develop and execute brand plans, local innovation projects, build sports brand support model.\nContract type: Not specified\nSchedule: Not specified\nLanguage: English (fluent), Dutch (good understanding)\nPay: Not specified",
-   "why_good": "Fits goal field of digital marketing and brand management.\nCandidate has experience in content creation and SEO which are relevant to brand building.\nAccepts English and B1 Dutch (posting states 'good understanding' which aligns).\nCompany offers support for learning and career growth.",
-   "why_bad": "The role explicitly asks for 2-5 years of experience in Brand Management, while the candidate has approximately 4 months of directly relevant experience.",
-   "dutch_stretch": false,
-   "exp_stretch": true,
-   "internship": false,
-   "lang": "en",
-   "cv_fit_v": 18,
-   "closed_check": "2026-08-05 07:32",
-   "closed_check_v": 2
   },
   {
    "id": "4447588203",
@@ -11264,7 +11242,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-05 07:32",
+   "closed_check": "2026-08-05 17:18",
    "closed_check_v": 2
   },
   {
@@ -11889,7 +11867,7 @@
    "exp_stretch": true,
    "internship": false,
    "cv_fit_v": 18,
-   "closed_check": "2026-08-05 07:32",
+   "closed_check": "2026-08-05 17:18",
    "closed_check_v": 2
   },
   {
@@ -11910,7 +11888,7 @@
    "exp_stretch": true,
    "internship": false,
    "cv_fit_v": 18,
-   "closed_check": "2026-08-05 07:32",
+   "closed_check": "2026-08-05 17:18",
    "closed_check_v": 2
   },
   {
