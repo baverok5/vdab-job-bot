@@ -203,7 +203,7 @@
 <div class="toast" id="toast"></div>
 
 <script>
-const APP_VERSION = "v60";                 // shown in the header; bump with sw.js CACHE
+const APP_VERSION = "v61";                 // shown in the header; bump with sw.js CACHE
 const LS = "jobstatus";                    // { jobId: "applied" | "skipped" | "closed" }
 const LS_AT = "jobstatus_at";              // { jobId: epoch ms the status was set }
 const getStatus = () => JSON.parse(localStorage.getItem(LS) || "{}");
@@ -952,6 +952,13 @@ function rejectedCard(j) {
 // neighbouring word makes it the marketing discipline (same rule the bot's
 // priority tiers already use).
 const SEA_RX = /\bsea[-\s/&]*(?:seo|sem|specialist|manager|expert|marketeer|consultant|campaign|advertis|adverteren|social|ads)\b|(?:seo|sem)[-\s/&]+sea\b/i;
+// "Sales & Marketing Apprentice" at a hotel — assist the sales team, answer
+// guest enquiries — is a sales job that merely has the word marketing in its
+// title, and it was landing in the digital-marketing section. When a title
+// leads with sales, it only counts as this field if something actually digital
+// is named too ("Digital Marketing & Sales Intern" still qualifies).
+const SALES_RX = /\bsales\b|verkoop\w*|commercie\w*|account ?manager|business development|\bbdr\b|apprentice.*sales|sales.*apprentice/i;
+const DIGITAL_RX = /seo|digital|online|content|social|\bweb\w*|e-?commerce|wordpress|copywrit|campaign|google ?ads|marketeer|advertis|\bbrand(ing|s)?\b/i;
 const CATS = [
   { key: "marketing", label: "🎯 Digital marketing, SEO & web", fav: true,
     // \bbrand(ing|s)?\b — matches "brand"/"branding" but NOT Dutch fire words
@@ -978,6 +985,8 @@ function categorize(j) {
   const t = j.title || "";   // title only — reasoning text would mislabel things
   for (const c of CATS) {
     if (c.not && c.not.test(t)) continue;          // wrong field despite the keyword
+    // A sales title with no digital signal belongs in sales, not here.
+    if (c.key === "marketing" && SALES_RX.test(t) && !DIGITAL_RX.test(t)) continue;
     if ((c.rx && c.rx.test(t)) || (c.also && c.also.test(t))) return c.key;
   }
   return "other";
