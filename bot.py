@@ -19,7 +19,8 @@ import subprocess
 import time
 from collections import Counter
 from datetime import datetime, timezone
-from urllib.parse import urljoin, urlsplit, urlunsplit
+import html
+from urllib.parse import quote, unquote, urljoin, urlsplit, urlunsplit
 
 import requests
 from bs4 import BeautifulSoup
@@ -1017,6 +1018,12 @@ def collect_boards(browser, budget_s=BOARD_BUDGET_S):
 # one log line is what turns the next run into a correction rather than a guess.
 EURES_SEARCH = "https://europa.eu/eures/api/jv-searchengine/public/jv-search/search"
 EURES_DETAIL_PAGE = "https://europa.eu/eures/portal/jv-se/jv-details/"
+# The portal link above is for a human to click; this JSON endpoint is what the
+# bot reads, because the portal page is a JS app that renders as an empty shell.
+EURES_DETAIL_API = "https://europa.eu/eures/api/jv-searchengine/public/jv/id/"
+# Descriptions from the search response, keyed by EURES id — the fallback when
+# the detail call fails, and free because the search already returned them.
+EURES_TEXT = {}
 EURES_KEYWORDS = [
     "seo", "digital marketing", "webmaster", "content marketing",
     "e-commerce", "online marketing", "communications", "marketing intern",
@@ -1120,6 +1127,9 @@ def collect_eures(budget_s=EURES_BUDGET_S):
                 url = _first(rec, "url", "applyUrl", "applicationUrl", "sourceUrl",
                              "originalUrl", "jvUrl") or (EURES_DETAIL_PAGE + raw_id)
                 jid = eures_job_id(raw_id)
+                desc = _first(rec, "description", "jvDescription", "content")
+                if desc:
+                    EURES_TEXT[raw_id] = desc
                 if jid in found:
                     continue
                 found[jid] = {
@@ -1137,6 +1147,44 @@ def collect_eures(budget_s=EURES_BUDGET_S):
             time.sleep(1)
     print(f"  eures: collected {len(found)} vacancies in {int(time.time() - t0)}s")
     return found
+
+
+def fetch_eures_detail(url):
+    """Job text for a EURES vacancy, over its JSON API.
+
+    The portal link (…/jv-se/jv-details/<id>) is a JavaScript app: rendering it
+    returns the site shell, so every EURES job was being evaluated as "a generic
+    EURES website page" and rejected. The vacancy itself is available as JSON —
+    and the search response already carried a description, cached during
+    collection, which serves as the fallback when the detail call fails."""
+    raw_id = unquote(url.rsplit("/", 1)[-1].split("?")[0])
+    text = ""
+    try:
+        r = requests.get(EURES_DETAIL_API + quote(raw_id, safe=""),
+                         params={"requestLang": "en"}, timeout=25,
+                         headers={"Accept": "application/json",
+                                  "User-Agent": HEADERS["User-Agent"]})
+        if r.status_code == 200:
+            d = r.json()
+            if isinstance(d, dict):
+                d = d.get("jv") or d.get("data") or d
+                parts = [_first(d, "title"), _first(d, "employer", "employerName"),
+                         _first(d, "description", "jvDescription", "content",
+                                "descriptionText", "freeText")]
+                text = "\n\n".join(p for p in parts if p)
+    except Exception as e:
+        print(f"  eures detail {raw_id[:12]}…: {type(e).__name__}")
+    if not text:
+        text = EURES_TEXT.get(raw_id, "")          # description from the search hit
+    if not text:
+        return "", None
+    text = re.sub(r"<[^>]+>", " ", text)           # descriptions can carry HTML
+    text = " ".join(html.unescape(text).split())
+    emails = [e for e in re.findall(
+        r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}", text)
+        if not any(b in e.lower() for b in
+                   ("europa.eu", "example.", "noreply", "no-reply"))]
+    return text[:15000], (emails[0] if emails else None)
 
 
 def linkedin_guest_gone(job_id):
@@ -1272,6 +1320,8 @@ def fetch_job_detail(browser, url, job_id, check_closed=False):
     vacancies from its own pages)."""
     if "linkedin.com" in (url or ""):
         return fetch_linkedin_detail(job_id, check_closed=check_closed)
+    if EURES_DETAIL_PAGE in (url or ""):
+        return fetch_eures_detail(url)
     page = browser.new_page(
         user_agent=HEADERS["User-Agent"],
         locale="nl-BE",
@@ -1727,6 +1777,20 @@ def main():
     seen = set(load_json(SEEN_FILE, []))
     jobs = load_json(JOBS_FILE, {"updated": "", "jobs": []})
     jobs.setdefault("rejected", [])   # "not a fit" pool (with why_bad reasons)
+    # One-time repair: the first EURES run read the portal's JS shell instead of
+    # the vacancy, so ~370 real jobs were rejected as "a generic EURES website
+    # page". A rejected job is never looked at again, so the fixed reader would
+    # never reach them — un-reject and un-see them once, and let them screen
+    # again properly.
+    if not jobs.get("eures_reread_v1"):
+        bad = {j["id"] for j in jobs["rejected"]
+               if EURES_DETAIL_PAGE in (j.get("url") or "")}
+        if bad:
+            jobs["rejected"] = [j for j in jobs["rejected"] if j["id"] not in bad]
+            seen -= bad
+            print(f"  eures: re-queued {len(bad)} vacancies rejected by the "
+                  f"broken page reader")
+        jobs["eures_reread_v1"] = True
     screen = load_json(SCREEN_FILE, {"title_no": [], "shortlist": []})
     title_no = set(screen.get("title_no", []))     # dropped at the cheap title stage
     shortlist = set(screen.get("shortlist", []))   # passed title stage, await full eval
