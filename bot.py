@@ -1164,6 +1164,11 @@ def fetch_eures_detail(url):
                          params={"requestLang": "en"}, timeout=25,
                          headers={"Accept": "application/json",
                                   "User-Agent": HEADERS["User-Agent"]})
+        if r.status_code != 200:
+            # Silent before: a 404 here just fell through to the cached search
+            # description, so a systematically wrong id format would have looked
+            # like everything working.
+            print(f"  eures detail {raw_id[:14]}…: HTTP {r.status_code}")
         if r.status_code == 200:
             d = r.json()
             if isinstance(d, dict):
@@ -1791,6 +1796,27 @@ def main():
             print(f"  eures: re-queued {len(bad)} vacancies rejected by the "
                   f"broken page reader")
         jobs["eures_reread_v1"] = True
+    # …and the ones it wrongly ACCEPTED. Reading the portal shell did not only
+    # cause rejections: given a page with no vacancy on it, the evaluator
+    # sometimes wrote a plausible-looking job instead. A Dutch shop-assistant
+    # vacancy ("Verkoopmedewerker (Flexi)", Dutch B1 required) reached Ready as
+    # an English "Digital Marketing Intern" at 70%. Invented matches are worse
+    # than none — he could apply to a job that does not exist — so every EURES
+    # match made in that window is dropped and read again properly.
+    if not jobs.get("eures_reread_v2"):
+        stale = {j["id"] for j in jobs["jobs"]
+                 if EURES_DETAIL_PAGE in (j.get("url") or "")}
+        if stale:
+            jobs["jobs"] = [j for j in jobs["jobs"] if j["id"] not in stale]
+            seen -= stale
+            for _i in stale:
+                try:
+                    os.remove(os.path.join(PREPARED_DIR, f"{_i}.json"))
+                except OSError:
+                    pass
+            print(f"  eures: dropped {len(stale)} match(es) judged from the "
+                  f"portal shell — re-reading them with the JSON API")
+        jobs["eures_reread_v2"] = True
     screen = load_json(SCREEN_FILE, {"title_no": [], "shortlist": []})
     title_no = set(screen.get("title_no", []))     # dropped at the cheap title stage
     shortlist = set(screen.get("shortlist", []))   # passed title stage, await full eval
