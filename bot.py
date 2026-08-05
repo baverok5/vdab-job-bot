@@ -2000,7 +2000,13 @@ def backfill_letters(browser, jobs, cv_text, budget=30, checkpoint=None):
     """Write letters for matched jobs that don't have one yet (e.g. matched
     before letters existed). Best fits first; re-renders the posting to get its
     text. Budgeted so it never starves the screening pass."""
-    todo = [j for j in jobs["jobs"] if not has_letter(j.get("id"))]
+    # Jobs whose posting could not be read twice are parked, not retried: a
+    # deleted posting (LinkedIn 404) can never yield a letter, and re-fetching
+    # it on every run is pure waste. They are parked rather than dropped so a
+    # job already marked Applied keeps its card and stays in that history.
+    parked = jobs.get("letter_fails", {})
+    todo = [j for j in jobs["jobs"]
+            if not has_letter(j.get("id")) and parked.get(j.get("id"), 0) < 2]
     todo.sort(key=lambda j: (bool(j.get("dutch_stretch")),
                              -int(j.get("match_score", 0) or 0)))
     todo = todo[:budget]
@@ -2017,7 +2023,16 @@ def backfill_letters(browser, jobs, cv_text, budget=30, checkpoint=None):
             print(f"  CLOSED — removed {j.get('title','')[:50]}")
             continue
         if not job_text:
+            # Same trap as the screening loop: a posting that is simply gone
+            # (LinkedIn 404) is re-fetched on every future run and can never
+            # produce a letter. Give it one more chance in case the failure was
+            # transient, then stop paying for it.
+            fails = jobs.setdefault("letter_fails", {})
+            fails[job_id] = n = fails.get(job_id, 0) + 1
+            if n >= 2:
+                print(f"  unreadable twice — parked {j.get('title', '')[:50]}")
             continue
+        jobs.get("letter_fails", {}).pop(job_id, None)
         if apply_email and not (j.get("apply_email") or "").strip():
             j["apply_email"] = apply_email  # keep the card's recipient in sync
         # We have the real posting here — record its language on the card too,
