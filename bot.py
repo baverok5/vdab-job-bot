@@ -1004,6 +1004,141 @@ def collect_boards(browser, budget_s=BOARD_BUDGET_S):
     return found
 
 
+# ---------------------------------------------------------------- EURES
+# Fourth source: EURES, the European Commission's job-mobility portal. Every
+# national public employment service feeds it, VDAB included, so it reaches the
+# same Belgian vacancies as the VDAB scrape — but over a plain JSON API instead
+# of a rendered page, which is far cheaper and does not break when markup moves.
+#
+# The request shape below is from the published API docs. The RESPONSE shape is
+# not documented anywhere I could reach, and this sandbox is firewalled from
+# europa.eu, so the parser tries the field names these APIs conventionally use
+# and prints the actual keys it received on the first record of the run. That
+# one log line is what turns the next run into a correction rather than a guess.
+EURES_SEARCH = "https://europa.eu/eures/api/jv-searchengine/public/jv-search/search"
+EURES_DETAIL_PAGE = "https://europa.eu/eures/portal/jv-se/jv-details/"
+EURES_KEYWORDS = [
+    "seo", "digital marketing", "webmaster", "content marketing",
+    "e-commerce", "online marketing", "communications", "marketing intern",
+]
+EURES_PAGES = 2            # pages per keyword
+EURES_PER_PAGE = 50
+EURES_BUDGET_S = 120
+
+
+def eures_job_id(raw):
+    """Stable 9-digit id for a EURES vacancy. It MUST stay under 1e9: anything
+    at or above that is treated as a LinkedIn id by the staleness gate, and a
+    larger id would redefine 'newest LinkedIn job' and age out the real ones."""
+    h = int(hashlib.sha1(("eures:" + str(raw)).encode("utf-8")).hexdigest()[:12], 16)
+    return str(100_000_000 + h % 900_000_000)
+
+
+def _first(d, *names):
+    """First present, non-empty value among candidate key names (nested dicts are
+    searched one level down, which is where these APIs tend to put employer)."""
+    for n in names:
+        v = d.get(n)
+        if isinstance(v, dict):
+            v = v.get("name") or v.get("title") or v.get("label") or v.get("value")
+        if isinstance(v, list) and v:
+            v = v[0] if not isinstance(v[0], dict) else (
+                v[0].get("name") or v[0].get("title") or v[0].get("label"))
+        if v not in (None, "", []):
+            return str(v)
+    return ""
+
+
+def _eures_records(payload):
+    """Pull the vacancy list out of the response whatever it is called."""
+    if isinstance(payload, list):
+        return payload
+    if not isinstance(payload, dict):
+        return []
+    for k in ("jvs", "data", "results", "items", "records", "content", "vacancies"):
+        v = payload.get(k)
+        if isinstance(v, list):
+            return v
+        if isinstance(v, dict):                     # e.g. {"data": {"jvs": [...]}}
+            for k2 in ("jvs", "results", "items", "records", "content"):
+                if isinstance(v.get(k2), list):
+                    return v[k2]
+    return []
+
+
+def collect_eures(budget_s=EURES_BUDGET_S):
+    """Belgian vacancies from the EURES API: {id: {...}} like the other sources."""
+    found, t0, shape_logged = {}, time.time(), False
+    for kw in EURES_KEYWORDS:
+        if time.time() - t0 > budget_s:
+            print(f"  eures: budget spent, {kw!r} onwards skipped this run")
+            break
+        for page in range(1, EURES_PAGES + 1):
+            body = {
+                "resultsPerPage": EURES_PER_PAGE, "page": page,
+                "sortSearch": "MOST_RECENT",
+                "keywords": [{"keyword": kw, "specificSearchCode": "EVERYWHERE"}],
+                "publicationPeriod": None, "occupationUris": [], "skillUris": [],
+                "requiredExperienceCodes": [], "positionScheduleCodes": [],
+                "sectorCodes": [], "educationAndQualificationLevelCodes": [],
+                "positionOfferingCodes": [], "locationCodes": ["be"],
+                "euresFlagCodes": [], "otherBenefitsCodes": [], "requiredLanguages": [],
+                "minNumberPost": None, "sessionId": "vdab-job-bot",
+                "requestLanguage": "en",
+            }
+            try:
+                r = requests.post(EURES_SEARCH, json=body, timeout=30, headers={
+                    "Content-Type": "application/json", "Accept": "application/json",
+                    "User-Agent": HEADERS["User-Agent"]})
+                if r.status_code != 200:
+                    print(f"  eures {kw!r} p{page}: HTTP {r.status_code}")
+                    break
+                payload = r.json()
+            except Exception as e:
+                print(f"  eures {kw!r} p{page} failed: {type(e).__name__}: "
+                      f"{' '.join(str(e).split())[:100]}")
+                break
+            recs = _eures_records(payload)
+            if not shape_logged:
+                # The one line that makes the next run a correction, not a guess.
+                top = list(payload)[:12] if isinstance(payload, dict) else "list"
+                print(f"  eures: response keys={top}")
+                if recs:
+                    print(f"  eures: record keys={list(recs[0])[:25]}")
+                shape_logged = True
+            if not recs:
+                print(f"  eures {kw!r} p{page}: 0 records")
+                break
+            added = 0
+            for rec in recs:
+                if not isinstance(rec, dict):
+                    continue
+                raw_id = _first(rec, "id", "jvId", "jobVacancyId", "vacancyId", "uuid")
+                title = _first(rec, "title", "jobTitle", "name", "positionTitle")
+                if not raw_id or not title:
+                    continue
+                url = _first(rec, "url", "applyUrl", "applicationUrl", "sourceUrl",
+                             "originalUrl", "jvUrl") or (EURES_DETAIL_PAGE + raw_id)
+                jid = eures_job_id(raw_id)
+                if jid in found:
+                    continue
+                found[jid] = {
+                    "id": jid, "url": url, "title": " ".join(title.split())[:140],
+                    "company": _first(rec, "employer", "employerName", "company",
+                                      "companyName", "organisation"),
+                    "location": _first(rec, "location", "city", "locationName",
+                                       "workLocation", "place"),
+                    "src": "eures",
+                }
+                added += 1
+            print(f"  eures {kw!r} p{page}: {len(recs)} records, +{added} new")
+            if len(recs) < EURES_PER_PAGE:
+                break
+            time.sleep(1)
+    print(f"  eures: collected {len(found)} vacancies in {int(time.time() - t0)}s")
+    return found
+
+
 def linkedin_guest_gone(job_id):
     """True only when LinkedIn's guest description endpoint says the posting no
     longer exists (404/410). Anything else — 200, a rate-limit, a network blip —
@@ -1737,12 +1872,35 @@ def main():
                 print(f"  boards: {len(board_meta)} new, {dropped} already covered "
                       f"by LinkedIn/VDAB")
 
+            # Fourth source: EURES. Deduped against everything already collected,
+            # so what survives is what the other sources missed — the measure of
+            # whether the API is worth leaning on more heavily than the scrape.
+            eures_meta = collect_eures()
+            if eures_meta:
+                known = {dedupe_key(j.get("title"), j.get("company"))
+                         for j in jobs.get("listing", [])}
+                known |= {dedupe_key(m["title"], m.get("company"))
+                          for m in list(li_meta.values()) + list(board_meta.values())}
+                known.discard(None)
+                dropped = 0
+                for _m in list(eures_meta.values()):
+                    k = dedupe_key(_m["title"], _m.get("company"))
+                    if k and k in known:
+                        eures_meta.pop(_m["id"], None)
+                        dropped += 1
+                        continue
+                    if k:
+                        known.add(k)
+                    all_links.add((_m["url"], _m["id"]))
+                print(f"  eures: {len(eures_meta)} new, {dropped} already covered "
+                      f"by VDAB/LinkedIn/boards")
+
             # Accumulate the master listing across runs (union by id), dropping
             # roles the candidate never wants. This is what keeps coverage growing
             # instead of being pinned to a single search's results.
             listing = {j["id"]: j for j in jobs.get("listing", [])}
             for (u, i) in all_links:
-                m = li_meta.get(i) or board_meta.get(i)
+                m = li_meta.get(i) or board_meta.get(i) or eures_meta.get(i)
                 if m:  # LinkedIn / job-board item — it carries a real title
                     if is_excluded(m["title"]) or is_ineligible(m["title"]):
                         continue

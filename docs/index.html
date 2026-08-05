@@ -203,7 +203,7 @@
 <div class="toast" id="toast"></div>
 
 <script>
-const APP_VERSION = "v59";                 // shown in the header; bump with sw.js CACHE
+const APP_VERSION = "v60";                 // shown in the header; bump with sw.js CACHE
 const LS = "jobstatus";                    // { jobId: "applied" | "skipped" | "closed" }
 const LS_AT = "jobstatus_at";              // { jobId: epoch ms the status was set }
 const getStatus = () => JSON.parse(localStorage.getItem(LS) || "{}");
@@ -874,6 +874,7 @@ const BOARD_NAMES = {
   "stepstone.be": "StepStone",
   "jobsinbrussels.com": "JobsinBrussels",
   "findajobinbelgium.com": "FindaJobinBelgium",
+  "eures": "EURES",          // the EU portal — every national employment service feeds it
 };
 function srcOf(j) {
   if (!j) return "VDAB";
