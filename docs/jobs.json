@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-05 01:19 UTC",
+ "updated": "2026-08-05 01:20 UTC",
  "jobs": [
   {
    "id": "4446772012",
@@ -42,7 +42,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-04 12:53",
+   "closed_check": "2026-08-05 01:18",
    "closed_check_v": 2
   },
   {
@@ -64,7 +64,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-04 12:53",
+   "closed_check": "2026-08-05 01:18",
    "closed_check_v": 2
   },
   {
@@ -86,7 +86,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-04 12:53",
+   "closed_check": "2026-08-05 01:18",
    "closed_check_v": 2
   },
   {
@@ -108,7 +108,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-04 12:53",
+   "closed_check": "2026-08-05 01:18",
    "closed_check_v": 2
   },
   {
@@ -130,7 +130,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-04 12:53",
+   "closed_check": "2026-08-05 01:18",
    "closed_check_v": 2
   },
   {
@@ -152,7 +152,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-04 12:53",
+   "closed_check": "2026-08-05 01:18",
    "closed_check_v": 2
   },
   {
@@ -174,7 +174,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-04 12:53",
+   "closed_check": "2026-08-05 01:18",
    "closed_check_v": 2
   },
   {
@@ -384,7 +384,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-04 12:53",
+   "closed_check": "2026-08-05 01:18",
    "closed_check_v": 2
   },
   {
@@ -10759,27 +10759,6 @@
    "cv_fit_v": 18
   },
   {
-   "id": "4437209796",
-   "url": "https://www.linkedin.com/jobs/view/4437209796",
-   "title": "WordPress Developer",
-   "company": "Unknown",
-   "location": "Unknown",
-   "match_score": 35,
-   "reason": "Job is a good fit for the candidate's WordPress/SEO skills; experience requirement is a stretch but not a hard fail.",
-   "apply_email": "",
-   "found_at": "2026-07-21 18:49",
-   "status": "new",
-   "details": "Build, customize, and maintain WordPress websites, themes, and plugins.\nCollaborate with designers and marketers; optimize for speed, SEO, security.\nFull-time, flexible hours & remote options.\nLanguage: English (implied).\nSalary: Competitive USD.",
-   "why_good": "Candidate has hands-on WordPress/Elementor experience building and maintaining client sites.\nOn-page SEO and performance tracking skills align with optimization tasks.\nFront-end dev background (AngularJS/JavaScript) supports HTML/CSS/JS requirements.\nQuick learner, comfortable with page builders and web development trends.\nWorks in English; no French required.",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": true,
-   "internship": false,
-   "cv_fit_v": 18,
-   "closed_check": "2026-08-04 07:31",
-   "closed_check_v": 2
-  },
-  {
    "id": "73955479",
    "url": "https://www.vdab.be/vindeenjob/vacatures/73955479/transportation-support-staff",
    "title": "Transportation Support Staff",
@@ -10974,7 +10953,7 @@
    "exp_stretch": true,
    "internship": false,
    "cv_fit_v": 18,
-   "closed_check": "2026-08-04 07:31",
+   "closed_check": "2026-08-05 01:18",
    "closed_check_v": 2
   },
   {
