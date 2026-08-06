@@ -1136,10 +1136,29 @@ function isFarAway(j) {
   if (BE_PLACE.test(loc)) return false;
   return FOREIGN_PLACE.test(loc) || FOREIGN_PLACE.test(j.company || "");
 }
+// "Remote" is not the same as remote-from-here. "Remote – Colombia" means
+// remote *within* Colombia — that posting's requirements said "Must be located
+// in Colombia" — so when the location names a foreign country only an
+// explicitly borderless arrangement rescues it.
+const GLOBAL_REMOTE = /\banywhere\b|world\s*wide|globally|any country|fully distributed|remote[^.\n]{0,20}\b(?:europe|eu|emea|global|worldwide)\b|\b(?:europe|eu|emea)[- ]?(?:based|wide)\b|within the eu\b|\bbelgium\b|\bbelgi[eë]\b/i;
+const RESIDENCE_REQ = /must\s+(?:be\s+)?(?:located|based|resid\w+|liv\w+)|you\s+must\s+live|require[sd]?\s+residen\w+|(?:located|based|residing)\s+in\s+(?!belgi)/i;
 function isUnreachable(j) {
   if (!isFarAway(j)) return false;
   const blob = `${j.location || ""} ${j.details || ""}`;
+  if (RESIDENCE_REQ.test(blob)) return true;   // they named a country you must live in
+  if (FOREIGN_PLACE.test(j.location || "")) return !GLOBAL_REMOTE.test(blob);
   return !(REMOTE_OK.test(blob) && ENGLISH_OK.test(blob));
+}
+
+// A freelancer advertising themselves, not a vacancy: no employer named, no
+// address to apply to, every concrete field left blank. One account posted a
+// handful of these within minutes of each other.
+const VAGUE_FIELD = /not specified|not stated|unspecified/gi;
+function isSelfPromo(j) {
+  const co = (j.company || "").trim().toLowerCase();
+  if (co && co !== "unknown") return false;
+  if ((j.apply_email || "").trim()) return false;
+  return ((j.details || "").match(VAGUE_FIELD) || []).length >= 3;
 }
 
 function render() {
@@ -1154,7 +1173,7 @@ function render() {
     if (s === "closed") continue;   // you marked it dead — never show it again
     // Too old to still be open: keep it out of Ready, but leave it visible if
     // you already acted on it, so your Applied history stays intact.
-    if (!s && (isStale(j) || isUnreachable(j))) continue;
+    if (!s && (isStale(j) || isUnreachable(j) || isSelfPromo(j))) continue;
     if (s === "applied") buckets.applied.push(j);
     else if (s === "skipped") buckets.skipped.push(j);
     else buckets.new.push(j);

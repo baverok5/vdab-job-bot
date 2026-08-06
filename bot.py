@@ -839,6 +839,17 @@ NONLOCAL_SCRIPT_RX = re.compile(
 REMOTE_RX = re.compile(r"\bremote\b|work from home|telewerk|thuiswerk|\banywhere\b|"
                        r"\bhybrid\b", re.I)
 ENGLISH_OK_RX = re.compile(r"\benglish\b|\bengels\b", re.I)
+# Remote that genuinely reaches Belgium, rather than remote inside one country.
+GLOBAL_REMOTE_RX = re.compile(
+    r"\banywhere\b|world\s*wide|globally|any country|fully distributed|"
+    r"remote[^.\n]{0,20}\b(?:europe|eu|emea|global|worldwide)\b|"
+    r"\b(?:europe|eu|emea)[- ]?(?:based|wide)\b|within the eu\b|"
+    r"\bbelgium\b|\bbelgi[eë]\b", re.I)
+# The employer naming a country you must live in settles it, remote or not.
+RESIDENCE_RX = re.compile(
+    r"must\s+(?:be\s+)?(?:located|based|resid\w+|liv\w+)|"
+    r"you\s+must\s+live|require[sd]?\s+residen\w+|"
+    r"(?:located|based|residing)\s+in\s+(?!belgi)", re.I)
 
 
 def is_far_away(title, company, location):
@@ -852,12 +863,57 @@ def is_far_away(title, company, location):
 
 
 def job_is_reachable(job):
-    """Somewhere abroad is only worth offering if you could do it from Belgium:
-    remote, and in English."""
-    if not is_far_away(job.get("title"), job.get("company"), job.get("location")):
+    """Somewhere abroad is only worth offering if you could do it from Belgium.
+
+    "Remote" is not the same as remote-from-here. "Remote - Colombia" means
+    remote *within Colombia*, and that posting's own requirements said "Must be
+    located in Colombia" — it passed the first version of this rule because the
+    word remote appeared. So when the location names a foreign country, only an
+    explicitly borderless arrangement rescues it."""
+    loc = job.get("location") or ""
+    if not is_far_away(job.get("title"), job.get("company"), loc):
         return True
-    blob = f"{job.get('location') or ''} {job.get('details') or ''}"
+    blob = f"{loc} {job.get('details') or ''}"
+    if RESIDENCE_RX.search(blob):          # "must be located in X" — that's that
+        return False
+    if FOREIGN_PLACE_RX.search(loc):
+        return bool(GLOBAL_REMOTE_RX.search(blob))
     return bool(REMOTE_RX.search(blob) and ENGLISH_OK_RX.search(blob))
+
+
+VAGUE_FIELD_RX = re.compile(r"not specified|not stated|unspecified", re.I)
+
+
+def looks_like_self_promo(job):
+    """A freelancer advertising themselves, not a vacancy. One LinkedIn account
+    posted "Remote Google Ads Specialist", "SEO Reporting Specialist",
+    "Performance Marketeer" and more within minutes of each other — no employer,
+    no address to apply to, and every concrete field left blank. A real employer
+    names itself; there is nothing to apply to here."""
+    company = (job.get("company") or "").strip().lower()
+    if company and company != "unknown":
+        return False
+    if (job.get("apply_email") or "").strip():
+        return False
+    return len(VAGUE_FIELD_RX.findall(job.get("details") or "")) >= 3
+
+
+def drop_self_promo_matches(jobs):
+    keep, dropped = [], 0
+    for j in jobs.get("jobs", []):
+        if not looks_like_self_promo(j):
+            keep.append(j)
+            continue
+        j["why_bad"] = ("No employer named, no way to apply, and every concrete "
+                        "detail left blank — an advert for a freelancer's own "
+                        "services rather than a vacancy.")
+        j["reason"] = j["why_bad"]
+        jobs.setdefault("rejected", []).insert(0, j)
+        dropped += 1
+    if dropped:
+        jobs["jobs"] = keep
+        print(f"  dropped {dropped} self-promotion post(s) from Ready")
+    return dropped
 
 
 def drop_unreachable_matches(jobs):
@@ -1992,6 +2048,7 @@ def main():
             # is the set you can ONLY apply to on that board.
             drop_stale_matches(jobs)
             drop_unreachable_matches(jobs)
+            drop_self_promo_matches(jobs)
             bad_board = prune_board_listings(jobs)
             if bad_board:
                 for _s in (shortlist, title_no):
@@ -2202,7 +2259,10 @@ def _apply_verdict(jobs, job_id, url, verdict, apply_email, found_at=None,
     # door into the matched pool — as end-of-run cleanups they kept losing:
     # an overlapping run re-committing an older jobs.json put the job back.
     blocked = None
-    if not job_is_reachable(entry):
+    if looks_like_self_promo(entry):
+        blocked = ("No employer named, no way to apply, and every concrete detail "
+                   "left blank — an advert for a freelancer's own services.")
+    elif not job_is_reachable(entry):
         blocked = (f"Not in Belgium ({entry.get('location') or 'location unclear'}) "
                    f"and not an English-language remote role.")
     else:
