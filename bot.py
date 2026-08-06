@@ -2197,9 +2197,26 @@ def _apply_verdict(jobs, job_id, url, verdict, apply_email, found_at=None,
     }
     jobs["jobs"] = [j for j in jobs["jobs"] if j.get("id") != job_id]
     jobs["rejected"] = [j for j in jobs.get("rejected", []) if j.get("id") != job_id]
-    if verdict.get("pass"):
+    # The AI judges skill fit and nothing else, so it happily passes a job in
+    # Florida. These two rules are not negotiable and belong HERE, at the single
+    # door into the matched pool — as end-of-run cleanups they kept losing:
+    # an overlapping run re-committing an older jobs.json put the job back.
+    blocked = None
+    if not job_is_reachable(entry):
+        blocked = (f"Not in Belgium ({entry.get('location') or 'location unclear'}) "
+                   f"and not an English-language remote role.")
+    else:
+        age = li_age_days(job_id, newest_linkedin_id(jobs))
+        if age > LI_MAX_AGE_DAYS:
+            blocked = (f"Posted about {int(age)} days ago — LinkedIn postings this "
+                       f"old are no longer accepting applications.")
+    if verdict.get("pass") and not blocked:
         jobs["jobs"].insert(0, entry)
         return True
+    if blocked:
+        entry["why_bad"] = blocked
+        entry["reason"] = blocked
+        print(f"  not offered: {blocked}")
     jobs["rejected"].insert(0, entry)
     return False
 
