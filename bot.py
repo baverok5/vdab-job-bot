@@ -237,6 +237,18 @@ CLOSED_CHECK_VERSION = 2
 # retry later) so callers actively drop it instead of leaving it in Ready.
 LI_CLOSED = "__CLOSED__"
 
+# Posts that are somebody advertising THEMSELVES for hire, not a vacancy. A
+# LinkedIn post titled "SEO Reporting Specialist" whose body opens "Why Hire Me"
+# reached Ready and ranked third. These phrases are first-person job-seeking and
+# effectively never appear in a real employer's advert, so they can be caught
+# before spending an AI read on them.
+SELF_PROMO_RX = re.compile(
+    r"why hire me|\bhire me\b|open to work|#?opentowork|"
+    r"\bmy (?:cv|resume|portfolio)\b|available for (?:freelance|hire|projects)|"
+    r"i am (?:a|an) [a-z ]{2,30}(?:freelancer|specialist|consultant|marketer|"
+    r"developer|designer)\b|op zoek naar (?:werk|een job)|ik zoek (?:werk|een job)|"
+    r"ik ben (?:een )?(?:freelance|zelfstandig)", re.I)
+
 # Links that are a tracking redirect rather than a job page — EnglishJobs sends
 # every vacancy through /clickout/<hash>, and rendering one yields no posting
 # text. Reading these can never succeed, so they are retired on the first
@@ -1733,6 +1745,12 @@ INTERNSHIP leniency above overrides the experience/degree/skill walls):
 - SCHOOL INTERNSHIP CONVENTION or current-student status required (see INTERNSHIP
   above) — the candidate is not enrolled in a school and cannot provide one.
 - Cleaning / domestic-help / studentenjob side-job.
+- NOT A VACANCY AT ALL. Some posts are a person advertising themselves for hire
+  ("Why Hire Me", "open to work", a CV or portfolio pitched in the first person),
+  a recruiter's generic "send us your CV" advert with no actual role, a training
+  course, or a page with no job on it. If nobody is offering employment for a
+  specific role, FAIL — and say so plainly in the reason. Applying to one of
+  these wastes the candidate's time and makes him look careless.
 
 DEGREE NUANCE (this matters): only KEEP a degree-mentioning job when the degree
 is NOT strictly mandatory — i.e. it says "bachelor OR equivalent by experience",
@@ -1915,6 +1933,11 @@ def main():
             # Then drop any matched LinkedIn posting that has closed since we
             # saved it, so the Ready feed only ever offers jobs you can apply to.
             sweep_closed(browser, jobs, budget=40, checkpoint=checkpoint)
+
+            # …and any post that was never a vacancy: matches saved before the
+            # self-promotion rule existed, re-read and dropped only if confirmed.
+            sweep_self_promo(browser, jobs)
+            checkpoint()
 
             # Then: screen NEW marketing jobs (below); re-vet the already-saved
             # pool LAST with a small budget so screening is never starved.
@@ -2282,6 +2305,35 @@ def sweep_closed(browser, jobs, budget=40, checkpoint=None):
     return dropped
 
 
+def sweep_self_promo(browser, jobs, budget=15):
+    """Re-read matches that predate the self-promotion rule and drop the ones
+    that turn out to be a person advertising themselves rather than a vacancy.
+
+    Needed because the stored card cannot reveal this: the evaluator rewrites the
+    posting into a tidy summary, so "Why Hire Me" is gone by the time it reaches
+    jobs.json — the original text has to be fetched again. Only matches with no
+    employer name are checked (a self-promotion has no hiring company), and only
+    confirmed hits are dropped, so genuine jobs and any card already marked
+    Applied are left alone."""
+    todo = [j for j in jobs["jobs"]
+            if (j.get("company") or "Unknown") in ("Unknown", "", "unknown")
+            and j["id"] not in set(jobs.get("self_promo_checked", []))]
+    if not todo:
+        return 0
+    todo = todo[:budget]
+    print(f"\nChecking {len(todo)} employer-less match(es) for self-promotion...")
+    checked, dropped = jobs.setdefault("self_promo_checked", []), 0
+    for j in todo:
+        text, _ = fetch_job_detail(browser, j.get("url"), j["id"])
+        checked.append(j["id"])
+        if text and SELF_PROMO_RX.search(text[:4000]):
+            _drop_job(jobs, j["id"])
+            dropped += 1
+            print(f"  not a vacancy — removed {j.get('title', '')[:50]}")
+    print(f"Self-promotion sweep: {dropped} removed of {len(todo)} checked.")
+    return dropped
+
+
 def backfill_letters(browser, jobs, cv_text, budget=30, checkpoint=None):
     """Write letters for matched jobs that don't have one yet (e.g. matched
     before letters existed). Best fits first; re-renders the posting to get its
@@ -2367,6 +2419,10 @@ def _process_jobs(browser, new_links, seen, jobs, cv_text, checkpoint=None):
             else:
                 fails[job_id] = n
                 print("  (could not read job — will retry next run)")
+            continue
+        if SELF_PROMO_RX.search(job_text[:4000]):
+            print("  (someone advertising themselves, not a vacancy — skipping)")
+            seen.add(job_id)          # settled: it will never become a vacancy
             continue
 
         try:
