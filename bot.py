@@ -1084,7 +1084,10 @@ def collect_eures(budget_s=EURES_BUDGET_S):
             body = {
                 "resultsPerPage": EURES_PER_PAGE, "page": page,
                 "sortSearch": "MOST_RECENT",
-                "keywords": [{"keyword": kw, "specificSearchCode": "EVERYWHERE"}],
+                # TITLE, not EVERYWHERE. "EVERYWHERE" matched almost anything —
+                # a run brought back electricians, butchers and a crane operator,
+                # and only 5% of what it collected was in this field at all.
+                "keywords": [{"keyword": kw, "specificSearchCode": "TITLE"}],
                 "publicationPeriod": None, "occupationUris": [], "skillUris": [],
                 "requiredExperienceCodes": [], "positionScheduleCodes": [],
                 "sectorCodes": [], "educationAndQualificationLevelCodes": [],
@@ -1116,13 +1119,19 @@ def collect_eures(budget_s=EURES_BUDGET_S):
             if not recs:
                 print(f"  eures {kw!r} p{page}: 0 records")
                 break
-            added = 0
+            added = skipped = 0
             for rec in recs:
                 if not isinstance(rec, dict):
                     continue
                 raw_id = _first(rec, "id", "jvId", "jobVacancyId", "vacancyId", "uuid")
                 title = _first(rec, "title", "jobTitle", "name", "positionTitle")
                 if not raw_id or not title:
+                    continue
+                # Belt and braces: whatever the API decides a keyword means, only
+                # keep what is actually this field. Same test the rest of the
+                # pipeline uses, so EURES cannot flood the listing with trades.
+                if not is_marketing(title):
+                    skipped += 1
                     continue
                 url = _first(rec, "url", "applyUrl", "applicationUrl", "sourceUrl",
                              "originalUrl", "jvUrl") or (EURES_DETAIL_PAGE + raw_id)
@@ -1141,7 +1150,8 @@ def collect_eures(budget_s=EURES_BUDGET_S):
                     "src": "eures",
                 }
                 added += 1
-            print(f"  eures {kw!r} p{page}: {len(recs)} records, +{added} new")
+            print(f"  eures {kw!r} p{page}: {len(recs)} records, +{added} new, "
+                  f"{skipped} off-field")
             if len(recs) < EURES_PER_PAGE:
                 break
             time.sleep(1)
@@ -1820,6 +1830,21 @@ def main():
     screen = load_json(SCREEN_FILE, {"title_no": [], "shortlist": []})
     title_no = set(screen.get("title_no", []))     # dropped at the cheap title stage
     shortlist = set(screen.get("shortlist", []))   # passed title stage, await full eval
+    # The first EURES searches used specificSearchCode EVERYWHERE, which matched
+    # almost anything: 254 vacancies collected, 12 of them in this field — the
+    # rest electricians, butchers, a crane operator. Clear those out of the
+    # listing rather than leaving them to age out slowly. (Must sit here, after
+    # title_no/shortlist exist — placed above them it would crash the run.)
+    if not jobs.get("eures_offfield_purge_v1"):
+        junk = {j["id"] for j in jobs.get("listing", [])
+                if j.get("src") == "eures" and not is_marketing(j.get("title", ""))}
+        if junk:
+            jobs["listing"] = [j for j in jobs["listing"] if j["id"] not in junk]
+            title_no -= junk
+            shortlist -= junk
+            print(f"  eures: cleared {len(junk)} off-field vacancies collected by "
+                  f"the too-broad keyword search")
+        jobs["eures_offfield_purge_v1"] = True
     # When the title-screen rules change (e.g. now keeping "<function> Manager"
     # marketing roles), wipe the dropped set once so every past title is re-screened
     # under the new rules and newly-eligible roles resurface.
