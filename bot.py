@@ -822,7 +822,13 @@ FOREIGN_PLACE_RX = re.compile(
     r"turin|naples|warsaw|warszawa|krak[oó]w|bucharest|sofia|prague|praha|budapest|"
     r"istanbul|ankara|izmir|hanoi|ho chi minh|saigon|bangalore|bengaluru|mumbai|"
     r"new delhi|hyderabad|chennai|cairo|casablanca|tunis|lagos|nairobi|"
-    r"s[aã]o paulo|buenos aires|toronto|vancouver|new york|san francisco|dubai)\b", re.I)
+    r"s[aã]o paulo|buenos aires|toronto|vancouver|new york|san francisco|dubai|"
+    # US states and cities. LinkedIn geocoded a Tampa, Florida vacancy to the
+    # Belgian town of Spa because the employer is a "Medical Spa", so the
+    # location field said Belgium while the posting said South Tampa. The
+    # company name and the location the AI read from the posting both have to
+    # be able to give the game away.
+    r"alabama|alaska|arizona|arkansas|california|colorado|connecticut|delaware|florida|georgia|hawaii|idaho|illinois|indiana|iowa|kansas|kentucky|louisiana|maryland|massachusetts|michigan|minnesota|mississippi|missouri|montana|nebraska|nevada|new hampshire|new jersey|new mexico|north carolina|north dakota|ohio|oklahoma|oregon|pennsylvania|rhode island|south carolina|south dakota|tennessee|texas|utah|vermont|virginia|washington|wisconsin|wyoming|tampa|miami|orlando|jacksonville|atlanta|boston|chicago|houston|dallas|austin|denver|seattle|portland|phoenix|philadelphia|detroit|los angeles|san diego|san jose|las vegas|charlotte|nashville|minneapolis|pittsburgh|baltimore|montreal|calgary|ottawa)\b", re.I)
 # Writing systems no Belgian vacancy uses. This is what catches a posting whose
 # location field says "Unknown" but whose title is Vietnamese.
 NONLOCAL_SCRIPT_RX = re.compile(
