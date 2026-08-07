@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-06 14:21 UTC",
+ "updated": "2026-08-07 01:40 UTC",
  "jobs": [
   {
    "id": "4446772012",
@@ -4698,7 +4698,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-06 06:32",
+   "closed_check": "2026-08-07 01:40",
    "closed_check_v": 2
   },
   {
@@ -5182,7 +5182,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-06 06:32",
+   "closed_check": "2026-08-07 01:40",
    "closed_check_v": 2
   },
   {
@@ -5790,7 +5790,7 @@
    "internship": false,
    "cv_fit_v": 18,
    "lang": "en",
-   "closed_check": "2026-08-06 06:32",
+   "closed_check": "2026-08-07 01:40",
    "closed_check_v": 2
   },
   {
@@ -6192,7 +6192,7 @@
    "internship": false,
    "cv_fit_v": 18,
    "lang": "nl",
-   "closed_check": "2026-08-06 06:32",
+   "closed_check": "2026-08-07 01:40",
    "closed_check_v": 2
   },
   {
@@ -7414,7 +7414,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-06 06:32",
+   "closed_check": "2026-08-07 01:40",
    "closed_check_v": 2
   },
   {
@@ -7458,28 +7458,6 @@
    "cv_fit_v": 18
   },
   {
-   "id": "4441969717",
-   "url": "https://www.linkedin.com/jobs/view/4441969717",
-   "title": "Commercial Excellence & Digital Specialist",
-   "company": "Avery Dennison",
-   "location": "Turnhout",
-   "match_score": 55,
-   "reason": "Role fits digital marketing/data analysis with 0-4 years experience, no French required, and degree is preferred but not strictly mandatory.",
-   "apply_email": "Requestaccomodation@eu.averydennison.com",
-   "found_at": "2026-08-03 00:50",
-   "status": "new",
-   "details": "Hybrid role in Turnhout\n40% commercial analysis & PM support (pricing, dashboards)\n40% digitalization & system management (Salesforce, pricing tools)\n20% content coordination & communications\nBachelor's degree in Business/Marketing/Data Science or related field\n0-4 years experience; graduate candidates with internships considered\nFlexible hours, teleworking, 20 vacation days + 18 ADV days\nMeal vouchers, pension, hospitalization insurance\nDutch language courses offered",
-   "why_good": "Directly in digital marketing/data analysis, leveraging SEO/analytics skills\n0-4 years experience matches candidate's ~4 months\nNo French required; English likely acceptable\nDegree preferred but not strictly required (experience considered)\nOpportunity to grow into Salesforce and BI tools, building on existing analytics background",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "en",
-   "cv_fit_v": 18,
-   "closed_check": "2026-08-06 06:32",
-   "closed_check_v": 2
-  },
-  {
    "id": "4444485231",
    "url": "https://www.linkedin.com/jobs/view/4444485231",
    "title": "Operational Care Specialist",
@@ -7498,7 +7476,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-06 06:32",
+   "closed_check": "2026-08-07 01:40",
    "closed_check_v": 2
   },
   {
@@ -7520,7 +7498,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-06 06:32",
+   "closed_check": "2026-08-07 01:40",
    "closed_check_v": 2
   },
   {
@@ -7601,7 +7579,7 @@
    "exp_stretch": false,
    "internship": false,
    "cv_fit_v": 18,
-   "closed_check": "2026-08-06 06:32",
+   "closed_check": "2026-08-07 01:40",
    "closed_check_v": 2,
    "lang": "nl"
   },
@@ -10583,7 +10561,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "en",
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "closed_check": "2026-08-07 01:40",
+   "closed_check_v": 2
   },
   {
    "id": "74323092",
