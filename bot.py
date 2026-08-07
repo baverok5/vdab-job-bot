@@ -189,6 +189,9 @@ HEADERS = {
 }
 
 MAX_NEW_PER_RUN = int(os.environ.get("MAX_NEW_PER_RUN", "300"))  # big chunk per run; progress is checkpointed
+# Shortest posting text worth asking the AI about. Below this there is no
+# description to read, only a heading, and the model invents the rest.
+MIN_JOB_TEXT = 300
 
 # LinkedIn issues job ids in order, so the gap between a posting's id and the
 # newest id we hold is its age — measured at ~496,570 ids/day between 14 Jul and
@@ -1257,10 +1260,17 @@ def fetch_eures_detail(url):
             d = r.json()
             if isinstance(d, dict):
                 d = d.get("jv") or d.get("data") or d
-                parts = [_first(d, "title"), _first(d, "employer", "employerName"),
-                         _first(d, "description", "jvDescription", "content",
-                                "descriptionText", "freeText")]
-                text = "\n\n".join(p for p in parts if p)
+                desc = _first(d, "description", "jvDescription", "content",
+                              "descriptionText", "freeText")
+                # Only with a real description. Returning title + employer alone
+                # gave the AI ~50 characters to judge, and it duly invented one:
+                # "Digitale afspraak - Manpower", a call-centre intake, came back
+                # as "Digital Marketing Intern ... tasks likely include SEO,
+                # content, social media" and scored 70%.
+                if desc:
+                    parts = [_first(d, "title"),
+                             _first(d, "employer", "employerName"), desc]
+                    text = "\n\n".join(p for p in parts if p)
     except Exception as e:
         print(f"  eures detail {raw_id[:12]}…: {type(e).__name__}")
     if not text:
@@ -2483,6 +2493,16 @@ def _process_jobs(browser, new_links, seen, jobs, cv_text, checkpoint=None):
             print("  (closed — no longer accepting applications; skipping)")
             seen.add(job_id)  # settled state, no point re-checking
             continue
+        if job_text and len(job_text) < MIN_JOB_TEXT:
+            # Too little to judge. The AI is asked to summarise a posting, and
+            # given almost nothing it fills the gap: a page carrying only
+            # "Digitale afspraak - Manpower" produced a confident "Digital
+            # Marketing Intern" with "tasks likely include SEO, content, social
+            # media" at 70%, for what is a call-centre role. Never evaluate a
+            # posting we have not actually read.
+            print(f"  (only {len(job_text)} chars of posting — too little to "
+                  f"judge, skipping)")
+            job_text = ""
         if not job_text:
             # A job that can never be read must not come back every run. Left
             # unbounded this starves the screening budget: one run spent all 300
