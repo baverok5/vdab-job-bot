@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-11 23:30 UTC",
+ "updated": "2026-08-11 23:31 UTC",
  "jobs": [
   {
    "id": "4446772012",
@@ -42,7 +42,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-11 11:37",
+   "closed_check": "2026-08-11 23:30",
    "closed_check_v": 2
   },
   {
@@ -64,7 +64,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-11 11:37",
+   "closed_check": "2026-08-11 23:30",
    "closed_check_v": 2
   },
   {
@@ -86,7 +86,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-11 11:37",
+   "closed_check": "2026-08-11 23:30",
    "closed_check_v": 2
   },
   {
@@ -108,7 +108,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-11 11:37",
+   "closed_check": "2026-08-11 23:30",
    "closed_check_v": 2
   },
   {
@@ -130,7 +130,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-11 11:37",
+   "closed_check": "2026-08-11 23:30",
    "closed_check_v": 2
   },
   {
@@ -152,7 +152,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-11 11:37",
+   "closed_check": "2026-08-11 23:30",
    "closed_check_v": 2
   },
   {
@@ -174,7 +174,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-11 11:37",
+   "closed_check": "2026-08-11 23:30",
    "closed_check_v": 2
   },
   {
@@ -376,7 +376,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-11 11:37",
+   "closed_check": "2026-08-11 23:30",
    "closed_check_v": 2
   },
   {
@@ -11930,7 +11930,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-11 05:48",
+   "closed_check": "2026-08-11 23:30",
    "closed_check_v": 2
   },
   {
@@ -12112,7 +12112,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-11 05:48",
+   "closed_check": "2026-08-11 23:30",
    "closed_check_v": 2
   }
  ],
