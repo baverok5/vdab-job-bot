@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-12 12:40 UTC",
+ "updated": "2026-08-12 17:52 UTC",
  "jobs": [
   {
    "id": "4446772012",
@@ -20,7 +20,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-12 06:07",
+   "closed_check": "2026-08-12 17:51",
    "closed_check_v": 2
   },
   {
@@ -295,7 +295,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "closed_check": "2026-08-12 17:51",
+   "closed_check_v": 2
   },
   {
    "id": "74360109",
@@ -378,7 +380,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-12 06:07",
+   "closed_check": "2026-08-12 17:51",
    "closed_check_v": 2
   },
   {
@@ -702,7 +704,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-12 06:07",
+   "closed_check": "2026-08-12 17:51",
    "closed_check_v": 2
   },
   {
@@ -1086,7 +1088,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-12 06:07",
+   "closed_check": "2026-08-12 17:51",
    "closed_check_v": 2
   },
   {
@@ -1390,7 +1392,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-12 06:07",
+   "closed_check": "2026-08-12 17:51",
    "closed_check_v": 2
   },
   {
@@ -8261,7 +8263,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "closed_check": "2026-08-12 17:51",
+   "closed_check_v": 2
   },
   {
    "id": "74360656",
@@ -11420,7 +11424,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-11 23:30",
+   "closed_check": "2026-08-12 17:51",
    "closed_check_v": 2
   },
   {
@@ -11704,7 +11708,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-11 23:30",
+   "closed_check": "2026-08-12 17:51",
    "closed_check_v": 2
   },
   {
@@ -11945,7 +11949,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "en",
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "closed_check": "2026-08-12 17:51",
+   "closed_check_v": 2
   },
   {
    "id": "74356512",
