@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-13 12:38 UTC",
+ "updated": "2026-08-13 17:50 UTC",
  "jobs": [
   {
    "id": "4446772012",
@@ -20,7 +20,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-13 06:09",
+   "closed_check": "2026-08-13 17:49",
    "closed_check_v": 2
   },
   {
@@ -458,7 +458,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-13 06:09",
+   "closed_check": "2026-08-13 17:49",
    "closed_check_v": 2
   },
   {
@@ -542,7 +542,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-13 06:09",
+   "closed_check": "2026-08-13 17:49",
    "closed_check_v": 2
   },
   {
@@ -866,7 +866,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-13 06:09",
+   "closed_check": "2026-08-13 17:49",
    "closed_check_v": 2
   },
   {
@@ -1250,7 +1250,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-13 06:09",
+   "closed_check": "2026-08-13 17:49",
    "closed_check_v": 2
   },
   {
@@ -1554,7 +1554,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-13 06:09",
+   "closed_check": "2026-08-13 17:49",
    "closed_check_v": 2
   },
   {
@@ -1576,7 +1576,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-13 06:09",
+   "closed_check": "2026-08-13 17:49",
    "closed_check_v": 2
   },
   {
@@ -1598,7 +1598,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-13 06:09",
+   "closed_check": "2026-08-13 17:49",
    "closed_check_v": 2
   },
   {
@@ -1680,7 +1680,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-13 06:09",
+   "closed_check": "2026-08-13 17:49",
    "closed_check_v": 2
   },
   {
@@ -4969,7 +4969,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "closed_check": "2026-08-13 17:49",
+   "closed_check_v": 2
   },
   {
    "id": "74369287",
