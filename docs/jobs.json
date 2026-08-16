@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-16 12:01 UTC",
+ "updated": "2026-08-16 17:12 UTC",
  "jobs": [
   {
    "id": "4446772012",
@@ -420,7 +420,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-16 05:19",
+   "closed_check": "2026-08-16 17:11",
    "closed_check_v": 2
   },
   {
@@ -1782,7 +1782,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-16 05:19",
+   "closed_check": "2026-08-16 17:11",
    "closed_check_v": 2
   },
   {
@@ -1804,7 +1804,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-16 05:19",
+   "closed_check": "2026-08-16 17:11",
    "closed_check_v": 2
   },
   {
@@ -1826,7 +1826,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-16 05:19",
+   "closed_check": "2026-08-16 17:11",
    "closed_check_v": 2
   },
   {
@@ -1908,7 +1908,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-16 05:19",
+   "closed_check": "2026-08-16 17:11",
    "closed_check_v": 2
   },
   {
@@ -1990,7 +1990,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-16 05:19",
+   "closed_check": "2026-08-16 17:11",
    "closed_check_v": 2
   },
   {
@@ -2012,7 +2012,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-16 05:19",
+   "closed_check": "2026-08-16 17:11",
    "closed_check_v": 2
   },
   {
@@ -2114,7 +2114,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-16 05:19",
+   "closed_check": "2026-08-16 17:11",
    "closed_check_v": 2
   },
   {
@@ -3072,28 +3072,6 @@
    "lang": "nl"
   },
   {
-   "id": "4441934883",
-   "url": "https://www.linkedin.com/jobs/view/4441934883",
-   "title": "Junior Marketeer",
-   "company": "STRIDE Europe",
-   "location": "Ghent",
-   "match_score": 70,
-   "reason": "The job is a junior marketing role with no hard walls; the candidate's experience and skills align well.",
-   "apply_email": "",
-   "found_at": "2026-07-17 07:41",
-   "status": "new",
-   "details": "Full-time, on-site in Ghent\nSupport marketing campaigns across digital and offline channels\nPrepare content for social media, email, and website\nAssist with event support and monitor campaign performance\nCollaborate with internal teams to maintain brand consistency\nEnglish required; additional languages a plus",
-   "why_good": "Directly in goal field (digital marketing)\nRequires only junior experience; candidate has relevant internship and job experience\nEnglish is the main language; candidate is fluent\nTasks match candidate's skills: content creation, social media, website management, analytics\nNo degree required (only 'relevant education beneficial' – not mandatory)",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "cv_fit_v": 18,
-   "lang": "en",
-   "closed_check": "2026-08-16 05:19",
-   "closed_check_v": 2
-  },
-  {
    "id": "73977549",
    "url": "https://www.vdab.be/vindeenjob/vacatures/73977549/logistiek-medewerker-starterstraject-met-doorgroeimogelijkheden",
    "title": "Logistiek medewerker - starterstraject met doorgroeimogelijkheden!",
@@ -3352,7 +3330,7 @@
    "internship": true,
    "cv_fit_v": 18,
    "lang": "en",
-   "closed_check": "2026-08-16 05:19",
+   "closed_check": "2026-08-16 17:11",
    "closed_check_v": 2
   },
   {
