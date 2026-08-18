@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-18 12:17 UTC",
+ "updated": "2026-08-18 17:24 UTC",
  "jobs": [
   {
    "id": "4446772012",
@@ -355,7 +355,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "closed_check": "2026-08-18 17:24",
+   "closed_check_v": 2
   },
   {
    "id": "74397186",
@@ -416,7 +418,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-18 05:20",
+   "closed_check": "2026-08-18 17:24",
    "closed_check_v": 2
   },
   {
@@ -562,29 +564,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-18 05:20",
-   "closed_check_v": 2
-  },
-  {
-   "id": "4453501632",
-   "url": "https://www.linkedin.com/jobs/view/4453501632",
-   "title": "Associate Frontend Developer",
-   "company": "Alpine Business Consulting",
-   "location": "Remote",
-   "match_score": 70,
-   "reason": "Entry-level frontend developer role fits candidate's web development skills and experience.",
-   "apply_email": "",
-   "found_at": "2026-08-14 12:21",
-   "status": "new",
-   "details": "Role: Associate Frontend Developer\nTasks: Develop web interfaces for financial data visualization, write HTML/CSS/JS, collaborate with consultants, assist in dashboard remediation, documentation, testing\nContract: Permanent, full-time, remote\nSchedule: Full-time\nLanguage: English (not specified, but job is in English)\nPay: Competitive, entry-level",
-   "why_good": "Candidate has front-end development experience (AngularJS/JavaScript) and web design skills (WordPress/Elementor).\nJob requires basic HTML/CSS/JS, which candidate has.\nRemote role, candidate works in English.\nEntry-level position, no degree required.\nCandidate has interest in data and analytics, and can learn financial systems.",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "en",
-   "cv_fit_v": 18,
-   "closed_check": "2026-08-18 05:20",
+   "closed_check": "2026-08-18 17:24",
    "closed_check_v": 2
   },
   {
@@ -1968,7 +1948,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-18 05:20",
+   "closed_check": "2026-08-18 17:24",
    "closed_check_v": 2
   },
   {
@@ -1990,7 +1970,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-18 05:20",
+   "closed_check": "2026-08-18 17:24",
    "closed_check_v": 2
   },
   {
@@ -2012,7 +1992,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-18 05:20",
+   "closed_check": "2026-08-18 17:24",
    "closed_check_v": 2
   },
   {
@@ -2094,7 +2074,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-18 05:20",
+   "closed_check": "2026-08-18 17:24",
    "closed_check_v": 2
   },
   {
@@ -2176,7 +2156,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-18 05:20",
+   "closed_check": "2026-08-18 17:24",
    "closed_check_v": 2
   },
   {
@@ -2198,7 +2178,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-18 05:20",
+   "closed_check": "2026-08-18 17:24",
    "closed_check_v": 2
   },
   {
