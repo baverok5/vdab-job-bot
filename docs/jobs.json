@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-18 18:27 UTC",
+ "updated": "2026-08-18 23:13 UTC",
  "jobs": [
   {
    "id": "4446772012",
@@ -295,7 +295,9 @@
    "exp_stretch": false,
    "internship": true,
    "lang": "en",
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "closed_check": "2026-08-18 23:13",
+   "closed_check_v": 2
   },
   {
    "id": "74402909",
@@ -460,7 +462,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-18 11:16",
+   "closed_check": "2026-08-18 23:13",
    "closed_check_v": 2
   },
   {
@@ -482,7 +484,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-18 11:16",
+   "closed_check": "2026-08-18 23:13",
    "closed_check_v": 2
   },
   {
@@ -606,7 +608,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-18 11:16",
+   "closed_check": "2026-08-18 23:13",
    "closed_check_v": 2
   },
   {
@@ -668,7 +670,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-18 11:16",
+   "closed_check": "2026-08-18 23:13",
    "closed_check_v": 2
   },
   {
@@ -790,7 +792,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-18 11:16",
+   "closed_check": "2026-08-18 23:13",
    "closed_check_v": 2
   },
   {
@@ -852,7 +854,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-18 11:16",
+   "closed_check": "2026-08-18 23:13",
    "closed_check_v": 2
   },
   {
@@ -954,7 +956,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-18 11:16",
+   "closed_check": "2026-08-18 23:13",
    "closed_check_v": 2
   },
   {
@@ -1176,7 +1178,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-18 11:16",
+   "closed_check": "2026-08-18 23:13",
    "closed_check_v": 2
   },
   {
@@ -1238,7 +1240,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-18 11:16",
+   "closed_check": "2026-08-18 23:13",
    "closed_check_v": 2
   },
   {
