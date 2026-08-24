@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-24 17:23 UTC",
+ "updated": "2026-08-24 17:24 UTC",
  "jobs": [
   {
    "id": "4446772012",
@@ -20,7 +20,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-24 11:18",
+   "closed_check": "2026-08-24 17:22",
    "closed_check_v": 2
   },
   {
@@ -6462,7 +6462,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-24 05:29",
+   "closed_check": "2026-08-24 17:22",
    "closed_check_v": 2
   },
   {
@@ -8252,7 +8252,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-24 05:29",
+   "closed_check": "2026-08-24 17:22",
    "closed_check_v": 2
   },
   {
@@ -8274,7 +8274,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-24 05:29",
+   "closed_check": "2026-08-24 17:22",
    "closed_check_v": 2
   },
   {
@@ -8576,7 +8576,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-24 05:29",
+   "closed_check": "2026-08-24 17:22",
    "closed_check_v": 2
   },
   {
@@ -8818,7 +8818,7 @@
    "internship": false,
    "cv_fit_v": 18,
    "lang": "en",
-   "closed_check": "2026-08-24 05:29",
+   "closed_check": "2026-08-24 17:22",
    "closed_check_v": 2
   },
   {
@@ -10668,7 +10668,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-24 05:29",
+   "closed_check": "2026-08-24 17:22",
    "closed_check_v": 2
   },
   {
@@ -11130,7 +11130,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-24 05:29",
+   "closed_check": "2026-08-24 17:22",
    "closed_check_v": 2
   },
   {
@@ -11192,7 +11192,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-24 05:29",
+   "closed_check": "2026-08-24 17:22",
    "closed_check_v": 2
   },
   {
@@ -11333,7 +11333,7 @@
    "exp_stretch": false,
    "internship": false,
    "cv_fit_v": 18,
-   "closed_check": "2026-08-24 05:29",
+   "closed_check": "2026-08-24 17:22",
    "closed_check_v": 2,
    "lang": "en"
   },
