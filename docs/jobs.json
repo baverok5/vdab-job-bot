@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-24 18:25 UTC",
+ "updated": "2026-08-24 23:14 UTC",
  "jobs": [
   {
    "id": "4446772012",
@@ -584,7 +584,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-24 11:18",
+   "closed_check": "2026-08-24 23:14",
    "closed_check_v": 2
   },
   {
@@ -606,7 +606,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-24 11:18",
+   "closed_check": "2026-08-24 23:14",
    "closed_check_v": 2
   },
   {
@@ -628,7 +628,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-24 11:18",
+   "closed_check": "2026-08-24 23:14",
    "closed_check_v": 2
   },
   {
@@ -934,29 +934,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-24 11:18",
-   "closed_check_v": 2
-  },
-  {
-   "id": "4454252806",
-   "url": "https://www.linkedin.com/jobs/view/4454252806",
-   "title": "Social Media Coordinator and Strategist",
-   "company": "Unknown",
-   "location": "Remote (Belgium)",
-   "match_score": 70,
-   "reason": "Social media coordinator role fits candidate's digital marketing skills and English requirement.",
-   "apply_email": "",
-   "found_at": "2026-08-17 11:57",
-   "status": "new",
-   "details": "Role: Social media coordinator and strategist\nTasks: Schedule and manage content across major platforms, coordinate with teams, write captions, monitor performance\nContract: Full-time, fully remote\nSchedule: Flexible, daytime availability, occasional flexibility for breaking news\nLanguage: English (implied)\nPay: Not stated",
-   "why_good": "Directly in digital marketing/social media field\nCandidate has social media content and integration experience from mirook.com\nStrong written communication skills from content writing\nFamiliarity with analytics tools (Google Analytics, SEMrush) aligns with performance monitoring\nRemote work matches candidate's current remote experience",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "en",
-   "cv_fit_v": 18,
-   "closed_check": "2026-08-24 11:18",
+   "closed_check": "2026-08-24 23:14",
    "closed_check_v": 2
   },
   {
@@ -978,7 +956,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-24 11:18",
+   "closed_check": "2026-08-24 23:14",
    "closed_check_v": 2
   },
   {
@@ -1348,7 +1326,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-24 11:18",
+   "closed_check": "2026-08-24 23:14",
    "closed_check_v": 2
   },
   {
@@ -1450,7 +1428,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-24 11:18",
+   "closed_check": "2026-08-24 23:14",
    "closed_check_v": 2
   },
   {
@@ -1672,7 +1650,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-24 11:18",
+   "closed_check": "2026-08-24 23:14",
    "closed_check_v": 2
   },
   {
@@ -5611,7 +5589,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "closed_check": "2026-08-24 23:14",
+   "closed_check_v": 2
   },
   {
    "id": "74443171",
