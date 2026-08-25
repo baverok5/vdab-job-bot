@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-25 17:48 UTC",
+ "updated": "2026-08-25 23:17 UTC",
  "jobs": [
   {
    "id": "4446772012",
@@ -273,7 +273,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "en",
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "closed_check": "2026-08-25 23:16",
+   "closed_check_v": 2
   },
   {
    "id": "74449527",
@@ -578,7 +580,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-25 11:18",
+   "closed_check": "2026-08-25 23:16",
    "closed_check_v": 2
   },
   {
@@ -684,7 +686,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-25 11:18",
+   "closed_check": "2026-08-25 23:16",
    "closed_check_v": 2
   },
   {
@@ -706,29 +708,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-25 11:18",
-   "closed_check_v": 2
-  },
-  {
-   "id": "4454762050",
-   "url": "https://www.linkedin.com/jobs/view/4454762050",
-   "title": "Online Campaign Manager",
-   "company": "Unknown (partner company via Jobgether)",
-   "location": "Remote (Belgium)",
-   "match_score": 70,
-   "reason": "Role is remote, English-only, and explicitly states no degree or experience required, fitting the candidate's skills.",
-   "apply_email": "",
-   "found_at": "2026-08-20 06:08",
-   "status": "new",
-   "details": "Full-time remote role\nPlan and execute online advocacy campaigns\nWrite and edit digital communications\nManage online advertising and volunteers\nNo degree or experience required\nSalary up to $15,000 USD/year",
-   "why_good": "Explicitly no degree or experience required\nEnglish-only, no French or Dutch needed\nRemote and flexible, fits self-directed work style\nSkills in content writing, SEO, and digital marketing are directly relevant\nOpportunity to grow into managerial roles",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "en",
-   "cv_fit_v": 18,
-   "closed_check": "2026-08-25 11:18",
+   "closed_check": "2026-08-25 23:16",
    "closed_check_v": 2
   },
   {
@@ -1034,7 +1014,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-25 11:18",
+   "closed_check": "2026-08-25 23:16",
    "closed_check_v": 2
   },
   {
@@ -1056,7 +1036,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-25 11:18",
+   "closed_check": "2026-08-25 23:16",
    "closed_check_v": 2
   },
   {
@@ -1426,7 +1406,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-25 11:18",
+   "closed_check": "2026-08-25 23:16",
    "closed_check_v": 2
   },
   {
@@ -1728,7 +1708,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-25 11:18",
+   "closed_check": "2026-08-25 23:16",
    "closed_check_v": 2
   },
   {
@@ -1790,7 +1770,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-25 11:18",
+   "closed_check": "2026-08-25 23:16",
    "closed_check_v": 2
   },
   {
