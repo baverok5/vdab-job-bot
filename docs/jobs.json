@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-25 06:18 UTC",
+ "updated": "2026-08-25 11:18 UTC",
  "jobs": [
   {
    "id": "4446772012",
@@ -498,7 +498,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-24 23:14",
+   "closed_check": "2026-08-25 11:18",
    "closed_check_v": 2
   },
   {
@@ -604,7 +604,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-24 23:14",
+   "closed_check": "2026-08-25 11:18",
    "closed_check_v": 2
   },
   {
@@ -626,7 +626,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-24 23:14",
+   "closed_check": "2026-08-25 11:18",
    "closed_check_v": 2
   },
   {
@@ -648,7 +648,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-24 23:14",
+   "closed_check": "2026-08-25 11:18",
    "closed_check_v": 2
   },
   {
@@ -954,7 +954,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-24 23:14",
+   "closed_check": "2026-08-25 11:18",
    "closed_check_v": 2
   },
   {
@@ -976,7 +976,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-24 23:14",
+   "closed_check": "2026-08-25 11:18",
    "closed_check_v": 2
   },
   {
@@ -1346,7 +1346,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-24 23:14",
+   "closed_check": "2026-08-25 11:18",
    "closed_check_v": 2
   },
   {
@@ -1428,28 +1428,6 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18
-  },
-  {
-   "id": "4449584288",
-   "url": "https://www.linkedin.com/jobs/view/4449584288",
-   "title": "All-round Marketing Intern",
-   "company": "GIMBER",
-   "location": "Unknown",
-   "match_score": 70,
-   "reason": "Internship in marketing/social media, English required, no French required, and no strict degree requirement.",
-   "apply_email": "",
-   "found_at": "2026-08-10 18:27",
-   "status": "new",
-   "details": "Role: Marketing intern supporting social media, influencer marketing, campaigns, and trade marketing.\nTasks: Manage Instagram, TikTok, Facebook, LinkedIn; engage community; assist content creation; support influencer campaigns; coordinate marketing materials.\nContract: Internship, minimum 3 months.\nSchedule: Not specified.\nLanguage: English fluent required; Dutch or French a plus.\nPay: Not stated.",
-   "why_good": "Internship role, so no experience required; candidate's digital marketing and SEO internship aligns.\nEnglish fluent matches candidate's professional English.\nSocial media and content tasks align with candidate's skills in content writing and social media integration.\nNo French required; Dutch B1 is a plus, which candidate has.\nDegree mentioned as 'foundation' but not strictly required; candidate's coursework and experience are relevant.",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": true,
-   "lang": "en",
-   "cv_fit_v": 18,
-   "closed_check": "2026-08-24 23:14",
-   "closed_check_v": 2
   },
   {
    "id": "923988250",
@@ -1670,7 +1648,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-24 23:14",
+   "closed_check": "2026-08-25 11:18",
    "closed_check_v": 2
   },
   {
@@ -10379,7 +10357,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "en",
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "closed_check": "2026-08-25 11:18",
+   "closed_check_v": 2
   },
   {
    "id": "4456531425",
