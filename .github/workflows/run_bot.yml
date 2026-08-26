@@ -1,17 +1,16 @@
 name: VDAB job bot
 
+# PAUSED at Baver's request (7 Aug 2026). Only a manual "Run workflow" starts
+# the bot now: the schedule and the run-on-code-push triggers are commented out,
+# not deleted, so unpausing is uncommenting these lines.
 on:
-  push:
-    branches: [main]
-    paths:
-      # Only re-run when the code changes — NOT when the bot commits its
-      # own results (docs/jobs.json, seen.json), which would cause a loop.
-      - "bot.py"
-      - ".github/workflows/run_bot.yml"
-  schedule:
-    # Comprehensive runs are long (deep paging + reading each posting), so run a
-    # few times a day rather than hourly. Progress is checkpointed within each run.
-    - cron: "0 5,11,17,23 * * *"
+  # push:
+  #   branches: [main]
+  #   paths:
+  #     - "bot.py"
+  #     - ".github/workflows/run_bot.yml"
+  # schedule:
+  #   - cron: "0 5,11,17,23 * * *"
   workflow_dispatch: {}
 
 permissions:
