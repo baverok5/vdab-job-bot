@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-05 15:27 UTC",
+ "updated": "2026-09-05 18:47 UTC",
  "jobs": [
   {
    "id": "4446772012",
@@ -247,7 +247,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "closed_check": "2026-09-05 18:46",
+   "closed_check_v": 2
   },
   {
    "id": "470243049",
@@ -287,7 +289,9 @@
    "exp_stretch": false,
    "internship": true,
    "lang": "en",
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "closed_check": "2026-09-05 18:46",
+   "closed_check_v": 2
   },
   {
    "id": "74457597",
@@ -716,7 +720,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-26 05:24",
+   "closed_check": "2026-09-05 18:46",
    "closed_check_v": 2
   },
   {
@@ -942,7 +946,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-26 05:24",
+   "closed_check": "2026-09-05 18:46",
    "closed_check_v": 2
   },
   {
@@ -1004,28 +1008,6 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18
-  },
-  {
-   "id": "4454733764",
-   "url": "https://www.linkedin.com/jobs/view/4454733764",
-   "title": "Junior Allround Marketeer",
-   "company": "RoofYou",
-   "location": "Unknown",
-   "match_score": 70,
-   "reason": "Junior allround marketing role with no strict degree or experience requirement, no French required, and content/events focus fits the candidate's skills.",
-   "apply_email": "",
-   "found_at": "2026-08-18 11:57",
-   "status": "new",
-   "details": "Role: Junior allround marketer for events and content.\nTasks: Organize events, create content for social media, newsletters, web texts, and support campaigns.\nContract: Full-time (implied).\nSchedule: Standard office hours.\nLanguage: Dutch (posting in Dutch, no explicit language requirement).\nPay: Not stated.",
-   "why_good": "The role explicitly welcomes candidates with 'a diploma or first experience' but emphasizes attitude over formal qualifications, so the candidate's lack of degree is not a barrier.\nThe candidate has hands-on experience in content creation, social media, and WordPress, which directly applies to the content responsibilities.\nThe events aspect involves coordination and communication, which the candidate can handle with their organizational skills.\nNo French required, and the Dutch level needed is conversational, which matches the candidate's B1.\nThe junior level and emphasis on learning align with the candidate's early-career status.",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18,
-   "closed_check": "2026-08-26 05:24",
-   "closed_check_v": 2
   },
   {
    "id": "74397186",
@@ -1210,7 +1192,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-26 05:24",
+   "closed_check": "2026-09-05 18:46",
    "closed_check_v": 2
   },
   {
@@ -1232,7 +1214,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-26 05:24",
+   "closed_check": "2026-09-05 18:46",
    "closed_check_v": 2
   },
   {
@@ -1294,7 +1276,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-08-26 05:24",
+   "closed_check": "2026-09-05 18:46",
    "closed_check_v": 2
   },
   {
@@ -5775,7 +5757,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "closed_check": "2026-09-05 18:46",
+   "closed_check_v": 2
   },
   {
    "id": "74512355",
@@ -10805,7 +10789,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "en",
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "closed_check": "2026-09-05 18:46",
+   "closed_check_v": 2
   },
   {
    "id": "932754903",
