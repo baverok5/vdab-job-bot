@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-06 01:48 UTC",
+ "updated": "2026-09-06 06:49 UTC",
  "jobs": [
   {
    "id": "4446772012",
@@ -3905,7 +3905,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "en",
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "closed_check": "2026-09-06 06:49",
+   "closed_check_v": 2
   },
   {
    "id": "74544428",
@@ -4126,7 +4128,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-05 18:46",
+   "closed_check": "2026-09-06 06:49",
    "closed_check_v": 2
   },
   {
@@ -4368,7 +4370,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-05 18:46",
+   "closed_check": "2026-09-06 06:49",
    "closed_check_v": 2
   },
   {
@@ -4590,7 +4592,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-05 18:46",
+   "closed_check": "2026-09-06 06:49",
    "closed_check_v": 2
   },
   {
@@ -4894,7 +4896,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-05 18:46",
+   "closed_check": "2026-09-06 06:49",
    "closed_check_v": 2
   },
   {
@@ -5036,7 +5038,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-05 18:46",
+   "closed_check": "2026-09-06 06:49",
    "closed_check_v": 2
   },
   {
@@ -5338,7 +5340,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-05 18:46",
+   "closed_check": "2026-09-06 06:49",
    "closed_check_v": 2
   },
   {
@@ -7190,28 +7192,6 @@
    "cv_fit_v": 18
   },
   {
-   "id": "4448385980",
-   "url": "https://www.linkedin.com/jobs/view/4448385980",
-   "title": "Video Creator",
-   "company": "Promojagers",
-   "location": "Brugge",
-   "match_score": 60,
-   "reason": "Role is a creative video creator for social media, which fits the candidate's digital marketing and content skills, and does not require French or a degree.",
-   "apply_email": "gunther@promojagers.be",
-   "found_at": "2026-08-03 20:36",
-   "status": "new",
-   "details": "- Create TikTok, Reels, Shorts, and Facebook posts\n- Develop new content formats and workflows\n- Make scroll-stopping ads for mobile app\n- Engage with community of 438k members\n- Full-time, hybrid (Brugge Inc, near station)\n- Start date in consultation; no salary mentioned",
-   "why_good": "- Candidate has experience in social media content and integration from mirook.com\n- Comfortable with content creation and storytelling, using Canva and AI tools\n- Has digital marketing background, including SEO and analytics, which supports content strategy\n- No degree required; experience and creativity valued\n- Language: Dutch B1 is sufficient; no French required",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18,
-   "closed_check": "2026-09-05 18:46",
-   "closed_check_v": 2
-  },
-  {
    "id": "74297392",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74297392/digital-sales-expert",
    "title": "Digital Sales Expert",
@@ -7730,7 +7710,7 @@
    "internship": false,
    "cv_fit_v": 18,
    "lang": "en",
-   "closed_check": "2026-09-05 18:46",
+   "closed_check": "2026-09-06 06:49",
    "closed_check_v": 2
   },
   {
@@ -7792,7 +7772,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-05 18:46",
+   "closed_check": "2026-09-06 06:49",
    "closed_check_v": 2
   },
   {
