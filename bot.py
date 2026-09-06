@@ -938,18 +938,27 @@ def drop_unreachable_matches(jobs):
 
 
 def drop_stale_matches(jobs):
-    """Take LinkedIn postings too old to still be open out of Ready. They keep
-    their evaluation in `rejected`, so nothing is re-screened from scratch, but
-    they stop being offered as something to apply to."""
+    """Take postings too old to still be open out of Ready. They keep their
+    evaluation in `rejected`, so nothing is re-screened from scratch, but they
+    stop being offered as something to apply to."""
     newest = newest_linkedin_id(jobs)
-    if not newest:
-        return 0
+    today = datetime.now(timezone.utc).date()
     keep, dropped = [], 0
     for j in jobs.get("jobs", []):
         age = li_age_days(j.get("id"), newest)
+        # VDAB and the boards carry no id we can date, so use how long the job
+        # has been sitting here. It was assumed VDAB drops closed vacancies from
+        # its own pages, so nothing aged out — after the August pause, 156 of the
+        # matches in Ready were ones first seen over six weeks earlier.
+        if not age:
+            try:
+                first = datetime.strptime((j.get("found_at") or "")[:10], "%Y-%m-%d").date()
+                age = (today - first).days
+            except ValueError:
+                age = 0
         if age > LI_MAX_AGE_DAYS:
-            j["why_bad"] = (f"Posted about {int(age)} days ago — LinkedIn postings "
-                            f"this old are no longer accepting applications.")
+            j["why_bad"] = (f"First seen about {int(age)} days ago — a vacancy open "
+                            f"this long has almost always been filled.")
             j["reason"] = j["why_bad"]
             jobs.setdefault("rejected", []).insert(0, j)
             dropped += 1

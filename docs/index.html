@@ -1061,6 +1061,21 @@ function isSEO(j) {
   const t = `${j.title || ""} ${j.details || ""}`;
   return SEO_RX.test(t) || SEA_RX.test(t);
 }
+// How strongly a job is an SEO job, so the most SEO ones lead rather than
+// merely "any job mentioning SEO". A title naming SEO/SEA outranks one that
+// only mentions it among the tasks.
+function seoRank(j) {
+  const title = j.title || "";
+  if (SEO_RX.test(title) || SEA_RX.test(title)) return 2;
+  return isSEO(j) ? 1 : 0;
+}
+// Newest first. found_at is "YYYY-MM-DD HH:MM", so it sorts as text; the id is
+// the fallback for anything saved before found_at was recorded.
+function freshness(j) {
+  return `${j.found_at || ""}|${String(j.id || "").padStart(12, "0")}`;
+}
+const bySeoThenNewest = (a, b) =>
+  (seoRank(b) - seoRank(a)) || (freshness(b) < freshness(a) ? -1 : freshness(b) > freshness(a) ? 1 : 0);
 // Sub-field labels so each Ready/All job shows which marketing area it is —
 // SEO (the candidate's strong field, above) vs content, social media (a field
 // the candidate has NOT worked in), and paid/online-marketing. Classified on the
@@ -1116,7 +1131,17 @@ function liAgeDays(j) {
   if (!NEWEST_LI_ID || !id) return 0;
   return (NEWEST_LI_ID - id) / LI_IDS_PER_DAY;
 }
-const isStale = (j) => liAgeDays(j) > LI_MAX_AGE_DAYS;
+// VDAB and the boards carry no id we can date, so fall back to how long the
+// job has been sitting here. Nothing aged those out before, on the assumption
+// VDAB removes closed vacancies itself — after the August pause, 156 matches in
+// Ready were ones first seen more than six weeks earlier.
+function daysSinceFound(j) {
+  const d = Date.parse(((j.found_at || "").slice(0, 10)) + "T00:00:00Z");
+  if (!d) return 0;
+  return (Date.now() - d) / 86400000;
+}
+const isStale = (j) =>
+  (liAgeDays(j) || daysSinceFound(j)) > LI_MAX_AGE_DAYS;
 
 // Jobs that simply aren't in Belgium. LinkedIn's Belgium search returns plenty
 // of them — a Vietnamese-language SEO post, a Barcelona agency role, call-centre
@@ -1290,11 +1315,16 @@ function render() {
     return;
   }
   if (TAB === "new") {
-    // A job only counts as an internship if the AI flagged it AND the title
-    // actually says so — the model sometimes mis-flags regular jobs (e.g. a
-    // "Customer Hero" role) as internships.
+    // A job counts as an internship if the AI flagged it AND something else
+    // says so too — the model sometimes mis-flags regular jobs (e.g. a
+    // "Customer Hero" role). The title alone was too strict: "Social Media and
+    // Content Officer" at Embrace the Earth is an unpaid 6-month volunteer
+    // placement, which its own contract line says plainly, and it was filed
+    // with the regular jobs. So the contract/role text counts as evidence too.
     const INTERN_RE = /(stage|stagi|intern|trainee)/i;
-    const isIntern = (j) => j.internship && INTERN_RE.test(j.title || "");
+    const INTERN_BODY_RE = /\b(internship|stagiair|trainee(ship)?|volunteer|vrijwillig\w*|unpaid|onbezoldigd|werkervaringsplaats)\b/i;
+    const isIntern = (j) => j.internship &&
+      (INTERN_RE.test(j.title || "") || INTERN_BODY_RE.test(j.details || ""));
 
     // Drop true duplicate postings — same title AND company (VDAB sometimes
     // lists the exact same job twice). Keep the highest-scored copy. Generic
@@ -1375,11 +1405,9 @@ function render() {
         // English postings first: with B1 Dutch they are the ones that can
         // realistically be applied to well, so they lead the section. Then SEO —
         // the goal field — then clean fits before stretch jobs, then by score.
-        const g = (groups[c.key] || []).sort((a, b) =>
-          (isEnglishJob(b) - isEnglishJob(a)) ||
-          (isSEO(b) - isSEO(a)) ||
-          (isStretch(a) - isStretch(b)) ||
-          (b.match_score || 0) - (a.match_score || 0));
+        // Most-SEO first, then newest — what you asked to see when a section
+        // unfolds. English/stretch/score no longer reorder ahead of that.
+        const g = (groups[c.key] || []).slice().sort(bySeoThenNewest);
         if (!g.length) return;
         addSection((ns || "") + "cat:" + c.key, c.fav ? "fav" : "",
           `${c.label}<span class="cnt">${g.length}</span>`, g);
@@ -1395,9 +1423,7 @@ function render() {
     if (shownInterns.length) {
       addSection("intern", "intern",
         `🎓 Internships <span class="cnt">${shownInterns.length}</span>`,
-        shownInterns.slice().sort((a, b) =>
-          (isEnglishJob(b) - isEnglishJob(a)) ||
-          (isSEO(b) - isSEO(a)) || (b.match_score || 0) - (a.match_score || 0)),
+        shownInterns.slice().sort(bySeoThenNewest),
         `<div class="hint" style="text-align:left;margin:0 4px 8px">Internships / stages (“stage” = internship) — kept even if they ask for more, since you learn on the job.</div>`);
     }
     if (!regular.length && !interns.length) {
