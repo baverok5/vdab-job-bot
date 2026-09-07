@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-07 10:57 UTC",
+ "updated": "2026-09-07 16:17 UTC",
  "jobs": [
   {
    "id": "4446772012",
@@ -3314,7 +3314,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-07 00:41",
+   "closed_check": "2026-09-07 16:16",
    "closed_check_v": 2
   },
   {
@@ -4361,7 +4361,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "closed_check": "2026-09-07 16:16",
+   "closed_check_v": 2
   },
   {
    "id": "74355423",
@@ -5528,7 +5530,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-07 00:41",
+   "closed_check": "2026-09-07 16:16",
    "closed_check_v": 2
   },
   {
@@ -5750,7 +5752,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-07 00:41",
+   "closed_check": "2026-09-07 16:16",
    "closed_check_v": 2
   },
   {
@@ -6054,7 +6056,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-07 00:41",
+   "closed_check": "2026-09-07 16:16",
    "closed_check_v": 2
   },
   {
@@ -6196,7 +6198,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-07 00:41",
+   "closed_check": "2026-09-07 16:16",
    "closed_check_v": 2
   },
   {
@@ -6498,7 +6500,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-07 00:41",
+   "closed_check": "2026-09-07 16:16",
    "closed_check_v": 2
   },
   {
@@ -8766,7 +8768,7 @@
    "internship": false,
    "cv_fit_v": 18,
    "lang": "en",
-   "closed_check": "2026-09-07 00:41",
+   "closed_check": "2026-09-07 16:16",
    "closed_check_v": 2
   },
   {
@@ -10163,7 +10165,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "en",
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "closed_check": "2026-09-07 16:16",
+   "closed_check_v": 2
   },
   {
    "id": "74519873",
@@ -10263,7 +10267,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "closed_check": "2026-09-07 16:16",
+   "closed_check_v": 2
   },
   {
    "id": "74465259",
