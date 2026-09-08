@@ -172,6 +172,20 @@
     font-size: 13px; padding: 10px 16px; border-radius: 10px; opacity: 0;
     transition: all .25s ease; pointer-events: none; z-index: 50; }
   .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  /* Search: an icon in the header that reveals a bar under it. Searching looks
+     across every tab, not just the one you are on, so a job you remember but
+     cannot place is findable wherever it ended up. */
+  .iconbtn { background: var(--card); color: var(--fg); border: 1px solid var(--line);
+             border-radius: 10px; padding: 8px 10px; font-size: 15px; cursor: pointer; }
+  .iconbtn:active { transform: scale(0.96); }
+  .searchbar { display: flex; gap: 8px; align-items: center; padding: 0 14px 12px; }
+  .searchbar input { flex: 1; background: var(--card); color: var(--fg);
+                     border: 1px solid var(--line); border-radius: 10px;
+                     padding: 10px 12px; font-size: 15px; }
+  .searchbar input:focus { outline: none; border-color: var(--blue); }
+  .searchhint { color: var(--dim); font-size: 12.5px; padding: 0 4px 8px; }
+  mark { background: rgba(255,214,0,.30); color: inherit; border-radius: 3px; padding: 0 1px; }
 </style>
 </head>
 <body>
@@ -183,8 +197,14 @@
       <h1>Jobs</h1>
       <div class="sub" id="updated">Loading…</div>
     </div>
+    <button class="iconbtn" id="searchbtn" title="Search jobs" aria-label="Search jobs">🔍</button>
     <button class="sync" id="syncbtn" title="Sync Applied / Skipped / Closed across your phone and computer">⟳ Sync</button>
     <button class="install" id="install">Install app</button>
+  </div>
+  <div class="searchbar" id="searchbar" hidden>
+    <input id="q" type="search" inputmode="search" autocomplete="off"
+           placeholder="Search title, company, location, tasks…">
+    <button class="iconbtn" id="qclear" title="Clear search" aria-label="Clear search">✕</button>
   </div>
 </header>
 
@@ -1186,11 +1206,56 @@ function isSelfPromo(j) {
   return ((j.details || "").match(VAGUE_FIELD) || []).length >= 3;
 }
 
+// Search runs across EVERY pool — Ready, the full browse listing, not-a-fit,
+// applied, skipped — because "where is this job?" is usually asked about one
+// that did not reach Ready. Matching is on what a job IS: title, company,
+// location and the role summary.
+let QUERY = "";
+const searchable = (j) =>
+  `${j.title || ""} ${j.company || ""} ${j.location || ""} ${j.details || ""}`.toLowerCase();
+function searchHits(q) {
+  const terms = q.toLowerCase().split(/\s+/).filter(Boolean);
+  if (!terms.length) return [];
+  const seen = new Set(), out = [];
+  const pools = [["Ready", DATA.jobs || []], ["Not a fit", DATA.rejected || []],
+                 ["All jobs", DATA.listing || []]];
+  for (const [where, pool] of pools) {
+    for (const j of pool) {
+      if (seen.has(j.id)) continue;
+      const hay = searchable(j);
+      if (!terms.every((t) => hay.includes(t))) continue;
+      seen.add(j.id);
+      out.push({ job: j, where });
+    }
+  }
+  return out;
+}
+function renderSearch(list) {
+  const hits = searchHits(QUERY);
+  const st = getStatus();
+  document.getElementById("list").innerHTML = "";
+  if (!hits.length) {
+    list.innerHTML = `<div class="empty"><div class="big">🔍</div>Nothing matches “${esc(QUERY)}”.</div>`;
+    return;
+  }
+  list.insertAdjacentHTML("beforeend",
+    `<div class="searchhint">${hits.length} result${hits.length > 1 ? "s" : ""} for
+     “${esc(QUERY)}” — searched Ready, All jobs and Not a fit.</div>`);
+  appendPaged(list, hits.map((h) => h.job), (j) => {
+    const where = hits.find((h) => h.job.id === j.id).where;
+    const el = card(j, st[j.id] || null);
+    el.insertAdjacentHTML("afterbegin",
+      `<div class="searchhint" style="padding:0 0 6px">in <b>${where}</b></div>`);
+    return el;
+  }, 20);
+}
+
 function render() {
   const st = getStatus();
   NEWEST_LI_ID = Math.max(0, ...[...(DATA.jobs || []), ...(DATA.listing || [])]
     .filter((j) => /linkedin\.com/.test(j.url || ""))
     .map((j) => parseInt(j.id, 10) || 0));
+  if (QUERY.trim()) { renderSearch(document.getElementById("list")); return; }
   const buckets = { new: [], applied: [], skipped: [] };
   for (const j of DATA.jobs) {
     if (HIDE_IDS.has(String(j.id))) continue;
@@ -1440,7 +1505,27 @@ function render() {
 }
 
 document.querySelectorAll(".tab").forEach((t) =>
-  t.addEventListener("click", () => { TAB = t.dataset.tab; render(); }));
+  t.addEventListener("click", () => { QUERY = ""; syncSearchUI(); TAB = t.dataset.tab; render(); }));
+
+const searchbar = document.getElementById("searchbar");
+const qbox = document.getElementById("q");
+function syncSearchUI() {
+  if (qbox.value !== QUERY) qbox.value = QUERY;
+  searchbar.hidden = !QUERY && searchbar.hidden;
+}
+document.getElementById("searchbtn").addEventListener("click", () => {
+  searchbar.hidden = !searchbar.hidden;
+  if (!searchbar.hidden) qbox.focus();
+  else if (QUERY) { QUERY = ""; qbox.value = ""; render(); }
+});
+let qTimer;
+qbox.addEventListener("input", () => {
+  clearTimeout(qTimer);
+  qTimer = setTimeout(() => { QUERY = qbox.value.trim(); render(); }, 180);
+});
+document.getElementById("qclear").addEventListener("click", () => {
+  qbox.value = ""; QUERY = ""; qbox.focus(); render();
+});
 
 fetch("jobs.json?t=" + Date.now())
   .then((r) => r.json())

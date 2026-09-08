@@ -901,6 +901,17 @@ def looks_like_self_promo(job):
     return len(VAGUE_FIELD_RX.findall(job.get("details") or "")) >= 3
 
 
+def _note_dropped(jobs, job_id, url, why):
+    """Keep a short, bounded record of jobs retired without a verdict, so the
+    feed can say what became of a posting instead of it just not being there."""
+    log = jobs.setdefault("dropped", {})
+    log[str(job_id)] = {"url": url, "why": why,
+                        "at": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M")}
+    if len(log) > 400:                    # keep the newest, bound the file
+        for k in sorted(log, key=lambda k: log[k]["at"])[:len(log) - 400]:
+            log.pop(k, None)
+
+
 def drop_self_promo_matches(jobs):
     keep, dropped = [], 0
     for j in jobs.get("jobs", []):
@@ -2527,6 +2538,12 @@ def _process_jobs(browser, new_links, seen, jobs, cv_text, checkpoint=None):
             if hopeless or n >= 2:
                 fails.pop(job_id, None)
                 seen.add(job_id)          # retire it; stop paying for it every run
+                # Record WHY. A retired job vanishes from the feed with no trace,
+                # and "why isn't this job in the app?" was unanswerable: it sat in
+                # the browse listing, marked seen, with no verdict anywhere.
+                _note_dropped(jobs, job_id, url,
+                              "redirect link, never a readable posting" if hopeless
+                              else "the posting could not be read twice running")
                 print(f"  (could not read job — retiring it{' (redirect link)' if hopeless else ''})")
             else:
                 fails[job_id] = n
