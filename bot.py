@@ -188,7 +188,7 @@ HEADERS = {
     "Accept-Language": "nl-BE,nl;q=0.9,en;q=0.8",
 }
 
-MAX_NEW_PER_RUN = int(os.environ.get("MAX_NEW_PER_RUN", "300"))  # big chunk per run; progress is checkpointed
+MAX_NEW_PER_RUN = int(os.environ.get("MAX_NEW_PER_RUN", "700"))  # progress is checkpointed, so a long run is safe
 # Shortest posting text worth asking the AI about. Below this there is no
 # description to read, only a heading, and the model invents the rest.
 MIN_JOB_TEXT = 300
@@ -899,6 +899,21 @@ def looks_like_self_promo(job):
     if (job.get("apply_email") or "").strip():
         return False
     return len(VAGUE_FIELD_RX.findall(job.get("details") or "")) >= 3
+
+
+# Every job the bot has judged, kept forever: {id: [status, score, reason, date]}.
+# The not-a-fit pool is capped at REJECTED_CAP full records, so 10,473 jobs that
+# HAD been read showed up in the app as untouched entries in "All jobs" with no
+# explanation — which is what made the tab useless and the question "why isn't
+# this job in my feed?" unanswerable. This index is ~90 bytes a job, so it can
+# cover everything without the file growing unreasonably.
+VERDICT_MATCH, VERDICT_NOFIT, VERDICT_TITLE, VERDICT_UNREAD = "m", "n", "t", "u"
+
+
+def record_verdict(jobs, job_id, status, score=0, reason=""):
+    jobs.setdefault("verdicts", {})[str(job_id)] = [
+        status, int(score or 0), " ".join((reason or "").split())[:160],
+        datetime.now(timezone.utc).strftime("%Y-%m-%d")]
 
 
 def _note_dropped(jobs, job_id, url, why):
@@ -2170,6 +2185,10 @@ def main():
                 kept = title_prescreen([c["title"] for c in cand])
                 for i, c in enumerate(cand):
                     (shortlist if i in kept else title_no).add(c["id"])
+                    if i not in kept:
+                        record_verdict(jobs, c["id"], VERDICT_TITLE, 0,
+                                       "the title alone rules it out for this profile "
+                                       "(senior/leadership, or a different trade)")
                 print(f"  shortlisted {len(kept)}, dropped {len(cand) - len(kept)} at title stage")
 
             # Full render + AI evaluation, drawn from the shortlist only —
@@ -2302,12 +2321,16 @@ def _apply_verdict(jobs, job_id, url, verdict, apply_email, found_at=None,
                        f"old are no longer accepting applications.")
     if verdict.get("pass") and not blocked:
         jobs["jobs"].insert(0, entry)
+        record_verdict(jobs, job_id, VERDICT_MATCH, entry.get("match_score"),
+                       entry.get("reason") or "match")
         return True
     if blocked:
         entry["why_bad"] = blocked
         entry["reason"] = blocked
         print(f"  not offered: {blocked}")
     jobs["rejected"].insert(0, entry)
+    record_verdict(jobs, job_id, VERDICT_NOFIT, entry.get("match_score"),
+                   entry.get("reason") or entry.get("why_bad") or "not a fit")
     return False
 
 
@@ -2541,9 +2564,10 @@ def _process_jobs(browser, new_links, seen, jobs, cv_text, checkpoint=None):
                 # Record WHY. A retired job vanishes from the feed with no trace,
                 # and "why isn't this job in the app?" was unanswerable: it sat in
                 # the browse listing, marked seen, with no verdict anywhere.
-                _note_dropped(jobs, job_id, url,
-                              "redirect link, never a readable posting" if hopeless
-                              else "the posting could not be read twice running")
+                why = ("redirect link, never a readable posting" if hopeless
+                       else "the posting could not be read twice running")
+                _note_dropped(jobs, job_id, url, why)
+                record_verdict(jobs, job_id, VERDICT_UNREAD, 0, why)
                 print(f"  (could not read job — retiring it{' (redirect link)' if hopeless else ''})")
             else:
                 fails[job_id] = n

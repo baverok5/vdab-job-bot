@@ -186,6 +186,17 @@
   .searchbar input:focus { outline: none; border-color: var(--blue); }
   .searchhint { color: var(--dim); font-size: 12.5px; padding: 0 4px 8px; }
   mark { background: rgba(255,214,0,.30); color: inherit; border-radius: 3px; padding: 0 1px; }
+
+  /* Verdict line on browse/search cards — what the bot decided, and why. */
+  .verdict { font-size: 12.5px; color: var(--dim); margin: 8px 0 2px;
+             border-left: 3px solid var(--line); padding: 4px 0 4px 9px; }
+  .verdict b { color: var(--fg); font-weight: 600; }
+  .verdict.vg { border-color: var(--green); }
+  .verdict.vn { border-color: var(--line); }
+  .verdict.vt { border-color: var(--amber); }
+  .verdict.vu { border-color: var(--amber); }
+  .verdict.vq { border-color: var(--blue); }
+  .vwhy { margin-top: 3px; line-height: 1.45; }
 </style>
 </head>
 <body>
@@ -905,6 +916,30 @@ function srcOf(j) {
   if (host && !/vdab\.be$/.test(host[1])) return host[1];
   return "VDAB";
 }
+// What the bot decided about a job, for every job it has ever judged. "All jobs"
+// used to be a wall of entries with no indication whether any of them had been
+// looked at — 10,473 HAD been read, but their write-ups were trimmed when the
+// not-a-fit pool hit its cap, so they looked untouched.
+const VERDICT_LABEL = {
+  m: ["✅", "In Ready", "vg"],
+  n: ["✖️", "Read — not a fit", "vn"],
+  t: ["⏭️", "Skipped on title", "vt"],
+  u: ["⚠️", "Could not be read", "vu"],
+};
+function verdictOf(j) {
+  const v = (DATA.verdicts || {})[String(j.id)];
+  if (!v) return null;
+  const [icon, label] = VERDICT_LABEL[v[0]] || ["•", "Judged"];
+  return { icon, label, score: v[1], why: v[2], when: v[3] };
+}
+function verdictHTML(j) {
+  const v = verdictOf(j);
+  if (!v) return `<div class="verdict vq">⏳ Not read yet — it is in the queue</div>`;
+  return `<div class="verdict ${VERDICT_LABEL[(DATA.verdicts[String(j.id)] || [])[0]]?.[2] || ""}">
+    ${v.icon} <b>${v.label}</b>${v.score ? ` · ${v.score}%` : ""}
+    ${v.why ? `<div class="vwhy">${esc(v.why)}</div>` : ""}</div>`;
+}
+
 function listingCard(j) {
   const el = document.createElement("div");
   el.className = "card";
@@ -918,6 +953,7 @@ function listingCard(j) {
           : (src === "LinkedIn" ? '<div class="tags"><span class="tag li">🔗 LinkedIn</span></div>' : "")}
       </div>
     </div>
+    ${verdictHTML(j)}
     <div class="actions">
       <button class="btn primary" data-act="generate">✍️ Write my letter</button>
       <a class="btn" href="${esc(j.url)}" target="_blank" rel="noopener">${src}</a>
@@ -1230,32 +1266,37 @@ function searchHits(q) {
   }
   return out;
 }
-function renderSearch(list) {
-  const hits = searchHits(QUERY);
-  const st = getStatus();
-  document.getElementById("list").innerHTML = "";
-  if (!hits.length) {
-    list.innerHTML = `<div class="empty"><div class="big">🔍</div>Nothing matches “${esc(QUERY)}”.</div>`;
-    return;
-  }
-  list.insertAdjacentHTML("beforeend",
-    `<div class="searchhint">${hits.length} result${hits.length > 1 ? "s" : ""} for
-     “${esc(QUERY)}” — searched Ready, All jobs and Not a fit.</div>`);
-  appendPaged(list, hits.map((h) => h.job), (j) => {
-    const where = hits.find((h) => h.job.id === j.id).where;
-    const el = card(j, st[j.id] || null);
-    el.insertAdjacentHTML("afterbegin",
-      `<div class="searchhint" style="padding:0 0 6px">in <b>${where}</b></div>`);
-    return el;
-  }, 20);
-}
-
 function render() {
   const st = getStatus();
   NEWEST_LI_ID = Math.max(0, ...[...(DATA.jobs || []), ...(DATA.listing || [])]
     .filter((j) => /linkedin\.com/.test(j.url || ""))
     .map((j) => parseInt(j.id, 10) || 0));
-  if (QUERY.trim()) { renderSearch(document.getElementById("list")); return; }
+  if (QUERY.trim()) {
+    const list = document.getElementById("list");
+    list.innerHTML = "";
+    const hits = searchHits(QUERY);
+    const tabName = ({ new: "Ready", all: "All jobs", rejected: "Not a fit",
+                       applied: "Applied", skipped: "Skipped" })[TAB] || "Ready";
+    if (!hits.length) {
+      list.innerHTML = `<div class="empty"><div class="big">🔍</div>Nothing matches “${esc(QUERY)}”.</div>`;
+      return;
+    }
+    list.insertAdjacentHTML("beforeend",
+      `<div class="searchhint">${hits.length} result${hits.length > 1 ? "s" : ""} for
+       “${esc(QUERY)}” across Ready, All jobs and Not a fit —
+       tap ✕ to go back to ${esc(tabName)}.</div>`);
+    const where = new Map(hits.map((h) => [h.job.id, h.where]));
+    appendPaged(list, hits.map((h) => h.job), (j) => {
+      const w = where.get(j.id);
+      // A browse-listing entry has no summary to show, so it needs the listing
+      // card; Ready / Not a fit entries have the full one.
+      const el = w === "All jobs" ? listingCard(j) : card(j, st[j.id] || null);
+      el.insertAdjacentHTML("afterbegin",
+        `<div class="searchhint" style="padding:0 0 6px">found in <b>${w}</b></div>`);
+      return el;
+    }, 20);
+    return;
+  }
   const buckets = { new: [], applied: [], skipped: [] };
   for (const j of DATA.jobs) {
     if (HIDE_IDS.has(String(j.id))) continue;
@@ -1505,14 +1546,10 @@ function render() {
 }
 
 document.querySelectorAll(".tab").forEach((t) =>
-  t.addEventListener("click", () => { QUERY = ""; syncSearchUI(); TAB = t.dataset.tab; render(); }));
+  t.addEventListener("click", () => { TAB = t.dataset.tab; render(); }));
 
 const searchbar = document.getElementById("searchbar");
 const qbox = document.getElementById("q");
-function syncSearchUI() {
-  if (qbox.value !== QUERY) qbox.value = QUERY;
-  searchbar.hidden = !QUERY && searchbar.hidden;
-}
 document.getElementById("searchbtn").addEventListener("click", () => {
   searchbar.hidden = !searchbar.hidden;
   if (!searchbar.hidden) qbox.focus();
