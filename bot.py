@@ -107,8 +107,12 @@ _PRIORITY_TIERS = (
                r"zoekmachine",
                re.I),
     re.compile(r"digital\s*market|digitale\s*market|online\s*market|marketeer|"
-               r"content|copywrit|social\s*media|e-?commerce|webshop|wordpress|"
-               r"web\s*design|webdesign|front[-\s]?end|\bux\b|\bui\b|growth", re.I),
+               r"content|copywrit|social\s*media|e-?commerce|webshop|"
+               # Site-building is the candidate's other strong hand — WordPress,
+               # Elementor, webmaster/webdesign work — so name it explicitly
+               # rather than hoping "web design" alone catches it.
+               r"wordpress|elementor|webflow|woo ?commerce|webmaster|website|"
+               r"web\s*design|webdesign|web ?develop|front[-\s]?end|\bux\b|\bui\b|growth", re.I),
     re.compile(r"marketing|communicat|\bbrand(?:ing|s)?\b|campaign|campagne|"
                r"advertis|\bpr\b", re.I),
 )
@@ -583,7 +587,8 @@ LI_ROTATING_KEYWORDS = [
     # Web / UX / front-end design — the candidate's WordPress/Elementor/Canva
     # background fits these, and they're often LinkedIn-only (missed before).
     "web designer", "web design", "wordpress", "ux designer", "ui designer",
-    "front-end", "webflow",
+    "front-end", "webflow", "elementor", "wordpress developer", "webmaster",
+    "website manager", "woocommerce",
     # Web/e-commerce titles that never say "marketing" or "SEO" but are the same
     # work — site upkeep, product content, on-page optimisation.
     "web content", "webshop", "e-commerce manager", "digital specialist",

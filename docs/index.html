@@ -1100,12 +1100,19 @@ function dutchProductive(t) {
   }
   return false;
 }
+// Dutch. The default is now "this needs better Dutch than B1" and a job has to
+// EARN its way out by saying the bar is low — B1/A2, basic/basiskennis, Dutch a
+// plus, English-only. Before, a job was only flagged when it shouted about
+// fluency, so "You speak French or Dutch and have a strong command of English"
+// (the WPP Media SEO Specialist) came through unmarked, and so did every posting
+// that simply never mentioned language.
+const DUTCH_OK_RX = /\b(a1|a2|b1)\b|basis ?kennis|basic (dutch|nederlands|knowledge of dutch)|beginner|elementary|limited dutch|little dutch|een beetje nederlands|dutch (is )?(a )?(plus|asset|nice[- ]to[- ]have|not required|niet vereist)|nederlands (is )?(een )?(pluspunt|troef|niet vereist)|no dutch (required|needed)|geen nederlands|without dutch|english[- ]?only|english is (the )?(working language|sufficient|enough)|working language is english|only english|dutch not required/i;
 function needsBetterDutch(j) {
-  const t = `${j.details || ""} ${j.why_bad || ""} ${j.reason || ""}`;
-  // If the posting/eval explicitly clears B1 as enough, trust it — don't hide a
-  // job the candidate actually qualifies for (e.g. "Dutch (medium) — B1 sufficient").
-  if (/\bb1\b[^.;\n]{0,45}(sufficient|acceptable|voldoende|is fine|enough|\bok\b)|(sufficient|acceptable|voldoende|enough)[^.;\n]{0,20}\bb1\b/i.test(t)) return false;
-  return !!j.dutch_stretch || DUTCH_FLUENT.test(t) || dutchRequired(t) || dutchProductive(t);
+  // The JOB's own text only. why_good/why_bad describe the candidate and keep
+  // saying "candidate has B1", which read as "the job accepts B1" and cleared
+  // 462 jobs that had never said any such thing.
+  const t = String(j.details || "").replace(/[^.;\n]*\b(candidate|kandidaat)\b[^.;\n]*/gi, " ");
+  return !DUTCH_OK_RX.test(t);
 }
 
 // SEO-focused roles — the candidate's strongest area — surfaced first in Ready.
@@ -1130,8 +1137,13 @@ function seoRank(j) {
 function freshness(j) {
   return `${j.found_at || ""}|${String(j.id || "").padStart(12, "0")}`;
 }
+// English-language postings ride at the top alongside the SEO ones — those are
+// the two things worth seeing first — then most-SEO, then newest.
+const topBand = (j) => (isEnglishJob(j) || seoRank(j) > 0) ? 1 : 0;
 const bySeoThenNewest = (a, b) =>
-  (seoRank(b) - seoRank(a)) || (freshness(b) < freshness(a) ? -1 : freshness(b) > freshness(a) ? 1 : 0);
+  (topBand(b) - topBand(a)) ||
+  (seoRank(b) - seoRank(a)) ||
+  (freshness(b) < freshness(a) ? -1 : freshness(b) > freshness(a) ? 1 : 0);
 // Sub-field labels so each Ready/All job shows which marketing area it is —
 // SEO (the candidate's strong field, above) vs content, social media (a field
 // the candidate has NOT worked in), and paid/online-marketing. Classified on the
