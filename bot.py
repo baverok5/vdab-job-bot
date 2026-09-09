@@ -1276,6 +1276,56 @@ def collect_eures(budget_s=EURES_BUDGET_S):
     return found
 
 
+def _eures_requirements(d):
+    """The language level EURES holds as structured data, rendered as text.
+
+    A "Digital Marketeer & Front-end Specialist" carried "Dutch (B2 - Upper
+    intermediate)" in this field while its description said nothing about
+    language — so the model wrote "not specified level, likely B1 acceptable"
+    and the job reached Ready with no Dutch warning. Facts the record already
+    states should never be left to a guess.
+    """
+    out = []
+    langs = []
+    raw = d.get("languages") or d.get("languageSkills") or d.get("requiredLanguages") or []
+    if isinstance(raw, dict):
+        raw = [raw]
+    for item in raw if isinstance(raw, list) else []:
+        if isinstance(item, str):
+            langs.append(item)
+            continue
+        if not isinstance(item, dict):
+            continue
+        name = _first(item, "language", "name", "code", "languageCode", "label")
+        level = _first(item, "level", "cefr", "cefrLevel", "proficiency",
+                       "languageLevel", "levelCode")
+        if name:
+            langs.append(f"{name} ({level})" if level else str(name))
+    if langs:
+        out.append("Required languages: " + ", ".join(str(x) for x in langs))
+    edu = _first(d, "educationLevel", "education", "requiredEducationLevel")
+    if edu:
+        out.append(f"Education level required: {edu}")
+    exp = d.get("experience") or d.get("requiredExperience") or d.get("workExperience")
+    if isinstance(exp, dict):
+        exp = [exp]
+    if isinstance(exp, list) and exp:
+        bits = []
+        for e in exp:
+            if isinstance(e, str):
+                bits.append(e)
+            elif isinstance(e, dict):
+                occ = _first(e, "occupation", "name", "label", "title")
+                yrs = _first(e, "years", "duration", "yearsOfExperience")
+                if occ:
+                    bits.append(f"{occ} ({yrs} years)" if yrs else str(occ))
+        if bits:
+            out.append("Experience required: " + ", ".join(bits))
+    if out:
+        print(f"      eures requirements: {' | '.join(out)[:120]}")
+    return "\n".join(out)
+
+
 def fetch_eures_detail(url):
     """Job text for a EURES vacancy, over its JSON API.
 
@@ -1309,7 +1359,8 @@ def fetch_eures_detail(url):
                 # content, social media" and scored 70%.
                 if desc:
                     parts = [_first(d, "title"),
-                             _first(d, "employer", "employerName"), desc]
+                             _first(d, "employer", "employerName"), desc,
+                             _eures_requirements(d)]
                     text = "\n\n".join(p for p in parts if p)
     except Exception as e:
         print(f"  eures detail {raw_id[:12]}…: {type(e).__name__}")
@@ -1957,6 +2008,20 @@ def main():
             print(f"  eures: dropped {len(stale)} match(es) judged from the "
                   f"portal shell — re-reading them with the JSON API")
         jobs["eures_reread_v2"] = True
+    # v3: EURES holds the language level as structured data, and until now only
+    # the free-text description was read. A "Digital Marketeer & Front-end
+    # Specialist" whose record says Dutch B2 reached Ready described as "not
+    # specified level, likely B1 acceptable". Re-read every EURES match so the
+    # requirement comes from the record instead of a guess.
+    if not jobs.get("eures_reread_v3"):
+        stale = {j["id"] for j in jobs["jobs"]
+                 if EURES_DETAIL_PAGE in (j.get("url") or "")}
+        if stale:
+            jobs["jobs"] = [j for j in jobs["jobs"] if j["id"] not in stale]
+            seen -= stale
+            print(f"  eures: re-reading {len(stale)} match(es) to pick up the "
+                  f"language level from the record")
+        jobs["eures_reread_v3"] = True
     screen = load_json(SCREEN_FILE, {"title_no": [], "shortlist": []})
     title_no = set(screen.get("title_no", []))     # dropped at the cheap title stage
     shortlist = set(screen.get("shortlist", []))   # passed title stage, await full eval
