@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-09 19:36 UTC",
+ "updated": "2026-09-09 19:37 UTC",
  "jobs": [
   {
    "id": "4446772012",
@@ -610,7 +610,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-09 12:10",
+   "closed_check": "2026-09-09 19:36",
    "closed_check_v": 2
   },
   {
@@ -992,7 +992,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-09 12:10",
+   "closed_check": "2026-09-09 19:36",
    "closed_check_v": 2
   },
   {
@@ -3636,7 +3636,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-09 12:10",
+   "closed_check": "2026-09-09 19:36",
    "closed_check_v": 2
   },
   {
@@ -3698,7 +3698,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-09 12:10",
+   "closed_check": "2026-09-09 19:36",
    "closed_check_v": 2
   },
   {
@@ -4060,7 +4060,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-09 12:10",
+   "closed_check": "2026-09-09 19:36",
    "closed_check_v": 2
   },
   {
@@ -4224,7 +4224,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-09 12:10",
+   "closed_check": "2026-09-09 19:36",
    "closed_check_v": 2
   },
   {
@@ -4286,7 +4286,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-09 12:10",
+   "closed_check": "2026-09-09 19:36",
    "closed_check_v": 2
   },
   {
@@ -4750,7 +4750,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-09 12:10",
+   "closed_check": "2026-09-09 19:36",
    "closed_check_v": 2
   },
   {
@@ -5052,7 +5052,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-09 12:10",
+   "closed_check": "2026-09-09 19:36",
    "closed_check_v": 2
   },
   {
@@ -5194,28 +5194,6 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18
-  },
-  {
-   "id": "4458617691",
-   "url": "https://www.linkedin.com/jobs/view/4458617691",
-   "title": "Digital Marketeer",
-   "company": "erudite.health",
-   "location": "Unknown",
-   "match_score": 60,
-   "reason": "Role fits digital marketing with junior-friendly language and no French requirement.",
-   "apply_email": "recruitment@erudite.health",
-   "found_at": "2026-09-05 14:57",
-   "status": "new",
-   "details": "Digital marketing role: performance campaigns (Meta, TikTok, Google), influencer relations, email/CRM (HubSpot), UGC optimization, AI/automation, e-commerce growth.\nFull-time permanent contract, 40h/week with 12 ADV days, flexible hours, 2 remote days after onboarding.\nSalary €2700-3500 gross/month, meal vouchers, eco vouchers, insurance, possible company car.\nLanguage: Dutch required (communicate fluently), no French mentioned.\nJunior-friendly: 'first steps' and 'not need to master everything'.",
-   "why_good": "Directly in digital marketing, matching candidate's SEO/content/analytics background.\nExplicitly open to juniors with 'first steps' or relevant internship, so experience gap is acceptable.\nTasks include Google Ads, Meta, content, and analytics—candidate has hands-on experience with these.\nAI/automation interest aligns with candidate's GEO/AI search work.\nNo French required; Dutch at B1 is likely sufficient for 'communicate fluently' as it's not specified as native.",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18,
-   "closed_check": "2026-09-09 12:10",
-   "closed_check_v": 2
   },
   {
    "id": "74512355",
