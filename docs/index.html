@@ -1107,12 +1107,19 @@ function dutchProductive(t) {
 // (the WPP Media SEO Specialist) came through unmarked, and so did every posting
 // that simply never mentioned language.
 const DUTCH_OK_RX = /\b(a1|a2|b1)\b|basis ?kennis|basic (dutch|nederlands|knowledge of dutch)|beginner|elementary|limited dutch|little dutch|een beetje nederlands|dutch (is )?(a )?(plus|asset|nice[- ]to[- ]have|not required|niet vereist)|nederlands (is )?(een )?(pluspunt|troef|niet vereist)|no dutch (required|needed)|geen nederlands|without dutch|english[- ]?only|english is (the )?(working language|sufficient|enough)|working language is english|only english|dutch not required/i;
+const DUTCH_HEDGE_RX = /\b(likely|probably|presumably|assume[ds]?|not specified|unspecified|no explicit|not stated|implied|guess|maybe|perhaps|suggests?)\b/i;
+const DUTCH_HIGH_RX = /\b(b2|c1|c2)\b|upper[- ]intermediate|fluent|vloeiend|near[- ]native|native speaker|moedertaal|uitstekende kennis|zeer goede kennis|perfect (dutch|nederlands)/i;
 function needsBetterDutch(j) {
   // The JOB's own text only. why_good/why_bad describe the candidate and keep
-  // saying "candidate has B1", which read as "the job accepts B1" and cleared
-  // 462 jobs that had never said any such thing.
+  // saying "candidate has B1", which read as "the job accepts B1".
   const t = String(j.details || "").replace(/[^.;\n]*\b(candidate|kandidaat)\b[^.;\n]*/gi, " ");
-  return !DUTCH_OK_RX.test(t);
+  // An explicit high bar settles it. EURES held "Dutch (B2 - Upper
+  // intermediate)" for a job whose description never mentioned language.
+  if (DUTCH_HIGH_RX.test(t)) return true;
+  // A guess is not a statement: "not specified level, likely B1 acceptable" is
+  // the model speculating, and it cleared that same B2 job. The low bar has to
+  // be stated in a sentence that is not hedging.
+  return !t.split(/[.;\n]/).some((line) => DUTCH_OK_RX.test(line) && !DUTCH_HEDGE_RX.test(line));
 }
 
 // SEO-focused roles — the candidate's strongest area — surfaced first in Ready.
