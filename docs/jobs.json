@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-10 01:18 UTC",
+ "updated": "2026-09-10 01:28 UTC",
  "jobs": [
   {
    "id": "4446772012",
@@ -8990,6 +8990,26 @@
    "cv_fit_v": 18
   },
   {
+   "id": "74523988",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74523988/inside-sales",
+   "title": "Inside Sales",
+   "company": "Actief Interim (for a client in Nazareth-De Pinte)",
+   "location": "Nazareth-De Pinte",
+   "match_score": 45,
+   "reason": "Accessible inside-sales role with no study or experience requirements, needing only Dutch and English (no French).",
+   "apply_email": "",
+   "found_at": "2026-09-10 01:27",
+   "status": "new",
+   "details": "- Inside sales for an IT infrastructure/security/distribution company\n- Proactive phone contact with customers/prospects, appointment setting, quotes, order processing\n- Permanent full-time contract, day work, immediate start\n- Languages: Dutch and English for phone contact\n- Pay €3000–€3700 gross/month + €7 meal vouchers/day + 8% monthly commission\n- No specific study requirements; experience 'not important'",
+   "why_good": "- No degree or specific experience required — explicitly open to candidates with a first commercial experience\n- Works in Dutch and English; candidate has B1 Dutch and professional English\n- Customer contact, sales support and admin tasks suit an early-career, communicative candidate\n- Full-time permanent role with training on the job and a supportive team\n- Located in East Flanders, commutable from Antwerp area",
+   "why_bad": "",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 18
+  },
+  {
    "id": "74420863",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74420863/hr-support",
    "title": "HR support",
@@ -10345,6 +10365,46 @@
    "why_bad": "",
    "dutch_stretch": false,
    "exp_stretch": true,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 18
+  },
+  {
+   "id": "74567015",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74567015/inside-sales-medewerker",
+   "title": "Inside Sales medewerker",
+   "company": "Unique Geel (for a transport & logistics company)",
+   "location": "Geel",
+   "match_score": 32,
+   "reason": "Accessible inside-sales role with no degree requirement and only limited (<2 years) experience asked; Dutch is 'zeer goed' (a stretch) but no French is required.",
+   "apply_email": "",
+   "found_at": "2026-09-10 01:27",
+   "status": "new",
+   "details": "- Inside sales / customer contact for an international transport & logistics player\n- Drafting quotes, calculating transport rates, handling price and transport requests\n- Daily customer contact by phone and email; advising on logistics solutions\n- Interim with option for permanent contract, full-time, day work, ASAP start\n- Languages: very good Dutch and English; French is a plus (not required)\n- No specific study requirements; limited experience (<2 years) accepted",
+   "why_good": "- No degree required and only limited (<2 years) experience asked — fits an early-career candidate\n- Commercial/customer-facing work matches the candidate's communication and service orientation\n- English is accepted alongside Dutch, and French is only 'a nice asset', not required\n- The candidate's warehouse/logistics stint at Katoen Natie gives relevant sector familiarity\n- Note: the posting asks for 'zeer goed' Dutch, which is above the candidate's B1 — a real stretch",
+   "why_bad": "",
+   "dutch_stretch": true,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 18
+  },
+  {
+   "id": "74575976",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74575976/recruiter",
+   "title": "Recruiter",
+   "company": "Talentus",
+   "location": "Waregem",
+   "match_score": 30,
+   "reason": "Recruiter role with limited experience (<2 years) and degree 'or equivalent by experience', but requires very good Dutch and a driving licence, making it a stretch.",
+   "apply_email": "kortrijk@talentus.be",
+   "found_at": "2026-09-10 01:26",
+   "status": "new",
+   "details": "- Full-cycle recruitment and selection for blue-collar and white-collar profiles\n- Sourcing, screening, interviewing, talent pooling, employer branding, HR admin support\n- Permanent full-time contract, day work, start 10 September 2026\n- Languages: Dutch (very good); driving licence B required\n- Education: professional bachelor or equivalent by experience\n- Pay: attractive salary package with company car, meal vouchers, eco vouchers, 12 ADV days",
+   "why_good": "- Recruitment is an accessible people-oriented role; the candidate's communication and organisational skills from digital marketing and logistics could transfer\n- The posting accepts 'equivalent by experience' instead of a strict bachelor requirement\n- The experience ask is 2-4 years, which is a reach but not an absolute wall for a junior\n- The candidate is based near Antwerp and willing to travel; Dutch is B1 and improving\n- However, the job requires very good Dutch, which is above the candidate's current B1 level, and a driving licence B is needed",
+   "why_bad": "",
+   "dutch_stretch": true,
+   "exp_stretch": false,
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18
@@ -127137,6 +127197,366 @@
  ],
  "rejected": [
   {
+   "id": "74567005",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74567005/sales-support-medewerker",
+   "title": "Sales Support Medewerker",
+   "company": "Unique Mechelen (client: industrial sieve machine manufacturer)",
+   "location": "Mechelen",
+   "match_score": 0,
+   "reason": "The job requires good French and/or German, and the candidate has no French.",
+   "apply_email": "",
+   "found_at": "2026-09-10 01:27",
+   "status": "new",
+   "details": "- Sales support role for an industrial sieve machine manufacturer\n- Answer customer/representative questions by phone and email, prepare and follow up quotes, process orders\n- Support external sales reps, register data in CRM/ERP, handle simple technical questions\n- Temporary full-time contract (Aug 2026 – Apr/May 2027), 40h/week, day work with sliding hours\n- Languages: very good Dutch, very good French, very good English; good basic French and/or German\n- Pay €2,500–€2,900 gross/month, meal vouchers, eco vouchers, commuting allowance",
+   "why_good": "",
+   "why_bad": "- Requires very good French (and/or German) — candidate has no French at all\n- Posting explicitly lists French as a must-have language\n- Role also leans on technical/engineering product knowledge and commercial sales support",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 18
+  },
+  {
+   "id": "74567008",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74567008/internal-sales",
+   "title": "Internal Sales",
+   "company": "Unique Brugge (for a job in Oostende)",
+   "location": "Oostende",
+   "match_score": 0,
+   "reason": "The job explicitly requires very good French (Frans: Zeer goed), which the candidate does not speak.",
+   "apply_email": "",
+   "found_at": "2026-09-10 01:27",
+   "status": "new",
+   "details": "- Internal sales / back-office role at a small and wholesale construction-glass company\n- Handling price requests, drafting quotes, following up offers, processing orders\n- Primary customer contact during the preparatory phase of interior projects\n- Full-time, permanent contract, day work, start ASAP\n- Languages: English (very good), Dutch (very good), French (very good)\n- Requires academic bachelor or several years of relevant experience; pay: competitive salary package, construction-sector leave",
+   "why_good": "",
+   "why_bad": "- Requires very good French (Frans: Zeer goed) — the candidate has no French at all\n- Also asks for very good Dutch, above the candidate's B1 level\n- Prefers an academic bachelor or several years of relevant sales/administrative experience, which the candidate lacks",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 18
+  },
+  {
+   "id": "74567087",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74567087/aankoper",
+   "title": "Aankoper",
+   "company": "Unique Hasselt (for a client in Beringen)",
+   "location": "Beringen",
+   "match_score": 0,
+   "reason": "Requires a completed academic bachelor degree and at least 2 years of purchasing/trading experience, neither of which the candidate has.",
+   "apply_email": "",
+   "found_at": "2026-09-10 01:27",
+   "status": "new",
+   "details": "- Buyer/trader of used IT hardware (laptops, desktops, servers, network gear) on national and international markets\n- Sourcing suppliers/customers, negotiating prices, quotes and contracts, tracking market prices\n- Permanent full-time contract, day work, start ASAP\n- Languages: Dutch (very good) and English (very good)\n- Required education: academic bachelor; required experience: at least 2 years\n- Pay: competitive salary plus bonus, CAO 90 bonus, meal/eco cheques, group and hospitalisation insurance",
+   "why_good": "",
+   "why_bad": "- Hard-requires a completed academic bachelor degree (Vereiste studies: Academische bachelor) with no 'or equivalent by experience' route\n- Requires at least 2 years of purchasing/sales/trading experience, preferably in IT or electronics — the candidate has none\n- Needs very good (fluent) Dutch, above the candidate's B1 level\n- Commercial negotiation/trading profile is outside the candidate's digital marketing/SEO/web field",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 18
+  },
+  {
+   "id": "74576178",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74576178/aankoper",
+   "title": "Aankoper",
+   "company": "Unique Hasselt (client in Beringen)",
+   "location": "Beringen",
+   "match_score": 15,
+   "reason": "Requires at least 2 years of dedicated purchasing/sales/trading experience in IT hardware, which the candidate does not have.",
+   "apply_email": "",
+   "found_at": "2026-09-10 01:26",
+   "status": "new",
+   "details": "- Buyer/trader role for used IT hardware (laptops, desktops, servers, network gear)\n- Tasks: sourcing suppliers/customers, negotiating prices and contracts, tracking market prices, spotting deals via marketplaces and broker platforms\n- Contract: permanent, full-time, day work\n- Languages: Dutch (good) and English (good); extra languages a plus\n- Studies: professional bachelor or equivalent by experience\n- Pay: competitive salary + bonus, CAO 90 bonus, meal/eco cheques, group and hospitalisation insurance",
+   "why_good": "",
+   "why_bad": "- Requires at least 2 years of experience in purchasing, sales or trading (preferably IT/electronics) — candidate has ~4 months of marketing experience\n- Needs strong knowledge of IT hardware and current market prices, plus proven negotiation/trading background the CV lacks\n- Role is a commercial buyer/trader, not in the candidate's digital marketing / SEO / web goal field",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 18
+  },
+  {
+   "id": "74576799",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74576799/sales-assistant",
+   "title": "Sales Assistant",
+   "company": "Bright Plus Aalst (for a client in Asse)",
+   "location": "Asse",
+   "match_score": 0,
+   "reason": "The job explicitly requires very good French (Frans: Zeer goed), which the candidate does not have.",
+   "apply_email": "",
+   "found_at": "2026-09-10 01:26",
+   "status": "new",
+   "details": "- Sales Assistant for an international distributor of packaging solutions (food, drinks, pharma)\n- Managing quotes, orders and customer files; daily contact with clients, suppliers and transport partners (NL/FR/ENG)\n- Coordinating logistics, stock management and supporting the full sales process\n- Interim with option for permanent contract, full-time (39h/week), day work, 6 ADV days, 1 day remote\n- Languages: Dutch (very good), French (very good), English (very good)\n- Requires academic bachelor and at least 2 years of experience",
+   "why_good": "",
+   "why_bad": "- Requires very good French (Frans: Zeer goed) — the candidate has no French at all\n- Requires at least 2 years of experience in a commercial back-office/sales support role\n- Requires an academic bachelor degree\n- Daily communication in NL/FR/ENG, so French is unavoidable",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 18
+  },
+  {
+   "id": "74576801",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74576801/customer-happiness-officer",
+   "title": "Customer Happiness Officer",
+   "company": "Bright Plus Geel (for a company in Hoogstraten)",
+   "location": "Hoogstraten",
+   "match_score": 0,
+   "reason": "The posting hard-requires a bachelor's degree plus at least 2 years of international B2B experience, and the candidate has neither.",
+   "apply_email": "",
+   "found_at": "2026-09-10 01:26",
+   "status": "new",
+   "details": "- First point of contact for national and international customers\n- Process sales orders and follow them through to delivery\n- Maintain forecasts and monitor stock levels\n- Work with the sales team on solutions\n- Permanent full-time contract, day work, flexible hours + telework, 32 leave days, meal/eco cheques, group and hospitalisation insurance\n- Languages: Dutch (very good) and English (very good); another language a plus\n- Requires: academic bachelor's degree + at least 2 years' experience in an international B2B environment",
+   "why_good": "",
+   "why_bad": "- Requires a completed academic bachelor's degree in a relevant field — the candidate has only coursework, no degree, and no 'or equivalent by experience' route is offered\n- Requires at least 2 years' experience in an international B2B environment, which the candidate does not have\n- Dutch is listed as 'zeer goed' (very good), above the candidate's B1 level\n- Logistics/incoterms/customs knowledge is a strong plus the candidate lacks",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 18
+  },
+  {
+   "id": "808164660",
+   "url": "https://europa.eu/eures/portal/jv-se/jv-details/NTk0NzI5MiAy",
+   "title": "Secrétaire / Réceptionniste avec communication digitale",
+   "company": "Studio Esthetic Avenue Louise",
+   "location": "Brussels",
+   "match_score": 0,
+   "reason": "The role requires a good knowledge of French, which the candidate does not have.",
+   "apply_email": "",
+   "found_at": "2026-09-10 01:26",
+   "status": "new",
+   "details": "- Receptionist/secretary role at a beauty studio on Avenue Louise, Brussels\n- Tasks: client reception, phone/messages, appointment & agenda management, simple admin, social media (Instagram, TikTok, Facebook), simple content creation, AI tools for drafting\n- Requires good knowledge of French plus a minimum level of English\n- Permanent-style position, no experience or degree stated\n- Pleasant, dynamic studio environment with international clientele",
+   "why_good": "",
+   "why_bad": "- Posting explicitly requires 'une bonne connaissance du français' — the candidate has no French\n- Client-facing role communicating with a francophone clientele, so French is essential\n- English is only a secondary requirement here, not a substitute for French",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 18
+  },
+  {
+   "id": "74566944",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74566944/marketing-officer-franstalig",
+   "title": "Marketing Officer (Franstalig)",
+   "company": "Unique Menen (client in Deerlijk)",
+   "location": "Deerlijk",
+   "match_score": 0,
+   "reason": "The role explicitly requires strong French (Franstalig with goede kennis Nederlands), and the candidate has no French.",
+   "apply_email": "",
+   "found_at": "2026-09-10 01:25",
+   "status": "new",
+   "details": "- Marketing Officer for an infrastructure-techniques company\n- Set up new business initiatives, run online/offline campaigns (social, website, content), manage projects, budgets and stakeholders\n- Interim with option for permanent contract, full-time, day work\n- Languages: Dutch (very good) AND French (very good) required\n- Based in Deerlijk, 1 day/week in Gosselies, flexible travel between Belgian sites\n- Offer: company car + fuel card, group/hospitalisation insurance, eco-cheques, laptop/phone, 12 ADV days",
+   "why_good": "",
+   "why_bad": "- Requires French at a very good level (\"Franstalig\", \"Frans (Zeer goed)\") — the candidate has no French at all\n- Also requires very good Dutch, above the candidate's B1\n- Requires an academic bachelor degree\n- Asks for first marketing work experience and running projects end-to-end",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 18
+  },
+  {
+   "id": "74576202",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74576202/marketing-officer-franstalig",
+   "title": "Marketing Officer (Franstalig)",
+   "company": "UNIQUE OFFICE (for a company in Deerlijk)",
+   "location": "Deerlijk",
+   "match_score": 0,
+   "reason": "The role explicitly requires the candidate to be French-speaking (Franstalig) with good French, and the candidate has no French.",
+   "apply_email": "",
+   "found_at": "2026-09-10 01:24",
+   "status": "new",
+   "details": "- Marketing Officer role at a company in Deerlijk, recruited via Unique Office\n- Set up new business initiatives from concept to launch; support and optimize existing brands\n- Translate ideas into concrete online and offline marketing actions, with focus on digital channels (social, website, content)\n- Follow up projects, report to stakeholders, manage deadlines, quality and budgets\n- Interim with option for permanent contract, full-time, day work; 2 telework days/week, 1 day/week in Gosselies\n- Languages: Dutch (good) AND French (good); requires professional bachelor and at least 2 years' experience; company car + fuel card, group/hospitalization insurance, eco-cheques",
+   "why_good": "",
+   "why_bad": "- Requires French at a good level — the candidate has no French at all (posting explicitly asks for a 'Franstalig' candidate with 'goede kennis van het Nederlands')\n- Requires a professional bachelor degree\n- Requires at least 2 years of marketing experience\n- Weekly travel to Gosselies (French-speaking region) reinforces the French requirement",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 18
+  },
+  {
+   "id": "74576738",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74576738/marketing-en-communitycoordinator",
+   "title": "Marketing en Communitycoördinator",
+   "company": "Konvert Interim (client: vehicle maintenance company)",
+   "location": "Groot-Bijgaarden",
+   "match_score": 0,
+   "reason": "The posting explicitly requires bilingual FR/NL, and the candidate has no French.",
+   "apply_email": "",
+   "found_at": "2026-09-10 01:24",
+   "status": "new",
+   "details": "- Operational execution of marketing & communication strategy for a vehicle maintenance group (trucks, buses, defence, events, leisure)\n- Content creation (photo, video, visuals, storytelling), social media management (FB, IG, LinkedIn, TikTok, YouTube)\n- Meta Ads & Google Ads campaigns, lead generation, community management, CRM/newsletters/email marketing\n- SEO and web content optimization, event organization, KPI analysis, sales team support\n- Temporary job with option for permanent, full-time, day work, driver's licence B required\n- Language: bilingual FR/NL required (English a plus)",
+   "why_good": "",
+   "why_bad": "- Requires bilingual FR/NL — the candidate has no French at all\n- French is a hard requirement, not a plus\n- Candidate's Dutch is only B1, below the bilingual level expected",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 18
+  },
+  {
+   "id": "452450466",
+   "url": "https://europa.eu/eures/portal/jv-se/jv-details/NTk0OTQ3OSAy",
+   "title": "Chargé·e de Marketing",
+   "company": "RTBF",
+   "location": "Unknown",
+   "match_score": 0,
+   "reason": "The job is entirely in French and requires a Master's degree, which the candidate does not have.",
+   "apply_email": "",
+   "found_at": "2026-09-10 01:23",
+   "status": "new",
+   "details": "",
+   "why_good": "",
+   "why_bad": "Requires a Master's degree (candidate has no completed degree).\nJob posting is in French and likely requires French language proficiency (candidate has no French).\nRequires at least 6 months of experience in marketing and digital marketing (candidate has ~4 months).\nRequires experience with digital platforms in the media sector (candidate lacks this specific experience).",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 18
+  },
+  {
+   "id": "4465337042",
+   "url": "https://www.linkedin.com/jobs/view/4465337042",
+   "title": "Chargé(e) de la communication",
+   "company": "Unknown",
+   "location": "Unknown",
+   "match_score": 0,
+   "reason": "The posting is written entirely in French and requires French-language communication work, which the candidate cannot do (no French).",
+   "apply_email": "",
+   "found_at": "2026-09-10 01:21",
+   "status": "new",
+   "details": "- Role: internal & external communications officer\n- Tasks: press relations, website/intranet content, event support (30-year anniversary), visual content (photo/video/image library), social media\n- Contract: fixed-term (CDD), flexible hours, partial telework\n- Pay/benefits: €100 net allowance, transport reimbursement, eco-cheques; no group/hospitalisation insurance\n- Language: posting in French; role is French-language communications work\n- Also asks ~3 years' communication experience and a bachelor's in communication (preferred)",
+   "why_good": "",
+   "why_bad": "- Requires French: the entire role and posting are in French (press relations, internal/external communication) — candidate has NO French\n- Asks ~3 years' experience in communication (candidate has ~4 months)\n- Prefers a bachelor's degree in communication (candidate has no completed degree)",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 18
+  },
+  {
+   "id": "74576754",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74576754/digital-growth-specialist",
+   "title": "Digital Growth Specialist",
+   "company": "Michael Page International (Belgium) for a client in Brussels",
+   "location": "Brussels",
+   "match_score": 0,
+   "reason": "The role explicitly requires good knowledge of French, which the candidate does not have.",
+   "apply_email": "",
+   "found_at": "2026-09-10 01:20",
+   "status": "new",
+   "details": "- Digital marketing / e-commerce growth role for an international animal-health company\n- Tasks: digital marketing strategy, e-commerce platform optimisation, Google Ads & Meta campaigns, SEO, analytics and reporting\n- Permanent full-time contract, day work, 2 homeworking days per week\n- Languages: fluent Dutch, English and good knowledge of French\n- Requires a degree in marketing/e-commerce and at least 2 years of e-commerce experience\n- Salary: competitive annual salary, benefits to be confirmed",
+   "why_good": "",
+   "why_bad": "- Requires good knowledge of French — the candidate has no French at all (hard language wall)\n- Asks for a degree in marketing/e-commerce and at least 2 years of e-commerce experience, more than the candidate's ~4 months\n- E-commerce platform experience (bol.com, Amazon) the candidate lacks",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 18
+  },
+  {
+   "id": "74577060",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74577060/medior-social-media-content-marketeer",
+   "title": "Medior Social Media & Content Marketeer",
+   "company": "Unique Asse (for a wellness resort in Groot-Bijgaarden)",
+   "location": "Groot-Bijgaarden",
+   "match_score": 0,
+   "reason": "The job requires fluent Dutch AND very good French, and the candidate has no French.",
+   "apply_email": "",
+   "found_at": "2026-09-10 01:20",
+   "status": "new",
+   "details": "- Social media & content marketing role in a dynamic marketing team of a large Benelux wellness resort\n- Develops campaigns and content strategy; creates content for FB, IG, YT, TikTok, LinkedIn; writes SEO-optimized copy for email, blogs, internal comms; coordinates internal events\n- Analyzes channel performance and sets improvement action plans\n- Interim with option for permanent, full-time 38h/week, day work, occasional evening/weekend shifts (2-weekly schedule)\n- Languages: fluent Dutch AND very good French required, good English (mainly written)\n- Pay: attractive salary package with meal/eco cheques, clothing allowance, hospitalization insurance",
+   "why_good": "",
+   "why_bad": "- Requires 'vloeiend Nederlands en Frans' — French at a very good level is mandatory, and the candidate has no French at all\n- Also asks for a Bachelor in Marketing/Communication or at least 5 years of experience in the field (candidate has neither)\n- Role is otherwise in the goal field (social media/content/SEO), but the French requirement is a hard wall",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 18
+  },
+  {
+   "id": "74577064",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74577064/growth-marketeer",
+   "title": "Growth Marketeer",
+   "company": "Unique Pelt (client: international IT/e-commerce company)",
+   "location": "Pelt",
+   "match_score": 0,
+   "reason": "Requires fluent French (Frans: Zeer goed), which the candidate does not have.",
+   "apply_email": "",
+   "found_at": "2026-09-10 01:20",
+   "status": "new",
+   "details": "- Performance/campaign marketeer for an international B2B IT/e-commerce company\n- Set up, run and optimize vendor and marketing campaigns; lead-gen; content for campaigns and mailings\n- Manage marketing tools: CRM, Dynamics 365 Customer Insights, social media, Canva\n- Permanent full-time contract, day work, 40h/week, 32 leave days, hybrid (Pelt/Brussels/home)\n- Languages: English (very good), Dutch (very good), French (very good)\n- Pay: attractive salary package + meal vouchers, ecocheques, net allowance",
+   "why_good": "",
+   "why_bad": "- Posting requires French at a very good level (Frans: Zeer goed) — candidate has no French\n- Also states Master study requirement and at least 2 years of experience\n- Role is otherwise in the goal field (performance/campaign marketing), but the French wall is a hard fail",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 18
+  },
+  {
+   "id": "560216260",
+   "url": "https://www.stepstone.be/jobs--Content-Marketeer-BOORTMEERBEEK-Zwembad-Bvba--2242442-inline.html",
+   "title": "Content Marketeer",
+   "company": "Zwembad Bvba",
+   "location": "Boortmeerbeek",
+   "match_score": 0,
+   "reason": "The role explicitly requires Adobe Creative Cloud (Photoshop, InDesign, Illustrator) and graphic design competency, which the candidate lacks.",
+   "apply_email": "",
+   "found_at": "2026-09-10 01:20",
+   "status": "new",
+   "details": "• Role: Creative Content & Visual Marketeer combining graphic design with commercial content creation.\n• Tasks: Design visuals, promo banners, social media graphics, POS material using Adobe Suite; photograph/film on location; manage Shopify e-commerce actions and landing pages.\n• Requirements: Mastery of Adobe Creative Cloud (Photoshop, InDesign, Illustrator), strong sense of aesthetics, typography, visual storytelling; affinity with e-commerce.\n• Contract: Full-time, on-site in Boortmeerbeek.\n• Language: Dutch (posting in Dutch, likely requires fluent Dutch).\n• Pay: Market-conform salary, not specified.",
+   "why_good": "",
+   "why_bad": "• Requires professional graphic design skills and mastery of Adobe Creative Cloud (Photoshop, InDesign, Illustrator) – candidate has no such experience.\n• Role is heavily focused on graphic design and visual branding, not digital marketing/SEO.\n• Likely requires fluent Dutch, which is above the candidate's B1 level.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 18
+  },
+  {
+   "id": "4462818153",
+   "url": "https://www.linkedin.com/jobs/view/4462818153",
+   "title": "Product Owner E-Commerce & Digital Products",
+   "company": "Schoenen Torfs",
+   "location": "Unknown",
+   "match_score": 0,
+   "reason": "Requires 5-7 years of product management experience, far beyond the candidate's ~4 months.",
+   "apply_email": "",
+   "found_at": "2026-09-10 01:19",
+   "status": "new",
+   "details": "Product Owner for e-commerce & digital products at Schoenen Torfs\nOwn product vision, roadmap, KPIs and backlog management\nStakeholder management, data-driven decisions, agile sprint work\nFull-time with home-work option, competitive salary\nDutch-language posting; no French mentioned",
+   "why_good": "",
+   "why_bad": "Requires minimum 5-7 years of relevant product management experience (e-commerce/SaaS/digital platforms) — candidate has ~4 months\nProven track record building products from concept to market launch and measuring success\nStrong e-commerce expertise (customer journey, conversion optimization, marketplace dynamics) and strategic roadmap ownership\nThis is a senior-level product role, not an entry-level digital marketing position",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 18
+  },
+  {
+   "id": "4465312047",
+   "url": "https://www.linkedin.com/jobs/view/4465312047",
+   "title": "Vastgoed Fotograaf / Social Media & Grafisch Ontwerper",
+   "company": "Unknown",
+   "location": "Zwevegem",
+   "match_score": 0,
+   "reason": "The role explicitly requires professional graphic-design software (Adobe Premiere Pro, Photoshop, Illustrator, InDesign) and graphic design as core skills, which the candidate lacks.",
+   "apply_email": "",
+   "found_at": "2026-09-10 01:19",
+   "status": "new",
+   "details": "- Versatile real-estate marketing role: photographing and filming properties/new-build projects\n- Creating and planning social media content across Facebook, Instagram, TikTok and more\n- Working with Adobe Premiere Pro, Photoshop, Illustrator and InDesign\n- Collaborating with self-employed real-estate agents\n- Requires driving licence B and knowledge of the Zwevegem region\n- Full-time, modern office, attractive salary with extra-legal benefits",
+   "why_good": "",
+   "why_bad": "- Explicitly requires professional graphic-design software: Adobe Premiere Pro, Photoshop, Illustrator, InDesign ('ken je door en door')\n- Lists 'Grafische software gebruiken' and 'Grafische ontwerpen lay-outen' as required professional skills\n- Requires driving licence B and regional knowledge of Zwevegem, which the candidate does not have\n- Core role is photography/videography/graphic design, outside the candidate's digital-marketing/SEO/WordPress profile",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 18
+  },
+  {
    "id": "74371723",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74371723/allround-commercieel-bediende",
    "title": "Allround Commercieel Bediende",
@@ -166783,366 +167203,6 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18
-  },
-  {
-   "id": "74503268",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74503268/expediteur-afrika-brasschaat",
-   "title": "Expediteur AFRIKA (Brasschaat)",
-   "company": "WaW Logistiek",
-   "location": "Brasschaat",
-   "match_score": 0,
-   "reason": "Requires French (Goed) and at least 2 years of experience in freight forwarding, which the candidate lacks.",
-   "apply_email": "",
-   "found_at": "2026-09-06 10:30",
-   "status": "new",
-   "details": "- Role: Export Forwarder coordinating international shipments\n- Tasks: prepare export docs, manage dossiers, track shipments, coordinate sea/air freight, invoice processing\n- Contract: permanent, full-time, day shift\n- Languages: French (good), English (good), Dutch (basic)\n- Education: Master or equivalent by experience\n- Experience: minimum 2 years\n- Pay: not stated",
-   "why_good": "",
-   "why_bad": "- Requires French at a good level (Goed) - candidate has no French\n- Requires at least 2 years of experience in freight forwarding/export - candidate has only ~4 months in digital marketing and unrelated warehouse work\n- Requires knowledge of export documentation and international transport processes - not in candidate's background",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18
-  },
-  {
-   "id": "74503270",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74503270/sales-account-manager",
-   "title": "Sales Account Manager",
-   "company": "Vivaldis Interim",
-   "location": "Mechelen",
-   "match_score": 0,
-   "reason": "Requires fluent Dutch, French, and English, plus 2-3 years B2B sales experience and a bachelor's degree.",
-   "apply_email": "",
-   "found_at": "2026-09-06 10:30",
-   "status": "new",
-   "details": "- B2B sales role for industrial hoses and couplings\n- Responsibilities: active selling, negotiation, prospecting, client relationship management\n- Contract: interim with option for permanent, full-time, day work\n- Languages: Dutch (very good), English (very good), French (very good)\n- Requirements: bachelor's degree, min. 3 years B2B sales experience, driver's license B, frequent travel (80%)",
-   "why_good": "",
-   "why_bad": "- Requires French at a very good level (candidate has no French)\n- Requires at least 2-3 years of B2B sales experience (candidate has none)\n- Requires a bachelor's degree (candidate has no degree)\n- Requires a driver's license B (candidate does not have one)",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18
-  },
-  {
-   "id": "74503526",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74503526/medewerker-verkoop-beddengoed",
-   "title": "Medewerker verkoop beddengoed",
-   "company": "Actief Interim Lier",
-   "location": "Lier",
-   "match_score": 0,
-   "reason": "Requires a driver's license and own car, which the candidate does not have.",
-   "apply_email": "",
-   "found_at": "2026-09-06 10:30",
-   "status": "new",
-   "details": "- Sales advisor in bedding store\n- Full-time, day work, temp-to-perm\n- Requires driver's license and own car\n- Dutch required for customer advice\n- Weekend work (Saturday full day, Sunday half day)\n- Salary €2100-2500 gross + meal vouchers + commission",
-   "why_good": "",
-   "why_bad": "- Requires a driver's license and own car (absolute must)\n- Requires Dutch language proficiency for customer advice (candidate has B1, but this is a hard requirement)\n- Sales experience preferred, but not strictly required",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18
-  },
-  {
-   "id": "74503558",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74503558/customer-service-czech-polish-lithuanian-english-volvo-group-gent",
-   "title": "Customer Service | Czech + Polish + Lithuanian + English | Volvo Group | Gent",
-   "company": "Volvo Group via Adecco",
-   "location": "Oostakker",
-   "match_score": 0,
-   "reason": "Requires fluent Czech, Polish, and Lithuanian (B2 minimum), which the candidate does not speak.",
-   "apply_email": "prc.west@adecco.be",
-   "found_at": "2026-09-06 10:30",
-   "status": "new",
-   "details": "- Customer service representative for international breakdowns\n- Contact with dealers and customers\n- Full-time, day work, interim with option for permanent contract\n- Requires fluent English, Czech, Polish, Lithuanian (B2)\n- Requires driving license B\n- Requires professional bachelor degree\n- No experience required",
-   "why_good": "",
-   "why_bad": "- Requires fluent Czech, Polish, and Lithuanian (B2 minimum) - candidate does not speak these languages\n- Requires a professional bachelor degree - candidate has no completed degree\n- Requires driving license B - not mentioned in CV",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18
-  },
-  {
-   "id": "74503562",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74503562/internal-sales-food-veurne-vast-contract",
-   "title": "Internal Sales food",
-   "company": "Adecco Perm Recruitment Center",
-   "location": "Veurne",
-   "match_score": 0,
-   "reason": "Requires perfect bilingual Dutch-French, which the candidate does not have.",
-   "apply_email": "prc.west@adecco.be",
-   "found_at": "2026-09-06 10:30",
-   "status": "new",
-   "details": "- Internal sales support in food/feed sector\n- Full-time, permanent contract\n- Day work, 38h/week\n- Languages: Dutch (very good), French (starter) but profile says perfect bilingual NL-FR required\n- Requires professional bachelor and at least 2 years experience",
-   "why_good": "",
-   "why_bad": "- Perfect bilingual Dutch-French is required (candidate has no French)\n- Requires professional bachelor degree (candidate has no degree)\n- Requires at least 2 years of experience (candidate has ~4 months)",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18
-  },
-  {
-   "id": "74504022",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74504022/technische-customer-service-specialist-freelancers-mogelijk",
-   "title": "Technische Customer Service Specialist - Freelancers mogelijk",
-   "company": "UNIQUE OFFICE",
-   "location": "Ternat",
-   "match_score": 0,
-   "reason": "Requires French at a good level, which the candidate does not have.",
-   "apply_email": "",
-   "found_at": "2026-09-06 10:29",
-   "status": "new",
-   "details": "Customer service specialist with technical skills in construction sector.\nFirst point of contact for clients, from request to order.\nRead and interpret technical plans, translate into quotes.\nProcess orders, returns, credit notes.\nCollaborate with internal departments.\nERP/CRM systems (SAP, Navision).\nFull-time, interim with option for permanent contract.\nSalary €3000-4000/month.\nRequires good Dutch and good French.",
-   "why_good": "",
-   "why_bad": "Requires good knowledge of French (Goede kennis Frans) - candidate has no French.\nRequires at least 2 years experience in technical/industrial environment - candidate has only ~4 months.\nRequires ability to read technical drawings/plans - not in candidate's background.",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18
-  },
-  {
-   "id": "74504031",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74504031/flexi-verkoper-mechelen",
-   "title": "Flexi Verkoper Mechelen",
-   "company": "AGO JOBS&HR",
-   "location": "Mechelen",
-   "match_score": 0,
-   "reason": "Requires a professional bachelor degree and at least 2 years of experience, which the candidate does not have.",
-   "apply_email": "",
-   "found_at": "2026-09-06 10:29",
-   "status": "new",
-   "details": "Role: Full sales cycle, achieve monthly targets, qualify leads, negotiate contracts, give software demos.\nContract: Flexijob, full-time, day work.\nLanguage: English (basic), Dutch (medium).\nEducation: Professional bachelor required.\nExperience: At least 2 years.\nPay: Not stated.",
-   "why_good": "",
-   "why_bad": "Requires a professional bachelor degree (candidate has no degree).\nRequires at least 2 years of experience (candidate has ~4 months).\nRole is sales, not in candidate's goal field.",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18
-  },
-  {
-   "id": "74504049",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74504049/commercieel-medewerker-binnendienst-customer-support",
-   "title": "Commercieel Medewerker Binnendienst & Customer Support",
-   "company": "Michael Page",
-   "location": "Deinze",
-   "match_score": 0,
-   "reason": "Requires French at a medium level, which the candidate does not speak.",
-   "apply_email": "",
-   "found_at": "2026-09-06 10:29",
-   "status": "new",
-   "details": "Role: commercial back-office and customer support.\nTasks: quotes, orders, client contact, pricing advice, CRM, phone support, marketing support.\nContract: temporary full-time day work.\nLanguage: Dutch (very good), English (medium), French (medium).\nEducation: bachelor or equivalent by experience.\nExperience: not important.",
-   "why_good": "",
-   "why_bad": "French is required at a medium level (Frans Medium).\nCandidate has no French.\n",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18
-  },
-  {
-   "id": "74504180",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74504180/office-assistant-hartje-gent",
-   "title": "Office assistant - hartje Gent",
-   "company": "Manpower",
-   "location": "Gent",
-   "match_score": 0,
-   "reason": "Requires very good Dutch (above B1) and a professional bachelor's degree, which the candidate lacks.",
-   "apply_email": "officepeoplegent@manpower.be",
-   "found_at": "2026-09-06 10:29",
-   "status": "new",
-   "details": "- Office assistant role: reception, phone/email, administrative support, facility tasks\n- Interim contract with option for permanent, full-time, day work\n- Start as soon as possible, contract of indefinite duration\n- Language: Dutch (very good)\n- Education: professional bachelor's degree required\n- Experience: not important",
-   "why_good": "",
-   "why_bad": "- Requires very good Dutch (above B1), candidate has B1 conversational\n- Requires a professional bachelor's degree (or equivalent by experience), candidate has no degree\n- No French required, but language and degree are hard requirements",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18
-  },
-  {
-   "id": "74504217",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74504217/inpakmedewerker-volcontinu-zelzate",
-   "title": "Inpakmedewerker - Volcontinu - Zelzate",
-   "company": "GENT LOGISTICS",
-   "location": "Zelzate",
-   "match_score": 0,
-   "reason": "Skilled manual production/packaging role requiring fluent Dutch and experience in the metal sector.",
-   "apply_email": "gent.logistics@ago.jobs",
-   "found_at": "2026-09-06 10:29",
-   "status": "new",
-   "details": "Industrial packaging of steel rolls\nVolcontinu shift system (early, late, night, weekend)\nPermanent contract, full-time\nRequires very good Dutch and experience in metal sector\nPhysical manual labor\n",
-   "why_good": "",
-   "why_bad": "Requires very good Dutch (candidate has B1)\nRequires experience in metal sector (candidate has none)\nManual production/packaging role outside candidate's field\n",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18
-  },
-  {
-   "id": "74504219",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74504219/orderpicker-2-ploegen-gentse-zeehaven",
-   "title": "Orderpicker - 2 ploegen - Gentse Zeehaven",
-   "company": "GENT LOGISTICS",
-   "location": "Desteldonk",
-   "match_score": 0,
-   "reason": "Skilled trade/production role requiring forklift and fluent Dutch.",
-   "apply_email": "gent.logistics@ago.jobs",
-   "found_at": "2026-09-06 10:29",
-   "status": "new",
-   "details": "Order picking in warehouse\n2-shift system or fixed night\nFull-time permanent contract\nRequires very good Dutch\nNo experience required\nPay €16.5960/hr + shift premium",
-   "why_good": "",
-   "why_bad": "Requires very good Dutch (above B1)\nRequires forklift/reachtruck license\nManual warehouse work not in candidate's goal field",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18
-  },
-  {
-   "id": "74504232",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74504232/orderpicker-2-ploegen-gent",
-   "title": "Orderpicker - 2 ploegen - Gent",
-   "company": "GENT LOGISTICS",
-   "location": "Desteldonk",
-   "match_score": 0,
-   "reason": "Skilled trade/production role (orderpicker) not in candidate's goal field and lacks required experience.",
-   "apply_email": "gent.logistics@ago.jobs",
-   "found_at": "2026-09-06 10:29",
-   "status": "new",
-   "details": "Orderpicker/magazijnmedewerker in 2-ploegenstelsel\nVaste job, voltijds, contract van onbepaalde duur\nTalenkennis: Engels (zeer goed)\nVereiste studies: lager onderwijs of max. tweede graad secundair\nWerkervaring: geen ervaring vereist\nSalaris: interessant salaris + maaltijdcheques",
-   "why_good": "",
-   "why_bad": "Skilled trade/production role (orderpicker) not in candidate's goal field\nRequires warehouse/logistics experience or willingness to learn manual work\nNot aligned with digital marketing/SEO/web design career path",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18
-  },
-  {
-   "id": "74504296",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74504296/backend-developer-javascript",
-   "title": "Backend Developer JavaScript",
-   "company": "Kingfisher IT",
-   "location": "Gent",
-   "match_score": 0,
-   "reason": "Job requires a professional bachelor's degree or equivalent by experience, but the candidate has no degree and only 4 months of experience, which is insufficient for this backend developer role.",
-   "apply_email": "",
-   "found_at": "2026-09-06 10:29",
-   "status": "new",
-   "details": "- Backend developer role for custom business applications\n- Technologies: NodeJS, TypeScript, NestJS, Docker, CI/CD\n- Requires professional bachelor or equivalent by experience\n- Minimum 2 years experience\n- Dutch: very good (required)\n- Full-time, permanent contract\n- Benefits: company car, meal vouchers, etc.",
-   "why_good": "",
-   "why_bad": "- Requires a professional bachelor's degree or equivalent by experience; candidate has no degree and only coursework.\n- Requires at least 2 years of experience; candidate has only ~4 months.\n- Requires very good Dutch (fluent); candidate has B1.\n- Role is backend development, not in candidate's goal field of digital marketing/SEO/web design.",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18
-  },
-  {
-   "id": "74504333",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74504333/customer-experience-specialist-france-region-kontich",
-   "title": "Customer Experience Specialist France - Region Kontich",
-   "company": "Michael Page",
-   "location": "Kontich",
-   "match_score": 0,
-   "reason": "Requires native-level French, which the candidate does not have.",
-   "apply_email": "",
-   "found_at": "2026-09-06 10:28",
-   "status": "new",
-   "details": "Role: Customer Experience Specialist for French market (B2B)\nTasks: primary contact, advise on products, handle enquiries, process orders, coordinate order flow, manage complaints, support commercial initiatives\nContract: Interim with option for permanent, full-time, day work\nSchedule: Full-time\nLanguage: English (good), French (very good/native)\nPay: Not stated",
-   "why_good": "",
-   "why_bad": "Native-level French required (candidate has no French)\nStrong affinity with French culture and market required\nBachelor's degree or equivalent by experience (candidate has no degree, but equivalent by experience is accepted, so not a hard fail)",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18
-  },
-  {
-   "id": "74504344",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74504344/data-analist-oudenaarde-vast-contract",
-   "title": "Data Analist",
-   "company": "Adecco Perm Recruitment Center",
-   "location": "Oudenaarde",
-   "match_score": 0,
-   "reason": "Requires a professional bachelor's or master's degree with no alternative by experience.",
-   "apply_email": "prc.west@adecco.be",
-   "found_at": "2026-09-06 10:28",
-   "status": "new",
-   "details": "Role: Data Specialist Productinformatie / Data Analist\nTasks: Manage product data in ERP, analyze data, create reports/dashboards\nContract: Vast contract, voltijds, dagwerk\nSchedule: Mon-Thu 8-17, Fri 8-16\nLanguages: Dutch (zeer goed), English (medium), French (medium)\nPay: Not stated",
-   "why_good": "",
-   "why_bad": "Requires a bachelor's or master's degree (in IT, logistics, supply chain, etc.) with no mention of equivalent experience.\nCandidate has no completed degree.\nFrench at medium level is required, which candidate does not have.\n",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18
-  },
-  {
-   "id": "74504528",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74504528/operations-officer-kyc-nl-fr",
-   "title": "Operations Officer - KYC (NL+FR)",
-   "company": "Start People",
-   "location": "Brussels",
-   "match_score": 0,
-   "reason": "Requires French and a professional bachelor degree, plus 2-5 years of KYC experience.",
-   "apply_email": "",
-   "found_at": "2026-09-06 10:28",
-   "status": "new",
-   "details": "Role: KYC file control and compliance support\nTasks: adverse info check, analysis, collaboration with KYC Coordinator\nContract: Interim, full-time, day work\nLanguages: French (good), Dutch (good), English (good)\nEducation: Professional bachelor\nExperience: Min 2 years, profile mentions 5 years\nLocation: Brussels centre",
-   "why_good": "",
-   "why_bad": "Requires French (good) - candidate has no French\nRequires professional bachelor degree - candidate has no degree\nRequires at least 2 years experience, profile mentions 5 years - candidate has ~4 months\nSpecialized KYC/finance background - not candidate's field",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18
-  },
-  {
-   "id": "74504532",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74504532/operations-officer-kyc-nl-fr",
-   "title": "Operations Officer - KYC (NL+FR)",
-   "company": "Start People",
-   "location": "Brussels",
-   "match_score": 0,
-   "reason": "Requires fluent French and Dutch, plus 5+ years of experience in KYC/finance.",
-   "apply_email": "",
-   "found_at": "2026-09-06 10:28",
-   "status": "new",
-   "details": "- KYC file control and analysis\n- Full-time interim contract\n- Fluent French and Dutch required\n- Minimum bachelor or equivalent by experience\n- At least 5 years of experience\n- Location: Brussels",
-   "why_good": "",
-   "why_bad": "- Requires fluent French (candidate has none)\n- Requires at least 5 years of experience (candidate has ~4 months)\n- Specialized KYC/finance background not in candidate's profile",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18
-  },
-  {
-   "id": "74504647",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74504647/tijdelijke-customer-care-agent",
-   "title": "Tijdelijke Customer Care Agent",
-   "company": "TEMPO-TEAM",
-   "location": "Lokeren",
-   "match_score": 0,
-   "reason": "French required at medium level, which the candidate does not speak.",
-   "apply_email": "",
-   "found_at": "2026-09-06 10:28",
-   "status": "new",
-   "details": "Interim job, full-time, day work\nCustomer care agent, handling client dossiers, phone/email queries\nDutch medium, French medium required\nStart ASAP\nSalary: attractive, 32 vacation days, meal vouchers",
-   "why_good": "",
-   "why_bad": "Requires French at medium level (goede kennis van het Frans is noodzakelijk)\nCandidate has no French language skills",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18
   }
  ],
  "search_cursor": 6,
@@ -168817,6 +168877,146 @@
    "url": "https://englishjobs.be/clickout/8d892bb9bed5957f?ql=ql&sig=37cf6b17d5f9518cf1a40034f08c5855e3a67220&e=ckKARSkItjnZLUQ5pqHUBWWdRsUyD8sMpsV2r8JY0Go_tSFw37R1pee2Isea1hagAHO5RLGaXP7YmYWTPns3UrVVEv-3twOj6Uql5ysBLdnEJ72Amta9gzSepl30p9DxqM9nSjW0IoQqr2hMpHcQhU0a6-eRvMJcEmF35f5BE2QI9QuTFFBk_k1CfCkzlN-CMGNbQh7EJ6ThqrS24BR_wPmRRIVhmtO9-JAwD_ZIakfhYmTW09dmXbHuUYX1tKhjfvD71iU4J664dE5U6Ego1YyQ4aJ3H8lC6tn1UKGVpeeql78sYgUgri-o0P9ybZ_vWvHtfR59iHPIQuyvjnYi-WobZdOhl3DTOaKGKQ68TGQ6gkjR7MrPHoW0nB-FAFyo0jbxP7Li_6yCK-lbajQeVvzx2zmDTRQzirExxq-P-J7uq2o8IOgELd1yIERUt8lb6eIyAPP01h5Dc7XH8JvJDxP1Fj9BRCJjMHJr3Qy6zZNTy7AAmgpjHBv68HaXdApOCs72L0TtE4kukONaMuFLIntmyV0viR45trd5jiR4U4wQHi-CQLMWm473xcpy0SX9fAJXrumuTmRWUZWaVOmXq-uuzwqxMr489NkdJo2r7NTeON35kLgSfN_Ftr7CzLGQchENV1Y0IAwH-pfPaILxevR8DWPODMrDlfDk0Cosh92oNUDdKqMW1lmm85I8e865IAgumSU68qm76SaosN7M8f-AeatQh8wnGdzygp4DnoXgMw6ra6sEXpANN7filFJO5kEOS_mM4qe_J8e4pxgUtc93L6sU0eFUHY6CSvPrjED9dhDnsieBfcgIHPdOv4SGAkU1qn63XpAobIVqsGjg9DQN6pQgbZR1WeaqVCbkOXTgWBwuzzSEIl5KSOBB_iyeU_igto17vcX9VfsDZvw71udIToMCRB7PSDp0gARBNq_XI7o-BcgvGU9gLgyw2fU04yv31AM3zp5DOQ6grQ1wH8qfLfsKn4CKM26Fn6MCQaE7MaFYxYHuinFbF9OrTVzzK0ixzqE7G_mBq4VtKXSeghyb_98SYLG6rEpp7jyWCJuBvtKXTJ1yHrkgkK63yzkYmmikk95pOlx4GCJcERdbivqpSZH_UuvwPMAIi1Xlkwa717ILOok_9nV-00pKwNnaOtony2FJx6eUZBzODxOwokJv5KeXzPKR6qcV5eMkH6MEASaQrO691zxR57he9hsbJ67O4HKFnE-NQo0f4mfT_37YW4d_TxO24cjGegI4qQSnN4_Ca1Q2w30nlOK_WX86HE4sUwsaIzeFJ6IWoQf3kVk9N-MHvEyIn9nNX1us1HZ0lIp0Nn_-otaEU58X7xT4UDWKlJO51kzZ1K4fhqSw831K2r478Pltshxe44RGtoGwej6P95SE8Af8fubIXHqjcoPxavlJ8tRE9A&prev=RQ5971CB7D3D1047&p=13&pg=1&w=1280",
    "why": "redirect link, never a readable posting",
    "at": "2026-09-09 20:26"
+  },
+  "872564393": {
+   "url": "https://englishjobs.be/clickout/453a9de0c078cfa1?ql=q&sig=854ced497c4be97c97c56560cd48e7dfa0166d21&e=KtgpLc_MZs5lq5ahiTBB3DMmx0J-kCFMPHEgzODCaeQ21xpc0U_RoYEXpmA702lDphA8s4ET0MP70KEbcr77kXYYOfgAouCE_ouaWDlVO27gk2_WlAVJsFcxgukHuZs-iAsBL8nKmuSX1h_x9dJnKBpAz58MyDJeYPgAj2FKtpwpBpugIT54Co_fe9tukiTxn174hZfWtAvrkpHyIwTvXP63cZlFgY-mb4AmT8Xj4puLWe5eUgHBGPfd-zfGC-k9_OMnqRcoxtLOA2RbltvyFIVw0VJINDibpwbqPivb-nXxFAWQUydameMZtIrfM8hmfAM-UgXEKOY-Q9H69t9XItF-gFSbxyU7P2lDpPGaufmbjasFFsD9ieMa3j7oH5k_5e-AEx7bku82VmzdaDgUV21-0fT7iwQxO1k8ej-jihs2z4_jbUj8a4RcSszY1pFY6zRuX6OuDNshbutJ1Pdx9OrAGIAhKRqxJ0Tr2vPYyKTal6EB9Wm5Zthd7hKWQ28rzJiMprl-9NXW8L6Fbde0M52MoOKePWaTtylWFJ5Cj4zcdhxcc2HjggafgA2t934_nN7dJjFoplAAgk2kHQSRzeSKHLKKbGg3HSPuE321YKNCURn9cC4tJK2BMlc1W9Zrablj9qhmTiFFU5lqftAUmjRX-i86oejjDkBcBY3rnF11y7lUDHovjmVpdqTzl0W6bXFiGGFOA8RuzlCOEAsaN71zTFbXe8rbgCKTNPPi8e8mYdpZp7JSPnRM56Qkfw_WxB3Ptx7fhzVoc_2J9iAYAckmzwThm7XOGJ_LkGmxZl_ugJzwjVqWwb79t8JAXfwUeIsTEmqIuWhEwaBNLx-bMlzYDIM1zyHMlnTsxB7bZ1uA63t2tbd1lJiPH7V_kgKe745FJoRFmZUpkSNckci-rqRkPihmKBy36d8g0ilvGQ7upeOBcO0W67zifGlhgcOJ7e_qYUZHtfudYw7urbJ0qDvHMGSavT213lKWewc9UdhHf1L2wDBvXlQNkfXq8pzTK2krQSZGIsbwK-E-3_L9sIirrkMvcIYZbJKgtYGFYrI_vVqI5FGnvZT50jY7tFuXLos1eQcgm43R1twjojiBEweIau1BSSl7wgR_k74WGdHnygUNouoIDLnaVs4NdDK-LK0XJ8GEGY4mgT_fqEM_9lZB6f8NZymwWyXsU9RBjWZ_3ix37bEQsXk_Cy0OqXW-BH9TNwHMkAF1w1fzB9aGu-9XMReC1dse7AXopBTXsE2gDE3epWMPQ3piImOGvgdVv3Paaofftyy_3o95jG_r9hli7xqtGwFV5fSqgUBrJxQULaUPkBNA7OkdMyu6KKu2Ic8N1pwbrGh_UhSs-01tcx0vyCgpEeZp6G-m80n24lILtCNWZR5n6tHAWnPeAE_q4CHVwRmxfXlNUnQzWRef5wJXpG8K-lK9fw_1CssYBaum8mp7mXeIw_EfW5Wa1dUVDXUAM4C5atc-Kxy6iPLkrLuXuofoPX5x6PsWlIHo0QQGW7kR16gOF-cmA3muiVc-Rp5Xluu5KHxL-ViIU6BGD7q555cEatgUAiWwR6Lhb1P0rtN4h8Bf9r3GjfH4m-B1YohHz5K37d15HdlQhIG_85iV5cfjnQ1JB-7I7YegyEMIsBqV48bbWlwiTq3UQn9JJj6iecXqFBCMhFNK8ucSOBt5nGTgLInroUhcwc-drfplB90uuIfSTmqnzqnNoEgoHbb24XSJrwg25xnO-0oXrkDFuJNYerrjLGFulDg3tt1m13FpnZZDQkSIDQD16EzHMZAeDV-viyP_rQ1B6o9WqCFmnjinQ3Hk-ZM3K03PjbWPvgu_8ke19xoRaqEKtal5nlxHNoBTRgNRBF3uROu0IZJWy7MYjxRgd2jbuFhLe52zb7LPVhU0f-ZqcxqVmAtqTPPwYZ3AfseqD6XtcGckHtCyRmMPQjLL2hMiSVsMCGWZxLnFKVmcZnDu4A7MXpHmq8vuNUuVgxh84XQVvGt21KcLyz0rhmFuN2qy4aAJOlazaFRDv9rAdwTAGNW_viJgBiLq&prev=RQA21E1E759A3382&p=13&pg=1&w=1280",
+   "why": "redirect link, never a readable posting",
+   "at": "2026-09-10 01:19"
+  },
+  "620683430": {
+   "url": "https://englishjobs.be/clickout/453a9de0c078cfa1?ql=ql&sig=854ced497c4be97c97c56560cd48e7dfa0166d21&e=9cG1UYf5IqfJ4z5kuQwNW-8OpQ_YNZW0x--fPAFzYfj_hHgIYlmQsTVszEIAu2Txi4yo4XNQP6eujxTyrZ60RRmXuuKNTZQ3Murrusw95vTu3-2ABBU6DfGPcKdxwShVdG26IgYSGUqBr4r3i48DDrDBGpdXitedJYbevfO505FHKksoHE4AxSqgznlA62uMt8ekvV5iRoaiYNWEVUD_JQqeCZFYE-xPAC6_jhHolo-K2DaeSY92w3MqKYbBXGzRh0P1xmwrKHYW8nFoWfbVBapY-1fQLf2KW2lY2ml7Q39oeYkppCGLal0lDseK1xx29Hl9SsOx6owXb7s5rnpdNNTizoggGlVcQBC-EsllYCKR_PLQgeFHGiv7Fo8QOE5SfKJxIaIatCM_IrofYcfSKS9TSz_OM-BTHQGyG_rsI93VS2hh_SF8VhjcsRTru9TG6K1UR_L02y_-AbiHq3EXc6zNXbnJQB-WkYGj82oHTwEJNdTEbw1-polR9IaPx5bsA4qPYJTZoOg-_-thidatNsYnlf4WurtvgDsOyen5eVMA-4jyPaMGCfKE6dWcRN6aGiwO5_v3BIU1Hgh2HA382kwE14kiNZnFdf9n5rGxSi9KAiz3BFemwtoaVs92hPHSBiMeX6eS4JSm9ggOBHkxqwIQ2cZkH1fyvi-YUVnOtKHbiDVbAFbxjVBEWZidbILnRD3ZI_5Am_4Nayf8m7p3z1mZdjKmXJ-Jk5Gy6HxvoMCq9hz9VkL86sqdmN0mzJWRemCdd4nyh_pKSVmFHyRvUv-XELMwoX7nPI9I0nfl9yxnxFOH85uWz5As0wiUQ2fE1C9I3d9sLVjQ1tw12dMKprNWCMGSBGi-XuNK88U8jFW7twVryMa8swSuqUG8q1nhjNbhwib2G8rGBGBXrwUF7k7FHXVy5i8sVNKXwMVsb6YUg5Oz_DYfdolIorr0fI0ephbjLZ8iLpT9yC9OrSrcMLwrWEAhu4tpeyT-s6AFrwD9Jt4XnyMlcvA4IKj3UGS63cDo71i6_NXWKOBemmBD5e64Q6LM7hZ8h6RmYpxe42K26uDaoZRsDTMSI7iVDXC6o-gCY-_tKsHdqA1zMlYajstIf6JWuCGDKrYSWP_yzkPF4NB-hZTvw_QW-LyK-5HeTK0Y_2Datv08U5n2Roj8liNb9YkOn69Qv6t1ZP6wMpMRt8tFJLcikIZ8pyXiaa4ww3KGZ7Rtz9NnqVt5vGfnUf_Stj0Vj6tiC1g4207IV9CyZ0AsElWzIdhymRbmkeKvul5H_V75BSLp-PC1x5FdGN7A2SejKHi5IzBa-eYo7N26b-d_nPeT60wY_M3s4Nkz59AGe7PkdgH_8Ya8AYsbl-3XjLn_r5n75rgLjyUYi87967FxylXN5TfBX7rQhDJ3TDvh6KA6BiM1UHzeaFexzWufWy6QTWSZu3HcI-h-DNc96aXaUbkDvzLf2KbvRmKhsen8GxTp7teksOYXw7DAtfm338GwFxUG3OGJsv0z2nQs1AXtv4wmuKuHGXYp1Vpp89SsrdQIu1ujjDl1LEesT29fpMGbzGiqFLUqJR0yHHmgr9BXvUbb1KG5Ds4rQHqfV9EmtXd8S47WLMZbaeXPkcXeYJL4RanqFgTqI73DBBRU_kKwGVYdgqyabjgj4IIcJm-i0DnION65a7F4lIDPV3WujupeBecZdKAggKilRvz8TsPDRhnxjeVFhlc3TAMttrA5m-O-t7SF24Z79PadaqrvBHqLUl3jSc-sxedeT19uYWlJlWVK31MVLV0-YzPmFmAnUX_QVGvRtt6SxvxconR1JA8jf-lbUJs5mcT64ROPIcZ0Mzbjq2C9aXsEJNIhkjFGpfgWdIw4DGPIbCWATpSewE2EVcmQKVOu3GJzhXdks4I-HpuUuTwn_rFh-CbncFJhDbkfa69CnPN8Sig0MxjTEIQWs0xP7LHuOwabzsejBsappGjVslK3-zcjSLW_YAsyA4c78CIzo23pj3PY3xOFSjRuQpr09pC3OTAXRANDnQUdC4YoCQO2L-aXt06EZ3KX&prev=RQA6CC3143F71E78&p=18&pg=1&w=1280",
+   "why": "redirect link, never a readable posting",
+   "at": "2026-09-10 01:19"
+  },
+  "178333438": {
+   "url": "https://englishjobs.be/clickout/a67671755ee11ed1?ql=q&sig=abe860c8e372d21a381e5e08902ac91c1feadb0d&e=puGIvid_QPACBzmW7YalHUJQslGEdsJyIHj70gZEPkSPkqzaTgDA85sIlZaRkE6F0nQQI0XT0TTux_KVcV0pHtPfJds8K3uawhxwBiHxX6ziqKJ1ZKaMvYDhEhTRImqa4MgJwyMQL1gl90WjTULMRRktsP46CBh6mIOmseMwty_WMuXJn-EvpNaMecO-HdBGYKhRHE5CCV9-Lifp2JmRFnx8v2gQsDgULbW4wRgDRDI8siLWwq7m5Wrzwa1ml8WIQ-XhM1SQtn_l5co3fwis-7ZoA2XSVH8aigNez7sCHWHclgekcbZMeoK0OwV7O3Bb2D70dYQfZTRn7PyhVEU7pU1nYByhJD5ic4ZkiLFeDe3i3uFRPZlbEIwxQi5dlGmKIhZEwXq_ixKqVhlHIbHmKRFvE7DStY8pE1OqHM5cO12QTqRmgthjlB_kvJYJvW80A1uCfSDIUYN_Q16Xft2_wGi8WjMpbXKBxIb_rZTyOe6X1ycsws3pthjHCYNvHKRxFYA0CYjtVw2lKyookFQU2ql_3zrJ9SzSczpvz8cWa10_4XtLxNf-EBv2yyz_efy_EJIldSAL8kT0UepQOMfFnz7RuTS2XkL9hhG21dwm7Dls7WTlCosPS1lKb1Gw-3pkMY_Z9A_9h-HynG-1E5sgy3MwB38-TjkhWH_PYVB9gtv2TqS0WqtbZ5ntzqyAkK0OxzOVTmbVR7oNAFp910CuTOATfJEdwqIDk2mN7XsTD0ATuhuBDa5WCO1oIbXOm4MNLhoMFYISvg8YR4GB3jje-k_5GZMoAbqyoorORpKFWbt5NDScoU-RXrF4cTMmkduQME5JA5s9AM0uKtju5_wbozUzQ0r8xD_jP54Z0RJ9RhlPvSFlto79zM8_uZ5QpQGlif3ICrHbJAioW0do229v4U_KkP5rndSWPdMUNveQDahRInp_kp7NP-SnJ2Cr-1RHbbxndTR8l6v8wUuRlHyY8oczEqdTOUVbkN2DYsNXSY3bNveZyNWJgju3LNWGB8u1CuocM85OvNRakmTiGa857gtuIxg2ZRZZS64hSeAdEpyMHEuC9t3wmXkLZ1ZOeP4hm0V_ucoEkuyUpLFI6vz9G461Bd1fFxzMi0TxJEFQHURQ8tN_3o_lAj-TDzddt381G-5qfGGGJ1qlNwv88ZsCJQwW9eYi84mkzNveaTloSLIPQ95Orlm1Q1I6kPBczPRd6fn10xxr21cajopIw4fJzDyn2PPqxfZCV1EUe8L9oT6GTl4cXSsb8wAXCOGelEQZ1xgrk3LfzNtDVNnqxGqIJEeWtvXeBmdQQTF0WssUeLlCCSJfAPPGuqzw71AUmGsOxu_FF9kH2BaAvt6Uqr_tqOmOitm3_rv5qngV9Al1mScKw6BmqfJfzxFFIeiyKyktPWfzy3xp4oritB1nAYt_CpwiiGXcZMVVacgXxasNV2LuYYYPvRB6e3jq6LAilJXhdbwan_5N8a-PSemxjUGLytNbVz2d6d4ruApS4befbd_YmBdf84fziTUxLTx3Kn8r3SWpF_boEQlzPsjGCp11_CI76ZG3SNl1QI2dJTEIbkLFUaC_kp_fhwUCMWCILQ9p_HVIhQzyf5o1QjAAG-rvFnGVcHyjmjjMr2_bqB9re0vv_PkgtNTA_25CkP7yi59lMxd5SS4JhvY6_gA1q8D8tDfJ69SPCP0R9Ea89O8qVwIFkFc_LB2InqaXG88lhhPcbZn25q7bWTwNv4nWKTO3F4cxBE_HFOBniN0K_ej34nIN8280HCDCGRUT3mG2jxv19cSStIEABD4t0SPDP7SN5fw43xqxUNMpiTBi5tgI5UIqVC_UbYdJRD9ninC0SGI4yQIqPV5pUIEe0807n_qjBULnhN5TdXBBVPJSHy-m9vGAaQd2LOZn26pV0Yqwq7FA2_vheHplbT8QXx-f6_G0TdNR5nH4KjRJQ3Xzp91Flq6HmN6Vniupeq-odRj6qQJhiATVHLyeFnnW9ezmef0EsJUzoJffoOYcAX6X_SgNcjvCDLXg_g1uOkCvkaizmaYoIOfj&prev=RQA21E1E759A3382&p=5&pg=1&w=1280",
+   "why": "redirect link, never a readable posting",
+   "at": "2026-09-10 01:19"
+  },
+  "933673090": {
+   "url": "https://englishjobs.be/clickout/11659ed7623b89f3?ql=ql&sig=ec641fe0f37cff386b30ad2c924a5e39fdee6b9e&e=p_AmIqt2psY0rYuhVC9y7lrYlhwoAp9C3KeftIFHFa2neXVp94TbWlj3ZTMHCc0Ty566B8ctNHoInVlddhKbMomm6hS_jI2X0QxcbD524D1uvgu49K9h0zDi6NREWLvecSHyR6mZZ0FhYetPV5WZPCjbQWfrJPqNMEw0riuDwOAVmsoYcECXSr8h2hQd0uoWjwWUY29amU4qsXNcZbz-D7xPChI7uchH2amx_HOH-NZJkcJturN0oOjMaZQ1EdCo0fCLRQeC7NTnSS0oHpcFZp_JJunxXh36hBhbq_sDLvUR_2nJQd1nHsIe6l54eONMt1cY6qO66t3bN1i3tFzQep_y_Jak03I-s9F1cr9-2TtukXeSDIWxAa10H8jV7Un7-11pC8TmWzCxQlyEA84SF82T7ZYVNnpW3LOz4OIfAk-Pgx0_daRAcNfEkZOaC27nPcKGyHtEfCSYe0UuQRNoMQAw1psCMZl0At_KILDFfH9_YSBmE6EwUcUlo5GMD5kfl4kAlIokB4aRKqVwvHbPRUnP2CdgA2ZzT9CEMZ6zV1YIMBN2lnFCxvdCvhtO3FUMKJmvCn_DE6KGxud291N2bQEqe8RKyX_NxiYtasjt9-1nSriPYS3-rTIT2JanPwSzYk9_jZ9mxRrgAJpD9zmaz-4rrDDlemtPqu_vtI56prjmXPnEZYt_8ijWbPOgAcVyeeNioArbrmXzv8ZezBwlH0MiOGrLzYPIeYiv-FZqFv6a44g7oxoal_dy19fIAZqMHrDyDuDdxEmiL8pexheHk2KRLQzxIYKhm53bl-hBHWGDOOpWWh89bOc6T9m2YsRCwdjBEtibi_VHFuBkKhHlWm2pWna8Ch-TcmwRSAqNCSlgQsU4mgfGs-tOyS7o_0R8SfEtUHe5NZIn5HP2a-ZOiJ2vKAzuuHVtV_WFeQqkqWBx0nyoTQundjIREn6n6e7nH2rkflPwqIJh9Mw0FTFS0mOZqJv6_v_vMkAp-Y78z7E-O10ldj4L9--Cs4brflxe7kq4J0QExqAxsez6dBvMJhVyl5thM0h06uuC9yValGhdNtjuAj6LJSMbtEOqjrzlsPyd6fyfxUi4vSxLJve81RaZ3RBBnF7fh8c7xiAaY3Pa5FJr-R3QYCjrIO4Xrs2T2D_HlPXvmVa_zNaBeE4rV_tr1htV1hhJH9tK39Z8_M7-_9k7haCkov8TpzzK4RQWuuswNICuxG_fewCld0fqgl3cqcYF2lahvxD4j66zPf5ERlahjOxD-t_nDPjuxpG--6qiEh2RIrs66ODx5lxX8rpcuxsKdM6tQNhw8e7HoufzY1AoZ6OyN5YwEkivkFryrZPOXPNKORg0k4-1YuFU-gUv7aJsjAEZv_2wW1ULFEUTFHxSLBc2NbuAOA41K_syH0tXEKTaJch-z9ZSEf7IfiMgtVfNYoTey09Tg4rgPs9oSzX2bMfPgOWPHbldeD7vLIQQkk088zpVGldEO-Wv6LwDnk8vbgjgzECdY8l-sDgqMfjx3PHu0WPznWH80h6rbcBLBCWYxKap6ViKn96Rh1oXdGXaMvPsxlhO9uq-h0bQ4PsEsoSo4AoU3dqmd3qNcw5gqCqwgUs1fKtOk4XVIU_o5DF1I0nEkfwkrNKqX7cO8EQCAbgPPlhn7zh3don1z4JMHoNQeb7wgB4i_dRN4iL0kicDM9fHNSDJWtNAKCaGMvoaWrCUBbXdmjrhA6nndT290g7SvkultbLOH0voWhBZ6EN1qXFSPujglO_OT_w3wo3y7G2Q4tWnDU8LlqGty5cq6QKLdrLLjCNIq24ogzARLxpLRPgVPD2u4WHMVP3cpEZuuWKU4phlvlCKnwCcj-JfvdDQtSa0aKReJwHnpUuxKiyprObN-taSoXK-FaSK9C7_JBjNrVSZJK6Z3x0zwfvQepu_5-INXT5OwpQadBr4iF2FpE-5__YNkJ_l9eGjO4Ht-GTzlK9Tf7Msi73RCd5-RwalLpObDzlbPpWH2m1ZJZjEH-kdhV-kGU-nW4B_fw7OY26CH_4U6maq4k7y_z_J&prev=RQA6CC3143F71E78&p=7&pg=1&w=1280",
+   "why": "redirect link, never a readable posting",
+   "at": "2026-09-10 01:20"
+  },
+  "448024214": {
+   "url": "https://englishjobs.be/clickout/6de374e5ef2ccac1?ql=q&sig=308cc5051e1775506e8386a81c4911ed5e2b1f5e&e=EEs0yuVkxzN_lqX8Pl4KsHo9IH3QudWAtmwDr2XxR4PnV3J3Wf7_van2eyOdGEBZCTRMYoIdJHKYzVu9GMAzX3nqaj8q5QRWatxWMIssLNVD1MVkTwcnjyIApNB5zkRPv2yl3X02uLPm2bY5HYZ4I9gV660EKQtlAUvgmQHpJdX-OUP8uPnWBsRB1Jeh_6pql2CbLmZumdsNC8G7Wvoqh28b3ufAZ9nVxemQrE-yMPr_9TwBIfvIP5bVYd4fjb9-vhvN7ev3v8eTQLkzoKFXU3m3HnJCFT_NKlLZMEa6Y-F8Y6oF223cScBoDfRovzHAUHXj7D-GkzXxHvrK-TZZLtsZXe-CxyHS7zcP3siSU_lDMvLp3BVuL4aYfc6FXiVbKtUkNnL80ZMYj2mDJfn8bNJl_CorqVeoIFCHG9FTpVKmqHghEEVdVvvKDqkz9oaddGnFNSL1yDJEEH8e3tTuDteuSLwSu6eTB8nZDQ6z37756sSvMV1TymNPGsjy_dst4Zr_Z53_EfLhA4f9Ok8X1x4vxFih0j2EQkreOtlW04d7plqcR62utoP9VNFJhztLfg3uTKGqnV2UqFHIn6BufwZ3uSdoUwhMsHjtBo4m5OmU0mOB72LCqPDDNMb5vEFQLz91iHtp8YoemxQqt5X4Qy5dckKys1gtfXaWHGlDMvctg1gWN_NM31LwBwPLN5CZ-Rzxmaq4rXpnCzNSh7LUo8qIPwn73qx5M41kr5MPP1l5aJ-Sm6VsXlrDCcnAZhaAHCSelk4qmoRMvAN97Z185iUlD7YlHbauBsW5np05SU1fjGl9oDARKKYeCuU5VZdd3gc6McZvJ969H6Cpb383lBJt4UGeBy8wv45h03yEN0GlC-TuVWBbimPfH6Zf774QTWtLW60XMBZjQCKssiJgGZBbila_had0VRTsxnCe3HyTENhn2jlj9OnvqrMCdHnE-fZz0rlz0PCtymdmJtRyv9Zt8op0HUckcIpZiaiaQ9do3DP6F15iT-RoHqcl1yJrIDA4I736XX_GDHa9d62va0zhCzf7p9_ALK3rw-W7B0awVsPL2_ofExQHeDRN5AmgdnZMZ8cvwrX3hRt0y4RM3ZqgoeWyVG292Q03S34H6o1sM_xYlrXGP4ayiWV1oCWQw4SUdiCuYdR7rVINbEecNRJNiH_vITIKr83Rvo-VgSbjxhiFQlZSYM-m_91RPrKO-JWZJyJ9Ex9-1yl7tB_EWqaghGmAyeD9azRQJM8PGzV5JDxjSmbtqAIZCMK7-rZB75yDEDXeC43kWGO0dXDpti8qpNwxxQbUBo2CF7G_--50QrwEGZ1ATXUV-9vVcGBlY1BXeC3Fvh-xK4biiXAjSVWeDew2xc0sJUA1Bkh6zLb6HPWZ4-MRtu3m6OPb1whOdM3RLZm-Vqwv_7ENmE6mhWDqBor5BXw_sIZ_0Kf0EEaLAQxnxII4Rjp7AkwyNwGwLYeUXqd3YSOfeWXBdv0Qz1aXilWsjWmpc1do6FDmfq9T-NJQnKVCNIsD6zXY_RhgCz6eda88aRZ6SzN8lAxPuNSWJExpKaA0a9dWlWi6VPnlf9Uuxo4kZDY2yqK-db4A5VkyiCG4GtBQVHoigUTRXcHEfmKJYqxM_uk2nzWM2M-1GtISlBGdhsR6FNGokhc8RuYgIbRI0OeDyfasLo7xyQjqk1h3iqb4Bh1eq12zWlSiGqusB2daTMuRcbdaO4j1R4xDc5o21p9SlmDnqRf6yIegp27dsKLT7LHsWPyHGcOXgxga0Gf6cmXzXUpxSzAFyifBRmS2jgBsaRBwf91D3ir9jkaK0AHUlO1wZ8IfUHwwt7UUTh0kLaAhuFs31sZ_YvBj8aOkyFpmuM4GGnX20kWbFKkuHWEBgvy6Abhk2GMgH7Rx5w4KDt3w8Hh6WXaYnIyb4-KIRWloelscQ3Y32M0hOq1MghB7Ty7VKcs00POoa5Bnn1LXviGOeJitHyEvUh95785Y4uoHEIHSR8lIzMSDi_DC3nDzUZH0T5nTVJ2k1tWbQy_eQuT_0ynJwT8_yRWh&prev=RQ8B8EDBF4E0133B&p=20&pg=1&w=1280",
+   "why": "redirect link, never a readable posting",
+   "at": "2026-09-10 01:20"
+  },
+  "870865303": {
+   "url": "https://englishjobs.be/clickout/ad2a3f30e7e85f37?ql=q&sig=15b4e07e35684d10a2835add6ce572757b31c84a&e=_axdNp3nlmtjKumTiYnR7E_fpz2AE2Alw_rfCeUY3g4pWZbDeWz4so44hTpQ4-5WEttBdnnlLeNpfSpMuPiaFqMiGJjT6ODnwznalWAHeSH9UI1_lLO32QMCMCBmuREHoHuYeJh9zeMtZR5jKj5Cstyxq5_QSajLeZwyScHQfPffzFksCfVmrHmHvFQYu7F7HdGwefz4QQHxtVZ-nvJClcnuBT3zdNpbH_BTKTZhi8476P4ROQL2m7mvfyQjePNip-767CuYVin9j8z4NHxIS10tGLq_doAxCnMd6DvqEV5U-XNjYQ91B7EDAF3PkMborkqxkbVfnlX2N3BAvPcvc0vjADGwxy7OO3Z9q46mxiV3Yg5eehi6z1Qoti3WMbnBuoo5oZ3lNhwpSFUxVE23seMX0fmbU6NzDuKUtmjgOkgEeLjqnLfPI9j7cD5VCT-rmoV00UJ1NlEDKB_ayWLcEpcPY1tU62gzH0MTqIBsMwM8N_81G0_Ig_tcudAHjP5pUnzbtL-LyBN8IgwamIyC3_341dW4lAnye2nQWs-LQfhKqGZIFs5WJMTmH_E3F6oWt-qHrZieSLiZ256tur0xD6BalQ3-ExRhUwrSPuV9301o-AUM71NqI_1hDq1I9z9SIbQAVc2fXUe0IxNLs9eLQ7CK2tvY36v2YYjPCQIj0mfkS9-aXDujBUv9fWd8fcIGQV3URFvpcw7n_PjOdk-V8PMNjfWmsp8HSJEv6jClQxzRPq87uM8P0jDLguxq4J1H3MXIeMbFQa8hAeLvLnzIuPRgXvnNMB6od4L3ZcQgz8Izqqoc9QVaCwXgrdn-a6Q5ObFZJE62rSA2HG8kk71SKp7N1Pe2qX0AUbCzLiW0zqoCq51xFSI_c5FHi0eWSOsuB5HACJGuAqMSC-djoDh5MaeOCc4q7K48RzAxXJI9zMjJHDmJKJc6Egu5-ZyEjcsVnREsTCRFtUtladcHw8cKCpgr72T3rxoxhcGrJxIOMy05TG45NXr5-3XLd0EABmacfErOXJ6Zr1gkAPY74-8qmYd7POmticfzkB38dJHr73UZiSJ7FVn_VaVv3H0lDXXH6JfW4uOX6NLstcasAvqmBsDpRrKb19FT1WaFfipTJEPNGcafkMYb9GdMpZTQxoib1GKNJzabw1P2pT0uo9VXIoRshBNmCktCQA2oMC9FT0i5XyruRaS21Q-H9dNvb2QKpT1L5nsxkgxA681Ht6_ID9bHWbspluPTgoVppGy4wye2d1YrPOK4C1_rBGcWA0XXmUgyiztES1yj6ckRb2TSFzoOcjsjAMS1xj1yLRlGGEFDJBZkxQOdo_V8NiL41-DCSUDgsnnfk2-kGXsd6HZ9qo1y2pqNUE6zeRtDJg7E0P9DLoPrQKpaukxNsegyLZv2uLa2aYUR3eTamfD_4L_rdV4E9LYkbCGeChVWl5-N_wZoFJtx4onyLth6QWhHA9Uh_eRCVFBJunri5-Uv12bzBQWafwP0iVipkoWGhJJ3Ia-1fwByVe-2-6C0g8kUD6deyOFC-XbzLgBbO1wSnACeG5mCn6swuUPsDvceMXJ5MwezdXbqqC8-obzYpcDTnESkHR2bMdR9tSehujljrLcJve_0LxucVk9HNGUoO8Q15RN5BzNxnGxAI_xwpEcZ8hRK1YquJIcIkSuCx43EGQgQF1RvxCKLB5Nc5VKIX5g0fx32NsmeWu5fnkaXl-tPZ2ox0tSO9ICKZas1LPkFpB9oqKUfrydFUPO_bJ8jpeYwc_EkIK0j3AECjUZFF0xVFwLmO3yum1VPESkmlxeKF9JvX7ZLShXHnTzEzZb_VXdQGxt2XY5MlpakcuGLWUNnjuon3iLarGJUWgkHe2PXVFu2OSr0550Dyaj93TaYw5bI8BNZOQposoSWJIaBxt8R1SJWwR-_Wm2VSqwige6NO5w60PwMowlkT-MVEMBieFpYXqNMr-XcGzs8dX_jycPwAW02wZKdKSVx9yLsFpw9Z43qyMmONBNctx1vXpTwMepRn0qgwUxZ9gljVMELUz1q6G7KTsF1&prev=RQA21E1E759A3382&p=17&pg=1&w=1280",
+   "why": "redirect link, never a readable posting",
+   "at": "2026-09-10 01:20"
+  },
+  "518507495": {
+   "url": "https://englishjobs.be/clickout/5943d78292fa3adb?ql=q&sig=44c87ad5821081f4c7aaf1c21c99821c199db320&e=qo8cCG01CvLvIqkaIeabPLIbqbeLkzP6hnZlvyQfL7o0_IC5WlWjFnk2fy733KZeVYhRkFBOKILphZEdEE-7sBwOhy8wSWSgN3v-oWOvCs8ArdUO8NKIOUwdt-SqH3szCrdT9XSwMbxxm_BVjsCllQmO4xsPfQB_1C0RkyHEwr6kHKeIhr4dB1un8cc4XzJKefQj_ZcQEVbmDXv-Bo8rVGPDT-KmZNv5TbNA-FfNvmSbM3N_b2NC3XP-Kzd8QAEtvunDksoO6k1QdAmchmXNVJTKroXp3dNI7yQZ6_pWIHvlYtj8h7tYzhNiBr6O-YM0ivdMx9u5qpy-U4FLcAnvpxr-3WyuoI76KH6zxYGa4ik5aaT3ojUCoqeW6sq8MzqSdMdmU6XF-jFURllJ05-l5Gr2wbvemGgwJnCe9E66WWlcSUlTnwNHlxi3SNMYJ287c_akB0GbfQeXenbykbw5m80ja7UloU6R8Dp8F1JOUbtMkvBbHnzGGMrkbgMFppXdV1RZxkxJFXbl5Fsqg1sKYpQvRNaFMmqOSchgeNR3eXPGV6v6u9SdWg8ArDSht4ndo3y98KaAm230ib_bxtZqIRGsV2KA87-I8ytY7vHg3sAvpK1TvneQi4Vc4K5PH5pEFh-Dl2JD_Sxd7sJBooW9sUxBKJMiDKumEz6ZKEaSmf2PposGKCsxsCNgGjQRacVviFFBHLKo4xzkoHh9tUY6IPQgmUv4zkfA99mdabcC-Qz3jsSNZ5TyRDHpYAbgG60bhj-Nm83lNrWMSx44IsFnxFSFOyQHv9yI9OAt6nTlSpfc876q5Ck5pcwzFsblkgAECStUhoGNOI6svUt79MA4kkwdZl8ibufGSmdyNHjzh9gh6hORijNwkxFZD6SGWhpTgI6_iN4ayAyfMBcwpXMv_UjGB25Fm1KCo9OfVuZeJ7V0ESQYGBew0L-XYabglFRPeU_IYV9Iddf2a9tTFiDAnDyIYdkPK_CPAtMdc3YBsPgdDTHEzKeHeYkSxtDdUJ3RVVz3ShoTuMTb9ij0J0cDlS2YKRCz3sy8jM0cLonAEq4NUYoyig1DUA7J68RRa_ZAZSghzxqrbMkaK49nklHYhhhOzNplT9ZMC-9yZjicUt4iuFvY3_QhfqxulDJLh18vhxw7CRt4Cto2zMYfp1GzhZx0ZBpX4x97RcIBN_WzA0_AtJrbu9UqbN-RrB66JHoP-xaP9gEHqlmOuVeIYMEIT4jvupmZDfYvGFZkf3ZQ6Wl9Z-TJUAwtNjc4TBr_aMCWOtcSL8v0JNSXyTY7Se6bpdyG63gPKTwJkB3lAavKeSP1_OYbuPGi2C8eJXsUaiIom2dXQAWLshc6869PmOurYi9VTkSYPmegt0xiWx-v-gnm_dhMf_sFkPRm2rzDQRuSsI6h5BHoH3ktV2geYIWpGqI&prev=RQ8B8EDBF4E0133B&p=5&pg=1&w=1280",
+   "why": "redirect link, never a readable posting",
+   "at": "2026-09-10 01:21"
+  },
+  "418323616": {
+   "url": "https://englishjobs.be/clickout/5943d78292fa3adb?ql=q&sig=44c87ad5821081f4c7aaf1c21c99821c199db320&e=4ItEEmv2YvgkGX1t78z64Jg77B9HH2BKjQZ8iQDAIAMSYiuJIdTBekeKcsDC_3z6C7XF5EyhXYeTcbPXZ6pdC79mOaUh8QI-nwP_2_f2fravk5Y3KgjVlTZWtH4ExbIwX9Gmz3jGmdvzqLpp7wIwAvYq2DCYxoMFTDPcZGMXc8uGhMTkwe5IUYAZm3H96W-d1nNx-aOx2N8rtV05SUaGua_YSm0Ue-iLBXOJyeaBPMAm_q5zMFBHDaRe0vBJ-DmHccW9LC4toHBMS-a0IhzM8DHGDnDnKFsL7DDsuB9VzQMzCSIB77peu4cUSEem-7FDZURec-fABWgVzq1es_a3MbdhniY-7mHdUGrPlqdazviFsjOqL0JbHF8uvPHrMTmbNzNSyYlf6zRNc9Qi6g2dkYFHTdq28rkcF-dWEn_rfqWaudUgQ2CHPDaR-CaQ2b9J1Juz5OsumTCZznDUGOcK2OcnUdZEdaLwZ1c1EPANniMZO-oiTXxs_nbhO3DeT4mJT3WPi58EAamgl46L4ZlgYjXNmJr_lB4taVitzKah3qN5WKVsNb3qvtJA1pfSdWJqQUDVvll1sPpULzCRBB6NeZ096Nhvxbjnc-kcw-MYmBHjpO4BGFR1AQ_lFU5ae8ckGQOoSNsxwguD3ByJSXKGg5nWBu8Sfv8FMkY4vFwmQ2Up6awlMEO6V59mopf5p_QYfeAVtwhHTk5roB0yOqj2nkjxRnWYsjna49qZb5gzG00AUPqlkhUQ2qEVa_8_1VidqzgC4ut5m2UGWIruUsDNxOaG56-dT2kQ6PAx8uSzcBTJDy33PwX4GzIK7swbfAA7BpwDnUpNQ1TFmujVdqf-AIhcG7ayduF8iUPFsSlsc0g_USCf5GzMzL837xc8u75UGcZc4pfxMuH6B5xVNBBs34JqyMv9qlTqj3BLBId_LcNWp2Fm1HIG3YcKYuwdU5bdrBaAZAgVTl1p9AL3r-fVEwPuU2oLs5GaBzRc_0wc26Ww-tN9C12XKqFCG6uJ44hAub18lnFljvKdhsqnk8TZcfbQTyPd_0gcBo_WlyUcriQXTYHGp7R9z6lhOhRUUn8z5rMEW-6UI5pIx72gMPii_POkUn8Ci7ab2hWOsiyZ-7XnpdeZCvYsrQDHxl_DKu4sBSnE5aglhyCtVjOaP9nkQEZNSDraPjAwiXjbFlf6bz9ks9kK8jqBw4XnqBjtd_glxQpzkhrcN25R9mJ7nRwoAqkIDm15qUP4fSgo6CCUhodmMGdIWeykDMKhwSmvVZXatZitGeMyKRhdsn3xONWM1NiCQW8HFkn3Iiz3wD7TdN-6DcKkM2QecVbuAiPviDIa2HtUmRNm9b62lAfCbAEbbJWZEHrhYwIY4yIgMbudAfIZspxGfD2udNo2RheEpFpE82M7XZNql3jgAagOGBH6KPQ&prev=RQA21E1E759A3382&p=9&pg=1&w=1280",
+   "why": "redirect link, never a readable posting",
+   "at": "2026-09-10 01:21"
+  },
+  "970294196": {
+   "url": "https://englishjobs.be/clickout/21128cbc8f730491?ql=q&sig=140107bda78f7a269279e2aae4cd8ba161d01caa&e=xd8zmvCdQE32xPh0gt2zQRaSBdb7IdNvkk-8_-OAM8pbZ9_hM4I2SKZPFk2jL9Zhy6kdIZ8-BpLW54QwapaWo7myvkgXFiy72SUyxVjLoQcch6E52DEKqaaTNKyuagihKdnZaEmgsJVa0RcuKi46pZV3tIoMDl5Bg1MZJrtFWCSyy31hmgMCOYO8RlZmbtnlbV4g6UfHm52LOY4gWC3g-zxLTy8meYtal3EHlHtNDD4k8BbX9C9PH0UvPLwbLB7eVQypXQMbDheH_uP0rUutA4tEGBtsnjYjHHCtB1wv0AK36L-U0tVSa0PistYLkOFdvCXCuW5w-uy2_qQEgcC2DmonjX2hKNNX4qAJXuHquFRpbot29VrAZuifypeDGNfHmh9KrVhnXNl0pSDs4KZ0t0gCH0Bne0Qu3V23xWe50M5XvToj95uXW7-FfafThBuevoOgU9LsXDbz2To3UOFvK9YiiKb7zBIVf-_VI3JcaSyR4Tz-WeLWzmoE-TlPDtAzduMXm9SpWo7rUtlu_y5Hd8nsYSQSCB3x_vcI9liDNgBgCH6iWVvXY0DJ5xd4-y6PJvKydC2y7-p0buUyML8Zolh4Il580jZdN7jovoQ_dIF0J_K44ecOeNLAUU85CmfKid93hmpgji_SMT5ngJVUTg8I33DVdY5jxo64P6rxqfG3eS_QeJJbKui6vXDTW7wKYaytbzHk9AincBO52844UKLGBt83AbLJSi7_tFRZNWMkVCyXim9F33R_zMlsajeHviDu_41bCgLejg8VXRKVe4NKdPk6_AYesrpeb-jY3JRRCcTceBzjPxSMQl2i5Q4NjApQp8nu8vxdcwSEWP8gzC2OAbnuJlE2DqeiDsu0MsHJMOR7i5rg3GdPXJyx7I2H0WiLN--XzJSlbG3-d5IjVXACiiJSMH9kphKZDkz7lZmFqL-QlBua-OnRz1q6Kgg_Il0owl9jpZ5LNmCaukrZbDB1ZW4tFl2o6i2ebQgJvQGa6_nj2LvPMBUBu_17gdgWzsSAbHn1r-ct0j-Xn9OR8_3iSRNjsXoaPEIBoHQEQ0jAh8Q2GiB73g1XSVsR7Fo72UfTH9LFVUfeLnOzX27nM1YqntjLAbtiJfEpvl--1piVX6duULr5k3oe6buR_i1heB0_5xIDqhr-hj8dmFfpZgdag3zFQBFojTYvr2faZiuDvStDBN6_w0en6R1HII6JQ2eMdZyMCjy_K6to97aex3477whnmp5yIcZs6znCaBKk0jPSakJn2ruDpCo1W_ABGpS3cqmLLfvaFEPatZSEOqfiKKoSt62lRNwCoEsbmBCQ3xekz-ZxVFx9tgIv7YnTv3gaTc_7e6V94J6VSACFYEzchwCnmLLR0p6tp8mAL8LXpBX5p6R-Jl5hzUU3vAu7WPl9DPT7Erz2_T5YZqSrR_Ea_z_a-whQO_s0Y8x-w-R0hZxKP_zyzRAutO5Mc0SlMrEqm0uGS0kbVVYrTWkp5L1il7bI4J7UjirjPiNODVfr-71wvQTxZr-ITxZ2WAJ9fQVu1VtEHN3TCwGwpFpPt0Rp-pCDakxaE9LYcagUEQwIqgG5kqIv1M-A_jS1C6giS8WeA7JgTHhVP1vALBhQ31J4dpsk4_-7GLW0qXawAzVkjFdO192lp91EhPdtoRvWLc6teTuWPsgKgRne50QgHoryqCqpe7d5TANGM11XRU_sVfS_2cE2QdbIZyCdvVaLeLkalSMuwSxy-9wNVq0pLHYQM-7GidNynKKh-rtrY-8ruAvy_x9T8GW14J5HsQMVSsdCFq558Hv2ApKMt4tm1R9CMoVMWxdxo9nlxCcXSQShNa2ClUhfCorDmjXVGNXI6XhwmKolGX3jkK0UzmELsWc-Q0CK8ffEhksF3abMJQJRXGlsgKXEkS8kCvc_4g0lA7kRVhLdoZqH7CP0ev9o8pqucofHSkAgNua0lj0v6r8w2uszdmaHRhmnOKbq5zUBbW60GadzDW68gvBt_gkToKFRlxxnqJscPMwJuiOf7Xa3_9dwXoH-g_xOfTyOLrwypYEU&prev=RQ8B8EDBF4E0133B&p=17&pg=1&w=1280",
+   "why": "redirect link, never a readable posting",
+   "at": "2026-09-10 01:21"
+  },
+  "940474251": {
+   "url": "https://englishjobs.be/clickout/58e3c09dd9ea35c3?ql=ql&sig=350eaeb9f854b687f1d3b7e77773557ebf318f33&e=6d5V9ep_NU8J2Wy2WsAhTBGK_tDSLYjQgb0lY2GQEJuEg4esDNB88q7TazScKaDAgRkduAG8d35__qd0E0cXJ3qhDtaq7rbGnNv16HJT3SkG0qRlkgLO7LNjxBcOWM17bwgN25kB82pblfA9EqaTG4aYLLaTf8AlfXNuezhJp9m-D5NIDkKZlUvBDOur95CUFnp53_Ikzj8mETFN4QutVsNU7oLtH2rYJUqE1QJ6I-DUF6VZctcQVlNSMsvR1fEJVc86yvGwI77h6xHxhZyxHP3oYXilcqngbE6lEwdjgrk2aMTm1hszw2NPPQdORbA1tL_2PoqvxHvDyyMXNecC2utZX9TVvt3ztN_Nb-oVWUGwKRmps0-qZ5-BpjA530fSmfr5JD9L-w-1q7qYU7mnizKGRRNiLlh0ScEydxHJAdaviQ7oE2aW3MHVzzhf-YEztQb64X6FsgKCrkItBMQLkCiZAFOgxpymFMs0U7_U8zLZJLggzJoPZudMic_-joYMiiMWHLB9l8V3Eo-mZL6l5FkLsXViffl8ZeHmhTHC3rTFHzs3ng0WAEQ24k98oQre5IrBuHwAKLjknKR-zBdk0KR2TiExRoyzk_HyC95VpeuXGkTG04IEyxbC2IATS-n2I4Rx36lHKmcppKpK0D1MoM9gOFPp3LiqQsvmgc3mfHCSO4pBI6xJNEazsrP039SLVNJHRQqtv8vsTHposRu6EAjrRn4YY0l7_O1DVNSVsIXf5LLmTsBLfJt9U018OgALiyN3irLD_JXipi4JUjw98orDaCwncXGWkTZyo0dO8OT_67erk2wScmnymNh9aY8aBt7Vwfl93KYCF2ehomcpIoImKPLD89WJeIuIOz0NOhP9PDadIGV2ET1LqIObH8AcTQWFt3Lf88zsl0WGxifA2JnvBkYgOPCuZkHZXwypQZ8EPlVW4jAUG7N49pHYKjc6U3vZuPQokLTSG3iYgiVm2ajNci0eYxrGlVguKE23r4kukgGzHOg5mijPya1oMP2ZybryZDQ-ExGkvc5tfm10kgmbgyu1Y2oQBaZ1usDAjQhBSYcs5mKbeSvswzGQcrdXgP5eB6RN4pmnn0unJpCTcDYFx6HeIbITXszrTUUrP4Yev35-bfjhE4bszF4ubHFWTljlnl4MLPKNQeftIIAW3GQgq67I7mfwU0YhGR3C6B67P6-mv4FfnmuGBl_R9m5-BicRmceYSKsooHz_kYdCp4VgK_JqkHVYpR11GzsVOm_IGkyEGCnbh2vd4ichR4QAvAswU8tXk33utGtmRy394LN8B7uV9PH7rwukxeEs9-pfifH_-54Zc2cv7Tdt3lBPiD98iLIY0fBMTUQUexvneFrBYjgwRdTwjfI25CrSLDRwLpUBmLncl2tIwXK7wXq0QRrmka5DuqgLJfPlavwbgzIJEFAuccfuXHbpLHaPl3Bl&prev=RQA6CC3143F71E78&p=16&pg=1&w=1280",
+   "why": "redirect link, never a readable posting",
+   "at": "2026-09-10 01:21"
+  },
+  "890314409": {
+   "url": "https://englishjobs.be/clickout/35d288aac10dd026?ql=ql&sig=e8e9c3498a6f21463e96757cfda720c6e6ab884d&e=KFftC3_ZF3OK-OZo3qdNTlDgQL_yu-8-n1mwh_JZ97capiXwJe_Tap-jTb_bmnTve4Db-kSPy6uILLawrc5GleBZExVXlauu52xBEYPbBcoEh5qsjeM0lq3DofcydLqK38RcpY78_ooENaknWoYKcOX9W0fwXWgW0I3tDvynb_znwaPbpJiVwMLhiCZqNjUmJZlWnLhwbg8ymTGPUDRQ9sdeYQ2tPfngd0bygeFs1QxGr_P6iykw0L0agMBscZ4TDJeycpqm8_-D9by9u-t5WM9_8CGqmdgeWkIAaiY4JmjE5IiFyQNudyWmsQrE3u0ybOdgVXSNoDEg54ryI_rZ8FUO9E4kR_g0aQbl2UrHi3pUX9thhrv9iXsJkLSWMry8_bVVnNfKZUvIxd6gLowAUkvaSoTpkN1hOtq15Y6lG_QpMh196nM1hoO9fbeUXmN88Zhv3vNMJ8_0xkatMPu3KYcSYTk4ckxDhfaD96NPZSIYzrn9UXVHg0fMhsw-zFZcMbzwKm_nE1r2iYgxb_ZWgbr-kIdm_1yJ1wHPuxSgSQ1XG_-4gWs9iZVcXHxvY1O15bnD92A4HPUshc79kOGB0iB6cWvPihnEyn32P2We9YnboMzEpIa_E1msf6kSHkxShunPeX5teR3nFqK9xBjhH6lXFtWLdmi32zYn9SCUlltowxwWmsPPTVCkK0eX_5kyY3Saj6w_qGqJEJb3O68JerW5rbPOnWrFUpx8gUvFWUDKAf_OsMBq1BLEcuIOfcwA13xy0uJZLWYCYcCmNTJ9EMJMRb-N3OenCzgg8aROuPQjJHAJX6DgWkl3ljV1SAIYQinmHso4Prx0np4uNDvBunZkgdhx5s4f1FWupy4fFothyLoYIIBvX4UGXrgBmFuI1S0GzVzFZmITBOUOsJp8X64-PT_nIVN23vLTXx3NaVwPIBJkCryhyopggPWDBacTJQdaa3lyUWvTdW2VEkrjgPRV-YOhHh0dR6-6emR07rFXgQ8yUKwZzTRU762LQfbETkXl40HEh49bdchVnrtl8lP7cOL9SLIqETk-kJdRyyiC8fNp9_HC71nwYjROTMIJ0aQirtQkfpdywnLrBhhTcMWFEuBi2Kk1ZF-cHyDuZNYkmz-WwLZKlinAxmYS-g4-mhlFd0xJKThnYX5pELc6D8LUVSncnyzi4SE0atdORULwuYNEnw4uv39lOevGHOoz7Y96aogquaLrRku9HwKadv_Snm58_SM-8r4DrRkcCBp_Eus697XVwz4HEWE9TBm795LbRUErDNBk4pbrtiU8BjZJHfkUAg9toF0QAS6H94rT7h-R6v6E7zAvOFVMwG4om4nySULGNkf04Xb8GDAhaA4L0gqX0GsCnuiIBsDHac2Cub4tA0TDlaRjF8_knaij0zkrOlTHHfoZRJFySlxVxS6C4c-zvxjI0ydPTv0z4vUIxAACutympTBROiPQ5HM6ZQUP-yXWq9sDyUbeXykpnwn6KfrvqJ2S__di80HpeOuAXJtb72Lc3dIHsGA6KS7AN7uoB832vBt8XB6wqJBrbQ5SLnalh0Bf25NUBnK-gxoBBLZQkvk2wrRzdYmdyiHzz-GWlQRn1OHoz0GmgmDNvakqmnQEOrYzFNp54hrtPxhc32NN5L1-OA0PO-JEejudtkfkHw98KYBRCaWvvYeZTtL1ceiMApYaHty3lf9nbPolg9fNQRPSyfW1CNdr3AGz7dmbKqe_PHggAjiCC-7CMLSnvN7CQL6bs5YntGq9a7D2YmBZUTDAhz9St3o-cbIupJ8hIgblTzJAwAD4j09UZdSDiemh09-icDDQG0GDsjNLUDRDckq56IlRZ_-IsNk767auAUdVdTFV71F1QZk2dGUcdIgqC-BPBmtpSYV4mXAiouu23xbrDFclyQIHPs6a-kfirfYGtQyT8Kncp6Y0408UmxTGU_0XUjl7X_LByUTnJsuIOQwBzlzGQAcebjGvGg8C2BeoYuGSy96FnR6SvMSAIKE7JsGepX6g3vIs0lF9fbILacWfAST3D91x5D4G-oKG&prev=RQA6CC3143F71E78&p=20&pg=1&w=1280",
+   "why": "redirect link, never a readable posting",
+   "at": "2026-09-10 01:22"
+  },
+  "682428254": {
+   "url": "https://englishjobs.be/clickout/cce7300af63d3a19?ql=q&sig=ff6087d903386f086b14979959cf70547ff3da1a&e=C4iE-Qtgxl1TlMtzLTXTNKPJoPdVl3PMbb96DarDnG5VzPKVIWTJjYUVcn_xjPOB3xxGP88DWV-FvXMoRWVLTVL92pzUoyZveTeNHWlqymVcVxr0UeyOJVHnGyeTo3iDHSi3hJ6e13bMiLm_NH7v5EZhcyDZJ378MTU6oDFDRLXu5VjWw_lnL1C0HWgiOZ7gug4ET-E7N4NtOQcJw8FXWm6khT9GpxFHPva-ayEDHMVqHIeKoNncU3PMG3J6YR1t4KcQmZstYPZVyIx1Qv3Xd2P4YW2q6MJAcSU9Om7G-PpaevxLX39th_nRuuN4B4OMUxYY77D33kCz5WaUXcvgCG-6j73G8sfTjQ3mmIULZCVTNDi1GS1If45do2wFKJLwtFL-DM_UAqwrAJMqDMcZM0C4PGhpWvbzm_effP3MTOeQM__eJ1eDKuVfjKlE7xPoDS2BXCgqTaE3p2lOwWgWS7rXm6Cjp63xqVIkl09poLdcZjY7dGWFQVU7a1oonxgK6p_HGNI1ErCkDdJfqWMRK0z2g2UD3qg7rxESmple2S-_ki7AFqEDGJ5bSzbrNla_BXwEcctkxB_e4m7eOH5iw-jfHpDnO2etIXaRuQIZfX2yEB_zCwdWUgRPr4nTKf_SCbjGwXnzjZrbZfz_Z0OcWeqFy_A7JcFdAQ8c6G0qbN7WGOIHAoOT_KWqk76G1uvnq15dfytk9h5cjCYMLjzDfpuYzvGn_QYcTkISHIsUuRvWBpOEh_xEZRGStPLRv5TuCw0LlwkiISEAIsCz1bKRtugqBBLsFlE-Jbh7BxwTSupasyRvHY5No0LPStMAc4mfzRuo0TurLM2kJICrffAuz6lZok7Sf3ZTRYbfT1-2_F9CgNq4e0b32eqrlUaO1WUD-AVUnveDA730tdozx9v0n8XyspP1uxkg6BeYitY71OZHlfxzeTsuUdxHgX6f9bD_ZYOOZX42mDk2ZzWcVeZZqrRtC1NTFZFJiRuD99TXRceLX_V0C0R3cv6pG8Ee78bwaVM2OPmpySOoY9F6HacOgXWX9ox7zq0NrkeoKc8_8c29LWlXCUpgG-Bxpvfy4Amh22yXY8q3fOOLA_5aT8e_LuRgPOtBK6W3QJo_vADIKl3DWf2gnotbGrWlAT6vnD_myH82KDAa62eUX2iVS4v4dUGnK5HVCyQ89jvyJncUfM6DOstLmChml3RDMy6mtoX24KX0EjMD4u8OeLkVDkqpZPzVDof_QvGkURgy91x16Mtbh2REGvhGt8LUF7oJf-JM2Y1G0fCobAs8kofmdlXEv1g2Dv59_3Lk200_BIly7uIQHYekWrugDoPxxVfGbgKIxcAwEANGA54nSxWcy_kSmYU8SO-w0jgBnoCpcscVEC2fbB52lVp_nyOHzTuodm3RXQQJE4KxvT9So9bODQc77MmMqdieZsPy7FEb9EkmXkuHQOEP8jkSu396HTnFGOt7grVxfEfugVfRy-XcSWzCjXPwXe0emCS4vaUi_rg0te2b114kK201XQDLYR-acNZ8H6-g9Bnm6eRTSeG8QlkDEsZ4ITHgkFpEji0ljXXcUvA3VD8w_lWD6BIdKMsZp6EMyyobRZm-KceoSvR_NxhHdhJ3mRK8nlQ7paHSZVrPJ3xYMzdUowL3Pb2PKA7u_Oi6wA0fTomE1DwpoxaTmoFBZrF4v2_rR91p-CUfRMKMGc-t2Dv0uuyLPkRsXgtL_IA4loAJdV-ELDfiq-uWtzGd6E2XHADx7lr1KxRp2ux0UZl1lFvZytdyegO3POAhFi8PCo68rcAW2n08uf-_kxuQLjRf8vHoiKhcH6WaPU_mbe9zRxAUkd5lrg-wCaA167KtDDy9TZwypvnHEhh_v1oCksnt2VLH2XIrrld00Bh-iSxvOWUG4hZpVlitXdsc3uemPrkcq1mS_hFgWys58s99j6JmSoaBKtz3rmqHDHBoddcUocBd6nrFuEiHTxiCUTgFSY-t97IdKqSYtzmxTUp4wUn60vUtKv2vmBn9OUquIuhKCh08jyM6MkDSEbSj3DFgNmj_&prev=RQ8B8EDBF4E0133B&p=16&pg=1&w=1280",
+   "why": "redirect link, never a readable posting",
+   "at": "2026-09-10 01:22"
+  },
+  "651499796": {
+   "url": "https://englishjobs.be/clickout/59312a1c2a6f73af?ql=q&sig=2d6b561c9733b3fef64f8279fe728997409820a4&e=-Alx1FAOMDmE950ruXhfAUywRbRlJUgcGDqdS2D-GdYZtUKZWR7_CEJKX02zbrIHLngdlT0lAlpLQ7R3dnYolv0g5Wg6c9U5cWIJiN2lrDECqsoo-gyymOvT6QXFI8Sj5zHTnl6G4JJD5LoBlmNtyw1h-m5QnLtcJBQ1q6W17foaNpZjpjrQpRokzjoMgzzEILdyXsUYPc5S66u3W2PP_d3TuoVAMkmjnts6VI57ta6NaChhV5WKqDhW_Odh2CZOGEh4AEAf7XoS4o1fN_Php2Ro4tZ-eopyzqyDL5XZEoPdtU7V1WvKlZZrWQIMzuVSDu_CdALNVgOL4lkKrqyz1WIBvvx-j95E8qki990X28mh8DNaKdD3Lmk9Rqrst-ZU3y1o-AIdfm0eYULqnL4sCkbS5zDIarl1XX3M8gQHHYs6l7dtDI0S0j1ZgRYyOwBdPMiNN5aYZWqyr9SeHqSHeO52jyma9DJfd1KE4YR_shwRX3KYk1wBqhLD3HUQ8LQuqGtd2HzTzGn4G0ljbGMLF13OjRRDX0aXScHYmNWOdcKZ2WQQJygDFwKZR-Kzuww1yNDS-EB5ysIyDK2bV06yKzLEG_XeqoWfBa5Zs_vWIS6qDY8tqiu5EUoOt7MXweJr14eod3a_0ZlujIce-xfWhGypxWwIdA4LYtrsxP8et5T5VuWYTTvn6SUpNg4G0FDpP_ata5ptCLx-N-UUdRMHHv-FOpowDgjWG1wtvgg1XlMEtQfg9JIL-y-xfDGVi9kSjlt1edmMddNnBsUfucm1opMPqX-_Rc8XthwdtS2UuzbJ5FXRMYJlKzOknPGtKfEMq319tiv_i8j3VMrWGxrcpQVt7bB1fgobiQYwjRAp01CqjuIo8nz1uDeh37NkaUbS1fIBWPBC-cljoBVuPwWL_eu5QJ5tLmP2Gq523OZvqlrdH-K7Vu9ECdbPq8ksOIncQLGMCvVkosJWeBGnVJqMWPcBOljPx5Q03UtXExg3UMU321RjJU8D8yULcdE_nFEyPz--rk-AnmGUj5e017RPzR2_OzX42qHmsZDev-ZvCe8Pato_EvW0IJaHhqxMoT65PbWUjFe8lh8dAVlgD5P8Qef5AoD6b6lA9mvRZn9lPwhuOI6cUaGiJQa8Wc66BGJfAN25nYLmvXC6EskpnyOrWOijkEdrT8jPbNkf_OnTTohkPQlRA3xW8WnkuOZ3tizsq9o7YNeQbcbzQOA53vfd063Xb_WDDcYJHLoomBU5Q3un6DnwV-VQQlEqml5EgmM_lgD3U21s9ATakS3YLi13CWspk9GaHgnCAX4NModUMAbSXNtWEiKTkxQMbVboyyfbW5Icb1Q9lopX8BJM7k4CCkCdOao8PEYVfRmkbVdq-5P45eCwwLgEoiLd_4aAT9JchCFHtO2_rOZx5XOfa4HoytSnUvLCqE2TLq-n6A&prev=RQ8B8EDBF4E0133B&p=3&pg=1&w=1280",
+   "why": "redirect link, never a readable posting",
+   "at": "2026-09-10 01:22"
+  },
+  "584335397": {
+   "url": "https://englishjobs.be/clickout/a3e903492dcb7499?ql=q&sig=8b8ff29ddf41956122bb517deb189aab8efb5889&e=PDw1LfbEuffFYPnYJwS0JTvdHCEWQzfuQ6a85XRHAuy2vn-AQ8EwJtfvNtFsu0huvi2YynV8uQbpk_xug0YUREo3uHsv0SLI1Da-SpY0lnkoOgBdEm4Zkf4OQ-TjYMcsjdBQEOzKYyQi01pVSHTTuPPuqmeVpmNMOK9akL7pjK9MEwaB1yu4uxAG3Zwa2QFFJepJbn0jjiTCZqYyc_udV22Gq-AEsio8fwMKwG681pezfcJ0BBUQPvGJWbYQIBreoJqqw-EAWn2PNcq-LHoZ6Njs62ZjNBqADRYb6aQCQy3LToKKjiMElIfNpzvh7-BhPJ9V_vpyiSCP0TNk01NFvulfCjmv61FUE8cJ-qkLod1jj6rFhYlOtkVlbp7xOdPQXzaVO5qXyd00eKKduspgRCDxujHSRcZbJyzqs5DdJWCjW3N8G5CtN6LrN3pcfLqt7E7l7bqilD2l04VcRPCvBFRvns_eWNRKMKPOzCG2V9n1DfWY6Tk5zX2ipm-ACY72Ylm4BALePoohPZhX8rCQaWz6eUKLk5zFrxNgWRU5E1PwayB0Iv_MlTXuQqR9FCAC7z51mgmPz58zfJUt7XEUew_fzKuv8JkTTQvwvnlVBNAzSx-Mpggpcd5QQ8ux3Ub4KJylusZ5z6-Jp4A5ZTsKc8QL3Pgd89lugCFxxzm961dxagSSAMwCHDrpXtHQIi6PjRSEeqcUQVGXPFdb0xtEukBnTrG4vw5q52C_rLcwZLyhpa6dxPHv7Cg6I9yb0U88mMeDcFxRZSctjwmxI2p54mD6KFFQu9Zl0cxLAAHO1PTQSrvLMiArNSK8QvjhQaAfnkuaZh_7jX21hpj0ZJJdxFkjz0ihwO3Zg-o3DGw9TNNwwtB2b3cr7_tpvQeGUivPjNcsEFrIJqO1z7fr6XmMSwfFxjXv776JEbVxQoGGQm9J8HDTbdY2ibq_33N9ZJiRP0eTOS4TWyqmLCgmGaC-3jQ9ZBrd9QyHw_zaVi97haUeiDl5V_OAIII1Lz5woYbXGDeEl85zN4XLukCjFRGCbVy9aMft5inyON8p3RefYvx9_fmUe0MiqVfbO1zU2HzQELa4fYQZhg7OZQRicJLRRE-STllESnYBh5BtaYuY71OTRo3x82xdCeEDcfUovokFlNJzHmrxDFr-WuPBtTxKU4CaiWG619zTkVpPpHcleHhkPjpXe0Y9UGtJN65rKFsiSiigEDm5e_xfaeGS5rGZS5q8nvtinumv-WBfelo1YszJcIn9ZBc7_eqL3-vkBGyypMWtmZsqh5nrL31pOYuVURBZqKinPE_RZgFZlDSt32qn543xDanyh2nMlOjF0IXT2p1wbrhV1sRzU0V5E4wLt4yE0x0gMer3ZwvBcUJq4LRwyvc7h-C9MaNWWvtpxvElUmLOeVbdntx2ibJVI3igzoHYYE0TiZUXCMDlifRvPcubCsAkBeTWlKdN8119iGuCiWSH3DeHlfpKYlxTXIbTbTmU&prev=RQ8B8EDBF4E0133B&p=9&pg=1&w=1280",
+   "why": "redirect link, never a readable posting",
+   "at": "2026-09-10 01:22"
+  },
+  "565729250": {
+   "url": "https://englishjobs.be/clickout/a3e903492dcb7499?ql=ql&sig=8b8ff29ddf41956122bb517deb189aab8efb5889&e=ndr_ZtCvZCOm8khy0ITTf9DLCDefli78rpMztVGPlPDFbvJnyczPmvmzY43AuJdgzkIwcMGKeyFqnpiLyVI1rv-LlrgNt-a65SLV89C9bRktSGANbLrOpvhFBb5Ib49aDvGxCLPSaMGMoML52FSH1Bxy6kXLkxkM9wklA5Z5qdRNRBoD7atOhnxgiNWVA8-mJmnaMjys9MF8Hu8l-xbzyCF89VeUrCZwK_wuSJsVmEezQ-a5YcUu7mcMzrLfE-fepVNvv7YIxywOciv4vEIOTJRpom0bhAQge884pWd3KeFwX6SM1T3q98eQaDq-4Z7JRWxOli9yHWiiANdKnWMgcH4iQ-UK2uYEsG3Ia-qvDg_Ph-scO18LRuEsw_2uPzOCpcaFE9nZSw9S-QveL_LlgPpphn1J6K5IDLlSZN_8AYkUc8K0LDPBPsA-MWGrTHD2eMDziR3zqeewvu-kwTm9cQ_fejNMYNyGZS9V6_njHHglVSCC2EPDGKI1CJUFfXovmnZDMvFiXO0N0BfA30xIdPfXsIpZ2UPXa3jvLb-7fdyQG-kW41EacFrEezHYB5T9VqugjutkrIpRxMuTeSy6_qQ_HOAsmj01PwGXrZklwRC6b7RIsPnEanm9HRF3dwFQMIO4Pe7Yapn_AbXkBmfgL7ofn15jZPt4upozS_-y04c-S1tHYPLkxr8RQ9d4Al-bmEaLzXMa0nAXzUwcWcKtp8-Psaj3v_zprOpWk-Gs_BXscJSpyvMgiGqkmMP1W3wuqA591zArpQ6ZMjlkDUdLCy3rim126XivaN09ErN0YB_-lSLEnAXYRfmGZGAASd7iXQ8gmfEJGy27hIlfB7PyycNy6og9xJT93-r8OLtHF3JASa8axjb1BRko7rD72oJMoJaITK5EHVNW-EjBNiOKU92rCil31gzK2aqP-_E7RZl_6iKQGNrKByBzIuLgP_F5FzHRXewtPcxcJDMzInCJ_vHQq5Tu3U4aCwRircTyaFQKvIEYypi5Y4_HPmh451kOZkqkriphYE1JDC1vciBCXpdzDIVvMKweUq0HrHp2GM8j6KWJ8KHY32q-BqgR-GGhoNQWZcC6SedKT8vc8qevgDgEfFHrUU0QgXcBfuxcaNSRnXQNZaHcHKT3yZoftXF5pHb5bjEt2N9il45aM41nrRYgiLj0MY1z_hwOK8L1_oRWIlj-p88GZc9SbTzvSnKFCFnqS3VVDzKuz9ZdjzaXIwhph9XLEfiLOofxglfLwqiUH0RPU8Fk5LcyfxfBqGDErj_2vqWElNklnrmCn0rB4eqktwRMZTFVxS-mBFsyEltYVVWeWglIzw5Uiu-VqTAFak55YJrWqU7e2gu5yHpaR6oOPgoJirqQSIfW06URdXtH4jGIGhOP0KFzv62NUg1dCCp0AqBOUZefZ7jfQLtWLS6oPFEgaIEXr805a9G3-Vj05F2LE9hi4TchaYRI-GlNhZBi2nyr_dhiYHwqEAHFti1S&prev=RQA6CC3143F71E78&p=1&pg=1&w=1280",
+   "why": "redirect link, never a readable posting",
+   "at": "2026-09-10 01:23"
+  },
+  "473025661": {
+   "url": "https://englishjobs.be/clickout/5fee5f9234271fdc?ql=q&sig=c35d432663c646043a24f1539a468108b628913a&e=2CAWDkXjOYSOITw1phi-iYXtirEx_cTPqLpQ6Vp9sEwtXTI6T7a0qby_e8sLvXHDTpZZqm_NjzsrwrhaX5d6UePIq9XP1AYrfwpcbqR43VmhJw3ZbR8g_3ld9AGKq1BeAlkP6FqqyVwobq9xeoDraQUVFmYhFCAQJ4ithNqMORDSKaOjD5PBQU11GFjkOghTv8irzZ3BTivVnl5Gqr2UriPiCsLeAJmZR9ftu-n7xdyGOqttkpHgUjWb45gxzGxZxs6LYO5UnnmrfRU4cnx1W2AMj5HjQ4LBRzJTUZLM4_3g8Ad7Slu3cxTPY7x2-B2BT73WBG5eMu4_Xm7-ksObWM7rV5uZRlXz9ROxU2pKB4CKM_EZqCEnengNkFD8whIu3G_m---_z8dc8dm3nGOLrM7OwBU6ZaQLrHK1CEZTCKrBQIOPSu18YfOKjGKivuIWJn2wgoEci7W1ZNgfVu2wr3NuFXcquJYRQimqqAvMd3xrIb-YPCOobUvHn_nalZ4uaBUnAtgWTNtwUIHV141HIIqat3Kd1Y9Onv2sJLyDcAf7ResGmzGXBLsaDuGc06VwcJWskDD5zlgTa0uinlhX7vBicF13Zo6uXyK7U9bXCJbI8LBpgrjlPgsr_U0H2hXCkNMN5LVXulw6d1eiA4K-YlghjxI6NKeImSUJlDFfBj_0YOyDRprPVRAp-epJzlScLkZapEeDXA63C1HdVYAsIxpyVO_J81EQE8yqdCga5cbI67GevBTq8fjOxvOEPV98XZkk2vD1mYfkMImY_RWrxV2NmwJXM5g0F3Ot6pyQCeZGMFEU0qwf4LboqYqLBJWhGXg4XxCiuhNIVXAi-5uHe8WFh-doe9B1cCb2yjuD7_iE5erflNpmAdc583L_e2zm1PrBsYo5yoFds0T0FDbjKoFWOJqkyA37ieSsyJb4wj6ql0PCFbXP4cAEaWabIqswMZRx2EjYepRaozrusmIW0fo5G56X7py0_QMnjiiZ_G8JPEfjVsm3cxsmSWpvtUz7Yyh-_2HinNVNNjQdbqo--feiaXy9669Z9hKWpgKTqccZi2WqAgtU0iGclCnToPG2rx0XqQmes--nPJeR35_acG6pZM7Hb-96GejB_l_bSgktlRhYS_mDi0LDyH-gOxUUeAekKEm1rPVO8lZbmSLoKNdxlj4CNfkFiUWnNGlddQWNqZYbwefuUaivZ5V1cJi2TepzRpVjWHCxGbaN4ZPFBbHBd4IjjtJQdjEw463KBoha2GBKkEXx7HyyW7Yrt84La7cEzyBOhkZV2l0ZBQzASPj5SKELBmyPNuFl9JziiqOrr5WRz5I6RLO5-mXBTOEg2xVNjksDGoQfGs94ksc7_paiwJA0S7MfKviN1otPx4L2_LiISwpTVC_U_l4OHxCSCj7_9ECSIjhJoJ56VqR3b6xEi-Fbrg&prev=RQ8B8EDBF4E0133B&p=10&pg=1&w=1280",
+   "why": "redirect link, never a readable posting",
+   "at": "2026-09-10 01:23"
+  },
+  "421097159": {
+   "url": "https://englishjobs.be/clickout/09297ba71ce7ab90?ql=q&sig=c59354a303821fd505c67b8196d954f8b42b4ff7&e=vxThu-NfBNa70cb0zB87MTQ228tSGn7-9aLh933wijwIO1R_3nRHmThfL19w3eoyVdXvduDQXFlY-2shUR1gWrO_y6NVs4UNxUqmlABaS5gPB7XkSVrC6CsKaydjmh_sP8XpS2QmYZM-2xT0Dp5VbNvM2-VGEPksLlm5FZQcLPkXumI42_FzuAtKOmNnQNkj1MsWfj_Ir_zKmWKAV2I45hVPC0Dtc0LlKtAiy26gwb-wGT7G_SqWQQh59tOCW3sA4b2PP3bgUsXR3uh1egt0ZbnlPj1MWAbeEbOhwSvYSzpmwPLb2sBrYG-wKFBiNWPHj9kRDncyHAtMQX-mdyMqL_E69g7I7H7qf3MSsL9nF7cdEfviSWdpSkonymHT0KorUWJR1jQXE-XH--hz1WOh5ZCqURiyC5y7xKwEDBEAUie9Oai62y7daBeQrnsjiXMY843Kv3jvsHSEOtUMh412gdgcDY02hCHMxXqedRQP0b908Iv0OzakgpuLE6taiOG0_8pkubXn8tdqADFZM3RZeW-BdvpgkuZO4NIxoH5xw1ARDdMCLk5cgUUvMkjAVjLqhVLYJgCzkopxvzcHtlIxgBWwPCVgzIG5VIs8XR0Cf_4_z_g1PX5FgsUQdJKzrCLNccDssdxcjXkh_g7CM7BBuE6AbguiYmbcJt3KdjvOhAajMY5FSksUG2mshRN-9MK_d16c_SSC5lfOLDlYGpsEkCYMg9Xex8Iqx68m_SOLmyTUBbuH_G7RnvSLzkz9OE2lUKsvoLWxkrLugSQ334ykj3B0tYJkr_Wq393l99jFuR-ppcJVEdNOAL38Bpt4p9myaCIhOXDCqcP5Tec-zPG8PH2xJ_Ziq4FApJn6uy2Z5LrMjpLrv-3vGwQ0yidqkLtr5DuLe8rDdV1F9Qp9Xj_1kDAASjjBBiEdLpmvmocF-8X4i4WuXVgSI02CSpnm0kc1Ex0_bJnpZfDNcNWEDOkMkntYQGbgjs2UWPQIciF24zAGkheAM7zDy6facEW1-v7o4WCjmR5qGMQEipZ1Fl7Q7Wh-CsB1_lbgCMukly2139mXMWk_etHN7OfbwsvcThM9y3fAAr9sUoiQfq10uwaesfoeOoe9SBdLSvMaWXG2mp0hS9dCq2NVLsE6zaid4wjv28qCTdWkdQ2-snBaVv711RLwe8UedhdqLcV6Kdvi0lKqR7DH5V-T8u-0ncYzcMDJ07xpFybDNl5_b0DiyYMSmWFLlFMXpRjWAClsLaEPHIvXj5zi0K4L7myKSvpEUTEa-t6vE0fLJQsiWFfejGMY_GwJrelmWTaPZKufNwYljfYoufSE-qenlsglwP6RQDhtxCEunUw9hHuZkEdzy--KP3iu_kF9b5VxFntvdHe2BkAIgcXJnF1tBv7Kiz2OWxA8Wt8d5X6WU6E-UteqTVU3rQ&prev=RQ8B8EDBF4E0133B&p=13&pg=1&w=1280",
+   "why": "redirect link, never a readable posting",
+   "at": "2026-09-10 01:23"
+  },
+  "397576313": {
+   "url": "https://englishjobs.be/clickout/e42080bf5f906f2c?ql=ql&sig=cb7d202612f4d8123b00ad4099377873709ebcfb&e=gL0mEwpb_9lNo5i40jNs_6Ta1cEaorTGMeIXiArIXNeklqvndoVm-640n5d-ohk9W85Qff0hHnpTrJlUPAqdT68urohy7RJCFD0xndo9gS2RdrF-dYANvnFKd7PTrFLxCxinScfpiQ6avexjfuCI2hBEIpeeO4ZhlipO2FAMGRL-MHsJE0wAPfMXts0UXmix8KqEGbl24cp7EJhJjewY6pRsXKsYgk1wG3uRCBkSqb0I4Wz1qr5HmN2y6DmK4lIubOWk_lFmcv85MCSwHWKewwIbEYWvsDHFuXUyottg7YWdONb8t5yMCGgP6zPONWZZvqKiZHnwNQsJncRekzqsbXafHDloEY4gv65jaZ1LXpwpYhCdmT7_9PhUq9_dundITJsDjcIpVc8MllpGnaiEnDd4sLIGysdLRAwMRwkphsBxOiDCtGnC9J8W5r_4L1HTgFtoNC_8vxOYhTRavUv3zO8wzpnYJKi_EWhk9I-W_j1MrUbfNPKvyAuy01kybelJ3MyYmiwiUIrYjlUCW2ZVMw-T9Qb0Y-8g3xY7CTCCezLQnUDRmTlGpY8QwKWKHro3hcMcjKDiPAOkZTwGw_OFNHywhRPyYyx73hcFSxhFIzKBZKRF_SRr1hEvFo6f1Mt9J_WGmPLit19I4RD4vmIGpPlgNjWoKHlIyYq34HYIERdNuTRyS-uUsdFZbtfAM6JTa-MOrzUHYUoHRx7Mkw7R8n6neaseiCy15HALxUZ7RsSMMvVajFjX6l4y6LteFc5WrkV0DBMZlHXW0wPwNd1cjhj5IKXWCdUNPlhcAPJQzMc_xMapLrdPjziTwLkndmh9are7u0e8m0vR2SPMMylToLMB9Mt8tvbRZKzKERB-Htbm--eqK-e_9mna7NVQpJsh13vXWjslCru_kiEI1EuuTunpc5Wx0e_7mykyHYR-R_eBi0xgPP9ph5EF9P4NRgt6mK1ffNNozjZohzbt6zseXMgt4ewvj2lFTVn8foWUUVVYcttnJyvWIwBE5ZBy8zAUnaEqmbSM_GZt9Kl4ebgJBhs9KJQwSZ6hbfIu8i_sUVzqnQFgjF795r13QFgYRu6j8in8hHXeSHe3uJHtE44JBg6U17VJltf05xp-tfwOsEHOdg2CPc7li3fa0_L5nSq3KR6JZxIn8aIYB4RTcg1X1YtYWU500fGJPJ5uMlKNfLTOCflfuKWVGV4uX3XYMHsTZp_-J8FirF3sM9SyXpnCW-3HiBhj37xO2CQuMJHYHxPsw-sOJCOaT8O8ViD509pLzBAleP1BkCZI4Zo3TqKO_eUijyGFYozwUjJLhdRCz8993U5d1u29vDJaHwu8wfzAcJ9vJq7172lpf6n_FgKxlKWAmZl2vi0hxeVAMaO3q0Th4QbScDxnuXKP5F2vSC_IFYfkx5h5A0w&prev=RQA6CC3143F71E78&p=3&pg=1&w=1280",
+   "why": "redirect link, never a readable posting",
+   "at": "2026-09-10 01:23"
+  },
+  "383272799": {
+   "url": "https://englishjobs.be/clickout/75fd99872ec4aede?ql=q&sig=573eaef67290ae264335f72acd9a1186519623a2&e=UWBhKd97QIsbTTvzfDN24o6kElrSnKmn6jJ8uJxLck9GJCuTKSmcqNKCJJ-rkt9_JKYeImwbbMOsE-j8G490NNa-UMO0H4eXwyt0g77F5y9l38lBXAFVcyw7nP50-J87ukJ46NjRsRXxwgK6yR9orXG8gkk8qmgYOCmtonJTIddo1LS1UfL2HlVh-X9h07d3AC2Sn8LVse0QjAri8GhFqhS8MQxC1mXTGLm2Si5qPC0E6sOFDH-KsrU7SqsWMOdfzbTh2uNo8oMSgOESTxfWuZurYfoFNXEOQCi0zhV58VbIMzaqU0bz-4LZWpbxexPf2Qe3x83woKmsaVYuOxipXfzUk-gDnNA8DhXGVqd6hRXCJ5TKDlLYik9YlL4grfaI5PIwjzT8Vi-6m1uMO1uW-VRe7EC7SyoyGgM7l8zDPBTp3OSrdfVgoCHjf6cFO1AOUdPZcp1JHyZqlb2cQKx4DO18tV2CPmrOiC9z4FEaFB2FoByIkfERR9tBaG4TwlJyoxjCTCop-LnNx_OOOWrmvn8700PXxOMj12y10kgXmCEkU7QJpPB8NekOkZT1T_zcHWTb-jiUDS2S4yFzl89wk-ZvzbvaibG2ZSeAQNZtFf2aLMe4Fd6lqWES5iM12Xj-2UuosZNLPlHUTbRF9KQawRc7lcIMxNhOEjPcp_Gp8SXdID8MM6yzZQdg5akOeZFHuw9V2dcwLztYwEcakyszuGLbOzM5Afo6BzJglOXbxaYgyuUVS6uloX6tRDbfv_uHmksoBcfaetRGFY-9sOgYLYB4pToVeh-0Oj2eazPlQ_z0_0vhIOMOzH1GvSHuM2sf2o-6wmfs3VZGqYck89fsfVt0_ipbpo3JP2gdGJ0un9xEq2nX_lfasSn-OPQLerUC2WSQeolpr6gVKDE9TXcoa20MbWv5BHId6rK0r2VWJpEzmwfexku1sd4knjUaGsq857UCmuddB_bqmzEEdkPImInGUu6IW2gfgzCxU57cL1kuyaE6_24ngpuhewiRJqgmxZJNekTGaQSJk5ARZSGirlQEJVWNSLL_reY27oD1ltaPhu8_p81G2bD5RmMs7oaLzg6kyv47BfeK9D5a4C6x-YL8fVQfpzZ6aLqR1KP_ap1185eieVPFGQe_OrP-F6pdwI3uYTB46TQD1BHNCteP2Srr_TbVtOXG_XAPTeZAlRNov3xQyQ-T9gP88T_9O5-mTTzR8wd87cA8HYLIcGWpzlKs2HDKbbBApDby1JvE8DezHC6PMCXs68o4FGsyRPQpmzqtRzh08cJV1Un3lYKHzh6csLEaA_JHhntzrYwUbHfNwDkBTO4mIES_MY8hMpQ-9wRbB9_aKSxPrDHNG5oqJgHfNaI3kN81OQLPGSNg9BYd7kHkVXHQR42Tm26LiOTrlXXd-to4FlZ2lQ9XxDGrIt6EBuo2lTp-Cb8YaOJNDoZtJgFIBbdqk6P7S5sQXIQNCoaKCVRG5ov4czB9gmZ8b6bOFAc39Tq_z2Gb8lo4SgBvyAsTiL1oITBEHNzSLXeDBp_EpYyzReADs_ywLH9Wa8BouNIcaHGyetPSmVozpsTlCGg1XnbvJlF3hJ-Y9x4N88Abh336lw1BSfltZj2_BE7ESdUuD5-DPMRUsl_8leREeFbrOhzXSS3VE0GKNcyQjMqYIMF0pAzDrWbQ5g1QhnK3KihC-dkwKRFOKko-X9d5QX-Wgw4thorcMdgDeEfpu2iBQlhhfO3UbT57-Upsp5PN5CMmLveDavi3PipdlxkYvPhfQqHV2QTqGeP8CvyHnLa8J_F6N0y2-z-rO3kS2WleaD8E6sKMgfsgaQaNO9ckAegxanpH06HuXKIoQn59NFSpy0wz51svqY5wwu0BUTm1CFq9xBnZIb9tPxzxmrx_3YUxnNneaytLFSY5Ga8XNk5ohSsaKlrgXgttwTbYroXAPYLvTr_fRjYNViGfpvoR3p-A51wllb9S3XRVRdXhkl79eMauyit5fy5VKa_lvLsnkF54sCL8A2ctt9-P8Q-zAApzfFzY7tWIRiicYNrkKsiE&prev=RQ8B8EDBF4E0133B&p=15&pg=1&w=1280",
+   "why": "redirect link, never a readable posting",
+   "at": "2026-09-10 01:24"
+  },
+  "314508490": {
+   "url": "https://englishjobs.be/clickout/cd67e7c9b00b69e4?ql=ql&sig=952425792ce630492349dd56f477cc0f86202e54&e=LQuZ9Edsc8PigeUYfKdJefhBkNB9d6T2IX1TvlyPO6cibSUlfQopU_di2Qu4xJF87hMJJW4l2yP0J_bi1e-gerlLRxmMtGb9R4cHMEzM9xiicrQtuC0zFZRYklFioNQQMwNZ3mwygR1eGDFoD6zl7_-b_-Jrl9oOo88VNEWI3vg6DCO2KYugSwHNpB2d9SskSx-7aMVuo-ZqV57Z0hNSlgXtlHkZsBEN_Nt_EhttAPfA6kT3oGAmbbP41SU5iSQpJThQ-a7GFfOWw5umNm3iFn4ad8tCJimet-WFIH9oNmDDyZFdFSByE4TZosgJa_M9EWEEP1nR0jJ39D0NhTc-wohRdtCReK3VJwh4UTbOUgC-kA7k422PC270wZPl4FYgNB7Ljp7xUQnY-1opZNCuoG3eh-7OmlBb4lqaqCxP9cwG8KVyS2WAqNsUlXo62yqJoUMp1zbYXQwu2h4JPPB9fgjKtPFIhoRCM6Iv6IVR1sv2YppTBMAdeARsFT0Ln3Qg2Y-4l_iYDNNGzzeBcSwHuNvKVqa3LtIbnCWMDlO-kiekg_mUs_M4NmRNEdZVDzp448hOzHhMCU4SZn6BhwunJUKiHGCeAt0sr7lMxv45_I_H2n1iVn1l49gvWNvfCKv_IrumWfIOrnTH3pWOd-yZRqkkmcxwmyBTbrXsNu8uPKsq6MuAsYWL_vi7pEUkFB0sp2a7_L0BB2K2FCqbiNrOnixDViY_MG2A8AJPag9h1NTvC9kNO_45TCSfzMRwbzKcy07AebmYXB9b1TdtOe-TUcneWKfz2MEBjjGpFWEiKowZyFYwJDR3c5mvWqo7kOFjxw7_VX7pAzOPBTcB9Urc1wAMDA4MxwPrI2fh_9iIwPWvqH-qDEJxOoSHC0w6YuRXKjLf-PR7yUATmWrk16Ld5tsMO7_nnL5-neT6jSq28fPkTbsH4sG5XWJdOq--aqltopBsM7gAFn7rABC_waoY9GNGjZ8wL-VXwJ8oHbRquBi6lPH8LcPmUY6zfMN0Y8kM3Pq3iwxbWWbNi0KCY_QSgCfphLGUcelsjXsi7MCKcU_BPQBNwSqEQdCTcAjVw5_GH-jeu_9SOSqANw2UbTXaefZm3yTeqix1eBo0nr7m0KVRrNG3Yc8SLiutpwd3bzTjFilqjZtYHF8L7dvc3y9uY6ITJpWohRZqv81SBlWyeFQwxdQjvD5XEvZMxjKLOyEXEvRbvvri8xtJySaQN6xo4TNID_2Z2irhOqPFCSZgAuYMzZTy0Sd7KmYGupGb1dHL9do0jnQA3nFg3leHtM-y2lyBLaUywnnSs8b3pqxriDdPwBp4fzPM9FvGHOxrIG0HSu1OcHA24FOpZSPOXXmymsPvItx0HhROYX52u579lhEo1KNxz2KqANiwlQkGCOHxlWVFmh9jHzIGplHgWx0SIcd645U4xiMqGBguFnn_BfP5Xj01QVUrpEnMGM52msMAvc_8kCRtUV1X4Q-Gjc6PgeyGlsLNy3cEYQaJR1lweT0VWNlwK32exsSl6wMObHXrSB9G_3d0KWAaYKxtmj6VkU00chWglmLZch3witcVjnM3irQRb6EGSLbRiy1Oc7VFVDyKe-QREm6qOEMIEBb0Q_uMJRvCZb0aIek9VcFH_j6pLFxZuDfWVNDg8j1EW-fxhvR5oLzmx5pMmPnj7oN1azvXxfQ_BCI8N1j9wRxTfU_Aqft5AVM9jPFxgzdjlj28H0BUeJcBJdEYaaLv3RhDAHwc6f4fy7HRBuQmcJubC1MND6fq5yC5KkDhwAEaEWpABcFZDcCmz_lDEERNKiTY1UH-C6eqeBHYQMFzB_YtwZ4bqK_Ew03ep5O7iJ5EAENLCw8a06j8gtqY2lEPlU0GdsMPRbwlJi9XIeKqT2yd1DgsU0hVaNA_4v_DLslnolk6B84QuRSJOZVWdBh8AyZGn47oBYc8TqTXjHVaa5FrVchQVgyX4Q23sJ7qA99dJR-P1Y9pUbWapqqfsMbuEElDdnfypEKwJ2MSIiXTcWelF8dblaislSazpPaCbBOtTpDHoTYv&prev=RQA6CC3143F71E78&p=17&pg=1&w=1280",
+   "why": "redirect link, never a readable posting",
+   "at": "2026-09-10 01:24"
+  },
+  "210664946": {
+   "url": "https://englishjobs.be/clickout/17ee3165f4ae9de1?ql=q&sig=2d418b4f540a20f05f739452234f9669f6ced838&e=Zg-LQxn-EMO7ERijZmOeVuT241Up1B43THxMjhLfPu24R0El9C24og2QBTrCmlyQO2Wz-2UIS_rBssGYZukisAt8Ee76in88wEXTNIuXkW5j9TfUvUioGS_f13GpiutFISnEqPffKcPBQlJ5wCqqPtlt_-E78fjAjEx22oYKF0sc4bKzsoGvbZRAOxXn52S_DaZTuuKsU2GWkHzNIJS33TDt-ZvjIwAlVjP_zQofmTc-rBQEj0-0i-XtkEFjBha0X0dXNXHmxlfT9Dpw_SgzMjx5y8QVrjeVNUoxhW4c5IBZOlwTNf2lOWOwPlIXSVFeY8Qxkqo1fbp25iCxAMtKaBFyKwWxzjem9egYEpgWYkoUTeSbcCHSd1ziJ6FFpaCVetwf07im7XfZZh1XiB1DwQ9PgiZqTdDY7qXOXLsBor0LfmG-e7lGsaQVKGsl4l5IyBrROt92sSeD_90LynTM22tZ5E6y1qdr6_wVbxXqe4YO7wxY5-gdM7gOab6Gmu-W7h03r-9tjImr_eTrheqZUrEYMX72sm3wptEfG9W4-oAWQCLbyAAvAnuAY2VLztbBEtcnROqdhxB69J44Z-TSwxuQmcqQqUlDbckfrO3XAVrTFsf95gmVW9-lpc6dPq6vK5ZMDRGmLJbcxmyT7lf8fZISJp5haoJoPenUWq1y7QK5bJXy0GleRiUj6SutsfjCoW5yqL9BUmOhPWKERFo5K4OkbDkxXDAGu1e9MvGQTfMJBbxLRTigmweY69pfrv_7cIBeTMrGDPgIW4MUxvhDOcMbXnPKfbf5T8XmLA-wiBGL3or32MV9cKQQPNlU0QoPNtuC5UXPyunDmkn5kmi7nfBtQ2HOmoXkDIjcUtq9EhwlBi0ba-W9TFPKDXh1scoseJMC2tBc3BoWxyIiVFWcjvG6RrEJgG_VWyvOLOia4OJYOs4w8HkwXM0cxM_sI1-yoSPubPKauZOKqha-vzonayELiemjEa2--02mcdvKty-fswviS6P_YawJbtwNkh0hO-udPIpSsxTtbc0oEFSjSbMCP5MqXn8dw4pGVJkb-MlzTAzGf9wGbPBZpvQpGV1cXBFOwAQ2bq3xlPeYIva75F2BDJcYMLZSC25gTF76Annr9OlCH2Id79m2wnhhV_gMsDc9FLZGZosHtHvmrFhUAavS0GlaIjlDL4IbdRG3LGiobPgCCz-g4y4bk7f8FmBxxubM5lkJMkGno8KbNZ28OQD_rCvDHoLBcjpgegluBE3lQksptMOqNTcMG3Ssi1VqkbbczdEC7iCsa4Sd9FViS_CicuX4SrzDAHl4bbCUI4HwY85yKHjfxlld9Q5umBZJrzkyxOK5d7NYHBSfwhVrz7ADKk7x9WJUuj2MK1l3vUv0L4gG2fqF9Dg7EANhWo1Spi_dS8CiKDReOeLUqmgfwkWIT-XQqpe7vXCh9ocNXX2SmMLfVCd2g1LsgiP4e92ub5sILSE9XDCQYaQG1SmuDGQf3rMMcjt_ZIPGbwQme-CAI2ntmkdYfWV1jlswSPdI5cMEOsDDz8XL5mzFB3De53vIxBsDVxQSLvTcYwQlYegMZFn-rnRNKumR5Ip8YxSUB7DrFUcNvXZzwTWRLCeermcrrbqUSdlBJoBfCUVvTlv02IwLYnfFVJX7NX2QAAYYfEgukP2x-ETPGEUZXvGSja31irVdIQ-ImnimrGAt1xbcgAKHuAQoHlZikm90Ii9C-nXFeh3XaGCujlvHdq12-gI3fGLADACeYSqI5pY8_MktZxEJOH9rlBbcsI5yraIzcDGy0xg26W86PazP98OwSigqY8TXpJH4uZt4DUNmHVDg1pL12bjeXZzlPDA4R1AxAfW2cuPZjo82NxxiUQOsmovJcmGM8HxJgaYklVMeRNiOX5D8_IgxHLCuXN443lEsZLKcgxnqV8pufpi5XSJIRGScgf5OCsVeYeFwf3qWgnipw-W9dvrwnq6uA5umfNbVBxyxUeh9KFViWsZGBlXpCY8Ad-tU-5IfAfhhL7z4yzrgTy1c3bO4zU-h-dlgZeCYatCW&prev=RQ8B8EDBF4E0133B&p=11&pg=1&w=1280",
+   "why": "redirect link, never a readable posting",
+   "at": "2026-09-10 01:24"
+  },
+  "193187214": {
+   "url": "https://englishjobs.be/clickout/70a2c3177b13245b?ql=q&sig=80bc4402859b188b4c9b71d0ed783ffdbca7042f&e=4OyG9YKSEJJA2S87qYaqRe2P8ZRBdUae9wOTdep6okyvJJEQgQujP5f6UGPhwEBZjCoato64ACm0DWnatBepKnaF1-azijHc9qlv02A-Z13--ySj4l7KgqudKGJdod-tA5f0CpfTrr_6gx8F9eZ7KnDtD4HA19-NCVVxzUy4rCbw2PNeBecixnRlFbt33OQt97G-DgnjQT10awseqRtNd6yTHcVOWBng0rSFuOldsn7SmqplRsBV4nvrwlOxvzLezv5WWV-nOqTr2BBPoYn9pH-Ojk5hjRIItTSedHiY4dgkImxE2BHgnSFFL1B9AoZm4BxxdkUsukq1I1oZv-HcCvDyhGKwVvErKaNND9JLDIlK3C7B_JWvBqYCuA4R-K_T5MXl8-pumIjh7wp07kqAt9Rp2sSJGl36vnvcVkspAIUqQcXxuM3NpeHMczpCpjfoahgeixOzEXRbCqZ04FuOkRWHNOKvJbNa49_qEHBv3Uew9_T1BGrX2fW95l-ZC3c6xHjpnH7TQcFAXnj0_179FqBO8BtbYqMhXA9jM2MLSIjxSCrUT1e0ubxkPyzeFYIuj3ghvalwknSV6XX4mB-FfxzAgX1Yi16diaQrkca2auQhxkBGCxIWBnZyiYBa_hLWchzT1_RMjjuz2X_mOl7ToqURXqbdMuma6QioVEIAXQuqeCZVlZS3wBWYVWAuheKEXzeR0-VA3ZExKOkDs67r9zRU83cGEm45dbBwCNI4CswenqgOYTMx2Zmo6215vwqUkahcnBjF9w7NOje_de3eNJBxuwq7cjvxKodZPlapzpKI0QnkE5wYDW3RKDDqm2JUv7grbiiXQA3J3-XBpMPBm14Qzm2ElTBNx4bnmNme88_wMYZ9yQ4j6B9sziyVB3AYax4bI6YUp78pMJsig9uklRwcvGAmCqF8eS0ypWThPEAoZRab1ByiQv521v1M8HAOYvCakc5BvBqTdj3b38ZN3uyJyIUwK0lp0c1XE0-cuwED-tW4Dw1-9cL3pwuN-_s5DNQKhOUdCqFhy84gjeHJkHnlwDSE2ZFl06zzBJOD71bN-PD1RZI8klNR2iPmY7nqFfrdmAVBTu20oMXfT4L6trUQzEt89pXZ0pxrTStzh2ie3QD9cAkIkXHbEk_Yq7GGnYzHrqk_CJjF3ub1Zu8D2p-29DFRstAGaRo8SsGOJwJ6hG9PiSpDqiHjYlc7IlWD67spRGZCrjrwoTx0QpaaZbKarGCc72g84toYjfKUKSPBjXpm5D_c7gKpmfoDTZXJloWbrrUgR6m8vDz1RJna3FE53rX5E73gfDAlBswXTgFCW5ibWoB8LXbGrR1bgK-H8ELJwqdadPI80R0LzbPhC8lSjlfBxu4Y_U_g4ZdUTA3rv4hzqUqyiAAhowAsEpQAvwH-NXObYuEycQM61-CR_g&prev=RQ8B8EDBF4E0133B&p=1&pg=1&w=1280",
+   "why": "redirect link, never a readable posting",
+   "at": "2026-09-10 01:24"
+  },
+  "964175185": {
+   "url": "https://englishjobs.be/clickout/6196ce5c15858f6f?ql=q&sig=29bea1776f7d7d31ebd50d0229cf82ea976437f4&e=hsqJ45Hqpo1fjnpKy0WKfGpQdy9uX3knOtOKARcKF89rIQTZxEN1i9QK_RcEy3QsOy7a3O5j0qQ6NDcWHoI3orA2t6Gxe6cPJdOFuawJeEsoSWkRCoFTXG_3inf_fDiRSnc1xPDsacBYwGv29mAMVPwYf8hON8Z4lySBl5VqmM706Px1LW1nKEoSVk19m-8EmjXriT5MnnYFguBK9cMnk7RMDjyQDunusIny4KjN0r880j2iEvg1LgD6POWFFzOz_OTnkaj6NIvWXcYywzeHryLRjC-4_HKIOwq3j6MVjzxx2znOc3GGspfFgN-P85QTwrgaAMsnK0hWMKLOGtakCPmmcahNj1WgvulRM0vNmtTDZtDpz8e8hwb9ZAVK85G-pLkqAbWUWXX19Ef43A8kpGh-U_MqF4Y_QB4yWsiyb7DuQilj4UsoVhjSMzmq9VrMbEC9yNeVfG6xqcoR2OCKVa0JXbvw9rl9zbN8axJ1YJFf_yxWeTlaVCqcdY5Kk_6Mg16f3toGJ9T_W5kyxeqKDpX5WvfZoW0aR_B8WsLIrUEyvM8OjmHMXHrCUXixGxfNrE_fs4dImNmStxMslhjUQWi0KjSgNzWz3R3BW1pJS9CSlEA4paKcvWKZakJPjN80G-qZQO4IDVeKUv2yki47dR_Z-8W8zMqhh6H0nzLQAR-vwYLerUtyaV5WPU66AyJ0HXojM2mARvRs6ekzDR48HYtNKn4RF-uZ8y47s4eS1qwH_GV733CbxtDHYTgW45HqEu7TNM_baQPfT0fH_1lR7r9VQhRmVznY5NQCJgW-f4S3IulOXa4IjIhPzz7EjQUp0RBO9p-LgUZxKYZarATwyY3vxi-hstYOnMucCtynGjacERZFlQgPnZ80EY4iKt7XNS_O2Flk1CptFU1Q7yrJv39b_qhfyWEQK0APyAw6_CoeV0V33G2-gHpsJfozaxRQFN-SrYgfmpmQFtKgpmNOkl0meIrN5MfKDA1yZVNHDUhnDmNvXRjBlWUc5qTRFYg44wFtntfFAXJRyfLFEBklBG952t3pS8crLlpPTGsjTbJeJTmoVD9HsjaIVAqX5E0KpwlTUK-oEMn8b7XEA7wJomzu0gZzz2IDTooOyJr5f7PKsNcMcFFphUMrHsoqe-4El9_lzkvslv8md0ilTD7beyp81COZeAvfCZbA1siQ227S8vCMWsljPwkAJQb1YIpjov19yNq-kptJ1hQjWnuCZ3-jWG1HMNhd2DmJEqIpphNxqJw2fVlONi0YWJSdeJkGd7-vQEHBSjFiUySoGLiKqnNK67LRKB31lHQ0NpSZsOVqhHyP-ED5L30iyVYt1edNDnuOLL7sEmBvw_c7wCL1Z8_NWTNbv5uQ4T_FYWU9eE1hWz3AGQ9MU4-U8GrfwDLTTA9LDI7eaNNQYy3UFHUNtuj3uEmZmxSatgZDo-vvM4WMNqfm9p-vEhfmWYSDCVjQ2VJ_O_D2GdePYH1imlt155N44JlqAacoZ89kCsVeKNJpq8Rgm9oRPI4D9FtFT9Bzh_FXpWEfTiHCDkSoCvpWO0Gl-1YZV4Lk9UzcWYWelr9r3yHtLFUOXGFgJ2BXVLxRszh9jq2Ao35EJW4sv5Wpw2GeqU45KvE2ZuO14iDipdWLCNF2tKCVnpqY73YeQ3m-U-F6s-Z3Eys9RgjWpbkUrB_k3j1DTyblZuHocdbWg4rBDQ_S8pO6DqruzyEPfsnw4ZkZteof731YpaP1__PMIeGPe467tif1ZJSBBWwqkYByUFiowAPXvYvAa4fBG49TKbIOAgfNOjsnb2WfIzLt0rzQsLkEzdRCs_yOXuA3CYs8IV3soVbncKM_9ZZ33yF16cdTI-XQubYHPgY2uNPTL8siJlPms3aYzBJqfWpKAe9BDbs3GLbngqzaVBk0dKGLl4Es_i6TtU7gnzr2NS3dCP4-_Iqn1AIZOqxaIhiaIU06w0lSPPCb7WXi9Xeho1NcvQReE1OmyZ3FWBd-TX0sODdR8QCNLLbkPlvv3n_ci4_XyUIveRNrwp6U6xfKjJX7TPj-&prev=RQA21E1E759A3382&p=8&pg=1&w=1280",
+   "why": "redirect link, never a readable posting",
+   "at": "2026-09-10 01:25"
+  },
+  "962243802": {
+   "url": "https://englishjobs.be/clickout/2836517e78135f29?ql=q&sig=7d43d03406e8bbdc9b730ede1266564d30f83bc7&e=pJ2JtHc-J8LzsHs0ozfdo5dAjLLyqAdL7UDs_gicL5vghoV_WpFx144GNWPrmyakIc_glAf7sjOiL6mXtETFHZTMPGuk0WAjRPOd_HDg-QNBJCfWo_CBU7Ko2Mtq8YNPtgOopAOeJjU7Y4y-inwfhLHzSiddTQhZ24pK8TweW_fDcGCZh9pl5qJUK2Kau4YpATpvT4pfib6t9-aSrxV2ACpM6n5PS4D5rSqsnG8rmxwp1Til-enxzwUESeCXDziVZ7u4I6JlrD3HAom_ztqtPhwG9SbzCvdFr8yzsUasAtrlRFyr2x3rgxHLXvjaqTEty9JTK6rF5027KwRSaByotZcMgAchXFVYcRvcVPRsZyGfEG4PXTH71wK9PCDlsGIGRftvmyKjj2VmUnQ5XHTyNAuCRQBDxYJV0Mc39v93fLPUT_cubycxKXjJAEsFtziGHcubE2BPwaeBuaHh-PHEUl62kz6P-Q-W4ebTkBY08yNw0pqPh8G1RAc-YqnyzJ-yGSyxO2stlzjnFaerM2eoN0l2-m6dB7Bvi-ELgOkpzsunJad9LqggfM3hnkRfGAHD2HTFMoii7bM68KvWkuy_VJazKKMZl1am50PsMtB0rGbU2x5HeHdq8vRwpTn4IkaqwhM_Yw7ZDiG2pwusVmRaWItRWbCxa-gXb4KTKQYUGYyAkK4ZHYeuppWMdgAQLCtA4gPIrzfFscsFM6ST_HiKuo-lfFS0PBuPw-pcdj1PavwDaNoXDqfIQs4RcLmh2p-YGsBAj6OkjE8y79ATPsYsmrPQ6iPxsF9K2K1kQVyMwYRl-39BBOCgDm2DHhA5Lb-yjAR_h1YzZtkueMH-dzXEbQSkssamCNngqL2Du8Spb_dSWmPxt94SuyitsGaiYj-fJOXDGOw1ZcOdR6pkrxkrqgHXmvwHFdY93dgAt85iBsdQq3pAaPlKkMeOyppyBJ8cCoMRZcodcqVG7NogSvQvwsS2lVxuVDwRIsIkLulzLWkZJzqjdeen_ayxixJ_9G4J3TnjAwx9NJBa7IrzQqSOlKnk-T2BN8XQ73kqpjU-aKMb9FAvqzz1evM_9_6-aJlUwXtQh1iY1zkCNReFglUE_hTcJAqHMWCfxGyAL8ZAHkDlj11LpvapA6fgcWjxGAjZSAPYx6n91RCo5pR4BgWCv0PoHTMXhkPw3NNv-q7vMrVTw9h0ZvY6yngB7BgXUUcPSA0COzhGmrjQYn3y9Bvr6wJ1Uu5TwIbMbWolFyAo5sFUNZF16Id2GuoX0x6V7ebhr_YuW-ZtwDIm9_tvfWa8Z5Cs4EGbv9SDgYr5ua50SXDfdrxYjWjFaElFKKJf1pWCaAFazVOSjesMxf6q8B9BoFj6hWbLVYooP2I-tBt0dkyIPjHc3tAOjjU-gBNj-nmPi2QuA_mv0YkK4iJhKneKPMn_HuICURO8jtQz9bv5l_mPh7lYuWWCSZI2MoMFVVcxcTffCLfLvD-bituBThO0XfmVupxlyMJrZ2UxpJlgJsc0wJ6m3uQ_9i0tVCH6qUlDoir67a9CFGzUZbv-Hk7Ur_fJdRMkumS_f4It0zlKcFh-yaYvg-qc8JHcR2ZhOKZbztsF085KbelqXLdyF0ZhJG3Dv-zscQEHfY8Te0uJLskdnQmozun7TMXFVHOlpqLFN4faj8kq-pPi5r_Pcy_CG2hIlMYKBxJE9qY_oqZE2YoZhstU2ttAhMu1Im5rm9D6I_zqngNLmil_GUs5JWOMDseOFAtj8jg7JxPGJq2rhMgzv1REAJyIr8UOwjZJBjWSxFH_hJKM-VTko-4MODAIpOHbnw4ZpTF6nKZk_ptMilZF-jXabIMXMhSzIHr3A7zBBO8vKKTNNOHkywpiNvNUFlMBsTRlLo3X5WQWj2u1RuxkJbPdO27MUdQT9EQCCBAJsBquQ9DBgbs8vA5SqFhJBfWnjkKil0y7s4VjhsRReQKlln41hyvlkrtcZLG13rQaiq64atacjYVK85oNlSQS2iFkutaFVFl81s_a-z4hUx5_MuUtmrjkOLVJMRK5IDXFw4VQ&prev=RQA21E1E759A3382&p=16&pg=1&w=1280",
+   "why": "redirect link, never a readable posting",
+   "at": "2026-09-10 01:25"
+  },
+  "838121781": {
+   "url": "https://englishjobs.be/clickout/51aee734c801686a?ql=q&sig=d7090d024e562f57ba129acf80489f705c3678e9&e=uxCbJ6CyZYCSjk3jTves5k1egcSNLAPK5FE_30ntSgtLJdS0j34EjMi1lvOafvJfDuue1aJ6yElwlrTnMSHOevFYQdNcjLIjKcL_15cGkKfK-wVMX2m_NNVo-4HcYRYgoDlJm-LTRaO3j4FoNa0qTOcg7-PhVRoIXw7eboaFaH8XLkW-PEHDiP7WDJvkvLAnC5VIQE9hDqNpKW8fngxVjutwxz5MWNSGThS7aYd6SXc6yvxlTqV9EbYguGLfoJEtQQ95bfhqgD7omFqChTlu9fFvusg9HwrLnzOfISljO95y0SMfl8uEpNWutDpJBE2Ud5jFfa2Tc5TiUu8yKIpqxIW-uRSZW3J0gkdTZKctahs9QwVtukLfhV1EyXDMPIg34ZCJo_UD_GP8ozsxkYF-hF168L1zoKvhUCHyXVn2JWNWj2rinrPZnvxmrJTZ8L-URBndnIRpdOD5AC11SZWjEGKymgD7dRbbz_rKrGnqqF4D4De4F3HL-tYhEp5ynnCmYaeUqB3FdM-VS7bXEDDqUPDDQqIvE35K9aCyjwsLcf6GX2M7dxRkvytrk3_iWES9uIJfKGFgRgxuLrhKEgGm8vhiMUG2cqWLhTw0DpnTAu4_8ZLYrJCVUJKrpGsDBfnDqk2YlUU_dZXCblOSCtxKav69zxNe-Tuf4f8IQmgpvuAUQKj6dqZTCkLzzg8PDbklA60IMrMx1JbEnkoBpQFhyauqMWmC6m5LgnKj6emJzSRQTdZGnEKZXjTzDiqJvowETIYhS-YnW8m0NBnT0bqtUyKX6HnrQ8tJuJQV_M8m1I_RqCoJENBVYZDyeNXRZPbENY2gbnbCcZhFElpTP-qZ2tiZqNaQnEyVnubJFB-V7f5fjWye9fswYgjqn-sCq-LR3wssdl1thMj4Tk1LOl6e3p8M06Mkj5FotlIPLR0DO_l0uesAm7-Nz7Dpg13MT_efguXwc1l--PiVvIlKq3t08ZLtq1sshrVuRJNnbeGNO9BHU1lOF-atf76Kn00Vuxk0wceUg5L2feCBKiB_yu1be6fCJRL5QWmNPVT8lUay88cqnJ_eRo6y3XjQTMGINT4wG__6sUJ_lFCwlrj4eu8X52TIdVb-Cc3AvIlAMIILl-1z4lbx3GgbZd1hVlfT1mlxmTAyjQNrdAwwXtKbBYRNp8vAN2mXlIf9cOM-R5vDQ8aOm4wZGu1bEsINFqztDCB3E2CJ6tJpo-jaAts0FBzLqKgMJWi4U79vMbkmHutgOCjNrj46QYQnyyXE3APVy7puSf6WCR4jghGN8HkWO1oNeizNZWFGaB0x4h90hxDJcW_HxC4ydmfjPYK6qinwD-DkuZqvE2Bh-VLk0bdCalAKxXwp0GpvqLOSnMIGg1aitNZ2kpjaJ11vBvq7ZuMRiCSSsKcGlKMgrggeR4JM6Q6Tk7iZs805hZsKcLTQsXgLqKh-2e1XKPIVGE9bFdcWpMtNSlylwWuaWgZjbCIh4C59a3dZ6ebI4M4u-4zPVV_YndUub1DydUxUm_u-caut3wdHoJsPub8OJ-Zf2oTwAORCOKX2_Ay7QKDDPvqJW3lzUzE7F2WqVr4wt_sXvryzq6u-aGIKMfRH5qUlOOpjP_kkhI4XEadR3d4qz0W2rFyrg_B1pWR6dDVihtvv7zNIakCoPOVVQeUXd__8J13zvlcTOHyvEhClADdLGaQGXiypYza2wlpX7QRhHTm7Fz29frL4H969vFeELVm4WRX29z1q43AOVZffUoRzJAt1VRWe9bvuHzQtuA9AgI2hIcZkSewe-hDxNfdC1dPcGW-3S9RH-3YvLycN8_i-gZzAmHtqUy_yAiMkAnZHxjrwgFI6yIyxllw4M-Dt4BzrRCK1wLq6gqMo8Rzyh7VfPsOIvCmB706sbhhVsQ4lG-gBeTg9r_lnu5cZKtVCMEjH9i2NWsSHPJaSYD_ma3qc59JCCT4PKoxfpNWXfEDWAsK1Pyu1jsZMKuIhXzlgQ041WOADfu0uvE8KlEjNAoz1_6taq4T4L8bL_dcWk_xNAuX5nl9-VhKXLLTt&prev=RQA21E1E759A3382&p=15&pg=1&w=1280",
+   "why": "redirect link, never a readable posting",
+   "at": "2026-09-10 01:25"
+  },
+  "750553581": {
+   "url": "https://englishjobs.be/clickout/ba6abe44cbe10c93?ql=q&sig=2dbd9e358c0072eb632b51dace35090ae006ceab&e=f2sdcx8NoBDTE3BbZQ-ftMmKG0agWWyYe196gZi-krx2CUl9pPAfYX-yBQDDpW-Xp7XP5udLvYf94wlrKmNe58dx4APQ7DPwBw_ClDyEgCPjtPQQCw2TYRxQDiwK55WUjUZYOAs-Dcx3JZuxEDhfDyG4BPm0_tTAZYFchHXLopS8epscf4XlHnMunGoGnbpsSe6FN0dTup4_i4l0UI5jKlZBx9gSJn2O0zbUbdmxg6hctldt_wYqqI5OSphf2PTpsuPQYdQ3tFqqJRSqC9yI6Xi7wlu3SroAxzrrVPDF-XSFKVf8ozLzMugTtIVuhsYr15vK32UrKhzfsGBYnv85w_ByHqWFsuGyBUv69uagZr3q_XB2mQvsM00yl11cHy4jtKN3yQ9i3Hbj0wYcW63PgviBYsJYzKTeCcowyX9X3oe4BxeyaWCes2GEQVNK7EDi0e9ODSNA1YFASlbWaQr0DDWb_5f57-lrPPjOOZKfcI9JXqYjrx6AdGyMnhl9HHFYJZv8_PGIjXHeZQUrAHUa0MaTUId5amTTo3HCCO8ZrEaYE5R_DuUKNmZpaBVXx0mTeAH_1gl8ptZQ55a13cM0wFr4ZaoPLDLD6ueQkk4OOdyCATzmk-oJwdz2K4inrWqog_UTj--giVcN1cTvmnvPfjb5XI-JM9mAk5qtSYlxp8N2kiPMTN9fUKTcKibEpFcghDYRB9wONzDTFBgMecWRgW-5JCxFksCjMsnY6bTe8tmbE_s83b7zKJ9zg1nehBf34ZXOF-ZalZFCkO3Zpw8125TrvQgrit8kVG3X4fy7p2x3sX_xz55VfZv4ZjiBK6iW2cd_O8A5pT9jpVts9B3FZ7fNvucv4q_eaWNcipXUdc4Q5ZhgCVS7Y56QmvEqC0dx4T51wumvYQB1IkBBKcavV6egXIA76KK4fce9McLBL66F4yBF_3pcv7g-jedGI1kj0v-_7xlgrZMBVOLs3tHLsRkphHT6z68Hzobq41z7fTMo-WbG5xrIlm-7bswligWIgy1-wCi_IAUiOy1i09OIlC3plRY0lv0wd33UBPk_q4fW-mNT0zQJHoW8G2W97JGz_JVclpy2PmV6IU-OAgV3NkafNcVioC79XMDhv3iq4o-X_-NnbA5vYI5--MjuUFylpYfzkvoqQccXNjJLFEhNHs-oJngJ5rH8qDp9E3AqLg4YPE3dDLBPGKath9xnfHNB13JrF9BdCRjqRg9_QiNDw5PuRZwOPHLEYxZOoQ4x-q6VVubcGO8vRBwyPkjmyvLefryBZfUmg9RvvuX0L7UFTXs0Y83fLMGG4XLPuw-yg7BfgR_eZxsSUxM66LdbvpADUx1RQsCZFVw8g6BgjbfcprmtbbE3e9NkSU6egydMozc-MEN6oe7JuJynSRSkJMWfrNJ3Ps0HfB5IUOONerkil7g6XJ-cu7-u9ZFURW1xX8fd9EpMd5wQhPek_6op66Z73_bQhvSZ5Q3QUaX6pT4ni3PL9zNoAdkbZOqsRM25QGam5wFC39ueACBW4tlqZoM3HDUIWklWirLqGGrG5hw7M4taxju3rRP9R2Tipj7bBmxh9su4KR4pr6KoLg-juUO_O3gsr3u5BMc1zZwZfCnp4ntIiEm1Is-wlzdiL6I37UXWdWYxyYYLNOYrO4M6_LQbHx1WznyvfUJORJqET474pBXVl7g7-fTWJ3WCfWz0o-yfOJrva1sxwIdJbdm4QBXzJebthOvnTtm54xDaQzw0IPYcpsAtP-MkgCV9GQczAWM5F5lOFjSlhZnp18Jd4NT9wsimWVZ2gVencRWkGAds0uALq08amrcB9FEYYaNSWTzgpcAmfKTpzEYD39DlWXL3alOJjTFf9VFwVrLlwxZVl2E_vWUBMeTHwQpfrOAwRYmyJPmXVFpNeAhfG8DdEtBlr_oPDUWsj9EsfTN-w9BVwgwtR8CqJXbqEA9XkLMdZhsU3tGAvEOmxRTDL_6GFKcltB399E25eLiTIn3yHvQjC7glgXhUtjPA3Q7k85GrM7MYZQzZiKRFZjAZgL-gfg-h8Rh_&prev=RQA21E1E759A3382&p=11&pg=1&w=1280",
+   "why": "redirect link, never a readable posting",
+   "at": "2026-09-10 01:25"
+  },
+  "900057930": {
+   "url": "https://englishjobs.be/clickout/7a0f73e9f697cae6?ql=ql&sig=a1fa6909313075ddca327e5a457d51928fab1f6a&e=CCYHg5iy6ec3eFXzunEVyKXntnSO3VOzjrgAdokWwhbxCI-2kcYAazEVV4NrUshzKuyaUY4wg6NtB8lktKGRhYPvtz9qFl5qv1IWPqgEqfkOlstY1-QpTEPk2lSkfyT4tGV0bN-VyNaqvSGw9zvauMqbH9R4Lknbn1hPlG4_b8MWNpTNIuqnBtx8qL13ymiK3oZ4pub23JQQtkSco-jG7-qK9I22pd-Yeal0D1ty_Far8PKFJiZXG1b701cnilWU62Ge2RxOHgAnM46PGWq5cTwKYqcSwhjlAVJRiJJwrnB0KJmePpjob2zzawEbMZkzJEg5Nb8p7ZJPk104AoODuN1XRo5UJa8GnmpTV8apqvbFpFo8qgy_ye6_dOuZnYxowglIt-yqROM2dyrqML_j2f9V6cXUP8fgvcy3mtKKPH_OZMFSgdX8tS4RvsXEJvZFk0dgojxs9wfurbr0sa_uTYCFLcUEoWoUfkISuYNRot_ZrydeUHUVeBIQoUPlsJnpumUKkpJCU__HdrtoBfRTxwyQhDEUsFIThZdnXZUGnDx6C-RhU1f-8aean6efIST6kxSZ2uI6QrNdfHBxZzdY8JfjXieCKsohmSUILlLJx_F71NC4UO5yMFAcjI6c0oVV3Wu8qCV68VMuAVAgJZ7niXDQRCB2XnD4iLHdkW5L9Zx5m7IcjmFVh6O9f_IkBRuZ26RG7HmAZ5zpw7VC-MV5gmT4jec19RQ2mEigwyNSvyry8vPRaXST6p9I3VGhTCp9QzN6XC52d4T7UFJrVHmwnHwTzZDKxXnOd27RPv2xg8r753DqNl36vu7O7M5zdUJ02UOkY85lOoweW6PE310-xSYXMqqiVKM1QzbxipmDnRu5XLra1p7S8yVbsl7N5vhuIly022H7j3GRb_Pw5Cu7L_HqGM5jGgIuNTTNczMwGnyJvcG3pmPIXebyR7hdjh-nkVQfEqcxGvtIjQpxMrbeycvWfZvDVGW0ntYODW_mbpVVLFNnkBG1B_eVIdZzrYXvCv9XjltgP27ogHi81kSnlt_H6Rv62lackWSsu7Hyljl5qjsr4ER5YzPgqtrqp3WI0r07NwxdAHkRcg_1zR69PdPlhxEqhk2Ptbw1gYoAwdxOOLzMyN7S4c-JfOT6rrv9dnJLeg_J4-MuaVorZAdV0ctmdR7_OcfJ-6k1X-cObhHwFHCQTix7aBkEtMNPNTvqQHkxFDNu_YetISPSSnkFjiQ2ZNBPH-8RUJnQ4eb7XWxl0jUa02J7kGbXm7p6U_CbkTvJcxuG_FPFnDfw98sey3bgY6m1tV79FCxFAtiC5VJBqd0ZJXXNKVYuYU5lIhHha_n-Dxy45LaXLqErJdz6s74eRk5v63yIQbclhZQJbJ42un7oLCna7cbtGwys2dphE_uHNJkUX41NtlSvXx4&prev=RQA6CC3143F71E78&p=15&pg=1&w=1280",
+   "why": "redirect link, never a readable posting",
+   "at": "2026-09-10 01:26"
+  },
+  "156603264": {
+   "url": "https://englishjobs.be/clickout/8d892bb9bed5957f?ql=ql&sig=37cf6b17d5f9518cf1a40034f08c5855e3a67220&e=rY7yFHcuErZPmHnzfH7P6kyxkKxZPnAggAn6GfY-sdjdVE0lhrdjFQtBjEUqbQdXFcInmv5qA9VzjMV37Dgv1sL3QKDoatiIMrvmUSe9OEvFd8jF4H5HuH45NGMNyocX0rT4bqxfhM8DvNT2AlK3pxCg8r-6KcwpypRGB50JgYRRUwac1Git46rLTI_XBf7con1tZO_0ZDpO-dXTqaAu15f-hdeSKuBYdbULbTs4_8R5ixC2AVIfVP_mxX2MjryWp5_AVcYrNd6NJ3oHJoVbzlQcfPXPNl2vQbfJrxBXSt9Wvgbu9OPIU1v1dWP02qxNjijPJy8bcxjypADfxTwcIS071g-s7XlqHjX1Q2QeWa6l_Qv3s2Qw4-s7ZS8ZAzpmRx9om-fcawOnOMTFwI_he0O2tpnmOhAxyV1G8EUm05ZDeuidzY6SYfzJdfSQIF7yiJAFQNPA3_9ky5vo_dYV9L2hXFkKNV8E7dNOEhGs1O3v4voAs7-wfY-80B13D7qw-S4whP2WLl138cLI8cvchlDMipeo9R3R4bBuGM7RF01vogBUhTDADNWWoX623QNFOsuPjAlPpv9lZUV9Tq2bqFnGE_5jcQkGiSyzppUqPC9AioAbRI09wnZ8fJa14ObidPr8eqorW9j205mkeOQr94ord-D_PpZWFDIrxaN_6ayNkkvCGgQTzdLvejNp_Uv_Dl2G1C-dix3st7xDqhfae-6NaKw7CXRDtfcRU2eZ1iifbrY0Cj4k2L_wMGLySxHdMjJVPJiAWipT7C8kOjXEehxFnkfsdvbRhNGr5QwNp9L3aeR3_X3yUZz2qpnQE4UfLpGthqWer6qrKeae9AI6K8m_1NSCy1-wi7LjKTRIcqmuWj3oS7jiCwbNOOYw8CfT8hD74AY7geXVlkyPVhCJf2Nknt7aEqAwafbEtGYYSeQ3_v02KOcYYPHdlhDqKw6oCBLx1cbN8qFsaD4gTecsfP4cFrHrJySqeON1ENlJyqaem-VS6X5bbzwMbLqADA7g08UtVR3Df0lq7HvFcvhksSGnvYR7E67cB_LttAKhEcMMYURIW2ogvPkcLwkFsMSnYOxZqgPTDc-98tpm1LRVJLK9Axbsw6KDZoQN31L5p4HNevAnYv7Z2TtSFH-W7nofcEcYup8zIFqImh0pmsatxgTzbX_jbbAn87N65TF_uCnGC2HKDDJHGg_ubWvOOfTmgsyPmZORHqrMH4DTI6X_m8f6QQjq3Ljw15DvGOXrU5UOaXMIBk63Kjxf7UuFnV667UNRoFsbTI3HGa94rCDD7qQWKU57bG6JWhMS-eNNdJVHi5G50qInVw-2Wm3aE2ePewS9ZnyP2F68E_UrITKqo5vIp6C3mgLCzxzVOcGNV68PucNqAbnXDbsEV7KSUGkkTKFqnCD2AZBzEA&prev=RQA6CC3143F71E78&p=13&pg=1&w=1280",
+   "why": "redirect link, never a readable posting",
+   "at": "2026-09-10 01:26"
   }
  },
  "verdicts": {
@@ -295329,6 +295529,444 @@
    0,
    "Requires French at medium level, which the candidate does not speak.",
    "2026-09-09"
+  ],
+  "911747585": [
+   "t",
+   0,
+   "the title alone rules it out for this profile (senior/leadership, or a different trade)",
+   "2026-09-10"
+  ],
+  "593869412": [
+   "t",
+   0,
+   "the title alone rules it out for this profile (senior/leadership, or a different trade)",
+   "2026-09-10"
+  ],
+  "954498568": [
+   "t",
+   0,
+   "the title alone rules it out for this profile (senior/leadership, or a different trade)",
+   "2026-09-10"
+  ],
+  "865644292": [
+   "t",
+   0,
+   "the title alone rules it out for this profile (senior/leadership, or a different trade)",
+   "2026-09-10"
+  ],
+  "762760121": [
+   "t",
+   0,
+   "the title alone rules it out for this profile (senior/leadership, or a different trade)",
+   "2026-09-10"
+  ],
+  "745995606": [
+   "t",
+   0,
+   "the title alone rules it out for this profile (senior/leadership, or a different trade)",
+   "2026-09-10"
+  ],
+  "605481796": [
+   "t",
+   0,
+   "the title alone rules it out for this profile (senior/leadership, or a different trade)",
+   "2026-09-10"
+  ],
+  "518808166": [
+   "t",
+   0,
+   "the title alone rules it out for this profile (senior/leadership, or a different trade)",
+   "2026-09-10"
+  ],
+  "475515210": [
+   "t",
+   0,
+   "the title alone rules it out for this profile (senior/leadership, or a different trade)",
+   "2026-09-10"
+  ],
+  "183540694": [
+   "t",
+   0,
+   "the title alone rules it out for this profile (senior/leadership, or a different trade)",
+   "2026-09-10"
+  ],
+  "104101190": [
+   "t",
+   0,
+   "the title alone rules it out for this profile (senior/leadership, or a different trade)",
+   "2026-09-10"
+  ],
+  "962049454": [
+   "t",
+   0,
+   "the title alone rules it out for this profile (senior/leadership, or a different trade)",
+   "2026-09-10"
+  ],
+  "869140064": [
+   "t",
+   0,
+   "the title alone rules it out for this profile (senior/leadership, or a different trade)",
+   "2026-09-10"
+  ],
+  "840540753": [
+   "t",
+   0,
+   "the title alone rules it out for this profile (senior/leadership, or a different trade)",
+   "2026-09-10"
+  ],
+  "975113220": [
+   "t",
+   0,
+   "the title alone rules it out for this profile (senior/leadership, or a different trade)",
+   "2026-09-10"
+  ],
+  "946721304": [
+   "t",
+   0,
+   "the title alone rules it out for this profile (senior/leadership, or a different trade)",
+   "2026-09-10"
+  ],
+  "942308808": [
+   "t",
+   0,
+   "the title alone rules it out for this profile (senior/leadership, or a different trade)",
+   "2026-09-10"
+  ],
+  "74576741": [
+   "t",
+   0,
+   "the title alone rules it out for this profile (senior/leadership, or a different trade)",
+   "2026-09-10"
+  ],
+  "74576365": [
+   "t",
+   0,
+   "the title alone rules it out for this profile (senior/leadership, or a different trade)",
+   "2026-09-10"
+  ],
+  "74576158": [
+   "t",
+   0,
+   "the title alone rules it out for this profile (senior/leadership, or a different trade)",
+   "2026-09-10"
+  ],
+  "74575979": [
+   "t",
+   0,
+   "the title alone rules it out for this profile (senior/leadership, or a different trade)",
+   "2026-09-10"
+  ],
+  "74575870": [
+   "t",
+   0,
+   "the title alone rules it out for this profile (senior/leadership, or a different trade)",
+   "2026-09-10"
+  ],
+  "74575854": [
+   "t",
+   0,
+   "the title alone rules it out for this profile (senior/leadership, or a different trade)",
+   "2026-09-10"
+  ],
+  "74518403": [
+   "t",
+   0,
+   "the title alone rules it out for this profile (senior/leadership, or a different trade)",
+   "2026-09-10"
+  ],
+  "872564393": [
+   "u",
+   0,
+   "redirect link, never a readable posting",
+   "2026-09-10"
+  ],
+  "620683430": [
+   "u",
+   0,
+   "redirect link, never a readable posting",
+   "2026-09-10"
+  ],
+  "178333438": [
+   "u",
+   0,
+   "redirect link, never a readable posting",
+   "2026-09-10"
+  ],
+  "4465312047": [
+   "n",
+   0,
+   "The role explicitly requires professional graphic-design software (Adobe Premiere Pro, Photoshop, Illustrator, InDesign) and graphic design as core skills, whic",
+   "2026-09-10"
+  ],
+  "4462818153": [
+   "n",
+   0,
+   "Requires 5-7 years of product management experience, far beyond the candidate's ~4 months.",
+   "2026-09-10"
+  ],
+  "933673090": [
+   "u",
+   0,
+   "redirect link, never a readable posting",
+   "2026-09-10"
+  ],
+  "560216260": [
+   "n",
+   0,
+   "The role explicitly requires Adobe Creative Cloud (Photoshop, InDesign, Illustrator) and graphic design competency, which the candidate lacks.",
+   "2026-09-10"
+  ],
+  "448024214": [
+   "u",
+   0,
+   "redirect link, never a readable posting",
+   "2026-09-10"
+  ],
+  "74577064": [
+   "n",
+   0,
+   "Requires fluent French (Frans: Zeer goed), which the candidate does not have.",
+   "2026-09-10"
+  ],
+  "74577060": [
+   "n",
+   0,
+   "The job requires fluent Dutch AND very good French, and the candidate has no French.",
+   "2026-09-10"
+  ],
+  "74576754": [
+   "n",
+   0,
+   "The role explicitly requires good knowledge of French, which the candidate does not have.",
+   "2026-09-10"
+  ],
+  "870865303": [
+   "u",
+   0,
+   "redirect link, never a readable posting",
+   "2026-09-10"
+  ],
+  "518507495": [
+   "u",
+   0,
+   "redirect link, never a readable posting",
+   "2026-09-10"
+  ],
+  "418323616": [
+   "u",
+   0,
+   "redirect link, never a readable posting",
+   "2026-09-10"
+  ],
+  "4465337042": [
+   "n",
+   0,
+   "The posting is written entirely in French and requires French-language communication work, which the candidate cannot do (no French).",
+   "2026-09-10"
+  ],
+  "970294196": [
+   "u",
+   0,
+   "redirect link, never a readable posting",
+   "2026-09-10"
+  ],
+  "940474251": [
+   "u",
+   0,
+   "redirect link, never a readable posting",
+   "2026-09-10"
+  ],
+  "890314409": [
+   "u",
+   0,
+   "redirect link, never a readable posting",
+   "2026-09-10"
+  ],
+  "682428254": [
+   "u",
+   0,
+   "redirect link, never a readable posting",
+   "2026-09-10"
+  ],
+  "651499796": [
+   "u",
+   0,
+   "redirect link, never a readable posting",
+   "2026-09-10"
+  ],
+  "584335397": [
+   "u",
+   0,
+   "redirect link, never a readable posting",
+   "2026-09-10"
+  ],
+  "565729250": [
+   "u",
+   0,
+   "redirect link, never a readable posting",
+   "2026-09-10"
+  ],
+  "473025661": [
+   "u",
+   0,
+   "redirect link, never a readable posting",
+   "2026-09-10"
+  ],
+  "452450466": [
+   "n",
+   0,
+   "The job is entirely in French and requires a Master's degree, which the candidate does not have.",
+   "2026-09-10"
+  ],
+  "421097159": [
+   "u",
+   0,
+   "redirect link, never a readable posting",
+   "2026-09-10"
+  ],
+  "397576313": [
+   "u",
+   0,
+   "redirect link, never a readable posting",
+   "2026-09-10"
+  ],
+  "383272799": [
+   "u",
+   0,
+   "redirect link, never a readable posting",
+   "2026-09-10"
+  ],
+  "314508490": [
+   "u",
+   0,
+   "redirect link, never a readable posting",
+   "2026-09-10"
+  ],
+  "210664946": [
+   "u",
+   0,
+   "redirect link, never a readable posting",
+   "2026-09-10"
+  ],
+  "193187214": [
+   "u",
+   0,
+   "redirect link, never a readable posting",
+   "2026-09-10"
+  ],
+  "74576738": [
+   "n",
+   0,
+   "The posting explicitly requires bilingual FR/NL, and the candidate has no French.",
+   "2026-09-10"
+  ],
+  "74576202": [
+   "n",
+   0,
+   "The role explicitly requires the candidate to be French-speaking (Franstalig) with good French, and the candidate has no French.",
+   "2026-09-10"
+  ],
+  "74566944": [
+   "n",
+   0,
+   "The role explicitly requires strong French (Franstalig with goede kennis Nederlands), and the candidate has no French.",
+   "2026-09-10"
+  ],
+  "964175185": [
+   "u",
+   0,
+   "redirect link, never a readable posting",
+   "2026-09-10"
+  ],
+  "962243802": [
+   "u",
+   0,
+   "redirect link, never a readable posting",
+   "2026-09-10"
+  ],
+  "838121781": [
+   "u",
+   0,
+   "redirect link, never a readable posting",
+   "2026-09-10"
+  ],
+  "750553581": [
+   "u",
+   0,
+   "redirect link, never a readable posting",
+   "2026-09-10"
+  ],
+  "900057930": [
+   "u",
+   0,
+   "redirect link, never a readable posting",
+   "2026-09-10"
+  ],
+  "808164660": [
+   "n",
+   0,
+   "The role requires a good knowledge of French, which the candidate does not have.",
+   "2026-09-10"
+  ],
+  "156603264": [
+   "u",
+   0,
+   "redirect link, never a readable posting",
+   "2026-09-10"
+  ],
+  "74576801": [
+   "n",
+   0,
+   "The posting hard-requires a bachelor's degree plus at least 2 years of international B2B experience, and the candidate has neither.",
+   "2026-09-10"
+  ],
+  "74576799": [
+   "n",
+   0,
+   "The job explicitly requires very good French (Frans: Zeer goed), which the candidate does not have.",
+   "2026-09-10"
+  ],
+  "74576178": [
+   "n",
+   15,
+   "Requires at least 2 years of dedicated purchasing/sales/trading experience in IT hardware, which the candidate does not have.",
+   "2026-09-10"
+  ],
+  "74575976": [
+   "m",
+   30,
+   "Recruiter role with limited experience (<2 years) and degree 'or equivalent by experience', but requires very good Dutch and a driving licence, making it a stre",
+   "2026-09-10"
+  ],
+  "74567087": [
+   "n",
+   0,
+   "Requires a completed academic bachelor degree and at least 2 years of purchasing/trading experience, neither of which the candidate has.",
+   "2026-09-10"
+  ],
+  "74567015": [
+   "m",
+   32,
+   "Accessible inside-sales role with no degree requirement and only limited (<2 years) experience asked; Dutch is 'zeer goed' (a stretch) but no French is required",
+   "2026-09-10"
+  ],
+  "74567008": [
+   "n",
+   0,
+   "The job explicitly requires very good French (Frans: Zeer goed), which the candidate does not speak.",
+   "2026-09-10"
+  ],
+  "74567005": [
+   "n",
+   0,
+   "The job requires good French and/or German, and the candidate has no French.",
+   "2026-09-10"
+  ],
+  "74523988": [
+   "m",
+   45,
+   "Accessible inside-sales role with no study or experience requirements, needing only Dutch and English (no French).",
+   "2026-09-10"
   ]
  },
  "eures_reread_v3": true
