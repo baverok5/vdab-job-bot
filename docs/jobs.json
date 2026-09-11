@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-11 00:50 UTC",
+ "updated": "2026-09-11 00:51 UTC",
  "jobs": [
   {
    "id": "4446772012",
@@ -1444,7 +1444,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-10 14:49",
+   "closed_check": "2026-09-11 00:49",
    "closed_check_v": 2
   },
   {
@@ -1466,7 +1466,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-10 14:49",
+   "closed_check": "2026-09-11 00:49",
    "closed_check_v": 2
   },
   {
@@ -1608,7 +1608,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-10 14:49",
+   "closed_check": "2026-09-11 00:49",
    "closed_check_v": 2
   },
   {
@@ -1730,7 +1730,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-10 14:49",
+   "closed_check": "2026-09-11 00:49",
    "closed_check_v": 2
   },
   {
@@ -1752,7 +1752,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-10 14:49",
+   "closed_check": "2026-09-11 00:49",
    "closed_check_v": 2
   },
   {
@@ -1814,7 +1814,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-10 14:49",
+   "closed_check": "2026-09-11 00:49",
    "closed_check_v": 2
   },
   {
@@ -1876,7 +1876,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-10 14:49",
+   "closed_check": "2026-09-11 00:49",
    "closed_check_v": 2
   },
   {
@@ -1958,7 +1958,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-10 14:49",
+   "closed_check": "2026-09-11 00:49",
    "closed_check_v": 2
   },
   {
@@ -2000,28 +2000,6 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18
-  },
-  {
-   "id": "4452622309",
-   "url": "https://www.linkedin.com/jobs/view/4452622309",
-   "title": "Digital Marketing Intern",
-   "company": "Vlugg",
-   "location": "Leuven (remote)",
-   "match_score": 70,
-   "reason": "Internship in digital marketing, no French required, and candidate has relevant skills.",
-   "apply_email": "",
-   "found_at": "2026-08-12 00:14",
-   "status": "new",
-   "details": "Part-time, remote internship in Leuven.\nSupport planning, execution, and optimization of online marketing campaigns.\nAssist with social media content creation, scheduling, and community engagement.\nTrack campaign performance using web analytics tools and prepare reports.\nCollaborate with marketing team and other departments.\nQualifications: interest in digital marketing, social media, web analytics, communication skills.",
-   "why_good": "Internship role, so no experience requirement is a barrier.\nCandidate has foundational skills in digital marketing, SEO, and content.\nExperience with web analytics tools (Google Analytics, SEMrush, Ahrefs) matches.\nSocial media content creation and community engagement are within candidate's skill set.\nRemote and part-time, flexible for candidate's schedule.",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": true,
-   "lang": "en",
-   "cv_fit_v": 18,
-   "closed_check": "2026-09-10 14:49",
-   "closed_check_v": 2
   },
   {
    "id": "74349205",
@@ -2582,7 +2560,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-10 14:49",
+   "closed_check": "2026-09-11 00:49",
    "closed_check_v": 2
   },
   {
