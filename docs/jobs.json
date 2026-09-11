@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-11 15:58 UTC",
+ "updated": "2026-09-11 19:28 UTC",
  "jobs": [
   {
    "id": "4446772012",
@@ -20,7 +20,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-11 09:21",
+   "closed_check": "2026-09-11 19:28",
    "closed_check_v": 2
   },
   {
@@ -42,7 +42,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-11 09:21",
+   "closed_check": "2026-09-11 19:28",
    "closed_check_v": 2
   },
   {
@@ -64,7 +64,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-11 09:21",
+   "closed_check": "2026-09-11 19:28",
    "closed_check_v": 2
   },
   {
@@ -446,7 +446,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-11 09:21",
+   "closed_check": "2026-09-11 19:28",
    "closed_check_v": 2
   },
   {
@@ -468,7 +468,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-11 09:21",
+   "closed_check": "2026-09-11 19:28",
    "closed_check_v": 2
   },
   {
@@ -670,7 +670,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-11 09:21",
+   "closed_check": "2026-09-11 19:28",
    "closed_check_v": 2
   },
   {
@@ -1052,7 +1052,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-11 09:21",
+   "closed_check": "2026-09-11 19:28",
    "closed_check_v": 2
   },
   {
@@ -3630,7 +3630,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-11 09:21",
+   "closed_check": "2026-09-11 19:28",
    "closed_check_v": 2
   },
   {
@@ -11450,28 +11450,6 @@
    "closed_check_v": 2
   },
   {
-   "id": "4449469087",
-   "url": "https://www.linkedin.com/jobs/view/4449469087",
-   "title": "Digital Marketing Specialist",
-   "company": "Wolf Oil Corporation",
-   "location": "Hemiksem, Belgium",
-   "match_score": 35,
-   "reason": "Role fits digital marketing field; language requirements are English with Dutch as asset; experience ask is a stretch but not a hard fail.",
-   "apply_email": "",
-   "found_at": "2026-09-08 15:34",
-   "status": "new",
-   "details": "- Full-time digital marketing specialist role\n- Responsibilities: social media management, website content updates, email marketing, analytics, agency coordination\n- Requires 3-5 years experience in digital marketing (B2B)\n- Fluent English required; Dutch is an asset\n- Skills: Google Analytics, Meta Suite, Looker Studio, HubSpot, CMS (Kontent.ai)\n- Benefits: flexible hours, home office, training, competitive package",
-   "why_good": "- Directly in digital marketing with tasks like social media, content, and analytics that match CV skills\n- English is the working language; Dutch only an asset, so language is fine\n- Experience with WordPress and CMS is transferable to Kontent.ai\n- Hands-on with Google Analytics and Ads, SEMrush/Ahrefs, which are relevant\n- Internship and project experience show initiative and practical skills",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": true,
-   "internship": false,
-   "lang": "en",
-   "cv_fit_v": 18,
-   "closed_check": "2026-09-11 00:49",
-   "closed_check_v": 2
-  },
-  {
    "id": "4459695843",
    "url": "https://www.linkedin.com/jobs/view/4459695843",
    "title": "B2B Marketeer",
@@ -11490,7 +11468,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-11 00:49",
+   "closed_check": "2026-09-11 19:28",
    "closed_check_v": 2
   },
   {
