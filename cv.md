@@ -3,13 +3,16 @@ Digital Marketing · SEO · GEO · Content · Web
 Zwijndrecht, Belgium | +32 470 42 48 36 | baverok@gmail.com | linkedin.com/in/baverok
 
 ## Profile
-Junior digital marketer with a technical foundation in web design, SEO, and GEO (Generative Engine Optimization). At Episto, I run on-page SEO, keyword-targeted content, and full-cycle WordPress site build and maintenance for client sites. On my own project (mirook.com) I've applied structured data, entity optimization, and technical SEO/GEO audits to improve visibility across both traditional and AI-powered search engines. Comfortable across content management, social media coordination, and performance reporting; quick to pick up new tools and platforms, and growing into analytics, e-commerce content management, and campaign support. Based in Zwijndrecht, next to Antwerp. Works in English and Turkish; Dutch: B1, currently taking classes to improve further.
+Junior digital marketer with a technical foundation in web design, SEO, and GEO (Generative Engine Optimization). At Episto, I run on-page SEO, keyword-targeted content, and full-cycle WordPress site build and maintenance for client sites. On my own project (mirook.com) I've applied structured data, entity optimization, and technical SEO/GEO audits to improve visibility across both traditional and AI-powered search engines. Comfortable across content management, social media coordination, and performance reporting; quick to pick up new tools and platforms, and growing into analytics, CRM and marketing automation, e-commerce content management, and campaign support. Based in Zwijndrecht, next to Antwerp. Works in English and Turkish; Dutch: B1, currently taking classes to improve further.
 
 ## Core skills
 - SEO & GEO: on-page SEO, keyword research, technical SEO audits, structured data / JSON-LD schema, entity optimization, GEO & AEO (AI search visibility)
 - Content & CMS: SEO blog & content writing, editorial content publishing, website content management, WordPress site building
 - Web & build: WordPress, Elementor, Astra theme, responsive web design, Canva, AI-assisted content tools
 - Analytics & reporting: Google Analytics, Google Search Console, SEMrush, Ahrefs, Google Ads
+- CRM & marketing ops: basic hands-on CRM use — maintaining customer records and
+  follow-up for a cleaning-services client at Episto; comfortable learning new CRM,
+  marketing-automation and e-mail tools
 - Social: social media content & integration
 - Languages: English (professional), Turkish (native), Dutch (B1)
 
@@ -20,6 +23,7 @@ Junior digital marketer with a technical foundation in web design, SEO, and GEO 
 - Write keyword-targeted blog content for client websites to grow organic traffic
 - Build and maintain client websites in WordPress using Elementor and the Astra theme, including content uploads and page updates
 - Track site performance with SEMrush, Ahrefs, Google Analytics, Google Search Console, and Google Ads to guide SEO and content decisions
+- Work in the CRM for a cleaning-services client — keeping customer records and follow-up up to date alongside the marketing work
 
 ### Warehouse & Logistics — Katoen Natie (Antwerp), 2025–2026
 - Maintained accuracy and efficiency in a high-volume, fast-paced logistics environment
