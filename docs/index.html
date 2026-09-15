@@ -1583,10 +1583,21 @@ document.getElementById("qclear").addEventListener("click", () => {
   qbox.value = ""; QUERY = ""; qbox.focus(); render();
 });
 
+// Ready first, browse pool second. One 21.5 MB file meant the app sat on
+// "Loading jobs…" with nothing on screen until all of it had downloaded; the
+// part you actually read is well under a megabyte.
 fetch("jobs.json?t=" + Date.now())
   .then((r) => r.json())
-  .then((d) => { DATA = d; render(); })
-  .catch(() => { document.getElementById("updated").textContent = "Could not load jobs.json."; });
+  .then((d) => { DATA = d; render(); return fetch("listing.json?t=" + Date.now()); })
+  .then((r) => (r && r.ok ? r.json() : null))
+  .then((extra) => {
+    if (!extra) return;
+    Object.assign(DATA, extra);   // listing + verdicts + dropped
+    render();                     // All jobs and search light up once it lands
+  })
+  .catch(() => {
+    if (!DATA.jobs) document.getElementById("updated").textContent = "Could not load jobs.json.";
+  });
 
 // Cross-device sync: pull the shared Applied/Skipped/Closed on load and whenever
 // the app regains focus, so the phone and computer stay in step. Silent if no

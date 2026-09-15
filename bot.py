@@ -137,7 +137,8 @@ TITLE_BATCH = 40                                                   # titles per 
 CANDIDATE_ONELINE = (
     "Early-career, ~4 months experience. GOAL FIELD (keep eagerly): digital "
     "marketing, SEO/SEA, content, copywriting, social media, WordPress/web/web "
-    "design, front-end, e-commerce, online marketing, communication. Also fits: "
+    "design, front-end, e-commerce, online marketing, communication, and basic "
+    "CRM / marketing-automation / e-mail-marketing work. Also fits: "
     "office/admin, customer service, reception, data entry, sales/commercial "
     "support, warehouse/logistics. NOT skilled trades/production/machine "
     "operators, NOT senior/manager/director, NOT licensed professions, NOT "
@@ -919,6 +920,26 @@ def record_verdict(jobs, job_id, status, score=0, reason=""):
     jobs.setdefault("verdicts", {})[str(job_id)] = [
         status, int(score or 0), " ".join((reason or "").split())[:160],
         datetime.now(timezone.utc).strftime("%Y-%m-%d")]
+
+
+LISTING_FILE = "docs/listing.json"   # the browse pool, loaded separately
+
+
+def save_jobs_split(jobs):
+    """Write the feed as two files.
+
+    Everything lived in one 21.5 MB jobs.json, and a phone showed "Loading
+    jobs..." with an empty Ready tab until the whole thing had arrived. Ready is
+    the part you look at, and it is under a megabyte; the browse listing, the
+    verdict index and the dropped log are only needed for All jobs and search,
+    so they load afterwards in the background.
+    """
+    heavy = {k: jobs.get(k) for k in ("listing", "verdicts", "dropped") if k in jobs}
+    light = {k: v for k, v in jobs.items() if k not in heavy}
+    save_json(JOBS_FILE, light)
+    save_json(LISTING_FILE, heavy)
+    print(f"  saved: jobs.json {os.path.getsize(JOBS_FILE)/1048576:.1f} MB, "
+          f"listing.json {os.path.getsize(LISTING_FILE)/1048576:.1f} MB")
 
 
 def _note_dropped(jobs, job_id, url, why):
@@ -2055,7 +2076,7 @@ def main():
         # Refresh the timestamp on every checkpoint so the app shows the scan is
         # live and working, not frozen at the last full-run's time.
         jobs["updated"] = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
-        save_json(JOBS_FILE, jobs)
+        save_jobs_split(jobs)
         save_json(SEEN_FILE, sorted(seen))
         save_json(SCREEN_FILE, {"title_no": sorted(title_no), "shortlist": sorted(shortlist), "title_screen_v": TITLE_SCREEN_VERSION})
         try:
@@ -2333,7 +2354,7 @@ def main():
                              -int(j.get("match_score", 0) or 0)))
     jobs["jobs"] = kept[:600]
     jobs["rejected"] = jobs.get("rejected", [])[:REJECTED_CAP]
-    save_json(JOBS_FILE, jobs)
+    save_jobs_split(jobs)
     save_json(SEEN_FILE, sorted(seen))
     save_json(SCREEN_FILE, {"title_no": sorted(title_no), "shortlist": sorted(shortlist), "title_screen_v": TITLE_SCREEN_VERSION})
     print(f"\nDone. {matched} new match(es) this run. "
