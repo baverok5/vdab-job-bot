@@ -144,8 +144,6 @@
     cursor: pointer; -webkit-tap-highlight-color: transparent; }
   .loadmore:active { opacity: .6; }
   .tag.nl { background: var(--amber-bg); color: var(--amber); border-color: transparent; font-weight: 600; }
-  /* "level not stated" is information, not a warning — muted, not amber. */
-  .tag.nlq { opacity: .75; }
   .tag.intern { background: var(--green-bg); color: var(--green); border-color: transparent; font-weight: 600; }
   .tag.stretch { background: var(--accent-bg); color: var(--accent); border-color: transparent; font-weight: 600; }
   .tag.li { background: rgba(10,102,194,.16); color: #4aa3ff; border-color: transparent; font-weight: 600; }
@@ -236,7 +234,7 @@
 <div class="toast" id="toast"></div>
 
 <script>
-const APP_VERSION = "v75";                 // MUST match CACHE in sw.js — it is how you tell whether the phone got the deploy
+const APP_VERSION = "v76";                 // MUST match CACHE in sw.js — it is how you tell whether the phone got the deploy
 const LS = "jobstatus";                    // { jobId: "applied" | "skipped" | "closed" }
 const LS_AT = "jobstatus_at";              // { jobId: epoch ms the status was set }
 const getStatus = () => JSON.parse(localStorage.getItem(LS) || "{}");
@@ -863,8 +861,8 @@ function card(j, state) {
         <div class="tags">
           ${state === "applied" ? '<span class="tag applied">✓ Applied</span>' : ""}
           ${j.internship ? '<span class="tag intern">🎓 Internship</span>' : ""}
-          ${needsBetterDutch(j) ? '<span class="tag nl">🇳🇱 Needs better Dutch</span>' : ""}
-          ${dutchState(j) === "unknown" ? '<span class="tag nlq">🇳🇱 Dutch level not stated</span>' : ""}
+          ${dutchState(j) === "high" ? '<span class="tag nl">🇳🇱 Needs better Dutch</span>' : ""}
+          ${dutchState(j) === "unknown" ? '<span class="tag nl">🇳🇱 Dutch level not stated</span>' : ""}
           ${j.exp_stretch ? '<span class="tag stretch">💪 Stretch — worth a shot</span>' : ""}
           ${designStretch(j) ? '<span class="tag design">🎨 Design-heavy — stretch</span>' : ""}
           ${isSEO(j) ? '<span class="tag seo">🔎 SEO</span>' : ""}
@@ -1141,7 +1139,11 @@ function dutchProductive(t) {
 // that simply never mentioned language.
 const DUTCH_OK_RX = /\b(a1|a2|b1)\b|basis ?kennis|basic (dutch|nederlands|knowledge of dutch)|beginner|elementary|limited dutch|little dutch|een beetje nederlands|dutch (is )?(a )?(plus|asset|nice[- ]to[- ]have|not required|niet vereist)|nederlands (is )?(een )?(pluspunt|troef|niet vereist)|no dutch (required|needed)|geen nederlands|without dutch|english[- ]?only|english is (the )?(working language|sufficient|enough)|working language is english|only english|dutch not required/i;
 const DUTCH_HEDGE_RX = /\b(likely|probably|presumably|assume[ds]?|not specified|unspecified|no explicit|not stated|implied|guess|maybe|perhaps|suggests?)\b/i;
-const DUTCH_HIGH_RX = /\b(b2|c1|c2)\b|upper[- ]intermediate|fluent|vloeiend|near[- ]native|native speaker|moedertaal|uitstekende kennis|zeer goede kennis|perfect (dutch|nederlands)/i;
+// The high bar was only written out in Dutch ("uitstekende kennis", "zeer
+// goede kennis"), so 58 postings that ask in English — "requires excellent
+// Dutch and English" — counted as saying nothing at all and reached Ready
+// unflagged.
+const DUTCH_HIGH_RX = /\b(b2|c1|c2)\b|upper[- ]intermediate|fluent|vloeiend|near[- ]native|native speaker|moedertaal|uitstekend\w*|zeer goed\w*|perfecte? (kennis|beheersing)|perfect (dutch|nederlands)|(excellent|very good|strong|thorough|solid|professional)\s+(command of |knowledge of |level of |written and spoken |spoken and written )?(dutch|nederlands)|(dutch|nederlands)[^.;\n]{0,30}\b(excellent|very good|mother ?tongue|native)\b|goede (mondelinge en schriftelijke )?kennis van het nederlands|excellent command/i;
 // Three states, not two. Treating "the posting never mentions language" as
 // "needs better Dutch" hid 738 of 790 Ready jobs: only 125 actually ask for
 // B2/C1/fluent, 52 explicitly accept B1 or English, and 613 simply say nothing.
@@ -1157,11 +1159,17 @@ function dutchState(j) {
   // the model speculating, and it cleared that same B2 job. The low bar has to
   // be stated in a sentence that is not hedging.
   if (t.split(/[.;\n]/).some((line) => DUTCH_OK_RX.test(line) && !DUTCH_HEDGE_RX.test(line))) return "ok";
+  // A vacancy written in English is not asking for Dutch it never mentions.
+  // This is the only thing that clears a posting without an explicit statement.
+  if (isEnglishJob(j)) return "ok";
   return "unknown";
 }
-// Only an explicit demand counts as needing better Dutch — this is what the
-// hide filter acts on.
-function needsBetterDutch(j) { return dutchState(j) === "high"; }
+// A Dutch-language posting that never states a level is treated as needing
+// better Dutch, not as neutral. Most of them do expect working Dutch and simply
+// do not spell it out, and finding that out after applying is worse than not
+// seeing the job — so the checkbox keeps only what explicitly accepts B1/A2 or
+// English, plus postings written in English.
+function needsBetterDutch(j) { return dutchState(j) !== "ok"; }
 
 // SEO-focused roles — the candidate's strongest area — surfaced first in Ready.
 const SEO_RX = /\bseo\b|\bsem\b|search engine|zoekmachine|google ads|google analytics|search console|semrush|ahrefs|\bgeo\b/i;   // SEA handled by SEA_RX (see above)
@@ -1187,7 +1195,10 @@ function freshness(j) {
 }
 // English-language postings ride at the top alongside the SEO ones — those are
 // the two things worth seeing first — then most-SEO, then newest.
-const topBand = (j) => (isEnglishJob(j) || seoRank(j) > 0) ? 1 : 0;
+// An English posting outranks everything: it is the one you can read, write to
+// and interview in without a language gap, so it should be the first thing on
+// screen. SEO jobs lead the Dutch ones below them.
+const topBand = (j) => isEnglishJob(j) ? 2 : (seoRank(j) > 0 ? 1 : 0);
 const bySeoThenNewest = (a, b) =>
   (topBand(b) - topBand(a)) ||
   (seoRank(b) - seoRank(a)) ||
@@ -1214,10 +1225,6 @@ function designStretch(j) {
   // Same rule as isSEO: judge the job itself (title + role/tasks), not the
   // fit narrative, which names the candidate's Canva skills and false-flags.
   return DESIGN_RX.test(`${j.title || ""} ${j.details || ""}`);
-}
-// Any reason a Ready job is a "worth a shot" stretch rather than a clean fit.
-function isStretch(j) {
-  return needsBetterDutch(j) || !!j.exp_stretch || designStretch(j);
 }
 
 // Manual override: job ids to hide from Ready immediately. Used for postings
@@ -1511,7 +1518,7 @@ function render() {
       `<label class="mkt${MKT_ONLY ? " on" : ""}"><input type="checkbox" id="mktonly" ${MKT_ONLY ? "checked" : ""}>
         <span>🎯 Marketing / SEO / web only</span>${mktCount ? `<span class="cnt">${mktCount}</span>` : ""}</label>
        <label class="mkt${HIDE_DUTCH ? " on" : ""}"><input type="checkbox" id="hidedutch" ${HIDE_DUTCH ? "checked" : ""}>
-        <span>🇳🇱 Hide jobs asking B2+ Dutch</span>${dutchCount ? `<span class="cnt">${dutchCount}</span>` : ""}</label>`);
+        <span>🇳🇱 Only jobs that accept my Dutch</span>${dutchCount ? `<span class="cnt">${dutchCount}</span>` : ""}</label>`);
     document.getElementById("mktonly").addEventListener("change", (e) => {
       MKT_ONLY = e.target.checked;
       localStorage.setItem("mktOnly", MKT_ONLY ? "1" : "");
