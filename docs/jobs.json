@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-16 06:40 UTC",
+ "updated": "2026-09-16 07:22 UTC",
  "jobs": [
   {
    "id": "4446772012",
@@ -1422,7 +1422,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-16 01:05",
+   "closed_check": "2026-09-16 07:21",
    "closed_check_v": 2
   },
   {
@@ -1464,7 +1464,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-16 01:05",
+   "closed_check": "2026-09-16 07:21",
    "closed_check_v": 2
   },
   {
@@ -1486,7 +1486,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-16 01:05",
+   "closed_check": "2026-09-16 07:21",
    "closed_check_v": 2
   },
   {
@@ -1528,7 +1528,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-16 01:05",
+   "closed_check": "2026-09-16 07:21",
    "closed_check_v": 2
   },
   {
@@ -1550,7 +1550,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-16 01:05",
+   "closed_check": "2026-09-16 07:21",
    "closed_check_v": 2
   },
   {
@@ -1792,7 +1792,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-16 01:05",
+   "closed_check": "2026-09-16 07:21",
    "closed_check_v": 2
   },
   {
@@ -1814,7 +1814,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-16 01:05",
+   "closed_check": "2026-09-16 07:21",
    "closed_check_v": 2
   },
   {
@@ -1916,7 +1916,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-16 01:05",
+   "closed_check": "2026-09-16 07:21",
    "closed_check_v": 2
   },
   {
@@ -3652,7 +3652,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-16 01:05",
+   "closed_check": "2026-09-16 07:21",
    "closed_check_v": 2
   },
   {
@@ -3714,7 +3714,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-16 01:05",
+   "closed_check": "2026-09-16 07:21",
    "closed_check_v": 2
   },
   {
@@ -52332,5 +52332,6 @@
   "4446593673"
  ],
  "eures_reread_v3": true,
- "crm_requeue_v1": true
+ "crm_requeue_v1": true,
+ "ready_cap_recover_v1": true
 }
