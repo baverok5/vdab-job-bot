@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-16 09:42 UTC",
+ "updated": "2026-09-16 10:06 UTC",
  "jobs": [
   {
    "id": "4446772012",
@@ -55764,8 +55764,8 @@
    "cv_fit_v": 18
   }
  ],
- "search_cursor": 13,
- "li_cursor": 12,
+ "search_cursor": 2,
+ "li_cursor": 18,
  "letter_fails": {
   "4428705687": 2
  },
