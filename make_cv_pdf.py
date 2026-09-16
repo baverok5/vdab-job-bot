@@ -23,22 +23,67 @@ W = {' ':278,'!':278,'"':355,'#':556,'$':556,'%':889,'&':667,"'":191,'(':333,')'
 def tw(s, fs):
     return sum(W.get(c, 556) for c in s) * fs / 1000.0
 
-def wrap(text, fs, maxw):
-    out = []
+def wrap_idx(text, fs, maxw):
+    """Wrap, returning each visual line as a (start, end) range into `text`.
+
+    Ranges rather than strings because links have to stay attached to the piece
+    they landed on: searching for the wrapped text afterwards anchors a repeated
+    word to the wrong place. Every candidate line is measured as a slice of the
+    source, never rebuilt by joining words — a bullet's "\u2022  " prefix contains
+    two spaces, and re-joining silently lost one character per line, which cut
+    "proteinbox.com.tr" in half and dropped its link.
+    """
+    out, base = [], 0
     for para in text.split("\n"):
         if not para.strip():
-            out.append("")
+            out.append((base, base))
+            base += len(para) + 1
             continue
-        cur = ""
-        for word in para.split(" "):
-            cand = (cur + " " + word).strip()
-            if tw(cand, fs) > maxw and cur:
-                out.append(cur); cur = word
+        starts, off, words = [], 0, para.split(" ")
+        for w in words:
+            starts.append(off)
+            off += len(w) + 1
+        line_start, line_end = 0, None
+        for k, w in enumerate(words):
+            if not w and line_end is None:
+                continue                      # leading spaces
+            cand_end = starts[k] + len(w)
+            if line_end is not None and tw(para[line_start:cand_end], fs) > maxw:
+                out.append((base + line_start, base + line_end))
+                line_start, line_end = starts[k], cand_end
             else:
-                cur = cand
-        if cur:
-            out.append(cur)
+                if line_end is None:
+                    line_start = starts[k]
+                line_end = cand_end
+        if line_end is not None:
+            out.append((base + line_start, base + line_end))
+        base += len(para) + 1
     return out
+
+
+def wrap(text, fs, maxw):
+    return [text[a:b] for (a, b) in wrap_idx(text, fs, maxw)]
+
+LINK_RX = re.compile(r"\[([^\]]+)\]\(((?:https?://|mailto:|tel:)[^)\s]+)\)")
+
+
+def delink(text):
+    """Turn "[label](url)" into the label plus the character spans to link.
+
+    The uploaded CV carried nine live links — the client sites, kxp.biz,
+    mirook.com, LinkedIn and the Semrush certificate — and rendering it as plain
+    text quietly dropped every one of them. Returns (display_text, [(i, j, url)])
+    with i:j indexing into display_text."""
+    out, spans, pos = [], [], 0
+    for m in LINK_RX.finditer(text):
+        out.append(text[pos:m.start()])
+        start = sum(len(x) for x in out)
+        out.append(m.group(1))
+        spans.append((start, start + len(m.group(1)), m.group(2)))
+        pos = m.end()
+    out.append(text[pos:])
+    return "".join(out), spans
+
 
 def clean(s):
     s = (s.replace("\r", "")
@@ -63,8 +108,15 @@ md = clean(open(SRC, encoding="utf-8").read())
 lines = md.split("\n")
 items = []  # (font, size, text, gap)
 def add(font, size, text, gap=0, maxw=USABLE, indent=0):
-    for i, wl in enumerate(wrap(text, size, maxw)):
-        items.append((font, size, wl, gap if i == 0 else 0, indent))
+    """Lay out one logical line, keeping any links attached to the right piece.
+
+    wrap() may split the line, so each span is re-anchored to whichever visual
+    line it landed on, by walking the consumed character count."""
+    text, spans = delink(text)
+    for i, (a0, a1) in enumerate(wrap_idx(text, size, maxw)):
+        here = [(a - a0, b - a0, url) for (a, b, url) in spans
+                if a >= a0 and b <= a1]
+        items.append((font, size, text[a0:a1], gap if i == 0 else 0, indent, here))
 
 i = 0
 while i < len(lines):
@@ -87,21 +139,34 @@ while i < len(lines):
 
 # ---- Paginate + emit content streams -------------------------------------
 pages, cur, y = [], [], TOP
-for (font, size, text, gap, indent) in items:
+for (font, size, text, gap, indent, links) in items:
     y -= gap
     lead = size * 1.32
     if y - lead < BOT:
         pages.append(cur); cur = []; y = TOP
     y -= lead
-    cur.append((L + indent, y, font, size, text))
+    cur.append((L + indent, y, font, size, text, links))
 if cur:
     pages.append(cur)
 
 def stream_for(pg):
     out = []
-    for (x, y, font, size, text) in pg:
+    for (x, y, font, size, text, links) in pg:
         out.append(f"BT /{font} {size:.1f} Tf 1 0 0 1 {x:.1f} {y:.1f} Tm ({esc(text)}) Tj ET")
     return "\n".join(out).encode("cp1252", "replace")
+
+
+def link_rects(pg):
+    """Clickable boxes for one page. The original CV styles links exactly like
+    the surrounding text — black, no underline — so only the annotation is
+    added and the page looks unchanged."""
+    rects = []
+    for (x, y, font, size, text, links) in pg:
+        for (a, b, url) in links:
+            x0 = x + tw(text[:a], size)
+            x1 = x + tw(text[:b], size)
+            rects.append((x0, y - size * 0.22, x1, y + size * 0.92, url))
+    return rects
 
 # ---- PDF object assembly --------------------------------------------------
 objs = []
@@ -120,12 +185,29 @@ for pg in pages:
     c = add_obj(b"<< /Length %d /Filter /FlateDecode >>\nstream\n" % len(comp) + comp + b"\nendstream")
     content_objs.append(c)
 
+# Link annotations, created before the page objects so the /Pages reservation
+# below still lands on the right object number.
+annot_objs = []
+for pg in pages:
+    nums = []
+    for (x0, y0, x1, y1, url) in link_rects(pg):
+        uri = url.encode("ascii", "ignore").replace(b"\\", b"").replace(b")", b"")
+        nums.append(add_obj(
+            b"<< /Type /Annot /Subtype /Link /Border [0 0 0] "
+            b"/Rect [%.2f %.2f %.2f %.2f] /A << /S /URI /URI (%s) >> >>"
+            % (x0, y0, x1, y1, uri)))
+    annot_objs.append(nums)
+
 pages_obj_num = len(objs) + len(pages) + 1  # reserve
 page_nums = []
 for idx, pg in enumerate(pages):
+    annots = b""
+    if annot_objs[idx]:
+        annots = (b" /Annots [%s]"
+                  % b" ".join(b"%d 0 R" % n for n in annot_objs[idx]))
     pn = add_obj(
-        b"<< /Type /Page /Parent %d 0 R /MediaBox [0 0 %.2f %.2f] /Resources %d 0 R /Contents %d 0 R >>"
-        % (pages_obj_num, PAGE_W, PAGE_H, res_obj, content_objs[idx]))
+        b"<< /Type /Page /Parent %d 0 R /MediaBox [0 0 %.2f %.2f] /Resources %d 0 R /Contents %d 0 R%s >>"
+        % (pages_obj_num, PAGE_W, PAGE_H, res_obj, content_objs[idx], annots))
     page_nums.append(pn)
 
 kids_str = " ".join(f"{n} 0 R" for n in page_nums).encode()

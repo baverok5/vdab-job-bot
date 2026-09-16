@@ -1,6 +1,6 @@
 # Baver Ok
 Digital Marketing · SEO · GEO · Content · Web · AI
-Zwijndrecht, Belgium | +32 470 42 48 36 | baverok@gmail.com | linkedin.com/in/baverok
+Zwijndrecht, Belgium | [+32 470 42 48 36](tel:+32470424836) | [baverok@gmail.com](mailto:baverok@gmail.com) | [linkedin.com/in/baverok](https://www.linkedin.com/in/baverok)
 Languages: English (Fluent) · Turkish (Native) · Dutch (Writing B1, Speaking A2+)
 
 ## Profile
@@ -17,21 +17,21 @@ Digital marketer with a technical background, working at the intersection of SEO
 
 ### Junior Digital Marketer — Episto (Remote), 2026–present
 - Handle on-page SEO, keyword research and SEO content for client websites, tracking results with Semrush, Ahrefs, Google Analytics and Search Console
-- Client sites (team work): etkendanismanlik.com (consultancy) and proteinbox.com.tr (e-commerce) — keyword-targeted blog content and on-page SEO to grow organic traffic
-- majistralecza.epis.to: building and maintaining a pharmacists' association site in WordPress/Elementor, including a consistent layout for ~600 member profile pages
+- Client sites (team work): [etkendanismanlik.com](https://etkendanismanlik.com) (consultancy) and [proteinbox.com.tr](https://proteinbox.com.tr) (e-commerce) — keyword-targeted blog content and on-page SEO to grow organic traffic
+- [majistralecza.epis.to](https://majistralecza.epis.to): building and maintaining a pharmacists' association site in WordPress/Elementor, including a consistent layout for ~600 member profile pages
 
-### Web & SEO Specialist — Knowledge Experts (KXP, kxp.biz), 2024–2026
+### Web & SEO Specialist — Knowledge Experts (KXP, [kxp.biz](https://kxp.biz/en/references)), 2024–2026
 - Supported the team in building SharePoint-based digital workplace sites for ŞOK Market (4,000+ stores, ERP/POS integration) and Aras Kargo (application gallery for 12,000 staff)
 - Designed and built websites for clients in WordPress, from site structure to content and social media integration
 - Ran SEO analyses and reported on performance using Google Search Console and Google Analytics
-- mirook.com: built and optimized a multi-page website for a Belgian youth chess champion; implemented JSON-LD schema (Person, SportsEvent, FAQPage), knowledge-graph markup and an llms.txt file, and ran iterative technical SEO/GEO audits that measurably raised the site's search-health score
+- [mirook.com](https://mirook.com): built and optimized a multi-page website for a Belgian youth chess champion; implemented JSON-LD schema (Person, SportsEvent, FAQPage), knowledge-graph markup and an llms.txt file, and ran iterative technical SEO/GEO audits that measurably raised the site's search-health score
 
 ### Front-End Developer — ViviDoctor (Belgium), 2018–2019
 - Developed and optimized front-end features for a healthcare web application (AngularJS, JavaScript)
 
 ## Certifications
-- Semrush Academy — SEO Fundamentals (completed, August 2026)
-- Semrush — SEO Toolkit Exam (September 2026)
+- Semrush Academy — [SEO Fundamentals](https://static.semrush.com/academy/certificates/7b2509a083/baver-ok_25.pdf) (completed, August 2026)
+- Semrush — [SEO Toolkit Exam](https://static.semrush.com/academy/certificates/35c1af233e/baver-ok_25.pdf) (September 2026)
 - Google Analytics Certification — GA4 (September 2026)
 - Google Ads Search Certification (October 2026)
 - HubSpot Academy — Content Marketing Certification (November 2026)

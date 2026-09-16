@@ -236,7 +236,7 @@
 <div class="toast" id="toast"></div>
 
 <script>
-const APP_VERSION = "v74";                 // MUST match CACHE in sw.js — it is how you tell whether the phone got the deploy
+const APP_VERSION = "v75";                 // MUST match CACHE in sw.js — it is how you tell whether the phone got the deploy
 const LS = "jobstatus";                    // { jobId: "applied" | "skipped" | "closed" }
 const LS_AT = "jobstatus_at";              // { jobId: epoch ms the status was set }
 const getStatus = () => JSON.parse(localStorage.getItem(LS) || "{}");
@@ -390,10 +390,15 @@ function mdRuns(s) {
 // Markdown as the AI writes it -> readable text. "## Profile" is a heading, not
 // a line that starts with hashes, and "**x**" is emphasis, not asterisks. Used
 // for anything shown on screen, copied, or pasted into an application form.
+const MD_LINK_RX = /\[([^\]]+)\]\((?:https?:\/\/|mailto:|tel:)[^)\s]+\)/g;
 function mdPlain(text) {
   return String(text || "").replace(/\r/g, "").split("\n")
     .map((l) => l.replace(/^\s{0,3}#{1,6}\s*/, "")
                  .replace(/^\s*[-*+]\s+/, "•  ")
+                 // "[mirook.com](https://mirook.com)" reads as the label alone;
+                 // the CV stores links in markdown so the PDF can make them
+                 // clickable, and the brackets must never reach an employer.
+                 .replace(MD_LINK_RX, "$1")
                  .replace(/\*\*/g, ""))
     .join("\n");
 }
@@ -402,6 +407,7 @@ function buildPdf(text) {
   const X = 56, TOP = 786, BOTTOM = 56, W = 595 - 56 - 56;
   const raw = String(text || "")
     .replace(/\r/g, "")
+    .replace(MD_LINK_RX, "$1")
     .replace(/[‘’]/g, "'").replace(/[“”]/g, '"')
     .replace(/[–—]/g, "-").replace(/…/g, "...");
 
@@ -491,6 +497,20 @@ function buildPdf(text) {
   const bytes = new Uint8Array(pdf.length);
   for (let i = 0; i < pdf.length; i++) bytes[i] = pdf.charCodeAt(i) & 0xff;
   return new Blob([bytes], { type: "application/pdf" });
+}
+
+// The CV is a real file on the site, not something to rebuild here: cv.pdf and
+// cv-nl.pdf carry clickable links (the client sites, kxp.biz, mirook.com,
+// LinkedIn, both Semrush certificates) and a PDF assembled in the browser would
+// drop every one of them. Same file the Gmail draft attaches.
+function downloadCv(lang) {
+  const a = document.createElement("a");
+  a.href = lang === "en" ? "cv.pdf" : "cv-nl.pdf";
+  a.download = "Baver Ok - CV.pdf";
+  a.target = "_blank";
+  document.body.appendChild(a); a.click();
+  setTimeout(() => a.remove(), 1500);
+  toast("CV downloaded");
 }
 
 function downloadTextPdf(text, filename) {
@@ -776,7 +796,7 @@ function renderPrepared(j, d, box) {
   box.querySelectorAll("[data-dl]").forEach((b) => b.addEventListener("click", (e) => {
     e.stopPropagation();
     if (b.dataset.dl === "letter") downloadTextPdf(letter, "Cover letter - " + nm + ".pdf");
-    else downloadTextPdf(cvText, "CV - " + nm + ".pdf");
+    else downloadCv(lang);
   }));
   const draftBtn = box.querySelector('[data-prep="draft"]');
   if (draftBtn) draftBtn.addEventListener("click", (e) => {
