@@ -1,6 +1,12 @@
 #!/usr/bin/env python3
 """Render cv.md into a clean, dependency-free A4 PDF (Helvetica + Helvetica-Bold)."""
-import re, zlib
+import re, sys, zlib
+
+# The English CV is the default; pass a source/output pair to build the Dutch
+# one (cv.nl.md -> docs/cv-nl.pdf). Both are the same document — one CV, two
+# languages — so they must come from the same renderer.
+SRC = sys.argv[1] if len(sys.argv) > 1 else "cv.md"
+OUT = sys.argv[2] if len(sys.argv) > 2 else "docs/cv.pdf"
 
 # ---- Helvetica AFM widths (1000-unit em) for proper proportional wrapping ----
 # Compact width table for the WinAnsi range we use; default 556 for the rest.
@@ -53,7 +59,7 @@ PAGE_W, PAGE_H = 595.28, 841.89
 L, R, TOP, BOT = 56, 56, 800, 56
 USABLE = PAGE_W - L - R
 
-md = clean(open("cv.md", encoding="utf-8").read())
+md = clean(open(SRC, encoding="utf-8").read())
 lines = md.split("\n")
 items = []  # (font, size, text, gap)
 def add(font, size, text, gap=0, maxw=USABLE, indent=0):
@@ -140,5 +146,14 @@ for off in offsets[1:]:
     buf += b"%010d 00000 n \n" % off
 buf += b"trailer\n<< /Size %d /Root %d 0 R >>\nstartxref\n%d\n%%%%EOF" % (len(objs) + 1, catalog, xref_pos)
 
-open("docs/cv.pdf", "wb").write(buf)
-print("wrote docs/cv.pdf:", len(buf), "bytes,", len(pages), "page(s)")
+open(OUT, "wb").write(buf)
+print(f"wrote {OUT}:", len(buf), "bytes,", len(pages), "page(s)")
+
+# The app builds its own PDF in the browser for upload fields, so it needs the
+# same source text this PDF was made from. Publishing it here (rather than
+# copying by hand) is what keeps the downloaded CV and the attached CV the same
+# document.
+if SRC in ("cv.md", "cv.nl.md"):
+    pub = "docs/cv.en.md" if SRC == "cv.md" else "docs/cv.nl.md"
+    open(pub, "w", encoding="utf-8").write(open(SRC, encoding="utf-8").read())
+    print("published", pub)

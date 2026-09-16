@@ -253,6 +253,12 @@ const setStatus = (id, s) => {
 };
 
 let DATA = { jobs: [], updated: "" };
+// One CV, two languages. It is no longer rewritten per job: the same document
+// goes out with every English application, and the Dutch applications get that
+// same document translated, nothing else changed. Loaded from cv.en.md /
+// cv.nl.md so editing the CV updates every letter at once — including ones
+// written months ago.
+const CVTEXT = { en: "", nl: "" };
 let TAB = "new";
 
 // The bot stamps docs/jobs.json in UTC ("2026-07-13 06:00 UTC"); show it in
@@ -673,7 +679,7 @@ Current role: Junior Digital Marketer at Episto (remote)`;
 const CV_PDF_URL = "https://baverok5.github.io/vdab-job-bot/cv.pdf";
 
 // Everything Claude for Chrome needs to fill one application: my details, the
-// job, and the CV + cover letter already tailored to it. Ends with rules that
+// job, plus the CV and the cover letter written for it. Ends with rules that
 // keep it honest and stop it before the final submit.
 function chromeApplyPack(j, d, lang, letter, cv) {
   const mail = d.apply_email || j.apply_email || "";
@@ -688,16 +694,17 @@ Title: ${j.title || ""}${j.company ? "\nCompany: " + j.company : ""}
 Link: ${j.url || ""}
 Application language: ${lang === "en" ? "English" : "Dutch"}
 
-=== TAILORED CV (use this content) ===
+=== MY CV (use this content exactly, do not rewrite it) ===
 ${cv || ""}
 
 === COVER LETTER (use / paste this) ===
 ${letter || ""}
 
 === RULES ===
-- Use the tailored CV and cover letter above; do not invent experience.
+- Use the CV and cover letter above exactly as written. Do NOT reword, reorder,
+  trim or "improve" the CV for this job — it is final. Do not invent experience.
 - Answer screening questions truthfully from my details.
-- For a CV / resume UPLOAD field: GENERATE the PDF yourself from the "TAILORED CV" text above (create the file in your own environment, name it "Baver Ok - CV.pdf") and attach that file to the upload field. Do this without asking me. Do NOT try to fetch ${CV_PDF_URL} and inject it — a browser blocks filling an upload field from a link or a script, which is why that fails; building the file yourself and attaching it works.
+- For a CV / resume UPLOAD field: GENERATE the PDF yourself from the "MY CV" text above (create the file in your own environment, name it "Baver Ok - CV.pdf") and attach that file to the upload field. Do this without asking me. Do NOT try to fetch ${CV_PDF_URL} and inject it — a browser blocks filling an upload field from a link or a script, which is why that fails; building the file yourself and attaching it works.
 - Same for a cover-letter FILE upload: generate a PDF from the "COVER LETTER" text above ("Baver Ok - Cover letter.pdf") and attach it. If the cover letter is a normal text box (the usual case), just paste the text.
 - Keep the PDFs plain and clean: name and contact details at the top, clear section headings, no invented content — use exactly the text above.
 - NEVER ask me to confirm, review, approve or choose anything — not before submitting, not at any step. No "shall I continue?", no "is this correct?", no showing me the filled form. Just do it.
@@ -715,7 +722,9 @@ function renderPrepared(j, d, box) {
   const subject = subjectFor(j, d, lang);
   const body = pickLang(d.email_body, lang);
   const letter = pickLang(d.cover_letter, lang);
-  const cv = pickLang(d.tailored_cv, lang);
+  // Always the real CV — never a per-job rewrite. Falls back to whatever the
+  // letter stored only if cv.en.md / cv.nl.md have not landed yet.
+  const cv = CVTEXT[lang === "en" ? "en" : "nl"] || pickLang(d.tailored_cv, lang);
   const cvText = cv || pickLang(d.cv_highlights, lang);
   // The raw markdown feeds buildPdf (it renders the headings and bold). Anything
   // shown on screen, copied, or pasted into a form gets the readable version —
@@ -736,9 +745,9 @@ function renderPrepared(j, d, box) {
     <div class="sec"><div class="h">Cover letter</div>
       <div class="quote">${esc(letterP)}</div>
       <button class="copybtn" data-copy="letter">Copy cover letter</button></div>
-    ${cv ? `<div class="sec"><div class="h">Tailored CV for this job</div>
+    ${cv ? `<div class="sec"><div class="h">My CV ${lang === "en" ? "🇬🇧 English" : "🇳🇱 Nederlands"}</div>
       <div class="quote" style="max-height:260px;overflow-y:auto">${esc(cvP)}</div>
-      <button class="copybtn" data-copy="cv">Copy tailored CV</button></div>`
+      <button class="copybtn" data-copy="cv">Copy CV</button></div>`
       : (cvText ? `<div class="sec"><div class="h">CV highlights for this job</div>${bullets(cvText)}</div>` : "")}
     ${hasMail
       ? `<button class="btn primary" data-prep="draft">📮 Create Gmail draft (CV + letter attached)</button>
@@ -1587,6 +1596,13 @@ document.getElementById("qclear").addEventListener("click", () => {
 // Ready first, browse pool second. One 21.5 MB file meant the app sat on
 // "Loading jobs…" with nothing on screen until all of it had downloaded; the
 // part you actually read is well under a megabyte.
+["en", "nl"].forEach((lg) => {
+  fetch(`cv.${lg}.md`)
+    .then((r) => (r.ok ? r.text() : ""))
+    .then((t) => { if (t) { CVTEXT[lg] = t; render(); } })
+    .catch(() => {});
+});
+
 fetch("jobs.json?t=" + Date.now())
   .then((r) => r.json())
   .then((d) => { DATA = d; render(); return fetch("listing.json?t=" + Date.now()); })
