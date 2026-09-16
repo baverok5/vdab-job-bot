@@ -1993,6 +1993,11 @@ def main():
     cv_text = open(CV_FILE, encoding="utf-8").read()
     seen = set(load_json(SEEN_FILE, []))
     jobs = load_json(JOBS_FILE, {"updated": "", "jobs": []})
+    # The feed is saved as two files (see save_jobs_split). Load BOTH: reading
+    # only jobs.json meant `listing` and `verdicts` came back empty, the run
+    # rebuilt the listing from that run's collection alone, and 19,222 browse
+    # entries plus 23,900 recorded verdicts were overwritten with a fresh 328.
+    jobs.update(load_json(LISTING_FILE, {}))
     jobs.setdefault("rejected", [])   # "not a fit" pool (with why_bad reasons)
     # One-time repair: the first EURES run read the portal's JS shell instead of
     # the vacancy, so ~370 real jobs were rejected as "a generic EURES website
@@ -2034,6 +2039,45 @@ def main():
     # Specialist" whose record says Dutch B2 reached Ready described as "not
     # specified level, likely B1 acceptable". Re-read every EURES match so the
     # requirement comes from the record instead of a guess.
+    # The CV gained a CRM line (basic hands-on CRM at Episto), so every job turned
+    # down with CRM / marketing automation / e-mail marketing in its reason was
+    # judged against a CV that did not mention it. Re-read them. Editing
+    # seen.json by hand did not survive — a run already in flight wrote its own
+    # copy back over it — so the bot performs the re-queue itself.
+    if not jobs.get("crm_requeue_v1"):
+        crm_rx = re.compile(r"\bcrm\b|marketing[- ]automation|hubspot|salesforce|"
+                            r"klaviyo|mailchimp|e-?mail[- ]?marketing|"
+                            r"customer relationship", re.I)
+        again = {x["id"] for x in jobs.get("rejected", [])
+                 if crm_rx.search(f"{x.get('reason','')} {x.get('why_bad','')}")}
+        again |= {i for i, v in (jobs.get("verdicts") or {}).items()
+                  if v[0] == "n" and crm_rx.search(v[2] or "")}
+        listed = {x["id"] for x in jobs.get("listing", [])}
+        again &= listed
+        # Plus anything marked read that has no verdict and no record anywhere:
+        # a wiped listing.json left jobs in that state, including the Aures
+        # "Digital marketing tools specialist" this was all about. Limited to
+        # in-field titles so this does not re-read the whole warehouse.
+        have = ({x["id"] for x in jobs.get("jobs", [])}
+                | {x["id"] for x in jobs.get("rejected", [])}
+                | set(jobs.get("verdicts") or {}))
+        by_id = {x["id"]: x for x in jobs.get("listing", [])}
+        ghosts = sorted((i for i in (listed & seen) - have
+                         if title_priority(by_id[i].get("title", "")) <= 2),
+                        key=lambda i: str(i), reverse=True)[:400]
+        if ghosts:
+            print(f"  re-reading {len(ghosts)} job(s) that were read but left "
+                  f"with no verdict on record")
+        again |= set(ghosts)
+        if again:
+            jobs["rejected"] = [x for x in jobs.get("rejected", [])
+                                if x["id"] not in again]
+            for _i in again:
+                (jobs.get("verdicts") or {}).pop(_i, None)
+            seen -= again
+            print(f"  crm: re-reading {len(again)} job(s) turned down over CRM / "
+                  f"marketing automation, now that the CV states it")
+        jobs["crm_requeue_v1"] = sorted(again)
     if not jobs.get("eures_reread_v3"):
         stale = {j["id"] for j in jobs["jobs"]
                  if EURES_DETAIL_PAGE in (j.get("url") or "")}
@@ -2046,6 +2090,13 @@ def main():
     screen = load_json(SCREEN_FILE, {"title_no": [], "shortlist": []})
     title_no = set(screen.get("title_no", []))     # dropped at the cheap title stage
     shortlist = set(screen.get("shortlist", []))   # passed title stage, await full eval
+    # The CRM re-queue above cleared these from `seen`; they also have to go back
+    # into the shortlist, because that is what the full-read queue is drawn from.
+    _crm_again = jobs.get("crm_requeue_v1")
+    if isinstance(_crm_again, list) and _crm_again:
+        shortlist |= set(_crm_again)
+        title_no -= set(_crm_again)
+        jobs["crm_requeue_v1"] = True      # done; do not re-add next run
     # The first EURES searches used specificSearchCode EVERYWHERE, which matched
     # almost anything: 254 vacancies collected, 12 of them in this field — the
     # rest electricians, butchers, a crane operator. Clear those out of the
