@@ -915,6 +915,7 @@ def looks_like_self_promo(job):
 # this job in my feed?" unanswerable. This index is ~90 bytes a job, so it can
 # cover everything without the file growing unreasonably.
 VERDICT_MATCH, VERDICT_NOFIT, VERDICT_TITLE, VERDICT_UNREAD = "m", "n", "t", "u"
+VERDICT_CLOSED = "c"   # posting no longer accepts applications
 
 
 def record_verdict(jobs, job_id, status, score=0, reason=""):
@@ -2501,6 +2502,18 @@ def _apply_verdict(jobs, job_id, url, verdict, apply_email, found_at=None,
     return False
 
 
+def _drop_closed(jobs, job_id):
+    """Drop a posting that has closed, and leave the reason behind.
+
+    _drop_job alone removes the card but keeps whatever verdict it already had,
+    so a job that was in Ready and then shut still answered "In Ready" when you
+    searched for it — the one place the app should be able to tell you plainly
+    that it is gone."""
+    record_verdict(jobs, job_id, VERDICT_CLOSED, 0,
+                   "Closed — the posting no longer accepts applications.")
+    return _drop_job(jobs, job_id)
+
+
 def _drop_job(jobs, job_id):
     """Remove a job from BOTH the matched and rejected pools (e.g. a posting that
     has closed). It stays in `seen`, so it is not re-collected on later runs."""
@@ -2527,7 +2540,7 @@ def revet_saved(browser, jobs, cv_text, budget=40, checkpoint=None):
         job_text, apply_email = fetch_job_detail(browser, url, job_id,
                                                  check_closed=True)
         if job_text == LI_CLOSED:
-            _drop_job(jobs, job_id)
+            _drop_closed(jobs, job_id)
             print("  CLOSED — removed (no longer accepting applications)")
             moved += 1
             if checkpoint and moved % CHECKPOINT_EVERY == 0:
@@ -2598,7 +2611,7 @@ def sweep_closed(browser, jobs, budget=40, checkpoint=None):
         j["closed_check_v"] = CLOSED_CHECK_VERSION
         checked += 1
         if state is True:
-            _drop_job(jobs, j.get("id"))
+            _drop_closed(jobs, j.get("id"))
             print(f"  dropped (closed): {j.get('title', '')[:60]}")
             dropped += 1
         if checkpoint and checked % 10 == 0:
@@ -2630,6 +2643,8 @@ def sweep_self_promo(browser, jobs, budget=15):
         text, _ = fetch_job_detail(browser, j.get("url"), j["id"])
         checked.append(j["id"])
         if text and SELF_PROMO_RX.search(text[:4000]):
+            record_verdict(jobs, j["id"], VERDICT_NOFIT, 0,
+                           "Not a vacancy — someone advertising their own services.")
             _drop_job(jobs, j["id"])
             dropped += 1
             print(f"  not a vacancy — removed {j.get('title', '')[:50]}")
@@ -2660,7 +2675,7 @@ def backfill_letters(browser, jobs, cv_text, budget=30, checkpoint=None):
         job_text, apply_email = fetch_job_detail(browser, url, job_id,
                                                  check_closed=True)
         if job_text == LI_CLOSED:
-            _drop_job(jobs, job_id)
+            _drop_closed(jobs, job_id)
             print(f"  CLOSED — removed {j.get('title','')[:50]}")
             continue
         if not job_text:
@@ -2701,6 +2716,12 @@ def _process_jobs(browser, new_links, seen, jobs, cv_text, checkpoint=None):
         job_text, apply_email = fetch_job_detail(browser, url, job_id)
         if job_text == LI_CLOSED:
             print("  (closed — no longer accepting applications; skipping)")
+            # Record the reason as well as the skip. Without this the job sits
+            # in the listing with no verdict at all, so searching for it in the
+            # app answers "not read yet" for something that was read and is
+            # simply shut — which reads as the bot having missed it.
+            record_verdict(jobs, job_id, VERDICT_CLOSED, 0,
+                           "Closed — the posting no longer accepts applications.")
             seen.add(job_id)  # settled state, no point re-checking
             continue
         if job_text and len(job_text) < MIN_JOB_TEXT:

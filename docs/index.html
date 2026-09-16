@@ -925,6 +925,7 @@ const VERDICT_LABEL = {
   n: ["✖️", "Read — not a fit", "vn"],
   t: ["⏭️", "Skipped on title", "vt"],
   u: ["⚠️", "Could not be read", "vu"],
+  c: ["🚫", "Closed — no longer accepting applications", "vn"],
 };
 function verdictOf(j) {
   const v = (DATA.verdicts || {})[String(j.id)];
