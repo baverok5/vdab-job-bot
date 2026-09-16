@@ -193,6 +193,7 @@ HEADERS = {
     "Accept-Language": "nl-BE,nl;q=0.9,en;q=0.8",
 }
 
+READY_CAP = 1500                  # every match fits; 600 was silently deleting 229
 MAX_NEW_PER_RUN = int(os.environ.get("MAX_NEW_PER_RUN", "700"))  # progress is checkpointed, so a long run is safe
 # Shortest posting text worth asking the AI about. Below this there is no
 # description to read, only a heading, and the model invents the rest.
@@ -2078,6 +2079,22 @@ def main():
             print(f"  crm: re-reading {len(again)} job(s) turned down over CRM / "
                   f"marketing automation, now that the CV states it")
         jobs["crm_requeue_v1"] = sorted(again)
+    # 229 jobs the AI had judged a MATCH were deleted by the old 600-job Ready
+    # cap — including five at 70% — leaving a verdict saying "in Ready" and no
+    # record in either pool. The cap is now 1500 and sorted by score, but these
+    # have to be read again to rebuild what was thrown away.
+    if not jobs.get("ready_cap_recover_v1"):
+        have = ({x["id"] for x in jobs.get("jobs", [])}
+                | {x["id"] for x in jobs.get("rejected", [])})
+        lost = {i for i, v in (jobs.get("verdicts") or {}).items()
+                if v[0] == "m" and i not in have}
+        lost &= {x["id"] for x in jobs.get("listing", [])}
+        if lost:
+            for _i in lost:
+                (jobs.get("verdicts") or {}).pop(_i, None)
+            seen -= lost
+            print(f"  ready-cap: re-reading {len(lost)} match(es) the 600 cap deleted")
+        jobs["ready_cap_recover_v1"] = sorted(lost)
     if not jobs.get("eures_reread_v3"):
         stale = {j["id"] for j in jobs["jobs"]
                  if EURES_DETAIL_PAGE in (j.get("url") or "")}
@@ -2092,11 +2109,12 @@ def main():
     shortlist = set(screen.get("shortlist", []))   # passed title stage, await full eval
     # The CRM re-queue above cleared these from `seen`; they also have to go back
     # into the shortlist, because that is what the full-read queue is drawn from.
-    _crm_again = jobs.get("crm_requeue_v1")
-    if isinstance(_crm_again, list) and _crm_again:
-        shortlist |= set(_crm_again)
-        title_no -= set(_crm_again)
-        jobs["crm_requeue_v1"] = True      # done; do not re-add next run
+    for _flag in ("crm_requeue_v1", "ready_cap_recover_v1"):
+        _again = jobs.get(_flag)
+        if isinstance(_again, list) and _again:
+            shortlist |= set(_again)
+            title_no -= set(_again)
+            jobs[_flag] = True             # done; do not re-add next run
     # The first EURES searches used specificSearchCode EVERYWHERE, which matched
     # almost anything: 254 vacancies collected, 12 of them in this field — the
     # rest electricians, butchers, a crane operator. Clear those out of the
@@ -2399,11 +2417,18 @@ def main():
             jobs["rejected"].insert(0, j)
             continue
         kept.append(j)
-    # Clean fits first, then stretch jobs (needs-better-Dutch OR needs-more-years);
-    # keep plenty so the stretch section isn't truncated. Highest score first.
-    kept.sort(key=lambda j: (bool(j.get("dutch_stretch")) or bool(j.get("exp_stretch")),
-                             -int(j.get("match_score", 0) or 0)))
-    jobs["jobs"] = kept[:600]
+    # Highest score first, full stop. Sorting on the stretch flag ahead of score
+    # meant the 600-job cap kept 30% clean fits and threw away 70% matches: a
+    # Digital Marketing Intern at Furt'her, a Marketing & Operations intern at
+    # LABELLOV, a Junior Lead Generation Marketeer at De Cronos — 229 matches
+    # deleted with no record in either pool. The app does its own ordering
+    # (SEO/English first, then newest), so this sort only decides what survives.
+    kept.sort(key=lambda j: -int(j.get("match_score", 0) or 0))
+    over = kept[READY_CAP:]
+    if over:
+        print(f"  Ready cap: {len(over)} match(es) over {READY_CAP} kept out "
+              f"(lowest kept {kept[READY_CAP - 1].get('match_score')}%)")
+    jobs["jobs"] = kept[:READY_CAP]
     jobs["rejected"] = jobs.get("rejected", [])[:REJECTED_CAP]
     save_jobs_split(jobs)
     save_json(SEEN_FILE, sorted(seen))
