@@ -1,7 +1,7 @@
 // Service worker for the VDAB Job Applier PWA.
 // Network-first for the app shell + data so updates always reach the phone
 // (previously the shell was cache-first, which pinned users to an old UI).
-const CACHE = "vjobs-v76";
+const CACHE = "vjobs-v77";
 const SHELL = [
   "./",
   "./index.html",
@@ -50,7 +50,8 @@ self.addEventListener("fetch", (e) => {
 
   // App shell (HTML) and data: always try the network first so the UI updates.
   if (isHTML || url.pathname.endsWith("jobs.json") || url.pathname.endsWith("listing.json") ||
-      url.pathname.endsWith("cv.en.md") || url.pathname.endsWith("cv.nl.md")) {
+      url.pathname.endsWith("cv.en.md") || url.pathname.endsWith("cv.nl.md") ||
+      url.pathname.endsWith("cv.pdf") || url.pathname.endsWith("cv-nl.pdf")) {
     e.respondWith(networkFirst(e.request));
     return;
   }

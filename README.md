@@ -19,9 +19,12 @@ python3 make_cv_pdf.py                       # -> docs/cv.pdf  + docs/cv.en.md
 python3 make_cv_pdf.py cv.nl.md docs/cv-nl.pdf   # -> docs/cv-nl.pdf + docs/cv.nl.md
 ```
 
-Links are written as markdown — `[mirook.com](https://mirook.com)` — and
-`make_cv_pdf.py` turns each one into a real PDF link annotation. The text stays
-plain black, exactly as in the original; only the annotation is added. The app
+`make_cv_pdf.py` reproduces the layout of the CV Baver supplied, measured off
+it: 9.5pt body, 12.5pt title-case section headings, 10.5pt bold job titles,
+bold run-in labels (`**SEO & GEO:**`), links in his blue with a real clickable
+annotation, Turkish letters via a /Differences encoding rather than
+transliteration, and one page — if a translation runs long the whole document
+is re-flowed a few percent smaller rather than spilling onto a second page. The app
 strips the markdown for anything shown on screen or pasted into a form, and its
 ⬇️ CV button downloads `docs/cv.pdf` itself rather than rebuilding one, because
 a PDF assembled in the browser cannot carry the links.
