@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-17 15:28 UTC",
+ "updated": "2026-09-17 16:06 UTC",
  "jobs": [
   {
    "id": "4456025221",
@@ -1091,28 +1091,6 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-09-17 01:05",
-   "closed_check_v": 2
-  },
-  {
-   "id": "4446018825",
-   "url": "https://www.linkedin.com/jobs/view/4446018825",
-   "title": "Digital Marketing Specialist",
-   "company": "Setrex",
-   "location": "Unknown",
-   "match_score": 62,
-   "reason": "Accessible digital marketing role in the candidate's goal field with no hard walls (no French, no mandatory degree, no seniority).",
-   "apply_email": "careers@setrex.com",
-   "found_at": "2026-07-29 08:32",
-   "status": "new",
-   "details": "- Digital marketing specialist for eCommerce brands, running paid media campaigns (Google Ads, Meta, TikTok)\n- Tasks: build/optimize paid campaigns, analyze performance and report KPIs, cross-channel collaboration with content/design/analytics\n- Contract: full-time, competitive salary + performance bonuses, regular reviews\n- Schedule: flexible working hours with remote options\n- Language: posting is in English, no Dutch/French requirement stated\n- Pay: not specified beyond 'competitive salary and performance bonuses'",
-   "why_good": "- Directly in the candidate's goal field (digital marketing / online marketing)\n- Candidate has Google Ads Search Certification and Google Analytics (GA4) certification, plus hands-on Google Ads/GA experience\n- Real SEO/content/analytics background with Semrush, Ahrefs, Search Console — transferable to campaign reporting and optimization\n- Works in English fluently; posting is in English with no language barrier\n- Junior-friendly framing ('hands-on experience', no years or degree stated) — worth applying despite the paid-media focus being a slight pivot from SEO",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "en",
    "cv_fit_v": 19,
    "closed_check": "2026-09-17 01:05",
    "closed_check_v": 2
@@ -2510,28 +2488,6 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18
-  },
-  {
-   "id": "4446017936",
-   "url": "https://www.linkedin.com/jobs/view/4446017936",
-   "title": "Content Writer",
-   "company": "Unknown",
-   "location": "Unknown",
-   "match_score": 60,
-   "reason": "Content Writer role fits candidate's content and SEO experience, with no hard walls triggered.",
-   "apply_email": "",
-   "found_at": "2026-09-08 15:40",
-   "status": "new",
-   "details": "- Content creation for websites, blogs, social media, marketing materials\n- Research, writing, editing, SEO keyword usage\n- Coordinate with marketing and design teams\n- Full-time, experience required 3+ years\n- English required",
-   "why_good": "- Proven content writing and SEO skills from Episto internship and mirook.com project\n- Experience with keyword research and SEO guidelines\n- Strong English writing and editing skills\n- Ability to coordinate with teams and meet deadlines",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": true,
-   "internship": false,
-   "lang": "en",
-   "cv_fit_v": 18,
-   "closed_check": "2026-09-17 15:26",
-   "closed_check_v": 2
   },
   {
    "id": "4448474443",
@@ -15667,6 +15623,50 @@
   }
  ],
  "rejected": [
+  {
+   "id": "4446017936",
+   "url": "https://www.linkedin.com/jobs/view/4446017936",
+   "title": "Content Writer",
+   "company": "Unknown",
+   "location": "Unknown",
+   "match_score": 60,
+   "reason": "First seen about 45 days ago — a vacancy open this long has almost always been filled.",
+   "apply_email": "",
+   "found_at": "2026-09-08 15:40",
+   "status": "new",
+   "details": "- Content creation for websites, blogs, social media, marketing materials\n- Research, writing, editing, SEO keyword usage\n- Coordinate with marketing and design teams\n- Full-time, experience required 3+ years\n- English required",
+   "why_good": "- Proven content writing and SEO skills from Episto internship and mirook.com project\n- Experience with keyword research and SEO guidelines\n- Strong English writing and editing skills\n- Ability to coordinate with teams and meet deadlines",
+   "why_bad": "First seen about 45 days ago — a vacancy open this long has almost always been filled.",
+   "dutch_stretch": false,
+   "exp_stretch": true,
+   "internship": false,
+   "lang": "en",
+   "cv_fit_v": 18,
+   "closed_check": "2026-09-17 15:26",
+   "closed_check_v": 2
+  },
+  {
+   "id": "4446018825",
+   "url": "https://www.linkedin.com/jobs/view/4446018825",
+   "title": "Digital Marketing Specialist",
+   "company": "Setrex",
+   "location": "Unknown",
+   "match_score": 62,
+   "reason": "First seen about 45 days ago — a vacancy open this long has almost always been filled.",
+   "apply_email": "careers@setrex.com",
+   "found_at": "2026-07-29 08:32",
+   "status": "new",
+   "details": "- Digital marketing specialist for eCommerce brands, running paid media campaigns (Google Ads, Meta, TikTok)\n- Tasks: build/optimize paid campaigns, analyze performance and report KPIs, cross-channel collaboration with content/design/analytics\n- Contract: full-time, competitive salary + performance bonuses, regular reviews\n- Schedule: flexible working hours with remote options\n- Language: posting is in English, no Dutch/French requirement stated\n- Pay: not specified beyond 'competitive salary and performance bonuses'",
+   "why_good": "- Directly in the candidate's goal field (digital marketing / online marketing)\n- Candidate has Google Ads Search Certification and Google Analytics (GA4) certification, plus hands-on Google Ads/GA experience\n- Real SEO/content/analytics background with Semrush, Ahrefs, Search Console — transferable to campaign reporting and optimization\n- Works in English fluently; posting is in English with no language barrier\n- Junior-friendly framing ('hands-on experience', no years or degree stated) — worth applying despite the paid-media focus being a slight pivot from SEO",
+   "why_bad": "First seen about 45 days ago — a vacancy open this long has almost always been filled.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "en",
+   "cv_fit_v": 19,
+   "closed_check": "2026-09-17 01:05",
+   "closed_check_v": 2
+  },
   {
    "id": "74261571",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74261571/showroom-verkoper-toonzaalverkoper-badkamers",
@@ -55672,8 +55672,8 @@
    "cv_fit_v": 18
   }
  ],
- "search_cursor": 11,
- "li_cursor": 19,
+ "search_cursor": 0,
+ "li_cursor": 25,
  "letter_fails": {
   "4428705687": 2
  },
