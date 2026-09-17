@@ -17,6 +17,7 @@ Digital marketeer met een technische achtergrond, werkzaam op het snijvlak van S
 
 ### Junior Digital Marketeer - Episto (op afstand), 2026-heden
 - Verantwoordelijk voor on-page SEO, zoekwoordenonderzoek en SEO-content voor klantenwebsites, met opvolging van de resultaten via Semrush, Ahrefs, Google Analytics en Search Console
+- **CMS-contentbeheer:** pagina's, blogposts en media publiceren en bijwerken voor klantenwebsites in WordPress (Elementor, Astra, Rank Math), en bestaande content actueel houden
 - **Klantenwebsites (in teamverband):** [etkendanismanlik.com](https://etkendanismanlik.com) (consultancy) en [proteinbox.com.tr](https://proteinbox.com.tr) (e-commerce) - blogcontent op zoekwoorden en on-page SEO om organisch verkeer te laten groeien
 - **[majistralecza.epis.to](https://majistralecza.epis.to):** opbouw en onderhoud van een website voor een apothekersvereniging in WordPress/Elementor, inclusief een consistente lay-out voor ongeveer 600 ledenprofielpagina's
 

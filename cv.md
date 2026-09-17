@@ -17,6 +17,7 @@ Digital marketer with a technical background, working at the intersection of SEO
 
 ### Junior Digital Marketer - Episto (Remote), 2026-present
 - Handle on-page SEO, keyword research and SEO content for client websites, tracking results with Semrush, Ahrefs, Google Analytics and Search Console
+- **CMS content management:** publishing and updating pages, blog posts and media for client websites in WordPress (Elementor, Astra, Rank Math), and keeping existing content current
 - **Client sites (team work):** [etkendanismanlik.com](https://etkendanismanlik.com) (consultancy) and [proteinbox.com.tr](https://proteinbox.com.tr) (e-commerce) - keyword-targeted blog content and on-page SEO to grow organic traffic
 - **[majistralecza.epis.to](https://majistralecza.epis.to):** building and maintaining a pharmacists' association site in WordPress/Elementor, including a consistent layout for ~600 member profile pages
 

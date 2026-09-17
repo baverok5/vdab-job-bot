@@ -138,8 +138,9 @@ CANDIDATE_ONELINE = (
     "~2 years of web & SEO experience plus a digital-marketing role now, and an "
     "earlier year of front-end development. GOAL FIELD (keep eagerly): digital "
     "marketing, SEO/SEA/GEO, content, copywriting, social media, WordPress/web/"
-    "web design, front-end, e-commerce, online marketing, communication, and "
-    "basic CRM / marketing-automation / e-mail-marketing work. Also fits: "
+    "web design, front-end, e-commerce, online marketing, communication, "
+    "CMS / content management / webredactie, and basic CRM / "
+    "marketing-automation / e-mail-marketing work. Also fits: "
     "office/admin, customer service, reception, data entry, sales/commercial "
     "support, warehouse/logistics. NOT skilled trades/production/machine "
     "operators, NOT senior/lead/director, NOT licensed professions, NOT "
@@ -1762,8 +1763,9 @@ def _sync_letter_email(job_id, apply_email):
 CANDIDATE_PROFILE = """WHO THE CANDIDATE IS:
 - GOAL FIELD: digital marketing / SEO & GEO / content / WordPress & web / web
   design. Real experience: Junior Digital Marketer at Episto now (on-page SEO,
-  keyword research, SEO content, WordPress/Elementor client sites, Semrush,
-  Ahrefs, Google Analytics, Search Console); ~2 years before that as Web & SEO
+  keyword research, SEO content, day-to-day CMS content management and
+  WordPress/Elementor client sites, Semrush, Ahrefs, Google Analytics,
+  Search Console); ~2 years before that as Web & SEO
   Specialist at Knowledge Experts (client websites in WordPress, SharePoint
   digital-workplace projects, SEO analysis and reporting, JSON-LD schema and
   technical SEO/GEO audits on mirook.com); and an earlier year as a front-end
