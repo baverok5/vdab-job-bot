@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-17 21:25 UTC",
+ "updated": "2026-09-17 21:26 UTC",
  "jobs": [
   {
    "id": "333793722",
@@ -15963,6 +15963,26 @@
   }
  ],
  "rejected": [
+  {
+   "id": "4468667877",
+   "url": "https://www.linkedin.com/jobs/view/4468667877",
+   "title": "WCM Specialist",
+   "company": "BNP Paribas Fortis",
+   "location": "Unknown",
+   "match_score": 0,
+   "reason": "The job requires 5+ years of experience, which is beyond the candidate's current experience level.",
+   "apply_email": "",
+   "found_at": "2026-09-17 21:26",
+   "status": "new",
+   "details": "Role: WCM Specialist\nMain tasks: Web Content Management, TeamSite expertise, building/integrating components, portal maintenance, documentation, incident/problem/change management, monitoring and optimizing performance.\nContract type: Not specified\nSchedule: Not specified\nLanguage: English (must-have), Dutch/French (plus)\nPay: Not specified",
+   "why_good": "",
+   "why_bad": "Experience: Requires 5+ years of experience, candidate has ~2.5 years.\nSkills: Requires mastery of OpenText TeamSite, LiveSite, OpenDeploy; JavaScript, Node.js, NPM, React, Webpack, Jest, SASS, HTML5; CI/CD pipelines; Headless WCM architecture. Candidate's core skills are in Digital Marketing, SEO, Content, WordPress, and some Python/JavaScript, not specific OpenText products or advanced front-end frameworks like React/Node.js.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "en",
+   "cv_fit_v": 19
+  },
   {
    "id": "74479350",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74479350/commercieel-bediende-binnendienst-fr-nl-sint-pieters-leeuw",
@@ -55945,26 +55965,6 @@
    "details": "- B2B account manager for a specialty beer brand in the gastronomic horeca sector\n- Build and maintain a network of chefs, sommeliers and restaurant owners; negotiate contracts; CRM reporting\n- Permanent full-time contract, day work, company car + phone\n- Languages: Dutch (very good) required; driving licence B required\n- Pay: €2600–€4000 gross/month plus benefits\n- Required: professional bachelor degree + min. 2 years commercial horeca experience",
    "why_good": "",
    "why_bad": "- Hard-requires a professional bachelor degree (candidate has only coursework, no completed degree)\n- Requires at least 2 years of commercial experience in the horeca sector\n- Requires an existing network in the gastronomic horeca — a must\n- Sales/account management in horeca is outside the candidate's digital marketing/SEO field and experience",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18
-  },
-  {
-   "id": "74599451",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74599451/accountmanager-bedrijfswagen",
-   "title": "ACCOUNTMANAGER | BEDRIJFSWAGEN",
-   "company": "SYNERGIE BRUGGE (for a brewery client)",
-   "location": "Brugge",
-   "match_score": 0,
-   "reason": "Requires a professional bachelor degree and at least 2 years of commercial horeca experience, plus fluent Dutch and a driving licence, none of which the candidate has.",
-   "apply_email": "",
-   "found_at": "2026-09-13 10:44",
-   "status": "new",
-   "details": "- Accountmanager for a family-run brewery, visiting horeca clients and beer traders\n- Prospecting new clients, promoting brands, following up promotions/POS materials, events and trade fairs\n- Permanent full-time contract, day work, company car and phone\n- Languages: Dutch (very good) required\n- Requirements: professional bachelor degree, min. 2 years commercial horeca experience, driving licence B, living in West-Vlaanderen\n- Pay: €2600–€4000 gross/month plus benefits",
-   "why_good": "",
-   "why_bad": "- Hard-requires a professional bachelor degree (candidate has no completed degree)\n- Requires at least 2 years of commercial horeca experience (candidate has ~4 months, unrelated field)\n- Requires very good Dutch and knowledge of the West-Vlaanderen region; candidate is B1 Dutch and based in Antwerp\n- Requires driving licence B and horeca sales background the candidate lacks",
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
