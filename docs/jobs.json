@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-17 02:02 UTC",
+ "updated": "2026-09-17 09:49 UTC",
  "jobs": [
   {
    "id": "4456025221",
@@ -415,7 +415,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "en",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-09-17 09:49",
+   "closed_check_v": 2
   },
   {
    "id": "74544765",
@@ -515,7 +517,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-09-17 09:49",
+   "closed_check_v": 2
   },
   {
    "id": "4468214437",
@@ -535,7 +539,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-09-17 09:49",
+   "closed_check_v": 2
   },
   {
    "id": "4464322333",
@@ -3887,7 +3893,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "en",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-09-17 09:49",
+   "closed_check_v": 2
   },
   {
    "id": "4457690365",
@@ -3907,7 +3915,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-09-17 09:49",
+   "closed_check_v": 2
   },
   {
    "id": "74596633",
@@ -7308,7 +7318,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-16 10:44",
+   "closed_check": "2026-09-17 09:49",
    "closed_check_v": 2
   },
   {
@@ -7730,28 +7740,6 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18
-  },
-  {
-   "id": "4447234154",
-   "url": "https://www.linkedin.com/jobs/view/4447234154",
-   "title": "Marketing Events Specialist",
-   "company": "TRM Labs",
-   "location": "Unknown",
-   "match_score": 55,
-   "reason": "The role is an accessible events coordination position that does not require French, a degree, or senior experience, and the candidate's organizational and digital skills are transferable.",
-   "apply_email": "",
-   "found_at": "2026-08-04 00:59",
-   "status": "new",
-   "details": "Manage execution of regional B2B events from handoff to completion.\nCoordinate vendors, logistics, booth requirements, and shipping.\nSupport event marketing: invitations, registration pages, social content.\nTrack spend, maintain records, and complete post-event reporting.\nContract role: 6 months, 20-30 hrs/week, €52-61/hr.\nRequires travel and occasional evenings/weekends.",
-   "why_good": "The candidate has strong organizational and project management skills from managing WordPress projects and logistics work.\nDigital marketing background supports event promotion and registration tasks.\nComfortable with tools like Notion, Slack, and social media.\nNo French required; English is sufficient.\nNo degree or specific certification required.",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "en",
-   "cv_fit_v": 18,
-   "closed_check": "2026-09-16 10:44",
-   "closed_check_v": 2
   },
   {
    "id": "74301165",
@@ -9258,7 +9246,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-16 10:44",
+   "closed_check": "2026-09-17 09:49",
    "closed_check_v": 2
   },
   {
@@ -10786,7 +10774,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-16 10:44",
+   "closed_check": "2026-09-17 09:49",
    "closed_check_v": 2
   },
   {
@@ -10828,7 +10816,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-16 10:44",
+   "closed_check": "2026-09-17 09:49",
    "closed_check_v": 2
   },
   {
