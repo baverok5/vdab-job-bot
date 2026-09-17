@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-17 11:03 UTC",
+ "updated": "2026-09-17 15:26 UTC",
  "jobs": [
   {
    "id": "4456025221",
@@ -63,7 +63,9 @@
    "exp_stretch": false,
    "internship": true,
    "lang": "en",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-09-17 15:26",
+   "closed_check_v": 2
   },
   {
    "id": "4465917069",
@@ -475,7 +477,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "en",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-09-17 15:26",
+   "closed_check_v": 2
   },
   {
    "id": "375150097",
@@ -535,7 +539,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-09-17 15:26",
+   "closed_check_v": 2
   },
   {
    "id": "4453873969",
@@ -9811,7 +9817,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-09-17 15:26",
+   "closed_check_v": 2
   },
   {
    "id": "74412393",
@@ -11573,7 +11581,9 @@
    "exp_stretch": false,
    "internship": true,
    "lang": "en",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-09-17 15:26",
+   "closed_check_v": 2
   },
   {
    "id": "4468381873",
@@ -11593,7 +11603,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "en",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-09-17 15:26",
+   "closed_check_v": 2
   },
   {
    "id": "4450162333",
@@ -11934,28 +11946,6 @@
    "closed_check_v": 2
   },
   {
-   "id": "4464443563",
-   "url": "https://www.linkedin.com/jobs/view/4464443563",
-   "title": "Performance Marketeer",
-   "company": "UPgemerkt",
-   "location": "Lichtervelde",
-   "match_score": 38,
-   "reason": "Performance marketing role asking ~3 years experience (a reach but not a hard 5+ wall), no French, no mandatory degree, and the candidate's Google Ads/GA4/SEO background is relevant.",
-   "apply_email": "",
-   "found_at": "2026-09-16 11:28",
-   "status": "new",
-   "details": "- New performance marketing agency in Lichtervelde seeking an experienced Performance Marketeer\n- Build, manage and optimize campaigns in Google Ads, Meta Ads, LinkedIn Campaign Manager and ChatGPT Ads\n- Set up conversion tracking with GA4, Google Tag Manager and Looker Studio; build dashboards\n- Translate commercial goals into performance strategy, funnels and lead-quality definitions\n- Full-time role; company car, strong salary package and extralegal benefits\n- Requires at least 3 years performance marketing experience; server-side tracking/CRM a plus; Dutch-language workplace",
-   "why_good": "- Real hands-on Google Ads and GA4 certifications plus Google Analytics/Search Console experience in the CV\n- SEO/content and landing-page optimization skills map onto the funnel and conversion-path work\n- Technical background (Python, tracking, JSON-LD, WordPress) helps with GA4/GTM/Looker tracking and dashboards\n- Junior digital marketer currently doing campaign-adjacent SEO/content work for client sites\n- Note: this asks for ~3 years of performance marketing (Google/Meta Ads) while the candidate has ~4 months; it is a genuine reach but worth applying to",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": true,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-09-16 15:19",
-   "closed_check_v": 2
-  },
-  {
    "id": "4465013337",
    "url": "https://www.linkedin.com/jobs/view/4465013337",
    "title": "Performance Marketeer (Google Ads)",
@@ -11974,7 +11964,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-09-16 15:19",
+   "closed_check": "2026-09-17 15:26",
    "closed_check_v": 2
   },
   {
@@ -13249,7 +13239,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-09-17 15:26",
+   "closed_check_v": 2
   },
   {
    "id": "74629370",
@@ -14181,26 +14173,6 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
-  },
-  {
-   "id": "4468381545",
-   "url": "https://www.linkedin.com/jobs/view/4468381545",
-   "title": "UX Conversational Designer",
-   "company": "Unknown",
-   "location": "Unknown",
-   "match_score": 32,
-   "reason": "Conversational/UX design role in English with no French requirement; the 3+ years ask is a stretch but not a hard wall, and the candidate's content, UX-adjacent and AI/LLM experience gives a real angle.",
-   "apply_email": "",
-   "found_at": "2026-09-17 10:32",
-   "status": "new",
-   "details": "- Design and optimize conversational flows for enterprise chatbots and multimodal interfaces\n- Build conversation design systems, dialogue patterns, persona frameworks and tone-of-voice guidelines for AI assistants\n- Run user research, usability testing, prototyping and analytics/KPI measurement for conversational experiences\n- Work in a squad with UX service designers, NLP designers, product owners and business stakeholders (B2B enterprise context)\n- English-language posting; no Dutch or French mentioned; contract type and pay not stated",
-   "why_good": "- Writes content and copy daily and is certified in content marketing, which maps to the copywriting/tone-of-voice side of conversation design\n- Works hands-on with LLMs, prompt engineering and AI agents, so AI-assistant behaviour and limitations are familiar territory\n- Has basic UX/web design skills (WordPress, Elementor, site structure, layout for ~600 member pages) and analytics experience (GA4, Search Console, KPIs)\n- Comfortable in digital collaboration and cross-functional team settings, and eager to learn new tools like Voiceflow/Botpress/Dialogflow\n- Note: the posting asks for 3+ years of conversational/chatbot design experience, which the candidate does not have — this is a genuine reach and he would be leaning on transferable content, AI and UX skills",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": true,
-   "internship": false,
-   "lang": "en",
    "cv_fit_v": 19
   },
   {
