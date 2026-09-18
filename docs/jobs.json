@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-18 20:08 UTC",
+ "updated": "2026-09-18 20:10 UTC",
  "jobs": [
   {
    "id": "4468821492",
@@ -437,6 +437,26 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
+   "cv_fit_v": 19
+  },
+  {
+   "id": "4469185886",
+   "url": "https://www.linkedin.com/jobs/view/4469185886",
+   "title": "Content Creator / Storyteller",
+   "company": "Eolis",
+   "location": "Unknown",
+   "match_score": 65,
+   "reason": "This role aligns well with the candidate's digital marketing, content, and web experience, with a slight stretch in required experience.",
+   "apply_email": "",
+   "found_at": "2026-09-18 20:10",
+   "status": "new",
+   "details": "Role: Content Creator / Storyteller. Main tasks: Developing and executing content strategies across various platforms (social media, websites, video), translating brand objectives into compelling stories, analyzing performance metrics.\nContract type: Not specified.\nSchedule: Not specified.\nLanguage: English (posting is in English).\nPay: Not specified.",
+   "why_good": "- The role's focus on content, storytelling, social media, and translating complex topics into engaging content directly matches the candidate's stated goals and experience.\n- The candidate's experience in SEO content writing, website content management (WordPress), and analyzing performance metrics (Google Analytics, Semrush) are highly relevant.\n- Experience with WordPress and Elementor for building websites and content is a strong fit.\n- The candidate's background in web development and technical SEO provides a solid foundation for understanding and creating technical or complex content.",
+   "why_bad": "- The posting asks for \"experience in content, social media, communications, content marketing, or a similar role\" which the candidate has roughly 2 years of relevant experience for, making it a slight stretch compared to their ~2.5 years total relevant experience.",
+   "dutch_stretch": false,
+   "exp_stretch": true,
+   "internship": false,
+   "lang": "en",
    "cv_fit_v": 19
   },
   {
