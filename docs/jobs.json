@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-19 19:50 UTC",
+ "updated": "2026-09-19 19:52 UTC",
  "jobs": [
   {
    "id": "370063910",
@@ -15399,6 +15399,26 @@
   }
  ],
  "rejected": [
+  {
+   "id": "4469174154",
+   "url": "https://www.linkedin.com/jobs/view/4469174154",
+   "title": "Experienced Frontend Web Developer",
+   "company": "ITS Group",
+   "location": "Unknown",
+   "match_score": 0,
+   "reason": "The job requires 5 years of professional experience and fluent Dutch/French, both of which the candidate does not meet.",
+   "apply_email": "",
+   "found_at": "2026-09-19 19:51",
+   "status": "new",
+   "details": "Role: Experienced Frontend Web Developer\nMain tasks: Design and develop a modern Single Page Application (SPA) using Angular, implement micro-frontend solutions, integrate with backend services, write tests.\nContract type: Not specified\nSchedule: Not specified\nLanguage: English (Professional) and French or Dutch (Professional)\nPay: Salary conform to experience",
+   "why_good": "",
+   "why_bad": "Missing 5+ years of professional experience.\nRequires professional level Dutch or French, and the candidate only has A2+ speaking and B1 writing Dutch and no French.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "en",
+   "cv_fit_v": 19
+  },
   {
    "id": "74266815",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74266815/toonzaalverkoper-textiel",
@@ -55391,26 +55411,6 @@
    "details": "- Administrative all-round role at an event equipment rental company\n- First point of contact for customers, full project admin from request to invoicing, debtor follow-up\n- Supports marketing/social media thinking (execution by external partner), website tweaks, stock management\n- Full-time, permanent contract, Mon–Fri 9:00–17:30, day work\n- Languages: Dutch (very good), English (good), French (medium) — French is listed as a plus, not required\n- Pay: market-conform salary (bediende pc200) + meal vouchers (from 6 months) + hospitalisation insurance (from 1 year)",
    "why_good": "",
    "why_bad": "- Requires at least 5 years of experience (hard fail)\n- Dutch is required at 'zeer goed' level, above the candidate's B1\n- French is listed as a medium-level plus, which the candidate does not have",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18
-  },
-  {
-   "id": "74602189",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74602189/export-sales-manager",
-   "title": "Export Sales Manager",
-   "company": "TecQuality Deinze (for an international building-solutions producer)",
-   "location": "SINT-ELOOIS-VIJVE",
-   "match_score": 0,
-   "reason": "Requires fluent Dutch and multiple years of international B2B sales experience, plus a technical bachelor background — a poor fit for an early-career digital marketer.",
-   "apply_email": "deinze@tecquality.be",
-   "found_at": "2026-09-14 11:18",
-   "status": "new",
-   "details": "- International B2B export sales role for a producer of high-grade construction solutions\n- Business development, account management, product presentations/training, trade fairs\n- Permanent full-time contract, day work, indefinite duration\n- Requires fluent Dutch and English; German/Spanish a plus\n- Requires a bachelor (preferably technical) and multiple years of international B2B sales experience\n- Attractive salary package with extra-legal benefits",
-   "why_good": "",
-   "why_bad": "- Requires multiple years of international B2B sales experience — candidate has ~4 months, far below the ask\n- Requires fluent Dutch (vloeiend Nederlands) — candidate is only B1\n- Prefers/requires a bachelor with a technical background; candidate has no completed degree\n- Field is international technical-commercial sales, not the candidate's digital marketing/SEO/web goal field",
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
