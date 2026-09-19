@@ -234,7 +234,7 @@
 <div class="toast" id="toast"></div>
 
 <script>
-const APP_VERSION = "v78";                 // MUST match CACHE in sw.js — it is how you tell whether the phone got the deploy
+const APP_VERSION = "v79";                 // MUST match CACHE in sw.js — it is how you tell whether the phone got the deploy
 const LS = "jobstatus";                    // { jobId: "applied" | "skipped" | "closed" }
 const LS_AT = "jobstatus_at";              // { jobId: epoch ms the status was set }
 const getStatus = () => JSON.parse(localStorage.getItem(LS) || "{}");
@@ -1139,11 +1139,37 @@ function dutchProductive(t) {
 // that simply never mentioned language.
 const DUTCH_OK_RX = /\b(a1|a2|b1)\b|basis ?kennis|basic (dutch|nederlands|knowledge of dutch)|beginner|elementary|limited dutch|little dutch|een beetje nederlands|dutch (is )?(a )?(plus|asset|nice[- ]to[- ]have|not required|niet vereist)|nederlands (is )?(een )?(pluspunt|troef|niet vereist)|no dutch (required|needed)|geen nederlands|without dutch|english[- ]?only|english is (the )?(working language|sufficient|enough)|working language is english|only english|dutch not required/i;
 const DUTCH_HEDGE_RX = /\b(likely|probably|presumably|assume[ds]?|not specified|unspecified|no explicit|not stated|implied|guess|maybe|perhaps|suggests?)\b/i;
-// The high bar was only written out in Dutch ("uitstekende kennis", "zeer
-// goede kennis"), so 58 postings that ask in English — "requires excellent
-// Dutch and English" — counted as saying nothing at all and reached Ready
-// unflagged.
-const DUTCH_HIGH_RX = /\b(b2|c1|c2)\b|upper[- ]intermediate|fluent|vloeiend|near[- ]native|native speaker|moedertaal|uitstekend\w*|zeer goed\w*|perfecte? (kennis|beheersing)|perfect (dutch|nederlands)|(excellent|very good|strong|thorough|solid|professional)\s+(command of |knowledge of |level of |written and spoken |spoken and written )?(dutch|nederlands)|(dutch|nederlands)[^.;\n]{0,30}\b(excellent|very good|mother ?tongue|native)\b|goede (mondelinge en schriftelijke )?kennis van het nederlands|excellent command/i;
+// Is the job asking for Dutch above B1? The level has to be tied to the word
+// Dutch, which it was not: a bare "fluent" matched "Language: English (fluent),
+// Dutch is a plus" and 34 English-language jobs were flagged as needing better
+// Dutch, the Delvaux "Digital Content & Social Media Manager" among them.
+//
+// NL_LVL is the bar — B2 and up, fluent, native, excellent, very good. VDAB's
+// "Goed" is deliberately NOT in it: that grade is about B1, and treating it as
+// too high would hide ~150 jobs Baver can actually do.
+const NL_WORD = "(?:dutch|nederlands|nederlandse)";
+const NL_LVL = "(?:b2|c1|c2|fluent\\w*|fluency|bilingual|native|mother ?tongue|moedertaal" +
+  "|excellent\\w*|very good|perfect\\w*|upper[- ]intermediate|uitstekend\\w*|zeer goed\\w*)";
+const NL_NEG = "(?!\\b(?:no|geen|not|zonder)\\b)";
+const NL_OTHER = "english|engels|french|frans|german|duits|spanish|spaans|italian|turkish|turks|russian|polish|pools";
+// Level before the language ("fluent, error-free Dutch"). The gap stops at a
+// clause break, at a negation, at another language that carries its own
+// bracketed level, and at ")" — a level inside brackets belongs to whatever
+// stands before the bracket, which is what "English (fluent), Dutch" is.
+const NL_GAP_A = "(?:" + NL_NEG + "(?!\\b(?:" + NL_OTHER + ")\\b\\s*[(\\[])[^.;)\\n]){0,30}";
+// Language before the level ("Dutch (B2)", "Dutch must be excellent").
+const NL_GAP_B = "(?:" + NL_NEG + "(?!\\b(?:" + NL_OTHER + ")\\b)[^.;,)\\n]){0,14}";
+// "...Dutch is a plus" is the opposite of a requirement.
+const NL_NOTREQ = "(?!\\s*(?:is\\s+)?(?:a|an|een)?\\s*(?:plus|pluspunt|asset|troef" +
+  "|nice[- ]to[- ]have|niet vereist|not required|welcome|an added value|only))";
+const DUTCH_HIGH_RX = new RegExp(
+  "(?:^|[^(\\w])" + NL_LVL + "\\b" + NL_GAP_A + "\\b" + NL_WORD + "\\b" + NL_NOTREQ +
+    "(?!\\s*(?:market|markt|culture|cultuur))" +
+  "|\\b" + NL_WORD + "\\b" + NL_GAP_B + "\\b" + NL_LVL + "\\b" +
+  // adjacent only: "strong communication in Dutch" is not a language level
+  "|\\b(?:strong|solid|thorough|professional)\\s+" + NL_WORD + "\\b" +
+  "|uitstekende kennis van het nederlands|zeer goede kennis van het nederlands" +
+  "|vloeiend\\w*\\s+nederlands|nederlands\\w*\\s+vloeiend|nederlandstalig", "i");
 // Three states, not two. Treating "the posting never mentions language" as
 // "needs better Dutch" hid 738 of 790 Ready jobs: only 125 actually ask for
 // B2/C1/fluent, 52 explicitly accept B1 or English, and 613 simply say nothing.
