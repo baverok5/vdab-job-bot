@@ -1780,6 +1780,14 @@ marketing experience. Jobs asking for UP TO ~3 years are fine. Jobs asking 4-5
 years are a reach (pass, score lower). Jobs that clearly require 5+ years, or a
 proven track record of leading a team, → FAIL.
 
+"APPLY ANYWAY" RULE: some postings say outright that you should apply even if
+you do not meet every requirement ("you don't need to tick every box", "even if
+you don't meet 100% of the criteria", "solliciteer ook als je niet aan alle
+voorwaarden voldoet"). Where a posting says that, treat its degree and
+years-of-experience lines as PREFERENCES, not walls: PASS it as a stretch and
+score it lower, rather than failing it. A hard licence, a required second
+language, or genuine team leadership still fail.
+
 LANGUAGE RULE: the candidate works in English; Dutch is B1 in writing and A2+ in
 speaking. PASS jobs that are in English, accept English, or need Dutch up to B1 /
 conversational / "goede kennis" or Dutch "as a plus". Jobs needing FLUENT/native
@@ -2447,7 +2455,7 @@ def main():
             # saved pool under the current criteria (e.g. move Dutch-required
             # marketing jobs into the stretch section). Small budget so it never
             # starves the new-job screening above.
-            revet_saved(browser, jobs, cv_text, budget=80, checkpoint=checkpoint)
+            revet_saved(browser, jobs, cv_text, budget=260, checkpoint=checkpoint)
         finally:
             browser.close()
 
@@ -2577,7 +2585,13 @@ def revet_saved(browser, jobs, cv_text, budget=40, checkpoint=None):
     fit (e.g. after loosening the rules) move back to matched. Only touches jobs
     stamped with an older CRITERIA_VERSION, so it's a one-time migration per bump."""
     stale = [j for j in (jobs["jobs"] + jobs.get("rejected", []))
-             if j.get("cv_fit_v") != CRITERIA_VERSION][:budget]
+             if j.get("cv_fit_v") != CRITERIA_VERSION]
+    # Marketing / SEO / web titles first. The queue used to be in whatever order
+    # the pools happened to be in, so after the CV changed, 1,510 jobs sat
+    # waiting to be re-judged and the warehouse ones were just as likely to be
+    # re-read first as the ones Baver actually opens.
+    stale.sort(key=lambda j: title_priority(j.get("title", "")))
+    stale = stale[:budget]
     if not stale:
         return 0
     print(f"\nRe-vetting {len(stale)} saved match(es) against criteria v{CRITERIA_VERSION}...")
