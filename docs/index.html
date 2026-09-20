@@ -234,7 +234,7 @@
 <div class="toast" id="toast"></div>
 
 <script>
-const APP_VERSION = "v79";                 // MUST match CACHE in sw.js — it is how you tell whether the phone got the deploy
+const APP_VERSION = "v80";                 // MUST match CACHE in sw.js — it is how you tell whether the phone got the deploy
 const LS = "jobstatus";                    // { jobId: "applied" | "skipped" | "closed" }
 const LS_AT = "jobstatus_at";              // { jobId: epoch ms the status was set }
 const getStatus = () => JSON.parse(localStorage.getItem(LS) || "{}");
@@ -564,8 +564,16 @@ async function pingClaude(j, box) {
     if (!r.ok) throw new Error("HTTP " + r.status);
     box.innerHTML = '<div class="hint">📮 Sent! Claude is creating the draft — check Gmail → Drafts in a few minutes.</div>';
   } catch (e) {
-    localStorage.removeItem(PAT_LS);
-    box.innerHTML = '<div class="hint">Ping failed — tap again and re-enter the token.</div>';
+    // Only an auth failure means the token is bad. Forgetting it on ANY error
+    // meant one flaky moment on mobile data cost a re-paste, and — worse — the
+    // real reason was never shown: the token had simply expired on 7 August and
+    // every tap since had silently done nothing.
+    const msg = String(e && e.message || "");
+    const auth = /\b(401|403)\b/.test(msg);
+    if (auth) localStorage.removeItem(PAT_LS);
+    box.innerHTML = auth
+      ? '<div class="hint">GitHub rejected the token (' + esc(msg) + ') — it has expired or lost access. Tap again and paste a new one.</div>'
+      : '<div class="hint">Ping failed: ' + esc(msg || "no connection") + '. Your token is still saved — tap again to retry.</div>';
   }
 }
 
