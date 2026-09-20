@@ -150,6 +150,10 @@ GREY = (0.27, 0.27, 0.27)
 md = clean(open(SRC, encoding="utf-8").read())
 
 
+# A source with no "## " headings is a letter, not a CV.
+LETTER = not any(l.startswith("## ") for l in md.split("\n"))
+
+
 def build(scale=1.0):
     """Lay the whole document out at `scale`.
 
@@ -188,6 +192,13 @@ def build(scale=1.0):
         elif ln.startswith("- "):
             add(9.5, ln[2:].strip(), gap=0.0, indent=BULLET_INDENT,
                 leading=12.8, bullet=True)
+        elif not ln.strip() and LETTER:
+            # A letter has no section headings to space it out, so its blank
+            # lines have to carry the paragraph breaks. The CV is unaffected:
+            # its spacing comes from the heading gaps.
+            items.append({"indent": 0, "size": 9.5 * scale, "line": [],
+                          "gap": 0.0, "leading": 7.0 * scale,
+                          "color": None, "bullet": False})
         elif ln.strip():
             if plain == 0:      # the tagline under the name
                 add(10.5, ln.strip(), gap=0.0, leading=12.5, color=GREY)
