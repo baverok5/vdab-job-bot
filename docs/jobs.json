@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-20 19:57 UTC",
+ "updated": "2026-09-20 19:59 UTC",
  "jobs": [
   {
    "id": "370063910",
@@ -314,6 +314,26 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18
+  },
+  {
+   "id": "4447244679",
+   "url": "https://www.linkedin.com/jobs/view/4447244679",
+   "title": "SEO Specialist",
+   "company": "Ikea",
+   "location": "Unknown",
+   "match_score": 70,
+   "reason": "The job is a good fit for the candidate's digital marketing and SEO skills, with manageable experience requirements.",
+   "apply_email": "",
+   "found_at": "2026-09-16 07:41",
+   "status": "new",
+   "details": "Role: SEO Specialist\nMain tasks: Maximize organic traffic, define and support SEO strategy, manage link building and keyword strategy, analyze and implement optimization changes, work with content editors and sales/marketing teams, contribute to SEM plan.\nContract type: Not specified\nSchedule: Not specified\nLanguage: English/Nederlands (Dutch B1/A2+ is sufficient)\nPay: Not specified",
+   "why_good": "- Role is directly in the candidate's goal field (digital marketing/SEO).\n- Candidate has relevant experience in on-page SEO, keyword research, and content management with tools like Semrush, Ahrefs, GA, and GSC.\n- Experience with CMS environments (WordPress) is mentioned.\n- The job asks for SEO experience, which the candidate possesses from their roles at Episto and Knowledge Experts.",
+   "why_bad": "- The job asks for 'proven SEO experience' and 'expert in content strategy, SEO and SEM', which may imply more than the candidate's current ~2 years of directly relevant experience.\n- The candidate's Dutch speaking ability (A2+) might be a stretch for a role where Dutch is also listed as a language, though B1 writing and English fluency should cover communication.",
+   "dutch_stretch": false,
+   "exp_stretch": true,
+   "internship": false,
+   "lang": "en",
+   "cv_fit_v": 19
   },
   {
    "id": "4469180531",
@@ -7784,28 +7804,6 @@
    "cv_fit_v": 18
   },
   {
-   "id": "4447244679",
-   "url": "https://www.linkedin.com/jobs/view/4447244679",
-   "title": "SEO Specialist",
-   "company": "Ikea",
-   "location": "Unknown",
-   "match_score": 45,
-   "reason": "SEO Specialist role in the candidate's goal field with no French requirement and no hard degree/experience wall stated.",
-   "apply_email": "",
-   "found_at": "2026-09-16 07:41",
-   "status": "new",
-   "details": "- SEO Specialist at IKEA, reporting to the Web Manager\n- Tasks: keyword research, link building, on-page/metadata optimization, competitor analysis, SEM support, working with content/sales/marketing teams\n- Full-time permanent role (no contract type or schedule stated)\n- Language: posting is in English/French/Dutch; no French requirement stated in the profile\n- Pay: not stated",
-   "why_good": "- Directly in the candidate's goal field: SEO, keyword strategy, on-page optimization, CMS content work\n- Candidate already does on-page SEO, keyword research, content writing and CMS work at Episto\n- Uses SEMrush, Ahrefs, Google Analytics/Search Console — matching the keyword-tool and CMS experience asked for\n- SEM/Google Ads exposure and technical SEO/GEO audits on mirook.com align with the SEM and sitemap/structured-data tasks\n- Gap: the posting asks for 'proven SEO experience' and an 'expert' profile, which is more than the candidate's ~4 months — a reach, but worth applying",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": true,
-   "internship": false,
-   "lang": "en",
-   "cv_fit_v": 18,
-   "closed_check": "2026-09-20 14:29",
-   "closed_check_v": 2
-  },
-  {
    "id": "74611086",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74611086/verkoper-chocolade-brugge",
    "title": "Verkoper - Chocolade - Brugge",
@@ -14839,6 +14837,26 @@
   }
  ],
  "rejected": [
+  {
+   "id": "4468471258",
+   "url": "https://www.linkedin.com/jobs/view/4468471258",
+   "title": "Experienced Frontend Developer (TypeScript / JavaScript)",
+   "company": "DPG Media IT",
+   "location": "Antwerp, Belgium",
+   "match_score": 0,
+   "reason": "The job requires deep expertise in modern TypeScript and JavaScript for frontend development, which is beyond the candidate's primary skill set.",
+   "apply_email": "toon.hertogs@persgroep.net",
+   "found_at": "2026-09-20 19:58",
+   "status": "new",
+   "details": "Role: Experienced Frontend Developer (TypeScript / JavaScript)\nMain tasks: Build a modern, unified Tracking Platform from the ground up, develop core SDKs for Android, iOS, and Web, collaborate with other developers, safeguard technical foundation.\nContract type: Not specified\nSchedule: Not specified\nLanguage: English (implied, as it's the language of the posting and primary language of the candidate, though Dutch is spoken in Belgium)\nPay: Competitive salary package with benefits",
+   "why_good": "",
+   "why_bad": "Requires profound knowledge of modern TypeScript and JavaScript (ESNext).\nRequires solid experience with automated testing frameworks (Vitest, Jest, Playwright).\nFocus is on frontend development and client-side architecture, not digital marketing or SEO.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "en",
+   "cv_fit_v": 19
+  },
   {
    "id": "4468652114",
    "url": "https://www.linkedin.com/jobs/view/4468652114",
@@ -54833,26 +54851,6 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 18
-  },
-  {
-   "id": "4465782217",
-   "url": "https://www.linkedin.com/jobs/view/4465782217",
-   "title": "Marketing & Communication Intern",
-   "company": "Avertim",
-   "location": "Unknown",
-   "match_score": 0,
-   "reason": "Requires a school internship agreement and current Master's student status, which the candidate cannot provide.",
-   "apply_email": "",
-   "found_at": "2026-09-14 17:29",
-   "status": "new",
-   "details": "• Support Marketing & Communications team with content creation, campaigns, events, and strategic materials\n• Create social media posts, banners, infographics, newsletters, short videos, and event visuals\n• Internship role, likely full-time, based in Belgium (location not specified)\n• Requires current Master's student (minimum Master 1) in Communications, Marketing, Business, or related\n• Mandatory internship agreement through a recognised educational institution\n• Fluent in French and/or Dutch with excellent English; French not strictly required if Dutch is fluent",
-   "why_good": "",
-   "why_bad": "• Requires current enrollment as a Master's student (minimum Master 1) — candidate has no degree and is not enrolled\n• Mandatory internship agreement through a recognised educational institution — candidate cannot provide this\n• Requires fluent French and/or Dutch; candidate has only B1 Dutch and no French (though French not strictly required if Dutch fluent, the school convention alone disqualifies)",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": true,
-   "lang": "en",
    "cv_fit_v": 18
   }
  ],
