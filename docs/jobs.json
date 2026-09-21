@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-21 16:47 UTC",
+ "updated": "2026-09-21 16:48 UTC",
  "jobs": [
   {
    "id": "4469833896",
@@ -1516,7 +1516,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-09-20 19:16",
+   "closed_check": "2026-09-21 16:47",
    "closed_check_v": 2
   },
   {
@@ -2060,7 +2060,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-20 19:16",
+   "closed_check": "2026-09-21 16:47",
    "closed_check_v": 2
   },
   {
@@ -3052,7 +3052,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-09-20 19:16",
+   "closed_check": "2026-09-21 16:47",
    "closed_check_v": 2
   },
   {
@@ -4458,7 +4458,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-20 19:16",
+   "closed_check": "2026-09-21 16:47",
    "closed_check_v": 2
   },
   {
@@ -8376,7 +8376,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-09-20 19:16",
+   "closed_check": "2026-09-21 16:47",
    "closed_check_v": 2
   },
   {
@@ -9974,7 +9974,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-20 19:16",
+   "closed_check": "2026-09-21 16:47",
    "closed_check_v": 2
   },
   {
@@ -10078,7 +10078,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-09-20 19:16",
+   "closed_check": "2026-09-21 16:47",
    "closed_check_v": 2
   },
   {
@@ -10200,29 +10200,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-09-20 19:16",
-   "closed_check_v": 2
-  },
-  {
-   "id": "4468381873",
-   "url": "https://www.linkedin.com/jobs/view/4468381873",
-   "title": "UX Conversational Designer",
-   "company": "AMA (deployed to a telecom client)",
-   "location": "Brussels",
-   "match_score": 38,
-   "reason": "Accessible UX/conversational design role in English with no French, no mandatory degree, and only a ~3-year ask the junior candidate can stretch toward.",
-   "apply_email": "",
-   "found_at": "2026-09-17 10:32",
-   "status": "new",
-   "details": "- Role: UX Conversational Designer in the client's Digital Factory, designing chatbot/digital-assistant dialogues for B2B customers\n- Tasks: build conversational flows, personas and tone-of-voice, user research/usability testing, KPIs, collaborate with NLP/AI-ML and UX teams\n- Contract: employed by AMA consulting firm, deployed on-site at a Brussels telecom client\n- Language: posting is in English; no French or Dutch requirement stated\n- Must-haves: 3+ years conversational/chatbot design, Voiceflow/Botpress/Dialogflow, FigJam/Miro/Mural, UX & copywriting skills\n- Pay: not stated",
-   "why_good": "- Goal-adjacent: content, copywriting, UX and digital experience work the candidate can lean on\n- Real content/SEO writing and WordPress/Elementor web-design experience transfers to dialogue and tone-of-voice work\n- Technical background (HTML/CSS/JS, Python automation, AI/LLM daily use, JSON-LD) helps with chatbot logic and AI-powered products\n- English-language role with no French requirement, so language is not a blocker\n- Gap is honest: the posting asks for 3+ years of conversational/chatbot design and tools like Voiceflow/Dialogflow the candidate has not used — a reach, but worth applying",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": true,
-   "internship": false,
-   "lang": "en",
-   "cv_fit_v": 19,
-   "closed_check": "2026-09-20 19:16",
+   "closed_check": "2026-09-21 16:47",
    "closed_check_v": 2
   },
   {
@@ -10244,7 +10222,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-09-20 19:16",
+   "closed_check": "2026-09-21 16:47",
    "closed_check_v": 2
   },
   {
