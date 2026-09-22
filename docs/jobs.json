@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-22 20:02 UTC",
+ "updated": "2026-09-22 20:41 UTC",
  "jobs": [
   {
    "id": "4469833896",
@@ -1429,28 +1429,6 @@
    "lang": "nl",
    "cv_fit_v": 19,
    "closed_check": "2026-09-22 15:25",
-   "closed_check_v": 2
-  },
-  {
-   "id": "4448118192",
-   "url": "https://www.linkedin.com/jobs/view/4448118192",
-   "title": "Junior Performance Marketer",
-   "company": "Distrilink",
-   "location": "Unknown",
-   "match_score": 62,
-   "reason": "Junior performance marketing role in the candidate's goal field, with degree requirement softened by 'or equivalent experience' and no French required.",
-   "apply_email": "",
-   "found_at": "2026-08-02 21:22",
-   "status": "new",
-   "details": "- Junior Performance Marketer / advertising specialist at a Belgian e-commerce accelerator\n- Set up, monitor and optimize Amazon/Bol.com/Meta/Google ad campaigns; bid & budget management; ACOS/ROAS tracking\n- Keyword research, competitor analysis, listing keyword optimization with content/SEO team\n- Weekly/monthly reporting via Helium 10, Seller/Vendor Central, Excel dashboards\n- Full-time role; fluent English and Dutch required; salary competitive + fringe benefits",
-   "why_good": "- Directly in the goal field: digital marketing, SEO/SEA, keyword research and e-commerce\n- Candidate already does keyword research, on-page SEO and reporting with Semrush/Ahrefs/GA/Search Console\n- E-commerce exposure via proteinbox.com.tr and WooCommerce; Google Ads certified\n- Degree requirement explicitly allows 'or equivalent experience', and relevant experience is only 'a plus'\n- English fluent; Dutch B1 writing / A2+ speaking is close to the 'fluent Dutch' ask and improving",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "en",
-   "cv_fit_v": 19,
-   "closed_check": "2026-09-22 09:37",
    "closed_check_v": 2
   },
   {
@@ -13857,6 +13835,28 @@
   }
  ],
  "rejected": [
+  {
+   "id": "4448118192",
+   "url": "https://www.linkedin.com/jobs/view/4448118192",
+   "title": "Junior Performance Marketer",
+   "company": "Distrilink",
+   "location": "Unknown",
+   "match_score": 62,
+   "reason": "First seen about 45 days ago — a vacancy open this long has almost always been filled.",
+   "apply_email": "",
+   "found_at": "2026-08-02 21:22",
+   "status": "new",
+   "details": "- Junior Performance Marketer / advertising specialist at a Belgian e-commerce accelerator\n- Set up, monitor and optimize Amazon/Bol.com/Meta/Google ad campaigns; bid & budget management; ACOS/ROAS tracking\n- Keyword research, competitor analysis, listing keyword optimization with content/SEO team\n- Weekly/monthly reporting via Helium 10, Seller/Vendor Central, Excel dashboards\n- Full-time role; fluent English and Dutch required; salary competitive + fringe benefits",
+   "why_good": "- Directly in the goal field: digital marketing, SEO/SEA, keyword research and e-commerce\n- Candidate already does keyword research, on-page SEO and reporting with Semrush/Ahrefs/GA/Search Console\n- E-commerce exposure via proteinbox.com.tr and WooCommerce; Google Ads certified\n- Degree requirement explicitly allows 'or equivalent experience', and relevant experience is only 'a plus'\n- English fluent; Dutch B1 writing / A2+ speaking is close to the 'fluent Dutch' ask and improving",
+   "why_bad": "First seen about 45 days ago — a vacancy open this long has almost always been filled.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "en",
+   "cv_fit_v": 19,
+   "closed_check": "2026-09-22 09:37",
+   "closed_check_v": 2
+  },
   {
    "id": "4469906758",
    "url": "https://www.linkedin.com/jobs/view/4469906758",
@@ -53880,8 +53880,8 @@
    "cv_fit_v": 18
   }
  ],
- "search_cursor": 9,
- "li_cursor": 6,
+ "search_cursor": 14,
+ "li_cursor": 12,
  "letter_fails": {
   "4428705687": 2
  },
