@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-22 20:41 UTC",
+ "updated": "2026-09-22 20:42 UTC",
  "jobs": [
   {
    "id": "4469833896",
@@ -420,6 +420,26 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18
+  },
+  {
+   "id": "4459940994",
+   "url": "https://www.linkedin.com/jobs/view/4459940994",
+   "title": "SEO expert",
+   "company": "WPP Media",
+   "location": "Unknown",
+   "match_score": 70,
+   "reason": "The candidate has relevant experience and skills for this SEO and Generative Engine Optimisation role, meeting most requirements.",
+   "apply_email": "",
+   "found_at": "2026-09-16 07:40",
+   "status": "new",
+   "details": "Role: SEO expert for Total Search Activation team.\nMain tasks: Technical SEO audits, content gap analysis, content briefs, SEO content writing, meta tag optimisation, internal linking, AI search visibility (GEO/GSO).\nContract type: Not specified.\nSchedule: Not specified.\nLanguage: French or Dutch and English.\nPay: Not specified.",
+   "why_good": "- Directly matches the GOAL FIELD of SEO & GEO and content.\n- Has relevant experience (~2.5 years) in Web & SEO Specialist and Junior Digital Marketer roles.\n- Proficient with required tools: Google Search Console, Google Analytics 4, Semrush.\n- Experience with AI search visibility, GEO, and LLMs aligns with Generative Engine Optimisation.\n- The job explicitly states \"Relevant internship experience can be included\" and \"Experience with all of these tools is not required\", showing flexibility.",
+   "why_bad": "- The job requires \"at least two years of experience working on SEO projects,\" and while the candidate has relevant experience, it's slightly under 2.5 years of direct SEO focus, and the posting asks for \"at least two years\".\n- The job states \"You speak French or Dutch and have a strong command of English.\" The candidate has B1 Dutch writing and A2+ speaking, which is not fluent, but since English is also accepted and Dutch is not explicitly required to be fluent, this is manageable.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "en",
+   "cv_fit_v": 19
   },
   {
    "id": "74654692",
@@ -9530,28 +9550,6 @@
    "closed_check_v": 2
   },
   {
-   "id": "4459940994",
-   "url": "https://www.linkedin.com/jobs/view/4459940994",
-   "title": "SEO and Generative Engine Optimisation (GEO) Specialist",
-   "company": "WPP Media",
-   "location": "Belgium",
-   "match_score": 40,
-   "reason": "SEO/GEO role in the candidate's goal field; asks ~2 years (a reach) but accepts relevant internship experience and only requires French OR Dutch, not French.",
-   "apply_email": "",
-   "found_at": "2026-09-16 07:40",
-   "status": "new",
-   "details": "- SEO/GEO specialist in the Total Search Activation team at a global media agency\n- Tasks: technical SEO audits, content gap analysis, content briefs, SEO content writing, meta tags, internal linking, AI search visibility (GEO/GSO)\n- Tools: Screaming Frog, Google Search Console, GA4, Semrush (not all required)\n- Language: French OR Dutch plus strong English — no French mandatory\n- Contract: full-time, international agency environment; pay not stated",
-   "why_good": "- Directly in the candidate's goal field: SEO, GEO/AEO, content and technical audits\n- Real hands-on SEO/GEO work at Episto and mirook.com (structured data, entity optimization, llms.txt, technical audits)\n- Uses Google Search Console, GA, SEMrush, Ahrefs — matches the named tool stack\n- English-speaking role; French not required, and Dutch is only one of two accepted options\n- Posting explicitly says relevant internship experience counts toward the 2 years\n- Gap: the role asks for ~2 years of SEO experience and the candidate has ~4 months, so this is a reach — but worth applying given the internship allowance and strong GEO fit",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": true,
-   "internship": false,
-   "lang": "en",
-   "cv_fit_v": 18,
-   "closed_check": "2026-09-22 09:37",
-   "closed_check_v": 2
-  },
-  {
    "id": "71855505",
    "url": "https://www.vdab.be/vindeenjob/vacatures/71855505/verkoopmedewerker",
    "title": "Verkoopmedewerker",
@@ -13835,6 +13833,26 @@
   }
  ],
  "rejected": [
+  {
+   "id": "74614310",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74614310/secretaire-encodage-et-facturation-20h-sem",
+   "title": "Secrétaire encodage et facturation 20h/sem",
+   "company": "ADECCO",
+   "location": "SAMBREVILLE",
+   "match_score": 0,
+   "reason": "The job requires French, which the candidate does not speak.",
+   "apply_email": "",
+   "found_at": "2026-09-16 01:37",
+   "status": "new",
+   "details": "Role: Administrative and accounting support for several points of sale.\nMain tasks: Counting and checking cash and banks, basic administrative and accounting entry, verifying delivery notes against invoices, administrative document control, administrative support to stores.\nContract type: Interim with option for permanent employment.\nSchedule: Part-time (16-10 hours/week), flexible, spread across 3x4 hour days and 1x8 hour day.\nLanguage: French (implied by job description and location).\nPay: According to scale.",
+   "why_good": "",
+   "why_bad": "French language required.\nRole is administrative/accounting focused, outside the candidate's core digital marketing/web/SEO goal field.\nRequires a level of experience in administrative/accounting tasks that is not explicitly detailed in the candidate's profile.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 19
+  },
   {
    "id": "4448118192",
    "url": "https://www.linkedin.com/jobs/view/4448118192",
@@ -37758,26 +37776,6 @@
    "cv_fit_v": 18
   },
   {
-   "id": "74614310",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74614310/secretaire-encodage-et-facturation-20h-sem",
-   "title": "Secrétaire encodage et facturation 20h/sem",
-   "company": "ADECCO (for a job in Sambreville)",
-   "location": "Sambreville",
-   "match_score": 0,
-   "reason": "The job is entirely in French and requires French-language administrative work in Namur/Brabant Wallon, and the candidate has no French.",
-   "apply_email": "",
-   "found_at": "2026-09-16 01:37",
-   "status": "new",
-   "details": "- Administrative secretary role: cash/bank counting and control, basic accounting data entry, checking delivery notes against invoices, document follow-up, admin support for 4 stores\n- Interim contract with option for permanent, part-time 16-20h/week, flexible day schedule\n- Fully French-language posting and role in the Namur / Brabant Wallon region\n- Education: general secondary (ASO); experience: limited (<2 years)\n- Pay: not stated",
-   "why_good": "",
-   "why_bad": "- The posting and all duties are in French; the candidate has no French at all\n- Role is located in Wallonia (Sambreville / Namur / Brabant Wallon) and requires French-language admin and client contact\n- Not in the candidate's goal field (digital marketing/SEO/web) and requires French-language accounting/encoding tasks",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18
-  },
-  {
    "id": "60615343",
    "url": "https://www.vdab.be/vindeenjob/vacatures/60615343/assistant-e-rh-zone-europe-f-h",
    "title": "Assistant(e) RH Zone Europe F/H",
@@ -53853,26 +53851,6 @@
    "details": "- Executive/Legal Assistant at an international law firm in central Brussels\n- Complex agenda management, travel coordination, email/document handling, billing support\n- Full-time, permanent contract, day work, 1 day home office\n- Requires excellent English plus a good command of French OR Dutch\n- A few years of management/executive assistant experience preferred\n- Competitive salary package",
    "why_good": "",
    "why_bad": "- Posting requires a good command of French or Dutch; candidate has no French and only B1 Dutch\n- Asks for a few years of management/executive assistant experience the candidate lacks\n- Legal/executive assistant background is outside the candidate's digital marketing/SEO field",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18
-  },
-  {
-   "id": "74518475",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74518475/account-manager-digitale-reclameoplossingen-brussel",
-   "title": "Account Manager | Digitale Reclameoplossingen Brussel",
-   "company": "MICHAEL PAGE INTERNATIONAL (BELGIUM)",
-   "location": "Provincie West-Vlaanderen",
-   "match_score": 0,
-   "reason": "The job explicitly requires fluent Dutch AND French, and the candidate has no French.",
-   "apply_email": "",
-   "found_at": "2026-09-14 17:48",
-   "status": "new",
-   "details": "- Sales Trainee / Account Manager in digital advertising (media screens)\n- Traineeship into a commercial sales role: prospecting, client relations, negotiations\n- Full-time, permanent contract (vaste job), day work, start ASAP\n- Languages: fluent Dutch AND French required\n- Requires driver's licence B\n- Pay: €2400 gross + commissions up to €1500/month, company car, net expenses",
-   "why_good": "",
-   "why_bad": "- Requires fluent Dutch AND French — the candidate has no French at all\n- Requires a driver's licence B, which is not on the CV\n- Commercial B2B sales role, outside the candidate's digital marketing/SEO goal field",
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
