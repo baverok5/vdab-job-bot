@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-23 15:18 UTC",
+ "updated": "2026-09-23 15:19 UTC",
  "jobs": [
   {
    "id": "4469833896",
@@ -1892,7 +1892,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-09-22 20:00",
+   "closed_check": "2026-09-23 15:17",
    "closed_check_v": 2
   },
   {
@@ -2124,7 +2124,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-09-22 20:00",
+   "closed_check": "2026-09-23 15:17",
    "closed_check_v": 2
   },
   {
@@ -2146,7 +2146,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-09-22 20:00",
+   "closed_check": "2026-09-23 15:17",
    "closed_check_v": 2
   },
   {
@@ -2228,28 +2228,6 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19
-  },
-  {
-   "id": "4468620028",
-   "url": "https://www.linkedin.com/jobs/view/4468620028",
-   "title": "UI Designer",
-   "company": "Outsight",
-   "location": "Brussels",
-   "match_score": 55,
-   "reason": "This UI Designer role aligns with the candidate's web design and digital marketing skills, despite some experience stretch.",
-   "apply_email": "okayletsgo@outsight.studio",
-   "found_at": "2026-09-18 10:05",
-   "status": "new",
-   "details": "Full-time position.\nRole: UI Designer, turning product thinking into excellent interfaces.\nMain tasks: Designing digital interfaces, working with UX experts and developers, presenting work to clients.\nContract type: Full-time.\nSchedule: Hybrid, minimum 2 fixed days per week in the office.\nLanguage: English is the working language, French not required.",
-   "why_good": "The role is in the web design and digital product space, which is close to the candidate's experience.\nIt explicitly states it is NOT a graphic design role, and focuses on interface behavior and technical craft, aligning with the candidate's web design background.\nThe job accepts \"serious freelance and personal projects\" for experience, which the candidate has.\nIt explicitly states that French is not required and English is the working language.",
-   "why_bad": "The job requires \"at least 2 years of relevant experience\", and the candidate has approximately 2 years but slightly less for a dedicated UI design role, making it a stretch.",
-   "dutch_stretch": false,
-   "exp_stretch": true,
-   "internship": false,
-   "lang": "en",
-   "cv_fit_v": 19,
-   "closed_check": "2026-09-22 20:00",
-   "closed_check_v": 2
   },
   {
    "id": "74634858",
@@ -6784,7 +6762,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-09-22 20:00",
+   "closed_check": "2026-09-23 15:17",
    "closed_check_v": 2
   },
   {
@@ -7248,7 +7226,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-22 20:00",
+   "closed_check": "2026-09-23 15:17",
    "closed_check_v": 2
   },
   {
@@ -7290,7 +7268,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-22 20:00",
+   "closed_check": "2026-09-23 15:17",
    "closed_check_v": 2
   },
   {
@@ -8574,7 +8552,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-22 20:00",
+   "closed_check": "2026-09-23 15:17",
    "closed_check_v": 2
   },
   {
@@ -8616,29 +8594,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-22 20:00",
-   "closed_check_v": 2
-  },
-  {
-   "id": "4456870322",
-   "url": "https://www.linkedin.com/jobs/view/4456870322",
-   "title": "Digital Marketing Expert Retention",
-   "company": "Atlas Copco Specialty Rental",
-   "location": "Boom",
-   "match_score": 42,
-   "reason": "English-language digital marketing role with no French requirement and no hard degree/experience wall; the candidate's SEO/content/WordPress and basic CRM skills fit, though the marketing-automation experience is a gap.",
-   "apply_email": "",
-   "found_at": "2026-09-16 07:47",
-   "status": "new",
-   "details": "- Digital marketing role focused on customer retention, automated journeys, and marketing automation (Pardot/MCAE)\n- Tasks: retention campaigns, segmentation/personalization, campaign attribution, closed-loop reporting, global campaign library, ABM\n- Contract: full-time, hybrid (office in Boom + remote)\n- Language: fluency in English required; other languages an asset (no French required)\n- Pay: competitive compensation and benefits package (not specified)\n- Employer explicitly encourages applying even without meeting every requirement",
-   "why_good": "- English-language role, no French requirement — matches the candidate's working languages\n- Core digital-marketing skills (SEO, content, email/campaign support, analytics with GA/Search Console) transfer to retention marketing\n- Hands-on CRM experience (customer records, follow-up) at Episto is relevant to customer-journey work\n- Employer states it welcomes applicants who don't meet every requirement, lowering the bar\n- Based in Boom, near the candidate's Antwerp-area location",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "en",
-   "cv_fit_v": 18,
-   "closed_check": "2026-09-22 20:00",
+   "closed_check": "2026-09-23 15:17",
    "closed_check_v": 2
   },
   {
