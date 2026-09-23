@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-23 15:57 UTC",
+ "updated": "2026-09-23 15:59 UTC",
  "jobs": [
   {
    "id": "4469833896",
@@ -9282,6 +9282,26 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18
+  },
+  {
+   "id": "4470919822",
+   "url": "https://www.linkedin.com/jobs/view/4470919822",
+   "title": "E-business analyst",
+   "company": "Bekende digital marketing bedrijf",
+   "location": "Unknown",
+   "match_score": 40,
+   "reason": "The candidate meets the experience and language requirements for this junior role, although Dutch fluency is a stretch.",
+   "apply_email": "",
+   "found_at": "2026-09-23 15:58",
+   "status": "new",
+   "details": "Role: Junior E-Business Analyst.\nMain tasks: Plan and manage digital campaigns, analyze campaign data, monitor and optimize online channels, create reports, collaborate with marketing teams, advise clients on digital trends.\nContract type: Not specified.\nSchedule: Not specified.\nLanguage: Dutch (fluent required), English (fluent).\nPay: Attractive salary package.",
+   "why_good": "The role aligns with the candidate's goal field of digital marketing and data analysis.\nIt requires 0-2 years of experience, which fits the candidate's background.\nThe candidate has strong English skills and B1/A2+ Dutch, making the required fluent Dutch a stretch but manageable.\nTasks involve campaign management, data analysis, and reporting, which are core components of digital marketing.\nCan work from home and has training opportunities.",
+   "why_bad": "The job explicitly requires fluent Dutch, which is beyond the candidate's current A2+ speaking level (B1 writing). Although the candidate has B1 writing skills, fluent speaking is a requirement that may be a stretch.",
+   "dutch_stretch": true,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 19
   },
   {
    "id": "74633119",
@@ -53795,26 +53815,6 @@
    "details": "- Internal account manager for a fast-growing client in the Antwerp region\n- Relationship management, up/cross-selling, prospecting, negotiation, CRM & reporting\n- Permanent full-time contract, day work, indefinite duration\n- Languages: Dutch (very good), French (good), English (good)\n- Education: secondary (ASO) or professional bachelor\n- Experience: limited (< 2 years), starter welcome\n- Pay: gross salary + meal vouchers, group & hospitalisation insurance, annual bonus, 9 ADV days",
    "why_good": "",
    "why_bad": "- Requires good knowledge of French ('goede kennis van het Frans') — candidate has no French\n- Fluent Dutch also required ('vloeiend Nederlands'), above the candidate's B1\n- Commercial/sales role outside the candidate's digital marketing/SEO goal field",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18
-  },
-  {
-   "id": "74599270",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74599270/customer-service",
-   "title": "Customer Service Officer",
-   "company": "Talentus (for a production company in Sint-Eloois-Vijve)",
-   "location": "Sint-Eloois-Vijve",
-   "match_score": 0,
-   "reason": "The job explicitly requires good French, which the candidate does not have.",
-   "apply_email": "kortrijk@talentus.be",
-   "found_at": "2026-09-14 21:42",
-   "status": "new",
-   "details": "- Customer Service Officer handling and following up orders from Belgium and Luxembourg\n- Daily contact with customers and the sales team; order entry, stock monitoring, order follow-up\n- Permanent full-time contract, day work, start 13 September 2026\n- Languages: French (good) and Dutch (very good) required\n- Requires at least 2 years' experience and a higher degree (or equivalent by experience)\n- Pay: attractive package in the chemical sector with extra-legal benefits",
-   "why_good": "",
-   "why_bad": "- Requires good French (Frans: Goed) — the candidate has no French at all\n- Requires very good Dutch, above the candidate's B1 level\n- Asks for at least 2 years' experience in a commercial back-office role\n- Prefers a higher degree in Communication (though equivalent experience is accepted)",
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
