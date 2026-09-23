@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-23 15:19 UTC",
+ "updated": "2026-09-23 15:57 UTC",
  "jobs": [
   {
    "id": "4469833896",
@@ -2038,28 +2038,6 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18
-  },
-  {
-   "id": "4448474443",
-   "url": "https://www.linkedin.com/jobs/view/4448474443",
-   "title": "Digital Content, Search & Engagement Specialist",
-   "company": "Septentrio",
-   "location": "Leuven",
-   "match_score": 60,
-   "reason": "Role fits candidate's digital marketing/SEO/content background; no French required.",
-   "apply_email": "",
-   "found_at": "2026-09-08 15:36",
-   "status": "new",
-   "details": "Create/optimize website content with SEO and AI search focus\nSupport personas, audience engagement, and lead nurturing\nManage Brand Hub and social media content calendar\nCollaborate with marketing, product, and sales teams\nFull-time, international high-tech environment\nEnglish required; Dutch/French a plus\nTravel ~10%",
-   "why_good": "Directly aligns with SEO, content, and digital marketing experience\nHands-on WordPress, on-page SEO, and analytics skills are relevant\nExperience with AI-driven search (GEO) is a plus and candidate has that\nEnglish professional level meets requirement\nEarly-career role; candidate's internship and project work demonstrate capability",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": true,
-   "internship": false,
-   "lang": "en",
-   "cv_fit_v": 18,
-   "closed_check": "2026-09-23 01:14",
-   "closed_check_v": 2
   },
   {
    "id": "4448970273",
@@ -13793,6 +13771,28 @@
   }
  ],
  "rejected": [
+  {
+   "id": "4448474443",
+   "url": "https://www.linkedin.com/jobs/view/4448474443",
+   "title": "Digital Content, Search & Engagement Specialist",
+   "company": "Septentrio",
+   "location": "Leuven",
+   "match_score": 60,
+   "reason": "First seen about 45 days ago — a vacancy open this long has almost always been filled.",
+   "apply_email": "",
+   "found_at": "2026-09-08 15:36",
+   "status": "new",
+   "details": "Create/optimize website content with SEO and AI search focus\nSupport personas, audience engagement, and lead nurturing\nManage Brand Hub and social media content calendar\nCollaborate with marketing, product, and sales teams\nFull-time, international high-tech environment\nEnglish required; Dutch/French a plus\nTravel ~10%",
+   "why_good": "Directly aligns with SEO, content, and digital marketing experience\nHands-on WordPress, on-page SEO, and analytics skills are relevant\nExperience with AI-driven search (GEO) is a plus and candidate has that\nEnglish professional level meets requirement\nEarly-career role; candidate's internship and project work demonstrate capability",
+   "why_bad": "First seen about 45 days ago — a vacancy open this long has almost always been filled.",
+   "dutch_stretch": false,
+   "exp_stretch": true,
+   "internship": false,
+   "lang": "en",
+   "cv_fit_v": 18,
+   "closed_check": "2026-09-23 01:14",
+   "closed_check_v": 2
+  },
   {
    "id": "4469881633",
    "url": "https://www.linkedin.com/jobs/view/4469881633",
@@ -53822,8 +53822,8 @@
    "cv_fit_v": 18
   }
  ],
- "search_cursor": 8,
- "li_cursor": 24,
+ "search_cursor": 13,
+ "li_cursor": 1,
  "letter_fails": {
   "4428705687": 2
  },
