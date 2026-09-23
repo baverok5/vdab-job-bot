@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-22 20:42 UTC",
+ "updated": "2026-09-23 01:15 UTC",
  "jobs": [
   {
    "id": "4469833896",
@@ -42,7 +42,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-09-22 09:37",
+   "closed_check": "2026-09-23 01:14",
    "closed_check_v": 2
   },
   {
@@ -104,7 +104,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-09-22 09:37",
+   "closed_check": "2026-09-23 01:14",
    "closed_check_v": 2
   },
   {
@@ -146,7 +146,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-09-22 09:37",
+   "closed_check": "2026-09-23 01:14",
    "closed_check_v": 2
   },
   {
@@ -439,7 +439,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "en",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-09-23 01:14",
+   "closed_check_v": 2
   },
   {
    "id": "74654692",
@@ -480,7 +482,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-09-22 09:37",
+   "closed_check": "2026-09-23 01:14",
    "closed_check_v": 2
   },
   {
@@ -710,29 +712,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-09-22 09:37",
-   "closed_check_v": 2
-  },
-  {
-   "id": "4468709927",
-   "url": "https://www.linkedin.com/jobs/view/4468709927",
-   "title": "Content & Communications Executive",
-   "company": "Glacier",
-   "location": "Unknown",
-   "match_score": 65,
-   "reason": "This role aligns well with the candidate's digital marketing and content creation skills, with a clear 'apply anyway' clause that makes experience and specific software less of a barrier.",
-   "apply_email": "",
-   "found_at": "2026-09-21 11:08",
-   "status": "new",
-   "details": "Role: Content & Communications Executive.\nMain tasks: Create and distribute high-quality communication content (written, visual, digital), manage digital channels (website, LinkedIn, intranet), support communication campaigns and brand standards.\nContract type: Not specified.\nSchedule: Not specified.\nLanguage: English (excellent oral and written), Dutch (preferred), French/Italian (preferred).\nPay: Not specified.",
-   "why_good": "The role is a strong fit for the candidate's experience in digital marketing, content creation, and web management (WordPress/Elementor). It involves writing articles, creating digital content, and managing social media, all areas where the candidate has proven skills.\nThe posting explicitly states 'you don't need to tick every box', making it accessible even with less direct experience in all areas.\nIt requires experience with digital communication platforms and social media, which the candidate has.\nThe candidate's web design and content management skills, including the use of Canva, are directly relevant to creating visual and digital content.",
-   "why_bad": "The job asks for experience in communications, marketing, or digital content creation, and while the candidate has relevant experience, the exact years are not specified, making it a potential stretch for ~2-4 years.\nIt mentions experience with design tools like Canva or Adobe Creative Suite, and while the candidate has Canva and web design skills, explicit professional graphic design software experience might be a slight gap.",
-   "dutch_stretch": false,
-   "exp_stretch": true,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-09-22 09:37",
+   "closed_check": "2026-09-23 01:14",
    "closed_check_v": 2
   },
   {
@@ -754,7 +734,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-09-22 09:37",
+   "closed_check": "2026-09-23 01:14",
    "closed_check_v": 2
   },
   {
@@ -796,7 +776,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-09-22 09:37",
+   "closed_check": "2026-09-23 01:14",
    "closed_check_v": 2
   },
   {
@@ -1470,7 +1450,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-09-22 09:37",
+   "closed_check": "2026-09-23 01:14",
    "closed_check_v": 2
   },
   {
