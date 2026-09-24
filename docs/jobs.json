@@ -1,26 +1,6 @@
 {
- "updated": "2026-09-24 01:06 UTC",
+ "updated": "2026-09-24 01:37 UTC",
  "jobs": [
-  {
-   "id": "317339688",
-   "url": "https://www.stepstone.be/jobs--Video-Content-Creator-Internship-TikTok-Focus-Brussels-The-Skateroom-Sprl--2173424-inline.html",
-   "title": "Video Content Creator Internship (TikTok Focus)",
-   "company": "The Skateroom Sprl",
-   "location": "Brussels",
-   "match_score": 85,
-   "reason": "This is an internship role that aligns with the candidate's goal field and requires no specific degree or extensive experience.",
-   "apply_email": "",
-   "found_at": "2026-08-02 21:18",
-   "status": "new",
-   "details": "Internship role ideating, shooting, and editing vertical video content for TikTok. \nContract duration unspecified, Full Time, Home Office.\nLanguage: English.\nPay not stated.",
-   "why_good": "- Internship role aligns perfectly with the candidate's goal field (content, web, digital marketing).\n- Focus on short-form video and social media aligns with content creation skills.\n- Technical background and experience with content management systems (WordPress) are transferable.\n- Proactive and curious personality matches the role's requirements.\n- No specific degree or advanced Dutch required.",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": true,
-   "lang": "en",
-   "cv_fit_v": 19
-  },
   {
    "id": "4469833896",
    "url": "https://www.linkedin.com/jobs/view/4469833896",
@@ -2988,26 +2968,6 @@
    "cv_fit_v": 19,
    "closed_check": "2026-09-23 19:58",
    "closed_check_v": 2
-  },
-  {
-   "id": "74341358",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74341358/customer-service-representative",
-   "title": "Customer Service Representative",
-   "company": "Synergie (for a job in Rumst)",
-   "location": "Rumst",
-   "match_score": 55,
-   "reason": "Accessible customer service role requiring only very good English and limited experience, no French or degree requirement.",
-   "apply_email": "",
-   "found_at": "2026-08-09 12:11",
-   "status": "new",
-   "details": "- First point of contact for customers, managing the full order life cycle (order entry, modification, escalations, logistics)\n- Single point of contact between customers, distribution centers/manufacturing plants and cross-functional teams\n- Resolve complex inquiries, maintain records, prepare reports, ensure export/shipping documentation compliance\n- Interim contract with option for permanent, full-time 39h/week, day work, start ASAP\n- Hybrid: 3 days onsite (Tuesday + 2 others); 5 days onsite during initial training\n- Languages: very good English required; education: secondary school; experience: limited (<2 years)\n- Pay/benefits: meal vouchers €8/day, hospitalization & group insurance, eco-vouchers €250/year, laptop, year bonus",
-   "why_good": "- Only requires very good English — the candidate is fluent in English\n- Experience requirement is limited (<2 years), well within reach\n- No degree required (secondary education only), matching the candidate's profile\n- Customer-facing, process and reporting work aligns with his communication and analytical skills\n- No French required, so no language barrier",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19
   },
   {
    "id": "74341847",
@@ -13791,6 +13751,46 @@
   }
  ],
  "rejected": [
+  {
+   "id": "74341358",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74341358/customer-service-representative",
+   "title": "Customer Service Representative",
+   "company": "Synergie (for a job in Rumst)",
+   "location": "Rumst",
+   "match_score": 55,
+   "reason": "First seen about 46 days ago — a vacancy open this long has almost always been filled.",
+   "apply_email": "",
+   "found_at": "2026-08-09 12:11",
+   "status": "new",
+   "details": "- First point of contact for customers, managing the full order life cycle (order entry, modification, escalations, logistics)\n- Single point of contact between customers, distribution centers/manufacturing plants and cross-functional teams\n- Resolve complex inquiries, maintain records, prepare reports, ensure export/shipping documentation compliance\n- Interim contract with option for permanent, full-time 39h/week, day work, start ASAP\n- Hybrid: 3 days onsite (Tuesday + 2 others); 5 days onsite during initial training\n- Languages: very good English required; education: secondary school; experience: limited (<2 years)\n- Pay/benefits: meal vouchers €8/day, hospitalization & group insurance, eco-vouchers €250/year, laptop, year bonus",
+   "why_good": "- Only requires very good English — the candidate is fluent in English\n- Experience requirement is limited (<2 years), well within reach\n- No degree required (secondary education only), matching the candidate's profile\n- Customer-facing, process and reporting work aligns with his communication and analytical skills\n- No French required, so no language barrier",
+   "why_bad": "First seen about 46 days ago — a vacancy open this long has almost always been filled.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 19
+  },
+  {
+   "id": "317339688",
+   "url": "https://www.stepstone.be/jobs--Video-Content-Creator-Internship-TikTok-Focus-Brussels-The-Skateroom-Sprl--2173424-inline.html",
+   "title": "Video Content Creator Internship (TikTok Focus)",
+   "company": "The Skateroom Sprl",
+   "location": "Brussels",
+   "match_score": 85,
+   "reason": "First seen about 53 days ago — a vacancy open this long has almost always been filled.",
+   "apply_email": "",
+   "found_at": "2026-08-02 21:18",
+   "status": "new",
+   "details": "Internship role ideating, shooting, and editing vertical video content for TikTok. \nContract duration unspecified, Full Time, Home Office.\nLanguage: English.\nPay not stated.",
+   "why_good": "- Internship role aligns perfectly with the candidate's goal field (content, web, digital marketing).\n- Focus on short-form video and social media aligns with content creation skills.\n- Technical background and experience with content management systems (WordPress) are transferable.\n- Proactive and curious personality matches the role's requirements.\n- No specific degree or advanced Dutch required.",
+   "why_bad": "First seen about 53 days ago — a vacancy open this long has almost always been filled.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": true,
+   "lang": "en",
+   "cv_fit_v": 19
+  },
   {
    "id": "4448474443",
    "url": "https://www.linkedin.com/jobs/view/4448474443",
@@ -53802,8 +53802,8 @@
    "cv_fit_v": 18
   }
  ],
- "search_cursor": 2,
- "li_cursor": 7,
+ "search_cursor": 7,
+ "li_cursor": 13,
  "letter_fails": {
   "4428705687": 2
  },
