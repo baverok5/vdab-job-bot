@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-24 16:23 UTC",
+ "updated": "2026-09-24 16:25 UTC",
  "jobs": [
   {
    "id": "4469833896",
@@ -460,6 +460,26 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18
+  },
+  {
+   "id": "701224763",
+   "url": "https://www.stepstone.be/jobs--Digital-Marketing-SEO-Lead-Generation-Specialist-ITEGEM-S-M-E-C-Bv--2246090-inline.html",
+   "title": "Digital Marketing, SEO & Lead Generation Specialist",
+   "company": "S.M.E.C. Bv",
+   "location": "ITEGEM",
+   "match_score": 70,
+   "reason": "The role aligns well with the candidate's digital marketing, SEO, and content skills, and the language requirements are met.",
+   "apply_email": "",
+   "found_at": "2026-09-24 16:23",
+   "status": "new",
+   "details": "Role: Digital Marketing, SEO & Lead Generation Specialist Contract: Flexi-job Schedule: Not specified Language: Dutch (implied, candidate has B1 writing, A2+ speaking) Pay: Not specified",
+   "why_good": "Candidate has strong experience in SEO, GEO/AEO, content management (WordPress/Elementor), Google Business Profile management, and social media content creation.\nSkills in AI-search tools and analytics align with the job's focus on AI search and lead generation.\nWhile the job asks for experience, the candidate's 2-3 years of relevant experience make it a good match despite potentially being a stretch in total years.",
+   "why_bad": "The posting asks for experience with SEO, local SEO, GEO/AEO, Google Business, LinkedIn, content strategy, lead generation, B2B prospecting, website optimization and analytics. The candidate has ~2 years of experience in web/SEO/marketing, which is at the lower end of the typical ~2-4 year range for such a role and might be considered a stretch.",
+   "dutch_stretch": false,
+   "exp_stretch": true,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 19
   },
   {
    "id": "654610989",
@@ -9612,6 +9632,26 @@
    "cv_fit_v": 18
   },
   {
+   "id": "4471492601",
+   "url": "https://www.linkedin.com/jobs/view/4471492601",
+   "title": "Growth Marketing Intern",
+   "company": "BePark",
+   "location": "Brussels",
+   "match_score": 38,
+   "reason": "This is an internship position that aligns well with the candidate's digital marketing and web skills, despite a minor language stretch.",
+   "apply_email": "",
+   "found_at": "2026-09-24 16:24",
+   "status": "new",
+   "details": "Internship role.\nAccompany B2C team on online visibility, quality, and performance of parking offers.\nTasks include visual/editorial quality of listings, optimizing presence on real estate portals, SEO/SEA support, content creation (newsletters, social media), tracking maintenance, and identifying digital trends.\nContract type: Internship.\nSchedule: Not specified.\nLanguage: French fluent, professional English required, Dutch is a plus.\nPay: Not specified.",
+   "why_good": "- This is an internship, making it ideal for a candidate seeking practical experience.\n- The role directly aligns with the candidate's goal field of digital marketing, SEO, content, and web.\n- Tasks include SEO/SEA coordination, on-page optimization, content creation, and website presence management, all areas the candidate has experience in.\n- It offers exposure to GA4 and data analysis, which the candidate is familiar with.",
+   "why_bad": "- The job requires fluent French, which the candidate does not have (only B1 Dutch writing, A2+ speaking).\n- While Dutch is listed as a plus, fluent French is a requirement for this role, making it a stretch for the candidate.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": true,
+   "lang": "nl",
+   "cv_fit_v": 19
+  },
+  {
    "id": "970484872",
    "url": "https://www.stepstone.be/jobs--Performance-Marketeer-BERLAAR-Lirrco-Bvba--2245667-inline.html",
    "title": "Performance Marketeer",
@@ -13955,6 +13995,26 @@
   }
  ],
  "rejected": [
+  {
+   "id": "4470912605",
+   "url": "https://www.linkedin.com/jobs/view/4470912605",
+   "title": "SEA marketeer",
+   "company": "Unknown",
+   "location": "Unknown",
+   "match_score": 38,
+   "reason": "No employer named, no way to apply, and every concrete detail left blank — an advert for a freelancer's own services.",
+   "apply_email": "",
+   "found_at": "2026-09-24 16:23",
+   "status": "new",
+   "details": "Role: SEA Marketeer\nMain tasks: Setting up, managing and optimizing Google Ads campaigns (Search, Display, Shopping, Performance Max), keyword research, A/B testing, data analysis and reporting.\nContract type: Not specified\nSchedule: Not specified\nLanguage: Dutch (implied, required for client interaction), English is likely acceptable given the candidate's fluency.\nPay: Not specified",
+   "why_good": "Focuses on Google Ads and performance marketing, which aligns with the candidate's analytical skills and experience with Google Analytics and Ads.\nCandidate has experience with Semrush, Ahrefs, Google Analytics, and Search Console, which are relevant for data analysis and campaign optimization.\nThe role requires data-driven insights and A/B testing, which the candidate can perform.\nThis role is within the digital marketing field, a core goal field for the candidate.",
+   "why_bad": "No employer named, no way to apply, and every concrete detail left blank — an advert for a freelancer's own services.",
+   "dutch_stretch": true,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 19
+  },
   {
    "id": "621424674",
    "url": "https://europa.eu/eures/portal/jv-se/jv-details/ZGU4YTljMDAtMGZmZC00ZmM2LTllMjAtYjIzNDdlMGE2YzhkIDM",
@@ -53959,26 +54019,6 @@
    "details": "- Role: holiday-rental clerk / property rental agent for vacation homes\n- Tasks: owner relations, guest reception, cleaning/inspection planning, contracts, admin, online listings with texts and photos\n- Contract: interim with option for permanent, full-time 38h/week, day work, permanent contract\n- Schedule: fixed hours but must work Saturdays (Wed and Sun off)\n- Language: very good Dutch AND good French required\n- Pay: attractive package based on experience (not specified)",
    "why_good": "",
    "why_bad": "- Requires good French ('goed Frans') — candidate has no French at all\n- Also asks for very good Dutch, above the candidate's B1 level\n- Diploma in tourism/real estate/administration/marketing mentioned as profile requirement",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18
-  },
-  {
-   "id": "74609310",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74609310/sales-executive-benelux-watches-industry",
-   "title": "Sales Executive Benelux - Watches Industry",
-   "company": "MICHAEL PAGE INTERNATIONAL (BELGIUM)",
-   "location": "Brussel",
-   "match_score": 0,
-   "reason": "The role explicitly requires fluent French, Dutch and English, and the candidate has no French.",
-   "apply_email": "",
-   "found_at": "2026-09-15 01:54",
-   "status": "new",
-   "details": "- Field sales role managing the brand's distribution network across the Benelux region\n- Regular visits to points of sale, CRM management, visual merchandising, and commercial training for retail partners\n- Permanent full-time contract, day work, immediate start\n- Languages: fluent French, Dutch and English required\n- No specific study requirements; experience level 'not important' but first retail/field sales experience expected\n- Luxury fine watch industry, Brussels-based",
-   "why_good": "",
-   "why_bad": "- Posting explicitly requires fluent French, Dutch and English — the candidate has no French at all\n- Field sales role in the luxury watch industry, far from the candidate's digital marketing/SEO goal field\n- Expects first relevant retail or field sales experience, which the candidate lacks",
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
