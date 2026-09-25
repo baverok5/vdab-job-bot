@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-25 15:46 UTC",
+ "updated": "2026-09-25 16:27 UTC",
  "jobs": [
   {
    "id": "510342102",
@@ -3132,28 +3132,6 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19
-  },
-  {
-   "id": "4449464376",
-   "url": "https://www.linkedin.com/jobs/view/4449464376",
-   "title": "Sales & Marketing Apprentice",
-   "company": "Radisson Hotel Group",
-   "location": "Unknown",
-   "match_score": 55,
-   "reason": "A sales & marketing apprenticeship open to candidates without experience or a degree, in English, with no French requirement.",
-   "apply_email": "",
-   "found_at": "2026-08-05 11:52",
-   "status": "new",
-   "details": "- Apprenticeship supporting the hotel sales department's initiatives and revenue goals\n- Guest-facing duties: timely responses to enquiries, problem resolution, guest satisfaction\n- Team collaboration on departmental plans, targets, cost and inventory control\n- Requirements: sales experience beneficial but not essential; hands-on can-do attitude; IT systems experience; strong communication\n- Hospitality apprenticeship with global hotel benefits (up to 53% off stays, F&B/spa discounts)\n- No language requirement stated; posting in English",
-   "why_good": "- Explicitly open to candidates without sales experience ('beneficial but not essential') and no degree required\n- Apprenticeship format means on-the-job learning, so the candidate's junior profile is not a barrier\n- Real commercial/marketing exposure (sales initiatives, revenue, guest communication) that builds on his digital marketing and client-facing work\n- Strong communication skills and comfort with IT systems/platforms match the stated requirements\n- English-language posting with no French or fluent-Dutch requirement",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": true,
-   "lang": "en",
-   "cv_fit_v": 19,
-   "closed_check": "2026-09-25 09:59",
-   "closed_check_v": 2
   },
   {
    "id": "74359400",
@@ -13903,6 +13881,28 @@
   }
  ],
  "rejected": [
+  {
+   "id": "4449464376",
+   "url": "https://www.linkedin.com/jobs/view/4449464376",
+   "title": "Sales & Marketing Apprentice",
+   "company": "Radisson Hotel Group",
+   "location": "Unknown",
+   "match_score": 55,
+   "reason": "First seen about 45 days ago — a vacancy open this long has almost always been filled.",
+   "apply_email": "",
+   "found_at": "2026-08-05 11:52",
+   "status": "new",
+   "details": "- Apprenticeship supporting the hotel sales department's initiatives and revenue goals\n- Guest-facing duties: timely responses to enquiries, problem resolution, guest satisfaction\n- Team collaboration on departmental plans, targets, cost and inventory control\n- Requirements: sales experience beneficial but not essential; hands-on can-do attitude; IT systems experience; strong communication\n- Hospitality apprenticeship with global hotel benefits (up to 53% off stays, F&B/spa discounts)\n- No language requirement stated; posting in English",
+   "why_good": "- Explicitly open to candidates without sales experience ('beneficial but not essential') and no degree required\n- Apprenticeship format means on-the-job learning, so the candidate's junior profile is not a barrier\n- Real commercial/marketing exposure (sales initiatives, revenue, guest communication) that builds on his digital marketing and client-facing work\n- Strong communication skills and comfort with IT systems/platforms match the stated requirements\n- English-language posting with no French or fluent-Dutch requirement",
+   "why_bad": "First seen about 45 days ago — a vacancy open this long has almost always been filled.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": true,
+   "lang": "en",
+   "cv_fit_v": 19,
+   "closed_check": "2026-09-25 09:59",
+   "closed_check_v": 2
+  },
   {
    "id": "4469744017",
    "url": "https://www.linkedin.com/jobs/view/4469744017",
@@ -53938,8 +53938,8 @@
    "cv_fit_v": 18
   }
  ],
- "search_cursor": 0,
- "li_cursor": 14,
+ "search_cursor": 5,
+ "li_cursor": 20,
  "letter_fails": {
   "4428705687": 2
  },
