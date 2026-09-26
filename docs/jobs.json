@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-26 19:34 UTC",
+ "updated": "2026-09-26 20:12 UTC",
  "jobs": [
   {
    "id": "4471489541",
@@ -1688,28 +1688,6 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19
-  },
-  {
-   "id": "4449844682",
-   "url": "https://www.linkedin.com/jobs/view/4449844682",
-   "title": "Specialist Client Operations",
-   "company": "WPP Media (Wavemaker)",
-   "location": "Brussels",
-   "match_score": 62,
-   "reason": "Early-career client operations role in media/marketing that accepts English plus Dutch or French, with no degree, seniority, or French requirement.",
-   "apply_email": "",
-   "found_at": "2026-09-15 17:50",
-   "status": "new",
-   "details": "- Operational backbone for media campaigns at Wavemaker (WPP Media), from briefing to reporting\n- Coordinate campaign follow-up, planning, deadlines, budgets, admin flows and client approvals\n- Central contact for internal teams, clients and partners; flag risks and improve processes\n- Full-time, Brussels office near public transport\n- Language: clear English + Dutch OR French; both Dutch and French a strong plus (not required)\n- Open to candidates at the start of their career or with first experience in media/marketing/admin",
-   "why_good": "- Explicitly open to candidates 'at the start of your career' — matches the candidate's junior profile\n- Marketing/media/administration coordination overlaps with his digital marketing and client-website work\n- English is accepted; Dutch OR French suffices, and he has B1 Dutch (no French needed)\n- Structured, detail-oriented, deadline- and budget-focused work fits his SEO reporting and client-site experience\n- No degree, licence, seniority or 5+ years requirement",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "en",
-   "cv_fit_v": 19,
-   "closed_check": "2026-09-26 09:42",
-   "closed_check_v": 2
   },
   {
    "id": "4464098295",
@@ -8508,28 +8486,6 @@
    "cv_fit_v": 18
   },
   {
-   "id": "4449878395",
-   "url": "https://www.linkedin.com/jobs/view/4449878395",
-   "title": "Social Media & Marketing Specialist – 12-Month Maternity Cover",
-   "company": "Yusen Logistics",
-   "location": "Unknown",
-   "match_score": 42,
-   "reason": "Social media/marketing role in the candidate's goal field, with a degree that explicitly accepts 'or equivalent relevant experience' and no French requirement.",
-   "apply_email": "",
-   "found_at": "2026-09-16 07:48",
-   "status": "new",
-   "details": "- Global social media & marketing specialist in the Corporate Communications Team\n- Create/edit/publish social content, support global social strategy, coordinate campaigns, define KPIs and report performance\n- 12-month maternity cover contract\n- Works with regional marketing teams and international stakeholders\n- Degree in Communications/Marketing/Business 'or equivalent relevant experience'\n- No language requirement stated (English-language global role)",
-   "why_good": "- Directly in the goal field: social media content, campaign coordination, marketing calendar, performance reporting\n- Candidate has hands-on SEO/content/WordPress and social media integration experience (mirook.com Instagram/Facebook)\n- Analytics/reporting skills (Google Analytics, Search Console, SEMrush/Ahrefs) map to the KPI/reporting duties\n- Degree is not mandatory — posting accepts 'equivalent relevant experience'\n- English-professional candidate fits a global English-language role",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": true,
-   "internship": false,
-   "lang": "en",
-   "cv_fit_v": 18,
-   "closed_check": "2026-09-26 14:52",
-   "closed_check_v": 2
-  },
-  {
    "id": "4459170029",
    "url": "https://www.linkedin.com/jobs/view/4459170029",
    "title": "Digital Marketer (Demand Gen / Growth Marketing)",
@@ -13857,6 +13813,50 @@
   }
  ],
  "rejected": [
+  {
+   "id": "4449878395",
+   "url": "https://www.linkedin.com/jobs/view/4449878395",
+   "title": "Social Media & Marketing Specialist – 12-Month Maternity Cover",
+   "company": "Yusen Logistics",
+   "location": "Unknown",
+   "match_score": 42,
+   "reason": "First seen about 45 days ago — a vacancy open this long has almost always been filled.",
+   "apply_email": "",
+   "found_at": "2026-09-16 07:48",
+   "status": "new",
+   "details": "- Global social media & marketing specialist in the Corporate Communications Team\n- Create/edit/publish social content, support global social strategy, coordinate campaigns, define KPIs and report performance\n- 12-month maternity cover contract\n- Works with regional marketing teams and international stakeholders\n- Degree in Communications/Marketing/Business 'or equivalent relevant experience'\n- No language requirement stated (English-language global role)",
+   "why_good": "- Directly in the goal field: social media content, campaign coordination, marketing calendar, performance reporting\n- Candidate has hands-on SEO/content/WordPress and social media integration experience (mirook.com Instagram/Facebook)\n- Analytics/reporting skills (Google Analytics, Search Console, SEMrush/Ahrefs) map to the KPI/reporting duties\n- Degree is not mandatory — posting accepts 'equivalent relevant experience'\n- English-professional candidate fits a global English-language role",
+   "why_bad": "First seen about 45 days ago — a vacancy open this long has almost always been filled.",
+   "dutch_stretch": false,
+   "exp_stretch": true,
+   "internship": false,
+   "lang": "en",
+   "cv_fit_v": 18,
+   "closed_check": "2026-09-26 14:52",
+   "closed_check_v": 2
+  },
+  {
+   "id": "4449844682",
+   "url": "https://www.linkedin.com/jobs/view/4449844682",
+   "title": "Specialist Client Operations",
+   "company": "WPP Media (Wavemaker)",
+   "location": "Brussels",
+   "match_score": 62,
+   "reason": "First seen about 45 days ago — a vacancy open this long has almost always been filled.",
+   "apply_email": "",
+   "found_at": "2026-09-15 17:50",
+   "status": "new",
+   "details": "- Operational backbone for media campaigns at Wavemaker (WPP Media), from briefing to reporting\n- Coordinate campaign follow-up, planning, deadlines, budgets, admin flows and client approvals\n- Central contact for internal teams, clients and partners; flag risks and improve processes\n- Full-time, Brussels office near public transport\n- Language: clear English + Dutch OR French; both Dutch and French a strong plus (not required)\n- Open to candidates at the start of their career or with first experience in media/marketing/admin",
+   "why_good": "- Explicitly open to candidates 'at the start of your career' — matches the candidate's junior profile\n- Marketing/media/administration coordination overlaps with his digital marketing and client-website work\n- English is accepted; Dutch OR French suffices, and he has B1 Dutch (no French needed)\n- Structured, detail-oriented, deadline- and budget-focused work fits his SEO reporting and client-site experience\n- No degree, licence, seniority or 5+ years requirement",
+   "why_bad": "First seen about 45 days ago — a vacancy open this long has almost always been filled.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "en",
+   "cv_fit_v": 19,
+   "closed_check": "2026-09-26 09:42",
+   "closed_check_v": 2
+  },
   {
    "id": "4446671421",
    "url": "https://www.linkedin.com/jobs/view/4446671421",
@@ -53894,8 +53894,8 @@
    "cv_fit_v": 18
   }
  ],
- "search_cursor": 9,
- "li_cursor": 15,
+ "search_cursor": 14,
+ "li_cursor": 21,
  "letter_fails": {
   "4428705687": 2
  },
