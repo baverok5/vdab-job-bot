@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-26 01:11 UTC",
+ "updated": "2026-09-26 01:12 UTC",
  "jobs": [
   {
    "id": "4471489541",
@@ -858,7 +858,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-09-25 09:59",
+   "closed_check": "2026-09-26 01:11",
    "closed_check_v": 2
   },
   {
@@ -984,7 +984,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-09-25 09:59",
+   "closed_check": "2026-09-26 01:11",
    "closed_check_v": 2
   },
   {
@@ -1050,29 +1050,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-09-25 09:59",
-   "closed_check_v": 2
-  },
-  {
-   "id": "4469162101",
-   "url": "https://www.linkedin.com/jobs/view/4469162101",
-   "title": "Communication & Web Manager",
-   "company": "Entropy Restaurant / Hearth Project",
-   "location": "Unknown",
-   "match_score": 65,
-   "reason": "The role aligns with the candidate's digital marketing, content creation, and web management skills, with manageable language and experience requirements.",
-   "apply_email": "",
-   "found_at": "2026-09-20 15:12",
-   "status": "new",
-   "details": "Role: Communication & Web Manager.\nMain tasks: Content strategy, social media, video editing, newsletters, website updates, online reputation management, graphic design for menus and events.\nContract type: Not specified.\nSchedule: Not specified (mentions evening/weekend events).\nLanguage: French required (candidate does not speak French) - this is a mismatch, but the prompt stated to PASS if the language is the *only* hard wall. However, the candidate has NO French, so a role requiring French is a hard FAIL. Re-evaluating: The prompt states 'FAIL only jobs that require any French'. The job posting clearly requires French.",
-   "why_good": "Fits the GOAL FIELD (digital marketing, content, web).\nStrong experience in content management (WordPress, Elementor), SEO basics, and analytics tools.\nCandidate has experience with Google My Business and website updates (though platforms differ).\nMatches the 'Apply Anyway' rule as it's a stretch, but the French language requirement is a hard fail.",
-   "why_bad": "Requires fluent French, which the candidate does not possess.\nExperience is approximately 2-3 years in relevant fields, while this role might imply more, but this is secondary to the language barrier.",
-   "dutch_stretch": false,
-   "exp_stretch": true,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-09-25 09:59",
+   "closed_check": "2026-09-26 01:11",
    "closed_check_v": 2
   },
   {
@@ -1114,7 +1092,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-09-25 09:59",
+   "closed_check": "2026-09-26 01:11",
    "closed_check_v": 2
   },
   {
@@ -1176,7 +1154,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-09-25 09:59",
+   "closed_check": "2026-09-26 01:11",
    "closed_check_v": 2
   },
   {
@@ -1744,7 +1722,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-09-25 09:59",
+   "closed_check": "2026-09-26 01:11",
    "closed_check_v": 2
   },
   {
@@ -2204,7 +2182,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-09-25 09:59",
+   "closed_check": "2026-09-26 01:11",
    "closed_check_v": 2
   },
   {
@@ -4398,7 +4376,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-25 09:59",
+   "closed_check": "2026-09-26 01:11",
    "closed_check_v": 2
   },
   {
@@ -7952,7 +7930,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-09-25 09:59",
+   "closed_check": "2026-09-26 01:11",
    "closed_check_v": 2
   },
   {
