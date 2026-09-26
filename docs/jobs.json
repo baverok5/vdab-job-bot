@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-25 20:59 UTC",
+ "updated": "2026-09-26 01:11 UTC",
  "jobs": [
   {
    "id": "4471489541",
@@ -19,7 +19,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "en",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-09-26 01:11",
+   "closed_check_v": 2
   },
   {
    "id": "510342102",
@@ -60,7 +62,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-09-25 09:59",
+   "closed_check": "2026-09-26 01:11",
    "closed_check_v": 2
   },
   {
@@ -144,7 +146,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-09-25 09:59",
+   "closed_check": "2026-09-26 01:11",
    "closed_check_v": 2
   },
   {
@@ -332,7 +334,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-09-25 09:59",
+   "closed_check": "2026-09-26 01:11",
    "closed_check_v": 2
   },
   {
@@ -354,7 +356,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-09-25 09:59",
+   "closed_check": "2026-09-26 01:11",
    "closed_check_v": 2
   },
   {
@@ -376,7 +378,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-09-25 09:59",
+   "closed_check": "2026-09-26 01:11",
    "closed_check_v": 2
   },
   {
@@ -626,7 +628,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-09-25 09:59",
+   "closed_check": "2026-09-26 01:11",
    "closed_check_v": 2
   },
   {
@@ -668,7 +670,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-09-25 09:59",
+   "closed_check": "2026-09-26 01:11",
    "closed_check_v": 2
   },
   {
@@ -13096,28 +13098,6 @@
    "closed_check_v": 2
   },
   {
-   "id": "4459324894",
-   "url": "https://www.linkedin.com/jobs/view/4459324894",
-   "title": "E-mailmarketeer & digital content creator",
-   "company": "Amnesty International Vlaanderen vzw",
-   "location": "Elsene / Brussel",
-   "match_score": 32,
-   "reason": "Digital marketing/content role in the candidate's goal field with no French requirement, but it demands fluent, error-free Dutch — a stretch.",
-   "apply_email": "sollicitaties@amnesty-international.be",
-   "found_at": "2026-09-16 07:45",
-   "status": "new",
-   "details": "- Role: e-mailmarketeer & digital content creator in the communication team\n- Tasks: build/plan/coordinate e-mail campaigns, write content for e-mail, social media and website, analyse open/click/conversion rates, support digital communication strategy, coach colleagues\n- Contract: permanent, full-time (38h/week), indefinite duration\n- Location: Brussels (Waversesteenweg 169), regular home work possible\n- Language: fluent, error-free Dutch required; no French required\n- Pay: competitive salary, PC 329.01 socio-cultural sector, meal vouchers, group/hospitalisation insurance, extra holidays",
-   "why_good": "- Directly in the candidate's goal field: e-mail/digital marketing, content creation, social media and website work\n- Candidate already writes SEO/content, manages WordPress sites and produces Canva visuals — matches the content and Canva asks\n- Analytical side (Google Analytics, Search Console, SEMrush/Ahrefs) fits the data-driven optimisation requirement\n- Posting explicitly says a diploma matters less than skills and invites people who don't fully match to apply\n- No French required, so the language wall is only Dutch\n- Note: this job needs fluent, error-free Dutch (writing and coaching colleagues), which is above the candidate's current B1 — a real stretch",
-   "why_bad": "",
-   "dutch_stretch": true,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18,
-   "closed_check": "2026-09-25 01:08",
-   "closed_check_v": 2
-  },
-  {
    "id": "73363645",
    "url": "https://www.vdab.be/vindeenjob/vacatures/73363645/assistant-park-manager",
    "title": "Assistant Park Manager",
@@ -13856,7 +13836,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-25 01:08",
+   "closed_check": "2026-09-26 01:11",
    "closed_check_v": 2
   },
   {
