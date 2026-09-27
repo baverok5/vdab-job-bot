@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-27 20:38 UTC",
+ "updated": "2026-09-27 20:40 UTC",
  "jobs": [
   {
    "id": "4471489541",
@@ -9358,6 +9358,26 @@
    "cv_fit_v": 18
   },
   {
+   "id": "964765552",
+   "url": "https://europa.eu/eures/portal/jv-se/jv-details/ZmJkMTc3MDUtMmUxZC00MDZlLTg1ZjEtNTc3OGFlNjQ1Nzk1IDM",
+   "title": "Digital Advertising & Performance Marketeer",
+   "company": "Papillon Group",
+   "location": "Unknown",
+   "match_score": 38,
+   "reason": "The role focuses on digital advertising and performance marketing, which aligns with the candidate's digital marketing skillset, though specific experience in paid advertising platforms is a stretch.",
+   "apply_email": "jobs@papillongroup.be",
+   "found_at": "2026-09-27 20:39",
+   "status": "new",
+   "details": "Role: Digital Advertising & Performance Marketeer. Main tasks: Manage, analyze, and optimize online advertising campaigns (Google Ads, Meta Ads, TikTok Ads). Contract type: Not specified. Schedule: Not specified. Language: Dutch and English. Pay: Not specified.",
+   "why_good": "- The role is in digital marketing and performance marketing, a strong match for the candidate's goal field.\n- The candidate has experience with Google Analytics and Google Ads certifications, which are relevant.\n- The candidate's profile mentions working with analytics and reporting tools like Semrush, Ahrefs, Google Analytics, and Search Console.\n- The job explicitly states a need for continuous optimization based on KPIs, which is a core part of digital marketing.\n- AI tools experience is mentioned as a plus, aligning with the candidate's profile.",
+   "why_bad": "- The job requires significant experience (5-10 accounts) in Google Ads and Meta Ads, whereas the candidate's direct experience in paid advertising platforms is not detailed and may be limited.\n- The candidate has ~4 months of relevant experience, but the role implies a need for more seasoned performance marketing skills across multiple accounts.",
+   "dutch_stretch": false,
+   "exp_stretch": true,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 19
+  },
+  {
    "id": "593798790",
    "url": "https://europa.eu/eures/portal/jv-se/jv-details/NmQyZTg2MzYtZTgyNi00MWRmLWI1OTQtOTMwNWZiN2I5M2Y3IDM",
    "title": "Parttime Freelance Content Creator",
@@ -13727,6 +13747,26 @@
   }
  ],
  "rejected": [
+  {
+   "id": "4472411725",
+   "url": "https://www.linkedin.com/jobs/view/4472411725",
+   "title": "Project Marketeer",
+   "company": "Unknown",
+   "location": "Deerlijk / Gosselies",
+   "match_score": 0,
+   "reason": "The job requires fluent Dutch and French, neither of which the candidate possesses.",
+   "apply_email": "",
+   "found_at": "2026-09-27 20:39",
+   "status": "new",
+   "details": "Project marketing role focusing on launching new initiatives, developing existing activities, and achieving results. Responsibilities include coordinating online/offline campaigns, managing digital channels (social media, websites, content platforms), and tracking projects. Full-time position with 2 days of remote work possible.\nContract type: Not specified\nSchedule: Not specified\nLanguage: French and Dutch required",
+   "why_good": "",
+   "why_bad": "Requires fluent Dutch and French, candidate only has B1 Dutch writing and A2+ speaking, and no French.\nRequires a relevant first experience in marketing and project management; candidate has relevant experience but it is more focused on digital marketing execution than broad project marketing.\nGraphic design software knowledge (Adobe) is a plus, but not explicitly required as a hard skill.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 19
+  },
   {
    "id": "155630666",
    "url": "https://europa.eu/eures/portal/jv-se/jv-details/OWJkZDVjODAtN2ZhMC00ZDhmLTgxMjYtNmU1ZjUyNmI3MWYxIDM",
@@ -53746,26 +53786,6 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18
-  },
-  {
-   "id": "74609558",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74609558/payroll-officer",
-   "title": "Payroll Officer",
-   "company": "HR Talents",
-   "location": "Wevelgem",
-   "match_score": 0,
-   "reason": "Requires very good French and 2 years of payroll experience, both of which the candidate lacks.",
-   "apply_email": "",
-   "found_at": "2026-09-15 10:51",
-   "status": "new",
-   "details": "- Payroll Officer in HR team, processing payroll for blue- and white-collar staff with social secretariat Attentia\n- First point of contact for payroll, social legislation and personnel admin questions\n- Permanent full-time contract, day work, start ASAP\n- Languages: French (very good) AND Dutch (very good) required\n- Min. 2 years relevant payroll experience; professional bachelor HR or equivalent by experience\n- Salary based on experience + meal vouchers €9/day, net expenses, CAO 90 bonus, laptop, smartphone, bike lease, 13th month, 20+12 leave days, 1 day home work",
-   "why_good": "",
-   "why_bad": "- Requires very good French (Frans: Zeer goed) — candidate has no French\n- Requires min. 2 years payroll experience and Belgian social legislation knowledge\n- Specialised payroll/HR profile outside the candidate's digital marketing field",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18
   }
  ],
  "search_cursor": 2,
@@ -53849,16 +53869,7 @@
   "4469429153": 1,
   "4467624069": 1,
   "4467601249": 1,
-  "4467365915": 1,
-  "611617776": 1,
-  "599697625": 1,
-  "497962173": 1,
-  "420133661": 1,
-  "386561241": 1,
-  "364993173": 1,
-  "219708257": 1,
-  "201487126": 1,
-  "161498649": 1
+  "4467365915": 1
  },
  "eures_reread_v1": true,
  "eures_reread_v2": true,
