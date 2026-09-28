@@ -1,6 +1,6 @@
 # Baver Ok
 Digital Marketing · SEO · GEO · Content · Web · AI
-Zwijndrecht, Belgium | [+32 470 42 48 36](tel:+32470424836) | [baverok@gmail.com](mailto:baverok@gmail.com) | [linkedin.com/in/baverok](https://www.linkedin.com/in/baverok)
+Zwijndrecht, Belgium | [+32 470 42 48 36](tel:+32470424836) | [baverok@gmail.com](mailto:baverok@gmail.com) | [baverok.com](https://baverok.com) | [linkedin.com/in/baverok](https://www.linkedin.com/in/baverok)
 **Languages:** English (Fluent) · Turkish (Native) · Dutch (Writing B1, Speaking A2+)
 
 ## Profile
@@ -15,17 +15,21 @@ Digital marketer with a technical background, working at the intersection of SEO
 
 ## Experience
 
+### Freelance - SEO, AI Search & WordPress, 2026-present
+- **[baverok.com](https://baverok.com):** designed, built and run the site myself in WordPress/Elementor - a hand-coded landing page with a WebGL hero, structured data, accessible markup and a free site-check enquiry flow
+- **[mirook.com](https://mirook.com):** built and optimized a multi-page website for a Belgian youth chess champion; implemented JSON-LD schema (Person, SportsEvent, FAQPage), knowledge-graph markup and an llms.txt file, and ran iterative technical SEO/GEO audits that measurably raised the site's search-health score
+- Structured data, technical SEO and WordPress work for businesses around Antwerp and remotely, reporting from Search Console and Google Analytics
+
 ### Junior Digital Marketer - Episto (Remote), 2026-present
 - Handle on-page SEO, keyword research and SEO content for client websites, tracking results with Semrush, Ahrefs, Google Analytics and Search Console
 - **CMS content management:** publishing and updating pages, blog posts and media for client websites in WordPress (Elementor, Astra, Rank Math), and keeping existing content current
 - **Client sites (team work):** [etkendanismanlik.com](https://etkendanismanlik.com) (consultancy) and [proteinbox.com.tr](https://proteinbox.com.tr) (e-commerce) - keyword-targeted blog content and on-page SEO to grow organic traffic
-- **[majistralecza.epis.to](https://majistralecza.epis.to):** building and maintaining a pharmacists' association site in WordPress/Elementor, including a consistent layout for ~600 member profile pages
+- **[majistraleczacilari.org.tr](https://majistraleczacilari.org.tr):** building and maintaining a pharmacists' association site in WordPress/Elementor, including a consistent layout for ~600 member profile pages
 
 ### Web & SEO Specialist - Knowledge Experts (KXP, [kxp.biz](https://kxp.biz/en/references)), 2024-2026
 - Supported the team in building SharePoint-based digital workplace sites for **ŞOK Market** (4,000+ stores, ERP/POS integration) and **Aras Kargo** (application gallery for 12,000 staff)
 - Designed and built websites for clients in WordPress, from site structure to content and social media integration
 - Ran SEO analyses and reported on performance using Google Search Console and Google Analytics
-- **[mirook.com](https://mirook.com):** built and optimized a multi-page website for a Belgian youth chess champion; implemented JSON-LD schema (Person, SportsEvent, FAQPage), knowledge-graph markup and an llms.txt file, and ran iterative technical SEO/GEO audits that measurably raised the site's search-health score
 
 ### Front-End Developer - ViviDoctor (Belgium), 2018-2019
 - Developed and optimized front-end features for a healthcare web application (AngularJS, JavaScript)
