@@ -138,7 +138,8 @@ CANDIDATE_ONELINE = (
     "~2 years of web & SEO experience plus a digital-marketing role now, and an "
     "earlier year of front-end development. GOAL FIELD (keep eagerly): digital "
     "marketing, SEO/SEA/GEO, content, copywriting, social media, WordPress/web/"
-    "web design, front-end, e-commerce, online marketing, communication, "
+    "web design, front-end, e-commerce and webshops (Shopify, WooCommerce), "
+    "online marketing, communication, "
     "CMS / content management / webredactie, and basic CRM / "
     "marketing-automation / e-mail-marketing work. Also fits: "
     "office/admin, customer service, reception, data entry, sales/commercial "
@@ -1659,7 +1660,7 @@ with writing — that is normal)."""
     prompt = f"""You are an expert career writer. Write application documents for this job,
 based ONLY on the real CV below. NEVER invent experience, education, or skills
 not in the CV. Professional but warm, no clichés. {style} Write all web
-addresses as bare text (mirook.com, linkedin.com/in/baverok) — never markdown
+addresses as bare text (baverok.com, linkedin.com/in/baverok) — never markdown
 links, never http(s):// prefixes.
 
 Reply ONLY with JSON:
@@ -1682,7 +1683,7 @@ Signature block to end email_body with:
 Baver Ok
 +32 470 42 48 36
 baverok@gmail.com
-linkedin.com/in/baverok"""
+baverok.com | linkedin.com/in/baverok"""
     return ask_llm(prompt, expect_json=True, provider=WRITE_PROVIDER,
                    gemini_model=GEMINI_WRITE_MODEL)
 
@@ -1763,8 +1764,9 @@ def _sync_letter_email(job_id, apply_email):
 CANDIDATE_PROFILE = """WHO THE CANDIDATE IS:
 - GOAL FIELD: digital marketing / SEO & GEO / content / WordPress & web / web
   design. Real experience: Junior Digital Marketer at Episto now (on-page SEO,
-  keyword research, SEO content, day-to-day CMS content management and
-  WordPress/Elementor client sites, Semrush, Ahrefs, Google Analytics,
+  keyword research, SEO content, day-to-day CMS content management,
+  WordPress/Elementor client sites and Shopify webshops (store design, product
+  catalogue upkeep, blog content), Semrush, Ahrefs, Google Analytics,
   Search Console); ~2 years before that as Web & SEO
   Specialist at Knowledge Experts (client websites in WordPress, SharePoint
   digital-workplace projects, SEO analysis and reporting, JSON-LD schema and

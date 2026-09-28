@@ -220,16 +220,36 @@ for _s in (0.985, 0.97, 0.955, 0.94):
         break
 
 # ---- Paginate -------------------------------------------------------------
-pages, cur, y = [], [], TOP
-for it in items:
-    y -= it["gap"]
-    y -= it["leading"]
-    if y < BOT:
-        pages.append(cur); cur = []; y = TOP - it["leading"]
-    cur.append((y, it))
-if cur:
-    pages.append(cur)
+def paginate(items, force_break_at=None):
+    pages, cur, y = [], [], TOP
+    for idx, it in enumerate(items):
+        y -= it["gap"]
+        y -= it["leading"]
+        if y < BOT or idx == force_break_at:
+            pages.append(cur); cur = []; y = TOP - it["leading"]
+        cur.append((y, it))
+    if cur:
+        pages.append(cur)
+    return pages
 
+
+pages = paginate(items)
+
+# Once the CV genuinely needs two pages, where the break falls matters. Left to
+# itself it ended page two with five stranded lines — Education and References
+# alone — which reads as an accident rather than a second page. Move the break
+# back to a section heading so the tail sections travel together.
+if len(pages) == 2 and len(pages[1]) < 12:
+    heads = [i for i, it in enumerate(items)
+             if it["size"] > 11 and i > 0]          # "## " section headings
+    for h in reversed(heads):
+        if len(items) - h >= 12:
+            trial = paginate(items, force_break_at=h)
+            if len(trial) == 2:
+                pages = trial
+                print(f"  moved the page break to '{''.join(r[0] for r in items[h]['line'])}'"
+                      f" so page 2 carries {len(pages[1])} lines")
+            break
 
 def stream_for(pg):
     out, col = [], None

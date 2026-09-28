@@ -10,7 +10,7 @@ Digital marketeer met een technische achtergrond, werkzaam op het snijvlak van S
 - **SEO & GEO:** on-page SEO, zoekwoordenonderzoek, technische SEO-audits, gestructureerde data / JSON-LD schema, entiteitsoptimalisatie, GEO & AEO (zichtbaarheid in AI-zoekmachines), llms.txt
 - **AI & LLM's:** dagelijks gebruik van LLM's (Claude, ChatGPT) voor onderzoek, content en audits; prompt engineering; AI-agents en MCP-integraties om rechtstreeks in WordPress, analytics- en SEO-tools te werken
 - **Code & automatisering:** Python-scripts en automatiseringen schrijven (scraping, AI-screening, automatisch gegenereerde documenten); apps bouwen en publiceren (Android-app live in Google Play); HTML, CSS, JavaScript
-- **Content & CMS:** SEO-blogs en contentschrijven, contentbeheer van websites, WordPress, Elementor, Astra, Rank Math, WooCommerce, Canva
+- **Content & CMS:** SEO-blogs en contentschrijven, contentbeheer van websites, WordPress, Elementor, Astra, Rank Math, WooCommerce, Shopify, Canva
 - **Analytics & rapportage:** Google Analytics, Google Search Console, Semrush, Ahrefs, Google Ads
 
 ## Werkervaring
@@ -18,6 +18,7 @@ Digital marketeer met een technische achtergrond, werkzaam op het snijvlak van S
 ### Freelance - SEO, AI-zoekmachines & WordPress, 2026-heden
 - **[baverok.com](https://baverok.com):** de site zelf ontworpen, gebouwd en beheerd in WordPress/Elementor - een handgecodeerde landingspagina met WebGL-hero, gestructureerde data, toegankelijke markup en een aanvraagformulier voor een gratis sitecheck
 - **[mirook.com](https://mirook.com):** een meerpaginawebsite gebouwd en geoptimaliseerd voor een Belgische jeugdschaakkampioen; JSON-LD schema (Person, SportsEvent, FAQPage), knowledge-graph-markup en een llms.txt-bestand geïmplementeerd, en iteratieve technische SEO/GEO-audits uitgevoerd die de search-health-score van de site meetbaar verhoogden
+- **Shopify-webshops — [harwindtf.com](https://harwindtf.com) en [custompremiumshirt.com](https://custompremiumshirt.com):** vormgeving van de webshop, producten toevoegen en onderhouden, en blogcontent schrijven en publiceren
 - Gestructureerde data, technische SEO en WordPress-werk voor bedrijven in de regio Antwerpen en op afstand, met rapportage via Search Console en Google Analytics
 
 ### Junior Digital Marketeer - Episto (op afstand), 2026-heden

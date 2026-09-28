@@ -10,7 +10,7 @@ Digital marketer with a technical background, working at the intersection of SEO
 - **SEO & GEO:** on-page SEO, keyword research, technical SEO audits, structured data / JSON-LD schema, entity optimization, GEO & AEO (AI search visibility), llms.txt
 - **AI & LLMs:** daily use of LLMs (Claude, ChatGPT) for research, content and audits; prompt engineering; AI agents and MCP integrations to work directly on WordPress, analytics and SEO tools
 - **Code & automation:** write Python scripts and automations (scraping, AI screening, auto-generated documents); build and publish apps (Android app live on Google Play); HTML, CSS, JavaScript
-- **Content & CMS:** SEO blog & content writing, website content management, WordPress, Elementor, Astra, Rank Math, WooCommerce, Canva
+- **Content & CMS:** SEO blog & content writing, website content management, WordPress, Elementor, Astra, Rank Math, WooCommerce, Shopify, Canva
 - **Analytics & reporting:** Google Analytics, Google Search Console, Semrush, Ahrefs, Google Ads
 
 ## Experience
@@ -18,6 +18,7 @@ Digital marketer with a technical background, working at the intersection of SEO
 ### Freelance - SEO, AI Search & WordPress, 2026-present
 - **[baverok.com](https://baverok.com):** designed, built and run the site myself in WordPress/Elementor - a hand-coded landing page with a WebGL hero, structured data, accessible markup and a free site-check enquiry flow
 - **[mirook.com](https://mirook.com):** built and optimized a multi-page website for a Belgian youth chess champion; implemented JSON-LD schema (Person, SportsEvent, FAQPage), knowledge-graph markup and an llms.txt file, and ran iterative technical SEO/GEO audits that measurably raised the site's search-health score
+- **Shopify stores — [harwindtf.com](https://harwindtf.com) and [custompremiumshirt.com](https://custompremiumshirt.com):** store design, adding and maintaining the product catalogue, and writing and publishing blog content
 - Structured data, technical SEO and WordPress work for businesses around Antwerp and remotely, reporting from Search Console and Google Analytics
 
 ### Junior Digital Marketer - Episto (Remote), 2026-present
