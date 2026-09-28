@@ -1,6 +1,6 @@
 # Baver Ok
 Digital Marketing · SEO · GEO · Content · Web · AI
-Zwijndrecht, België | [+32 470 42 48 36](tel:+32470424836) | [baverok@gmail.com](mailto:baverok@gmail.com) | [linkedin.com/in/baverok](https://www.linkedin.com/in/baverok)
+Zwijndrecht, België | [+32 470 42 48 36](tel:+32470424836) | [baverok@gmail.com](mailto:baverok@gmail.com) | [baverok.com](https://baverok.com) | [linkedin.com/in/baverok](https://www.linkedin.com/in/baverok)
 **Talen:** Engels (vloeiend) · Turks (moedertaal) · Nederlands (schrijven B1, spreken A2+)
 
 ## Profiel
@@ -15,17 +15,21 @@ Digital marketeer met een technische achtergrond, werkzaam op het snijvlak van S
 
 ## Werkervaring
 
+### Freelance - SEO, AI-zoekmachines & WordPress, 2026-heden
+- **[baverok.com](https://baverok.com):** de site zelf ontworpen, gebouwd en beheerd in WordPress/Elementor - een handgecodeerde landingspagina met WebGL-hero, gestructureerde data, toegankelijke markup en een aanvraagformulier voor een gratis sitecheck
+- **[mirook.com](https://mirook.com):** een meerpaginawebsite gebouwd en geoptimaliseerd voor een Belgische jeugdschaakkampioen; JSON-LD schema (Person, SportsEvent, FAQPage), knowledge-graph-markup en een llms.txt-bestand geïmplementeerd, en iteratieve technische SEO/GEO-audits uitgevoerd die de search-health-score van de site meetbaar verhoogden
+- Gestructureerde data, technische SEO en WordPress-werk voor bedrijven in de regio Antwerpen en op afstand, met rapportage via Search Console en Google Analytics
+
 ### Junior Digital Marketeer - Episto (op afstand), 2026-heden
 - Verantwoordelijk voor on-page SEO, zoekwoordenonderzoek en SEO-content voor klantenwebsites, met opvolging van de resultaten via Semrush, Ahrefs, Google Analytics en Search Console
 - **CMS-contentbeheer:** pagina's, blogposts en media publiceren en bijwerken voor klantenwebsites in WordPress (Elementor, Astra, Rank Math), en bestaande content actueel houden
 - **Klantenwebsites (in teamverband):** [etkendanismanlik.com](https://etkendanismanlik.com) (consultancy) en [proteinbox.com.tr](https://proteinbox.com.tr) (e-commerce) - blogcontent op zoekwoorden en on-page SEO om organisch verkeer te laten groeien
-- **[majistralecza.epis.to](https://majistralecza.epis.to):** opbouw en onderhoud van een website voor een apothekersvereniging in WordPress/Elementor, inclusief een consistente lay-out voor ongeveer 600 ledenprofielpagina's
+- **[majistraleczacilari.org.tr](https://majistraleczacilari.org.tr):** opbouw en onderhoud van een website voor een apothekersvereniging in WordPress/Elementor, inclusief een consistente lay-out voor ongeveer 600 ledenprofielpagina's
 
 ### Web & SEO Specialist - Knowledge Experts (KXP, [kxp.biz](https://kxp.biz/en/references)), 2024-2026
 - Het team ondersteund bij het bouwen van digitale werkplekken op SharePoint voor **ŞOK Market** (4.000+ winkels, ERP/POS-integratie) en **Aras Kargo** (applicatiegalerij voor 12.000 medewerkers)
 - Websites voor klanten ontworpen en gebouwd in WordPress, van sitestructuur tot content en social media-integratie
 - SEO-analyses uitgevoerd en over de prestaties gerapporteerd met Google Search Console en Google Analytics
-- **[mirook.com](https://mirook.com):** een meerpaginawebsite gebouwd en geoptimaliseerd voor een Belgische jeugdschaakkampioen; JSON-LD schema (Person, SportsEvent, FAQPage), knowledge-graph-markup en een llms.txt-bestand geïmplementeerd, en iteratieve technische SEO/GEO-audits uitgevoerd die de search-health-score van de site meetbaar verhoogden
 
 ### Front-End Developer - ViviDoctor (België), 2018-2019
 - Front-endfunctionaliteit ontwikkeld en geoptimaliseerd voor een webapplicatie in de gezondheidszorg (AngularJS, JavaScript)
