@@ -211,7 +211,10 @@ def build(scale=1.0):
 
 
 items = build()
-for _s in (0.985, 0.97, 0.955, 0.94):
+# Dutch runs ~8% longer than the same CV in English, so the ladder has to
+# reach further down for it. 0.90 is the floor: below that the type is too
+# small to read comfortably and a second page is the honest answer.
+for _s in (0.985, 0.97, 0.955, 0.94, 0.925, 0.91, 0.90):
     if sum(i["gap"] + i["leading"] for i in items) <= TOP - BOT:
         break
     items = build(_s)

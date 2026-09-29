@@ -4,12 +4,11 @@ Zwijndrecht, België | [+32 470 42 48 36](tel:+32470424836) | [baverok@gmail.com
 **Talen:** Engels (vloeiend) · Turks (moedertaal) · Nederlands (schrijven B1, spreken A2+)
 
 ## Profiel
-Digital marketeer met een technische achtergrond, werkzaam op het snijvlak van SEO, content en web. Ik bouw en optimaliseer websites voor zowel klassieke als AI-gedreven zoekmachines, schrijf content die scoort, en gebruik AI-tools en code om het repetitieve werk te automatiseren. Die combinatie van marketing en techniek wil ik inzetten in een team, om websites om te vormen tot meetbare bronnen van organische groei.
+Digital marketeer met een technische achtergrond, werkzaam waar SEO, content en web samenkomen. Ik bouw en optimaliseer websites voor klassieke en AI-gedreven zoekmachines, schrijf content die scoort, en gebruik AI-tools en code om het repetitieve werk te automatiseren. Die combinatie wil ik inzetten in een team, om websites om te vormen tot meetbare bronnen van organische groei.
 
 ## Kernvaardigheden
 - **SEO & GEO:** on-page SEO, zoekwoordenonderzoek, technische SEO-audits, gestructureerde data / JSON-LD schema, entiteitsoptimalisatie, GEO & AEO (zichtbaarheid in AI-zoekmachines), llms.txt
-- **AI & LLM's:** dagelijks gebruik van LLM's (Claude, ChatGPT) voor onderzoek, content en audits; prompt engineering; AI-agents en MCP-integraties om rechtstreeks in WordPress, analytics- en SEO-tools te werken
-- **Code & automatisering:** Python-scripts en automatiseringen schrijven (scraping, AI-screening, automatisch gegenereerde documenten); apps bouwen en publiceren (Android-app live in Google Play); HTML, CSS, JavaScript
+- **AI, code & automatisering:** dagelijks gebruik van LLM's (Claude, ChatGPT) voor onderzoek, content en audits; prompt engineering; MCP-integraties in WordPress en SEO-tools; Python-automatisering; een Android-app live in Google Play; HTML, CSS, JavaScript
 - **Content & CMS:** SEO-blogs en contentschrijven, contentbeheer van websites, WordPress, Elementor, Astra, Rank Math, WooCommerce, Shopify, Canva
 - **Analytics & rapportage:** Google Analytics, Google Search Console, Semrush, Ahrefs, Google Ads
 
@@ -18,14 +17,13 @@ Digital marketeer met een technische achtergrond, werkzaam op het snijvlak van S
 ### Freelance - SEO, AI-zoekmachines & WordPress, 2026-heden
 - **[baverok.com](https://baverok.com):** de site zelf ontworpen, gebouwd en beheerd in WordPress/Elementor - een handgecodeerde landingspagina met WebGL-hero, gestructureerde data, toegankelijke markup en een aanvraagformulier voor een gratis sitecheck
 - **[mirook.com](https://mirook.com):** een meerpaginawebsite gebouwd en geoptimaliseerd voor een Belgische jeugdschaakkampioen; JSON-LD schema (Person, SportsEvent, FAQPage), knowledge-graph-markup en een llms.txt-bestand geïmplementeerd, en iteratieve technische SEO/GEO-audits uitgevoerd die de search-health-score van de site meetbaar verhoogden
-- **Shopify-webshops — [harwindtf.com](https://harwindtf.com) en [custompremiumshirt.com](https://custompremiumshirt.com):** vormgeving van de webshop, producten toevoegen en onderhouden, en blogcontent schrijven en publiceren
-- Gestructureerde data, technische SEO en WordPress-werk voor bedrijven in de regio Antwerpen en op afstand, met rapportage via Search Console en Google Analytics
 
 ### Junior Digital Marketeer - Episto (op afstand), 2026-heden
 - Verantwoordelijk voor on-page SEO, zoekwoordenonderzoek en SEO-content voor klantenwebsites, met opvolging van de resultaten via Semrush, Ahrefs, Google Analytics en Search Console
 - **CMS-contentbeheer:** pagina's, blogposts en media publiceren en bijwerken voor klantenwebsites in WordPress (Elementor, Astra, Rank Math), en bestaande content actueel houden
 - **Klantenwebsites (in teamverband):** [etkendanismanlik.com](https://etkendanismanlik.com) (consultancy) en [proteinbox.com.tr](https://proteinbox.com.tr) (e-commerce) - blogcontent op zoekwoorden en on-page SEO om organisch verkeer te laten groeien
 - **[majistraleczacilari.org.tr](https://majistraleczacilari.org.tr):** opbouw en onderhoud van een website voor een apothekersvereniging in WordPress/Elementor, inclusief een consistente lay-out voor ongeveer 600 ledenprofielpagina's
+- **Shopify-webshops — [harwindtf.com](https://harwindtf.com) en [custompremiumshirt.com](https://custompremiumshirt.com):** vormgeving van de webshop, producten toevoegen en onderhouden, en blogcontent schrijven en publiceren
 
 ### Web & SEO Specialist - Knowledge Experts (KXP, [kxp.biz](https://kxp.biz/en/references)), 2024-2026
 - Het team ondersteund bij het bouwen van digitale werkplekken op SharePoint voor **ŞOK Market** (4.000+ winkels, ERP/POS-integratie) en **Aras Kargo** (applicatiegalerij voor 12.000 medewerkers)
@@ -36,16 +34,12 @@ Digital marketeer met een technische achtergrond, werkzaam op het snijvlak van S
 - Front-endfunctionaliteit ontwikkeld en geoptimaliseerd voor een webapplicatie in de gezondheidszorg (AngularJS, JavaScript)
 
 ## Certificaten
-- Semrush Academy - [SEO Fundamentals](https://static.semrush.com/academy/certificates/7b2509a083/baver-ok_25.pdf) (behaald, augustus 2026)
-- Semrush - [SEO Toolkit Exam](https://static.semrush.com/academy/certificates/35c1af233e/baver-ok_25.pdf) (september 2026)
-- Google Analytics Certification - GA4 (september 2026)
-- Google Ads Search Certification (oktober 2026)
-- HubSpot Academy - Content Marketing Certification (november 2026)
+- Semrush Academy - [SEO Fundamentals](https://static.semrush.com/academy/certificates/7b2509a083/baver-ok_25.pdf) en [SEO Toolkit Exam](https://static.semrush.com/academy/certificates/35c1af233e/baver-ok_25.pdf), 2026
+- Google Analytics GA4 · Google Ads Search · HubSpot Content Marketing, 2026
 
 ## Opleiding
 - Karel de Grote Hogeschool, Antwerpen - Vakken Toegepaste Informatica (2022-2025)
-- Celal Bayar Universiteit, Turkije - Vakken Informatica (2012-2016)
-- Diyarbakır Anatolian High School, Turkije - Diploma secundair onderwijs (2012)
+- Celal Bayar Universiteit, Turkije - Vakken Informatica (2012-2016); diploma secundair onderwijs, Diyarbakır (2012)
 
 ## Referenties
 Op aanvraag beschikbaar.

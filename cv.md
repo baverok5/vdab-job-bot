@@ -4,12 +4,11 @@ Zwijndrecht, Belgium | [+32 470 42 48 36](tel:+32470424836) | [baverok@gmail.com
 **Languages:** English (Fluent) · Turkish (Native) · Dutch (Writing B1, Speaking A2+)
 
 ## Profile
-Digital marketer with a technical background, working at the intersection of SEO, content and web. I build and optimize websites for both traditional and AI-powered search, write content that ranks, and use AI tools and code to automate the repetitive parts of the job. I want to bring that mix of marketing and technical skills to a team, turning websites into measurable sources of organic growth.
+Digital marketer with a technical background, working where SEO, content and web meet. I build and optimize websites for traditional and AI-powered search, write content that ranks, and use AI tools and code to automate the repetitive work. I want to bring that mix to a team and turn websites into measurable sources of organic growth.
 
 ## Core Skills
 - **SEO & GEO:** on-page SEO, keyword research, technical SEO audits, structured data / JSON-LD schema, entity optimization, GEO & AEO (AI search visibility), llms.txt
-- **AI & LLMs:** daily use of LLMs (Claude, ChatGPT) for research, content and audits; prompt engineering; AI agents and MCP integrations to work directly on WordPress, analytics and SEO tools
-- **Code & automation:** write Python scripts and automations (scraping, AI screening, auto-generated documents); build and publish apps (Android app live on Google Play); HTML, CSS, JavaScript
+- **AI, code & automation:** daily use of LLMs (Claude, ChatGPT) for research, content and audits; prompt engineering; MCP integrations into WordPress and SEO tools; Python automation; an Android app live on Google Play; HTML, CSS, JavaScript
 - **Content & CMS:** SEO blog & content writing, website content management, WordPress, Elementor, Astra, Rank Math, WooCommerce, Shopify, Canva
 - **Analytics & reporting:** Google Analytics, Google Search Console, Semrush, Ahrefs, Google Ads
 
@@ -18,14 +17,13 @@ Digital marketer with a technical background, working at the intersection of SEO
 ### Freelance - SEO, AI Search & WordPress, 2026-present
 - **[baverok.com](https://baverok.com):** designed, built and run the site myself in WordPress/Elementor - a hand-coded landing page with a WebGL hero, structured data, accessible markup and a free site-check enquiry flow
 - **[mirook.com](https://mirook.com):** built and optimized a multi-page website for a Belgian youth chess champion; implemented JSON-LD schema (Person, SportsEvent, FAQPage), knowledge-graph markup and an llms.txt file, and ran iterative technical SEO/GEO audits that measurably raised the site's search-health score
-- **Shopify stores — [harwindtf.com](https://harwindtf.com) and [custompremiumshirt.com](https://custompremiumshirt.com):** store design, adding and maintaining the product catalogue, and writing and publishing blog content
-- Structured data, technical SEO and WordPress work for businesses around Antwerp and remotely, reporting from Search Console and Google Analytics
 
 ### Junior Digital Marketer - Episto (Remote), 2026-present
 - Handle on-page SEO, keyword research and SEO content for client websites, tracking results with Semrush, Ahrefs, Google Analytics and Search Console
 - **CMS content management:** publishing and updating pages, blog posts and media for client websites in WordPress (Elementor, Astra, Rank Math), and keeping existing content current
 - **Client sites (team work):** [etkendanismanlik.com](https://etkendanismanlik.com) (consultancy) and [proteinbox.com.tr](https://proteinbox.com.tr) (e-commerce) - keyword-targeted blog content and on-page SEO to grow organic traffic
 - **[majistraleczacilari.org.tr](https://majistraleczacilari.org.tr):** building and maintaining a pharmacists' association site in WordPress/Elementor, including a consistent layout for ~600 member profile pages
+- **Shopify stores — [harwindtf.com](https://harwindtf.com) and [custompremiumshirt.com](https://custompremiumshirt.com):** store design, adding and maintaining the product catalogue, and writing and publishing blog content
 
 ### Web & SEO Specialist - Knowledge Experts (KXP, [kxp.biz](https://kxp.biz/en/references)), 2024-2026
 - Supported the team in building SharePoint-based digital workplace sites for **ŞOK Market** (4,000+ stores, ERP/POS integration) and **Aras Kargo** (application gallery for 12,000 staff)
@@ -36,16 +34,12 @@ Digital marketer with a technical background, working at the intersection of SEO
 - Developed and optimized front-end features for a healthcare web application (AngularJS, JavaScript)
 
 ## Certifications
-- Semrush Academy - [SEO Fundamentals](https://static.semrush.com/academy/certificates/7b2509a083/baver-ok_25.pdf) (completed, August 2026)
-- Semrush - [SEO Toolkit Exam](https://static.semrush.com/academy/certificates/35c1af233e/baver-ok_25.pdf) (September 2026)
-- Google Analytics Certification - GA4 (September 2026)
-- Google Ads Search Certification (October 2026)
-- HubSpot Academy - Content Marketing Certification (November 2026)
+- Semrush Academy - [SEO Fundamentals](https://static.semrush.com/academy/certificates/7b2509a083/baver-ok_25.pdf) and [SEO Toolkit Exam](https://static.semrush.com/academy/certificates/35c1af233e/baver-ok_25.pdf), 2026
+- Google Analytics GA4 · Google Ads Search · HubSpot Content Marketing, 2026
 
 ## Education
-- Karel de Grote Hogeschool, Antwerp - Coursework in Applied Computer Science (2022-2025)
-- Celal Bayar University, Türkiye - Coursework in Computer Science (2012-2016)
-- Diyarbakır Anatolian High School, Türkiye - High School Diploma (2012)
+- Karel de Grote Hogeschool, Antwerp - Applied Computer Science coursework (2022-2025)
+- Celal Bayar University, Türkiye - Computer Science coursework (2012-2016); High School Diploma, Diyarbakır (2012)
 
 ## References
 Available on request.
