@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-30 17:21 UTC",
+ "updated": "2026-09-30 17:22 UTC",
  "jobs": [
   {
    "id": "4471489541",
@@ -13305,6 +13305,26 @@
   }
  ],
  "rejected": [
+  {
+   "id": "4472332054",
+   "url": "https://www.linkedin.com/jobs/view/4472332054",
+   "title": "Social Media Intern",
+   "company": "ING Belgium",
+   "location": "Brussels",
+   "match_score": 0,
+   "reason": "The internship requires current student status and a school convention, which the candidate cannot provide.",
+   "apply_email": "",
+   "found_at": "2026-09-30 17:22",
+   "status": "new",
+   "details": "Full-time internship\n3 to 6 months\nUnpaid\nRole: Social Media Intern\nTasks: Content creation, social media management, trend spotting, influencer support\nLanguage: Fluent French or Dutch, English is an asset",
+   "why_good": "",
+   "why_bad": "Requires current student status and a school internship convention.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": true,
+   "lang": "en",
+   "cv_fit_v": 19
+  },
   {
    "id": "309128880",
    "url": "https://www.stepstone.be/jobs--Content-Social-Media-Creator-Dierendonck-Group-M-V-X-VEURNE-Dierendonck-Butchery-Bvba--2243164-inline.html",
@@ -53325,26 +53345,6 @@
    "details": "- Digital all-round marketer within Customer Service (email campaigns, content management, web optimisation, performance analysis)\n- Writes/coordinates promotional newsletters, manages CS content calendar, briefs and approves email campaigns\n- Creates and manages promotions for parts and accessories on the webshop\n- Maintains CS content on brand websites, optimises Google Ads copy, supports SEO/SEA and keyword research\n- Full time, Brussels\n- Languages: excellent written and spoken NL and FR, good knowledge of ENG",
    "why_good": "",
    "why_bad": "- Requires excellent written and spoken Dutch AND French (\"uitstekende mondelinge en schriftelijke vaardigheden in NL en FR\") — the candidate has no French at all\n- French is a hard requirement, not a plus, so this is out of reach\n- Also asks for a bachelor in Marketing/Communication (candidate has no completed degree)",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18
-  },
-  {
-   "id": "4467752165",
-   "url": "https://www.linkedin.com/jobs/view/4467752165",
-   "title": "Allround Digital Marketeer",
-   "company": "BSH Home Appliances Group",
-   "location": "Bruxelles",
-   "match_score": 0,
-   "reason": "Requires excellent written and spoken Dutch AND French, and the candidate has no French.",
-   "apply_email": "",
-   "found_at": "2026-09-15 17:19",
-   "status": "new",
-   "details": "- Allround digital marketer within Customer Service (CS)\n- Email campaigns, newsletters, content calendar, e-commerce promotions for parts/accessories\n- Google Ads text optimization, SEO/SEA and keyword research with agency\n- Full-time, Brussels\n- Requires excellent oral and written Dutch AND French, good English\n- Requires a bachelor's degree in marketing/communication or related",
-   "why_good": "",
-   "why_bad": "- Requires excellent written and spoken French — candidate has no French at all\n- Requires excellent Dutch (not just B1 conversational)\n- Requires a completed bachelor's degree in marketing/communication or related discipline\n- Adobe Analytics, SAP Cloud, Commercetools knowledge is a plus (candidate lacks these)",
    "dutch_stretch": false,
    "exp_stretch": false,
    "internship": false,
