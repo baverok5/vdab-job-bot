@@ -8914,28 +8914,6 @@
    "cv_fit_v": 18
   },
   {
-   "id": "4463876164",
-   "url": "https://www.linkedin.com/jobs/view/4463876164",
-   "title": "Marketeer Events & Communication",
-   "company": "Cronos (one of its companies)",
-   "location": "Unknown (Belgium)",
-   "match_score": 40,
-   "reason": "Accessible marketing/communication role with no French, no mandatory degree, and only a vague experience ask the junior candidate can stretch into.",
-   "apply_email": "",
-   "found_at": "2026-09-16 07:44",
-   "status": "new",
-   "details": "- Marketing & communication role centred on organising internal and external events\n- Manage event calendar end-to-end: planning, communication, registrations, logistics, suppliers, catering\n- Support broader marketing/communication projects; act as connector between teams, partners and suppliers\n- Education in Eventmanagement/Communicatie/Marketing is 'mooi meegenomen' (a plus, not required)\n- Asks for some experience in eventmanagement/marketing/communicatie or similar\n- Benefits: company car, insurance package, bike leasing, extra holidays; language not explicitly specified",
-   "why_good": "- Marketing/communication role in the candidate's goal field, with transferable digital-marketing and content skills\n- No French required and no mandatory bachelor/master — degree is only 'mooi meegenomen'\n- Candidate's WordPress/content/social-media and client-facing CRM work shows organisational and communication ability\n- Junior digital marketer used to coordinating content, publishing and follow-up, which maps onto event communication and planning\n- Note: the posting asks for some prior experience in eventmanagement/marketing/communicatie, which the candidate only partly has (~4 months) — a reach, but worth applying",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": true,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18,
-   "closed_check": "2026-09-30 21:12",
-   "closed_check_v": 2
-  },
-  {
    "id": "71855505",
    "url": "https://www.vdab.be/vindeenjob/vacatures/71855505/verkoopmedewerker",
    "title": "Verkoopmedewerker",
@@ -13283,6 +13261,26 @@
   }
  ],
  "rejected": [
+  {
+   "id": "4463876164",
+   "url": "https://www.linkedin.com/jobs/view/4463876164",
+   "title": "Marketeer Events & Communication",
+   "company": "Cronos",
+   "location": "Unknown",
+   "match_score": 0,
+   "reason": "The job requires experience in event management and a degree in a relevant field, which the candidate lacks.",
+   "apply_email": "",
+   "found_at": "2026-09-16 07:44",
+   "status": "new",
+   "details": "Role: Marketeer Events & Communication.\nMain tasks: Organizing internal and external events, supporting marketing projects, communication, community building.\nContract type: Not specified.\nSchedule: Not specified.\nLanguage: Dutch.\nPay: Not specified.",
+   "why_good": "",
+   "why_bad": "Requires experience in event management which is not detailed in the candidate's profile.\nRequires a degree in Event Management, Communication, or Marketing, which the candidate does not have (only coursework).\nDoes not directly align with the candidate's core skills in digital marketing, SEO, and web development.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 19
+  },
   {
    "id": "4472332054",
    "url": "https://www.linkedin.com/jobs/view/4472332054",
@@ -53307,26 +53305,6 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "en",
-   "cv_fit_v": 18
-  },
-  {
-   "id": "4466541506",
-   "url": "https://www.linkedin.com/jobs/view/4466541506",
-   "title": "Digital Allround Marketeer Customer Service",
-   "company": "BSH Home Appliances NV",
-   "location": "Brussel",
-   "match_score": 0,
-   "reason": "The role requires excellent written and spoken Dutch AND French, and the candidate has no French.",
-   "apply_email": "",
-   "found_at": "2026-09-15 17:19",
-   "status": "new",
-   "details": "- Digital all-round marketer within Customer Service (email campaigns, content management, web optimisation, performance analysis)\n- Writes/coordinates promotional newsletters, manages CS content calendar, briefs and approves email campaigns\n- Creates and manages promotions for parts and accessories on the webshop\n- Maintains CS content on brand websites, optimises Google Ads copy, supports SEO/SEA and keyword research\n- Full time, Brussels\n- Languages: excellent written and spoken NL and FR, good knowledge of ENG",
-   "why_good": "",
-   "why_bad": "- Requires excellent written and spoken Dutch AND French (\"uitstekende mondelinge en schriftelijke vaardigheden in NL en FR\") — the candidate has no French at all\n- French is a hard requirement, not a plus, so this is out of reach\n- Also asks for a bachelor in Marketing/Communication (candidate has no completed degree)",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
    "cv_fit_v": 18
   }
  ],
