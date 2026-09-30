@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-30 17:22 UTC",
+ "updated": "2026-09-30 21:12 UTC",
  "jobs": [
   {
    "id": "4471489541",
@@ -5408,7 +5408,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-09-29 21:16",
+   "closed_check": "2026-09-30 21:12",
    "closed_check_v": 2
   },
   {
@@ -6312,7 +6312,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-09-29 21:16",
+   "closed_check": "2026-09-30 21:12",
    "closed_check_v": 2
   },
   {
@@ -8704,7 +8704,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-09-29 21:16",
+   "closed_check": "2026-09-30 21:12",
    "closed_check_v": 2
   },
   {
@@ -8974,7 +8974,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-09-29 21:16",
+   "closed_check": "2026-09-30 21:12",
    "closed_check_v": 2
   },
   {
@@ -8996,7 +8996,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-09-29 21:16",
+   "closed_check": "2026-09-30 21:12",
    "closed_check_v": 2
   },
   {
@@ -9080,7 +9080,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-09-29 21:16",
+   "closed_check": "2026-09-30 21:12",
    "closed_check_v": 2
   },
   {
@@ -10704,29 +10704,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-29 21:16",
-   "closed_check_v": 2
-  },
-  {
-   "id": "4461039842",
-   "url": "https://www.linkedin.com/jobs/view/4461039842",
-   "title": "Digital E-commerce Operations Specialist",
-   "company": "Van Hoecke",
-   "location": "Unknown",
-   "match_score": 38,
-   "reason": "Accessible e-commerce/IT-operations role in the candidate's goal field, no French, no mandatory degree, and the experience ask is a reachable stretch.",
-   "apply_email": "",
-   "found_at": "2026-09-16 07:45",
-   "status": "new",
-   "details": "- First point of contact for internal stakeholders and trade partners on the e-commerce/digital platform team\n- Analyse issues and translate them into clear JIRA tickets; follow up incidents and give feedback\n- Test bugfixes, new features and optimisations before go-live; document processes in Confluence\n- Work closely with development teams and external partners; spot structural improvement opportunities\n- Full-time, international context; communicates fluently in Dutch and English\n- Salary range €2,900–€4,900 gross/month plus extralegal benefits",
-   "why_good": "- Sits in the candidate's goal field (e-commerce / digital platforms / web) and leans on his WordPress, web-build and technical-SEO background\n- His front-end dev stint (AngularJS/JavaScript) and Applied Computer Science coursework give real grounding for a business-IT bridge role\n- Ticket/issue handling, testing and documentation are learnable and match his structured, tool-quick profile (SEMrush, Ahrefs, GA, GSC)\n- Works in English and Dutch B1, and the posting only asks for fluent Dutch + English — no French\n- Honest gap: it asks for 'enkele jaren ervaring' in e-commerce/digital platforms/IT-operations, which he does not yet have, so this is a stretch worth applying to anyway",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": true,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18,
-   "closed_check": "2026-09-29 21:16",
+   "closed_check": "2026-09-30 21:12",
    "closed_check_v": 2
   },
   {
@@ -10748,7 +10726,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-29 21:16",
+   "closed_check": "2026-09-30 21:12",
    "closed_check_v": 2
   },
   {
@@ -10770,7 +10748,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-29 21:16",
+   "closed_check": "2026-09-30 21:12",
    "closed_check_v": 2
   },
   {
