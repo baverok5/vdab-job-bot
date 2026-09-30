@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-30 11:34 UTC",
+ "updated": "2026-09-30 16:40 UTC",
  "jobs": [
   {
    "id": "4471489541",
@@ -357,7 +357,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "en",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-09-30 16:39",
+   "closed_check_v": 2
   },
   {
    "id": "4469678339",
@@ -1213,7 +1215,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-09-30 16:39",
+   "closed_check_v": 2
   },
   {
    "id": "74710946",
@@ -9854,7 +9858,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-09-29 11:05",
+   "closed_check": "2026-09-30 16:39",
    "closed_check_v": 2
   },
   {
@@ -10656,7 +10660,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-29 11:05",
+   "closed_check": "2026-09-30 16:39",
    "closed_check_v": 2
   },
   {
@@ -10678,7 +10682,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-29 11:05",
+   "closed_check": "2026-09-30 16:39",
    "closed_check_v": 2
   },
   {
@@ -10700,7 +10704,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-09-29 11:05",
+   "closed_check": "2026-09-30 16:39",
    "closed_check_v": 2
   },
   {
@@ -10900,26 +10904,6 @@
    "cv_fit_v": 18
   },
   {
-   "id": "4461088439",
-   "url": "https://www.linkedin.com/jobs/view/4461088439",
-   "title": "Digital Growth Specialist",
-   "company": "Vooruit",
-   "location": "Brussel",
-   "match_score": 35,
-   "reason": "The role aligns well with the candidate's digital marketing, SEO, and content skills, and experience requirements are a reasonable stretch.",
-   "apply_email": "",
-   "found_at": "2026-09-16 07:44",
-   "status": "new",
-   "details": "Role: Digital Growth Specialist\nMain tasks: social listening, data analysis, automation (Zapier, Make, N8N), content ecosystem management, AI tool application, campaign strategy support.\nContract type: Not specified, likely full-time.\nSchedule: Flexible working hours, homeworking.\nLanguage: Dutch (implied, but English is the candidate's working language and B1 writing/A2+ speaking is decent).\nPay: Attractive salary package (hospitalisation insurance, phone, laptop, public transport pass).",
-   "why_good": "Strong alignment with candidate's GOAL FIELD: digital marketing, SEO/SEA, content, AI, automation.\nExperience aligns with on-page SEO, keyword research, content management, and automation tools (candidate's profile mentions Python automation, AI tools).\nCandidate has technical background (Applied Computer Science coursework) and experience with WordPress, Elementor, AI tools and prompt engineering, which is relevant for building content ecosystems and applying AI.\nRole explicitly states \"apply anyway\" sentiment: \"Vooruit verwelkomt sollicitaties van iedereen die zich in dit profiel herkent, ongeacht achtergrond, gender of leeftijd.\"",
-   "why_bad": "As this is an exp_stretch role, it asks for ~2-4 years of experience, whereas the candidate has about 1.5 years of relevant experience post-education. The candidate has B1 writing/A2+ speaking Dutch, which is functional but not fluent, and the job is in Dutch.",
-   "dutch_stretch": false,
-   "exp_stretch": true,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19
-  },
-  {
    "id": "4465597747",
    "url": "https://www.linkedin.com/jobs/view/4465597747",
    "title": "Creator",
@@ -10937,7 +10921,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-09-30 16:39",
+   "closed_check_v": 2
   },
   {
    "id": "229142007",
@@ -11786,7 +11772,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-09-29 11:05",
+   "closed_check": "2026-09-30 16:39",
    "closed_check_v": 2
   },
   {
@@ -13335,7 +13321,9 @@
    "exp_stretch": false,
    "internship": true,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-09-30 16:39",
+   "closed_check_v": 2
   }
  ],
  "rejected": [
