@@ -13,11 +13,15 @@ on:
     # few times a day rather than hourly. Progress is checkpointed within each run.
     #
     # Times are chosen around DeepSeek's peak billing, which since 16 August 2026
-    # is 01:00-04:00 and 06:00-10:00 UTC on weekdays and costs exactly double the
-    # off-peak rate. A run takes 1.5-2.5 h, so what matters is that neither the
-    # start nor the finish lands inside those windows: the old 05:00 run spent
-    # most of its life in the 06:00-10:00 peak and was billed at twice the rate.
-    - cron: "30 10,14,18,22 * * *"
+    # is 01:00-04:00 and 06:00-10:00 UTC on weekdays and costs exactly double.
+    #
+    # What makes this awkward is not the run length (28-45 min) but GitHub's
+    # scheduler, which fires these 2-4 h late — the 23:00 slot last fired at
+    # 01:47 and the 17:00 slot at 21:11. A slot is therefore only safe if the
+    # whole window from the slot to slot+4h delay+1h run misses both peaks.
+    # That rules out anything from about 20:00 to 10:00; these four are clear
+    # even at the worst delay seen.
+    - cron: "30 10,13,16,19 * * *"
   workflow_dispatch: {}
 
 permissions:
