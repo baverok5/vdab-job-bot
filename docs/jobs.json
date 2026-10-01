@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-01 17:16 UTC",
+ "updated": "2026-10-01 17:17 UTC",
  "jobs": [
   {
    "id": "4471489541",
@@ -672,7 +672,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 01:48",
+   "closed_check": "2026-10-01 17:16",
    "closed_check_v": 2
   },
   {
@@ -818,7 +818,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 01:48",
+   "closed_check": "2026-10-01 17:16",
    "closed_check_v": 2
   },
   {
@@ -12243,7 +12243,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-01 17:16",
+   "closed_check_v": 2
   },
   {
    "id": "4472186983",
@@ -12263,7 +12265,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-01 17:16",
+   "closed_check_v": 2
   },
   {
    "id": "4473906816",
@@ -12283,7 +12287,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-01 17:16",
+   "closed_check_v": 2
   },
   {
    "id": "4468222229",
@@ -12385,7 +12391,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "en",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-01 17:16",
+   "closed_check_v": 2
   },
   {
    "id": "74636483",
@@ -13271,7 +13279,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "en",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-01 17:16",
+   "closed_check_v": 2
   },
   {
    "id": "4471502044",
@@ -13291,7 +13301,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-01 17:16",
+   "closed_check_v": 2
   },
   {
    "id": "4474179518",
@@ -13311,7 +13323,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-01 17:16",
+   "closed_check_v": 2
   },
   {
    "id": "74634659",
@@ -14113,7 +14127,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "en",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-01 17:16",
+   "closed_check_v": 2
   },
   {
    "id": "74716983",
