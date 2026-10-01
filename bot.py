@@ -174,7 +174,12 @@ GEMINI_URL_TMPL = (
 # engine for the high-volume job evaluation, so the bot can screen the whole
 # English job set instead of ~25 jobs/day. ~$0.0005 per job → $5 ≈ 8-10k jobs.
 DEEPSEEK_API_KEY = os.environ.get("DEEPSEEK_API_KEY", "")
-DEEPSEEK_MODEL = os.environ.get("DEEPSEEK_MODEL", "deepseek-chat")
+# "deepseek-chat" was a V3-era alias that DeepSeek retired; requests still land
+# on Flash, but on an alias with no guarantee about where it points next.
+# Pinned to the cheap model by name instead: deepseek-flash IS V4.1-Flash,
+# and "deepseek-v4-flash" is itself a legacy alias for the same thing. The
+# expensive model is deepseek-v4-pro, which this bot has never called.
+DEEPSEEK_MODEL = os.environ.get("DEEPSEEK_MODEL", "deepseek-flash")
 DEEPSEEK_URL = "https://api.deepseek.com/chat/completions"
 
 # Which engine screens jobs / writes letters. Prefer DeepSeek for both when its

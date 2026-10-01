@@ -11,7 +11,13 @@ on:
   schedule:
     # Comprehensive runs are long (deep paging + reading each posting), so run a
     # few times a day rather than hourly. Progress is checkpointed within each run.
-    - cron: "0 5,11,17,23 * * *"
+    #
+    # Times are chosen around DeepSeek's peak billing, which since 16 August 2026
+    # is 01:00-04:00 and 06:00-10:00 UTC on weekdays and costs exactly double the
+    # off-peak rate. A run takes 1.5-2.5 h, so what matters is that neither the
+    # start nor the finish lands inside those windows: the old 05:00 run spent
+    # most of its life in the 06:00-10:00 peak and was billed at twice the rate.
+    - cron: "30 10,14,18,22 * * *"
   workflow_dispatch: {}
 
 permissions:
