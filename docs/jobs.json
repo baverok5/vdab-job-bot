@@ -559,7 +559,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "en",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-01 22:52",
+   "closed_check_v": 2
   },
   {
    "id": "4474165313",
@@ -579,7 +581,9 @@
    "exp_stretch": false,
    "internship": true,
    "lang": "en",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-01 22:52",
+   "closed_check_v": 2
   },
   {
    "id": "4473909356",
@@ -599,7 +603,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-01 22:52",
+   "closed_check_v": 2
   },
   {
    "id": "4471489541",
@@ -10124,7 +10130,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 01:48",
+   "closed_check": "2026-10-01 22:52",
    "closed_check_v": 2
   },
   {
@@ -10146,7 +10152,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 01:48",
+   "closed_check": "2026-10-01 22:52",
    "closed_check_v": 2
   },
   {
@@ -10228,7 +10234,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 01:48",
+   "closed_check": "2026-10-01 22:52",
    "closed_check_v": 2
   },
   {
@@ -10330,7 +10336,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 01:48",
+   "closed_check": "2026-10-01 22:52",
    "closed_check_v": 2
   },
   {
@@ -10660,7 +10666,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 01:48",
+   "closed_check": "2026-10-01 22:52",
    "closed_check_v": 2
   },
   {
@@ -10682,7 +10688,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 01:48",
+   "closed_check": "2026-10-01 22:52",
    "closed_check_v": 2
   },
   {
@@ -10704,7 +10710,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 01:48",
+   "closed_check": "2026-10-01 22:52",
    "closed_check_v": 2
   },
   {
