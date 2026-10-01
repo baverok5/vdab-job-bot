@@ -391,6 +391,32 @@ DS_PRICE = {                       # (cached input, fresh input, output)
 _ds = {"calls": 0, "hit": 0, "miss": 0, "out": 0,
        "cost": 0.0, "peak_calls": 0, "peak_cost": 0.0}
 
+# Two hard stops on DeepSeek spend, because a schedule only ever *aims* at the
+# cheap hours and a run can drift out of them (GitHub fires cron jobs 2-4 h
+# late, and every push to bot.py starts a run at whatever time it was pushed).
+#   * peak guard : no DeepSeek calls while peak pricing is in force. Manual
+#                  runs (workflow_dispatch) are exempt, so a deliberate run at
+#                  the wrong hour is still possible. DS_PEAK_GUARD=0 disables.
+#   * run budget : stop once this run has spent DS_RUN_BUDGET dollars by the
+#                  accounting above. Two runs a day at the default is a ceiling
+#                  of about $0.60 a day. The prices are third-party figures held
+#                  in DS_PRICE, so treat the ceiling as approximate.
+# Either stop raises QuotaExhausted, which every AI loop already handles by
+# stopping cleanly and leaving the unread jobs queued for the next run.
+DS_RUN_BUDGET = float(os.environ.get("DS_RUN_BUDGET", "0.30"))
+DS_PEAK_GUARD = (os.environ.get("DS_PEAK_GUARD", "1") != "0"
+                 and os.environ.get("GITHUB_EVENT_NAME") != "workflow_dispatch")
+_ds_stop_said = False
+
+
+def ds_blocked():
+    """Why DeepSeek must not be called right now, or None if it may be."""
+    if DS_PEAK_GUARD and _ds_is_peak():
+        return "DeepSeek peak pricing (double rate) is in force"
+    if _ds["cost"] >= DS_RUN_BUDGET:
+        return f"this run's DeepSeek budget (${DS_RUN_BUDGET:.2f}) is spent"
+    return None
+
 
 def _ds_is_peak(now=None):
     now = now or datetime.now(timezone.utc)
@@ -489,9 +515,19 @@ def ask_llm(prompt, expect_json=False, provider=None, gemini_model=None):
     looked healthy for three days that way. Fall back to Gemini instead: its
     free tier is small, so far fewer jobs get through, but the feed keeps
     moving until the balance is topped up."""
-    global _DEEPSEEK_DEAD
+    global _DEEPSEEK_DEAD, _ds_stop_said
     provider = provider or EVAL_PROVIDER
     if provider == "deepseek" and DEEPSEEK_API_KEY and not _DEEPSEEK_DEAD:
+        why = ds_blocked()
+        if why:
+            # Stop, do not fall back: Gemini's free quota is tiny and would just
+            # produce a handful of reads at a different quality. Whatever is
+            # unread stays queued and the next run picks it up.
+            if not _ds_stop_said:
+                _ds_stop_said = True
+                print(f"  ⏸  Stopping AI for this run: {why}. "
+                      f"Unread jobs stay queued for the next run.")
+            raise QuotaExhausted()
         try:
             return ask_deepseek(prompt, expect_json)
         except DeepSeekOutOfCredit as e:
@@ -1870,7 +1906,7 @@ WHAT THE CANDIDATE CANNOT DO (must FAIL):
   in marketing/SEO/content is NOT auto-excluded), or anything needing 5+ years."""
 
 
-def title_prescreen(titles):
+def title_prescreen(titles, undecided=None):
     """Cheap batch filter over plain job titles (no page render). Returns the set
     of indices (into `titles`) worth a full look. Deliberately inclusive — it only
     drops titles that are clearly non-fits; the full evaluate_job does the precise
@@ -1902,9 +1938,21 @@ TITLES:
             res = ask_llm(prompt, expect_json=True, provider=EVAL_PROVIDER,
                           gemini_model=GEMINI_EVAL_MODEL)
         except QuotaExhausted:
-            print("  Title screen: quota exhausted — keeping the rest for next run.")
-            for i in range(len(batch)):
-                keep.add(start + i)
+            # What this used to do: keep the batch that failed and then break,
+            # leaving every LATER batch out of `keep` — and the caller files
+            # anything not kept under title_no with the reason "the title alone
+            # rules it out". So hitting quota halfway through silently and
+            # permanently dropped every remaining title, and shortlisted the
+            # failing batch unscreened. With undecided supplied, the rest are
+            # simply left alone and screened again next run.
+            if undecided is not None:
+                print("  Title screen: AI stopped — the remaining titles stay "
+                      "unscreened and are picked up next run.")
+                undecided.update(range(start, len(titles)))
+            else:
+                print("  Title screen: quota exhausted — keeping the rest for next run.")
+                for i in range(len(batch)):
+                    keep.add(start + i)
             break
         if not res or "keep" not in res:
             for i in range(len(batch)):    # safe: don't lose jobs on a parse miss
@@ -2076,6 +2124,10 @@ JOB POSTING:
 def main():
     if not GEMINI_KEY and not DEEPSEEK_API_KEY:
         raise SystemExit("No AI key set — add GEMINI_API_KEY or DEEPSEEK_API_KEY as a GitHub secret.")
+    _why = ds_blocked() if DEEPSEEK_API_KEY else None
+    print(f"DeepSeek guard: run budget ${DS_RUN_BUDGET:.2f}, peak guard "
+          f"{'on' if DS_PEAK_GUARD else 'off'}"
+          + (f" — {_why}: this run will collect listings but not read jobs" if _why else ""))
     print(f"Engines: eval={EVAL_PROVIDER}, write={WRITE_PROVIDER}, "
           f"max_new_per_run={MAX_NEW_PER_RUN}")
 
@@ -2463,14 +2515,19 @@ def main():
             cand = cand[:TITLE_SCREEN_CAP]
             if cand:
                 print(f"Title pre-screening {len(cand)} titles...")
-                kept = title_prescreen([c["title"] for c in cand])
+                undecided = set()
+                kept = title_prescreen([c["title"] for c in cand], undecided)
                 for i, c in enumerate(cand):
+                    if i in undecided:
+                        continue          # not judged: leave it for the next run
                     (shortlist if i in kept else title_no).add(c["id"])
                     if i not in kept:
                         record_verdict(jobs, c["id"], VERDICT_TITLE, 0,
                                        "the title alone rules it out for this profile "
                                        "(senior/leadership, or a different trade)")
-                print(f"  shortlisted {len(kept)}, dropped {len(cand) - len(kept)} at title stage")
+                print(f"  shortlisted {len(kept)}, dropped "
+                      f"{len(cand) - len(kept) - len(undecided)} at title stage"
+                      + (f", {len(undecided)} left unscreened" if undecided else ""))
 
             # Full render + AI evaluation, drawn from the shortlist only —
             # closest to the target field first, then newest. Sorting by "is it
@@ -2679,7 +2736,7 @@ def revet_saved(browser, jobs, cv_text, budget=40, checkpoint=None):
         try:
             verdict = evaluate_job(job_text, cv_text)
         except QuotaExhausted:
-            print("  Gemini quota exhausted — stopping re-vet for this run.")
+            print("  AI quota/budget reached — stopping re-vet for this run.")
             break
         if not verdict:
             print("  (AI call failed — leaving as-is)")
@@ -2898,7 +2955,7 @@ def _process_jobs(browser, new_links, seen, jobs, cv_text, checkpoint=None):
         except QuotaExhausted:
             # Free-tier quota is spent — stop now instead of burning time/quota.
             # The listing + already-banked matches stay intact for the dashboard.
-            print("  Gemini quota exhausted — stopping AI for this run (listing still updated).")
+            print("  AI quota/budget reached — stopping AI for this run (listing still updated).")
             break
         if not verdict:
             ai_fails += 1
