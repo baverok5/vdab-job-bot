@@ -12,12 +12,25 @@ on:
     # Comprehensive runs are long (deep paging + reading each posting), so run a
     # few times a day rather than hourly. Progress is checkpointed within each run.
     #
-    # Times are chosen around DeepSeek's peak billing, which since 16 August 2026
-    # is 01:00-04:00 and 06:00-10:00 UTC on weekdays and costs exactly double the
-    # off-peak rate. A run takes 1.5-2.5 h, so what matters is that neither the
-    # start nor the finish lands inside those windows: the old 05:00 run spent
-    # most of its life in the 06:00-10:00 peak and was billed at twice the rate.
-    - cron: "30 10,14,18,22 * * *"
+    # Two runs a day, both in DeepSeek's off-peak hours. Peak billing is
+    # 01:00-04:00 and 06:00-10:00 UTC on weekdays, at double the rate.
+    #
+    # The difficulty is GitHub's scheduler, which fires these 2-4 h late (a 23:00
+    # slot has fired at 01:47, a 17:00 one at 21:11) and never early. A run can
+    # also take up to ~95 min. So a slot is only safe if slot + 4h15m delay +
+    # 1h35m run still ends before the next peak starts:
+    #   10:30 -> worst case done by 16:20      (off-peak all the way)
+    #   18:00 -> worst case done by 23:50      (peak resumes at 01:00)
+    # That second run is the "jobs in the morning" run: it finishes the evening
+    # before and the results are waiting at breakfast. A true 05:00 run is not
+    # possible, since the only overnight off-peak stretch is 04:00-06:00 and a
+    # run's start time floats by hours.
+    #
+    # bot.py enforces this independently: DeepSeek calls stop at the start of a
+    # peak window and once a run has spent its budget, so a run that drifts is
+    # cut short instead of billed at double rate.
+    - cron: "30 10 * * *"
+    - cron: "0 18 * * *"
   workflow_dispatch: {}
 
 permissions:
