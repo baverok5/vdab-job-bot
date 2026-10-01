@@ -378,6 +378,61 @@ def ask_gemini(prompt, expect_json=False, model=None):
     return None
 
 
+# ---- What a run actually costs -------------------------------------------
+# DeepSeek returns a usage block on every response and the bot was discarding
+# it, so there was no way to answer "what did that run cost?" short of reading
+# the billing dashboard by hand. V4.1-Flash list prices, USD per million
+# tokens; peak is 01:00-04:00 and 06:00-10:00 UTC on weekdays and costs exactly
+# double, everything else including the whole weekend is off-peak.
+DS_PRICE = {                       # (cached input, fresh input, output)
+    "peak":    (0.006, 0.30, 1.20),
+    "offpeak": (0.003, 0.15, 0.60),
+}
+_ds = {"calls": 0, "hit": 0, "miss": 0, "out": 0,
+       "cost": 0.0, "peak_calls": 0, "peak_cost": 0.0}
+
+
+def _ds_is_peak(now=None):
+    now = now or datetime.now(timezone.utc)
+    if now.weekday() >= 5:         # the whole weekend bills off-peak
+        return False
+    return 1 <= now.hour < 4 or 6 <= now.hour < 10
+
+
+def _ds_record(usage):
+    """Tally one response's tokens and what they cost at the rate in force now."""
+    if not usage:
+        return
+    hit = int(usage.get("prompt_cache_hit_tokens") or 0)
+    miss = int(usage.get("prompt_cache_miss_tokens") or 0)
+    if not hit and not miss:       # no cache breakdown: treat it all as fresh
+        miss = int(usage.get("prompt_tokens") or 0)
+    out = int(usage.get("completion_tokens") or 0)
+    peak = _ds_is_peak()
+    p_hit, p_miss, p_out = DS_PRICE["peak" if peak else "offpeak"]
+    cost = (hit * p_hit + miss * p_miss + out * p_out) / 1_000_000
+    _ds["calls"] += 1
+    _ds["hit"] += hit
+    _ds["miss"] += miss
+    _ds["out"] += out
+    _ds["cost"] += cost
+    if peak:
+        _ds["peak_calls"] += 1
+        _ds["peak_cost"] += cost
+
+
+def ds_cost_summary():
+    if not _ds["calls"]:
+        return "DeepSeek: no calls this run."
+    tin = _ds["hit"] + _ds["miss"]
+    part = (f", ${_ds['peak_cost']:.3f} of it at peak rates ({_ds['peak_calls']} calls)"
+            if _ds["peak_calls"] else ", all of it off-peak")
+    return (f"DeepSeek: {_ds['calls']:,} calls, {tin + _ds['out']:,} tokens "
+            f"({tin:,} in / {_ds['out']:,} out, "
+            f"{_ds['hit'] / max(tin, 1):.0%} of input served from cache) "
+            f"— about ${_ds['cost']:.3f}{part}")
+
+
 def ask_deepseek(prompt, expect_json=False):
     """Call DeepSeek's OpenAI-compatible chat endpoint. Returns text or parsed
     JSON. DeepSeek is paid (cheap) with no tiny daily cap, so no QuotaExhausted
@@ -405,7 +460,9 @@ def ask_deepseek(prompt, expect_json=False):
                 raise DeepSeekOutOfCredit(
                     "DeepSeek returned 402 Payment Required — the account balance is empty.")
             r.raise_for_status()
-            text = r.json()["choices"][0]["message"]["content"]
+            data = r.json()
+            _ds_record(data.get("usage"))
+            text = data["choices"][0]["message"]["content"]
             if expect_json:
                 text = re.sub(r"^```(json)?|```$", "", text.strip(), flags=re.M)
                 return json.loads(text)
@@ -2500,6 +2557,7 @@ def main():
     print(f"\nDone. {matched} new match(es) this run. "
           f"{len(jobs['jobs'])} in Ready, {len(jobs['rejected'])} not-a-fit. "
           f"Screen state: {len(shortlist)} shortlisted, {len(title_no)} title-dropped.")
+    print(ds_cost_summary())
 
 
 def _apply_verdict(jobs, job_id, url, verdict, apply_email, found_at=None,
