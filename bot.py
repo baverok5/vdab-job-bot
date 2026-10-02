@@ -180,13 +180,15 @@ DEEPSEEK_API_KEY = os.environ.get("DEEPSEEK_API_KEY", "")
 # and "deepseek-v4-flash" is itself a legacy alias for the same thing. The
 # expensive model is deepseek-v4-pro, which this bot has never called.
 DEEPSEEK_MODEL = os.environ.get("DEEPSEEK_MODEL", "deepseek-flash")
-# V4.1 Flash is a reasoning model with a "thinking" mode. DeepSeek's API takes
-# {"thinking": {"type": "enabled" | "disabled"}} and, per several guides to the
-# V4 API, it is ON by default at high effort — the model writes a chain of
-# thought first and that is billed at the OUTPUT rate, which is the expensive
-# one. The bot sent nothing, so it got whatever the default is. Screening is a
-# checklist against written rules, not a puzzle, and the same prompts ran on a
-# non-thinking model for weeks; "disabled" is the cheap setting.
+# V4.1 Flash has a "thinking" mode, taken by {"thinking": {"type": "enabled" |
+# "disabled"}}. It is on by default and reasoning is billed as output. MEASURED
+# with the "DeepSeek probe" workflow on 2 Oct 2026, on the real screening prompt:
+# reasoning was 73 of 518 output tokens on a pass and 25 of 160 on a fail
+# (14-16%), and disabling it gave identical verdicts on both samples. So it is a
+# modest saving, not the main cost: the main cost was the length of what each
+# read wrote (see the "FAIL" instructions in eval_prompt). Two samples do not
+# prove equal quality across 700 postings, so this is one environment variable
+# from being put back.
 #   disabled / enabled : send that value
 #   default            : send nothing (what the bot did until now)
 DS_THINKING = os.environ.get("DS_THINKING", "disabled").strip().lower()
@@ -412,7 +414,7 @@ _ds = {"calls": 0, "hit": 0, "miss": 0, "out": 0, "reasoning": 0,
 #   * run budget : stop once this run has spent DS_RUN_BUDGET dollars.
 # Either stop raises QuotaExhausted, which every AI loop already handles by
 # stopping cleanly and leaving the unread jobs queued for the next run.
-DS_RUN_BUDGET = float(os.environ.get("DS_RUN_BUDGET", "0.30"))
+DS_RUN_BUDGET = float(os.environ.get("DS_RUN_BUDGET", "0.25"))
 DS_PEAK_GUARD = (os.environ.get("DS_PEAK_GUARD", "1") != "0"
                  and os.environ.get("GITHUB_EVENT_NAME") != "workflow_dispatch")
 _ds_stop_said = False

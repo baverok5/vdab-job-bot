@@ -38,6 +38,39 @@ each stored letter.
 CV and cover letter are never merged. Never regenerate or reword the CV for the
 job.
 
+## What a run costs, and the switches
+
+DeepSeek is the only paid part. Every run ends with a line saying what it spent
+(calls, tokens, how much came from cache, reasoning tokens, which model answered,
+and cost by purpose: reads, letters, titles). Prices are third-party figures held
+in `DS_PRICE`, so the total is approximate; check it against
+platform.deepseek.com/usage.
+
+- **One run a day**, 13:00 UTC, by schedule only. Pushes do **not** start a run
+  (they used to, and each one cost money). To run now: Actions → *VDAB job bot*
+  → *Run workflow*.
+- **Peak pricing.** DeepSeek bills double 01:00-04:00 and 06:00-10:00 UTC on
+  weekdays. The slot is 13:00 because GitHub fires jobs up to ~4.5 h late and a
+  full run takes ~5 h; the bot also refuses to call DeepSeek during peak
+  (`DS_PEAK_GUARD=0` to disable; manual runs are exempt).
+- **Run budget.** A run stops spending at `DS_RUN_BUDGET` dollars (default 0.25,
+  a hard ceiling of about $7.50 a month) and leaves the rest of the queue for
+  tomorrow.
+- **Thinking.** Requests carry `{"thinking": {"type": "disabled"}}`. Measured with
+  the probe: reasoning was only ~15% of output on the screening prompt, so this
+  is a modest saving, and verdicts matched on both samples.
+  `DS_THINKING=enabled` or `default` changes it.
+- **Model name.** `deepseek-flash` and `deepseek-v4-flash` are the same model:
+  asked for either, the API answers `served-by=deepseek-flash`, and the usage
+  dashboard only ever shows that name. There is no cheaper model behind the
+  other spelling.
+- **Re-reads.** `REVET_MAX_PRIORITY` (default 2.5) keeps warehouse and
+  customer-service postings out of the re-vet queue.
+
+To measure instead of guess, run *Actions → DeepSeek probe*: it sends the real
+screening prompt to the live API with thinking default vs disabled and under both
+model names, and prints what DeepSeek reports. About a cent, makes no commit.
+
 ## Data files — do not hand-edit
 
 `seen.json`, `screen.json`, `docs/jobs.json` and `docs/listing.json` are written
