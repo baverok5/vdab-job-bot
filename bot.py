@@ -180,6 +180,16 @@ DEEPSEEK_API_KEY = os.environ.get("DEEPSEEK_API_KEY", "")
 # and "deepseek-v4-flash" is itself a legacy alias for the same thing. The
 # expensive model is deepseek-v4-pro, which this bot has never called.
 DEEPSEEK_MODEL = os.environ.get("DEEPSEEK_MODEL", "deepseek-flash")
+# V4.1 Flash is a reasoning model with a "thinking" mode. DeepSeek's API takes
+# {"thinking": {"type": "enabled" | "disabled"}} and, per several guides to the
+# V4 API, it is ON by default at high effort — the model writes a chain of
+# thought first and that is billed at the OUTPUT rate, which is the expensive
+# one. The bot sent nothing, so it got whatever the default is. Screening is a
+# checklist against written rules, not a puzzle, and the same prompts ran on a
+# non-thinking model for weeks; "disabled" is the cheap setting.
+#   disabled / enabled : send that value
+#   default            : send nothing (what the bot did until now)
+DS_THINKING = os.environ.get("DS_THINKING", "disabled").strip().lower()
 DEEPSEEK_URL = "https://api.deepseek.com/chat/completions"
 
 # Which engine screens jobs / writes letters. Prefer DeepSeek for both when its
@@ -202,6 +212,7 @@ HEADERS = {
 }
 
 READY_CAP = 1500                  # every match fits; 600 was silently deleting 229
+REVET_MAX_PRIORITY = float(os.environ.get("REVET_MAX_PRIORITY", "2.5"))  # 0 = SEO/SEA ... 3 = unrelated
 MAX_NEW_PER_RUN = int(os.environ.get("MAX_NEW_PER_RUN", "700"))  # progress is checkpointed, so a long run is safe
 # Shortest posting text worth asking the AI about. Below this there is no
 # description to read, only a heading, and the model invents the rest.
@@ -379,34 +390,40 @@ def ask_gemini(prompt, expect_json=False, model=None):
 
 
 # ---- What a run actually costs -------------------------------------------
-# DeepSeek returns a usage block on every response and the bot was discarding
-# it, so there was no way to answer "what did that run cost?" short of reading
-# the billing dashboard by hand. V4.1-Flash list prices, USD per million
-# tokens; peak is 01:00-04:00 and 06:00-10:00 UTC on weekdays and costs exactly
-# double, everything else including the whole weekend is off-peak.
+# DeepSeek returns a usage block on every response; the bot used to discard it,
+# so "what did that run cost?" had no answer short of the billing dashboard.
+# V4.1-Flash list prices, USD per million tokens (third-party figures, so the
+# totals below are approximate). Peak is 01:00-04:00 and 06:00-10:00 UTC on
+# weekdays and costs exactly double; everything else, the whole weekend
+# included, is off-peak.
 DS_PRICE = {                       # (cached input, fresh input, output)
     "peak":    (0.006, 0.30, 1.20),
     "offpeak": (0.003, 0.15, 0.60),
 }
-_ds = {"calls": 0, "hit": 0, "miss": 0, "out": 0,
-       "cost": 0.0, "peak_calls": 0, "peak_cost": 0.0}
+_ds = {"calls": 0, "hit": 0, "miss": 0, "out": 0, "reasoning": 0,
+       "cost": 0.0, "peak_calls": 0, "peak_cost": 0.0,
+       "models": {}, "kinds": {}}
 
 # Two hard stops on DeepSeek spend, because a schedule only ever *aims* at the
-# cheap hours and a run can drift out of them (GitHub fires cron jobs 2-4 h
-# late, and every push to bot.py starts a run at whatever time it was pushed).
-#   * peak guard : no DeepSeek calls while peak pricing is in force. Manual
-#                  runs (workflow_dispatch) are exempt, so a deliberate run at
-#                  the wrong hour is still possible. DS_PEAK_GUARD=0 disables.
-#   * run budget : stop once this run has spent DS_RUN_BUDGET dollars by the
-#                  accounting above. Two runs a day at the default is a ceiling
-#                  of about $0.60 a day. The prices are third-party figures held
-#                  in DS_PRICE, so treat the ceiling as approximate.
+# cheap hours and a run can drift out of them (GitHub fires cron jobs hours
+# late, and a run reading 700 postings takes about five).
+#   * peak guard : no DeepSeek calls while peak pricing is in force. Manual runs
+#                  (workflow_dispatch) are exempt. DS_PEAK_GUARD=0 disables.
+#   * run budget : stop once this run has spent DS_RUN_BUDGET dollars.
 # Either stop raises QuotaExhausted, which every AI loop already handles by
 # stopping cleanly and leaving the unread jobs queued for the next run.
 DS_RUN_BUDGET = float(os.environ.get("DS_RUN_BUDGET", "0.30"))
 DS_PEAK_GUARD = (os.environ.get("DS_PEAK_GUARD", "1") != "0"
                  and os.environ.get("GITHUB_EVENT_NAME") != "workflow_dispatch")
 _ds_stop_said = False
+_DS_THINKING_REJECTED = False      # set if the API refuses the thinking field
+
+
+def _ds_is_peak(now=None):
+    now = now or datetime.now(timezone.utc)
+    if now.weekday() >= 5:         # the whole weekend bills off-peak
+        return False
+    return 1 <= now.hour < 4 or 6 <= now.hour < 10
 
 
 def ds_blocked():
@@ -418,14 +435,20 @@ def ds_blocked():
     return None
 
 
-def _ds_is_peak(now=None):
-    now = now or datetime.now(timezone.utc)
-    if now.weekday() >= 5:         # the whole weekend bills off-peak
-        return False
-    return 1 <= now.hour < 4 or 6 <= now.hour < 10
+def _ds_kind(prompt):
+    """What a call was for, from the first words of its prompt — so the summary
+    can say where the money went instead of just how much."""
+    head = (prompt or "")[:60]
+    if head.startswith("Belgian job titles"):
+        return "titles"
+    if head.startswith("You screen Belgian job postings"):
+        return "reads"
+    if "career writer" in head:
+        return "letters"
+    return "other"
 
 
-def _ds_record(usage):
+def _ds_record(usage, model=None, kind="other"):
     """Tally one response's tokens and what they cost at the rate in force now."""
     if not usage:
         return
@@ -434,6 +457,8 @@ def _ds_record(usage):
     if not hit and not miss:       # no cache breakdown: treat it all as fresh
         miss = int(usage.get("prompt_tokens") or 0)
     out = int(usage.get("completion_tokens") or 0)
+    reasoning = int((usage.get("completion_tokens_details") or {})
+                    .get("reasoning_tokens") or 0)
     peak = _ds_is_peak()
     p_hit, p_miss, p_out = DS_PRICE["peak" if peak else "offpeak"]
     cost = (hit * p_hit + miss * p_miss + out * p_out) / 1_000_000
@@ -441,10 +466,17 @@ def _ds_record(usage):
     _ds["hit"] += hit
     _ds["miss"] += miss
     _ds["out"] += out
+    _ds["reasoning"] += reasoning
     _ds["cost"] += cost
     if peak:
         _ds["peak_calls"] += 1
         _ds["peak_cost"] += cost
+    if model:
+        _ds["models"][model] = _ds["models"].get(model, 0) + 1
+    k = _ds["kinds"].setdefault(kind, {"calls": 0, "out": 0, "cost": 0.0})
+    k["calls"] += 1
+    k["out"] += out
+    k["cost"] += cost
 
 
 def ds_cost_summary():
@@ -453,16 +485,26 @@ def ds_cost_summary():
     tin = _ds["hit"] + _ds["miss"]
     part = (f", ${_ds['peak_cost']:.3f} of it at peak rates ({_ds['peak_calls']} calls)"
             if _ds["peak_calls"] else ", all of it off-peak")
-    return (f"DeepSeek: {_ds['calls']:,} calls, {tin + _ds['out']:,} tokens "
-            f"({tin:,} in / {_ds['out']:,} out, "
-            f"{_ds['hit'] / max(tin, 1):.0%} of input served from cache) "
-            f"— about ${_ds['cost']:.3f}{part}")
+    think = (f", of which {_ds['reasoning']:,} were reasoning" if _ds["reasoning"] else "")
+    lines = [f"DeepSeek: {_ds['calls']:,} calls, {tin + _ds['out']:,} tokens "
+             f"({tin:,} in / {_ds['out']:,} out{think}, "
+             f"{_ds['hit'] / max(tin, 1):.0%} of input served from cache) "
+             f"- about ${_ds['cost']:.3f}{part}"]
+    if _ds["models"]:
+        lines.append("  served by: " + ", ".join(
+            f"{m} x{n}" for m, n in sorted(_ds["models"].items())))
+    if _ds["kinds"]:
+        lines.append("  by purpose: " + " | ".join(
+            f"{k} {v['calls']} calls ${v['cost']:.3f} ({v['out'] // max(v['calls'], 1)} out/call)"
+            for k, v in sorted(_ds["kinds"].items(), key=lambda kv: -kv[1]["cost"])))
+    return "\n".join(lines)
 
 
 def ask_deepseek(prompt, expect_json=False):
     """Call DeepSeek's OpenAI-compatible chat endpoint. Returns text or parsed
     JSON. DeepSeek is paid (cheap) with no tiny daily cap, so no QuotaExhausted
     dance — a 429 here is a brief rate blip, not a wall."""
+    global _DS_THINKING_REJECTED
     headers = {"Authorization": f"Bearer {DEEPSEEK_API_KEY}",
                "Content-Type": "application/json"}
     body = {
@@ -473,11 +515,22 @@ def ask_deepseek(prompt, expect_json=False):
     }
     if expect_json:
         body["response_format"] = {"type": "json_object"}
+    if DS_THINKING in ("disabled", "enabled") and not _DS_THINKING_REJECTED:
+        body["thinking"] = {"type": DS_THINKING}
     for attempt in range(4):
         try:
             r = requests.post(DEEPSEEK_URL, headers=headers, json=body, timeout=120)
             if r.status_code == 429:
                 time.sleep(4 * (attempt + 1))
+                continue
+            # If the API does not accept the thinking field, a wrong guess about
+            # its name must not take the whole bot down: drop it, remember that,
+            # and carry on exactly as before.
+            if (r.status_code == 400 and "thinking" in body
+                    and "thinking" in (r.text or "").lower()):
+                _DS_THINKING_REJECTED = True
+                body.pop("thinking", None)
+                print("  DeepSeek rejected the thinking field — continuing without it.")
                 continue
             # 402 = the prepaid balance is empty. Retrying cannot fix that, and
             # every later call would burn 4 more attempts while the run quietly
@@ -487,7 +540,7 @@ def ask_deepseek(prompt, expect_json=False):
                     "DeepSeek returned 402 Payment Required — the account balance is empty.")
             r.raise_for_status()
             data = r.json()
-            _ds_record(data.get("usage"))
+            _ds_record(data.get("usage"), data.get("model"), _ds_kind(prompt))
             text = data["choices"][0]["message"]["content"]
             if expect_json:
                 text = re.sub(r"^```(json)?|```$", "", text.strip(), flags=re.M)
@@ -1906,6 +1959,104 @@ WHAT THE CANDIDATE CANNOT DO (must FAIL):
   in marketing/SEO/content is NOT auto-excluded), or anything needing 5+ years."""
 
 
+# ---- Measure the API instead of guessing about it ---------------------------
+# `python bot.py` with DS_PROBE=1 runs the real screening prompt a few times
+# against the live API, each time with a different setting, prints what
+# DeepSeek itself reports (tokens, reasoning tokens, which model answered) and
+# exits. About a cent. Triggered by the "DeepSeek probe" workflow.
+_PROBE_PASS = """SEO & Content Specialist
+Northgate Digital, Antwerp (Belgium). Hybrid: 3 days on site.
+We are a 14-person digital agency and we are looking for a junior-to-medior SEO & Content Specialist to join the team. You own on-page SEO and content for a portfolio of Belgian and international clients.
+What you will do:
+- Keyword research, content briefs and on-page optimisation for client websites (mostly WordPress and Shopify)
+- Technical SEO audits with Screaming Frog, Search Console and GA4, and a monthly report for each client
+- Write and publish blog articles and landing pages, in coordination with our designer
+- Help implement structured data and track results in Semrush
+What we are looking for:
+- 1-2 years of experience in SEO or content marketing (internships count)
+- Good written English. Dutch is a plus but not required: our working language is English
+- Hands-on with WordPress; curiosity about AI search (GEO) is a bonus
+- No degree required if you can show real work
+What we offer: permanent full-time contract (38h), EUR 2,900-3,400 gross per month depending on experience, meal vouchers, 32 days of leave and a learning budget.
+Apply by e-mail to jobs@northgate-digital.example"""
+
+_PROBE_FAIL = """Customer Service Medewerker (m/v/x) - Zaventem
+Voor onze klant, een internationale logistieke speler in Zaventem, zoeken wij een Customer Service Medewerker.
+Jouw functie:
+- Je behandelt inkomende vragen van klanten per telefoon en per e-mail
+- Je volgt zendingen op en lost problemen op met onze transportpartners
+- Je voert orders in en bewaakt de leveringstermijnen
+Jouw profiel:
+- Je hebt minstens een diploma hoger secundair onderwijs, bij voorkeur een bachelor
+- Je spreekt vlot Nederlands en Frans (tweetalig NL/FR is een must) en hebt goede kennis van Engels
+- Je hebt minstens 2 jaar ervaring in een klantendienst of dispatch
+- Je bent stressbestendig en werkt graag in team
+Wij bieden: een voltijds contract van onbepaalde duur, een marktconform loon, maaltijdcheques, hospitalisatieverzekering en een dynamische werkomgeving.
+Interesse? Stuur je cv naar recruitment@logistics-partner.example"""
+
+
+def _probe_call(label, model, thinking, prompt):
+    body = {"model": model, "temperature": 0.2, "stream": False,
+            "messages": [{"role": "user", "content": prompt}],
+            "response_format": {"type": "json_object"}}
+    if thinking:
+        body["thinking"] = {"type": thinking}
+    headers = {"Authorization": f"Bearer {DEEPSEEK_API_KEY}",
+               "Content-Type": "application/json"}
+    t0 = time.time()
+    r = requests.post(DEEPSEEK_URL, headers=headers, json=body, timeout=240)
+    dt = time.time() - t0
+    try:
+        d = r.json()
+    except Exception:
+        print(f"{label:34} HTTP {r.status_code}  (not JSON) {r.text[:200]}")
+        return None
+    if r.status_code != 200:
+        print(f"{label:34} HTTP {r.status_code}  {str(d)[:240]}")
+        return None
+    u = d.get("usage") or {}
+    msg = d["choices"][0]["message"]
+    rc = msg.get("reasoning_content") or ""
+    reasoning = int((u.get("completion_tokens_details") or {}).get("reasoning_tokens") or 0)
+    out = int(u.get("completion_tokens") or 0)
+    hit = int(u.get("prompt_cache_hit_tokens") or 0)
+    miss = int(u.get("prompt_cache_miss_tokens") or 0) or int(u.get("prompt_tokens") or 0)
+    p = DS_PRICE["peak" if _ds_is_peak() else "offpeak"]
+    cost = (hit * p[0] + miss * p[1] + out * p[2]) / 1e6
+    try:
+        v = json.loads(re.sub(r"^```(json)?|```$", "", msg.get("content", "").strip(), flags=re.M))
+        verdict = f"pass={v.get('pass')} score={v.get('match_score')} | {str(v.get('reason'))[:70]}"
+    except Exception:
+        verdict = "(content was not valid JSON)"
+    print(f"{label:34} served-by={d.get('model')}  out={out}  reasoning={reasoning}  "
+          f"reasoning_content={len(rc)} chars  answer={len(msg.get('content') or '')} chars  "
+          f"in={hit + miss} (cached {hit})  {dt:.0f}s  ~${cost:.4f}")
+    print(f"{'':34} -> {verdict}")
+    return {"out": out, "reasoning": reasoning, "cost": cost}
+
+
+def run_probe():
+    cv = open(CV_FILE, encoding="utf-8").read()
+    model = DEEPSEEK_MODEL
+    alt = "deepseek-v4-flash" if model != "deepseek-v4-flash" else "deepseek-flash"
+    print(f"Probe at {datetime.now(timezone.utc):%a %H:%M} UTC, "
+          f"{'PEAK' if _ds_is_peak() else 'off-peak'} rates; model={model}\n")
+    res = {}
+    for case, text in (("PASS-case", _PROBE_PASS), ("FAIL-case", _PROBE_FAIL)):
+        prompt = eval_prompt(text, cv)
+        for mode, th in (("thinking: default", None), ("thinking: disabled", "disabled")):
+            res[(case, mode)] = _probe_call(f"{case} / {mode}", model, th, prompt)
+    fail_prompt = eval_prompt(_PROBE_FAIL, cv)
+    res[("ALT", "x")] = _probe_call(f"FAIL-case / {alt} / disabled", alt, "disabled", fail_prompt)
+    print("\nSummary")
+    for case in ("PASS-case", "FAIL-case"):
+        a, b = res.get((case, "thinking: default")), res.get((case, "thinking: disabled"))
+        if a and b and a["out"]:
+            print(f"  {case}: output tokens {a['out']} (default) vs {b['out']} (disabled) "
+                  f"= {b['out'] / a['out']:.0%} of the default; cost ${a['cost']:.4f} vs ${b['cost']:.4f}; "
+                  f"reasoning tokens reported: {a['reasoning']} vs {b['reasoning']}")
+
+
 def title_prescreen(titles, undecided=None):
     """Cheap batch filter over plain job titles (no page render). Returns the set
     of indices (into `titles`) worth a full look. Deliberately inclusive — it only
@@ -1969,7 +2120,7 @@ TITLES:
     return keep
 
 
-def evaluate_job(job_text, cv_text):
+def eval_prompt(job_text, cv_text):
     """One Gemini call: judge whether the candidate could REALISTICALLY apply
     (language + genuine eligibility), and if so summarise the fit. If not, say
     plainly why it's not for them (why_bad). Does NOT write the email/cover
@@ -2091,8 +2242,10 @@ warehouse & logistics, and "no experience needed" roles. When unsure about an
 accessible role, PASS with a low score; when a required degree is clearly stated
 with no experience route, FAIL.
 
-STEP 2 — Summarise, honestly, either way. For a PASS that is a stretch, still say
-in why_good what the candidate would be leaning on and note the gap frankly.
+STEP 2 — For a PASS, summarise honestly; for a PASS that is a stretch, still say
+in why_good what the candidate would be leaning on and note the gap frankly. For a
+FAIL, write only the decision fields: most postings fail, every extra word is
+billed, and a rejected job is never read again.
 
 Reply ONLY with JSON:
 {{
@@ -2105,9 +2258,9 @@ Reply ONLY with JSON:
   "dutch_stretch": true or false — true ONLY when the job would fit but requires Dutch above A2 (and no French); false otherwise,
   "exp_stretch": true or false — true when the main gap is a ~2-4 year experience ask (not senior, not 5+) the junior candidate could still apply to; false otherwise,
   "internship": true or false — true if this is an internship / stage / traineeship,
-  "details": "4-6 short bullets (one newline-separated string): role, main tasks, contract type, schedule, language, pay if stated (or '')",
+  "details": "if pass: 4-6 short bullets (one newline-separated string): role, main tasks, contract type, schedule, language, pay if stated (or ''). If fail: '' — do not summarise a job you are rejecting",
   "why_good": "if pass: 3-5 short bullets (one newline-separated string) on why it fits, grounded ONLY in the real CV; for a dutch_stretch job also state plainly that it needs stronger Dutch than A2; for an exp_stretch job state plainly it asks for more years than the candidate has but is still worth a shot. If fail: ''",
-  "why_bad": "if fail: 2-4 short bullets (one newline-separated string) naming exactly which required experience / licence / qualification / seniority / language the candidate is MISSING for this job. If pass: ''"
+  "why_bad": "if fail: ONE or TWO short bullets (one newline-separated string, at most 15 words each) naming the main requirement the candidate is MISSING for this job. If pass: ''"
 }}
 
 THE REAL CV:
@@ -2115,13 +2268,23 @@ THE REAL CV:
 
 JOB POSTING:
 {job_text[:8000]}"""
-    return ask_llm(prompt, expect_json=True, provider=EVAL_PROVIDER,
-                   gemini_model=GEMINI_EVAL_MODEL)
+    return prompt
+
+
+def evaluate_job(job_text, cv_text):
+    """Screen one posting against the CV. See eval_prompt for the rules."""
+    return ask_llm(eval_prompt(job_text, cv_text), expect_json=True,
+                   provider=EVAL_PROVIDER, gemini_model=GEMINI_EVAL_MODEL)
 
 
 # ---------------------------------------------------------------- main
 
 def main():
+    if os.environ.get("DS_PROBE") == "1":
+        if not DEEPSEEK_API_KEY:
+            raise SystemExit("DS_PROBE needs DEEPSEEK_API_KEY")
+        run_probe()
+        return
     if not GEMINI_KEY and not DEEPSEEK_API_KEY:
         raise SystemExit("No AI key set — add GEMINI_API_KEY or DEEPSEEK_API_KEY as a GitHub secret.")
     _why = ds_blocked() if DEEPSEEK_API_KEY else None
@@ -2576,7 +2739,7 @@ def main():
             # saved pool under the current criteria (e.g. move Dutch-required
             # marketing jobs into the stretch section). Small budget so it never
             # starves the new-job screening above.
-            revet_saved(browser, jobs, cv_text, budget=260, checkpoint=checkpoint)
+            revet_saved(browser, jobs, cv_text, budget=100, checkpoint=checkpoint)
         finally:
             browser.close()
 
@@ -2707,7 +2870,11 @@ def revet_saved(browser, jobs, cv_text, budget=40, checkpoint=None):
     fit (e.g. after loosening the rules) move back to matched. Only touches jobs
     stamped with an older CRITERIA_VERSION, so it's a one-time migration per bump."""
     stale = [j for j in (jobs["jobs"] + jobs.get("rejected", []))
-             if j.get("cv_fit_v") != CRITERIA_VERSION]
+             if j.get("cv_fit_v") != CRITERIA_VERSION
+             # 454 of the last 541 jobs waiting for a re-read were warehouse,
+             # customer-service and driver postings. Re-judging them against a
+             # better CV cannot put one in the feed and each read is paid for.
+             and title_priority(j.get("title", "")) <= REVET_MAX_PRIORITY]
     # Marketing / SEO / web titles first. The queue used to be in whatever order
     # the pools happened to be in, so after the CV changed, 1,510 jobs sat
     # waiting to be re-judged and the warehouse ones were just as likely to be

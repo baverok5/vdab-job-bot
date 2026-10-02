@@ -1,36 +1,26 @@
 name: VDAB job bot
 
 on:
-  push:
-    branches: [main]
-    paths:
-      # Only re-run when the code changes — NOT when the bot commits its
-      # own results (docs/jobs.json, seen.json), which would cause a loop.
-      - "bot.py"
-      - ".github/workflows/run_bot.yml"
+  # No push trigger. It used to start a full run on every push to bot.py, and a
+  # run costs real money: one day of pushing while testing started five of them,
+  # two inside DeepSeek's double-rate peak window. Code changes now wait for the
+  # next scheduled run, or are run by hand ("Run workflow") when that matters.
   schedule:
-    # Comprehensive runs are long (deep paging + reading each posting), so run a
-    # few times a day rather than hourly. Progress is checkpointed within each run.
+    # One run a day, in DeepSeek's off-peak hours. Peak billing is 01:00-04:00
+    # and 06:00-10:00 UTC on weekdays, at double the rate.
     #
-    # Two runs a day, both in DeepSeek's off-peak hours. Peak billing is
-    # 01:00-04:00 and 06:00-10:00 UTC on weekdays, at double the rate.
-    #
-    # The difficulty is GitHub's scheduler, which fires these 2-4 h late (a 23:00
-    # slot has fired at 01:47, a 17:00 one at 21:11) and never early. A run can
-    # also take up to ~95 min. So a slot is only safe if slot + 4h15m delay +
-    # 1h35m run still ends before the next peak starts:
-    #   10:30 -> worst case done by 16:20      (off-peak all the way)
-    #   18:00 -> worst case done by 23:50      (peak resumes at 01:00)
-    # That second run is the "jobs in the morning" run: it finishes the evening
-    # before and the results are waiting at breakfast. A true 05:00 run is not
-    # possible, since the only overnight off-peak stretch is 04:00-06:00 and a
-    # run's start time floats by hours.
+    # Two things make the timing awkward, both measured:
+    #   * GitHub fires scheduled jobs late and unpredictably: a 23:00 slot fired
+    #     at 01:47, a 17:00 slot at 21:11, an 18:00 slot at 22:28 (4h28 late);
+    #   * a full run is long: reading 700 postings took 4h40m (about 24 s each,
+    #     they are rendered in a browser), plus ~40 min of collection first.
+    # So the slot has to leave room for ~4.5 h of delay and ~6 h of work before
+    # 01:00: 13:00 + 4h30 + 6h = 23:30. A later slot would run into the peak.
     #
     # bot.py enforces this independently: DeepSeek calls stop at the start of a
-    # peak window and once a run has spent its budget, so a run that drifts is
-    # cut short instead of billed at double rate.
-    - cron: "30 10 * * *"
-    - cron: "0 18 * * *"
+    # peak window and once a run has spent its budget, so a run that does drift
+    # is cut short instead of billed at double rate.
+    - cron: "0 13 * * *"
   workflow_dispatch: {}
 
 permissions:

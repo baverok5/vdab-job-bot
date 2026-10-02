@@ -1,0 +1,33 @@
+name: DeepSeek probe
+
+# Runs the real screening prompt against the live DeepSeek API with different
+# settings and prints what DeepSeek itself reports: tokens, reasoning tokens,
+# which model answered. Costs about a cent, starts only when run by hand, makes
+# no commit, and does not queue behind the job bot.
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ds-probe
+  cancel-in-progress: false
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        # bot.py imports playwright at the top, but the probe never launches a
+        # browser, so the package alone is enough: no 9-minute browser install.
+        run: pip install requests beautifulsoup4 playwright
+      - name: Probe the API
+        env:
+          DS_PROBE: "1"
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        run: python -u bot.py
