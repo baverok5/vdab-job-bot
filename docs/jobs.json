@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-03 16:51 UTC",
+ "updated": "2026-10-03 16:52 UTC",
  "jobs": [
   {
    "id": "4471489541",
@@ -1742,7 +1742,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 13:24",
+   "closed_check": "2026-10-03 16:50",
    "closed_check_v": 2
   },
   {
@@ -1992,7 +1992,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 13:24",
+   "closed_check": "2026-10-03 16:50",
    "closed_check_v": 2
   },
   {
@@ -2890,7 +2890,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 13:24",
+   "closed_check": "2026-10-03 16:50",
    "closed_check_v": 2
   },
   {
@@ -6180,7 +6180,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 13:24",
+   "closed_check": "2026-10-03 16:50",
    "closed_check_v": 2
   },
   {
@@ -7044,28 +7044,6 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19
-  },
-  {
-   "id": "4462193903",
-   "url": "https://www.linkedin.com/jobs/view/4462193903",
-   "title": "Web Platform Specialist",
-   "company": "Unknown",
-   "location": "Antwerp, Belgium",
-   "match_score": 45,
-   "reason": "Technical web platform role matching the candidate's front-end/WordPress/JavaScript background, with no degree, French, or seniority hard wall.",
-   "apply_email": "buna@recurv.be",
-   "found_at": "2026-09-16 11:29",
-   "status": "new",
-   "details": "- Own technical evolution and day-to-day coordination of a multi-domain public website platform\n- Manage backlog, releases, CMS/front-end architecture, integrations, testing and QA\n- Work with Product Owner, analysts, developers and external agencies; lead web projects\n- Full-time, hybrid in Antwerp; permanent or contract to be confirmed\n- Must-haves: Drupal/PHP/JavaScript, ability to write code, website testing and test scripts\n- Salary/benefits to be confirmed; no language requirement stated",
-   "why_good": "- Real front-end developer experience (AngularJS/JavaScript) plus WordPress/Elementor site building and maintenance\n- Technical SEO/GEO work (JSON-LD schema, llms.txt, technical audits) shows platform and architecture awareness\n- Writes Python automation and has a published Android app, demonstrating coding ability beyond marketing\n- Comfortable coordinating client websites and working with developers/agencies\n- Based in Belgium, English-fluent, and hybrid Antwerp is workable",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "en",
-   "cv_fit_v": 19,
-   "closed_check": "2026-10-01 13:24",
-   "closed_check_v": 2
   },
   {
    "id": "74621569",
@@ -8366,7 +8344,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 13:24",
+   "closed_check": "2026-10-03 16:50",
    "closed_check_v": 2
   },
   {
@@ -9188,7 +9166,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-10-01 13:24",
+   "closed_check": "2026-10-03 16:50",
    "closed_check_v": 2
   },
   {
@@ -9210,7 +9188,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-10-01 13:24",
+   "closed_check": "2026-10-03 16:50",
    "closed_check_v": 2
   },
   {
@@ -9736,7 +9714,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 13:24",
+   "closed_check": "2026-10-03 16:50",
    "closed_check_v": 2
   },
   {
@@ -9778,7 +9756,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 13:24",
+   "closed_check": "2026-10-03 16:50",
    "closed_check_v": 2
   },
   {
