@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-03 19:02 UTC",
+ "updated": "2026-10-04 17:09 UTC",
  "jobs": [
   {
    "id": "4471489541",
@@ -2973,7 +2973,9 @@
    "exp_stretch": false,
    "internship": true,
    "lang": "en",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-04 17:09",
+   "closed_check_v": 2
   },
   {
    "id": "774357424",
@@ -5949,7 +5951,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "en",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-04 17:09",
+   "closed_check_v": 2
   },
   {
    "id": "4467716525",
@@ -10109,7 +10113,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "en",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-04 17:09",
+   "closed_check_v": 2
   },
   {
    "id": "4467963726",
@@ -10338,7 +10344,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 13:24",
+   "closed_check": "2026-10-04 17:09",
    "closed_check_v": 2
   },
   {
@@ -10360,7 +10366,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 13:24",
+   "closed_check": "2026-10-04 17:09",
    "closed_check_v": 2
   },
   {
@@ -11092,50 +11098,6 @@
    "cv_fit_v": 19
   },
   {
-   "id": "4472732559",
-   "url": "https://www.linkedin.com/jobs/view/4472732559",
-   "title": "Temporary Full-Stack Web Developer",
-   "company": "Silverfin",
-   "location": "Ghent",
-   "match_score": 38,
-   "reason": "This role aligns well with the candidate's digital marketing and web development skills, with some experience gaps.",
-   "apply_email": "",
-   "found_at": "2026-09-29 11:50",
-   "status": "new",
-   "details": "Full-stack web developer role focusing on reconstructing silverfin.com.\nResponsibilities include architecting and developing a multi-region website, collaborating with stakeholders, implementing UX/UI principles, configuring WordPress CMS, and managing redirects.\nContract type: Temporary, Full-time.\nSchedule: Hybrid (at least 3 days in Ghent office).\nLanguage: Fluent English required; Dutch and French proficiency is a bonus.\nPay: €62,050 - €83,950 a year.",
-   "why_good": "- The role is in the candidate's goal field (web development, CMS, digital experience).\n- Requires WordPress and CMS experience, which the candidate has.\n- Focuses on front-end development and website management, aligning with current experience.\n- Experience asks are manageable for a stretch application.",
-   "why_bad": "- The role asks for proven track record in full-stack development and potentially more experience than the candidate currently has (~4 months professional experience in this specific combo, though ~2-3 years in related fields).\n- Bonus mentions Dutch and French, and while the candidate has A2+ speaking and B1 writing Dutch, it is not fluent.",
-   "dutch_stretch": false,
-   "exp_stretch": true,
-   "internship": false,
-   "lang": "en",
-   "cv_fit_v": 19,
-   "closed_check": "2026-10-01 13:24",
-   "closed_check_v": 2
-  },
-  {
-   "id": "4465542758",
-   "url": "https://www.linkedin.com/jobs/view/4465542758",
-   "title": "Stage en Communication & Marketing Digital (H/F/X)",
-   "company": "Lilliputiens",
-   "location": "Saintes (Tubeke)",
-   "match_score": 38,
-   "reason": "This is an internship opportunity that aligns with the candidate's digital marketing and content creation skills, despite the language and specific software requirements being a stretch.",
-   "apply_email": "",
-   "found_at": "2026-09-15 17:26",
-   "status": "new",
-   "details": "Internship in Communication & Digital Marketing; Tasks include social media content creation, editorial calendar planning, adapting content for platforms, creating B2B communication tools and POS materials, coordinating product shoots, participating in international trade fairs, and supporting marketing actions; Contract type: Internship; Schedule: Not specified; Language: French (job posting), Dutch (preferred, A2+ speaking/B1 writing by candidate is sufficient), English (preferred); Pay: Not specified.",
-   "why_good": "- This is an internship, which overrides experience requirements.\n- The role involves content creation for social media, adapting content, and contributing to editorial calendars, which aligns with the candidate's SEO content and CMS management experience.\n- Familiarity with digital tools is required, which the candidate possesses.\n- The company is open to candidates with \"good knowledge\" of Dutch, which the candidate has (B1 writing, A2+ speaking).",
-   "why_bad": "- The job posting is in French, and the candidate has no French knowledge, but the 'why_good' notes the Dutch preference which the candidate meets.\n- While Canva or Adobe Creative Suite is a plus, the candidate's web design experience with WordPress/Elementor and Canva familiarity makes this manageable.\n- The role asks for a Bachelor or Master student, but as this is an internship and the candidate has relevant coursework, it's being treated as a stretch rather than a hard fail.",
-   "dutch_stretch": false,
-   "exp_stretch": true,
-   "internship": true,
-   "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-10-01 13:24",
-   "closed_check_v": 2
-  },
-  {
    "id": "4472717391",
    "url": "https://www.linkedin.com/jobs/view/4472717391",
    "title": "Digital Marketing Intern",
@@ -11216,7 +11178,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 13:24",
+   "closed_check": "2026-10-04 17:09",
    "closed_check_v": 2
   },
   {
@@ -12715,7 +12677,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-04 17:09",
+   "closed_check_v": 2
   },
   {
    "id": "4474596911",
@@ -12735,7 +12699,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-04 17:09",
+   "closed_check_v": 2
   },
   {
    "id": "4466321724",
