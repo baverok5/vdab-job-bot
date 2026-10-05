@@ -29,4 +29,4 @@ jobs:
           pip install requests beautifulsoup4 playwright
           python -m playwright install --with-deps chromium
       - name: Probe the sites
-        run: python -u closed_probe.py
+        run: python -u closed_probe.py --verify

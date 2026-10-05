@@ -2994,13 +2994,84 @@ def _linkedin_open(browser, job):
     return (True, None) if s is False else (None, None)
 
 
+VDAB_VACANCY_API = "https://www.vdab.be/rest/vindeenjob/v4/vacatures/"
+
+
+def _vdab_open(browser, job):
+    """VDAB's own vacancy API, the one its page calls. A posting that is gone
+    answers 404, and one taken offline says status PASSIEF / gepubliceerd false
+    (both seen on real postings). Anything else — an error, a block, a shape we
+    do not recognise — is "could not tell", never "closed"."""
+    m = re.search(r"/vacatures/(\d+)", job.get("url") or "")
+    if not m:
+        return None, None
+    try:
+        r = requests.get(VDAB_VACANCY_API + m.group(1), params={"preview": "false"},
+                         headers={**HEADERS, "Accept": "application/json"}, timeout=25)
+    except requests.RequestException:
+        return None, None
+    if r.status_code == 404:
+        return False, "Closed — VDAB no longer has this vacancy."
+    if r.status_code != 200:
+        return None, None
+    try:
+        d = r.json()
+    except ValueError:
+        return None, None
+    if not isinstance(d, dict) or "status" not in d:
+        return None, None
+    if str(d.get("status")).upper() == "PASSIEF" or d.get("gepubliceerd") is False:
+        return False, "Closed — VDAB has taken this vacancy offline."
+    return True, None
+
+
+def _eures_open(browser, job):
+    """EURES answers 404 RESOURCE_UNAVAILABLE for a posting that was withdrawn
+    (identical to a made-up id). Only that exact answer counts as closed."""
+    raw_id = unquote((job.get("url") or "").rsplit("/", 1)[-1].split("?")[0])
+    if not raw_id:
+        return None, None
+    try:
+        r = requests.get(EURES_DETAIL_API + quote(raw_id, safe=""),
+                         params={"requestLang": "en"}, timeout=25,
+                         headers={"Accept": "application/json", "User-Agent": HEADERS["User-Agent"]})
+    except requests.RequestException:
+        return None, None
+    if r.status_code == 404 and "notAvailable" in r.text:
+        return False, "Closed — EURES has withdrawn this vacancy."
+    if r.status_code == 200:
+        return True, None
+    return None, None
+
+
+def _stepstone_open(browser, job):
+    """An expired StepStone listing answers HTTP 410 and says "This listing went
+    offline ... is expired". An open one is 200 with its apply button."""
+    page = browser.new_page(user_agent=HEADERS["User-Agent"], locale="nl-BE")
+    try:
+        resp = page.goto(job.get("url"), wait_until="domcontentloaded", timeout=30000)
+        page.wait_for_timeout(2500)
+        text = page.inner_text("body")
+        code = resp.status if resp else None
+    except Exception:
+        return None, None
+    finally:
+        page.close()
+    if code == 410 or re.search(r"listing (went|is) offline|listing .{0,40}expired", text, re.I):
+        return False, "Closed — StepStone says this listing is expired."
+    if code == 200 and len(text) > 1500:
+        return True, None
+    return None, None
+
+
 # source -> checker(browser, job) -> (state, why)
 #   state True  : positively still open
 #   state False : positively closed; `why` says how we know
 #   state None  : could not tell (blocked, timed out, page did not render, ...)
 # A checker may only return False on definite evidence, because False moves a
 # live vacancy out of the feed. "Could not tell" keeps the job where it is.
-_OPEN_CHECKERS = {"LinkedIn": _linkedin_open}
+_OPEN_CHECKERS = {"LinkedIn": _linkedin_open, "VDAB": _vdab_open,
+                  "EURES": _eures_open, "StepStone": _stepstone_open}
 
 
 def check_still_open(browser, job):

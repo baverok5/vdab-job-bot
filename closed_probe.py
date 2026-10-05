@@ -213,5 +213,46 @@ def main():
     probe_eures("eures-control", "ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ")
 
 
+def verify():
+    """Run the bot's real checkers on a sample and show the verdicts, so the rules
+    can be judged against what the sites actually say for open and closed jobs."""
+    from collections import Counter
+    jobs = json.load(open("docs/jobs.json", encoding="utf-8")).get("jobs", [])
+    by = {}
+    for j in jobs:
+        by.setdefault(bot._source_of(j), []).append(j)
+    with sync_playwright() as pw:
+        browser = pw.chromium.launch(args=["--no-sandbox"])
+        try:
+            for src in ("VDAB", "EURES", "StepStone"):
+                rows = sorted(by.get(src, []), key=lambda x: x.get("found_at") or "")
+                sample = rows[:30] + rows[-10:] if src == "VDAB" else rows
+                if src == "EURES":
+                    sample = rows[:30] + rows[-10:]
+                print(f"\n=========== VERIFY {src}: {len(sample)} of {len(rows)}")
+                tally, fields = Counter(), Counter()
+                for j in sample:
+                    st, why = bot.check_still_open(browser, j)
+                    tally[st] += 1
+                    if src == "VDAB":
+                        try:
+                            m = __import__("re").search(r"/vacatures/(\d+)", j["url"])
+                            d = requests.get(bot.VDAB_VACANCY_API + m.group(1), timeout=25,
+                                             headers={**bot.HEADERS, "Accept": "application/json"}).json()
+                            fields[(d.get("status"), d.get("gepubliceerd"))] += 1
+                        except Exception as e:
+                            fields[("err", type(e).__name__)] += 1
+                    if st is False:
+                        print(f"  CLOSED found={str(j.get('found_at'))[:10]} {j.get('title','')[:50]!r} -> {why}")
+                    elif st is None:
+                        print(f"  UNKNOWN {j.get('url')}")
+                print(f"  verdicts (True=open, False=closed, None=unknown): {dict(tally)}")
+                if fields:
+                    print(f"  VDAB (status, gepubliceerd): {dict(fields)}")
+        finally:
+            browser.close()
+
+
 if __name__ == "__main__":
-    main()
+    import sys
+    verify() if "--verify" in sys.argv else main()
