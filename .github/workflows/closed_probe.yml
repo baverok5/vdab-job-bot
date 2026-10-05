@@ -1,0 +1,32 @@
+name: Closed-check probe
+
+# Opens a sample of real jobs on VDAB, StepStone, EURES and LinkedIn and prints
+# what each site shows for an open posting, a closed one, and a made-up id, so
+# the rules for "no longer accepting applications" can be written from evidence.
+# Starts only when run by hand. Read-only: no commit, no AI call, no cost, and it
+# does not queue behind the job bot.
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: closed-probe
+  cancel-in-progress: false
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          pip install requests beautifulsoup4 playwright
+          python -m playwright install --with-deps chromium
+      - name: Probe the sites
+        run: python -u closed_probe.py
