@@ -226,6 +226,7 @@
     <button class="tab" data-tab="rejected">Not a fit <span class="n" id="c-rejected"></span></button>
     <button class="tab" data-tab="applied">Applied <span class="n" id="c-applied"></span></button>
     <button class="tab" data-tab="skipped">Skipped <span class="n" id="c-skipped"></span></button>
+    <button class="tab" data-tab="closed">Closed <span class="n" id="c-closed"></span></button>
   </div>
 
   <div class="list" id="list"><div class="empty">Loading jobs…</div></div>
@@ -234,7 +235,7 @@
 <div class="toast" id="toast"></div>
 
 <script>
-const APP_VERSION = "v81";                 // MUST match CACHE in sw.js — it is how you tell whether the phone got the deploy
+const APP_VERSION = "v82";                 // MUST match CACHE in sw.js — it is how you tell whether the phone got the deploy
 const LS = "jobstatus";                    // { jobId: "applied" | "skipped" | "closed" }
 const LS_AT = "jobstatus_at";              // { jobId: epoch ms the status was set }
 const getStatus = () => JSON.parse(localStorage.getItem(LS) || "{}");
@@ -928,7 +929,7 @@ function card(j, state) {
     // A posting you found closed on the board. The bot cannot always tell from
     // outside, so this is the reliable way to kill one: gone from Ready for
     // good, and it never comes back even if the bot re-matches the id.
-    if (act === "closed") { setStatus(j.id, "closed"); toast("Marked closed — hidden for good"); return; }
+    if (act === "closed") { setStatus(j.id, "closed"); toast("Marked closed — moved to the Closed tab"); return; }
     if (act === "unskip" || act === "unapply") { setStatus(j.id, null); return; }
   });
   return el;
@@ -1001,6 +1002,35 @@ function listingCard(j) {
   el.addEventListener("click", (e) => {
     const act = (e.target.closest("[data-act]") || {}).dataset?.act;
     if (act === "generate") prepareJob(j, el.querySelector(".prep"));
+  });
+  return el;
+}
+
+// A closed posting: the bot re-checks every Ready job each run and moves the ones
+// that stopped accepting applications here (or you marked it with 🚫).
+function closedCard(j, mine) {
+  const el = document.createElement("div");
+  el.className = "card";
+  const when = (j.closed_at || "").slice(0, 10);
+  el.innerHTML = `
+    <div class="top">
+      <div style="flex:1">
+        <div class="title">${esc(j.title)}</div>
+        <div class="co">${esc(j.company)} · ${esc(j.location)}</div>
+        <div class="tags">
+          <span class="tag">🚫 ${mine ? "Marked closed by you" : "Closed" + (when ? " " + esc(when) : "")}</span>
+          <span class="tag">Found ${esc((j.found_at || "").slice(0, 10))}</span>
+        </div>
+        ${!mine && j.closed_why ? `<div class="t" style="margin-top:6px">${esc(j.closed_why)}</div>` : ""}
+      </div>
+    </div>
+    <div class="actions" style="padding:0 14px 12px">
+      <a class="btn" href="${esc(j.url)}" target="_blank" rel="noopener">View on ${srcOf(j)} anyway</a>
+      ${mine ? `<button class="btn" data-act="reopen">↩︎ Back to Ready</button>` : ""}
+    </div>`;
+  el.addEventListener("click", (e) => {
+    const act = (e.target.closest("[data-act]") || {}).dataset?.act;
+    if (act === "reopen") { setStatus(j.id, null); toast("Back in Ready"); }
   });
   return el;
 }
@@ -1355,7 +1385,7 @@ function searchHits(q) {
   if (!terms.length) return [];
   const seen = new Set(), out = [];
   const pools = [["Ready", DATA.jobs || []], ["Not a fit", DATA.rejected || []],
-                 ["All jobs", DATA.listing || []]];
+                 ["Closed", DATA.closed || []], ["All jobs", DATA.listing || []]];
   for (const [where, pool] of pools) {
     for (const j of pool) {
       if (seen.has(j.id)) continue;
@@ -1377,14 +1407,14 @@ function render() {
     list.innerHTML = "";
     const hits = searchHits(QUERY);
     const tabName = ({ new: "Ready", all: "All jobs", rejected: "Not a fit",
-                       applied: "Applied", skipped: "Skipped" })[TAB] || "Ready";
+                       applied: "Applied", skipped: "Skipped", closed: "Closed" })[TAB] || "Ready";
     if (!hits.length) {
       list.innerHTML = `<div class="empty"><div class="big">🔍</div>Nothing matches “${esc(QUERY)}”.</div>`;
       return;
     }
     list.insertAdjacentHTML("beforeend",
       `<div class="searchhint">${hits.length} result${hits.length > 1 ? "s" : ""} for
-       “${esc(QUERY)}” across Ready, All jobs and Not a fit —
+       “${esc(QUERY)}” across Ready, Closed, All jobs and Not a fit —
        tap ✕ to go back to ${esc(tabName)}.</div>`);
     const where = new Map(hits.map((h) => [h.job.id, h.where]));
     appendPaged(list, hits.map((h) => h.job), (j) => {
@@ -1399,10 +1429,13 @@ function render() {
     return;
   }
   const buckets = { new: [], applied: [], skipped: [] };
+  const closedMine = [];                       // you tapped 🚫 on these
+  const botClosed = DATA.closed || [];         // the bot found these closed
+  const botClosedIds = new Set(botClosed.map((j) => String(j.id)));
   for (const j of DATA.jobs) {
     if (HIDE_IDS.has(String(j.id))) continue;
     const s = st[j.id];
-    if (s === "closed") continue;   // you marked it dead — never show it again
+    if (s === "closed") { closedMine.push(j); continue; }
     // Too old to still be open: keep it out of Ready, but leave it visible if
     // you already acted on it, so your Applied history stays intact.
     if (!s && (isStale(j) || isUnreachable(j) || isSelfPromo(j))) continue;
@@ -1410,6 +1443,17 @@ function render() {
     else if (s === "skipped") buckets.skipped.push(j);
     else buckets.new.push(j);
   }
+  // A job you applied to / skipped that the bot later found closed has left
+  // DATA.jobs; keep it in your Applied / Skipped history, not only in Closed.
+  const closedShown = [];
+  for (const j of botClosed) {
+    if (HIDE_IDS.has(String(j.id))) continue;
+    const s = st[j.id];
+    if (s === "applied") buckets.applied.push(j);
+    else if (s === "skipped") buckets.skipped.push(j);
+    else if (s !== "closed") closedShown.push(j);
+  }
+  closedShown.sort((a, b) => (b.closed_at || "").localeCompare(a.closed_at || ""));
   const listing = DATA.listing || [];
   const rejected = DATA.rejected || [];
 
@@ -1418,6 +1462,7 @@ function render() {
   document.getElementById("c-rejected").textContent = rejected.length || "";
   document.getElementById("c-applied").textContent = buckets.applied.length || "";
   document.getElementById("c-skipped").textContent = buckets.skipped.length || "";
+  document.getElementById("c-closed").textContent = (closedShown.length + closedMine.length) || "";
   // Show the app version too: a device silently running an old cached shell has
   // caused real bugs (a stale sync payload), and this makes that visible at a
   // glance instead of guessable.
@@ -1500,6 +1545,18 @@ function render() {
     list.insertAdjacentHTML("beforeend",
       `<div class="hint" style="margin:2px 0 12px">${rejected.length} jobs filtered out because your CV is missing what they require. Tap one to see exactly what was missing.</div>`);
     appendPaged(list, rejected, rejectedCard, 20);
+    return;
+  }
+
+  if (TAB === "closed") {
+    if (!closedShown.length && !closedMine.length) {
+      list.innerHTML = '<div class="empty"><div class="big">🚫</div>Nothing closed yet.<br>Every run re-checks all Ready jobs; the ones that stop accepting applications move here by themselves.</div>';
+      return;
+    }
+    list.insertAdjacentHTML("beforeend",
+      `<div class="hint" style="margin:2px 0 12px">${closedShown.length} found closed by the bot, ${closedMine.length} marked closed by you. Checked again on every run.</div>`);
+    const items = [...closedShown.map((j) => [j, false]), ...closedMine.map((j) => [j, true])];
+    appendPaged(list, items, ([j, mine]) => closedCard(j, mine), 25);
     return;
   }
 

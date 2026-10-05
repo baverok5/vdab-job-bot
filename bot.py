@@ -262,6 +262,16 @@ TITLE_SCREEN_VERSION = 3   # v3: web* compounds count as the target field, so th
 # verdict that method could not actually reach. Version 1 read LinkedIn over
 # plain HTTP and called genuinely closed jobs open; version 2 renders the page.
 CLOSED_CHECK_VERSION = 2
+# Closed jobs are kept (so the app can show them) up to this many, newest first.
+# They live in jobs.json next to Ready, not in listing.json: removing a job from
+# Ready and filing it under Closed then happens in ONE file. The mid-run
+# checkpoint commits jobs.json but not listing.json, so a run that died partway
+# would otherwise have taken jobs out of Ready without listing them anywhere.
+CLOSED_CAP = int(os.environ.get("CLOSED_CAP", "500"))
+# Every Ready job is re-checked on every run, oldest-checked first. This caps how
+# long that may take, so a slow site cannot stretch the run past the 01:00 UTC
+# DeepSeek peak; whatever is left over is simply first in line next run.
+CLOSED_SWEEP_MINUTES = float(os.environ.get("CLOSED_SWEEP_MINUTES", "75"))
 # Sentinel returned by the detail fetchers when a posting exists but is closed
 # (LinkedIn "No longer accepting applications"). Distinct from None (= unreadable,
 # retry later) so callers actively drop it instead of leaving it in Ready.
@@ -2535,9 +2545,10 @@ def main():
             # end, on whatever quota screening leaves.
             backfill_letters(browser, jobs, cv_text, budget=6, checkpoint=checkpoint)
 
-            # Then drop any matched LinkedIn posting that has closed since we
-            # saved it, so the Ready feed only ever offers jobs you can apply to.
-            sweep_closed(browser, jobs, budget=40, checkpoint=checkpoint)
+            # Then re-check every job in Ready and move the ones that have closed
+            # since we saved them into Closed, so Ready only ever offers jobs you
+            # can apply to.
+            sweep_closed(browser, jobs, checkpoint=checkpoint)
 
             # …and any post that was never a vacancy: matches saved before the
             # self-promotion rule existed, re-read and dropped only if confirmed.
@@ -2814,6 +2825,8 @@ def _apply_verdict(jobs, job_id, url, verdict, apply_email, found_at=None,
     }
     jobs["jobs"] = [j for j in jobs["jobs"] if j.get("id") != job_id]
     jobs["rejected"] = [j for j in jobs.get("rejected", []) if j.get("id") != job_id]
+    if jobs.get("closed"):          # re-judged, so it is no longer "closed" as filed
+        jobs["closed"] = [c for c in jobs["closed"] if c.get("id") != job_id]
     # The AI judges skill fit and nothing else, so it happily passes a job in
     # Florida. These two rules are not negotiable and belong HERE, at the single
     # door into the matched pool — as end-of-run cleanups they kept losing:
@@ -2845,16 +2858,44 @@ def _apply_verdict(jobs, job_id, url, verdict, apply_email, found_at=None,
     return False
 
 
-def _drop_closed(jobs, job_id):
-    """Drop a posting that has closed, and leave the reason behind.
+_CLOSED_KEEP = ("id", "url", "src", "title", "company", "location", "found_at", "match_score",
+                "reason", "lang", "internship", "apply_email", "dutch_stretch", "exp_stretch")
 
-    _drop_job alone removes the card but keeps whatever verdict it already had,
-    so a job that was in Ready and then shut still answered "In Ready" when you
-    searched for it — the one place the app should be able to tell you plainly
-    that it is gone."""
-    record_verdict(jobs, job_id, VERDICT_CLOSED, 0,
-                   "Closed — the posting no longer accepts applications.")
-    return _drop_job(jobs, job_id)
+
+def _closed_record(entry, why):
+    """What the Closed tab needs to show a job, without the long summaries."""
+    rec = {k: entry[k] for k in _CLOSED_KEEP if k in entry}
+    rec["closed_at"] = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M")
+    rec["closed_why"] = why
+    return rec
+
+
+def _move_to_closed(jobs, job_id, why):
+    """Take a posting that stopped accepting applications out of Ready and file
+    it under Closed, with the reason and the date.
+
+    It used to be deleted. That meant the app could not show what had closed, and
+    a job you had already marked Applied simply vanished from your Applied list,
+    because the app builds that list from the same pool. The app now reads
+    jobs["closed"] too. Returns True if the job was in Ready."""
+    entry = next((j for j in jobs.get("jobs", []) if j.get("id") == job_id), None)
+    jobs["jobs"] = [j for j in jobs.get("jobs", []) if j.get("id") != job_id]
+    jobs["rejected"] = [j for j in jobs.get("rejected", []) if j.get("id") != job_id]
+    if entry is not None:
+        closed = [c for c in jobs.get("closed", []) if c.get("id") != job_id]
+        closed.insert(0, _closed_record(entry, why))
+        jobs["closed"] = closed[:CLOSED_CAP]
+    # The verdict index is how the search box can say "closed" for a job that has
+    # long since left every list, so it is written for rejected jobs too.
+    record_verdict(jobs, job_id, VERDICT_CLOSED, 0, why)
+    return entry is not None
+
+
+def _drop_closed(jobs, job_id, why="Closed — the posting no longer accepts applications."):
+    """A posting has closed: if it was in Ready it moves to Closed, otherwise it
+    is just dropped. Kept under its old name because the re-vet and letter paths
+    call it when they happen to find a closed LinkedIn posting."""
+    return _move_to_closed(jobs, job_id, why)
 
 
 def _drop_job(jobs, job_id):
@@ -2933,45 +2974,123 @@ def revet_saved(browser, jobs, cv_text, budget=40, checkpoint=None):
     return moved
 
 
-def sweep_closed(browser, jobs, budget=40, checkpoint=None):
-    """Re-check matched LinkedIn jobs and drop the ones that stopped accepting
-    applications.
+def _source_of(job):
+    u = (job.get("url") or "")
+    if "linkedin.com" in u:
+        return "LinkedIn"
+    if "vdab.be" in u:
+        return "VDAB"
+    if EURES_DETAIL_PAGE in u or "europa.eu" in u:
+        return "EURES"
+    if "stepstone" in u:
+        return "StepStone"
+    return "other"
 
-    This needs its own pass. The other two paths that re-read a posting go
-    dormant: revet_saved only touches jobs stamped with an older
-    CRITERIA_VERSION, and backfill_letters only touches jobs still missing a
-    letter — so once the pool is settled, nothing would ever notice a posting
-    closing and the feed would slowly fill with dead jobs again.
 
-    Round-robins by `closed_check` (never-checked first, then oldest), so a
-    small per-run budget still covers the whole feed every day. Jobs last seen by
-    an older CLOSED_CHECK_VERSION queue with the never-checked ones: their verdict
-    came from a method that could not see the banner at all, so it carries no
-    information and must not keep them at the back of the line. VDAB is skipped:
-    it takes closed vacancies off its own pages, so they stop resolving anyway."""
-    li = [j for j in jobs["jobs"] if "linkedin.com" in (j.get("url") or "")]
-    if not li:
+def _linkedin_open(browser, job):
+    s = linkedin_is_closed(job.get("id"), browser=browser)
+    if s is True:
+        return False, "Closed — LinkedIn says it is no longer accepting applications."
+    return (True, None) if s is False else (None, None)
+
+
+# source -> checker(browser, job) -> (state, why)
+#   state True  : positively still open
+#   state False : positively closed; `why` says how we know
+#   state None  : could not tell (blocked, timed out, page did not render, ...)
+# A checker may only return False on definite evidence, because False moves a
+# live vacancy out of the feed. "Could not tell" keeps the job where it is.
+_OPEN_CHECKERS = {"LinkedIn": _linkedin_open}
+
+
+def check_still_open(browser, job):
+    fn = _OPEN_CHECKERS.get(_source_of(job))
+    if fn is None:
+        return None, None
+    try:
+        return fn(browser, job)
+    except Exception as e:
+        print(f"  closed-check error for {job.get('id')}: {type(e).__name__}: {str(e)[:80]}")
+        return None, None
+
+
+def sweep_closed(browser, jobs, max_minutes=None, checkpoint=None):
+    """Re-check EVERY job in Ready for "no longer accepting applications" and move
+    the ones that closed into the Closed pool.
+
+    Until now this looked at LinkedIn jobs only, 40 a run — 158 of the 851 Ready
+    jobs. The other 693 (VDAB, EURES, StepStone) were never looked at again and
+    left Ready only by the 45-day age rule, so a vacancy filled on day three kept
+    being offered for six more weeks.
+
+    Order is never-checked first, then oldest check first, so a run that ends on
+    the time cap still advances everyone and the leftovers lead next time.
+    Results are applied in batches. If almost everything in a batch comes back
+    "closed", the likelier explanation is that a site is serving us a block page,
+    so that batch is discarded and the sweep stops rather than emptying Ready."""
+    max_minutes = CLOSED_SWEEP_MINUTES if max_minutes is None else max_minutes
+    todo = list(jobs.get("jobs", []))
+    if not todo:
         return 0
-    li.sort(key=lambda j: (j.get("closed_check") or "")
-            if j.get("closed_check_v") == CLOSED_CHECK_VERSION else "")
-    todo = li[:budget]
-    print(f"\nChecking {len(todo)} of {len(li)} LinkedIn match(es) for closed postings...")
+    todo.sort(key=lambda j: (j.get("closed_check") or "")
+              if j.get("closed_check_v") == CLOSED_CHECK_VERSION else "")
+    print(f"\nChecking {len(todo)} Ready job(s) for closed postings "
+          f"(up to {max_minutes:.0f} min)...")
+    t0 = time.time()
+    deadline = t0 + max_minutes * 60
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M")
-    dropped = checked = 0
+    per = {}                                   # source -> [checked, closed, unknown]
+    moved = checked = 0
+    batch = []                                 # (job, state, why)
+
+    def apply_batch():
+        nonlocal moved
+        closed_n = sum(1 for _, st, _ in batch if st is False)
+        if len(batch) >= 20 and closed_n / len(batch) >= 0.9:
+            print(f"  ⚠️  {closed_n} of the last {len(batch)} came back closed — that "
+                  f"looks like a site blocking us, not {closed_n} vacancies closing at "
+                  f"once. Changing nothing and stopping the sweep.")
+            batch.clear()
+            return False
+        for j, st, why in batch:
+            j["closed_check"] = now          # don't retry the same job next run
+            j["closed_check_v"] = CLOSED_CHECK_VERSION
+            if st is False:
+                _move_to_closed(jobs, j.get("id"), why)
+                moved += 1
+                print(f"  closed: [{_source_of(j)}] {j.get('title', '')[:56]} — {why[:70]}")
+        batch.clear()
+        return True
+
+    healthy = True
     for j in todo:
-        state = linkedin_is_closed(j.get("id"), browser=browser)
-        j["closed_check"] = now          # don't retry the same job next run
-        j["closed_check_v"] = CLOSED_CHECK_VERSION
+        if time.time() > deadline:
+            print(f"  time cap reached after {checked} job(s); the rest go first next run.")
+            break
+        st, why = check_still_open(browser, j)
+        src = _source_of(j)
+        row = per.setdefault(src, [0, 0, 0])
+        row[0] += 1
+        row[1] += st is False
+        row[2] += st is None
+        batch.append((j, st, why or "Closed — the posting no longer accepts applications."))
         checked += 1
-        if state is True:
-            _drop_closed(jobs, j.get("id"))
-            print(f"  dropped (closed): {j.get('title', '')[:60]}")
-            dropped += 1
-        if checkpoint and checked % 10 == 0:
-            checkpoint()
-        time.sleep(1)                    # be gentle — LinkedIn rate-limits
-    print(f"Closed sweep done: {dropped} dropped of {checked} checked.")
-    return dropped
+        if len(batch) >= 50:
+            if not apply_batch():
+                healthy = False
+                break
+            if checkpoint and checked % 100 == 0:
+                checkpoint()
+        time.sleep(1 if src == "LinkedIn" else 0.4)   # LinkedIn rate-limits
+    if healthy:
+        apply_batch()
+    for src, (n, c, u) in sorted(per.items()):
+        warn = ("  ⚠️  could not tell for most of them — this check may be broken"
+                if n >= 20 and u / n >= 0.8 else "")
+        print(f"  {src:10} checked {n:4}  closed {c:3}  could not tell {u:3}{warn}")
+    print(f"Closed sweep done: {moved} moved to Closed, {checked} of {len(todo)} checked "
+          f"in {(time.time() - t0) / 60:.1f} min.")
+    return moved
 
 
 def sweep_self_promo(browser, jobs, budget=15):
