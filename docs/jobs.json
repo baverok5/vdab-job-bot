@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-04 19:07 UTC",
+ "updated": "2026-10-06 18:43 UTC",
  "jobs": [
   {
    "id": "4471489541",
@@ -41,7 +41,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "4469833896",
@@ -105,7 +107,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "855429554",
@@ -125,7 +129,9 @@
    "exp_stretch": false,
    "internship": true,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "4468710433",
@@ -167,7 +173,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "4468821492",
@@ -231,7 +239,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "74630854",
@@ -251,7 +261,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "4473243061",
@@ -293,7 +305,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "4472747121",
@@ -379,7 +393,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "74740597",
@@ -399,7 +415,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "730930572",
@@ -419,7 +437,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "74666961",
@@ -439,7 +459,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "4468384750",
@@ -525,7 +547,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "993630383",
@@ -545,7 +569,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "4465528671",
@@ -587,7 +613,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "738917442",
@@ -607,7 +635,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "243449977",
@@ -627,7 +657,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "747085670",
@@ -647,7 +679,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "4472762719",
@@ -711,7 +745,9 @@
    "exp_stretch": false,
    "internship": true,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "688426610",
@@ -731,7 +767,9 @@
    "exp_stretch": false,
    "internship": true,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "301838116",
@@ -751,7 +789,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "491205901",
@@ -771,7 +811,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "4470150842",
@@ -879,7 +921,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "654610989",
@@ -899,7 +943,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "4469894628",
@@ -963,7 +1009,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "4469855587",
@@ -1027,7 +1075,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "4467883143",
@@ -1074,66 +1124,6 @@
    "closed_check_v": 2
   },
   {
-   "id": "831467131",
-   "url": "https://europa.eu/eures/portal/jv-se/jv-details/ZTQwYWNhOTctMjIxZS00NmQzLWFiMDktOTc2OWUyOWJlMTMxIDM",
-   "title": "Marketing Assistant",
-   "company": "Unknown",
-   "location": "Unknown",
-   "match_score": 70,
-   "reason": "Role fits candidate's digital marketing/content/CMS experience; Dutch requirement is conversational (B1) and no French required.",
-   "apply_email": "",
-   "found_at": "2026-09-09 20:21",
-   "status": "new",
-   "details": "- Manage mailbox and follow up\n- Enter and adjust website content via CMS\n- Prepare and publish social media posts\n- Support marketing campaigns and actions\n- Ad hoc marketing support\n- Experience with CMS and basic social media tools (Meta Business Suite, Canva)\n- Fluent and correct Dutch writing\n- Full-time or part-time? Not specified",
-   "why_good": "- Hands-on CMS and website content management matches WordPress/Elementor experience\n- Social media posting and Canva use align with candidate's skills\n- Marketing campaign support fits digital marketing background\n- Dutch B1 is sufficient for conversational and written tasks; no French required\n- Early-career role, no degree or extensive experience required",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18
-  },
-  {
-   "id": "175659264",
-   "url": "https://europa.eu/eures/portal/jv-se/jv-details/OWRmNzg3YTMtOGEwNS00ZTFiLWI1YzgtYjUyMjJhYjc1ODc2IDM",
-   "title": "Marketing Assistant - Deeltijds",
-   "company": "Manpower Office People (for client)",
-   "location": "Unknown",
-   "match_score": 70,
-   "reason": "Role fits candidate's digital marketing and CMS experience; Dutch requirement is conversational (B1) and no French required.",
-   "apply_email": "",
-   "found_at": "2026-09-09 15:51",
-   "status": "new",
-   "details": "Part-time temporary role\nSupport marketing team with mailbox management, website content via CMS, social media posts, campaign support\nRequires CMS experience and basic social media tools (Meta Business Suite, Canva)\nDutch: 'vlot en correct Nederlands' (fluent written Dutch) - candidate has B1, but this is a stretch not a fail\nNo French required",
-   "why_good": "Directly aligns with candidate's digital marketing and content skills\nExperience with WordPress CMS and Canva matches requirements\nPart-time role suitable for early-career candidate\nNo French requirement, Dutch at B1 may be acceptable for this level",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18
-  },
-  {
-   "id": "165454364",
-   "url": "https://europa.eu/eures/portal/jv-se/jv-details/MWI4ZDg5ZjQtNzMwOC00YjQ3LWIzMjQtMjZmOTA4YzYxNjNjIDM",
-   "title": "Customer Success & Marketing Medewerker",
-   "company": "DVP Health and Beauty",
-   "location": "Unknown",
-   "match_score": 70,
-   "reason": "Role fits candidate's marketing/content/social media skills and explicitly welcomes school leavers with no years of experience.",
-   "apply_email": "",
-   "found_at": "2026-09-09 13:00",
-   "status": "new",
-   "details": "Broad commercial role combining customer support, sales support, content creation, and growth marketing.\nTasks include helping customers via phone/email, proactive follow-up, creating content for social media (Reels, TikTok), email marketing, and building customer journeys.\nPart-time: ±19 hours/week.\nNo years of experience required; school leavers welcome.\nLanguage: Dutch required (implied), French is a plus but not required.\nPay not specified.",
-   "why_good": "Directly aligns with candidate's digital marketing, content, and social media skills.\nExplicitly welcomes school leavers and does not require years of experience.\nMentions Canva, Meta, email marketing as nice-to-have, which candidate has experience with.\nDutch requirement is conversational (B1) level, not fluent, so candidate's B1 is acceptable.\nOpportunity to grow in a small team with varied tasks, matching candidate's broad skill set.",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18
-  },
-  {
    "id": "384038783",
    "url": "https://europa.eu/eures/portal/jv-se/jv-details/Nzg1Y2VmNzItNmRlYy00N2E0LWFlOWItNjI3NTc0NDFmNmMzIDM",
    "title": "Marketing & Management Assistant",
@@ -1151,7 +1141,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "4468065564",
@@ -1215,7 +1207,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "4473283546",
@@ -1279,7 +1273,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "337334618",
@@ -1299,7 +1295,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "431748713",
@@ -1319,7 +1317,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "4466781358",
@@ -1361,7 +1361,9 @@
    "exp_stretch": false,
    "internship": true,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "4460263105",
@@ -1403,7 +1405,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "74702145",
@@ -1423,7 +1427,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "4472704625",
@@ -1465,27 +1471,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
-  },
-  {
-   "id": "858067676",
-   "url": "https://europa.eu/eures/portal/jv-se/jv-details/OThlMmM0YzQtODZhNS00YzYzLTgyNDUtMDU2ODE1ZGE5MDFhIDM",
-   "title": "Stagiair(e) Social Media Manager & Content Creator",
-   "company": "Creatix Visions",
-   "location": "Vilvoorde",
-   "match_score": 65,
-   "reason": "This is a stage/internship role focused on social media and content creation, aligning with the candidate's digital marketing and content skills.",
-   "apply_email": "",
-   "found_at": "2026-09-27 11:04",
-   "status": "new",
-   "details": "Stage/werkplekleren via VDAB\nFilming and editing reels, TikToks and short videos\nCreating behind-the-scenes content\nWriting captions and scheduling posts\nAnalyzing social media statistics\nBesprekenbaar startdatum, werkregime",
-   "why_good": "- Internship role, so experience and degree requirements are waived.\n- Focus on social media management and content creation aligns with candidate's digital marketing background.\n- Tasks include creating video content (reels, TikToks) and writing captions, which leverages content creation skills.\n- Candidate has experience with WordPress/Elementor and Canva, which are related creative tools.",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": true,
-   "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "4469686683",
@@ -1576,26 +1564,6 @@
    "closed_check_v": 2
   },
   {
-   "id": "654938502",
-   "url": "https://www.stepstone.be/jobs--CRM-Marketing-Automation-Marketeer-Antwerpen-Dixon-Sales-Marketing--2245472-inline.html",
-   "title": "CRM & Marketing Automation Marketeer",
-   "company": "Dixon Sales & Marketing",
-   "location": "Antwerpen",
-   "match_score": 65,
-   "reason": "The role aligns well with the candidate's digital marketing and CRM automation skills, with a manageable experience requirement.",
-   "apply_email": "",
-   "found_at": "2026-09-24 10:26",
-   "status": "new",
-   "details": "Role: CRM & Marketing Automation Marketeer\nMain Tasks: Develop, build, and optimize personalized customer journeys and campaigns across various channels (email, app, paid media); manage automated campaigns; analyze customer data for target group selection and flow optimization; monitor and improve commercial KPIs; advise marketing and product teams; explore new techniques including AI applications.\nContract Type: Unspecified duration\nSchedule: Full Time\nLanguage: Dutch (implied by job posting, but candidate has B1 writing/A2+ speaking and company is Belgian retail)\nPay: Not stated",
-   "why_good": "Matches goal field of digital marketing, content, and web.\nDirect experience in on-page SEO, keyword research, and content management aligns with data-driven marketing approaches.\nSkills in Semrush, Ahrefs, Google Analytics, and Search Console are transferable to CRM analytics.\nPython automation skills could be leveraged for process improvements.\nCandidate's profile explicitly mentions using AI tools for marketing tasks.",
-   "why_bad": "The posting asks for \"Sterke eerste ervaring als CRM-Marketeer of Marketing Automation Specialist\" and \"Aantoonbare ervaring met het zelfstandig bedenken en ontwikkelen van customer journeys,\" which is a stretch for the candidate's current ~4 months of dedicated junior digital marketing experience, though their prior web/SEO roles provide relevant transferable skills.\nWhile the candidate has B1 writing/A2+ speaking Dutch, the role is in Dutch and implicitly expects strong communication in this language.",
-   "dutch_stretch": false,
-   "exp_stretch": true,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19
-  },
-  {
    "id": "852871761",
    "url": "https://www.stepstone.be/jobs--Content-Social-Marketeer-BERLAAR-Lirrco-Bvba--2245598-inline.html",
    "title": "Content & Social Marketeer",
@@ -1613,7 +1581,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "4469375118",
@@ -1721,7 +1691,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "4469185886",
@@ -1763,7 +1735,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "4467973589",
@@ -1805,7 +1779,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "4464122493",
@@ -1869,7 +1845,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "4472840939",
@@ -1911,7 +1889,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "74636806",
@@ -1931,27 +1911,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
-  },
-  {
-   "id": "954702024",
-   "url": "https://europa.eu/eures/portal/jv-se/jv-details/M2U0NDJiYzktMGYxNS00NjFjLWE5OGItYjZiYTJhYTIyOWZhIDM",
-   "title": "Communication Officer",
-   "company": "Unknown (client in technology & telecom sector)",
-   "location": "Brussels",
-   "match_score": 62,
-   "reason": "Accessible communication/marketing role with only ~2 years' experience asked and French listed as a plus, not a requirement.",
-   "apply_email": "",
-   "found_at": "2026-09-17 16:11",
-   "status": "new",
-   "details": "- Communication Officer for a tech/telecom client in Brussels\n- Build internal/external communication campaigns, manage social media & newsletters, keep website content up to date, create engaging content (photo, video), support branding, report on campaign effectiveness\n- Relevant education in communication/marketing or similar; ideally ~2 years' experience\n- Dutch required, French is a plus (not mandatory)\n- Flexible, deadline-driven, available ASAP\n- Pay not stated",
-   "why_good": "- Directly in the goal field: content creation, website management, social media, newsletters, campaign reporting\n- Real WordPress/Elementor website management and SEO content experience at Episto and KXP\n- Canva + content production (photo/video basics) matches the 'engaging content' ask\n- Analytics/reporting skills (GA4, Search Console) fit the campaign-effectiveness reporting\n- Dutch is only needed at a working level and French is explicitly 'een troef', not required",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": true,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "4466272556",
@@ -2015,27 +1977,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
-  },
-  {
-   "id": "951724867",
-   "url": "https://europa.eu/eures/portal/jv-se/jv-details/MmMxNTVmOGEtYmU5Mi00ZTVkLThiOTUtMDEyMTdkNWIwNTY5IDM",
-   "title": "Marketing & SEO Medewerker (BBQ & Food)",
-   "company": "Unknown",
-   "location": "Unknown",
-   "match_score": 62,
-   "reason": "Accessible junior marketing/SEO role with no French, no degree hard-requirement, and no seniority wall.",
-   "apply_email": "",
-   "found_at": "2026-09-17 10:33",
-   "status": "new",
-   "details": "- Create monthly email newsletters (ActiveCampaign, or willing to learn)\n- Manage social media and create posts\n- Co-write recipes and food/BBQ content\n- SEO, SEA & AI optimization knowledge required\n- Manage webshops (or willing to learn)\n- Marketing studies or marketing background mentioned; no years of experience stated",
-   "why_good": "- Core SEO/SEA and AI-optimization skills match the CV directly\n- Real WordPress/WooCommerce webshop and content experience\n- Social media and content writing are part of his current work\n- ActiveCampaign is learnable; posting says 'willing to learn'\n- No French required and no completed degree strictly demanded",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "4468392910",
@@ -2077,7 +2021,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "74505163",
@@ -2097,7 +2043,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "74502038",
@@ -2117,7 +2065,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "74481341",
@@ -2137,7 +2087,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "4464322333",
@@ -2182,26 +2134,6 @@
    "cv_fit_v": 19,
    "closed_check": "2026-10-04 17:09",
    "closed_check_v": 2
-  },
-  {
-   "id": "716488094",
-   "url": "https://europa.eu/eures/portal/jv-se/jv-details/YTk3ZjNiMDMtNmQ0ZS00MGIyLWFmMmItN2U1YmViOTlmOWIwIDM",
-   "title": "Fleximedewerker marketing & webshop",
-   "company": "Unknown (horeca sector, via recruiter)",
-   "location": "Lummen",
-   "match_score": 62,
-   "reason": "Accessible junior marketing/social-media role with no degree requirement and French only a plus, not required.",
-   "apply_email": "",
-   "found_at": "2026-09-10 15:33",
-   "status": "new",
-   "details": "- Flexi job (fleximedewerker) for a company in the horeca sector\n- Run promotions/actions via webshop, Facebook, Instagram, LinkedIn\n- Write and send newsletters; help conceive and execute marketing campaigns\n- Boost webshop sales; support general communication and promotion\n- Dutch-speaking workplace; French and English are a plus; Office skills; ODOO/ERP a plus (training provided)\n- Requires driver's licence B for travel to Lummen; flexible, hands-on attitude",
-   "why_good": "- Directly in the goal field: social media, newsletters, webshop/e-commerce promotion and marketing campaigns\n- Candidate has real WordPress/WooCommerce webshop and content experience, plus Canva for social visuals\n- Office skills and quick learning of ODOO/ERP are realistic given his Python/automation and CMS background\n- French is only 'een pluspunt', not required, so his lack of French is not a blocker\n- No degree requirement and no years-of-experience threshold stated",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19
   },
   {
    "id": "4466340128",
@@ -2287,7 +2219,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "4464098295",
@@ -2312,26 +2246,6 @@
    "closed_check_v": 2
   },
   {
-   "id": "366048342",
-   "url": "https://www.stepstone.be/jobs--Marketing-Content-Medewerker-LOKEREN-De-Block-Verhuur-BVBA--2239285-inline.html",
-   "title": "Marketing & Content Medewerker",
-   "company": "De Block Verhuur BVBA",
-   "location": "Lokeren",
-   "match_score": 62,
-   "reason": "Accessible marketing/content role with no hard walls (no French, no degree requirement, no seniority, no 5+ years), and the candidate's social media, content, WordPress and Canva skills fit.",
-   "apply_email": "",
-   "found_at": "2026-09-05 15:00",
-   "status": "new",
-   "details": "- Broad marketing & content role for a machine/construction rental company\n- Manage social media, create content (posts, reels, video), maintain website, run campaigns\n- Shoot and edit photo/video on site and at customer worksites\n- Coordinate with external marketing agency; support commercial actions, events, vacancies\n- Full-time, on-site in Lokeren; Dutch required (posting in Dutch, likely conversational/fluent)\n- Pay not stated",
-   "why_good": "- Real experience in social media content, WordPress website management and Canva visuals\n- SEO/content writing skills transfer to commercial messaging and online campaign follow-up\n- Hands-on, independent worker who can create content quickly (matches 'goesting en initiatief')\n- Comfortable both behind a computer and on location (site visits, photo/video)\n- No degree or French required; Dutch at B1/A2+ is workable for a content role",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19
-  },
-  {
    "id": "74480746",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74480746/commercieel-bediende-marketing",
    "title": "Commercieel bediende - marketing",
@@ -2349,7 +2263,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "74624681",
@@ -2369,7 +2285,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "74624921",
@@ -2389,27 +2307,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
-  },
-  {
-   "id": "503240810",
-   "url": "https://europa.eu/eures/portal/jv-se/jv-details/YTYyYWIwMTYtNzczNy00ZWVkLTgzYjAtZDMzZDkwOWMzOThjIDM",
-   "title": "Medewerker E-commerce",
-   "company": "Bio Degradable Packaging",
-   "location": "Unknown",
-   "match_score": 62,
-   "reason": "Accessible e-commerce support role with no degree, seniority, French, or 5+ year requirement; Dutch ask is only 'goede beheersing' which the candidate's B1 covers.",
-   "apply_email": "",
-   "found_at": "2026-09-16 16:04",
-   "status": "new",
-   "details": "- Support management in setting up and growing e-commerce activities for a packaging wholesaler\n- Manage webshops and seller accounts on platforms like bol and Amazon; add products and keep product pages, texts, prices, images and stock up to date\n- Process online orders, pick and pack products, ship them and follow up on deliveries\n- Handle customer questions by email and via platforms, plus returns and review follow-up\n- Mix of digital/admin work and hands-on order handling; Dutch required ('goede beheersing'), basic English for international platforms\n- No degree, seniority or years-of-experience requirement stated; pay not stated",
-   "why_good": "- Directly in the goal field: e-commerce / online sales / webshop management, which matches the candidate's WordPress/WooCommerce and digital marketing background\n- Real experience managing client websites and product/content pages, plus SEO content and product-text skills that transfer to bol/Amazon listings\n- Strong computer skills and fast learner of new systems (WordPress, Elementor, analytics tools, Python automation)\n- Customer-facing and organised work suits his profile; he can handle both admin and practical tasks\n- Dutch ask is only 'goede beheersing', which his B1 writing / A2+ speaking can meet; English is fine for international platforms",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "4456474475",
@@ -2451,7 +2351,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "4462850281",
@@ -2493,7 +2395,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "74547511",
@@ -2513,7 +2417,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "4461656561",
@@ -2538,26 +2444,6 @@
    "closed_check_v": 2
   },
   {
-   "id": "732127286",
-   "url": "https://europa.eu/eures/portal/jv-se/jv-details/NzUyM2M0MmItODdiOC00MTdlLWIxZjYtNjJhNjhjYjQ4MDQ1IDM",
-   "title": "Communication & Events Intern",
-   "company": "Pulse Foundation",
-   "location": "Unknown",
-   "match_score": 62,
-   "reason": "Professional internship in digital communication open to non-students, with no French requirement and no school-convention clause.",
-   "apply_email": "",
-   "found_at": "2026-09-09 12:54",
-   "status": "new",
-   "details": "- Internship with the Communication & Events team of a foundation\n- Social media publishing and community management (LinkedIn, Instagram, Facebook), visual content, video editing (CapCut, OpusClips)\n- Newsletters and email campaigns (Mailchimp), website updates, event organisation (in-person and online, occasional evenings)\n- AI tools and automation: ChatGPT, Claude, Canva AI, Zapier/Make, AI agents\n- Open to students, professionals and recent graduates; trilingual EN+FR/NL a plus, bilingual fine\n- Pay not stated",
-   "why_good": "- Real digital communication experience: content creation, social media and community management are core to the CV\n- Daily AI/LLM user (Claude, ChatGPT) with prompt engineering and automation experience — matches the AI-driven workflow focus\n- WordPress, Canva and content/newsletter skills align with the website and email tasks\n- English-speaking role; Dutch is only 'a plus', so B1/A2+ is no barrier\n- Internship is explicitly open to professionals and recent graduates, not only enrolled students",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": true,
-   "lang": "en",
-   "cv_fit_v": 19
-  },
-  {
    "id": "74573243",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74573243/customer-care-medewerker-ned-eng-tijdelijk-nov-jan",
    "title": "Customer Care Medewerker (NED/ENG) - Tijdelijk nov-jan",
@@ -2575,7 +2461,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "4467495674",
@@ -2617,7 +2505,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "4467995103",
@@ -2664,26 +2554,6 @@
    "closed_check_v": 2
   },
   {
-   "id": "989727014",
-   "url": "https://europa.eu/eures/portal/jv-se/jv-details/YjYwZTJhNTQtYjg3OC00NjNlLWIwMmItNTFlNmM3YzBlYTRmIDM",
-   "title": "Klantenservice & Webshopbeheer",
-   "company": "Unknown",
-   "location": "Unknown",
-   "match_score": 62,
-   "reason": "Accessible customer-service + webshop role with SEO tasks; degree is 'or equivalent by experience' and French is only a plus, not required.",
-   "apply_email": "",
-   "found_at": "2026-09-15 17:22",
-   "status": "new",
-   "details": "- Combine customer service with webshop/e-commerce management\n- Answer customer questions via email, phone, chat and social media; follow up orders, returns and dossiers\n- Create and enrich product pages, upload product photos/descriptions, support SEO optimizations\n- Degree: bachelor OR equivalent by relevant experience; first experience in a customer-facing/admin role preferred\n- Communicates fluently in Dutch; French is a plus (not required); good Outlook/Word/Excel\n- Limited weekend duty by rotation; contract type and pay not stated",
-   "why_good": "- Webshop/e-commerce content + SEO tasks map directly to the candidate's WordPress, on-page SEO and content skills\n- Customer service and CRM follow-up experience at Episto (cleaning-services client) is relevant\n- Degree requirement explicitly allows 'gelijkwaardig door relevante ervaring', so no completed degree is needed\n- French is only 'een pluspunt', so no French wall; English + improving B1 Dutch is workable\n- Office tools (Outlook/Word/Excel) and learning new systems quickly fit the candidate's profile",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18
-  },
-  {
    "id": "339730496",
    "url": "https://europa.eu/eures/portal/jv-se/jv-details/YWRkNmE4NTYtNTI4Ni00YjgxLWIyZmUtNDhjMTQxNTUwOWRhIDM",
    "title": "Marketing & Administration Officer",
@@ -2701,7 +2571,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "310153123",
@@ -2721,7 +2593,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "4469900373",
@@ -2785,7 +2659,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "4470696055",
@@ -2871,7 +2747,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "74571366",
@@ -2891,7 +2769,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "74567718",
@@ -2911,7 +2791,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "4473442320",
@@ -2953,7 +2835,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "74727926",
@@ -2973,7 +2857,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "4474729893",
@@ -3081,7 +2967,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 18
+   "cv_fit_v": 18,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "4468718337",
@@ -3123,7 +3011,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "74703738",
@@ -3143,7 +3033,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "74715701",
@@ -3163,7 +3055,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "74742041",
@@ -3183,7 +3077,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "74742627",
@@ -3203,7 +3099,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "74742775",
@@ -3223,7 +3121,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "74745111",
@@ -3243,7 +3143,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "74746202",
@@ -3263,7 +3165,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "74747780",
@@ -3283,7 +3187,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "74748632",
@@ -3303,7 +3209,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "74749348",
@@ -3323,7 +3231,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "74750727",
@@ -3343,7 +3253,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "74596899",
@@ -3363,7 +3275,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "74713094",
@@ -3383,7 +3297,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "74678763",
@@ -3403,7 +3319,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "74687339",
@@ -3423,7 +3341,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "74749087",
@@ -3443,7 +3363,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "185696800",
@@ -3463,7 +3385,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "905606243",
@@ -3483,7 +3407,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "en",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "4472085657",
@@ -3525,7 +3451,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "4472112587",
@@ -3567,7 +3495,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "74644535",
@@ -3587,7 +3517,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "74638052",
@@ -3607,7 +3539,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "74634858",
@@ -3627,7 +3561,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-06 18:40",
+   "closed_check_v": 2
   },
   {
    "id": "74635967",
@@ -57562,5 +57498,211 @@
  "eures_reread_v3": true,
  "crm_requeue_v1": true,
  "ready_cap_recover_v1": true,
- "new_cv_exp_requeue_v1": true
+ "new_cv_exp_requeue_v1": true,
+ "closed": [
+  {
+   "id": "989727014",
+   "url": "https://europa.eu/eures/portal/jv-se/jv-details/YjYwZTJhNTQtYjg3OC00NjNlLWIwMmItNTFlNmM3YzBlYTRmIDM",
+   "title": "Klantenservice & Webshopbeheer",
+   "company": "Unknown",
+   "location": "Unknown",
+   "found_at": "2026-09-15 17:22",
+   "match_score": 62,
+   "reason": "Accessible customer-service + webshop role with SEO tasks; degree is 'or equivalent by experience' and French is only a plus, not required.",
+   "lang": "nl",
+   "internship": false,
+   "apply_email": "",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "closed_at": "2026-10-06 18:43",
+   "closed_why": "Closed — EURES has withdrawn this vacancy."
+  },
+  {
+   "id": "732127286",
+   "url": "https://europa.eu/eures/portal/jv-se/jv-details/NzUyM2M0MmItODdiOC00MTdlLWIxZjYtNjJhNjhjYjQ4MDQ1IDM",
+   "title": "Communication & Events Intern",
+   "company": "Pulse Foundation",
+   "location": "Unknown",
+   "found_at": "2026-09-09 12:54",
+   "match_score": 62,
+   "reason": "Professional internship in digital communication open to non-students, with no French requirement and no school-convention clause.",
+   "lang": "en",
+   "internship": true,
+   "apply_email": "",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "closed_at": "2026-10-06 18:43",
+   "closed_why": "Closed — EURES has withdrawn this vacancy."
+  },
+  {
+   "id": "503240810",
+   "url": "https://europa.eu/eures/portal/jv-se/jv-details/YTYyYWIwMTYtNzczNy00ZWVkLTgzYjAtZDMzZDkwOWMzOThjIDM",
+   "title": "Medewerker E-commerce",
+   "company": "Bio Degradable Packaging",
+   "location": "Unknown",
+   "found_at": "2026-09-16 16:04",
+   "match_score": 62,
+   "reason": "Accessible e-commerce support role with no degree, seniority, French, or 5+ year requirement; Dutch ask is only 'goede beheersing' which the candidate's B1 covers.",
+   "lang": "nl",
+   "internship": false,
+   "apply_email": "",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "closed_at": "2026-10-06 18:43",
+   "closed_why": "Closed — EURES has withdrawn this vacancy."
+  },
+  {
+   "id": "366048342",
+   "url": "https://www.stepstone.be/jobs--Marketing-Content-Medewerker-LOKEREN-De-Block-Verhuur-BVBA--2239285-inline.html",
+   "title": "Marketing & Content Medewerker",
+   "company": "De Block Verhuur BVBA",
+   "location": "Lokeren",
+   "found_at": "2026-09-05 15:00",
+   "match_score": 62,
+   "reason": "Accessible marketing/content role with no hard walls (no French, no degree requirement, no seniority, no 5+ years), and the candidate's social media, content, WordPress and Canva skills fit.",
+   "lang": "nl",
+   "internship": false,
+   "apply_email": "",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "closed_at": "2026-10-06 18:43",
+   "closed_why": "Closed — StepStone says this listing is expired."
+  },
+  {
+   "id": "716488094",
+   "url": "https://europa.eu/eures/portal/jv-se/jv-details/YTk3ZjNiMDMtNmQ0ZS00MGIyLWFmMmItN2U1YmViOTlmOWIwIDM",
+   "title": "Fleximedewerker marketing & webshop",
+   "company": "Unknown (horeca sector, via recruiter)",
+   "location": "Lummen",
+   "found_at": "2026-09-10 15:33",
+   "match_score": 62,
+   "reason": "Accessible junior marketing/social-media role with no degree requirement and French only a plus, not required.",
+   "lang": "nl",
+   "internship": false,
+   "apply_email": "",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "closed_at": "2026-10-06 18:43",
+   "closed_why": "Closed — EURES has withdrawn this vacancy."
+  },
+  {
+   "id": "951724867",
+   "url": "https://europa.eu/eures/portal/jv-se/jv-details/MmMxNTVmOGEtYmU5Mi00ZTVkLThiOTUtMDEyMTdkNWIwNTY5IDM",
+   "title": "Marketing & SEO Medewerker (BBQ & Food)",
+   "company": "Unknown",
+   "location": "Unknown",
+   "found_at": "2026-09-17 10:33",
+   "match_score": 62,
+   "reason": "Accessible junior marketing/SEO role with no French, no degree hard-requirement, and no seniority wall.",
+   "lang": "nl",
+   "internship": false,
+   "apply_email": "",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "closed_at": "2026-10-06 18:42",
+   "closed_why": "Closed — EURES has withdrawn this vacancy."
+  },
+  {
+   "id": "954702024",
+   "url": "https://europa.eu/eures/portal/jv-se/jv-details/M2U0NDJiYzktMGYxNS00NjFjLWE5OGItYjZiYTJhYTIyOWZhIDM",
+   "title": "Communication Officer",
+   "company": "Unknown (client in technology & telecom sector)",
+   "location": "Brussels",
+   "found_at": "2026-09-17 16:11",
+   "match_score": 62,
+   "reason": "Accessible communication/marketing role with only ~2 years' experience asked and French listed as a plus, not a requirement.",
+   "lang": "nl",
+   "internship": false,
+   "apply_email": "",
+   "dutch_stretch": false,
+   "exp_stretch": true,
+   "closed_at": "2026-10-06 18:42",
+   "closed_why": "Closed — EURES has withdrawn this vacancy."
+  },
+  {
+   "id": "654938502",
+   "url": "https://www.stepstone.be/jobs--CRM-Marketing-Automation-Marketeer-Antwerpen-Dixon-Sales-Marketing--2245472-inline.html",
+   "title": "CRM & Marketing Automation Marketeer",
+   "company": "Dixon Sales & Marketing",
+   "location": "Antwerpen",
+   "found_at": "2026-09-24 10:26",
+   "match_score": 65,
+   "reason": "The role aligns well with the candidate's digital marketing and CRM automation skills, with a manageable experience requirement.",
+   "lang": "nl",
+   "internship": false,
+   "apply_email": "",
+   "dutch_stretch": false,
+   "exp_stretch": true,
+   "closed_at": "2026-10-06 18:42",
+   "closed_why": "Closed — StepStone says this listing is expired."
+  },
+  {
+   "id": "858067676",
+   "url": "https://europa.eu/eures/portal/jv-se/jv-details/OThlMmM0YzQtODZhNS00YzYzLTgyNDUtMDU2ODE1ZGE5MDFhIDM",
+   "title": "Stagiair(e) Social Media Manager & Content Creator",
+   "company": "Creatix Visions",
+   "location": "Vilvoorde",
+   "found_at": "2026-09-27 11:04",
+   "match_score": 65,
+   "reason": "This is a stage/internship role focused on social media and content creation, aligning with the candidate's digital marketing and content skills.",
+   "lang": "nl",
+   "internship": true,
+   "apply_email": "",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "closed_at": "2026-10-06 18:42",
+   "closed_why": "Closed — EURES has withdrawn this vacancy."
+  },
+  {
+   "id": "165454364",
+   "url": "https://europa.eu/eures/portal/jv-se/jv-details/MWI4ZDg5ZjQtNzMwOC00YjQ3LWIzMjQtMjZmOTA4YzYxNjNjIDM",
+   "title": "Customer Success & Marketing Medewerker",
+   "company": "DVP Health and Beauty",
+   "location": "Unknown",
+   "found_at": "2026-09-09 13:00",
+   "match_score": 70,
+   "reason": "Role fits candidate's marketing/content/social media skills and explicitly welcomes school leavers with no years of experience.",
+   "lang": "nl",
+   "internship": false,
+   "apply_email": "",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "closed_at": "2026-10-06 18:42",
+   "closed_why": "Closed — EURES has withdrawn this vacancy."
+  },
+  {
+   "id": "175659264",
+   "url": "https://europa.eu/eures/portal/jv-se/jv-details/OWRmNzg3YTMtOGEwNS00ZTFiLWI1YzgtYjUyMjJhYjc1ODc2IDM",
+   "title": "Marketing Assistant - Deeltijds",
+   "company": "Manpower Office People (for client)",
+   "location": "Unknown",
+   "found_at": "2026-09-09 15:51",
+   "match_score": 70,
+   "reason": "Role fits candidate's digital marketing and CMS experience; Dutch requirement is conversational (B1) and no French required.",
+   "lang": "nl",
+   "internship": false,
+   "apply_email": "",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "closed_at": "2026-10-06 18:42",
+   "closed_why": "Closed — EURES has withdrawn this vacancy."
+  },
+  {
+   "id": "831467131",
+   "url": "https://europa.eu/eures/portal/jv-se/jv-details/ZTQwYWNhOTctMjIxZS00NmQzLWFiMDktOTc2OWUyOWJlMTMxIDM",
+   "title": "Marketing Assistant",
+   "company": "Unknown",
+   "location": "Unknown",
+   "found_at": "2026-09-09 20:21",
+   "match_score": 70,
+   "reason": "Role fits candidate's digital marketing/content/CMS experience; Dutch requirement is conversational (B1) and no French required.",
+   "lang": "nl",
+   "internship": false,
+   "apply_email": "",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "closed_at": "2026-10-06 18:42",
+   "closed_why": "Closed — EURES has withdrawn this vacancy."
+  }
+ ]
 }
