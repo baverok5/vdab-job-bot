@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-06 18:54 UTC",
+ "updated": "2026-10-06 19:00 UTC",
  "jobs": [
   {
    "id": "4471489541",
@@ -20,7 +20,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-03 16:50",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -46,28 +46,6 @@
    "closed_check_v": 2
   },
   {
-   "id": "4469833896",
-   "url": "https://www.linkedin.com/jobs/view/4469833896",
-   "title": "Stagiair(e) Marketing & Communicatie",
-   "company": "View and Integrate",
-   "location": "Mol",
-   "match_score": 85,
-   "reason": "This is an internship that aligns well with the candidate's digital marketing and content skills.",
-   "apply_email": "janie.noels@viewandintegrate.be",
-   "found_at": "2026-09-21 11:11",
-   "status": "new",
-   "details": "Internship role\nActive participation in marketing and communication efforts\nTasks include newsletters, LinkedIn management, campaign execution, analysis, event prep, CRM, copywriting, and promotional material\nContract type: Internship\nSchedule: Part-time (few days per week in office)\nLanguage: Dutch (implied by context and candidate's Dutch level)\nPay: Not stated",
-   "why_good": "- Internship role aligns with the 'APPLY ANYWAY' rule, making it lenient on experience and degree.\n- The tasks (newsletters, LinkedIn, content planning, copywriting, campaign analysis) directly match the candidate's goal field and experience in content and digital marketing.\n- The candidate's Dutch writing B1 is sufficient for tasks like copywriting and newsletters, even if speaking is A2+.",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": true,
-   "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-10-03 16:50",
-   "closed_check_v": 2
-  },
-  {
    "id": "4469840847",
    "url": "https://www.linkedin.com/jobs/view/4469840847",
    "title": "Internship Digital Marketing",
@@ -86,7 +64,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 22:52",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -152,7 +130,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-03 16:50",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -196,7 +174,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-02 18:06",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -218,7 +196,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-02 18:06",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -284,7 +262,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-02 18:06",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -310,28 +288,6 @@
    "closed_check_v": 2
   },
   {
-   "id": "4472747121",
-   "url": "https://www.linkedin.com/jobs/view/4472747121",
-   "title": "Website Content & Front-End Developer",
-   "company": "Manutan",
-   "location": "Anderlecht",
-   "match_score": 78,
-   "reason": "This role aligns well with the candidate's digital marketing, web development, and SEO skills, with a reasonable experience requirement.",
-   "apply_email": "",
-   "found_at": "2026-09-29 11:49",
-   "status": "new",
-   "details": "Role: Website Content & Front-End Developer.\nMain tasks: Support in building and animating website, front-end coding (HTML/CSS/JS), website testing and optimization, debugging, monitoring site performance and web tracking, CRO strategy.\nContract type: Full-time, 40-hour week with 12 RTT days.\nSchedule: Hybrid working opportunities.\nLanguage: English is likely accepted, with a focus on communication skills and ability to convey concepts to non-technical personnel.\nPay: Competitive salary package, 13th-month bonus, meal vouchers, eco vouchers, hospitalization insurance, pension plan.",
-   "why_good": "- Role directly in the candidate's goal field (web development, content, SEO).\n- Focus on front-end coding (HTML/CSS/JS) which candidate has experience with.\n- Website optimization, debugging, and performance monitoring align with SEO/web skills.\n- Familiarity with Google Analytics and Google Optimize is a bonus, candidate has GA4 experience.\n- The ~2 years experience ask fits the candidate's profile.",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "en",
-   "cv_fit_v": 19,
-   "closed_check": "2026-10-02 18:06",
-   "closed_check_v": 2
-  },
-  {
    "id": "4456025221",
    "url": "https://www.linkedin.com/jobs/view/4456025221",
    "title": "Digital Marketeer",
@@ -350,7 +306,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-02 18:06",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -372,7 +328,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-02 18:06",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -482,7 +438,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-03 16:50",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -504,7 +460,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-03 16:50",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -526,7 +482,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-03 16:50",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -592,7 +548,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-03 16:50",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -702,7 +658,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-02 18:06",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -834,7 +790,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-02 18:06",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -856,7 +812,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-02 18:06",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -988,7 +944,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-03 16:50",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -1032,7 +988,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-03 16:50",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -1080,28 +1036,6 @@
    "closed_check_v": 2
   },
   {
-   "id": "4467883143",
-   "url": "https://www.linkedin.com/jobs/view/4467883143",
-   "title": "Digital Content Creator",
-   "company": "Acaza",
-   "location": "Kortrijk (Heule)",
-   "match_score": 70,
-   "reason": "The role aligns well with the candidate's digital marketing, content creation, and web skills, with a manageable experience requirement.",
-   "apply_email": "thomas@mobistoxx.com",
-   "found_at": "2026-09-19 09:55",
-   "status": "new",
-   "details": "Role: Digital Content Creator.\nMain tasks: Creating product text, images, visuals, banners, and video; optimizing product listings for various platforms; AI integration for content creation.\nContract type: Not specified.\nSchedule: Not specified.\nLanguage: Dutch, French, English.\nPay: Not specified.",
-   "why_good": "Fits the candidate's goal field in digital marketing, content creation, and web.\nExperience requirement of 2 years is within reach.\nInvolves content management, SEO, and AI tools which align with the candidate's profile.\nIncludes visual content creation (Canva mentioned, candidate has experience with it) and web design aspects.",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-10-02 18:06",
-   "closed_check_v": 2
-  },
-  {
    "id": "4467582532",
    "url": "https://www.linkedin.com/jobs/view/4467582532",
    "title": "Digital Content & Social Media Manager",
@@ -1120,7 +1054,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-02 18:06",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -1164,7 +1098,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 22:52",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -1186,7 +1120,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-03 16:50",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -1230,7 +1164,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 22:52",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -1340,7 +1274,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-02 18:06",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -1476,28 +1410,6 @@
    "closed_check_v": 2
   },
   {
-   "id": "4469686683",
-   "url": "https://www.linkedin.com/jobs/view/4469686683",
-   "title": "Content Creator",
-   "company": "Gutsy",
-   "location": "Antwerpen",
-   "match_score": 65,
-   "reason": "The role aligns well with the candidate's digital marketing and content creation skills, particularly in social media video and visual content.",
-   "apply_email": "recruitment@gutsy.dog",
-   "found_at": "2026-09-26 10:25",
-   "status": "new",
-   "details": "Voltijds, 38u/week\nRemote possible\nContract type: Not specified\nSchedule: Full-time\nLanguage: Dutch (primary, but English is implied acceptance by candidate and overall context).\nPay: €2,300 – €3,800 bruto/month (0-6 years experience)",
-   "why_good": "- Fits directly into the candidate's goal field of content and web.\n- Experience with WordPress and content management can be leveraged for website content.\n- Strong skills in SEO content, keyword research, and analytics are transferable to understanding what content performs well.\n- Candidate has experience creating visuals with Canva, which is listed as a tool.\n- The job explicitly states \"Je hoeft nog niet alles te kunnen. We vinden het belangrijker dat je snel leert, zelf dingen vastpakt en steeds beter wil worden.\", indicating leniency on full skill coverage.",
-   "why_bad": "- The job asks for 0-6 years of experience, and the candidate has about 2-3 years, making it a stretch for the higher end of the range.\n- Requires strong Dutch language skills for content creation, which is above the candidate's current A2+ speaking level, although B1 writing is present and the job is in Dutch, this is not a hard fail as the candidate has strong English skills and is improving Dutch.\n- Explicitly mentions \"sterk grafisch oog voor compositie, typografie en layout\" and \"kan werken met creatieve tools zoals Adobe, Canva, CapCut of gelijkaardige software\" which might be a stretch for the candidate's web design focus versus graphic design expertise.",
-   "dutch_stretch": false,
-   "exp_stretch": true,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-10-02 18:06",
-   "closed_check_v": 2
-  },
-  {
    "id": "4470318373",
    "url": "https://www.linkedin.com/jobs/view/4470318373",
    "title": "Growth Marketer",
@@ -1516,7 +1428,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-02 18:06",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -1560,7 +1472,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-02 18:06",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -1604,7 +1516,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-03 16:50",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -1626,7 +1538,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-02 18:06",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -1648,7 +1560,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-02 18:06",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -1670,7 +1582,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-03 16:50",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -1714,7 +1626,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-03 16:50",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -1758,7 +1670,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-03 16:50",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -1802,7 +1714,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-03 16:50",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -1824,7 +1736,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-03 16:50",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -1868,7 +1780,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-03 16:50",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -1934,7 +1846,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-03 16:50",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -1956,7 +1868,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-02 18:06",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -2000,7 +1912,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-02 18:06",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -2330,7 +2242,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-02 18:06",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -2353,28 +2265,6 @@
    "lang": "nl",
    "cv_fit_v": 19,
    "closed_check": "2026-10-06 18:40",
-   "closed_check_v": 2
-  },
-  {
-   "id": "4462850281",
-   "url": "https://www.linkedin.com/jobs/view/4462850281",
-   "title": "Social Media Marketing Internship",
-   "company": "MUTANI",
-   "location": "Antwerp",
-   "match_score": 62,
-   "reason": "Unpaid social media marketing internship open to non-students, in English, with no French or degree requirement — the internship leniency applies.",
-   "apply_email": "contact@mutani.io",
-   "found_at": "2026-09-05 14:46",
-   "status": "new",
-   "details": "- Social media marketing intern at an Antwerp gaming/fashion apparel startup\n- Create photo, video and graphic content for Instagram, TikTok and other platforms; write captions and copy\n- Plan, schedule and manage accounts; apply growth tactics; engage the community\n- Track and analyse social KPIs and report on performance; paid social is a plus, not required\n- Part-time, minimum 6 weeks, from the Antwerp office; flexible hours; unpaid internship\n- English working language; open to students OR experienced candidates; a voluntary internship is possible",
-   "why_good": "- Content creation, copywriting and social media fit the candidate's digital marketing / content profile\n- Analytics and reporting skills (GA4, Search Console, Semrush) map well to the performance-tracking part\n- Canva plus WordPress/Elementor web work covers the visual and graphic-asset side\n- English is the working language and the candidate is fluent; no French required\n- Internship is open to non-students (voluntary internship possible), so no school convention needed",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": true,
-   "lang": "en",
-   "cv_fit_v": 19,
-   "closed_check": "2026-10-02 18:06",
    "closed_check_v": 2
   },
   {
@@ -2440,7 +2330,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-02 18:06",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -2484,7 +2374,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-02 18:06",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -2528,7 +2418,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-02 18:06",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -2550,7 +2440,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-02 18:06",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -2704,7 +2594,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-03 16:50",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -2726,7 +2616,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-02 18:06",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -2880,7 +2770,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-03 16:50",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -2902,7 +2792,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 22:52",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -2924,7 +2814,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-02 18:06",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -2946,7 +2836,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-02 18:06",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -2990,7 +2880,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 22:52",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -6004,7 +5894,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 22:52",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -6070,7 +5960,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-03 16:50",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -6114,7 +6004,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 22:52",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -6136,7 +6026,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 22:52",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -6730,7 +6620,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 22:52",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -6796,7 +6686,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-03 16:50",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -9722,7 +9612,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-03 16:50",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -10602,7 +10492,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-10-03 16:50",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -10624,7 +10514,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-10-03 16:50",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -11174,7 +11064,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 22:52",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -12076,7 +11966,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 22:52",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -12098,7 +11988,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 22:52",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -12120,7 +12010,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 22:52",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -12142,7 +12032,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 22:52",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -12428,7 +12318,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 22:52",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -12450,7 +12340,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 22:52",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -12538,7 +12428,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 22:52",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -12648,7 +12538,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 22:52",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -13000,7 +12890,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 22:52",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -13022,7 +12912,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 22:52",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -13044,29 +12934,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 22:52",
-   "closed_check_v": 2
-  },
-  {
-   "id": "4462768527",
-   "url": "https://www.linkedin.com/jobs/view/4462768527",
-   "title": "Digital Marketeer",
-   "company": "Boplan",
-   "location": "Unknown",
-   "match_score": 38,
-   "reason": "Digital marketing role in the candidate's goal field with no French, no mandatory degree, and no hard 5+ years requirement — a reach on experience but worth applying.",
-   "apply_email": "",
-   "found_at": "2026-09-16 11:29",
-   "status": "new",
-   "details": "- Digital Marketeer owning the full digital marketing chain: campaigns, marketing automation, e-commerce, SEO/GEO/SEA/CRO, CRM, data and AI\n- Builds and optimises campaigns, e-mail marketing, customer journeys, website and social channels; works with Dynamics 365 and reporting tools (Looker Studio/Power BI)\n- Reports to the Marketing & E-commerce Manager; works with Sales, international sales offices and external partners\n- On-site at HQ (Belgium); international B2B environment\n- Language: communicates fluently in Dutch and English (no French mentioned)\n- Pay: attractive salary package with extra benefits (not specified)",
-   "why_good": "- Core tasks (SEO, GEO, SEA, CRO, AI-driven search, content, website/social management) map directly onto the candidate's real SEO/GEO and WordPress experience\n- GEO / AI-search visibility is explicitly part of the role — the candidate has hands-on GEO, llms.txt and JSON-LD schema work at mirook.com\n- Analytics/reporting with GA4, Search Console, Semrush and Ahrefs fits the data and dashboard expectations\n- No French required and no mandatory degree stated, so the language and diploma walls don't apply\n- Gap to be frank about: the posting asks for an experienced marketeer with marketing automation, CRM (Dynamics 365), Power BI/Looker and international B2B background — the candidate has ~4 months of junior experience and would be leaning on his SEO/GEO, WordPress and AI-automation strengths to compensate",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": true,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-10-01 22:52",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -13088,7 +12956,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-02 18:06",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -13792,7 +13660,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 18,
-   "closed_check": "2026-10-02 18:06",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -14188,7 +14056,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-02 18:06",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -14232,7 +14100,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 22:52",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -14254,7 +14122,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 22:52",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -14342,7 +14210,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 17:16",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -14453,28 +14321,6 @@
    "lang": "nl",
    "cv_fit_v": 19,
    "closed_check": "2026-10-06 18:40",
-   "closed_check_v": 2
-  },
-  {
-   "id": "4465597747",
-   "url": "https://www.linkedin.com/jobs/view/4465597747",
-   "title": "Creator",
-   "company": "Dailipharma",
-   "location": "Unknown",
-   "match_score": 35,
-   "reason": "The role aligns well with the candidate's digital marketing and content creation skills, despite requiring a stronger Dutch than the candidate currently possesses.",
-   "apply_email": "people@dailipharma.com",
-   "found_at": "2026-09-15 20:44",
-   "status": "new",
-   "details": "Role: Creator. Main tasks: Content creation and production (video, social media, ads), social media strategy and management, campaign setup, brand consistency, networking. Contract type: Not specified. Schedule: Not specified. Language: Dutch (implied strong need), English accepted. Pay: Not specified.",
-   "why_good": "- Directly aligns with candidate's goal field in digital marketing and content creation.\n- Experience with WordPress/Elementor and Shopify content management is transferable to social media content production.\n- Skills in SEO, keyword research, and content writing are relevant to creating engaging social media content.\n- The job explicitly states \"Solliciteer ook als je niet aan alle voorwaarden voldoet\" (Apply even if you don't meet all conditions), making it open to candidates with some gaps.\n- The role requires stronger Dutch than the candidate currently has (A2+ speaking, B1 writing), but this is noted as a stretch, not a hard fail.",
-   "why_bad": "- Requires fluent Dutch (or near-fluent) for effective content creation and brand voice, which the candidate is still developing (B1 writing, A2+ speaking).",
-   "dutch_stretch": true,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-10-02 18:06",
    "closed_check_v": 2
   },
   {
@@ -15112,7 +14958,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 22:52",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -15134,7 +14980,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 22:52",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -15156,7 +15002,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 22:52",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -15266,29 +15112,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 17:16",
-   "closed_check_v": 2
-  },
-  {
-   "id": "4472186983",
-   "url": "https://www.linkedin.com/jobs/view/4472186983",
-   "title": "Digital Growth & Performance Expert",
-   "company": "Ranson",
-   "location": "Stasegem (Kortrijk), Belgium",
-   "match_score": 33,
-   "reason": "A digital marketing/SEO/webshop role that fits the candidate's field, but it asks for 4-8 years of experience, making it a stretch he can still apply to.",
-   "apply_email": "",
-   "found_at": "2026-10-01 14:12",
-   "status": "new",
-   "details": "- Digital Growth & Performance Expert taking charge of the further build-out of Ranson's digital marketing operations (bakery raw materials distributor, HQ Stasegem).\n- Tasks: develop/optimise website, webshop and digital channels (UX, conversion, performance); SEO/SEA, e-mail, social, A/B testing, segmentation, marketing automation, customer journeys and lead nurturing; dashboards/KPIs and reporting to management.\n- Tools mentioned: Looker Studio, Google Ads, SEO/SEA tools, Meta Ads Manager, Algolia, CMS like Craft, e-mail platforms, CRM.\n- Contract: full-time, permanent position in a marketing team of four; one day per week remote; office in Stasegem.\n- Languages: posting is in Dutch; asks for 'sufficient language skills' and a valid Belgian work permit for non-EU citizens; no French requirement stated.\n- Pay: 'marktconform salaris' with meal vouchers, hospitalisation insurance, mobile phone, bike lease, Corporate Benefits.",
-   "why_good": "- Core of the role is exactly the candidate's field: website/webshop optimisation, SEO/SEA, content and conversion focus.\n- He already does on-page SEO, keyword research, SEO content, A/B-style optimisation and reporting with GA4, Search Console, Semrush and Ahrefs at Episto.\n- WordPress/Elementor, WooCommerce and Shopify store building + catalogue/blog upkeep match the 'website, webshop and digital ecosystem' part.\n- Real technical edge: JSON-LD schema, technical SEO/GEO audits, Python automation and an interest in introducing AI applications, which the posting explicitly wants.\n- Honest gap: the advert asks for 4-8 years of digital marketing experience plus hands-on CRM/marketing automation, Looker Studio and e-commerce tooling; the candidate has ~4 months of junior experience, so this is clearly a stretch application.",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": true,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-10-01 17:16",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -15310,7 +15134,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 17:16",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -15332,7 +15156,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-02 18:06",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -15750,7 +15574,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 22:52",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -15795,28 +15619,6 @@
    "lang": "nl",
    "cv_fit_v": 19,
    "closed_check": "2026-10-06 18:40",
-   "closed_check_v": 2
-  },
-  {
-   "id": "4471522712",
-   "url": "https://www.linkedin.com/jobs/view/4471522712",
-   "title": "Front-End Developer (React / TypeScript)",
-   "company": "Halian Group",
-   "location": "Brussels",
-   "match_score": 32,
-   "reason": "Front-end developer role in English (French only a plus) with a ~2-year experience ask, which the junior candidate can still apply to as a stretch.",
-   "apply_email": "",
-   "found_at": "2026-10-01 14:13",
-   "status": "new",
-   "details": "- Build and maintain web apps in React and TypeScript\n- Translate business needs into functional specs and user-friendly UIs\n- Design dashboards and reporting solutions; testing, code reviews, deployment\n- Requires 2+ years React/TypeScript, SQL/data-oriented apps, Git/CI-CD\n- Fluent English required; French is a plus (not required)\n- Location: Brussels, Belgium",
-   "why_good": "- Real front-end development experience (ViviDoctor, AngularJS/JavaScript) plus HTML/CSS/JS in the CV\n- Technical background (Applied Computer Science coursework) and genuine coding ability (Python automation, published Android app)\n- Comfortable with data-driven work (analytics, Search Console, SQL-adjacent reporting/SEO audits)\n- Fluent English matches the language requirement; French is only a plus, so no French needed\n- Honest gap: the CV shows AngularJS/JavaScript and WordPress, not React/TypeScript or SQL, and the posting asks for 2+ years of React/TypeScript experience the candidate does not have — still worth a shot as a stretch",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": true,
-   "internship": false,
-   "lang": "en",
-   "cv_fit_v": 19,
-   "closed_check": "2026-10-01 17:16",
    "closed_check_v": 2
   },
   {
@@ -16081,28 +15883,6 @@
    "lang": "nl",
    "cv_fit_v": 19,
    "closed_check": "2026-10-06 18:40",
-   "closed_check_v": 2
-  },
-  {
-   "id": "4461091093",
-   "url": "https://www.linkedin.com/jobs/view/4461091093",
-   "title": "Performance & Content Marketeer",
-   "company": "Get Driven",
-   "location": "Unknown",
-   "match_score": 32,
-   "reason": "Goal-field performance/content marketing role, but it asks for 4 years' experience and native Dutch, so it's a reach rather than a clear fit.",
-   "apply_email": "",
-   "found_at": "2026-09-16 11:30",
-   "status": "new",
-   "details": "- Performance & content marketing role at Get Driven, a private-chauffeur platform in the Benelux\n- Tasks: Google/Meta/LinkedIn/TikTok Ads, A/B testing, funnels, budget management, app-download growth, website SEO & conversion, landing pages, social media (LinkedIn, Instagram, Facebook, TikTok), content & branding\n- Tools: Google Ads, Google Analytics, Meta Ads, Canva, Figma, Drupal (or similar CMS)\n- Full-time, works directly with management; competitive salary + extralegal benefits + bonus\n- Language: 'Nederlands is je moedertaal' (native Dutch required); no French mentioned\n- No degree requirement stated",
-   "why_good": "- Directly in the goal field: performance marketing, SEO, content, socials and website conversion — all areas the candidate has real hands-on experience in\n- Uses Google Ads, Google Analytics, Canva and WordPress/Elementor-style site building, which match the CV's toolset\n- The candidate's SEO, landing-page and content skills fit the website & conversion and content & branding parts of the role\n- Gap to be frank about: the posting asks for at least 4 years as a growth/digital marketer and native Dutch, while the candidate has ~4 months in his current role and Dutch at B1 writing / A2+ speaking — a genuine stretch, but still worth applying",
-   "why_bad": "",
-   "dutch_stretch": true,
-   "exp_stretch": true,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-10-01 22:52",
    "closed_check_v": 2
   },
   {
@@ -17070,7 +16850,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 22:52",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -17092,7 +16872,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 22:52",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -17114,7 +16894,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 22:52",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -17250,28 +17030,6 @@
    "closed_check_v": 2
   },
   {
-   "id": "4471375966",
-   "url": "https://www.linkedin.com/jobs/view/4471375966",
-   "title": "Full-Stack Developer / Shopify Expert (eCommerce CRO Focus)",
-   "company": "Jobgether (on behalf of partner company)",
-   "location": "Belgium (remote)",
-   "match_score": 30,
-   "reason": "No hard wall applies (no French, no degree requirement, not senior), but the 3+ years of hands-on Shopify/Liquid full-stack development asked for is well beyond the candidate's ~4 months, making it a stretch.",
-   "apply_email": "",
-   "found_at": "2026-10-01 14:14",
-   "status": "new",
-   "details": "- Role: own the performance, usability and conversion of high-traffic Shopify storefronts, combining full-stack Shopify development with CRO and performance engineering\n- Tasks: front-end/back-end Shopify improvements, A/B tests and CRO experiments, Core Web Vitals/speed optimization, custom Liquid sections and pages, Shopify APIs and third-party app integrations, analytics and heatmap analysis\n- Contract: fully remote, flexible hours; competitive salary + performance-based bonus\n- Schedule: flexible working hours\n- Language: posting is in English; no French or Dutch requirement stated\n- Pay: 'competitive salary commensurate with experience' plus performance bonus and benefits (medical/dental/vision, PTO, retreats, learning stipend)",
-   "why_good": "- Genuine hands-on Shopify experience: store design, product catalogue upkeep and blog content for harwindtf.com and custompremiumshirt.com\n- Real web/WordPress and front-end background (AngularJS/JavaScript) plus HTML/CSS, so the eCommerce web context is familiar\n- Strong analytics toolkit the role leans on: Google Analytics, Search Console, Semrush, Ahrefs\n- The posting lists Klaviyo, headmapping/heatmapping, UI/UX and growth-marketing experience only as 'a plus'\n- Honest gap: they ask 3+ years of Shopify development with Liquid and Shopify APIs, and the candidate has months, not years, and no theme/Liquid development record — still worth a shot given the seniority-flexible, results-driven framing",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": true,
-   "internship": false,
-   "lang": "en",
-   "cv_fit_v": 19,
-   "closed_check": "2026-10-01 17:16",
-   "closed_check_v": 2
-  },
-  {
    "id": "4471502044",
    "url": "https://www.linkedin.com/jobs/view/4471502044",
    "title": "Performance Marketeer",
@@ -17290,7 +17048,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 17:16",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -17312,7 +17070,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 17:16",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -18104,7 +17862,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 22:52",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -18170,7 +17928,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-01 17:16",
+   "closed_check": "2026-10-06 18:40",
    "closed_check_v": 2
   },
   {
@@ -58466,6 +58224,193 @@
  "ready_cap_recover_v1": true,
  "new_cv_exp_requeue_v1": true,
  "closed": [
+  {
+   "id": "4469833896",
+   "url": "https://www.linkedin.com/jobs/view/4469833896",
+   "title": "Stagiair(e) Marketing & Communicatie",
+   "company": "View and Integrate",
+   "location": "Mol",
+   "found_at": "2026-09-21 11:11",
+   "match_score": 85,
+   "reason": "This is an internship that aligns well with the candidate's digital marketing and content skills.",
+   "lang": "nl",
+   "internship": true,
+   "apply_email": "janie.noels@viewandintegrate.be",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "closed_at": "2026-10-06 19:00",
+   "closed_why": "Closed — LinkedIn says it is no longer accepting applications."
+  },
+  {
+   "id": "4465597747",
+   "url": "https://www.linkedin.com/jobs/view/4465597747",
+   "title": "Creator",
+   "company": "Dailipharma",
+   "location": "Unknown",
+   "found_at": "2026-09-15 20:44",
+   "match_score": 35,
+   "reason": "The role aligns well with the candidate's digital marketing and content creation skills, despite requiring a stronger Dutch than the candidate currently possesses.",
+   "lang": "nl",
+   "internship": false,
+   "apply_email": "people@dailipharma.com",
+   "dutch_stretch": true,
+   "exp_stretch": false,
+   "closed_at": "2026-10-06 19:00",
+   "closed_why": "Closed — LinkedIn says it is no longer accepting applications."
+  },
+  {
+   "id": "4462850281",
+   "url": "https://www.linkedin.com/jobs/view/4462850281",
+   "title": "Social Media Marketing Internship",
+   "company": "MUTANI",
+   "location": "Antwerp",
+   "found_at": "2026-09-05 14:46",
+   "match_score": 62,
+   "reason": "Unpaid social media marketing internship open to non-students, in English, with no French or degree requirement — the internship leniency applies.",
+   "lang": "en",
+   "internship": true,
+   "apply_email": "contact@mutani.io",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "closed_at": "2026-10-06 19:00",
+   "closed_why": "Closed — LinkedIn says it is no longer accepting applications."
+  },
+  {
+   "id": "4469686683",
+   "url": "https://www.linkedin.com/jobs/view/4469686683",
+   "title": "Content Creator",
+   "company": "Gutsy",
+   "location": "Antwerpen",
+   "found_at": "2026-09-26 10:25",
+   "match_score": 65,
+   "reason": "The role aligns well with the candidate's digital marketing and content creation skills, particularly in social media video and visual content.",
+   "lang": "nl",
+   "internship": false,
+   "apply_email": "recruitment@gutsy.dog",
+   "dutch_stretch": false,
+   "exp_stretch": true,
+   "closed_at": "2026-10-06 19:00",
+   "closed_why": "Closed — LinkedIn says it is no longer accepting applications."
+  },
+  {
+   "id": "4467883143",
+   "url": "https://www.linkedin.com/jobs/view/4467883143",
+   "title": "Digital Content Creator",
+   "company": "Acaza",
+   "location": "Kortrijk (Heule)",
+   "found_at": "2026-09-19 09:55",
+   "match_score": 70,
+   "reason": "The role aligns well with the candidate's digital marketing, content creation, and web skills, with a manageable experience requirement.",
+   "lang": "nl",
+   "internship": false,
+   "apply_email": "thomas@mobistoxx.com",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "closed_at": "2026-10-06 19:00",
+   "closed_why": "Closed — LinkedIn says it is no longer accepting applications."
+  },
+  {
+   "id": "4472747121",
+   "url": "https://www.linkedin.com/jobs/view/4472747121",
+   "title": "Website Content & Front-End Developer",
+   "company": "Manutan",
+   "location": "Anderlecht",
+   "found_at": "2026-09-29 11:49",
+   "match_score": 78,
+   "reason": "This role aligns well with the candidate's digital marketing, web development, and SEO skills, with a reasonable experience requirement.",
+   "lang": "en",
+   "internship": false,
+   "apply_email": "",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "closed_at": "2026-10-06 18:57",
+   "closed_why": "Closed — LinkedIn says it is no longer accepting applications."
+  },
+  {
+   "id": "4461091093",
+   "url": "https://www.linkedin.com/jobs/view/4461091093",
+   "title": "Performance & Content Marketeer",
+   "company": "Get Driven",
+   "location": "Unknown",
+   "found_at": "2026-09-16 11:30",
+   "match_score": 32,
+   "reason": "Goal-field performance/content marketing role, but it asks for 4 years' experience and native Dutch, so it's a reach rather than a clear fit.",
+   "lang": "nl",
+   "internship": false,
+   "apply_email": "",
+   "dutch_stretch": true,
+   "exp_stretch": true,
+   "closed_at": "2026-10-06 18:57",
+   "closed_why": "Closed — LinkedIn says it is no longer accepting applications."
+  },
+  {
+   "id": "4462768527",
+   "url": "https://www.linkedin.com/jobs/view/4462768527",
+   "title": "Digital Marketeer",
+   "company": "Boplan",
+   "location": "Unknown",
+   "found_at": "2026-09-16 11:29",
+   "match_score": 38,
+   "reason": "Digital marketing role in the candidate's goal field with no French, no mandatory degree, and no hard 5+ years requirement — a reach on experience but worth applying.",
+   "lang": "nl",
+   "internship": false,
+   "apply_email": "",
+   "dutch_stretch": false,
+   "exp_stretch": true,
+   "closed_at": "2026-10-06 18:57",
+   "closed_why": "Closed — LinkedIn says it is no longer accepting applications."
+  },
+  {
+   "id": "4471375966",
+   "url": "https://www.linkedin.com/jobs/view/4471375966",
+   "title": "Full-Stack Developer / Shopify Expert (eCommerce CRO Focus)",
+   "company": "Jobgether (on behalf of partner company)",
+   "location": "Belgium (remote)",
+   "found_at": "2026-10-01 14:14",
+   "match_score": 30,
+   "reason": "No hard wall applies (no French, no degree requirement, not senior), but the 3+ years of hands-on Shopify/Liquid full-stack development asked for is well beyond the candidate's ~4 months, making it a stretch.",
+   "lang": "en",
+   "internship": false,
+   "apply_email": "",
+   "dutch_stretch": false,
+   "exp_stretch": true,
+   "closed_at": "2026-10-06 18:57",
+   "closed_why": "Closed — LinkedIn says it is no longer accepting applications."
+  },
+  {
+   "id": "4471522712",
+   "url": "https://www.linkedin.com/jobs/view/4471522712",
+   "title": "Front-End Developer (React / TypeScript)",
+   "company": "Halian Group",
+   "location": "Brussels",
+   "found_at": "2026-10-01 14:13",
+   "match_score": 32,
+   "reason": "Front-end developer role in English (French only a plus) with a ~2-year experience ask, which the junior candidate can still apply to as a stretch.",
+   "lang": "en",
+   "internship": false,
+   "apply_email": "",
+   "dutch_stretch": false,
+   "exp_stretch": true,
+   "closed_at": "2026-10-06 18:57",
+   "closed_why": "Closed — LinkedIn says it is no longer accepting applications."
+  },
+  {
+   "id": "4472186983",
+   "url": "https://www.linkedin.com/jobs/view/4472186983",
+   "title": "Digital Growth & Performance Expert",
+   "company": "Ranson",
+   "location": "Stasegem (Kortrijk), Belgium",
+   "found_at": "2026-10-01 14:12",
+   "match_score": 33,
+   "reason": "A digital marketing/SEO/webshop role that fits the candidate's field, but it asks for 4-8 years of experience, making it a stretch he can still apply to.",
+   "lang": "nl",
+   "internship": false,
+   "apply_email": "",
+   "dutch_stretch": false,
+   "exp_stretch": true,
+   "closed_at": "2026-10-06 18:57",
+   "closed_why": "Closed — LinkedIn says it is no longer accepting applications."
+  },
   {
    "id": "293917579",
    "url": "https://europa.eu/eures/portal/jv-se/jv-details/YmFkMjBlMGYtZTJkNi00YzMzLTk2MmUtMTNlMDJhOGU5NmU4IDM",
