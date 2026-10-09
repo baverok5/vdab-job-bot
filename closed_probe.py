@@ -224,7 +224,7 @@ def verify():
     with sync_playwright() as pw:
         browser = pw.chromium.launch(args=["--no-sandbox"])
         try:
-            for src in ("VDAB", "EURES", "StepStone"):
+            for src in ("VDAB",):
                 rows = sorted(by.get(src, []), key=lambda x: x.get("found_at") or "")
                 sample = rows[:30] + rows[-10:] if src == "VDAB" else rows
                 if src == "EURES":
@@ -237,9 +237,10 @@ def verify():
                     if src == "VDAB":
                         try:
                             m = __import__("re").search(r"/vacatures/(\d+)", j["url"])
-                            d = requests.get(bot.VDAB_VACANCY_API + m.group(1), timeout=25,
-                                             headers={**bot.HEADERS, "Accept": "application/json"}).json()
-                            fields[(d.get("status"), d.get("gepubliceerd"))] += 1
+                            d = bot._vdab_session_page(browser).evaluate(
+                                "async (id) => { const r = await fetch('/rest/vindeenjob/v4/vacatures/' + id + '?preview=false', {headers:{Accept:'application/json'}}); let d=null; try{d=await r.json()}catch(e){}; return [r.status, d&&d.status, d&&d.gepubliceerd]; }",
+                                m.group(1))
+                            fields[tuple(d)] += 1
                         except Exception as e:
                             fields[("err", type(e).__name__)] += 1
                     if st is False:

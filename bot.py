@@ -2999,6 +2999,26 @@ def _linkedin_open(browser, job):
 VDAB_VACANCY_API = "https://www.vdab.be/rest/vindeenjob/v4/vacatures/"
 
 
+_VDAB_PAGE = {}
+
+
+def _vdab_session_page(browser):
+    """One vdab.be page kept open for the whole sweep. The vacancy API only answers
+    from inside a normal browser session (a plain HTTP request gets a non-JSON
+    reply), so the check calls it with fetch() from that page: ~0.3 s a job
+    instead of rendering every posting."""
+    pg = _VDAB_PAGE.get("page")
+    if pg is not None and not pg.is_closed():
+        return pg
+    pg = browser.new_page(user_agent=HEADERS["User-Agent"], locale="nl-BE",
+                          extra_http_headers={"Accept-Language": HEADERS["Accept-Language"]})
+    pg.goto("https://www.vdab.be/vindeenjob/vacatures", wait_until="domcontentloaded",
+            timeout=30000)
+    pg.wait_for_timeout(2500)
+    _VDAB_PAGE["page"] = pg
+    return pg
+
+
 def _vdab_open(browser, job):
     """VDAB's own vacancy API, the one its page calls. A posting that is gone
     answers 404, and one taken offline says status PASSIEF / gepubliceerd false
@@ -3008,21 +3028,24 @@ def _vdab_open(browser, job):
     if not m:
         return None, None
     try:
-        r = requests.get(VDAB_VACANCY_API + m.group(1), params={"preview": "false"},
-                         headers={**HEADERS, "Accept": "application/json"}, timeout=25)
-    except requests.RequestException:
+        res = _vdab_session_page(browser).evaluate(
+            """async (id) => {
+                 const r = await fetch('/rest/vindeenjob/v4/vacatures/' + id + '?preview=false',
+                                       {headers: {Accept: 'application/json'}});
+                 let d = null;
+                 try { d = await r.json(); } catch (e) {}
+                 return {http: r.status,
+                         status: d && d.status !== undefined ? d.status : null,
+                         pub: d && d.gepubliceerd !== undefined ? d.gepubliceerd : null};
+               }""", m.group(1))
+    except Exception:
+        _VDAB_PAGE.pop("page", None)          # rebuild the session next time
         return None, None
-    if r.status_code == 404:
+    if res["http"] == 404:
         return False, "Closed — VDAB no longer has this vacancy."
-    if r.status_code != 200:
+    if res["http"] != 200 or res["status"] is None:
         return None, None
-    try:
-        d = r.json()
-    except ValueError:
-        return None, None
-    if not isinstance(d, dict) or "status" not in d:
-        return None, None
-    if str(d.get("status")).upper() == "PASSIEF" or d.get("gepubliceerd") is False:
+    if str(res["status"]).upper() == "PASSIEF" or res["pub"] is False:
         return False, "Closed — VDAB has taken this vacancy offline."
     return True, None
 
