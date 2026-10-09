@@ -238,7 +238,7 @@
 <div class="toast" id="toast"></div>
 
 <script>
-const APP_VERSION = "v84";                 // MUST match CACHE in sw.js — it is how you tell whether the phone got the deploy
+const APP_VERSION = "v85";                 // MUST match CACHE in sw.js — it is how you tell whether the phone got the deploy
 const LS = "jobstatus";                    // { jobId: "applied" | "skipped" | "closed" }
 const LS_AT = "jobstatus_at";              // { jobId: epoch ms the status was set }
 const getStatus = () => JSON.parse(localStorage.getItem(LS) || "{}");
@@ -1563,7 +1563,7 @@ function render() {
     }
     list.insertAdjacentHTML("beforeend",
       `<div class="hint" style="margin:2px 0 12px">${closedShown.length} found closed by the bot, ${closedMine.length} marked closed by you. Checked again on every run.</div>`);
-    const items = [...closedShown.map((j) => [j, false]), ...closedMine.map((j) => [j, true])];
+    const items = [...closedMine.map((j) => [j, true]), ...closedShown.map((j) => [j, false])];   // yours first
     appendPaged(list, items, ([j, mine]) => closedCard(j, mine), 25);
     return;
   }
