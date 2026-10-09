@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-09 19:06 UTC",
+ "updated": "2026-10-09 19:44 UTC",
  "jobs": [
   {
    "id": "4471489541",
@@ -1703,28 +1703,6 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-10-09 18:34",
-   "closed_check_v": 2
-  },
-  {
-   "id": "4455124951",
-   "url": "https://www.linkedin.com/jobs/view/4455124951",
-   "title": "Web Designer",
-   "company": "WebloomDesign",
-   "location": "Belgium",
-   "match_score": 62,
-   "reason": "Part-time on-site web design role in a small studio; the candidate's real WordPress/Elementor web design work fits, with Squarespace being learnable.",
-   "apply_email": "",
-   "found_at": "2026-08-17 11:56",
-   "status": "new",
-   "details": "- Part-time, on-site Web Designer at a small creative studio (WebloomDesign)\n- Designing and refining website layouts and visual concepts for clients\n- Building/maintaining sites in Squarespace\n- Collaborative studio environment, client-facing creative digital projects\n- Language requirements not stated in the posting\n- Pay not stated",
-   "why_good": "- Real web design experience: built and maintained client websites in WordPress/Elementor (majistralecza.epis.to, mirook.com, KXP client sites)\n- Strong visual/layout sensibility via Elementor, Astra and Canva work\n- Technical web background (HTML/CSS/JavaScript, front-end developer at ViviDoctor) supports layout implementation\n- Squarespace is a comparable CMS the candidate can pick up quickly given his WordPress/Elementor fluency\n- Part-time, on-site format suits an early-career candidate building a portfolio",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "en",
    "cv_fit_v": 19,
    "closed_check": "2026-10-09 18:34",
    "closed_check_v": 2
@@ -13987,6 +13965,28 @@
   }
  ],
  "rejected": [
+  {
+   "id": "4455124951",
+   "url": "https://www.linkedin.com/jobs/view/4455124951",
+   "title": "Web Designer",
+   "company": "WebloomDesign",
+   "location": "Belgium",
+   "match_score": 62,
+   "reason": "First seen about 45 days ago — a vacancy open this long has almost always been filled.",
+   "apply_email": "",
+   "found_at": "2026-08-17 11:56",
+   "status": "new",
+   "details": "- Part-time, on-site Web Designer at a small creative studio (WebloomDesign)\n- Designing and refining website layouts and visual concepts for clients\n- Building/maintaining sites in Squarespace\n- Collaborative studio environment, client-facing creative digital projects\n- Language requirements not stated in the posting\n- Pay not stated",
+   "why_good": "- Real web design experience: built and maintained client websites in WordPress/Elementor (majistralecza.epis.to, mirook.com, KXP client sites)\n- Strong visual/layout sensibility via Elementor, Astra and Canva work\n- Technical web background (HTML/CSS/JavaScript, front-end developer at ViviDoctor) supports layout implementation\n- Squarespace is a comparable CMS the candidate can pick up quickly given his WordPress/Elementor fluency\n- Part-time, on-site format suits an early-career candidate building a portfolio",
+   "why_bad": "First seen about 45 days ago — a vacancy open this long has almost always been filled.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "en",
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-09 18:34",
+   "closed_check_v": 2
+  },
   {
    "id": "74641458",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74641458/customer-service-medewerker-dagdienst-nederlands-frans-engels",
@@ -54000,8 +54000,8 @@
    "cv_fit_v": 19
   }
  ],
- "search_cursor": 0,
- "li_cursor": 3,
+ "search_cursor": 5,
+ "li_cursor": 9,
  "letter_fails": {
   "4428705687": 2
  },
