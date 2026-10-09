@@ -2254,7 +2254,9 @@ warehouse & logistics, and "no experience needed" roles. When unsure about an
 accessible role, PASS with a low score; when a required degree is clearly stated
 with no experience route, FAIL.
 
-STEP 2 — For a PASS, summarise honestly; for a PASS that is a stretch, still say
+STEP 2 — For a PASS, summarise honestly (why_good answers "why would THIS job suit
+him", so it is driven by the posting's duties and requirements, not by a tour of
+the CV); for a PASS that is a stretch, still say
 in why_good what the candidate would be leaning on and note the gap frankly. For a
 FAIL, write only the decision fields: most postings fail, every extra word is
 billed, and a rejected job is never read again.
@@ -2271,7 +2273,7 @@ Reply ONLY with JSON:
   "exp_stretch": true or false — true when the main gap is a ~2-4 year experience ask (not senior, not 5+) the junior candidate could still apply to; false otherwise,
   "internship": true or false — true if this is an internship / stage / traineeship,
   "details": "if pass: 4-6 short bullets (one newline-separated string): role, main tasks, contract type, schedule, language, pay if stated (or ''). If fail: '' — do not summarise a job you are rejecting",
-  "why_good": "if pass: 3-5 short bullets (one newline-separated string) on why it fits, grounded ONLY in the real CV; for a dutch_stretch job also state plainly that it needs stronger Dutch than A2; for an exp_stretch job state plainly it asks for more years than the candidate has but is still worth a shot. If fail: ''",
+  "why_good": "if pass: 3-5 short bullets (one newline-separated string) on why it fits. Each bullet starts from something THIS posting actually asks for or does, then names the matching real CV evidence (e.g. 'Asks for CMS/community content -> runs WordPress and Shopify content at Episto'). NEVER list a CV strength the posting does not use: if the job has no SEO, analytics, web or tools in it, do not mention them, and say plainly when the role is a different kind of work than the candidate's background (and what the real overlap is, even if thin). Grounded ONLY in the real CV; for a dutch_stretch job also state plainly that it needs stronger Dutch than A2; for an exp_stretch job state plainly it asks for more years than the candidate has but is still worth a shot. If fail: ''",
   "why_bad": "if fail: ONE or TWO short bullets (one newline-separated string, at most 15 words each) naming the main requirement the candidate is MISSING for this job. If pass: ''"
 }}
 
