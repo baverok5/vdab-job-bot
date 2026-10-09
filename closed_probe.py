@@ -213,7 +213,53 @@ def main():
     probe_eures("eures-control", "ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ")
 
 
+def tree(x, path="", out=None, depth=0):
+    """Flatten a JSON value into 'path: short value' lines."""
+    out = [] if out is None else out
+    if isinstance(x, dict):
+        for k, v in x.items():
+            tree(v, f"{path}.{k}" if path else k, out, depth + 1)
+    elif isinstance(x, list):
+        out.append(f"{path}: list[{len(x)}]")
+        for i, v in enumerate(x[:3]):
+            tree(v, f"{path}[{i}]", out, depth + 1)
+    else:
+        out.append(f"{path}: {str(x)[:70]!r}")
+    return out
+
+
+def eures_shape():
+    """Show where EURES keeps the language level, for the jobs that state one."""
+    jobs = json.load(open("docs/jobs.json", encoding="utf-8")).get("jobs", [])
+    shown = 0
+    for j in jobs:
+        if "europa.eu" not in (j.get("url") or ""):
+            continue
+        raw = j["url"].rsplit("/", 1)[-1]
+        try:
+            r = requests.get(bot.EURES_DETAIL_API + quote(raw, safe=""), params={"requestLang": "en"},
+                             timeout=25, headers={"Accept": "application/json", "User-Agent": bot.HEADERS["User-Agent"]})
+            d = r.json() if r.status_code == 200 else None
+        except Exception:
+            d = None
+        if not d:
+            continue
+        lines = tree(d)
+        langy = [l for l in lines if re.search(r"lang|cefr|level", l, re.I)]
+        print(f"\n=== {j.get('title','')[:60]!r}")
+        for l in langy[:25]:
+            print("   ", l)
+        shown += 1
+        if shown >= 4:
+            break
+    if shown:
+        print("\n--- full key tree of the last job ---")
+        for l in lines[:120]:
+            print("   ", l)
+
+
 def verify():
+    eures_shape()
     """Run the bot's real checkers on a sample and show the verdicts, so the rules
     can be judged against what the sites actually say for open and closed jobs."""
     from collections import Counter
