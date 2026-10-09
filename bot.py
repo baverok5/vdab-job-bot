@@ -1465,6 +1465,48 @@ def collect_eures(budget_s=EURES_BUDGET_S):
     return found
 
 
+_CEFR = ("a1", "a2", "b1", "b2", "c1", "c2")
+_LANG_NAMES = {"nl": "Dutch", "fr": "French", "en": "English", "de": "German"}
+
+
+def _eures_profile(d):
+    """EURES nests the vacancy under jvProfiles.<language>; the top level holds
+    only ids and dates. Prefer the version in the posting's own language."""
+    profiles = d.get("jvProfiles") if isinstance(d, dict) else None
+    if not isinstance(profiles, dict) or not profiles:
+        return {}
+    pref = d.get("preferredLanguage")
+    prof = profiles.get(pref) if pref in profiles else next(iter(profiles.values()))
+    return prof if isinstance(prof, dict) else {}
+
+
+def eures_lang_levels(d):
+    """{"nl": "b2", "en": "b1"} from positionLanguages. EURES states the bar in
+    requiredSkillLevel or, as VDAB feeds do, desiredSkillLevel (the portal shows
+    it as "Dutch (B2 - Upper intermediate)"); failing both, the best score among
+    the CEF competencies. This is the posting's own stated level, not a guess."""
+    out = {}
+    prof = _eures_profile(d)
+    for item in prof.get("positionLanguages") or []:
+        if not isinstance(item, dict):
+            continue
+        code = str(item.get("languageCode") or "").lower()
+        level = None
+        for key in ("requiredSkillLevel", "desiredSkillLevel"):
+            v = str(item.get(key) or "").lower()
+            if v in _CEFR:
+                level = v
+                break
+        if level is None:
+            scores = [str(c.get("score") or "").lower() for c in item.get("competencies") or []
+                      if isinstance(c, dict)]
+            scores = [x for x in scores if x in _CEFR]
+            level = max(scores, key=_CEFR.index) if scores else None
+        if code and level:
+            out[code] = max(level, out.get(code, level), key=_CEFR.index)
+    return out
+
+
 def _eures_requirements(d):
     """The language level EURES holds as structured data, rendered as text.
 
@@ -1475,7 +1517,8 @@ def _eures_requirements(d):
     states should never be left to a guess.
     """
     out = []
-    langs = []
+    langs = [f"{_LANG_NAMES.get(c, c)} ({lv.upper()})"
+             for c, lv in eures_lang_levels(d).items()]
     raw = d.get("languages") or d.get("languageSkills") or d.get("requiredLanguages") or []
     if isinstance(raw, dict):
         raw = [raw]
@@ -1539,16 +1582,18 @@ def fetch_eures_detail(url):
             d = r.json()
             if isinstance(d, dict):
                 d = d.get("jv") or d.get("data") or d
+                prof = _eures_profile(d)
                 desc = _first(d, "description", "jvDescription", "content",
-                              "descriptionText", "freeText")
+                              "descriptionText", "freeText") or prof.get("description")
                 # Only with a real description. Returning title + employer alone
                 # gave the AI ~50 characters to judge, and it duly invented one:
                 # "Digitale afspraak - Manpower", a call-centre intake, came back
                 # as "Digital Marketing Intern ... tasks likely include SEO,
                 # content, social media" and scored 70%.
                 if desc:
-                    parts = [_first(d, "title"),
-                             _first(d, "employer", "employerName"), desc,
+                    emp = prof.get("employer") if isinstance(prof.get("employer"), dict) else {}
+                    parts = [_first(d, "title") or prof.get("title"),
+                             _first(d, "employer", "employerName") or emp.get("name"), desc,
                              _eures_requirements(d)]
                     text = "\n\n".join(p for p in parts if p)
     except Exception as e:
@@ -2861,7 +2906,7 @@ def _apply_verdict(jobs, job_id, url, verdict, apply_email, found_at=None,
 
 
 _CLOSED_KEEP = ("id", "url", "src", "title", "company", "location", "found_at", "match_score",
-                "reason", "lang", "internship", "apply_email", "dutch_stretch", "exp_stretch")
+                "reason", "lang", "internship", "apply_email", "dutch_stretch", "exp_stretch", "lang_req")
 
 
 def _closed_record(entry, why):
@@ -3003,20 +3048,34 @@ _VDAB_PAGE = {}
 
 
 def _vdab_session_page(browser):
-    """One vdab.be page kept open for the whole sweep. The vacancy API only answers
-    from inside a normal browser session (a plain HTTP request gets a non-JSON
-    reply), so the check calls it with fetch() from that page: ~0.3 s a job
-    instead of rendering every posting."""
+    """One page reused for the whole sweep, with images/fonts/CSS blocked so each
+    posting costs a couple of seconds, not a full render. (Calling the API with
+    fetch() or plain HTTP gets 403 / non-JSON; the page's own request succeeds.)"""
     pg = _VDAB_PAGE.get("page")
     if pg is not None and not pg.is_closed():
         return pg
     pg = browser.new_page(user_agent=HEADERS["User-Agent"], locale="nl-BE",
                           extra_http_headers={"Accept-Language": HEADERS["Accept-Language"]})
-    pg.goto("https://www.vdab.be/vindeenjob/vacatures", wait_until="domcontentloaded",
-            timeout=30000)
-    pg.wait_for_timeout(2500)
+    pg.route("**/*", lambda route: route.abort()
+             if route.request.resource_type in ("image", "font", "media", "stylesheet")
+             else route.continue_())
     _VDAB_PAGE["page"] = pg
     return pg
+
+
+def _vdab_api_response(browser, url):
+    """Open the posting and return (http status, parsed JSON or None) of the
+    vacancy API call the page makes."""
+    pg = _vdab_session_page(browser)
+    with pg.expect_response(lambda r: "/rest/vindeenjob/v4/vacatures/" in r.url
+                            and "lookalikes" not in r.url, timeout=20000) as info:
+        pg.goto(url, wait_until="commit", timeout=30000)
+    resp = info.value
+    try:
+        data = resp.json()
+    except Exception:
+        data = None
+    return resp.status, data
 
 
 def _vdab_open(browser, job):
@@ -3024,28 +3083,19 @@ def _vdab_open(browser, job):
     answers 404, and one taken offline says status PASSIEF / gepubliceerd false
     (both seen on real postings). Anything else — an error, a block, a shape we
     do not recognise — is "could not tell", never "closed"."""
-    m = re.search(r"/vacatures/(\d+)", job.get("url") or "")
-    if not m:
+    url = job.get("url") or ""
+    if not re.search(r"/vacatures/\d+", url):
         return None, None
     try:
-        res = _vdab_session_page(browser).evaluate(
-            """async (id) => {
-                 const r = await fetch('/rest/vindeenjob/v4/vacatures/' + id + '?preview=false',
-                                       {headers: {Accept: 'application/json'}});
-                 let d = null;
-                 try { d = await r.json(); } catch (e) {}
-                 return {http: r.status,
-                         status: d && d.status !== undefined ? d.status : null,
-                         pub: d && d.gepubliceerd !== undefined ? d.gepubliceerd : null};
-               }""", m.group(1))
+        http, d = _vdab_api_response(browser, url)
     except Exception:
         _VDAB_PAGE.pop("page", None)          # rebuild the session next time
         return None, None
-    if res["http"] == 404:
+    if http == 404:
         return False, "Closed — VDAB no longer has this vacancy."
-    if res["http"] != 200 or res["status"] is None:
+    if http != 200 or not isinstance(d, dict) or "status" not in d:
         return None, None
-    if str(res["status"]).upper() == "PASSIEF" or res["pub"] is False:
+    if str(d.get("status")).upper() == "PASSIEF" or d.get("gepubliceerd") is False:
         return False, "Closed — VDAB has taken this vacancy offline."
     return True, None
 
@@ -3065,6 +3115,12 @@ def _eures_open(browser, job):
     if r.status_code == 404 and "notAvailable" in r.text:
         return False, "Closed — EURES has withdrawn this vacancy."
     if r.status_code == 200:
+        try:
+            levels = eures_lang_levels(r.json())
+        except ValueError:
+            levels = None
+        if levels is not None:
+            job["lang_req"] = levels          # {"nl": "b2", ...}; the app reads it
         return True, None
     return None, None
 

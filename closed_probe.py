@@ -259,7 +259,7 @@ def eures_shape():
 
 
 def verify():
-    eures_shape()
+    pass
     """Run the bot's real checkers on a sample and show the verdicts, so the rules
     can be judged against what the sites actually say for open and closed jobs."""
     from collections import Counter
@@ -282,11 +282,8 @@ def verify():
                     tally[st] += 1
                     if src == "VDAB":
                         try:
-                            m = __import__("re").search(r"/vacatures/(\d+)", j["url"])
-                            d = bot._vdab_session_page(browser).evaluate(
-                                "async (id) => { const r = await fetch('/rest/vindeenjob/v4/vacatures/' + id + '?preview=false', {headers:{Accept:'application/json'}}); let d=null; try{d=await r.json()}catch(e){}; return [r.status, d&&d.status, d&&d.gepubliceerd]; }",
-                                m.group(1))
-                            fields[tuple(d)] += 1
+                            http, d = bot._vdab_api_response(browser, j["url"])
+                            fields[(http, d.get("status") if d else None, d.get("gepubliceerd") if d else None)] += 1
                         except Exception as e:
                             fields[("err", type(e).__name__)] += 1
                     if st is False:

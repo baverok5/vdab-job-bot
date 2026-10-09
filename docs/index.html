@@ -235,7 +235,7 @@
 <div class="toast" id="toast"></div>
 
 <script>
-const APP_VERSION = "v82";                 // MUST match CACHE in sw.js — it is how you tell whether the phone got the deploy
+const APP_VERSION = "v83";                 // MUST match CACHE in sw.js — it is how you tell whether the phone got the deploy
 const LS = "jobstatus";                    // { jobId: "applied" | "skipped" | "closed" }
 const LS_AT = "jobstatus_at";              // { jobId: epoch ms the status was set }
 const getStatus = () => JSON.parse(localStorage.getItem(LS) || "{}");
@@ -1213,6 +1213,11 @@ const DUTCH_HIGH_RX = new RegExp(
 // B2/C1/fluent, 52 explicitly accept B1 or English, and 613 simply say nothing.
 // Silence is not a requirement, so it gets its own label and stays visible.
 function dutchState(j) {
+  // EURES states the required level as structured data (the bot saves it as
+  // lang_req from the vacancy record). That is the posting's own word, so it
+  // beats anything inferred from the text: B2 or above is "needs better Dutch".
+  const lvl = String((j.lang_req || {}).nl || "").toLowerCase();
+  if (["b2", "c1", "c2"].includes(lvl)) return "high";
   // The JOB's own text only. why_good/why_bad describe the candidate and keep
   // saying "candidate has B1", which read as "the job accepts B1".
   const t = String(j.details || "").replace(/[^.;\n]*\b(candidate|kandidaat)\b[^.;\n]*/gi, " ");
