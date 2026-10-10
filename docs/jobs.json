@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-10 18:04 UTC",
+ "updated": "2026-10-10 18:38 UTC",
  "jobs": [
   {
    "id": "4471489541",
@@ -3458,28 +3458,6 @@
    "closed_check_v": 2
   },
   {
-   "id": "74451011",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74451011/commerciele-medewerker-planning",
-   "title": "Commerciële medewerker planning",
-   "company": "RANDSTAD",
-   "location": "Dessel",
-   "match_score": 55,
-   "reason": "Role fits candidate's administrative and digital skills; Dutch requirement is medium (B1) and no French required.",
-   "apply_email": "office.kempen@randstad.be",
-   "found_at": "2026-08-25 12:15",
-   "status": "new",
-   "details": "Role: commercial administrative employee handling phone client contact and administrative follow-up of dossiers.\nTasks: manage phone calls, process orders, monitor progress, support commercial planning.\nContract: permanent, full-time, day work, start ASAP.\nLanguage: Dutch (medium) required.\nEducation: no specific study requirements; bachelor preferred but not strict.\nExperience: limited experience (<2 years) accepted.\nSalary: market-conform, meal vouchers €9/day, eco-cheques €250/year, 36 vacation days, laptop, group insurance, 13th month, travel allowance, company car after 5 years.",
-   "why_good": "Candidate has administrative and organizational skills from logistics and digital marketing roles.\nDutch at B1 meets the 'medium' requirement.\nNo French required, and English is not required but candidate's English is professional.\nLimited experience (<2 years) aligns with candidate's ~4 months.\nNo specific degree required, so candidate's coursework is acceptable.",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18,
-   "closed_check": "2026-10-10 17:31",
-   "closed_check_v": 2
-  },
-  {
    "id": "4468734043",
    "url": "https://www.linkedin.com/jobs/view/4468734043",
    "title": "Marketing Associate for Clinical Education",
@@ -4710,28 +4688,6 @@
    "why_bad": "",
    "dutch_stretch": true,
    "exp_stretch": true,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
-   "closed_check_v": 2
-  },
-  {
-   "id": "74449527",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74449527/kassa-servicemedewerkers-25u-mediamarkt-turnhout",
-   "title": "Kassa/Servicemedewerkers 25u - MediaMarkt Turnhout",
-   "company": "MediaMarkt-Saturn Belgium NV",
-   "location": "Turnhout",
-   "match_score": 45,
-   "reason": "Accessible part-time retail/customer-service role with no experience, no degree and only good (not fluent) Dutch required.",
-   "apply_email": "",
-   "found_at": "2026-08-25 12:30",
-   "status": "new",
-   "details": "- Part-time cashier/customer-service employee (25h/week over 5 days) at MediaMarkt Turnhout\n- Tasks: checkout, cash and goods handling, customer care, after-sales, online pick-up, service and repairs\n- Contract: permanent (contract van onbepaalde duur), day work plus weekends\n- Languages: Dutch (Goed) — no French required\n- Requirements: no specific studies, no experience needed\n- Pay: not stated; bonus scheme, 13th month, 4 weeks holiday, up to 30% staff discount",
-   "why_good": "- No experience and no degree required — fully open to an early-career candidate\n- Dutch requirement is only 'Goed', within the candidate's B1 writing / A2+ speaking range\n- No French needed\n- Customer-facing, communicative role matching the candidate's fluent English and native Turkish plus growing Dutch\n- Located in Turnhout, commutable from Zwijndrecht area",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
@@ -14131,6 +14087,50 @@
   }
  ],
  "rejected": [
+  {
+   "id": "74449527",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74449527/kassa-servicemedewerkers-25u-mediamarkt-turnhout",
+   "title": "Kassa/Servicemedewerkers 25u - MediaMarkt Turnhout",
+   "company": "MediaMarkt-Saturn Belgium NV",
+   "location": "Turnhout",
+   "match_score": 45,
+   "reason": "First seen about 46 days ago — a vacancy open this long has almost always been filled.",
+   "apply_email": "",
+   "found_at": "2026-08-25 12:30",
+   "status": "new",
+   "details": "- Part-time cashier/customer-service employee (25h/week over 5 days) at MediaMarkt Turnhout\n- Tasks: checkout, cash and goods handling, customer care, after-sales, online pick-up, service and repairs\n- Contract: permanent (contract van onbepaalde duur), day work plus weekends\n- Languages: Dutch (Goed) — no French required\n- Requirements: no specific studies, no experience needed\n- Pay: not stated; bonus scheme, 13th month, 4 weeks holiday, up to 30% staff discount",
+   "why_good": "- No experience and no degree required — fully open to an early-career candidate\n- Dutch requirement is only 'Goed', within the candidate's B1 writing / A2+ speaking range\n- No French needed\n- Customer-facing, communicative role matching the candidate's fluent English and native Turkish plus growing Dutch\n- Located in Turnhout, commutable from Zwijndrecht area",
+   "why_bad": "First seen about 46 days ago — a vacancy open this long has almost always been filled.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-10 17:31",
+   "closed_check_v": 2
+  },
+  {
+   "id": "74451011",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74451011/commerciele-medewerker-planning",
+   "title": "Commerciële medewerker planning",
+   "company": "RANDSTAD",
+   "location": "Dessel",
+   "match_score": 55,
+   "reason": "First seen about 46 days ago — a vacancy open this long has almost always been filled.",
+   "apply_email": "office.kempen@randstad.be",
+   "found_at": "2026-08-25 12:15",
+   "status": "new",
+   "details": "Role: commercial administrative employee handling phone client contact and administrative follow-up of dossiers.\nTasks: manage phone calls, process orders, monitor progress, support commercial planning.\nContract: permanent, full-time, day work, start ASAP.\nLanguage: Dutch (medium) required.\nEducation: no specific study requirements; bachelor preferred but not strict.\nExperience: limited experience (<2 years) accepted.\nSalary: market-conform, meal vouchers €9/day, eco-cheques €250/year, 36 vacation days, laptop, group insurance, 13th month, travel allowance, company car after 5 years.",
+   "why_good": "Candidate has administrative and organizational skills from logistics and digital marketing roles.\nDutch at B1 meets the 'medium' requirement.\nNo French required, and English is not required but candidate's English is professional.\nLimited experience (<2 years) aligns with candidate's ~4 months.\nNo specific degree required, so candidate's coursework is acceptable.",
+   "why_bad": "First seen about 46 days ago — a vacancy open this long has almost always been filled.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 18,
+   "closed_check": "2026-10-10 17:31",
+   "closed_check_v": 2
+  },
   {
    "id": "74628776",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74628776/customer-service-nl-fr-eng",
@@ -54146,8 +54146,8 @@
    "cv_fit_v": 19
   }
  ],
- "search_cursor": 5,
- "li_cursor": 9,
+ "search_cursor": 10,
+ "li_cursor": 15,
  "letter_fails": {
   "4428705687": 2
  },
