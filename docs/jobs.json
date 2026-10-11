@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-11 17:55 UTC",
+ "updated": "2026-10-11 18:00 UTC",
  "jobs": [
   {
    "id": "4471489541",
@@ -2030,7 +2030,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -2052,7 +2052,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -2074,7 +2074,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -2096,7 +2096,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -2118,7 +2118,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -2144,51 +2144,7 @@
     "en": "b1",
     "nl": "b2"
    },
-   "closed_check": "2026-10-10 17:31",
-   "closed_check_v": 2
-  },
-  {
-   "id": "268036849",
-   "url": "https://www.stepstone.be/jobs--Marketing-Operations-Specialist-Kontich-HeadCount--2242581-inline.html",
-   "title": "Marketing & Operations Support",
-   "company": "HeadCount (for a Cronos Groep technology company)",
-   "location": "Kontich",
-   "match_score": 58,
-   "reason": "Accessible marketing/operations support role with only a preference for a degree and no hard experience wall, so the junior candidate can apply.",
-   "apply_email": "",
-   "found_at": "2026-10-06 19:51",
-   "status": "new",
-   "details": "Marketing & operations support role for a Cronos Groep SAP implementation partner.\nTasks: budget/funding admin, planning & deadline tracking, content planning for mailings/newsletters/social, campaign admin follow-up, process improvement, AI interest.\nFull-time, contract duration unspecified.\nDutch-language posting; no French required.\nPay: attractive package incl. company car, insurance, 32 vacation days (no figure stated).",
-   "why_good": "Content planning for mailings, newsletters and social media maps directly to the candidate's SEO content and CMS experience.\nAdministrative and operational follow-up of campaigns fits his structured, detail-oriented work on client sites and reporting.\nInterest in AI and new tech is a real strength: he uses LLMs daily and writes Python automation.\nAffinity with IT/technology is backed by his Applied Computer Science coursework and front-end background.\nDegree is only 'bij voorkeur' (preferred), not a hard requirement, so his lack of a completed diploma is not a blocker.",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
-   "closed_check_v": 2
-  },
-  {
-   "id": "313604517",
-   "url": "https://www.stepstone.be/jobs--Marketing-Operations-Support-Kontich-HeadCount--2242581-inline.html",
-   "title": "Marketing & Operations Support",
-   "company": "HeadCount (for a Cronos Groep SAP implementation partner)",
-   "location": "Kontich",
-   "match_score": 58,
-   "reason": "Accessible marketing/operations support role with only a preferred (not required) diploma and no French requirement.",
-   "apply_email": "",
-   "found_at": "2026-10-06 19:50",
-   "status": "new",
-   "details": "Marketing & operations support role at a Cronos Groep SAP implementation company.\nTasks: budget/funding admin, planning & deadline tracking, content planning (mailings, newsletters, social), campaign support, process improvement, AI interest.\nFull-time, contract duration unspecified, based in Kontich.\nLanguage: Dutch (posting in Dutch; no French mentioned).\nPay: attractive package incl. company car, insurance, 32 vacation days.\nProfile: first relevant experience (incl. stage/studentenjob) is a plus; diploma in Marketing/Communication 'bij voorkeur' (preferred, not required).",
-   "why_good": "Marketing + content planning + admin/operations mix matches the candidate's digital marketing and CMS/content background.\nOnly 'eerste relevante ervaring' is asked — the candidate's ~2-3 years of web/SEO/marketing experience fits comfortably.\nDiploma in Marketing/Communication is only 'bij voorkeur' (preferred), not a hard requirement, so no degree wall.\nNo French required; Dutch is used but the posting does not demand fluent/native Dutch.\nAI interest and creative writing (social posts, newsletters) align with the candidate's daily LLM use and SEO content writing.",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -2210,29 +2166,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
-   "closed_check_v": 2
-  },
-  {
-   "id": "774357424",
-   "url": "https://www.stepstone.be/jobs--Marketing-Administration-Coordinator-Kontich-HeadCount--2242581-inline.html",
-   "title": "Marketing & Administration Coordinator",
-   "company": "HeadCount (for a Cronos Groep technology company)",
-   "location": "Kontich",
-   "match_score": 58,
-   "reason": "Accessible marketing/communication/administration role with only a preferred (not required) diploma and no French requirement.",
-   "apply_email": "",
-   "found_at": "2026-09-10 15:33",
-   "status": "new",
-   "details": "Marketing & Administration Officer for a technology company within Cronos Groep.\nTasks: budget/funding administration, supporting marketing campaign follow-up, external communication (mailings, social media, newsletters), content calendar management, process/campaign improvement, exploring AI tools.\nProfile: analytical marketer comfortable with admin/operational work; first relevant experience (incl. internship/student job) is a plus; affinity with IT/technology.\nDiploma in Marketing/Communication 'preferred' (bij voorkeur) — not a hard requirement.\nFull-time, contract duration unspecified; attractive salary package incl. company car, insurance, bike leasing, extra vacation days.\nLocation: Kontich, Belgium.",
-   "why_good": "Real SEO/content/CMS and marketing experience at Episto maps well to campaign support, content calendar and external communication.\nHands-on with mailings, social media, newsletters and WordPress content — directly relevant to the contentkalender and communication tasks.\nStrong AI/tech affinity (daily LLM use, Python automation, Android app) matches the AI-and-new-tech interest they ask for.\nAnalytical reporting skills (GA4, Search Console, Semrush) support the 'analyseer respons en engagement' expectation.\nDiploma is only 'bij voorkeur', so the lack of a completed degree is not a blocker.",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -2254,7 +2188,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -2276,7 +2210,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -2298,7 +2232,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -2320,7 +2254,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -2342,7 +2276,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -2364,7 +2298,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -2386,7 +2320,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -2409,7 +2343,7 @@
    "lang": "nl",
    "cv_fit_v": 19,
    "lang_req": {},
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -2431,7 +2365,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -2453,7 +2387,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -2475,7 +2409,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -2497,7 +2431,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -2519,7 +2453,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -2541,7 +2475,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -2563,7 +2497,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -2585,7 +2519,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -2607,7 +2541,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2,
    "lang_req": {
     "nl": "b2"
@@ -2632,7 +2566,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -2654,7 +2588,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -2676,7 +2610,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -2698,7 +2632,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -2720,7 +2654,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -2742,7 +2676,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -2764,7 +2698,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -2786,7 +2720,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -2808,7 +2742,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -2830,7 +2764,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2,
    "lang_req": {
     "nl": "b1"
@@ -2855,7 +2789,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2,
    "lang_req": {}
   },
@@ -2878,7 +2812,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -2900,7 +2834,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -2922,7 +2856,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -2944,7 +2878,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -2966,7 +2900,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -2988,7 +2922,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -3010,7 +2944,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -3032,7 +2966,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -3054,7 +2988,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -3076,7 +3010,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -3098,7 +3032,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2,
    "lang_req": {
     "en": "b2",
@@ -3124,7 +3058,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -3146,7 +3080,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -3168,7 +3102,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -3190,7 +3124,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -3212,7 +3146,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -3234,7 +3168,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -3256,7 +3190,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -3278,7 +3212,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -3300,7 +3234,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -3322,7 +3256,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -3344,7 +3278,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -3366,7 +3300,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -3388,7 +3322,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -3410,7 +3344,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -3432,7 +3366,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -3454,7 +3388,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2,
    "lang_req": {
     "en": "b1",
@@ -3481,7 +3415,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -3503,7 +3437,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -3525,7 +3459,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -3547,7 +3481,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -3569,7 +3503,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -3591,7 +3525,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -3613,7 +3547,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -3635,7 +3569,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -3657,7 +3591,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -3679,7 +3613,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -3701,7 +3635,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -3723,7 +3657,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -3745,7 +3679,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -3767,7 +3701,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -3789,7 +3723,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -3811,7 +3745,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -3833,7 +3767,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -3855,7 +3789,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -3877,7 +3811,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -3899,7 +3833,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -3921,7 +3855,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -3943,7 +3877,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -3965,7 +3899,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -3987,7 +3921,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -4009,7 +3943,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -4031,7 +3965,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -4053,7 +3987,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -4075,7 +4009,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -4097,7 +4031,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -4119,7 +4053,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -4141,7 +4075,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -4163,7 +4097,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -4185,7 +4119,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -4207,7 +4141,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -4229,7 +4163,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-10 17:31",
+   "closed_check": "2026-10-11 17:50",
    "closed_check_v": 2
   },
   {
@@ -54489,6 +54423,57 @@
  "ready_cap_recover_v1": true,
  "new_cv_exp_requeue_v1": true,
  "closed": [
+  {
+   "id": "774357424",
+   "url": "https://www.stepstone.be/jobs--Marketing-Administration-Coordinator-Kontich-HeadCount--2242581-inline.html",
+   "title": "Marketing & Administration Coordinator",
+   "company": "HeadCount (for a Cronos Groep technology company)",
+   "location": "Kontich",
+   "found_at": "2026-09-10 15:33",
+   "match_score": 58,
+   "reason": "Accessible marketing/communication/administration role with only a preferred (not required) diploma and no French requirement.",
+   "lang": "nl",
+   "internship": false,
+   "apply_email": "",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "closed_at": "2026-10-11 17:58",
+   "closed_why": "Closed — StepStone says this listing is expired."
+  },
+  {
+   "id": "313604517",
+   "url": "https://www.stepstone.be/jobs--Marketing-Operations-Support-Kontich-HeadCount--2242581-inline.html",
+   "title": "Marketing & Operations Support",
+   "company": "HeadCount (for a Cronos Groep SAP implementation partner)",
+   "location": "Kontich",
+   "found_at": "2026-10-06 19:50",
+   "match_score": 58,
+   "reason": "Accessible marketing/operations support role with only a preferred (not required) diploma and no French requirement.",
+   "lang": "nl",
+   "internship": false,
+   "apply_email": "",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "closed_at": "2026-10-11 17:58",
+   "closed_why": "Closed — StepStone says this listing is expired."
+  },
+  {
+   "id": "268036849",
+   "url": "https://www.stepstone.be/jobs--Marketing-Operations-Specialist-Kontich-HeadCount--2242581-inline.html",
+   "title": "Marketing & Operations Support",
+   "company": "HeadCount (for a Cronos Groep technology company)",
+   "location": "Kontich",
+   "found_at": "2026-10-06 19:51",
+   "match_score": 58,
+   "reason": "Accessible marketing/operations support role with only a preference for a degree and no hard experience wall, so the junior candidate can apply.",
+   "lang": "nl",
+   "internship": false,
+   "apply_email": "",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "closed_at": "2026-10-11 17:58",
+   "closed_why": "Closed — StepStone says this listing is expired."
+  },
   {
    "id": "4464201422",
    "url": "https://www.linkedin.com/jobs/view/4464201422",
