@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-11 18:24 UTC",
+ "updated": "2026-10-11 19:00 UTC",
  "jobs": [
   {
    "id": "4471489541",
@@ -7137,28 +7137,6 @@
    "closed_check_v": 2
   },
   {
-   "id": "74455499",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74455499/onthaalbediende",
-   "title": "Onthaalbediende",
-   "company": "NOEL FRANKLIN (for a client in Kuurne)",
-   "location": "Kuurne",
-   "match_score": 42,
-   "reason": "Accessible receptionist/admin role with limited experience (<2 years) and degree 'or equivalent by experience', no French required.",
-   "apply_email": "",
-   "found_at": "2026-08-26 00:18",
-   "status": "new",
-   "details": "- Receptionist / onthaalmedewerker: first point of contact for clients, visitors and suppliers\n- Scheduling technicians, following up interventions administratively, managing the agenda\n- Permanent full-time contract (vast, onbepaalde duur), day work\n- Requires limited experience (<2 years); studies: professional bachelor or equivalent by experience\n- Driving licence B required\n- Pay €2,300–2,900 gross/month + meal/eco cheques, group & hospitalisation insurance",
-   "why_good": "- Customer-facing, organised admin/reception role — matches the accessible customer-service/office-support profile\n- Only asks for limited experience (<2 years), which the candidate meets\n- Degree requirement explicitly allows 'gelijkwaardig door ervaring', so no completed bachelor needed\n- No French required; Dutch is the working language, which is the main gap\n- Driving licence B is standard and the candidate is based in Belgium",
-   "why_bad": "",
-   "dutch_stretch": true,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-10-11 17:50",
-   "closed_check_v": 2
-  },
-  {
    "id": "74440829",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74440829/junior-transportcoordinator-koelketen",
    "title": "Junior transportcoördinator koelketen",
@@ -14131,6 +14109,28 @@
   }
  ],
  "rejected": [
+  {
+   "id": "74455499",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74455499/onthaalbediende",
+   "title": "Onthaalbediende",
+   "company": "NOEL FRANKLIN (for a client in Kuurne)",
+   "location": "Kuurne",
+   "match_score": 42,
+   "reason": "First seen about 46 days ago — a vacancy open this long has almost always been filled.",
+   "apply_email": "",
+   "found_at": "2026-08-26 00:18",
+   "status": "new",
+   "details": "- Receptionist / onthaalmedewerker: first point of contact for clients, visitors and suppliers\n- Scheduling technicians, following up interventions administratively, managing the agenda\n- Permanent full-time contract (vast, onbepaalde duur), day work\n- Requires limited experience (<2 years); studies: professional bachelor or equivalent by experience\n- Driving licence B required\n- Pay €2,300–2,900 gross/month + meal/eco cheques, group & hospitalisation insurance",
+   "why_good": "- Customer-facing, organised admin/reception role — matches the accessible customer-service/office-support profile\n- Only asks for limited experience (<2 years), which the candidate meets\n- Degree requirement explicitly allows 'gelijkwaardig door ervaring', so no completed bachelor needed\n- No French required; Dutch is the working language, which is the main gap\n- Driving licence B is standard and the candidate is based in Belgium",
+   "why_bad": "First seen about 46 days ago — a vacancy open this long has almost always been filled.",
+   "dutch_stretch": true,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-11 17:50",
+   "closed_check_v": 2
+  },
   {
    "id": "74644692",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74644692/medewerker-commerciele-binnendienst",
@@ -54140,8 +54140,8 @@
    "cv_fit_v": 19
   }
  ],
- "search_cursor": 10,
- "li_cursor": 15,
+ "search_cursor": 15,
+ "li_cursor": 21,
  "letter_fails": {
   "4428705687": 2
  },
