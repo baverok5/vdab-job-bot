@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-15 19:09 UTC",
+ "updated": "2026-10-16 17:06 UTC",
  "jobs": [
   {
    "id": "4471489541",
@@ -20,7 +20,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -42,7 +42,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -64,7 +64,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2,
    "lang_req": {
     "en": "b1",
@@ -90,55 +90,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
-   "closed_check_v": 2
-  },
-  {
-   "id": "370063910",
-   "url": "https://europa.eu/eures/portal/jv-se/jv-details/MGZkZjRmZDUtMjQzOS00MDNmLTk3NWMtYTNmYjAyZWI2ZmQxIDM",
-   "title": "Content Marketeer",
-   "company": "Tifre",
-   "location": "Unknown",
-   "match_score": 85,
-   "reason": "This role aligns well with the candidate's digital marketing and content creation skills, with manageable experience and language requirements.",
-   "apply_email": "",
-   "found_at": "2026-09-19 09:55",
-   "status": "new",
-   "details": "Role: Content Marketeer\nMain Tasks: Create content for social media (Facebook, Instagram, LinkedIn - reels, videos, stories), develop storytelling and campaign ideas, design visuals in Canva for internal communication, manage content calendar.\nContract Type: Not specified\nSchedule: Full-time\nLanguage: Dutch (implied, as the posting is in Dutch and 'vlot' is used for the candidate's personality, but no explicit language requirement for the job is stated beyond the posting language itself)\nPay: Not specified",
-   "why_good": "Fits candidate's goal field in content and digital marketing.\nExperience aligns with creating content for social media and managing a content calendar.\nFamiliarity with Canva for designing visuals matches a requirement.\nTechnical background in web and SEO can support content strategy.\nThe role seems to value creativity and storytelling, areas the candidate can likely excel in.",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
-   "closed_check_v": 2,
-   "lang_req": {
-    "en": "b1",
-    "nl": "b2"
-   }
-  },
-  {
-   "id": "4468821492",
-   "url": "https://www.linkedin.com/jobs/view/4468821492",
-   "title": "Environmental Marketing Officer",
-   "company": "Embrace the Earth",
-   "location": "Aarschot, Flanders (hybrid)",
-   "match_score": 85,
-   "reason": "This is a volunteer internship that aligns with the candidate's goal field and language skills.",
-   "apply_email": "info@embracetheearth.eu",
-   "found_at": "2026-09-18 10:08",
-   "status": "new",
-   "details": "Contract type: Internship/ Volunteer\nStart date: Immediate\nRole: Environmental Marketing Officer\nMain tasks: Design, validate, and implement sustainable revenue generation strategies, create marketing strategies, establish alliances, analyze financial viability, measure results.\nContract type: Volunteer, remote 2 hours daily Mon-Fri, occasional in-person visits.\nMinimum duration: 6 months.\nLanguage: English and Dutch.\nPay: Not a paid position.",
-   "why_good": "The role is an internship, making the experience and degree requirements lenient.\nIt is in the goal field of marketing and business development.\nThe candidate has fluent English and B1 written Dutch, which is sufficient for this role.\nThe candidate's technical and web design skills can support revenue generation strategies and impact communication.",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": true,
-   "lang": "en",
-   "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -160,7 +112,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -182,7 +134,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -204,7 +156,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -226,7 +178,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -248,7 +200,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -270,7 +222,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2,
    "lang_req": {
     "nl": "b2"
@@ -295,7 +247,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -317,29 +269,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
-   "closed_check_v": 2
-  },
-  {
-   "id": "4467983366",
-   "url": "https://www.linkedin.com/jobs/view/4467983366",
-   "title": "Junior/Medior Digital Marketeer (Performance & Growth)",
-   "company": "Ants",
-   "location": "Antwerpen (also Gent)",
-   "match_score": 72,
-   "reason": "Junior/medior performance marketing role explicitly open to recent graduates with first experience, in the candidate's goal field, with no French or degree requirement.",
-   "apply_email": "",
-   "found_at": "2026-09-16 09:23",
-   "status": "new",
-   "details": "- Junior/medior digital marketeer at a 35-person performance & growth agency\n- Work across the full funnel: Paid Advertising, SEO, GEO, tagging & tracking\n- Translate data into clear client stories; build digital growth plans; hands-on execution\n- Employment contract (in loondienst), not freelance; flexible/hybrid working\n- Antwerpen (Eilandje) or Gent (Dok-Noord) office\n- Pay: attractive salary based on experience + meal vouchers €8/day, ecocheques €250, hospitalisation insurance, cafetaria plan, laptop, training budget, car depending on seniority",
-   "why_good": "- Explicitly welcomes 'net afgestudeerd' or first experience in performance marketing — matches the candidate's junior profile\n- Core tasks (SEO, GEO, data/analytics, tracking) map directly onto his Episto and KXP experience\n- GEO/AI-search is a stated specialty and a genuine strength on his CV (llms.txt, JSON-LD, GEO audits)\n- Data-native requirement fits his Google Analytics, Search Console, Semrush, Ahrefs and Python/automation skills\n- Posting is in Dutch but does not demand fluent Dutch or French, so his B1 writing / A2+ speaking is workable",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -361,7 +291,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2,
    "lang_req": {
     "en": "b1",
@@ -388,7 +318,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -410,7 +340,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -432,7 +362,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -454,7 +384,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -476,7 +406,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2,
    "lang_req": {}
   },
@@ -499,7 +429,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -521,7 +451,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -543,7 +473,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -565,7 +495,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -587,7 +517,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -609,7 +539,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -631,7 +561,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2,
    "lang_req": {
     "nl": "b2"
@@ -656,7 +586,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -678,7 +608,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -700,7 +630,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -722,29 +652,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
-   "closed_check_v": 2
-  },
-  {
-   "id": "74645978",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74645978/content-marketeer",
-   "title": "Content marketeer",
-   "company": "Tifre",
-   "location": "TEMSE",
-   "match_score": 70,
-   "reason": "This role aligns well with the candidate's digital marketing and content creation skills, with manageable experience and language requirements.",
-   "apply_email": "jobs@tifre.be",
-   "found_at": "2026-09-20 08:18",
-   "status": "new",
-   "details": "Vaste job\nVoltijds\nDagwerk\nContract van onbepaalde duur\nLanguages: Engels (Medium), Nederlands (Zeer goed)\nLocation: TEMSE",
-   "why_good": "- The role is a Content Marketeer, directly in the candidate's goal field.\n- Experience requirement of 'Minstens 2 jaar ervaring' (at least 2 years) fits the candidate's ~2.5 years of relevant experience.\n- The company explicitly mentions 'Diploma marketing of gelijkwaardige ervaring' (marketing diploma or equivalent experience), which covers the candidate's coursework and experience.\n- The language requirement is 'Nederlands (Zeer goed)' (Very good Dutch), which the candidate's B1 writing and A2+ speaking may stretch but is not a hard FAIL, especially with English being medium and the candidate's profile being in English.\n- Tasks involve content creation (social media, video, stories), storytelling, and designing visuals in Canva, all within the candidate's skill set.",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -766,7 +674,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -788,7 +696,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -810,7 +718,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -832,7 +740,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -854,7 +762,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -876,7 +784,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -898,7 +806,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -920,7 +828,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -942,7 +850,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -964,7 +872,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -986,7 +894,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -1008,7 +916,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -1030,7 +938,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -1052,7 +960,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -1074,7 +982,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -1095,7 +1003,12 @@
    "exp_stretch": false,
    "internship": true,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "lang_req": {
+    "nl": "b1"
+   },
+   "closed_check": "2026-10-16 17:02",
+   "closed_check_v": 2
   },
   {
    "id": "4478479627",
@@ -1116,7 +1029,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -1138,7 +1051,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -1161,7 +1074,7 @@
    "lang": "nl",
    "cv_fit_v": 19,
    "lang_req": {},
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -1186,7 +1099,7 @@
    "lang_req": {
     "nl": "b1"
    },
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -1212,7 +1125,7 @@
     "en": "a2",
     "nl": "b2"
    },
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -1237,7 +1150,7 @@
    "lang_req": {
     "nl": "b1"
    },
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -1259,7 +1172,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -1281,7 +1194,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -1303,7 +1216,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -1325,7 +1238,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -1347,7 +1260,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -1369,7 +1282,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -1391,7 +1304,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -1413,7 +1326,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -1435,33 +1348,11 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2,
    "lang_req": {
     "nl": "b1"
    }
-  },
-  {
-   "id": "4467973589",
-   "url": "https://www.linkedin.com/jobs/view/4467973589",
-   "title": "Communications Intern",
-   "company": "EFEE",
-   "location": "Brussels",
-   "match_score": 62,
-   "reason": "Communications internship in English that explicitly welcomes applicants who don't meet every requirement, and the candidate's real SEO/content/WordPress/social-media work fits the tasks.",
-   "apply_email": "",
-   "found_at": "2026-09-16 09:23",
-   "status": "new",
-   "details": "Full-time communications internship (38h/week, hybrid, min. 3 office days) in Brussels, starting 2 November 2026, 3–6 months.\nTasks: create content for LinkedIn, Instagram, YouTube and the EFEE website; support social media campaigns; produce visual and video content; update and maintain the website; monitor engagement; support CRM/mailing; cover events in Brussels and across Europe.\nLanguages: English at C1 level or above (candidate is fluent) — no French required.\nProfile: bachelor's degree in communications/marketing/journalism/related, plus interest or experience in photography, video editing or graphic design; Microsoft 365 familiarity.\nPay: no salary stated; work-related travel and expenses covered; applicant must be eligible for an internship funding mechanism (Erasmus+, Actiris International Erasmus Pro, Chamber of Commerce mobility grant, etc.).\nApplication: CV, one-page motivation letter, funding-eligibility confirmation; portfolio welcome but not required; deadline 9 October 2026.",
-   "why_good": "Real hands-on content and social-media work: SEO blog/content writing, WordPress/Elementor site building and maintenance, and Shopify store design and blog content.\nStrong digital toolkit the internship needs: CMS/website management, Google Analytics and Search Console for engagement monitoring, Canva for visual content.\nEnglish is fluent (C1+), and the posting is entirely in English with no French requirement.\nThe posting explicitly says it encourages applications even if you don't meet every requirement, so the bachelor's-degree line is a preference, not a wall.\nGap to note honestly: the candidate has no completed degree and no formal photography/video-editing background, and must secure an internship funding mechanism — but the role is a learning internship and the digital/content side is a genuine fit.",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": true,
-   "lang": "en",
-   "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
-   "closed_check_v": 2
   },
   {
    "id": "280933487",
@@ -1482,7 +1373,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2,
    "lang_req": {
     "nl": "b2"
@@ -1507,7 +1398,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -1529,7 +1420,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -1551,7 +1442,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2,
    "lang_req": {
     "nl": "b2"
@@ -1576,7 +1467,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -1598,7 +1489,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -1620,7 +1511,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2,
    "lang_req": {
     "en": "b2",
@@ -1646,7 +1537,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -1668,7 +1559,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -1690,7 +1581,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -1712,7 +1603,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -1734,7 +1625,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2,
    "lang_req": {
     "fr": "a2",
@@ -1760,7 +1651,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -1782,7 +1673,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -1804,7 +1695,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -1826,7 +1717,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2,
    "lang_req": {
     "nl": "b2"
@@ -1851,7 +1742,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -1873,7 +1764,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -1895,7 +1786,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -1917,7 +1808,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-15 17:26",
+   "closed_check": "2026-10-16 17:02",
    "closed_check_v": 2
   },
   {
@@ -2118,7 +2009,10 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "lang_req": {},
+   "closed_check": "2026-10-16 17:02",
+   "closed_check_v": 2
   },
   {
    "id": "944972855",
@@ -3074,7 +2968,12 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "lang_req": {
+    "nl": "b2"
+   },
+   "closed_check": "2026-10-16 17:02",
+   "closed_check_v": 2
   },
   {
    "id": "74820283",
@@ -4458,7 +4357,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-16 17:02",
+   "closed_check_v": 2
   },
   {
    "id": "74839632",
@@ -4478,7 +4379,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-16 17:02",
+   "closed_check_v": 2
   },
   {
    "id": "74839724",
@@ -4498,7 +4401,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-16 17:02",
+   "closed_check_v": 2
   },
   {
    "id": "74843485",
@@ -4518,7 +4423,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-16 17:02",
+   "closed_check_v": 2
   },
   {
    "id": "809048128",
@@ -4538,7 +4445,13 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "lang_req": {
+    "en": "b2",
+    "nl": "b2"
+   },
+   "closed_check": "2026-10-16 17:02",
+   "closed_check_v": 2
   },
   {
    "id": "74828109",
@@ -7491,7 +7404,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-16 17:02",
+   "closed_check_v": 2
   },
   {
    "id": "74830148",
@@ -12210,7 +12125,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-16 17:02",
+   "closed_check_v": 2
   },
   {
    "id": "74842376",
@@ -12230,7 +12147,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-16 17:02",
+   "closed_check_v": 2
   },
   {
    "id": "74845415",
@@ -12250,7 +12169,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-16 17:02",
+   "closed_check_v": 2
   },
   {
    "id": "74846422",
@@ -12270,7 +12191,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-16 17:02",
+   "closed_check_v": 2
   },
   {
    "id": "74847157",
@@ -12290,7 +12213,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-16 17:02",
+   "closed_check_v": 2
   },
   {
    "id": "74847358",
@@ -12310,7 +12235,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-16 17:02",
+   "closed_check_v": 2
   },
   {
    "id": "74848335",
@@ -12330,7 +12257,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-16 17:02",
+   "closed_check_v": 2
   },
   {
    "id": "74838180",
@@ -53584,6 +53513,95 @@
  "new_cv_exp_requeue_v1": true,
  "closed": [
   {
+   "id": "4467973589",
+   "url": "https://www.linkedin.com/jobs/view/4467973589",
+   "title": "Communications Intern",
+   "company": "EFEE",
+   "location": "Brussels",
+   "found_at": "2026-09-16 09:23",
+   "match_score": 62,
+   "reason": "Communications internship in English that explicitly welcomes applicants who don't meet every requirement, and the candidate's real SEO/content/WordPress/social-media work fits the tasks.",
+   "lang": "en",
+   "internship": true,
+   "apply_email": "",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "closed_at": "2026-10-16 17:06",
+   "closed_why": "Closed — LinkedIn says it is no longer accepting applications."
+  },
+  {
+   "id": "74645978",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74645978/content-marketeer",
+   "title": "Content marketeer",
+   "company": "Tifre",
+   "location": "TEMSE",
+   "found_at": "2026-09-20 08:18",
+   "match_score": 70,
+   "reason": "This role aligns well with the candidate's digital marketing and content creation skills, with manageable experience and language requirements.",
+   "lang": "nl",
+   "internship": false,
+   "apply_email": "jobs@tifre.be",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "closed_at": "2026-10-16 17:04",
+   "closed_why": "Closed — VDAB has taken this vacancy offline."
+  },
+  {
+   "id": "4467983366",
+   "url": "https://www.linkedin.com/jobs/view/4467983366",
+   "title": "Junior/Medior Digital Marketeer (Performance & Growth)",
+   "company": "Ants",
+   "location": "Antwerpen (also Gent)",
+   "found_at": "2026-09-16 09:23",
+   "match_score": 72,
+   "reason": "Junior/medior performance marketing role explicitly open to recent graduates with first experience, in the candidate's goal field, with no French or degree requirement.",
+   "lang": "nl",
+   "internship": false,
+   "apply_email": "",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "closed_at": "2026-10-16 17:04",
+   "closed_why": "Closed — LinkedIn says it is no longer accepting applications."
+  },
+  {
+   "id": "4468821492",
+   "url": "https://www.linkedin.com/jobs/view/4468821492",
+   "title": "Environmental Marketing Officer",
+   "company": "Embrace the Earth",
+   "location": "Aarschot, Flanders (hybrid)",
+   "found_at": "2026-09-18 10:08",
+   "match_score": 85,
+   "reason": "This is a volunteer internship that aligns with the candidate's goal field and language skills.",
+   "lang": "en",
+   "internship": true,
+   "apply_email": "info@embracetheearth.eu",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "closed_at": "2026-10-16 17:04",
+   "closed_why": "Closed — LinkedIn says it is no longer accepting applications."
+  },
+  {
+   "id": "370063910",
+   "url": "https://europa.eu/eures/portal/jv-se/jv-details/MGZkZjRmZDUtMjQzOS00MDNmLTk3NWMtYTNmYjAyZWI2ZmQxIDM",
+   "title": "Content Marketeer",
+   "company": "Tifre",
+   "location": "Unknown",
+   "found_at": "2026-09-19 09:55",
+   "match_score": 85,
+   "reason": "This role aligns well with the candidate's digital marketing and content creation skills, with manageable experience and language requirements.",
+   "lang": "nl",
+   "internship": false,
+   "apply_email": "",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "lang_req": {
+    "en": "b1",
+    "nl": "b2"
+   },
+   "closed_at": "2026-10-16 17:04",
+   "closed_why": "Closed — EURES has withdrawn this vacancy."
+  },
+  {
    "id": "74733467",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74733467/customer-support-specialist",
    "title": "Customer Support Specialist",
@@ -62013,91 +62031,6 @@
    "dutch_stretch": false,
    "exp_stretch": true,
    "closed_at": "2026-10-08 19:07",
-   "closed_why": "Closed — LinkedIn says it is no longer accepting applications."
-  },
-  {
-   "id": "738917442",
-   "url": "https://europa.eu/eures/portal/jv-se/jv-details/MTgzNjg3NWYtODFjZC00N2M0LTkzMmMtNTQ5Y2VmNWM4Zjc5IDM",
-   "title": "Digital Marketeer & IT Specialist",
-   "company": "Unknown (via recruiter, green energy client)",
-   "location": "Unknown (Belgium)",
-   "found_at": "2026-09-11 15:27",
-   "match_score": 72,
-   "reason": "Accessible digital marketing + web role matching the candidate's SEO/WordPress/HTML-CSS profile, with no French, no degree requirement, and only 'experience or strong interest' asked.",
-   "lang": "nl",
-   "internship": false,
-   "apply_email": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "closed_at": "2026-10-08 19:07",
-   "closed_why": "Closed — EURES has withdrawn this vacancy."
-  },
-  {
-   "id": "510342102",
-   "url": "https://europa.eu/eures/portal/jv-se/jv-details/MjdlZDgxODMtYWUyYS00NTQ2LThjNzQtMGY1MWZjM2I3YTdlIDM",
-   "title": "Junior Social Media & Content Medewerker",
-   "company": "Ultify",
-   "location": "Unknown",
-   "found_at": "2026-09-24 20:55",
-   "match_score": 85,
-   "reason": "This junior role perfectly aligns with the candidate's digital marketing and content creation skills, with a manageable Dutch language requirement.",
-   "lang": "nl",
-   "internship": false,
-   "apply_email": "",
-   "dutch_stretch": true,
-   "exp_stretch": false,
-   "closed_at": "2026-10-08 19:07",
-   "closed_why": "Closed — EURES has withdrawn this vacancy."
-  },
-  {
-   "id": "4471502044",
-   "url": "https://www.linkedin.com/jobs/view/4471502044",
-   "title": "Performance Marketeer",
-   "company": "PIA Group",
-   "location": "Gent",
-   "found_at": "2026-10-01 14:14",
-   "match_score": 30,
-   "reason": "Digital marketing/SEO/SEA role that fits the goal field and accepts English, but it asks ~4 years' experience and fluent Dutch, so it is a stretch rather than a clean match.",
-   "lang": "nl",
-   "internship": false,
-   "apply_email": "jobs@pia.be",
-   "dutch_stretch": true,
-   "exp_stretch": true,
-   "closed_at": "2026-10-07 19:26",
-   "closed_why": "Closed — LinkedIn says it is no longer accepting applications."
-  },
-  {
-   "id": "841738843",
-   "url": "https://www.stepstone.be/jobs--Marketing-Manager-HOBOKEN-Ambertree--2244049-inline.html",
-   "title": "Marketing Manager",
-   "company": "Ambertree",
-   "location": "Hoboken",
-   "found_at": "2026-09-17 16:11",
-   "match_score": 35,
-   "reason": "Marketing Manager role in e-commerce/SEO/content that fits the candidate's skills; Dutch requirement is a stretch but not a hard fail.",
-   "lang": "nl",
-   "internship": false,
-   "apply_email": "",
-   "dutch_stretch": true,
-   "exp_stretch": false,
-   "closed_at": "2026-10-07 19:25",
-   "closed_why": "Closed — StepStone says this listing is expired."
-  },
-  {
-   "id": "4471438447",
-   "url": "https://www.linkedin.com/jobs/view/4471438447",
-   "title": "Trade Marketeer",
-   "company": "Van de Velde",
-   "location": "Unknown",
-   "found_at": "2026-09-25 10:38",
-   "match_score": 38,
-   "reason": "The role aligns with the candidate's goal field and experience, with only a slight stretch in required experience.",
-   "lang": "en",
-   "internship": false,
-   "apply_email": "",
-   "dutch_stretch": false,
-   "exp_stretch": true,
-   "closed_at": "2026-10-07 19:22",
    "closed_why": "Closed — LinkedIn says it is no longer accepting applications."
   }
  ]
