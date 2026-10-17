@@ -212,7 +212,7 @@
       <div class="sub" id="updated">Loading…</div>
     </div>
     <button class="iconbtn" id="searchbtn" title="Search jobs" aria-label="Search jobs">🔍</button>
-    <button class="sync" id="syncbtn" title="Sync Applied / Skipped / Closed across your phone and computer">⟳ Sync</button>
+    <button class="sync" id="syncbtn" title="Tap: refresh the jobs. Hold: set up syncing Applied / Skipped between your phone and computer">⟳ Sync</button>
     <button class="install" id="install">Install app</button>
   </div>
   <div class="searchbar" id="searchbar" hidden>
@@ -238,7 +238,7 @@
 <div class="toast" id="toast"></div>
 
 <script>
-const APP_VERSION = "v85";                 // MUST match CACHE in sw.js — it is how you tell whether the phone got the deploy
+const APP_VERSION = "v86";                 // MUST match CACHE in sw.js — it is how you tell whether the phone got the deploy
 const LS = "jobstatus";                    // { jobId: "applied" | "skipped" | "closed" }
 const LS_AT = "jobstatus_at";              // { jobId: epoch ms the status was set }
 const getStatus = () => JSON.parse(localStorage.getItem(LS) || "{}");
@@ -671,16 +671,22 @@ function schedulePush() {
   clearTimeout(SYNC_TIMER);
   SYNC_TIMER = setTimeout(() => syncNow(t, true), 1500);
 }
-async function syncDevices() {           // manual button: set token, then pull+push
+async function syncDevices(forceSetup) {   // manual button: refresh jobs, then (if a token is set) pull+push
   const btn = document.getElementById("syncbtn");
-  const t = ensurePat();
-  if (!t) { toast("Sync needs the one-time GitHub token"); return; }
   if (btn) btn.classList.add("syncing");
-  toast("Syncing…");
-  const ok = await syncNow(t, true);
+  toast("Refreshing…");
+  const fresh = await refreshData();
+  let t = localStorage.getItem(PAT_LS) || "";
+  if (!t && forceSetup === true) t = ensurePat();     // only when you hold the button
+  let msg = fresh ? "Jobs refreshed ✓" : "Could not refresh — check your connection";
+  if (t) {
+    const ok = await syncNow(t, true);
+    msg += ok ? " · Applied/Skipped synced ✓" : " · device sync failed — check the token has Issues read/write";
+  } else if (fresh) {
+    msg += " · (hold Sync to set up syncing between devices)";
+  }
   if (btn) btn.classList.remove("syncing");
-  toast(ok ? "Synced ✓ — Applied/Skipped now match on all devices"
-           : "Sync failed — check the token has Issues read/write");
+  toast(msg);
 }
 
 function gmailFor(j, d) {
@@ -1740,25 +1746,40 @@ document.getElementById("qclear").addEventListener("click", () => {
     .catch(() => {});
 });
 
-fetch("jobs.json?t=" + Date.now())
-  .then((r) => r.json())
-  .then((d) => { DATA = d; render(); return fetch("listing.json?t=" + Date.now()); })
-  .then((r) => (r && r.ok ? r.json() : null))
-  .then((extra) => {
-    if (!extra) return;
-    Object.assign(DATA, extra);   // listing + verdicts + dropped
-    render();                     // All jobs and search light up once it lands
-  })
-  .catch(() => {
-    if (!DATA.jobs) document.getElementById("updated").textContent = "Could not load jobs.json.";
-  });
+// Load (or reload) the job data. Used at start-up and by the Sync button, so a
+// tap on Sync really does fetch what the bot saved last, with or without a token.
+function refreshData() {
+  return fetch("jobs.json?t=" + Date.now())
+    .then((r) => r.json())
+    .then((d) => { DATA = d; render(); return fetch("listing.json?t=" + Date.now()); })
+    .then((r) => (r && r.ok ? r.json() : null))
+    .then((extra) => {
+      if (!extra) return true;
+      Object.assign(DATA, extra);   // listing + verdicts + dropped
+      render();                     // All jobs and search light up once it lands
+      return true;
+    })
+    .catch(() => {
+      if (!DATA.jobs) document.getElementById("updated").textContent = "Could not load jobs.json.";
+      return false;
+    });
+}
+refreshData();
 
 // Cross-device sync: pull the shared Applied/Skipped/Closed on load and whenever
 // the app regains focus, so the phone and computer stay in step. Silent if no
 // token is set yet — the ⟳ Sync button sets it up on a new device.
 (function () {
   const syncBtn = document.getElementById("syncbtn");
-  if (syncBtn) syncBtn.addEventListener("click", syncDevices);
+  if (syncBtn) {
+    let held = false, timer = null;
+    const start = () => { held = false; timer = setTimeout(() => { held = true; syncDevices(true); }, 700); };
+    const stop = () => clearTimeout(timer);
+    syncBtn.addEventListener("pointerdown", start);
+    ["pointerup", "pointerleave", "pointercancel"].forEach((ev) => syncBtn.addEventListener(ev, stop));
+    syncBtn.addEventListener("contextmenu", (e) => e.preventDefault());
+    syncBtn.addEventListener("click", () => { if (!held) syncDevices(); });
+  }
   const t = localStorage.getItem(PAT_LS);
   if (t) syncNow(t, false);
   document.addEventListener("visibilitychange", () => {
