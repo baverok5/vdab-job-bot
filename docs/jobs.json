@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-17 16:32 UTC",
+ "updated": "2026-10-17 17:06 UTC",
  "jobs": [
   {
    "id": "4471489541",
@@ -1924,28 +1924,6 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "en",
-   "cv_fit_v": 19,
-   "closed_check": "2026-10-17 16:00",
-   "closed_check_v": 2
-  },
-  {
-   "id": "4457690365",
-   "url": "https://www.linkedin.com/jobs/view/4457690365",
-   "title": "Digital Sales Assistant (Used Cars)",
-   "company": "Van Mossel",
-   "location": "Temse",
-   "match_score": 58,
-   "reason": "Accessible digital sales/support role with no degree, no French, and no hard experience requirement — automotive experience explicitly 'geen must'.",
-   "apply_email": "",
-   "found_at": "2026-09-06 09:56",
-   "status": "new",
-   "details": "- Publish and maintain used-car listings on digital sales platforms (photos, specs, mileage, options, condition)\n- Monitor market prices, comparable vehicles, stock age and market trends\n- Handle B2B enquiries and bids, ensuring fast professional follow-up\n- Improve the digital used-car process (faster, more consistent, more professional)\n- Full-time, on-site at the new occasion centre in Temse; competitive salary + extralegal benefits\n- Dutch-language posting; no French mentioned; automotive/digital sales experience is 'mooi meegenomen, maar geen must'",
-   "why_good": "- Digital-first role: publishing, checking and optimising online listings is close to the candidate's web/content and CMS work (WordPress, Elementor, content management)\n- Commercial + detail-oriented profile matches his SEO/analytics habit of tracking data, prices and performance\n- No degree requirement stated, and automotive/digital-sales experience is explicitly not a must\n- No French required; Dutch is used but the posting does not demand fluent/native level\n- Junior-friendly entry point into digital sales/e-commerce within a large, stable employer",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
    "cv_fit_v": 19,
    "closed_check": "2026-10-17 16:00",
    "closed_check_v": 2
@@ -13070,6 +13048,28 @@
   }
  ],
  "rejected": [
+  {
+   "id": "4457690365",
+   "url": "https://www.linkedin.com/jobs/view/4457690365",
+   "title": "Digital Sales Assistant (Used Cars)",
+   "company": "Van Mossel",
+   "location": "Temse",
+   "match_score": 58,
+   "reason": "First seen about 45 days ago — a vacancy open this long has almost always been filled.",
+   "apply_email": "",
+   "found_at": "2026-09-06 09:56",
+   "status": "new",
+   "details": "- Publish and maintain used-car listings on digital sales platforms (photos, specs, mileage, options, condition)\n- Monitor market prices, comparable vehicles, stock age and market trends\n- Handle B2B enquiries and bids, ensuring fast professional follow-up\n- Improve the digital used-car process (faster, more consistent, more professional)\n- Full-time, on-site at the new occasion centre in Temse; competitive salary + extralegal benefits\n- Dutch-language posting; no French mentioned; automotive/digital sales experience is 'mooi meegenomen, maar geen must'",
+   "why_good": "- Digital-first role: publishing, checking and optimising online listings is close to the candidate's web/content and CMS work (WordPress, Elementor, content management)\n- Commercial + detail-oriented profile matches his SEO/analytics habit of tracking data, prices and performance\n- No degree requirement stated, and automotive/digital-sales experience is explicitly not a must\n- No French required; Dutch is used but the posting does not demand fluent/native level\n- Junior-friendly entry point into digital sales/e-commerce within a large, stable employer",
+   "why_bad": "First seen about 45 days ago — a vacancy open this long has almost always been filled.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-17 16:00",
+   "closed_check_v": 2
+  },
   {
    "id": "74632534",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74632534/digital-workplace-specialist",
@@ -53087,8 +53087,8 @@
    "cv_fit_v": 19
   }
  ],
- "search_cursor": 8,
- "li_cursor": 22,
+ "search_cursor": 13,
+ "li_cursor": 28,
  "letter_fails": {
   "4428705687": 2
  },
