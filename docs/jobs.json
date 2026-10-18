@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-18 15:26 UTC",
+ "updated": "2026-10-18 15:58 UTC",
  "jobs": [
   {
    "id": "4471489541",
@@ -1926,28 +1926,6 @@
     "en": "b1",
     "nl": "b2"
    },
-   "closed_check": "2026-10-18 15:02",
-   "closed_check_v": 2
-  },
-  {
-   "id": "4458024008",
-   "url": "https://www.linkedin.com/jobs/view/4458024008",
-   "title": "Community Manager / Organic Social (Instagram & TikTok)",
-   "company": "Loop",
-   "location": "Antwerp / Amsterdam",
-   "match_score": 58,
-   "reason": "Entry-level community management / organic social role with no degree, language, or experience hard walls — an accessible early-career fit.",
-   "apply_email": "",
-   "found_at": "2026-09-06 01:05",
-   "status": "new",
-   "details": "- Run day-to-day Instagram & TikTok community management and organic social\n- Reply to comments/Stories, track sentiment and internet culture trends\n- Schedule and publish organic content (captions, tags, links, timing)\n- In-office role, Antwerp or Amsterdam\n- No degree, years-of-experience, or language requirement stated; English-language posting\n- Pay not stated",
-   "why_good": "- Explicitly entry-friendly: no degree, no years-of-experience, no Dutch/French requirement — just instinct for internet culture\n- Candidate's social media integration and content work at KXP and Episto maps to organic content and community tasks\n- Curiosity about AI for social listening/analysis matches his daily LLM and Python automation use\n- Attention to detail (captions, tags, timing) fits his SEO/content precision and WordPress publishing experience\n- English-fluent and based in Belgium, so the Antwerp location works",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "en",
-   "cv_fit_v": 19,
    "closed_check": "2026-10-18 15:02",
    "closed_check_v": 2
   },
@@ -13182,6 +13160,28 @@
   }
  ],
  "rejected": [
+  {
+   "id": "4458024008",
+   "url": "https://www.linkedin.com/jobs/view/4458024008",
+   "title": "Community Manager / Organic Social (Instagram & TikTok)",
+   "company": "Loop",
+   "location": "Antwerp / Amsterdam",
+   "match_score": 58,
+   "reason": "First seen about 45 days ago — a vacancy open this long has almost always been filled.",
+   "apply_email": "",
+   "found_at": "2026-09-06 01:05",
+   "status": "new",
+   "details": "- Run day-to-day Instagram & TikTok community management and organic social\n- Reply to comments/Stories, track sentiment and internet culture trends\n- Schedule and publish organic content (captions, tags, links, timing)\n- In-office role, Antwerp or Amsterdam\n- No degree, years-of-experience, or language requirement stated; English-language posting\n- Pay not stated",
+   "why_good": "- Explicitly entry-friendly: no degree, no years-of-experience, no Dutch/French requirement — just instinct for internet culture\n- Candidate's social media integration and content work at KXP and Episto maps to organic content and community tasks\n- Curiosity about AI for social listening/analysis matches his daily LLM and Python automation use\n- Attention to detail (captions, tags, timing) fits his SEO/content precision and WordPress publishing experience\n- English-fluent and based in Belgium, so the Antwerp location works",
+   "why_bad": "First seen about 45 days ago — a vacancy open this long has almost always been filled.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "en",
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-18 15:02",
+   "closed_check_v": 2
+  },
   {
    "id": "74716007",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74716007/warehouse-medewerker",
@@ -53201,8 +53201,8 @@
    "cv_fit_v": 19
   }
  ],
- "search_cursor": 13,
- "li_cursor": 28,
+ "search_cursor": 2,
+ "li_cursor": 5,
  "letter_fails": {
   "4428705687": 2
  },
