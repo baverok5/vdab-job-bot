@@ -238,7 +238,7 @@
 <div class="toast" id="toast"></div>
 
 <script>
-const APP_VERSION = "v86";                 // MUST match CACHE in sw.js — it is how you tell whether the phone got the deploy
+const APP_VERSION = "v87";                 // MUST match CACHE in sw.js — it is how you tell whether the phone got the deploy
 const LS = "jobstatus";                    // { jobId: "applied" | "skipped" | "closed" }
 const LS_AT = "jobstatus_at";              // { jobId: epoch ms the status was set }
 const getStatus = () => JSON.parse(localStorage.getItem(LS) || "{}");
@@ -1624,6 +1624,22 @@ function render() {
         <span>🎯 Marketing / SEO / web only</span>${mktCount ? `<span class="cnt">${mktCount}</span>` : ""}</label>
        <label class="mkt${HIDE_DUTCH ? " on" : ""}"><input type="checkbox" id="hidedutch" ${HIDE_DUTCH ? "checked" : ""}>
         <span>🇳🇱 Only jobs that accept my Dutch</span>${dutchCount ? `<span class="cnt">${dutchCount}</span>` : ""}</label>`);
+    // Say plainly what the Dutch filter is hiding. It once looked like the bot had
+    // stopped finding jobs: 45 new marketing jobs in six days, 3 of them let
+    // through, the rest hidden without a word. "high" = the posting itself asks for
+    // B2+, "unknown" = a Dutch-language posting that never states a level.
+    if (HIDE_DUTCH) {
+      const pool = MKT_ONLY ? uniq.filter((j) => categorize(j) === "marketing") : uniq;
+      const hid = pool.filter(needsBetterDutch);
+      const high = hid.filter((j) => dutchState(j) === "high").length;
+      const cutoff = new Date(Date.now() - 4 * 864e5).toISOString().slice(0, 10);
+      const recent = pool.filter((j) => (j.found_at || "") >= cutoff);
+      const recentHid = recent.filter(needsBetterDutch).length;
+      list.insertAdjacentHTML("beforeend",
+        `<div class="hint" style="margin:6px 4px 10px;text-align:left">The Dutch filter hides ${hid.length} of ${pool.length}:
+          ${high} ask for B2 or higher, ${hid.length - high} are Dutch postings that don’t state a level.
+          Found in the last 4 days: ${recent.length}, ${recentHid} of them hidden. Untick the Dutch box to see them.</div>`);
+    }
     document.getElementById("mktonly").addEventListener("change", (e) => {
       MKT_ONLY = e.target.checked;
       localStorage.setItem("mktOnly", MKT_ONLY ? "1" : "");
