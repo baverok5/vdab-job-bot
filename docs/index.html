@@ -238,7 +238,7 @@
 <div class="toast" id="toast"></div>
 
 <script>
-const APP_VERSION = "v87";                 // MUST match CACHE in sw.js — it is how you tell whether the phone got the deploy
+const APP_VERSION = "v88";                 // MUST match CACHE in sw.js — it is how you tell whether the phone got the deploy
 const LS = "jobstatus";                    // { jobId: "applied" | "skipped" | "closed" }
 const LS_AT = "jobstatus_at";              // { jobId: epoch ms the status was set }
 const getStatus = () => JSON.parse(localStorage.getItem(LS) || "{}");
@@ -1618,27 +1618,23 @@ function render() {
     // Two independent filters for the Ready tab. Counts come from the deduped
     // set so the badges match what would actually show/hide.
     const mktCount = uniq.filter((j) => categorize(j) === "marketing").length;
-    const dutchCount = uniq.filter(needsBetterDutch).length;
+    const dutchCount = uniq.filter((j) => dutchState(j) === "high").length;   // what the box hides
     list.insertAdjacentHTML("beforeend",
       `<label class="mkt${MKT_ONLY ? " on" : ""}"><input type="checkbox" id="mktonly" ${MKT_ONLY ? "checked" : ""}>
         <span>🎯 Marketing / SEO / web only</span>${mktCount ? `<span class="cnt">${mktCount}</span>` : ""}</label>
        <label class="mkt${HIDE_DUTCH ? " on" : ""}"><input type="checkbox" id="hidedutch" ${HIDE_DUTCH ? "checked" : ""}>
-        <span>🇳🇱 Only jobs that accept my Dutch</span>${dutchCount ? `<span class="cnt">${dutchCount}</span>` : ""}</label>`);
+        <span>🇳🇱 Hide jobs asking B2+ Dutch</span>${dutchCount ? `<span class="cnt">${dutchCount}</span>` : ""}</label>`);
     // Say plainly what the Dutch filter is hiding. It once looked like the bot had
     // stopped finding jobs: 45 new marketing jobs in six days, 3 of them let
     // through, the rest hidden without a word. "high" = the posting itself asks for
     // B2+, "unknown" = a Dutch-language posting that never states a level.
     if (HIDE_DUTCH) {
       const pool = MKT_ONLY ? uniq.filter((j) => categorize(j) === "marketing") : uniq;
-      const hid = pool.filter(needsBetterDutch);
-      const high = hid.filter((j) => dutchState(j) === "high").length;
-      const cutoff = new Date(Date.now() - 4 * 864e5).toISOString().slice(0, 10);
-      const recent = pool.filter((j) => (j.found_at || "") >= cutoff);
-      const recentHid = recent.filter(needsBetterDutch).length;
+      const high = pool.filter((j) => dutchState(j) === "high").length;
+      const unk = pool.filter((j) => dutchState(j) === "unknown").length;
       list.insertAdjacentHTML("beforeend",
-        `<div class="hint" style="margin:6px 4px 10px;text-align:left">The Dutch filter hides ${hid.length} of ${pool.length}:
-          ${high} ask for B2 or higher, ${hid.length - high} are Dutch postings that don’t state a level.
-          Found in the last 4 days: ${recent.length}, ${recentHid} of them hidden. Untick the Dutch box to see them.</div>`);
+        `<div class="hint" style="margin:6px 4px 10px;text-align:left">Hiding ${high} that ask for B2 or higher.
+          ${unk ? `${unk} Dutch postings don’t say what level they need — they’re in “Dutch level not stated” at the bottom.` : ""}</div>`);
     }
     document.getElementById("mktonly").addEventListener("change", (e) => {
       MKT_ONLY = e.target.checked;
@@ -1654,7 +1650,11 @@ function render() {
     // With the Dutch filter on, drop every job that needs better Dutch than B1
     // — regular roles AND internships — so they're gone from the list, not just
     // sorted to the bottom.
-    const visible = HIDE_DUTCH ? uniq.filter((j) => !needsBetterDutch(j)) : uniq;
+    // The box hides only postings that themselves ask for B2+. Dutch postings that
+    // never state a level used to be hidden too — 75 marketing jobs, which left the
+    // list at ~16 and looked like a dead bot. They now get their own section below.
+    const visible = HIDE_DUTCH ? uniq.filter((j) => dutchState(j) === "ok") : uniq;
+    const unknownNl = HIDE_DUTCH ? uniq.filter((j) => dutchState(j) === "unknown") : [];
     const interns = visible.filter(isIntern);
     const regular = visible.filter((j) => !isIntern(j));
     // Each category is a collapsible section — closed by default, tap the
@@ -1720,11 +1720,18 @@ function render() {
         shownInterns.slice().sort(bySeoThenNewest),
         `<div class="hint" style="text-align:left;margin:0 4px 8px">Internships / stages (“stage” = internship) — kept even if they ask for more, since you learn on the job.</div>`);
     }
+    const shownUnknown = inView(unknownNl);
+    if (shownUnknown.length) {
+      addSection("nlunknown", "",
+        `🇳🇱 Dutch level not stated <span class="cnt">${shownUnknown.length}</span>`,
+        shownUnknown.slice().sort(bySeoThenNewest),
+        `<div class="hint" style="text-align:left;margin:0 4px 8px">Written in Dutch and they don’t say what level they need. Many expect working Dutch, some are fine with B1 — check the posting before applying.</div>`);
+    }
     if (!regular.length && !interns.length) {
       const allHidByDutch = HIDE_DUTCH && dutchCount > 0 &&
-        uniq.filter((j) => !needsBetterDutch(j) && (!MKT_ONLY || categorize(j) === "marketing")).length === 0;
+        uniq.filter((j) => dutchState(j) !== "high" && (!MKT_ONLY || categorize(j) === "marketing")).length === 0;
       list.insertAdjacentHTML("beforeend", allHidByDutch
-        ? `<div class="empty"><div class="big">🇳🇱</div>Every match here needs better Dutch than B1.<br>Untick “Hide jobs needing better Dutch” above to see the ${dutchCount} hidden.</div>`
+        ? `<div class="empty"><div class="big">🇳🇱</div>Every match here needs better Dutch than B1.<br>Untick “Hide jobs asking B2+ Dutch” above to see the ${dutchCount} hidden.</div>`
         : '<div class="empty"><div class="big">🎯</div>No matches in this view yet.<br>The scan is still working through the marketing jobs — check back soon.</div>');
     }
     return;
