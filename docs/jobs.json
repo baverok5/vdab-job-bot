@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-20 17:59 UTC",
+ "updated": "2026-10-20 18:34 UTC",
  "jobs": [
   {
    "id": "4471489541",
@@ -8942,28 +8942,6 @@
    "closed_check_v": 2
   },
   {
-   "id": "4458724538",
-   "url": "https://www.linkedin.com/jobs/view/4458724538",
-   "title": "Digital & Social Media Consultant",
-   "company": "Unknown",
-   "location": "Brussels",
-   "match_score": 38,
-   "reason": "Accessible digital/social media content role in English with no French, no degree requirement and no hard 5+ years wall — a stretch on experience but worth applying.",
-   "apply_email": "",
-   "found_at": "2026-09-16 11:31",
-   "status": "new",
-   "details": "- Full-time digital & social media consultant embedded in a client's communications team (European climate/energy policy project)\n- Own the corporate LinkedIn account end to end: content ideas, drafting/editing posts, scheduling, engagement monitoring\n- Website editorial: draft, edit and publish blogs, reports and updates; apply accessibility and SEO good practice\n- Editorial calendar coordination, monthly performance reporting, rapid-response content, executive LinkedIn visibility\n- Creative production: video recording, graphics, quote cards, basic motion (Canva/Adobe Express); camera skills a plus\n- Based in Brussels, European working hours; language: excellent English writing required (no French mentioned); pay not stated",
-   "why_good": "- Core tasks (LinkedIn/social content, website editorial, SEO good practice, editorial calendar, reporting) map directly to the candidate's SEO/content/WordPress and analytics experience\n- Strong English writing plus GA/Search Console/Semrush reporting skills fit the monthly-reporting and editorial duties\n- Canva and basic creative production are explicitly listed and the candidate already uses Canva\n- No degree requirement and no French — the candidate's B1 Dutch is irrelevant here since the role runs in English\n- Honest gap: the posting asks for 'proven experience' managing corporate social/website operations and coordinating team members, which is more than the candidate's ~4 months in his current role — a real stretch, but the skills overlap is genuine and worth a shot",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": true,
-   "internship": false,
-   "lang": "en",
-   "cv_fit_v": 19,
-   "closed_check": "2026-10-20 17:36",
-   "closed_check_v": 2
-  },
-  {
    "id": "74519873",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74519873/internal-sales-support-en-administratie",
    "title": "Internal sales support en administratie",
@@ -12592,6 +12570,28 @@
   }
  ],
  "rejected": [
+  {
+   "id": "4458724538",
+   "url": "https://www.linkedin.com/jobs/view/4458724538",
+   "title": "Digital & Social Media Consultant",
+   "company": "Unknown",
+   "location": "Brussels",
+   "match_score": 38,
+   "reason": "First seen about 45 days ago — a vacancy open this long has almost always been filled.",
+   "apply_email": "",
+   "found_at": "2026-09-16 11:31",
+   "status": "new",
+   "details": "- Full-time digital & social media consultant embedded in a client's communications team (European climate/energy policy project)\n- Own the corporate LinkedIn account end to end: content ideas, drafting/editing posts, scheduling, engagement monitoring\n- Website editorial: draft, edit and publish blogs, reports and updates; apply accessibility and SEO good practice\n- Editorial calendar coordination, monthly performance reporting, rapid-response content, executive LinkedIn visibility\n- Creative production: video recording, graphics, quote cards, basic motion (Canva/Adobe Express); camera skills a plus\n- Based in Brussels, European working hours; language: excellent English writing required (no French mentioned); pay not stated",
+   "why_good": "- Core tasks (LinkedIn/social content, website editorial, SEO good practice, editorial calendar, reporting) map directly to the candidate's SEO/content/WordPress and analytics experience\n- Strong English writing plus GA/Search Console/Semrush reporting skills fit the monthly-reporting and editorial duties\n- Canva and basic creative production are explicitly listed and the candidate already uses Canva\n- No degree requirement and no French — the candidate's B1 Dutch is irrelevant here since the role runs in English\n- Honest gap: the posting asks for 'proven experience' managing corporate social/website operations and coordinating team members, which is more than the candidate's ~4 months in his current role — a real stretch, but the skills overlap is genuine and worth a shot",
+   "why_bad": "First seen about 45 days ago — a vacancy open this long has almost always been filled.",
+   "dutch_stretch": false,
+   "exp_stretch": true,
+   "internship": false,
+   "lang": "en",
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-20 17:36",
+   "closed_check_v": 2
+  },
   {
    "id": "74712255",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74712255/logistics-consultant-freight-forwarding",
@@ -52611,8 +52611,8 @@
    "cv_fit_v": 19
   }
  ],
- "search_cursor": 12,
- "li_cursor": 17,
+ "search_cursor": 1,
+ "li_cursor": 23,
  "letter_fails": {
   "4428705687": 2
  },
