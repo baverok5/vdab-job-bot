@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-21 18:59 UTC",
+ "updated": "2026-10-21 19:11 UTC",
  "jobs": [
   {
    "id": "4471489541",
@@ -257,28 +257,6 @@
     "fr": "a2",
     "nl": "b2"
    }
-  },
-  {
-   "id": "963070953",
-   "url": "https://www.stepstone.be/jobs--SEO-GEO-specialist-ROESELARE-Inksane-BV--2240449-inline.html",
-   "title": "SEO & GEO specialist",
-   "company": "Inksane BV",
-   "location": "Roeselare",
-   "match_score": 72,
-   "reason": "SEO & GEO specialist role matching the candidate's exact niche, with no hard walls (no French, no degree requirement, no seniority).",
-   "apply_email": "",
-   "found_at": "2026-09-05 14:45",
-   "status": "new",
-   "details": "• Own Inksane's organic visibility across classic search engines and generative AI platforms (GEO/AI Search).\n• Tasks: SEO strategy, keyword & competitor research, on-page/technical SEO, structured data, content strategy, backlinks, Local SEO & Google Business Profile, GEO experiments.\n• Tools: Google Analytics, Search Console, Ahrefs/Semrush; WordPress is a plus.\n• Contract: full-time, on-site in Roeselare (no remote mentioned).\n• Language: posting in Dutch; no French required, English-friendly tech environment.\n• Pay: not stated.",
-   "why_good": "• Direct match with the candidate's core skills: on-page SEO, keyword research, technical SEO, structured data/JSON-LD, GEO/AEO and llms.txt — exactly what the role asks for.\n• Hands-on experience with Semrush, Ahrefs, Google Analytics and Search Console, plus WordPress/Elementor (listed as a plus).\n• The candidate already runs technical SEO/GEO audits and builds content around real search questions, mirroring the GEO part of the job.\n• Junior profile fits: the posting asks for demonstrable SEO experience but no specific years or degree, so the candidate's ~2-3 years of relevant work is credible.\n• Dutch is only needed for reading/writing job context; the candidate's B1 writing and improving speaking are workable, and the role is technical/English-friendly.",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-10-21 17:43",
-   "closed_check_v": 2
   },
   {
    "id": "4472762719",
@@ -1497,28 +1475,6 @@
    "why_bad": "",
    "dutch_stretch": false,
    "exp_stretch": true,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-10-21 17:43",
-   "closed_check_v": 2
-  },
-  {
-   "id": "74505163",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74505163/sales-marketing-assistant",
-   "title": "Sales & Marketing assistant",
-   "company": "JobLink (for a metal-processing company)",
-   "location": "Puurs-Sint-Amands",
-   "match_score": 62,
-   "reason": "Accessible sales/marketing assistant role with no experience required, no degree requirement (or equivalent by experience), and only good Dutch needed — no French.",
-   "apply_email": "duffel@joblink.be",
-   "found_at": "2026-09-05 19:43",
-   "status": "new",
-   "details": "- Sales/marketing assistant at a metal-processing company, via JobLink\n- Tasks: quotes, commercial support for sales engineers/dealers, customer relations, maintaining offers/presentations/price lists/flyers/marketing material, CRM/lead follow-up, website management and social media posting, marketing campaigns, market research, trade fairs/events, organizing sales team travel\n- Contract: interim with option for permanent, or immediate permanent contract; full-time, day work\n- Start: 1 September 2026; sliding hours\n- Language: Dutch (good); no French required\n- Studies: secondary education or equivalent by experience; experience in sales/marketing is a plus\n- Pay: attractive salary plus extra-legal benefits (not specified)",
-   "why_good": "- Explicitly open to no experience and 'or equivalent by experience' for studies — no degree barrier\n- Website management and social media content posting match the candidate's WordPress/web and content skills\n- Marketing material, presentations and market research fit his digital marketing background\n- Only 'good' Dutch required, no French — within reach given his B1 writing / A2+ speaking\n- Sales support / commercial support is an accessible role type for an early-career candidate",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
@@ -13014,6 +12970,50 @@
   }
  ],
  "rejected": [
+  {
+   "id": "74505163",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74505163/sales-marketing-assistant",
+   "title": "Sales & Marketing assistant",
+   "company": "JobLink (for a metal-processing company)",
+   "location": "Puurs-Sint-Amands",
+   "match_score": 62,
+   "reason": "First seen about 46 days ago — a vacancy open this long has almost always been filled.",
+   "apply_email": "duffel@joblink.be",
+   "found_at": "2026-09-05 19:43",
+   "status": "new",
+   "details": "- Sales/marketing assistant at a metal-processing company, via JobLink\n- Tasks: quotes, commercial support for sales engineers/dealers, customer relations, maintaining offers/presentations/price lists/flyers/marketing material, CRM/lead follow-up, website management and social media posting, marketing campaigns, market research, trade fairs/events, organizing sales team travel\n- Contract: interim with option for permanent, or immediate permanent contract; full-time, day work\n- Start: 1 September 2026; sliding hours\n- Language: Dutch (good); no French required\n- Studies: secondary education or equivalent by experience; experience in sales/marketing is a plus\n- Pay: attractive salary plus extra-legal benefits (not specified)",
+   "why_good": "- Explicitly open to no experience and 'or equivalent by experience' for studies — no degree barrier\n- Website management and social media content posting match the candidate's WordPress/web and content skills\n- Marketing material, presentations and market research fit his digital marketing background\n- Only 'good' Dutch required, no French — within reach given his B1 writing / A2+ speaking\n- Sales support / commercial support is an accessible role type for an early-career candidate",
+   "why_bad": "First seen about 46 days ago — a vacancy open this long has almost always been filled.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-21 17:43",
+   "closed_check_v": 2
+  },
+  {
+   "id": "963070953",
+   "url": "https://www.stepstone.be/jobs--SEO-GEO-specialist-ROESELARE-Inksane-BV--2240449-inline.html",
+   "title": "SEO & GEO specialist",
+   "company": "Inksane BV",
+   "location": "Roeselare",
+   "match_score": 72,
+   "reason": "First seen about 46 days ago — a vacancy open this long has almost always been filled.",
+   "apply_email": "",
+   "found_at": "2026-09-05 14:45",
+   "status": "new",
+   "details": "• Own Inksane's organic visibility across classic search engines and generative AI platforms (GEO/AI Search).\n• Tasks: SEO strategy, keyword & competitor research, on-page/technical SEO, structured data, content strategy, backlinks, Local SEO & Google Business Profile, GEO experiments.\n• Tools: Google Analytics, Search Console, Ahrefs/Semrush; WordPress is a plus.\n• Contract: full-time, on-site in Roeselare (no remote mentioned).\n• Language: posting in Dutch; no French required, English-friendly tech environment.\n• Pay: not stated.",
+   "why_good": "• Direct match with the candidate's core skills: on-page SEO, keyword research, technical SEO, structured data/JSON-LD, GEO/AEO and llms.txt — exactly what the role asks for.\n• Hands-on experience with Semrush, Ahrefs, Google Analytics and Search Console, plus WordPress/Elementor (listed as a plus).\n• The candidate already runs technical SEO/GEO audits and builds content around real search questions, mirroring the GEO part of the job.\n• Junior profile fits: the posting asks for demonstrable SEO experience but no specific years or degree, so the candidate's ~2-3 years of relevant work is credible.\n• Dutch is only needed for reading/writing job context; the candidate's B1 writing and improving speaking are workable, and the role is technical/English-friendly.",
+   "why_bad": "First seen about 46 days ago — a vacancy open this long has almost always been filled.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-21 17:43",
+   "closed_check_v": 2
+  },
   {
    "id": "74717252",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74717252/sales-administrator",
@@ -53031,8 +53031,8 @@
    "cv_fit_v": 19
   }
  ],
- "search_cursor": 1,
- "li_cursor": 23,
+ "search_cursor": 6,
+ "li_cursor": 0,
  "letter_fails": {
   "4428705687": 2
  },
