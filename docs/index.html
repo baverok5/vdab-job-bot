@@ -238,7 +238,7 @@
 <div class="toast" id="toast"></div>
 
 <script>
-const APP_VERSION = "v88";                 // MUST match CACHE in sw.js — it is how you tell whether the phone got the deploy
+const APP_VERSION = "v89";                 // MUST match CACHE in sw.js — it is how you tell whether the phone got the deploy
 const LS = "jobstatus";                    // { jobId: "applied" | "skipped" | "closed" }
 const LS_AT = "jobstatus_at";              // { jobId: epoch ms the status was set }
 const getStatus = () => JSON.parse(localStorage.getItem(LS) || "{}");
@@ -505,7 +505,29 @@ function buildPdf(text) {
 // cv-nl.pdf carry clickable links (the client sites, kxp.biz, mirook.com,
 // LinkedIn, both Semrush certificates) and a PDF assembled in the browser would
 // drop every one of them. Same file the Gmail draft attaches.
+// iPhone home-screen apps open a PDF link in a bare viewer with no way to save
+// it. The share sheet does have "Save to Files", so on iOS hand the file to it.
+// navigator.share needs the tap's user activation, so the CVs (6 KB each) are
+// fetched up front and the share call happens synchronously in the tap.
+const IS_IOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+  (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+const CV_BLOBS = {};
+if (IS_IOS) ["en", "nl"].forEach((lg) =>
+  fetch(lg === "en" ? "cv.pdf" : "cv-nl.pdf")
+    .then((r) => (r.ok ? r.blob() : null))
+    .then((b) => { if (b) CV_BLOBS[lg] = b; })
+    .catch(() => {}));
+function shareFile(blob, filename) {
+  if (!IS_IOS || !blob || !navigator.canShare) return false;
+  const file = new File([blob], filename, { type: "application/pdf" });
+  if (!navigator.canShare({ files: [file] })) return false;
+  navigator.share({ files: [file] }).catch(() => {});
+  toast("Tap “Save to Files” to keep the PDF");
+  return true;
+}
+
 function downloadCv(lang) {
+  if (shareFile(CV_BLOBS[lang === "en" ? "en" : "nl"], "Baver Ok - CV.pdf")) return;
   const a = document.createElement("a");
   a.href = lang === "en" ? "cv.pdf" : "cv-nl.pdf";
   a.download = "Baver Ok - CV.pdf";
@@ -517,7 +539,9 @@ function downloadCv(lang) {
 
 function downloadTextPdf(text, filename) {
   if (!text || !text.trim()) { toast("Nothing to download yet"); return; }
-  const url = URL.createObjectURL(buildPdf(text));
+  const blob = buildPdf(text);
+  if (shareFile(blob, filename)) return;
+  const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url; a.download = filename;
   document.body.appendChild(a); a.click();
