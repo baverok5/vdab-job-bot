@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-23 18:05 UTC",
+ "updated": "2026-10-23 18:39 UTC",
  "jobs": [
   {
    "id": "4471489541",
@@ -459,28 +459,6 @@
    "lang_req": {
     "nl": "b2"
    }
-  },
-  {
-   "id": "4459940994",
-   "url": "https://www.linkedin.com/jobs/view/4459940994",
-   "title": "SEO expert",
-   "company": "WPP Media",
-   "location": "Unknown",
-   "match_score": 70,
-   "reason": "The candidate has relevant experience and skills for this SEO and Generative Engine Optimisation role, meeting most requirements.",
-   "apply_email": "",
-   "found_at": "2026-09-16 07:40",
-   "status": "new",
-   "details": "Role: SEO expert for Total Search Activation team.\nMain tasks: Technical SEO audits, content gap analysis, content briefs, SEO content writing, meta tag optimisation, internal linking, AI search visibility (GEO/GSO).\nContract type: Not specified.\nSchedule: Not specified.\nLanguage: French or Dutch and English.\nPay: Not specified.",
-   "why_good": "- Directly matches the GOAL FIELD of SEO & GEO and content.\n- Has relevant experience (~2.5 years) in Web & SEO Specialist and Junior Digital Marketer roles.\n- Proficient with required tools: Google Search Console, Google Analytics 4, Semrush.\n- Experience with AI search visibility, GEO, and LLMs aligns with Generative Engine Optimisation.\n- The job explicitly states \"Relevant internship experience can be included\" and \"Experience with all of these tools is not required\", showing flexibility.",
-   "why_bad": "- The job requires \"at least two years of experience working on SEO projects,\" and while the candidate has relevant experience, it's slightly under 2.5 years of direct SEO focus, and the posting asks for \"at least two years\".\n- The job states \"You speak French or Dutch and have a strong command of English.\" The candidate has B1 Dutch writing and A2+ speaking, which is not fluent, but since English is also accepted and Dutch is not explicitly required to be fluent, this is manageable.",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "en",
-   "cv_fit_v": 19,
-   "closed_check": "2026-10-23 17:34",
-   "closed_check_v": 2
   },
   {
    "id": "4467582532",
@@ -9602,28 +9580,6 @@
    "closed_check_v": 2
   },
   {
-   "id": "4459886741",
-   "url": "https://www.linkedin.com/jobs/view/4459886741",
-   "title": "Intern – Strategic Communications",
-   "company": "FTI Consulting",
-   "location": "Brussels",
-   "match_score": 35,
-   "reason": "It's a professional 6-month internship open to non-students with English-only requirements and no French, so the experience/degree gaps are waived for interns.",
-   "apply_email": "",
-   "found_at": "2026-10-01 23:37",
-   "status": "new",
-   "details": "- 6-month internship within FTI Consulting's Strategic Communications / public affairs team in Brussels\n- Tasks: monitor institutional and regulatory developments, draft reports and policy analysis, support marketing/practice initiatives, help with pitch preparation and client accounts\n- Sectors: Healthcare & Life Sciences, Financial Services, Energy, Legal services\n- Language: excellent English required; additional European languages preferable (no French mandatory)\n- Contract: full-time paid internship, mentoring and coaching provided; availability to travel\n- Pay: not stated",
-   "why_good": "- Explicitly an internship (6 months), which per the rules waives the experience and degree walls — an intern learns on the job\n- Strong English is the only stated language requirement, which the candidate has (fluent English), and no French is needed\n- The role involves writing reports, research and supporting marketing/business-development initiatives — areas the candidate has some grounding in through content writing and SEO/marketing work\n- Brussels-based and open to non-students; no school convention or current-student status is required",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": true,
-   "lang": "en",
-   "cv_fit_v": 19,
-   "closed_check": "2026-10-23 17:34",
-   "closed_check_v": 2
-  },
-  {
    "id": "940023577",
    "url": "https://europa.eu/eures/portal/jv-se/jv-details/NmE4ZjU1NTYtZGI4OC00NzNjLTliYjUtNjViZjIzMzUzZDRhIDM",
    "title": "Marketing Coördinator",
@@ -12859,6 +12815,50 @@
   }
  ],
  "rejected": [
+  {
+   "id": "4459886741",
+   "url": "https://www.linkedin.com/jobs/view/4459886741",
+   "title": "Intern – Strategic Communications",
+   "company": "FTI Consulting",
+   "location": "Brussels",
+   "match_score": 35,
+   "reason": "First seen about 45 days ago — a vacancy open this long has almost always been filled.",
+   "apply_email": "",
+   "found_at": "2026-10-01 23:37",
+   "status": "new",
+   "details": "- 6-month internship within FTI Consulting's Strategic Communications / public affairs team in Brussels\n- Tasks: monitor institutional and regulatory developments, draft reports and policy analysis, support marketing/practice initiatives, help with pitch preparation and client accounts\n- Sectors: Healthcare & Life Sciences, Financial Services, Energy, Legal services\n- Language: excellent English required; additional European languages preferable (no French mandatory)\n- Contract: full-time paid internship, mentoring and coaching provided; availability to travel\n- Pay: not stated",
+   "why_good": "- Explicitly an internship (6 months), which per the rules waives the experience and degree walls — an intern learns on the job\n- Strong English is the only stated language requirement, which the candidate has (fluent English), and no French is needed\n- The role involves writing reports, research and supporting marketing/business-development initiatives — areas the candidate has some grounding in through content writing and SEO/marketing work\n- Brussels-based and open to non-students; no school convention or current-student status is required",
+   "why_bad": "First seen about 45 days ago — a vacancy open this long has almost always been filled.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": true,
+   "lang": "en",
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-23 17:34",
+   "closed_check_v": 2
+  },
+  {
+   "id": "4459940994",
+   "url": "https://www.linkedin.com/jobs/view/4459940994",
+   "title": "SEO expert",
+   "company": "WPP Media",
+   "location": "Unknown",
+   "match_score": 70,
+   "reason": "First seen about 45 days ago — a vacancy open this long has almost always been filled.",
+   "apply_email": "",
+   "found_at": "2026-09-16 07:40",
+   "status": "new",
+   "details": "Role: SEO expert for Total Search Activation team.\nMain tasks: Technical SEO audits, content gap analysis, content briefs, SEO content writing, meta tag optimisation, internal linking, AI search visibility (GEO/GSO).\nContract type: Not specified.\nSchedule: Not specified.\nLanguage: French or Dutch and English.\nPay: Not specified.",
+   "why_good": "- Directly matches the GOAL FIELD of SEO & GEO and content.\n- Has relevant experience (~2.5 years) in Web & SEO Specialist and Junior Digital Marketer roles.\n- Proficient with required tools: Google Search Console, Google Analytics 4, Semrush.\n- Experience with AI search visibility, GEO, and LLMs aligns with Generative Engine Optimisation.\n- The job explicitly states \"Relevant internship experience can be included\" and \"Experience with all of these tools is not required\", showing flexibility.",
+   "why_bad": "First seen about 45 days ago — a vacancy open this long has almost always been filled.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "en",
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-23 17:34",
+   "closed_check_v": 2
+  },
   {
    "id": "74756488",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74756488/warehouse-controller-3-ploegen",
@@ -52884,8 +52884,8 @@
    "cv_fit_v": 19
   }
  ],
- "search_cursor": 11,
- "li_cursor": 6,
+ "search_cursor": 0,
+ "li_cursor": 12,
  "letter_fails": {
   "4428705687": 2
  },
