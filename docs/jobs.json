@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-25 17:17 UTC",
+ "updated": "2026-10-25 17:55 UTC",
  "jobs": [
   {
    "id": "4471489541",
@@ -230,33 +230,6 @@
    "cv_fit_v": 19,
    "closed_check": "2026-10-25 16:53",
    "closed_check_v": 2
-  },
-  {
-   "id": "993630383",
-   "url": "https://europa.eu/eures/portal/jv-se/jv-details/NTFkYWFlMTgtN2Y3MS00M2NhLTg4MmQtMDZmOWMyYzc3NTcwIDM",
-   "title": "SEO & GEO Specialist",
-   "company": "Inksane",
-   "location": "Unknown",
-   "match_score": 72,
-   "reason": "SEO & GEO specialist role matching the candidate's exact niche, with no French, no degree requirement, and no hard experience wall.",
-   "apply_email": "",
-   "found_at": "2026-09-09 12:50",
-   "status": "new",
-   "details": "- Own the organic visibility strategy for Inksane (tattoo/piercing studios) across classic search and AI platforms\n- Tasks: keyword research, on-page & technical SEO, structured data, content strategy, backlinks, Local SEO / Google Business Profile, GEO / AI-search optimization\n- Tools named: Google Analytics, Search Console, Ahrefs, Semrush; WordPress is a plus\n- Contract type and schedule not stated\n- Language: posting in Dutch, no French required; no explicit Dutch level stated\n- Pay not stated",
-   "why_good": "- The role is exactly the candidate's niche: SEO + GEO/AI-search, which he already does (llms.txt, JSON-LD schema, entity optimization, GEO audits on mirook.com)\n- Named tools (Ahrefs, Semrush, GA, Search Console) are all in his daily stack\n- WordPress/Elementor experience is listed as a plus and he has it\n- No degree requirement, no French, no seniority title — an accessible early-career fit\n- He can lean on his technical SEO + Python automation + AI-tooling background for the experimental GEO side",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-10-25 16:53",
-   "closed_check_v": 2,
-   "lang_req": {
-    "en": "b1",
-    "fr": "a2",
-    "nl": "b2"
-   }
   },
   {
    "id": "4472762719",
@@ -1027,56 +1000,6 @@
    "cv_fit_v": 19,
    "closed_check": "2026-10-25 16:53",
    "closed_check_v": 2
-  },
-  {
-   "id": "513357567",
-   "url": "https://europa.eu/eures/portal/jv-se/jv-details/YmMyMjM3NDMtZDE3MC00ZDcwLWIyMDQtZDU1ZGQxODAwOTBlIDM",
-   "title": "Marketing & Communicatie Medewerker",
-   "company": "Unknown",
-   "location": "Unknown",
-   "match_score": 62,
-   "reason": "Entry-level marketing/communication role explicitly open to motivated school-leavers, no degree or French required.",
-   "apply_email": "",
-   "found_at": "2026-09-09 12:58",
-   "status": "new",
-   "details": "Veelzijdige marketing- en communicatiefunctie voor verschillende commerciële afdelingen.\nTaken: marketingjaarplan, promomateriaal (folders, mailings), bedrijfsmagazine en advertenties, interne/externe visibiliteit, beheer bedrijfswebsite, social media, marketingbudgetten.\nVereist: eerste ervaring in marketing OF gemotiveerde schoolverlater; kennis van/interesse in grafische vormgeving; vertrouwd met webdesign (bv. Drupal) en social media.\nZelfstandig, nauwkeurig, commercieel ingesteld, neemt initiatief.\nContracttype, uurregeling en loon niet vermeld.",
-   "why_good": "Explicitly welcomes a motivated school-leaver, so no years-of-experience wall.\nReal SEO/content/WordPress/social-media experience at Episto and KXP maps onto the website, content and social tasks.\nWeb design + Canva background covers the promo material and webdesign expectations.\nNo French required; Dutch is workable and improving.\nGrafische vormgeving is framed as 'kennis van of interesse in', not a hard Adobe requirement.",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-10-25 16:53",
-   "closed_check_v": 2,
-   "lang_req": {
-    "nl": "b1"
-   }
-  },
-  {
-   "id": "280933487",
-   "url": "https://europa.eu/eures/portal/jv-se/jv-details/YjA4NDM5OGMtNzZiYi00ZTlkLWE2OGYtZmVjNTdmYTJlZjM3IDM",
-   "title": "Digital Marketer / Content & Social Media (dubbelrol marketing)",
-   "company": "Smart-boost",
-   "location": "Unknown",
-   "match_score": 62,
-   "reason": "Accessible marketing/content role in the goal field with no hard walls (no French, no degree requirement, no seniority).",
-   "apply_email": "",
-   "found_at": "2026-09-09 12:53",
-   "status": "new",
-   "details": "Dual role: 20% own marketing, 80% client marketing\nWriting catchy copy, social media copy (Facebook, Instagram, LinkedIn), ads\nGoogle Ads campaigns and SEO writing for websites\nCollaboration with internal colleagues and external creatives on online/offline projects\nAffinity with photography/videography is a plus\nLanguage: Dutch posting; no French mentioned",
-   "why_good": "Directly in the goal field: content, social media copy, Google Ads and SEO writing\nReal SEO/content experience at Episto plus Google Ads and GA4 certifications\nWordPress/Elementor and Canva cover the web and visual side\nNo degree or years-of-experience wall stated, so junior profile fits\nDutch is only conversational-level here, which matches the candidate's B1/A2+",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-10-25 16:53",
-   "closed_check_v": 2,
-   "lang_req": {
-    "nl": "b2"
-   }
   },
   {
    "id": "4464122493",
@@ -13101,6 +13024,83 @@
   }
  ],
  "rejected": [
+  {
+   "id": "280933487",
+   "url": "https://europa.eu/eures/portal/jv-se/jv-details/YjA4NDM5OGMtNzZiYi00ZTlkLWE2OGYtZmVjNTdmYTJlZjM3IDM",
+   "title": "Digital Marketer / Content & Social Media (dubbelrol marketing)",
+   "company": "Smart-boost",
+   "location": "Unknown",
+   "match_score": 62,
+   "reason": "First seen about 46 days ago — a vacancy open this long has almost always been filled.",
+   "apply_email": "",
+   "found_at": "2026-09-09 12:53",
+   "status": "new",
+   "details": "Dual role: 20% own marketing, 80% client marketing\nWriting catchy copy, social media copy (Facebook, Instagram, LinkedIn), ads\nGoogle Ads campaigns and SEO writing for websites\nCollaboration with internal colleagues and external creatives on online/offline projects\nAffinity with photography/videography is a plus\nLanguage: Dutch posting; no French mentioned",
+   "why_good": "Directly in the goal field: content, social media copy, Google Ads and SEO writing\nReal SEO/content experience at Episto plus Google Ads and GA4 certifications\nWordPress/Elementor and Canva cover the web and visual side\nNo degree or years-of-experience wall stated, so junior profile fits\nDutch is only conversational-level here, which matches the candidate's B1/A2+",
+   "why_bad": "First seen about 46 days ago — a vacancy open this long has almost always been filled.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-25 16:53",
+   "closed_check_v": 2,
+   "lang_req": {
+    "nl": "b2"
+   }
+  },
+  {
+   "id": "513357567",
+   "url": "https://europa.eu/eures/portal/jv-se/jv-details/YmMyMjM3NDMtZDE3MC00ZDcwLWIyMDQtZDU1ZGQxODAwOTBlIDM",
+   "title": "Marketing & Communicatie Medewerker",
+   "company": "Unknown",
+   "location": "Unknown",
+   "match_score": 62,
+   "reason": "First seen about 46 days ago — a vacancy open this long has almost always been filled.",
+   "apply_email": "",
+   "found_at": "2026-09-09 12:58",
+   "status": "new",
+   "details": "Veelzijdige marketing- en communicatiefunctie voor verschillende commerciële afdelingen.\nTaken: marketingjaarplan, promomateriaal (folders, mailings), bedrijfsmagazine en advertenties, interne/externe visibiliteit, beheer bedrijfswebsite, social media, marketingbudgetten.\nVereist: eerste ervaring in marketing OF gemotiveerde schoolverlater; kennis van/interesse in grafische vormgeving; vertrouwd met webdesign (bv. Drupal) en social media.\nZelfstandig, nauwkeurig, commercieel ingesteld, neemt initiatief.\nContracttype, uurregeling en loon niet vermeld.",
+   "why_good": "Explicitly welcomes a motivated school-leaver, so no years-of-experience wall.\nReal SEO/content/WordPress/social-media experience at Episto and KXP maps onto the website, content and social tasks.\nWeb design + Canva background covers the promo material and webdesign expectations.\nNo French required; Dutch is workable and improving.\nGrafische vormgeving is framed as 'kennis van of interesse in', not a hard Adobe requirement.",
+   "why_bad": "First seen about 46 days ago — a vacancy open this long has almost always been filled.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-25 16:53",
+   "closed_check_v": 2,
+   "lang_req": {
+    "nl": "b1"
+   }
+  },
+  {
+   "id": "993630383",
+   "url": "https://europa.eu/eures/portal/jv-se/jv-details/NTFkYWFlMTgtN2Y3MS00M2NhLTg4MmQtMDZmOWMyYzc3NTcwIDM",
+   "title": "SEO & GEO Specialist",
+   "company": "Inksane",
+   "location": "Unknown",
+   "match_score": 72,
+   "reason": "First seen about 46 days ago — a vacancy open this long has almost always been filled.",
+   "apply_email": "",
+   "found_at": "2026-09-09 12:50",
+   "status": "new",
+   "details": "- Own the organic visibility strategy for Inksane (tattoo/piercing studios) across classic search and AI platforms\n- Tasks: keyword research, on-page & technical SEO, structured data, content strategy, backlinks, Local SEO / Google Business Profile, GEO / AI-search optimization\n- Tools named: Google Analytics, Search Console, Ahrefs, Semrush; WordPress is a plus\n- Contract type and schedule not stated\n- Language: posting in Dutch, no French required; no explicit Dutch level stated\n- Pay not stated",
+   "why_good": "- The role is exactly the candidate's niche: SEO + GEO/AI-search, which he already does (llms.txt, JSON-LD schema, entity optimization, GEO audits on mirook.com)\n- Named tools (Ahrefs, Semrush, GA, Search Console) are all in his daily stack\n- WordPress/Elementor experience is listed as a plus and he has it\n- No degree requirement, no French, no seniority title — an accessible early-career fit\n- He can lean on his technical SEO + Python automation + AI-tooling background for the experimental GEO side",
+   "why_bad": "First seen about 46 days ago — a vacancy open this long has almost always been filled.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 19,
+   "closed_check": "2026-10-25 16:53",
+   "closed_check_v": 2,
+   "lang_req": {
+    "en": "b1",
+    "fr": "a2",
+    "nl": "b2"
+   }
+  },
   {
    "id": "74755647",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74755647/customer-service-representative-haven",
@@ -53128,8 +53128,8 @@
    "cv_fit_v": 19
   }
  ],
- "search_cursor": 5,
- "li_cursor": 18,
+ "search_cursor": 10,
+ "li_cursor": 24,
  "letter_fails": {
   "4428705687": 2
  },
