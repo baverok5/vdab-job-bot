@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-28 18:57 UTC",
+ "updated": "2026-10-28 19:36 UTC",
  "jobs": [
   {
    "id": "4471489541",
@@ -1300,28 +1300,6 @@
    "closed_check_v": 2
   },
   {
-   "id": "74596633",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74596633/travel-customer-care-assistant",
-   "title": "Travel & Customer Care Assistant",
-   "company": "UNIQUE (for an international event-management client)",
-   "location": "Brussels",
-   "match_score": 58,
-   "reason": "Accessible customer-care/admin role in English with limited experience (<2 years) and degree 'or equivalent by experience' — no French required.",
-   "apply_email": "",
-   "found_at": "2026-09-12 01:39",
-   "status": "new",
-   "details": "- Support the DiscoverEU team with travel coordination and participant support\n- Answer participant enquiries via email and chat, handle bookings, document verification, expense/invoice tracking\n- Use helpdesk tools, databases and office software; ensure GDPR compliance\n- Interim full-time, day work, 3-month initial mission (5 months for German/Polish speakers)\n- Languages: excellent English required; German, Dutch and/or Polish a plus\n- Pay: €2,435 gross/month; 1–2 days remote per week possible",
-   "why_good": "- English is the working language and the candidate is professionally fluent\n- Only limited experience (<2 years) required, matching the candidate's early-career level\n- Degree requirement is 'or equivalent by experience', so no completed bachelor is needed\n- Customer-service, admin and communication skills transfer from the candidate's background\n- Dutch is only listed as a plus, not a requirement",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18,
-   "closed_check": "2026-10-28 18:33",
-   "closed_check_v": 2
-  },
-  {
    "id": "4484092149",
    "url": "https://www.linkedin.com/jobs/view/4484092149",
    "title": "EU Communications Assistant (CIP Internship)",
@@ -1978,28 +1956,6 @@
    "status": "new",
    "details": "- Warehouse/logistics associate: order preparation with scanning system, packing, labelling/marking, quality checks\n- Interim contract with option for permanent (vast werk), full-time, fixed day shift 8:30–16:30\n- Languages: English (very good) required; no Dutch or French needed\n- No specific study requirements, no experience required (order-picker experience a plus)\n- Pay: 'good salary', meal vouchers after 22 days, mileage allowance, internal training and career options",
    "why_good": "- Only English required — matches the candidate's professional English, no French/Dutch barrier\n- No experience and no degree required, so the candidate's profile clears the bar\n- Candidate has real warehouse/logistics experience at Katoen Natie (2025–2026)\n- Tasks (order picking, packing, labelling, quality checks) align with prior logistics work\n- Stable full-time day shift with permanent-contract option and training",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18,
-   "closed_check": "2026-10-28 18:33",
-   "closed_check_v": 2
-  },
-  {
-   "id": "74599145",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74599145/sales-support-medewerker",
-   "title": "Sales Support Medewerker",
-   "company": "JobLink (via VDAB)",
-   "location": "Schelle",
-   "match_score": 55,
-   "reason": "Accessible sales-support role with limited experience (<2 years) and no degree requirement, and French is only a plus, not required.",
-   "apply_email": "duffel@joblink.be",
-   "found_at": "2026-09-12 14:40",
-   "status": "new",
-   "details": "- Sales support for a Belgian SME in Schelle\n- Tasks: preparing/following up quotes, supporting account managers, advising customers, managing price lists, articles and CRM data, contacting customers and suppliers\n- Contract: interim with option for permanent, full-time, day work, start 12 September 2026\n- Languages: Dutch (good), French and English are a plus\n- Education: secondary education or equivalent by experience\n- Pay: €3,000–€3,800 gross, meal vouchers, group insurance, 12 ADV days",
-   "why_good": "- Only limited experience (<2 years) required, matching the candidate's ~4 months\n- No completed degree required — secondary education or equivalent by experience\n- French is only a plus, not required; candidate's English and B1 Dutch are workable\n- Office/CRM/MS Office tasks are within reach for an organised early-career candidate\n- Sales support is an accessible role near the candidate's Antwerp area",
    "why_bad": "",
    "dutch_stretch": false,
    "exp_stretch": false,
@@ -12582,6 +12538,50 @@
   }
  ],
  "rejected": [
+  {
+   "id": "74599145",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74599145/sales-support-medewerker",
+   "title": "Sales Support Medewerker",
+   "company": "JobLink (via VDAB)",
+   "location": "Schelle",
+   "match_score": 55,
+   "reason": "First seen about 46 days ago — a vacancy open this long has almost always been filled.",
+   "apply_email": "duffel@joblink.be",
+   "found_at": "2026-09-12 14:40",
+   "status": "new",
+   "details": "- Sales support for a Belgian SME in Schelle\n- Tasks: preparing/following up quotes, supporting account managers, advising customers, managing price lists, articles and CRM data, contacting customers and suppliers\n- Contract: interim with option for permanent, full-time, day work, start 12 September 2026\n- Languages: Dutch (good), French and English are a plus\n- Education: secondary education or equivalent by experience\n- Pay: €3,000–€3,800 gross, meal vouchers, group insurance, 12 ADV days",
+   "why_good": "- Only limited experience (<2 years) required, matching the candidate's ~4 months\n- No completed degree required — secondary education or equivalent by experience\n- French is only a plus, not required; candidate's English and B1 Dutch are workable\n- Office/CRM/MS Office tasks are within reach for an organised early-career candidate\n- Sales support is an accessible role near the candidate's Antwerp area",
+   "why_bad": "First seen about 46 days ago — a vacancy open this long has almost always been filled.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 18,
+   "closed_check": "2026-10-28 18:33",
+   "closed_check_v": 2
+  },
+  {
+   "id": "74596633",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74596633/travel-customer-care-assistant",
+   "title": "Travel & Customer Care Assistant",
+   "company": "UNIQUE (for an international event-management client)",
+   "location": "Brussels",
+   "match_score": 58,
+   "reason": "First seen about 46 days ago — a vacancy open this long has almost always been filled.",
+   "apply_email": "",
+   "found_at": "2026-09-12 01:39",
+   "status": "new",
+   "details": "- Support the DiscoverEU team with travel coordination and participant support\n- Answer participant enquiries via email and chat, handle bookings, document verification, expense/invoice tracking\n- Use helpdesk tools, databases and office software; ensure GDPR compliance\n- Interim full-time, day work, 3-month initial mission (5 months for German/Polish speakers)\n- Languages: excellent English required; German, Dutch and/or Polish a plus\n- Pay: €2,435 gross/month; 1–2 days remote per week possible",
+   "why_good": "- English is the working language and the candidate is professionally fluent\n- Only limited experience (<2 years) required, matching the candidate's early-career level\n- Degree requirement is 'or equivalent by experience', so no completed bachelor is needed\n- Customer-service, admin and communication skills transfer from the candidate's background\n- Dutch is only listed as a plus, not a requirement",
+   "why_bad": "First seen about 46 days ago — a vacancy open this long has almost always been filled.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 18,
+   "closed_check": "2026-10-28 18:33",
+   "closed_check_v": 2
+  },
   {
    "id": "74766412",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74766412/lifescience-business-development-associate",
@@ -52642,8 +52642,8 @@
    "cv_fit_v": 19
   }
  ],
- "search_cursor": 4,
- "li_cursor": 7,
+ "search_cursor": 9,
+ "li_cursor": 13,
  "letter_fails": {
   "4428705687": 2
  },
