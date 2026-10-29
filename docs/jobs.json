@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-29 18:51 UTC",
+ "updated": "2026-10-29 18:56 UTC",
  "jobs": [
   {
    "id": "4471489541",
@@ -3963,7 +3963,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -3985,7 +3985,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -4007,7 +4007,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -4029,7 +4029,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -4051,7 +4051,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -4073,7 +4073,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -4095,7 +4095,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -4117,7 +4117,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -4139,7 +4139,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -4161,7 +4161,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -4183,29 +4183,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
-   "closed_check_v": 2
-  },
-  {
-   "id": "74786152",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74786152/commercieel-coordinator",
-   "title": "Commercieel Coördinator",
-   "company": "Actief Interim Gent",
-   "location": "Gent",
-   "match_score": 42,
-   "reason": "Accessible commercial/administrative support role with no study requirements, no experience requirement, and no French or fluent-Dutch demand.",
-   "apply_email": "actief.gent@actief.be",
-   "found_at": "2026-10-15 19:08",
-   "status": "new",
-   "details": "Commercieel coördinator / digital sales assistant at a retail store via Actief Interim Gent\nSupport the commercial team: follow up clients and dossiers, process quotes, orders and requests, answer customer questions, prepare and follow up commercial actions, coordinate between internal departments\nInterim with option of permanent contract, full-time, day work, start as soon as possible\nNo specific study requirements; experience 'niet van belang'\nDutch-speaking workplace; no French mentioned\nPay not stated, 'attractive and competitive' plus extralegal benefits",
-   "why_good": "No study requirements and experience 'niet van belang' -> the candidate's lack of a completed degree and short experience are not blockers here\nAsks for digital tools and administrative accuracy -> he manages CMS content, client dossiers and reporting tools daily, so structured follow-up is familiar\nLists 'online sales management', 'optimising site performance' and 'managing website content' as skills -> he does exactly this on Shopify stores and WordPress client sites\nClient contact and coordinating between departments -> he works with clients and internal teams at Episto and KXP\nHonest gap: this is a commercial/administrative retail support role, not a marketing/SEO job, and it runs in Dutch, so his A2+ speaking Dutch is the main practical hurdle",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -4227,7 +4205,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -4249,7 +4227,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -4271,7 +4249,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -4297,7 +4275,7 @@
     "en": "b2",
     "nl": "b2"
    },
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -4319,7 +4297,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -4341,7 +4319,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -4363,7 +4341,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -4385,7 +4363,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -4407,7 +4385,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -4429,7 +4407,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -4451,7 +4429,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -4476,7 +4454,7 @@
    "lang_req": {
     "nl": "a2"
    },
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -4498,7 +4476,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -4520,7 +4498,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -4542,7 +4520,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -4564,7 +4542,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -4586,7 +4564,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -4608,7 +4586,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -4630,7 +4608,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -4652,7 +4630,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -4674,7 +4652,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -4696,7 +4674,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -4718,51 +4696,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
-   "closed_check_v": 2
-  },
-  {
-   "id": "74798913",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74798913/temporary-logistics-administrative-officer",
-   "title": "Temporary Logistics Administrative Officer",
-   "company": "SELECT HR",
-   "location": "Machelen",
-   "match_score": 42,
-   "reason": "Accessible logistics admin role requiring only secondary education, limited experience, and English — no French, no degree wall.",
-   "apply_email": "",
-   "found_at": "2026-10-09 12:30",
-   "status": "new",
-   "details": "Logistics administrative support for a cross-dock department\nOpen/manage operational files, prepare transport, customs and sea freight documents, invoicing, data entry, order processing, customer updates\nInterim contract (via staffing agency), full-time, day shift, immediate start\nLanguages: excellent English required; Dutch is a plus\nEducation: secondary school; experience under 2 years\nPay not stated",
-   "why_good": "Asks for strong administrative and computer-system skills -> candidate has years of CMS, data-entry and reporting work (Semrush, Analytics, Search Console)\nWants accurate, autonomous, proactive handling of files and follow-up -> matches his detail-heavy SEO audit and client-site management background\nEnglish very good required, Dutch only a plus -> fits his fluent English and B1/A2+ Dutch\nNo degree or French required -> clears his two main walls\nNote: this is logistics admin, not his marketing/SEO field — the real overlap is administrative accuracy, tooling and English communication",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
-   "closed_check_v": 2
-  },
-  {
-   "id": "74798929",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74798929/customer-service-medewerker",
-   "title": "Customer Service Medewerker",
-   "company": "START PEOPLE (for a logistics client)",
-   "location": "Tessenderlo-Ham",
-   "match_score": 42,
-   "reason": "Accessible customer-service/logistics admin role accepting a bachelor 'or equivalent by experience' and only ~1-2 years experience, with Dutch/English only (no French).",
-   "apply_email": "",
-   "found_at": "2026-10-09 12:30",
-   "status": "new",
-   "details": "- Customer service + logistics order management for an international logistics company\n- First point of contact for clients, full order process A-Z, shipment follow-up, complaints handling, coordination with warehouse/supervisors\n- Interim with option for permanent contract, full-time, day shift, region Tessenderlo\n- Languages: Dutch (very good) and English (good)\n- ~€3100 gross/month, €10 meal vouchers/day, 6 ADV days, internal training\n- Requires bachelor (preferably logistics) or equivalent by experience; min. 1 year customer service/logistics admin",
-   "why_good": "- Asks for customer contact and daily client communication -> candidate works in English-facing client/team settings and communicates clearly\n- Needs order/administrative process handling and follow-up -> candidate manages CMS content, catalogues and client site upkeep with structured admin work\n- Wants Excel and admin-system skills -> candidate uses analytics/reporting tools and CMS dashboards daily\n- Accepts 'bachelor or equivalent by experience' -> candidate has real work experience instead of a completed degree\n- Note: this is a logistics customer-service role, not digital marketing; the real overlap is client communication, admin and tooling, and it needs stronger Dutch than the candidate's A2+ speaking level",
-   "why_bad": "",
-   "dutch_stretch": true,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -4784,7 +4718,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -4806,7 +4740,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -4828,7 +4762,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -4850,7 +4784,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -4872,7 +4806,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -4894,7 +4828,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -4916,7 +4850,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -4938,7 +4872,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -4960,7 +4894,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -4982,29 +4916,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
-   "closed_check_v": 2
-  },
-  {
-   "id": "74786915",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74786915/commerciele-binnendienstmedewerker",
-   "title": "Commerciële binnendienstmedewerker",
-   "company": "Randstad (for a client in Sint-Kruis)",
-   "location": "Sint-Kruis",
-   "match_score": 42,
-   "reason": "Accessible commercial back-office role with no degree requirement, limited experience (<2 years), and only medium Dutch plus English — no French.",
-   "apply_email": "",
-   "found_at": "2026-10-07 20:23",
-   "status": "new",
-   "details": "- Commercial back-office / internal sales support role within the 'Inpak en Montage' department\n- End-to-end order and dossier management: quotes, orders, article files, order follow-up, after-sales\n- Liaison between external clients and internal production/atelier and logistics; proactive client communication\n- Full-time permanent employee contract (bediende), day work, flexible hours, start ASAP\n- Languages: Dutch (medium) and English, both spoken and written\n- Pay: competitive salary based on experience plus extralegal benefits",
-   "why_good": "- No specific study requirements and only limited experience (<2 years) asked — matches the candidate's profile level\n- Dutch requirement is only 'medium' plus English, which fits his B1 Dutch and fluent English\n- His client-facing CMS/website work and reporting habits (GA, Search Console) show the accuracy and follow-up this role needs\n- MS Office and ERP familiarity is realistic given his tooling background\n- Not in his goal field, but a low-barrier accessible role he could realistically land",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -5026,7 +4938,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -5048,7 +4960,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -5070,7 +4982,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -5092,7 +5004,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -5114,7 +5026,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -5136,7 +5048,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -5158,7 +5070,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -5180,7 +5092,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -5202,7 +5114,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -5224,7 +5136,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -5246,7 +5158,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -5268,29 +5180,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
-   "closed_check_v": 2
-  },
-  {
-   "id": "74731268",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74731268/projectcoordinator-klantrelaties",
-   "title": "Projectcoördinator Klantrelaties",
-   "company": "Forum Jobs (for a job in Gavere)",
-   "location": "Gavere",
-   "match_score": 42,
-   "reason": "Accessible client-relations/project coordination role with no specific study or experience requirements, open to a bachelor in business/marketing/sales/communication or relevant experience.",
-   "apply_email": "",
-   "found_at": "2026-10-04 18:05",
-   "status": "new",
-   "details": "- Role: Project- & Klantcoördinator, linking customers, colleagues, sales and technical teams\n- Tasks: first point of contact, translating customer questions into project plans, coordinating planning/progress, preparing quotes with sales/tech, admin follow-up and reporting\n- Contract: permanent (vaste job, onbepaalde duur), full-time, day work, ASAP start\n- Language: Dutch-language posting; no French mentioned\n- Pay: gross salary based on experience, plus 20 legal + 6 ADV days, possible telework\n- Study requirement: secondary adult education / professional bachelor (business/marketing/sales/communication) or relevant experience",
-   "why_good": "- Explicitly accepts relevant experience OR a bachelor in business/marketing/sales/communication — no hard degree wall\n- 'Ervaring: niet van belang' and 'Geen specifieke studievereisten' — very open entry level\n- Candidate's marketing/communication background and client-facing CMS/SEO work translate to customer contact and admin follow-up\n- Dutch at B1 writing / A2+ speaking is workable for a Dutch-language office role, though stronger Dutch would help\n- Full-time permanent contract with telework option suits the candidate's location in Belgium",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -5312,51 +5202,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
-   "closed_check_v": 2
-  },
-  {
-   "id": "74731606",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74731606/partnership-manager-e-mobility-4-month-project",
-   "title": "Partnership Manager | E-Mobility (4-Month Project)",
-   "company": "Michael Page International (Belgium)",
-   "location": "Brussels",
-   "match_score": 42,
-   "reason": "Accessible commercial/marketing role with no degree requirement, only 1 year experience, and Dutch OR French (not both) — candidate can apply with English.",
-   "apply_email": "",
-   "found_at": "2026-10-04 18:04",
-   "status": "new",
-   "details": "Partnership/commercial role for an EV charging network operator, focused on boosting utilization of existing charging stations.\nMain tasks: develop partnerships (mobility platforms, leasing, corporate clients), design commercial & marketing initiatives, coordinate campaigns, improve station visibility, analyze performance data.\nContract: fixed-term project until January, full-time, day work, start ASAP.\nLanguage: fluent Dutch and/or French required — English-only candidate may be a stretch here.\nPay: €3,000–3,500 gross/month + meal vouchers.\nRequires valid Category B driving license (candidate should confirm he holds one).",
-   "why_good": "Commercial/marketing role with no degree requirement and only 1 year of relevant experience asked — well within reach.\nCandidate's marketing campaign coordination, analytics (GA, Search Console) and data-driven reporting map to the analysis and campaign duties.\nPartnership/stakeholder work aligns with his client-facing experience at Episto and KXP.\nExplicitly values curiosity about AI tools — a direct match for his daily LLM/AI workflow.\nNote: posting asks for fluent Dutch and/or French; candidate's Dutch is A2+/B1, so he'd lean on English and his improving Dutch — worth a shot but language is the main gap.",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
-   "closed_check_v": 2
-  },
-  {
-   "id": "74731616",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74731616/sales-support-officer-internationale-projecten",
-   "title": "Sales Support Officer | Internationale projecten",
-   "company": "Michael Page International (Belgium)",
-   "location": "Oudenaarde",
-   "match_score": 42,
-   "reason": "Accessible sales-support/order-management role with no study requirement and only good Dutch + English needed (French is just a plus).",
-   "apply_email": "",
-   "found_at": "2026-10-04 18:03",
-   "status": "new",
-   "details": "Sales support / order management for an international high-tech company.\nManage client files from quote to delivery and invoicing; process and follow up orders; track deadlines; draft quotes; support export documentation.\nFirst point of contact for customers; coordinate between clients, sales and internal departments.\nFull-time, permanent contract (vaste job), day work, start ASAP.\nLanguages: good Dutch and English required; French/German/Spanish a plus.\nPay not stated; attractive salary package with extralegal benefits.",
-   "why_good": "Administrative, customer-facing role open to candidates without a specific degree (bachelor or equivalent by experience).\nOnly good Dutch + English needed — French is merely a plus, so no French wall.\nCandidate's CMS/website and communication skills map to the listed 'communicatie/website beheren' competencies.\nMicrosoft Office and structured, accurate admin work fit his profile; ERP experience is only a 'sterke troef'.\nInternational environment suits his English fluency and cross-team coordination experience.",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -5378,7 +5224,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -5400,7 +5246,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -5422,51 +5268,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
-   "closed_check_v": 2
-  },
-  {
-   "id": "74738690",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74738690/account-manager-b2b-regio-waasland",
-   "title": "Account Manager B2B Regio Waasland",
-   "company": "MICHAEL PAGE INTERNATIONAL (BELGIUM)",
-   "location": "Sint-Niklaas",
-   "match_score": 42,
-   "reason": "Accessible B2B sales role with no study or experience requirements, open to recent graduates.",
-   "apply_email": "",
-   "found_at": "2026-10-03 18:51",
-   "status": "new",
-   "details": "B2B account manager for a Belgian SME selling document and print solutions in the Waasland region.\nTasks: prospecting, building client relationships, managing your own agenda, sales talks, quotes, negotiation, closing deals.\nContract: permanent, full-time, day work, start ASAP.\nLanguage: Dutch (posting in Dutch; no French required).\nPay: competitive salary plus uncapped commission, company car with fuel/charge card, smartphone, hospitalisation insurance, bike leasing.\nRequires driving licence B and residence/affinity with the Waasland region.",
-   "why_good": "No study requirements and experience 'niet van belang' — explicitly open to recent graduates or first commercial experience.\nCommercial/communication skills transfer from client-facing web, SEO and CMS work.\nBased in Zwijndrecht, close to Sint-Niklaas and the Waasland region.\nDutch at B1/A2+ is workable for a Dutch-language sales role, though fluent client Dutch would help.\nNote: this is a sales role, not digital marketing — a career pivot rather than a direct fit.",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
-   "closed_check_v": 2
-  },
-  {
-   "id": "74740252",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74740252/inside-sales-temse",
-   "title": "Inside Sales - Account Support Medewerker",
-   "company": "Forum Jobs (for a distribution client)",
-   "location": "Temse",
-   "match_score": 42,
-   "reason": "Accessible inside-sales/account-support role with no experience requirement and no French; degree is only 'bachelor denkniveau or equivalent by experience'.",
-   "apply_email": "",
-   "found_at": "2026-10-03 18:47",
-   "status": "new",
-   "details": "Role: Account Support / Inside Sales medewerker supporting account managers for a convenience & food distribution partner.\nTasks: client follow-up, managing customer data/contracts, drafting quotes and reports, answering client and internal questions, coordinating with customer service, logistics and finance.\nContract: permanent (vaste job, contract van onbepaalde duur), full-time, day work, ASAP start.\nLanguage: Dutch-language posting; no French mentioned.\nPay: attractive salary package plus extralegal benefits (amount not stated).\nProfile: bachelor thinking level or equivalent by experience; first experience in admin/sales support/customer service; good MS Office/Excel.",
-   "why_good": "Accessible commercial-support role open to 'bachelor denkniveau or equivalent by experience' — no completed degree required.\nNo French required, so the candidate's English + improving Dutch is workable.\nHis admin-adjacent skills (reporting, Google Analytics/Search Console, structured CMS work, Excel-style data handling) transfer to account support.\nExperience is explicitly 'niet van belang', so his junior profile is not a barrier.\nGood foot-in-the-door in a stable commercial environment while he keeps building Dutch.",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -5488,29 +5290,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
-   "closed_check_v": 2
-  },
-  {
-   "id": "74742370",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74742370/accountmanager-b2b",
-   "title": "Accountmanager B2B",
-   "company": "NOEL FRANKLIN (for a client in Antwerp)",
-   "location": "Antwerpen",
-   "match_score": 42,
-   "reason": "Accessible B2B sales role with no experience requirement and degree 'or equivalent by experience', no French needed.",
-   "apply_email": "",
-   "found_at": "2026-10-03 18:42",
-   "status": "new",
-   "details": "B2B account management for a label & packaging family business\nBuild and maintain client relationships, prospect new clients in Antwerp, Limburg and the Netherlands, prepare quotes and follow up orders in ERP\nVast contract (onbepaalde duur), voltijds, dagwerk\nRequires driving licence B and willingness to visit clients across Antwerp/Limburg/NL\nDutch-language role; no French required\nPay €3,300–€4,000 gross + company car with fuel card, laptop, phone subscription",
-   "why_good": "Sales/commercial support is an accessible role and the posting states experience is 'niet van belang' and studies 'of gelijkwaardig door ervaring'\nCandidate has client-facing and commercial exposure through freelance and agency work, plus strong communication in English and Turkish\nInternal training is provided, so product knowledge (labels/packaging) is not a barrier\nNote: the role is conducted in Dutch and the candidate's Dutch is only B1 writing / A2+ speaking, so this is a stretch on language\nNote: it is a field-sales role needing a B driving licence and daily client visits, which is a shift from his digital-marketing focus",
-   "why_bad": "",
-   "dutch_stretch": true,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -5532,7 +5312,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -5554,7 +5334,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -5576,7 +5356,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -5598,7 +5378,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -5620,29 +5400,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
-   "closed_check_v": 2
-  },
-  {
-   "id": "73749311",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/73749311/junior-vertegenwoordiger-vlaanderen",
-   "title": "Junior Vertegenwoordiger Vlaanderen",
-   "company": "NOEL FRANKLIN (for a job in Berchem)",
-   "location": "Berchem (Antwerp)",
-   "match_score": 42,
-   "reason": "Junior B2B sales role, no experience required, degree 'or equivalent by experience', no French, only a driving licence B which the candidate can hold.",
-   "apply_email": "",
-   "found_at": "2026-09-15 17:40",
-   "status": "new",
-   "details": "- Junior B2B sales representative (Vertegenwoordiger B2B) for a marketing/commercial services company in Flanders and the Netherlands\n- Tasks: prospecting and cold calling, booking appointments, visiting prospects, presenting services, closing deals, maintaining existing client relationships\n- Contract: permanent (contract van onbepaalde duur), full-time, day work\n- Pay: €2,400–€3,400 gross/month plus uncapped bonus, company car with fuel card, meal vouchers, 24 holidays\n- Language: Dutch (posting in Dutch, no French required)\n- Requirement: driving licence B",
-   "why_good": "- Junior, entry-level commercial role: 'ervaring: niet van belang' and studies 'of gelijkwaardig door ervaring' — no degree wall\n- The candidate's marketing background and client-facing CMS/SEO work at Episto and KXP give him a commercial story to tell\n- No French required, so his English/Turkish/Dutch profile is workable\n- Company car, bonus and growth path make it a low-risk first commercial step\n- Note: this is a sales role, not digital marketing — he would be leaning on communication skills rather than SEO, and Dutch client conversations will be a real stretch at A2+/B1",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -5664,7 +5422,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -5686,7 +5444,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -5708,7 +5466,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -5730,7 +5488,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -5752,29 +5510,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-10-28 18:33",
-   "closed_check_v": 2
-  },
-  {
-   "id": "74584753",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74584753/business-development-manager",
-   "title": "Business Development Manager",
-   "company": "NOEL FRANKLIN (media group client)",
-   "location": "Antwerpen",
-   "match_score": 42,
-   "reason": "Accessible B2B sales role with limited experience (<2 years) accepted and degree not strictly required (equivalent by experience), no French required.",
-   "apply_email": "",
-   "found_at": "2026-09-16 08:22",
-   "status": "new",
-   "details": "- B2B sales / business development for a high-end business magazine in the Antwerp region\n- Self-driven prospecting, cold calling, client visits, selling advertising space, managing full sales cycle\n- Permanent full-time contract (onbepaalde duur), day work\n- Requires driving licence B\n- Experience: limited (<2 years) accepted; degree listed as 'or equivalent by experience'\n- Pay: €3,500–€4,800 gross/month + holiday pay and year-end bonus\n- Language: Dutch (no French required)",
-   "why_good": "- Explicitly open to limited experience (<2 years) and degree 'of gelijkwaardig door ervaring' — no hard degree wall\n- Commercial/communication skills transferable from client-facing marketing work at Episto\n- Dutch B1 is workable; posting does not demand fluent Dutch or French\n- Based in Zwijndrecht next to Antwerp, matching the region\n- No French requirement anywhere in the posting",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": true,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -5796,7 +5532,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -5818,7 +5554,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -5840,7 +5576,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -5862,29 +5598,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-10-28 18:33",
-   "closed_check_v": 2
-  },
-  {
-   "id": "73748417",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/73748417/inside-sales-executive",
-   "title": "Inside Sales Executive",
-   "company": "NOEL FRANKLIN (for a logistics client)",
-   "location": "Antwerpen",
-   "match_score": 42,
-   "reason": "Accessible inside-sales role with limited experience (<2 years) and a degree route 'or equivalent by experience', no French required.",
-   "apply_email": "",
-   "found_at": "2026-09-15 18:26",
-   "status": "new",
-   "details": "- Inside sales for an international freight forwarding / maritime logistics company in Antwerp\n- Handle incoming commercial requests, request rates from carriers/terminals, draft quotes, follow up offers, log in CRM\n- Permanent full-time contract, day work, indefinite duration\n- Languages: Dutch (good) and English (good)\n- Requires B driving licence\n- Pay: €2,500–3,500 gross/month plus meal vouchers, hospitalisation & group insurance, flexible hours",
-   "why_good": "- Sales/commercial support role open to limited experience (<2 years) — candidate has ~4 months, so a reach but applicable\n- Degree requirement explicitly allows 'of gelijkwaardig door ervaring' (or equivalent by experience), so no completed degree needed\n- English is accepted and Dutch only needs to be 'good' — candidate's B1 Dutch plus professional English fits\n- CRM record-keeping and client follow-up are things the candidate already does at Episto\n- Logistics background (Katoen Natie warehouse) gives some familiarity with the sector",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 18,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -5906,7 +5620,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -5928,7 +5642,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -5950,7 +5664,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -5972,7 +5686,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -5994,7 +5708,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -6016,7 +5730,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -6038,7 +5752,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -6060,7 +5774,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -6082,7 +5796,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -6104,7 +5818,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -6126,7 +5840,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -6148,7 +5862,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 18,
-   "closed_check": "2026-10-28 18:33",
+   "closed_check": "2026-10-29 18:42",
    "closed_check_v": 2
   },
   {
@@ -53182,6 +52896,227 @@
  "new_cv_exp_requeue_v1": true,
  "closed": [
   {
+   "id": "73748417",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/73748417/inside-sales-executive",
+   "title": "Inside Sales Executive",
+   "company": "NOEL FRANKLIN (for a logistics client)",
+   "location": "Antwerpen",
+   "found_at": "2026-09-15 18:26",
+   "match_score": 42,
+   "reason": "Accessible inside-sales role with limited experience (<2 years) and a degree route 'or equivalent by experience', no French required.",
+   "lang": "nl",
+   "internship": false,
+   "apply_email": "",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "closed_at": "2026-10-29 18:56",
+   "closed_why": "Closed — VDAB has taken this vacancy offline."
+  },
+  {
+   "id": "74584753",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74584753/business-development-manager",
+   "title": "Business Development Manager",
+   "company": "NOEL FRANKLIN (media group client)",
+   "location": "Antwerpen",
+   "found_at": "2026-09-16 08:22",
+   "match_score": 42,
+   "reason": "Accessible B2B sales role with limited experience (<2 years) accepted and degree not strictly required (equivalent by experience), no French required.",
+   "lang": "nl",
+   "internship": false,
+   "apply_email": "",
+   "dutch_stretch": false,
+   "exp_stretch": true,
+   "closed_at": "2026-10-29 18:56",
+   "closed_why": "Closed — VDAB has taken this vacancy offline."
+  },
+  {
+   "id": "73749311",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/73749311/junior-vertegenwoordiger-vlaanderen",
+   "title": "Junior Vertegenwoordiger Vlaanderen",
+   "company": "NOEL FRANKLIN (for a job in Berchem)",
+   "location": "Berchem (Antwerp)",
+   "found_at": "2026-09-15 17:40",
+   "match_score": 42,
+   "reason": "Junior B2B sales role, no experience required, degree 'or equivalent by experience', no French, only a driving licence B which the candidate can hold.",
+   "lang": "nl",
+   "internship": false,
+   "apply_email": "",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "closed_at": "2026-10-29 18:56",
+   "closed_why": "Closed — VDAB has taken this vacancy offline."
+  },
+  {
+   "id": "74742370",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74742370/accountmanager-b2b",
+   "title": "Accountmanager B2B",
+   "company": "NOEL FRANKLIN (for a client in Antwerp)",
+   "location": "Antwerpen",
+   "found_at": "2026-10-03 18:42",
+   "match_score": 42,
+   "reason": "Accessible B2B sales role with no experience requirement and degree 'or equivalent by experience', no French needed.",
+   "lang": "nl",
+   "internship": false,
+   "apply_email": "",
+   "dutch_stretch": true,
+   "exp_stretch": false,
+   "closed_at": "2026-10-29 18:56",
+   "closed_why": "Closed — VDAB has taken this vacancy offline."
+  },
+  {
+   "id": "74740252",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74740252/inside-sales-temse",
+   "title": "Inside Sales - Account Support Medewerker",
+   "company": "Forum Jobs (for a distribution client)",
+   "location": "Temse",
+   "found_at": "2026-10-03 18:47",
+   "match_score": 42,
+   "reason": "Accessible inside-sales/account-support role with no experience requirement and no French; degree is only 'bachelor denkniveau or equivalent by experience'.",
+   "lang": "nl",
+   "internship": false,
+   "apply_email": "",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "closed_at": "2026-10-29 18:56",
+   "closed_why": "Closed — VDAB has taken this vacancy offline."
+  },
+  {
+   "id": "74738690",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74738690/account-manager-b2b-regio-waasland",
+   "title": "Account Manager B2B Regio Waasland",
+   "company": "MICHAEL PAGE INTERNATIONAL (BELGIUM)",
+   "location": "Sint-Niklaas",
+   "found_at": "2026-10-03 18:51",
+   "match_score": 42,
+   "reason": "Accessible B2B sales role with no study or experience requirements, open to recent graduates.",
+   "lang": "nl",
+   "internship": false,
+   "apply_email": "",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "closed_at": "2026-10-29 18:56",
+   "closed_why": "Closed — VDAB has taken this vacancy offline."
+  },
+  {
+   "id": "74731616",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74731616/sales-support-officer-internationale-projecten",
+   "title": "Sales Support Officer | Internationale projecten",
+   "company": "Michael Page International (Belgium)",
+   "location": "Oudenaarde",
+   "found_at": "2026-10-04 18:03",
+   "match_score": 42,
+   "reason": "Accessible sales-support/order-management role with no study requirement and only good Dutch + English needed (French is just a plus).",
+   "lang": "nl",
+   "internship": false,
+   "apply_email": "",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "closed_at": "2026-10-29 18:56",
+   "closed_why": "Closed — VDAB has taken this vacancy offline."
+  },
+  {
+   "id": "74731606",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74731606/partnership-manager-e-mobility-4-month-project",
+   "title": "Partnership Manager | E-Mobility (4-Month Project)",
+   "company": "Michael Page International (Belgium)",
+   "location": "Brussels",
+   "found_at": "2026-10-04 18:04",
+   "match_score": 42,
+   "reason": "Accessible commercial/marketing role with no degree requirement, only 1 year experience, and Dutch OR French (not both) — candidate can apply with English.",
+   "lang": "nl",
+   "internship": false,
+   "apply_email": "",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "closed_at": "2026-10-29 18:56",
+   "closed_why": "Closed — VDAB has taken this vacancy offline."
+  },
+  {
+   "id": "74731268",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74731268/projectcoordinator-klantrelaties",
+   "title": "Projectcoördinator Klantrelaties",
+   "company": "Forum Jobs (for a job in Gavere)",
+   "location": "Gavere",
+   "found_at": "2026-10-04 18:05",
+   "match_score": 42,
+   "reason": "Accessible client-relations/project coordination role with no specific study or experience requirements, open to a bachelor in business/marketing/sales/communication or relevant experience.",
+   "lang": "nl",
+   "internship": false,
+   "apply_email": "",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "closed_at": "2026-10-29 18:56",
+   "closed_why": "Closed — VDAB has taken this vacancy offline."
+  },
+  {
+   "id": "74786915",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74786915/commerciele-binnendienstmedewerker",
+   "title": "Commerciële binnendienstmedewerker",
+   "company": "Randstad (for a client in Sint-Kruis)",
+   "location": "Sint-Kruis",
+   "found_at": "2026-10-07 20:23",
+   "match_score": 42,
+   "reason": "Accessible commercial back-office role with no degree requirement, limited experience (<2 years), and only medium Dutch plus English — no French.",
+   "lang": "nl",
+   "internship": false,
+   "apply_email": "",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "closed_at": "2026-10-29 18:53",
+   "closed_why": "Closed — VDAB has taken this vacancy offline."
+  },
+  {
+   "id": "74798929",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74798929/customer-service-medewerker",
+   "title": "Customer Service Medewerker",
+   "company": "START PEOPLE (for a logistics client)",
+   "location": "Tessenderlo-Ham",
+   "found_at": "2026-10-09 12:30",
+   "match_score": 42,
+   "reason": "Accessible customer-service/logistics admin role accepting a bachelor 'or equivalent by experience' and only ~1-2 years experience, with Dutch/English only (no French).",
+   "lang": "nl",
+   "internship": false,
+   "apply_email": "",
+   "dutch_stretch": true,
+   "exp_stretch": false,
+   "closed_at": "2026-10-29 18:53",
+   "closed_why": "Closed — VDAB has taken this vacancy offline."
+  },
+  {
+   "id": "74798913",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74798913/temporary-logistics-administrative-officer",
+   "title": "Temporary Logistics Administrative Officer",
+   "company": "SELECT HR",
+   "location": "Machelen",
+   "found_at": "2026-10-09 12:30",
+   "match_score": 42,
+   "reason": "Accessible logistics admin role requiring only secondary education, limited experience, and English — no French, no degree wall.",
+   "lang": "nl",
+   "internship": false,
+   "apply_email": "",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "closed_at": "2026-10-29 18:53",
+   "closed_why": "Closed — VDAB has taken this vacancy offline."
+  },
+  {
+   "id": "74786152",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74786152/commercieel-coordinator",
+   "title": "Commercieel Coördinator",
+   "company": "Actief Interim Gent",
+   "location": "Gent",
+   "found_at": "2026-10-15 19:08",
+   "match_score": 42,
+   "reason": "Accessible commercial/administrative support role with no study requirements, no experience requirement, and no French or fluent-Dutch demand.",
+   "lang": "nl",
+   "internship": false,
+   "apply_email": "actief.gent@actief.be",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "closed_at": "2026-10-29 18:53",
+   "closed_why": "Closed — VDAB has taken this vacancy offline."
+  },
+  {
    "id": "73747017",
    "url": "https://www.vdab.be/vindeenjob/vacatures/73747017/customer-success-manager",
    "title": "Customer success manager",
@@ -61526,227 +61461,6 @@
    "found_at": "2026-10-01 14:40",
    "match_score": 33,
    "reason": "Accessible digital-marketing/CMS role in the goal field; the only real gap is its flush-Dutch requirement (French is merely a plus).",
-   "lang": "nl",
-   "internship": false,
-   "apply_email": "",
-   "dutch_stretch": true,
-   "exp_stretch": false,
-   "closed_at": "2026-10-09 11:28",
-   "closed_why": "Closed — VDAB has taken this vacancy offline."
-  },
-  {
-   "id": "74611516",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74611516/klantendienstmedewerker-ing-gent-telewerk-mogelijk",
-   "title": "Klantendienstmedewerker ING - Gent - Telewerk mogelijk",
-   "company": "N-Allo (via Start People)",
-   "location": "Mechelen (Gent offices)",
-   "found_at": "2026-09-16 08:07",
-   "match_score": 35,
-   "reason": "Accessible customer-service role with no degree requirement and French only a plus, though it asks for fluent Dutch and 2 years' experience.",
-   "lang": "nl",
-   "internship": false,
-   "apply_email": "",
-   "dutch_stretch": true,
-   "exp_stretch": true,
-   "closed_at": "2026-10-09 11:28",
-   "closed_why": "Closed — VDAB has taken this vacancy offline."
-  },
-  {
-   "id": "74609622",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74609622/business-developer",
-   "title": "Business developer",
-   "company": "Bio-Logica",
-   "location": "Waasmunster",
-   "found_at": "2026-09-16 08:08",
-   "match_score": 35,
-   "reason": "Business developer role with sales/marketing tasks, no French required, degree not mandatory (equivalent by experience accepted), and the 2-year ask is a reach but not a hard wall.",
-   "lang": "nl",
-   "internship": false,
-   "apply_email": "jobs@bio-logica.be",
-   "dutch_stretch": true,
-   "exp_stretch": true,
-   "closed_at": "2026-10-09 11:28",
-   "closed_why": "Closed — VDAB has taken this vacancy offline."
-  },
-  {
-   "id": "74606929",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74606929/customer-service-operations-employee-rieme",
-   "title": "Customer Service & Operations Employee - Rieme",
-   "company": "AGO Jobs & HR Gent (for an international supply chain client)",
-   "location": "Ertvelde (Rieme), Belgium",
-   "found_at": "2026-09-16 08:09",
-   "match_score": 35,
-   "reason": "Accessible customer service/operations role with no experience required and no French; only a fluent-Dutch stretch.",
-   "lang": "nl",
-   "internship": false,
-   "apply_email": "gent.office@ago.jobs",
-   "dutch_stretch": true,
-   "exp_stretch": false,
-   "closed_at": "2026-10-09 11:28",
-   "closed_why": "Closed — VDAB has taken this vacancy offline."
-  },
-  {
-   "id": "74595833",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74595833/customer-service-medewerker-m-v-x",
-   "title": "Customer Service Medewerker m/v/x",
-   "company": "Start People (for a client in healthcare sector)",
-   "location": "Heverlee (Haasrode)",
-   "found_at": "2026-09-16 08:15",
-   "match_score": 35,
-   "reason": "Accessible customer-service role with limited experience (<2 years) and no French requirement, though it asks for very good Dutch.",
-   "lang": "nl",
-   "internship": false,
-   "apply_email": "",
-   "dutch_stretch": true,
-   "exp_stretch": false,
-   "closed_at": "2026-10-09 11:28",
-   "closed_why": "Closed — VDAB has taken this vacancy offline."
-  },
-  {
-   "id": "74592983",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74592983/sales-support",
-   "title": "Sales Support",
-   "company": "Actief Interim Mechelen",
-   "location": "Mechelen",
-   "found_at": "2026-09-16 08:17",
-   "match_score": 35,
-   "reason": "Accessible sales-support/admin role with no degree requirement and only limited experience needed, but it asks for very good Dutch, which is above the candidate's B1.",
-   "lang": "nl",
-   "internship": false,
-   "apply_email": "actief.mechelen@actief.be",
-   "dutch_stretch": true,
-   "exp_stretch": false,
-   "closed_at": "2026-10-09 11:28",
-   "closed_why": "Closed — VDAB has taken this vacancy offline."
-  },
-  {
-   "id": "74590088",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74590088/customer-service-medewerk-st-er-operations-rieme",
-   "title": "Customer Service Medewerk(st)er Operations - Rieme",
-   "company": "AGO JOBS & HR GENT-ZEEHAVEN (for a supply-chain client)",
-   "location": "Ertvelde",
-   "found_at": "2026-09-16 08:19",
-   "match_score": 35,
-   "reason": "Accessible customer-service/operations role with no experience required and no French, though it asks for very good Dutch and English.",
-   "lang": "nl",
-   "internship": false,
-   "apply_email": "gent.zeehaven@ago.jobs",
-   "dutch_stretch": true,
-   "exp_stretch": false,
-   "closed_at": "2026-10-09 11:28",
-   "closed_why": "Closed — VDAB has taken this vacancy offline."
-  },
-  {
-   "id": "74590080",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74590080/sales-development-representative",
-   "title": "Sales Development Representative",
-   "company": "Jobmatch",
-   "location": "Gent",
-   "found_at": "2026-09-16 08:19",
-   "match_score": 35,
-   "reason": "Accessible B2B sales role with no degree requirement (or equivalent by experience) and no French requirement; the 2-year experience ask is a reach but not a hard wall.",
-   "lang": "nl",
-   "internship": false,
-   "apply_email": "",
-   "dutch_stretch": true,
-   "exp_stretch": true,
-   "closed_at": "2026-10-09 11:28",
-   "closed_why": "Closed — VDAB has taken this vacancy offline."
-  },
-  {
-   "id": "74567015",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74567015/inside-sales-medewerker",
-   "title": "Inside Sales medewerker",
-   "company": "Unique Geel",
-   "location": "Geel",
-   "found_at": "2026-09-16 08:29",
-   "match_score": 35,
-   "reason": "Accessible inside-sales role with no degree requirement and only limited experience needed; Dutch is a stretch but French is only a plus.",
-   "lang": "nl",
-   "internship": false,
-   "apply_email": "",
-   "dutch_stretch": true,
-   "exp_stretch": false,
-   "closed_at": "2026-10-09 11:28",
-   "closed_why": "Closed — VDAB has taken this vacancy offline."
-  },
-  {
-   "id": "74555903",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74555903/allround-administratief-bediende",
-   "title": "Allround Administratief Bediende",
-   "company": "Unique Mechelen (client: fresh vegetable importer)",
-   "location": "Sint-Katelijne-Waver",
-   "found_at": "2026-09-16 08:31",
-   "match_score": 35,
-   "reason": "Accessible administrative office role with no experience required and no French requirement (French only a plus), though it asks for very good Dutch.",
-   "lang": "nl",
-   "internship": false,
-   "apply_email": "",
-   "dutch_stretch": true,
-   "exp_stretch": false,
-   "closed_at": "2026-10-09 11:28",
-   "closed_why": "Closed — VDAB has taken this vacancy offline."
-  },
-  {
-   "id": "74526537",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74526537/customer-service-officer",
-   "title": "Customer Service Officer",
-   "company": "Van Moer Group (Van Moer Logistics)",
-   "location": "Beveren-Kruibeke-Zwijndrecht (Kallo)",
-   "found_at": "2026-09-16 08:34",
-   "match_score": 35,
-   "reason": "Accessible customer-service/admin role with no degree requirement and no French, though it asks for 2 years' experience and very good Dutch.",
-   "lang": "nl",
-   "internship": false,
-   "apply_email": "",
-   "dutch_stretch": true,
-   "exp_stretch": true,
-   "closed_at": "2026-10-09 11:28",
-   "closed_why": "Closed — VDAB has taken this vacancy offline."
-  },
-  {
-   "id": "74486904",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74486904/customer-service-medewerker",
-   "title": "Customer Service Medewerker",
-   "company": "Unique Mechelen (for a young marketing/energy company)",
-   "location": "Mechelen",
-   "found_at": "2026-09-16 08:37",
-   "match_score": 35,
-   "reason": "Accessible customer-service role with no degree requirement and only limited (<2 years) experience asked; Dutch is 'zeer goed' but no French, so it's a stretch, not a fail.",
-   "lang": "nl",
-   "internship": false,
-   "apply_email": "",
-   "dutch_stretch": true,
-   "exp_stretch": false,
-   "closed_at": "2026-10-09 11:28",
-   "closed_why": "Closed — VDAB has taken this vacancy offline."
-  },
-  {
-   "id": "74556985",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74556985/content-marketing-coordinator",
-   "title": "Content Marketing Coordinator",
-   "company": "Ago Jobs en Hr (client in voedingssector)",
-   "location": "Londerzeel",
-   "found_at": "2026-09-16 11:40",
-   "match_score": 35,
-   "reason": "Content marketing role in the goal field; degree is 'or equivalent by experience' and French is only a plus, but it requires very good Dutch and 2 years' experience.",
-   "lang": "nl",
-   "internship": false,
-   "apply_email": "",
-   "dutch_stretch": true,
-   "exp_stretch": true,
-   "closed_at": "2026-10-09 11:28",
-   "closed_why": "Closed — VDAB has taken this vacancy offline."
-  },
-  {
-   "id": "74438895",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74438895/sales-e-commerce-coordinator-20-25u-week",
-   "title": "Sales & E-commerce coördinator (20-25u/week)",
-   "company": "Unknown",
-   "location": "Genk",
-   "found_at": "2026-08-24 00:02",
-   "match_score": 35,
-   "reason": "Accessible part-time e-commerce/online-marketing role with no study or experience requirements, but it asks for very good Dutch, which is above the candidate's A2+ speaking level.",
    "lang": "nl",
    "internship": false,
    "apply_email": "",
