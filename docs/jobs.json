@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-03 20:21 UTC",
+ "updated": "2026-11-03 21:00 UTC",
  "jobs": [
   {
    "id": "4471489541",
@@ -7391,28 +7391,6 @@
    "closed_check_v": 2
   },
   {
-   "id": "4463575646",
-   "url": "https://www.linkedin.com/jobs/view/4463575646",
-   "title": "Campaign Manager",
-   "company": "Gaming1",
-   "location": "Unknown",
-   "match_score": 38,
-   "reason": "Accessible marketing campaign role in English with Dutch only a plus, and the degree requirement offers an 'or equivalent' route.",
-   "apply_email": "",
-   "found_at": "2026-09-16 11:45",
-   "status": "new",
-   "details": "- Plan and execute marketing campaigns for Gaming1's brand portfolio across territories\n- Work on promotion plans with Acquisition and Retention teams\n- Report on campaign results, web analysis and KPIs; measure campaign ROI\n- Collect and use data to inform new and existing campaigns\n- Fluent English required; Dutch is a plus\n- Hybrid model, up to 50% remote; competitive salary and benefits",
-   "why_good": "- Digital marketing role in the goal field (campaigns, web analysis, KPIs, ROI)\n- Real SEO/content/analytics experience with GA, Search Console, Semrush, Ahrefs\n- English-fluent candidate; Dutch only a plus, so language is no barrier\n- Degree requirement softened by 'or equivalent', which his hands-on experience can cover\n- Data-driven, proactive profile matches the 'collect and use data' and project-management asks",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": true,
-   "internship": false,
-   "lang": "en",
-   "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
-   "closed_check_v": 2
-  },
-  {
    "id": "4486165579",
    "url": "https://www.linkedin.com/jobs/view/4486165579",
    "title": "Marketing Officer",
@@ -11334,6 +11312,28 @@
   }
  ],
  "rejected": [
+  {
+   "id": "4463575646",
+   "url": "https://www.linkedin.com/jobs/view/4463575646",
+   "title": "Campaign Manager",
+   "company": "Gaming1",
+   "location": "Unknown",
+   "match_score": 38,
+   "reason": "First seen about 45 days ago — a vacancy open this long has almost always been filled.",
+   "apply_email": "",
+   "found_at": "2026-09-16 11:45",
+   "status": "new",
+   "details": "- Plan and execute marketing campaigns for Gaming1's brand portfolio across territories\n- Work on promotion plans with Acquisition and Retention teams\n- Report on campaign results, web analysis and KPIs; measure campaign ROI\n- Collect and use data to inform new and existing campaigns\n- Fluent English required; Dutch is a plus\n- Hybrid model, up to 50% remote; competitive salary and benefits",
+   "why_good": "- Digital marketing role in the goal field (campaigns, web analysis, KPIs, ROI)\n- Real SEO/content/analytics experience with GA, Search Console, Semrush, Ahrefs\n- English-fluent candidate; Dutch only a plus, so language is no barrier\n- Degree requirement softened by 'or equivalent', which his hands-on experience can cover\n- Data-driven, proactive profile matches the 'collect and use data' and project-management asks",
+   "why_bad": "First seen about 45 days ago — a vacancy open this long has almost always been filled.",
+   "dutch_stretch": false,
+   "exp_stretch": true,
+   "internship": false,
+   "lang": "en",
+   "cv_fit_v": 19,
+   "closed_check": "2026-11-03 19:52",
+   "closed_check_v": 2
+  },
   {
    "id": "74810925",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74810925/frontdeskmedewerk-st-er-15u-week",
@@ -51491,8 +51491,8 @@
    "cv_fit_v": 19
   }
  ],
- "search_cursor": 2,
- "li_cursor": 14,
+ "search_cursor": 7,
+ "li_cursor": 20,
  "letter_fails": {
   "4428705687": 2
  },
