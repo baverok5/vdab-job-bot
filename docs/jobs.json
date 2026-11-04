@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-03 21:49 UTC",
+ "updated": "2026-11-04 20:12 UTC",
  "jobs": [
   {
    "id": "4471489541",
@@ -20,7 +20,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -42,7 +42,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -64,7 +64,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2,
    "lang_req": {
     "en": "b1",
@@ -90,7 +90,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -112,7 +112,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -134,7 +134,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -156,7 +156,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -178,7 +178,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -200,7 +200,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -222,7 +222,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -247,7 +247,7 @@
    "lang_req": {
     "nl": "b1"
    },
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -269,7 +269,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -291,7 +291,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -313,7 +313,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -335,7 +335,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -356,7 +356,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "en",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-11-04 20:07",
+   "closed_check_v": 2
   },
   {
    "id": "4486190469",
@@ -376,7 +378,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "en",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-11-04 20:07",
+   "closed_check_v": 2
   },
   {
    "id": "898615588",
@@ -396,7 +400,12 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "lang_req": {
+    "nl": "b1"
+   },
+   "closed_check": "2026-11-04 20:07",
+   "closed_check_v": 2
   },
   {
    "id": "4486006816",
@@ -416,7 +425,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "en",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-11-04 20:07",
+   "closed_check_v": 2
   },
   {
    "id": "4485901467",
@@ -437,7 +448,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -459,29 +470,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
-   "closed_check_v": 2
-  },
-  {
-   "id": "74946544",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74946544/junior-social-media-content-medewerker",
-   "title": "Junior Social Media & Content Medewerker",
-   "company": "Go4jobs Londerzeel (client in Buggenhout)",
-   "location": "Buggenhout",
-   "match_score": 62,
-   "reason": "Junior social media/content role, no experience required, degree or equivalent-by-experience accepted, and Dutch requirement is conversational.",
-   "apply_email": "londerzeel@go4jobs.be",
-   "found_at": "2026-10-29 19:47",
-   "status": "new",
-   "details": "Junior Social Media & Content Medewerker for a construction-sector client via Go4jobs\nCreate and plan content for TikTok, Instagram, Facebook, LinkedIn; shoot photos/video, write texts, analyse results\nAlso help with website management, Google Ads, Meta Ads, email campaigns and data analysis\nInterim with option to permanent, full-time, day work, start 12 Nov 2026\nLanguages: fluent Dutch speaking/writing required (candidate is A2+/B1)\nPay per profile; meal vouchers, hospitalisation insurance",
-   "why_good": "Asks for content creation and planning across social channels -> candidate writes SEO/content and manages WordPress/Shopify blog content at Episto\nWants website management and data analysis -> candidate runs WordPress/Elementor CMS and uses Google Analytics/Search Console\nLists Google Ads, Meta Ads, SEO and Google Analytics as plus points -> candidate has Google Ads and SEO/analytics experience\nCanva and basic video editing as plus -> candidate uses Canva and produces web visuals\nSchool-leavers and starters welcome, degree or equivalent by experience -> fits the candidate's profile; main gap is fluent Dutch (A2+/B1) for on-the-job communication",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -503,7 +492,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -528,7 +517,7 @@
    "lang_req": {
     "nl": "b1"
    },
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -550,7 +539,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -572,7 +561,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -594,7 +583,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -616,7 +605,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -638,7 +627,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -660,7 +649,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -682,7 +671,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -707,7 +696,7 @@
    "lang_req": {
     "nl": "b1"
    },
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -729,7 +718,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -754,7 +743,7 @@
    "lang_req": {
     "nl": "b1"
    },
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -776,7 +765,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -798,7 +787,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -820,7 +809,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -842,7 +831,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -864,29 +853,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
-   "closed_check_v": 2
-  },
-  {
-   "id": "4475801211",
-   "url": "https://www.linkedin.com/jobs/view/4475801211",
-   "title": "Online Merchandiser / E-commerce Specialist",
-   "company": "Unknown",
-   "location": "Unknown",
-   "match_score": 62,
-   "reason": "Accessible e-commerce/merchandising role matching the candidate's webshop, analytics and technical-SEO background, with no French, no degree wall and no 5+ year requirement.",
-   "apply_email": "",
-   "found_at": "2026-10-06 19:41",
-   "status": "new",
-   "details": "Role: Online Merchandiser / E-commerce Specialist optimising an online sales channel (travel/booking).\nTasks: monitor revenue, bookings and conversion; manage sorting, ranking, labels and badges; investigate look-to-book gaps; improve the booking funnel; write tickets/requirements and test fixes; use GA4 and dashboards for analysis.\nContract: full-time, reports to the E-commerce Manager.\nSchedule: not stated.\nLanguage: Dutch posting; no French mentioned, English-friendly digital team.\nPay: not stated.",
-   "why_good": "Real e-commerce/webshop experience: Shopify store design, product catalogue upkeep and blog content at Episto.\nAnalytics fit: Google Analytics (GA4), Search Console, Semrush and Ahrefs used daily for tracking and reporting.\nTechnical curiosity matches: front-end background (AngularJS/JavaScript), Python automation and structured bug/requirements work.\nFunnel and conversion thinking grounded in on-page SEO, keyword research and content that drives organic traffic.\nNo French, no mandatory degree and no 5+ year ask — the 'ervaring in e-commerce/webshopbeheer' line is within reach of his ~2-3 years.",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -908,7 +875,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -930,7 +897,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2,
    "lang_req": {
     "nl": "b2"
@@ -955,7 +922,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -977,7 +944,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -999,7 +966,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -1021,7 +988,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -1043,7 +1010,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -1064,7 +1031,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "en",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-11-04 20:07",
+   "closed_check_v": 2
   },
   {
    "id": "4485327686",
@@ -1085,7 +1054,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -1110,7 +1079,7 @@
    "lang_req": {
     "nl": "b1"
    },
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -1132,7 +1101,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -1154,7 +1123,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -1176,7 +1145,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -1202,28 +1171,8 @@
     "en": "b1",
     "nl": "b2"
    },
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
-  },
-  {
-   "id": "483857921",
-   "url": "https://europa.eu/eures/portal/jv-se/jv-details/MGM5NDUwYjktZDVmMC00MzRjLWI0MGEtNDE1M2Q2ZTNiNTc0IDM",
-   "title": "Marketing & Communicatiemanager",
-   "company": "Synergie",
-   "location": "Unknown",
-   "match_score": 55,
-   "reason": "Broad marketing/communications role accepting a bachelor/master 'or equivalent by experience', Dutch only at B1, and duties match his content, social, web and analytics background.",
-   "apply_email": "",
-   "found_at": "2026-11-03 21:09",
-   "status": "new",
-   "details": "Role: full marketing & communications ownership for Synergie\nTasks: strategy-to-campaign planning, social media (LinkedIn focus), content calendar and copywriting for web/newsletters/social, website and product-info coordination, content from projects (photos, video, cases), supporting sales campaigns, events/fairs, internal comms & employer branding\nContract: full-time, permanent (not stated)\nSchedule: not stated\nLanguage: Dutch B1 required, no French\nPay: not stated",
-   "why_good": "Asks for content calendar and attractive copy for websites, newsletters and social -> writes SEO blog and web content daily at Episto\nWants website coordination and product information upkeep -> manages WordPress/Elementor client sites and Shopify catalogues and blogs\nNeeds Google Ads and Google Analytics knowledge -> holds Google Ads Search and GA4 certifications and uses GA/Search Console\nWants social media and online presence management -> did social media integration on client WordPress builds at KXP\nAccepts 'bachelor/master or equivalent by experience' -> his ~2-3 years of hands-on web/SEO/marketing experience fits that route; only gap is basic Adobe Creative Cloud familiarity, which is Canva-adjacent and learnable",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19
   },
   {
    "id": "4485998117",
@@ -1243,7 +1192,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-11-04 20:07",
+   "closed_check_v": 2
   },
   {
    "id": "4484943376",
@@ -1264,7 +1215,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -1286,7 +1237,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -1308,29 +1259,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
-   "closed_check_v": 2
-  },
-  {
-   "id": "4479382981",
-   "url": "https://www.linkedin.com/jobs/view/4479382981",
-   "title": "Strategisch Marketing Expert",
-   "company": "Pulso",
-   "location": "Leuven",
-   "match_score": 55,
-   "reason": "Allround B2B marketing/communication role accepting equivalent experience, Dutch+English with French only a plus, fits the candidate's content/web/SEO and AI-tool background.",
-   "apply_email": "marketing@pulso-group.com",
-   "found_at": "2026-10-22 18:59",
-   "status": "new",
-   "details": "Allround marketing & communication expert in a 3-person marketing team\nTasks: market/competitor analysis, marketing plan, campaigns, website copy & content, sales/communication materials, PowerPoint, keeping websites current, events/webinars\nContract: permanent (onbepaalde duur), hybrid, office near Leuven station\nLanguage: fluent Dutch + English; French a plus (not required)\nPay: competitive salary + extralegal benefits (not specified)",
-   "why_good": "Asks for website copy/content and keeping sites current -> candidate writes SEO content and manages WordPress/Shopify content at Episto\nWants AI tools used daily for texts, ideas and presentations -> candidate uses LLMs daily for research, content and audits\nMentions SEO/GEO and technical web improvements with partners -> candidate has on-page SEO, technical audits and JSON-LD/GEO experience\nDegree accepted 'or equivalent experience' and only 'first experience' asked -> candidate's ~2-3 years web/SEO/marketing fits\nDutch+English with French only a plus -> candidate's B1 Dutch and fluent English work here",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -1352,7 +1281,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -1374,7 +1303,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -1396,7 +1325,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -1418,7 +1347,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -1440,7 +1369,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-03 19:52",
+   "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
   },
   {
@@ -1684,7 +1613,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-11-04 20:07",
+   "closed_check_v": 2
   },
   {
    "id": "650223336",
@@ -1704,7 +1635,12 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "lang_req": {
+    "nl": "b1"
+   },
+   "closed_check": "2026-11-04 20:07",
+   "closed_check_v": 2
   },
   {
    "id": "74964159",
@@ -1977,7 +1913,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-11-04 20:07",
+   "closed_check_v": 2
   },
   {
    "id": "74957933",
@@ -2591,27 +2529,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
-  },
-  {
-   "id": "74973576",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74973576/internal-sales-generalist",
-   "title": "Internal Sales Generalist",
-   "company": "Actief Interim Dendermonde",
-   "location": "Dendermonde",
-   "match_score": 42,
-   "reason": "Accessible internal sales support role with no study or experience requirements, open to the candidate's commercial support profile.",
-   "apply_email": "",
-   "found_at": "2026-11-03 21:33",
-   "status": "new",
-   "details": "Internal sales support role bridging customer, sales and internal teams\nFirst point of contact for customers, analysing requests and drafting tailored quotes\nFollows up quotes, spots commercial opportunities, supports field sales\nMaintains customer data and quotes in CRM; suggests process improvements\nInterim with option to permanent, full-time, day work, start ASAP\nNo specific study requirements; experience 'not of importance'",
-   "why_good": "Asks for customer contact and professional advice -> candidate has client-facing web/SEO work and communication in English/Turkish\nWants CRM/MS Office and data accuracy -> candidate manages CMS content, catalogues and reporting tools carefully\nNeeds commercial mindset and follow-up -> candidate ran freelance client work and Shopify store upkeep\nTeam support across departments -> candidate collaborated on client sites and SharePoint projects\nNote: role needs stronger Dutch than A2+ for daily customer contact, and it's a sales-support job rather than digital marketing — real overlap is client communication and admin, not SEO.",
-   "why_bad": "",
-   "dutch_stretch": true,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-11-04 20:07",
+   "closed_check_v": 2
   },
   {
    "id": "74977446",
@@ -2631,7 +2551,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-11-04 20:07",
+   "closed_check_v": 2
   },
   {
    "id": "74977697",
@@ -2651,7 +2573,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-11-04 20:07",
+   "closed_check_v": 2
   },
   {
    "id": "74977951",
@@ -2671,7 +2595,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-11-04 20:07",
+   "closed_check_v": 2
   },
   {
    "id": "74974463",
@@ -2691,7 +2617,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-11-04 20:07",
+   "closed_check_v": 2
   },
   {
    "id": "74964451",
@@ -5214,7 +5142,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-11-04 20:07",
+   "closed_check_v": 2
   },
   {
    "id": "74951532",
@@ -5388,7 +5318,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-11-04 20:07",
+   "closed_check_v": 2
   },
   {
    "id": "74979332",
@@ -5408,7 +5340,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-11-04 20:07",
+   "closed_check_v": 2
   },
   {
    "id": "74948540",
@@ -5428,7 +5362,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-11-04 20:07",
+   "closed_check_v": 2
   },
   {
    "id": "74972796",
@@ -5448,7 +5384,9 @@
    "exp_stretch": false,
    "internship": true,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-11-04 20:07",
+   "closed_check_v": 2
   },
   {
    "id": "74979394",
@@ -5468,7 +5406,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-11-04 20:07",
+   "closed_check_v": 2
   },
   {
    "id": "720691395",
@@ -5488,7 +5428,12 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "lang_req": {
+    "nl": "b2"
+   },
+   "closed_check": "2026-11-04 20:07",
+   "closed_check_v": 2
   },
   {
    "id": "833230106",
@@ -5508,7 +5453,12 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "lang_req": {
+    "nl": "b2"
+   },
+   "closed_check": "2026-11-04 20:07",
+   "closed_check_v": 2
   },
   {
    "id": "940165754",
@@ -5528,7 +5478,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-11-04 20:07",
+   "closed_check_v": 2
   },
   {
    "id": "4485331587",
@@ -5548,7 +5500,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-11-04 20:07",
+   "closed_check_v": 2
   },
   {
    "id": "4485359835",
@@ -5568,7 +5522,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "en",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-11-04 20:07",
+   "closed_check_v": 2
   },
   {
    "id": "4485753098",
@@ -5588,7 +5544,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "en",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-11-04 20:07",
+   "closed_check_v": 2
   },
   {
    "id": "4486035871",
@@ -5608,7 +5566,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-11-04 20:07",
+   "closed_check_v": 2
   },
   {
    "id": "4487037775",
@@ -5628,27 +5588,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
-  },
-  {
-   "id": "4484820901",
-   "url": "https://www.linkedin.com/jobs/view/4484820901",
-   "title": "Google Ads Media Buyer – Worldwide",
-   "company": "Growth Agency (via Jobgether)",
-   "location": "Remote (Belgium)",
-   "match_score": 38,
-   "reason": "English-language Google Ads media buying role with a 1-2 year ask and no degree requirement, so the junior candidate can apply as a stretch.",
-   "apply_email": "",
-   "found_at": "2026-11-03 21:01",
-   "status": "new",
-   "details": "Role: Google Ads Media Buyer for DTC eCommerce brands at a Belgian growth agency\nTasks: end-to-end Google Ads management (Search, Display, Shopping, Performance Max), shopping feed optimization, ad copy/creative testing, budget & profitability analysis, client communication via Slack\nContract: full-time, 100% remote, flexible hours aligned to EU time zones\nLanguage: fluent English required (no Dutch/French needed)\nPay: performance-based salary + bonuses (no figure stated)",
-   "why_good": "Asks for 1-2 years hands-on Google Ads experience -> candidate has Google Ads Search certification and Google Ads in his analytics toolkit, though not yet as a dedicated media buyer\nWants GA4, conversion tracking and analytical skills -> candidate uses Google Analytics/GA4 and Search Console daily and reports on performance\nNeeds ad copy and creative testing -> candidate writes SEO/content copy and produces visuals in Canva\nValues independent ownership and self-driven learning -> candidate runs freelance WordPress/SEO projects and built his own site solo\nHonest gap: this is a performance-media-buying role, further from his SEO/content core, and it asks for more paid-ads experience than he has — still worth a shot given the low bar and English-only setup",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": true,
-   "internship": false,
-   "lang": "en",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-11-04 20:07",
+   "closed_check_v": 2
   },
   {
    "id": "74970399",
@@ -8945,26 +8887,6 @@
    "closed_check_v": 2
   },
   {
-   "id": "74971508",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74971508/commercieel-medewerker-binnendienst",
-   "title": "Commercieel medewerker - binnendienst",
-   "company": "Konvert Interim",
-   "location": "Evergem",
-   "match_score": 32,
-   "reason": "Accessible commercial inside-sales role with no study or experience requirements; only fluent Dutch is a stretch, French is merely a plus.",
-   "apply_email": "",
-   "found_at": "2026-11-03 21:39",
-   "status": "new",
-   "details": "- Commercial inside-sales / customer contact role for an electronics distributor\n- Answering customer questions by phone and email, following up orders, quotes and files\n- Advising retailers and webshops on availability, alternatives and promotions\n- Full-time temporary job with option to permanent, day work, start ASAP\n- Requires very good Dutch; French/English a plus; driving licence B\n- Salary not stated; meal vouchers €10/day, 32 leave days, insurance",
-   "why_good": "- Customer-facing contact and follow-up -> candidate's client-facing work at Episto and KXP building and supporting client sites\n- Advising webshops/retailers on products -> hands-on Shopify and WooCommerce webshop work (catalogue, store design)\n- Working with sales, purchasing, marketing and logistics -> digital marketing background gives commercial and marketing context\n- No degree or experience requirement -> candidate meets the formal bar easily\n- Needs stronger Dutch than A2+ (very good Dutch required) -> real gap; French is only a plus, so no hard language wall",
-   "why_bad": "",
-   "dutch_stretch": true,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19
-  },
-  {
    "id": "74974128",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74974128/business-support-sales-assistant",
    "title": "Business Support & Sales Assistant",
@@ -8982,7 +8904,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-11-04 20:07",
+   "closed_check_v": 2
   },
   {
    "id": "354433292",
@@ -9002,7 +8926,14 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "lang_req": {
+    "en": "a2",
+    "fr": "a2",
+    "nl": "b1"
+   },
+   "closed_check": "2026-11-04 20:07",
+   "closed_check_v": 2
   },
   {
    "id": "74800342",
@@ -9022,7 +8953,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-11-04 20:07",
+   "closed_check_v": 2
   },
   {
    "id": "74976044",
@@ -9042,7 +8975,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-11-04 20:07",
+   "closed_check_v": 2
   },
   {
    "id": "4479841203",
@@ -9062,7 +8997,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "en",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-11-04 20:07",
+   "closed_check_v": 2
   },
   {
    "id": "74959358",
@@ -10736,7 +10673,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-11-04 20:07",
+   "closed_check_v": 2
   },
   {
    "id": "74902366",
@@ -10756,7 +10695,9 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-11-04 20:07",
+   "closed_check_v": 2
   },
   {
    "id": "74971655",
@@ -10776,7 +10717,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-11-04 20:07",
+   "closed_check_v": 2
   },
   {
    "id": "74974728",
@@ -10796,7 +10739,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-11-04 20:07",
+   "closed_check_v": 2
   },
   {
    "id": "74971641",
@@ -10816,7 +10761,9 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19
+   "cv_fit_v": 19,
+   "closed_check": "2026-11-04 20:07",
+   "closed_check_v": 2
   },
   {
    "id": "74883145",
@@ -52566,6 +52513,125 @@
  "new_cv_exp_requeue_v1": true,
  "closed": [
   {
+   "id": "4479382981",
+   "url": "https://www.linkedin.com/jobs/view/4479382981",
+   "title": "Strategisch Marketing Expert",
+   "company": "Pulso",
+   "location": "Leuven",
+   "found_at": "2026-10-22 18:59",
+   "match_score": 55,
+   "reason": "Allround B2B marketing/communication role accepting equivalent experience, Dutch+English with French only a plus, fits the candidate's content/web/SEO and AI-tool background.",
+   "lang": "nl",
+   "internship": false,
+   "apply_email": "marketing@pulso-group.com",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "closed_at": "2026-11-04 20:12",
+   "closed_why": "Closed — LinkedIn says it is no longer accepting applications."
+  },
+  {
+   "id": "4475801211",
+   "url": "https://www.linkedin.com/jobs/view/4475801211",
+   "title": "Online Merchandiser / E-commerce Specialist",
+   "company": "Unknown",
+   "location": "Unknown",
+   "found_at": "2026-10-06 19:41",
+   "match_score": 62,
+   "reason": "Accessible e-commerce/merchandising role matching the candidate's webshop, analytics and technical-SEO background, with no French, no degree wall and no 5+ year requirement.",
+   "lang": "nl",
+   "internship": false,
+   "apply_email": "",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "closed_at": "2026-11-04 20:12",
+   "closed_why": "Closed — LinkedIn says it is no longer accepting applications."
+  },
+  {
+   "id": "74946544",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74946544/junior-social-media-content-medewerker",
+   "title": "Junior Social Media & Content Medewerker",
+   "company": "Go4jobs Londerzeel (client in Buggenhout)",
+   "location": "Buggenhout",
+   "found_at": "2026-10-29 19:47",
+   "match_score": 62,
+   "reason": "Junior social media/content role, no experience required, degree or equivalent-by-experience accepted, and Dutch requirement is conversational.",
+   "lang": "nl",
+   "internship": false,
+   "apply_email": "londerzeel@go4jobs.be",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "closed_at": "2026-11-04 20:12",
+   "closed_why": "Closed — VDAB has taken this vacancy offline."
+  },
+  {
+   "id": "74971508",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74971508/commercieel-medewerker-binnendienst",
+   "title": "Commercieel medewerker - binnendienst",
+   "company": "Konvert Interim",
+   "location": "Evergem",
+   "found_at": "2026-11-03 21:39",
+   "match_score": 32,
+   "reason": "Accessible commercial inside-sales role with no study or experience requirements; only fluent Dutch is a stretch, French is merely a plus.",
+   "lang": "nl",
+   "internship": false,
+   "apply_email": "",
+   "dutch_stretch": true,
+   "exp_stretch": false,
+   "closed_at": "2026-11-04 20:09",
+   "closed_why": "Closed — VDAB has taken this vacancy offline."
+  },
+  {
+   "id": "4484820901",
+   "url": "https://www.linkedin.com/jobs/view/4484820901",
+   "title": "Google Ads Media Buyer – Worldwide",
+   "company": "Growth Agency (via Jobgether)",
+   "location": "Remote (Belgium)",
+   "found_at": "2026-11-03 21:01",
+   "match_score": 38,
+   "reason": "English-language Google Ads media buying role with a 1-2 year ask and no degree requirement, so the junior candidate can apply as a stretch.",
+   "lang": "en",
+   "internship": false,
+   "apply_email": "",
+   "dutch_stretch": false,
+   "exp_stretch": true,
+   "closed_at": "2026-11-04 20:09",
+   "closed_why": "Closed — LinkedIn says it is no longer accepting applications."
+  },
+  {
+   "id": "74973576",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74973576/internal-sales-generalist",
+   "title": "Internal Sales Generalist",
+   "company": "Actief Interim Dendermonde",
+   "location": "Dendermonde",
+   "found_at": "2026-11-03 21:33",
+   "match_score": 42,
+   "reason": "Accessible internal sales support role with no study or experience requirements, open to the candidate's commercial support profile.",
+   "lang": "nl",
+   "internship": false,
+   "apply_email": "",
+   "dutch_stretch": true,
+   "exp_stretch": false,
+   "closed_at": "2026-11-04 20:09",
+   "closed_why": "Closed — VDAB has taken this vacancy offline."
+  },
+  {
+   "id": "483857921",
+   "url": "https://europa.eu/eures/portal/jv-se/jv-details/MGM5NDUwYjktZDVmMC00MzRjLWI0MGEtNDE1M2Q2ZTNiNTc0IDM",
+   "title": "Marketing & Communicatiemanager",
+   "company": "Synergie",
+   "location": "Unknown",
+   "found_at": "2026-11-03 21:09",
+   "match_score": 55,
+   "reason": "Broad marketing/communications role accepting a bachelor/master 'or equivalent by experience', Dutch only at B1, and duties match his content, social, web and analytics background.",
+   "lang": "nl",
+   "internship": false,
+   "apply_email": "",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "closed_at": "2026-11-04 20:09",
+   "closed_why": "Closed — EURES has withdrawn this vacancy."
+  },
+  {
    "id": "74928365",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74928365/internal-account-representative",
    "title": "Internal Account Representative",
@@ -61065,125 +61131,6 @@
    "dutch_stretch": true,
    "exp_stretch": false,
    "closed_at": "2026-10-13 19:40",
-   "closed_why": "Closed — VDAB has taken this vacancy offline."
-  },
-  {
-   "id": "4472617609",
-   "url": "https://www.linkedin.com/jobs/view/4472617609",
-   "title": "Demand Generation / Pipeline Operator (Growth)",
-   "company": "Cashfeed",
-   "location": "Belgium (city not stated)",
-   "found_at": "2026-10-01 18:03",
-   "match_score": 28,
-   "reason": "Growth/pipeline role in a digital/AI SaaS fits the candidate's field, but it asks 3-7 years' experience and professional (fluent) Dutch, so it's a stretch rather than a natural fit.",
-   "lang": "en",
-   "internship": false,
-   "apply_email": "",
-   "dutch_stretch": true,
-   "exp_stretch": true,
-   "closed_at": "2026-10-12 21:56",
-   "closed_why": "Closed — LinkedIn says it is no longer accepting applications."
-  },
-  {
-   "id": "74688564",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74688564/administratief-medewerker-social-media-manager",
-   "title": "Administratief medewerker/Social media manager",
-   "company": "Konvert Interim Oudenaarde (supermarkt in Kluisbergen)",
-   "location": "Kluisbergen",
-   "found_at": "2026-10-01 14:36",
-   "match_score": 30,
-   "reason": "Accessible admin + social-media role matching the candidate's content/social side, passed as a stretch because it asks for very good Dutch and 3 years' bookkeeping experience.",
-   "lang": "nl",
-   "internship": false,
-   "apply_email": "",
-   "dutch_stretch": true,
-   "exp_stretch": true,
-   "closed_at": "2026-10-12 21:56",
-   "closed_why": "Closed — VDAB has taken this vacancy offline."
-  },
-  {
-   "id": "74706204",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74706204/klantenadviseur-telecom-turnhout",
-   "title": "Klantenadviseur Telecom (Turnhout)",
-   "company": "Synergie Mechelen",
-   "location": "Turnhout",
-   "found_at": "2026-10-04 18:54",
-   "match_score": 30,
-   "reason": "Accessible customer-service/sales role with no experience or degree requirements, but it demands very strong Dutch.",
-   "lang": "nl",
-   "internship": false,
-   "apply_email": "",
-   "dutch_stretch": true,
-   "exp_stretch": false,
-   "closed_at": "2026-10-12 21:56",
-   "closed_why": "Closed — VDAB has taken this vacancy offline."
-  },
-  {
-   "id": "74621312",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74621312/onthaalmedewerker",
-   "title": "Onthaalmedewerker",
-   "company": "AGO Jobs & HR (voor een job in Emelgem/Izegem)",
-   "location": "Emelgem / Izegem",
-   "found_at": "2026-09-16 09:31",
-   "match_score": 32,
-   "reason": "Accessible reception/customer-service role with no experience required and no French, though it asks for very good Dutch.",
-   "lang": "nl",
-   "internship": false,
-   "apply_email": "",
-   "dutch_stretch": true,
-   "exp_stretch": false,
-   "closed_at": "2026-10-12 21:55",
-   "closed_why": "Closed — VDAB has taken this vacancy offline."
-  },
-  {
-   "id": "74626437",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74626437/klantenadviseur-telecom-mechelen",
-   "title": "Klantenadviseur Telecom (Mechelen)",
-   "company": "Synergie Mechelen",
-   "location": "Mechelen",
-   "found_at": "2026-09-16 16:16",
-   "match_score": 32,
-   "reason": "Accessible customer-service role with no experience, no degree requirement and no French — only very good Dutch, which is a stretch but not a fail.",
-   "lang": "nl",
-   "internship": false,
-   "apply_email": "",
-   "dutch_stretch": true,
-   "exp_stretch": false,
-   "closed_at": "2026-10-12 21:55",
-   "closed_why": "Closed — VDAB has taken this vacancy offline."
-  },
-  {
-   "id": "74776301",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74776301/customer-service-medewerker",
-   "title": "Customer service medewerker",
-   "company": "Belfius (via Unique Pelt)",
-   "location": "Sint-Joost-ten-Node",
-   "found_at": "2026-10-06 20:09",
-   "match_score": 32,
-   "reason": "Accessible customer-service role with limited experience (<2 years) and degree 'or equivalent by experience', but it demands excellent written and spoken Dutch, which is above the candidate's A2+ level.",
-   "lang": "nl",
-   "internship": false,
-   "apply_email": "",
-   "dutch_stretch": true,
-   "exp_stretch": false,
-   "closed_at": "2026-10-12 21:55",
-   "closed_why": "Closed — VDAB has taken this vacancy offline."
-  },
-  {
-   "id": "74602221",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74602221/administratief-medewerker-met-kennis-van-social-media",
-   "title": "Administratief medewerker met kennis van social media",
-   "company": "Manpower (client in Kluisbergen)",
-   "location": "Kluisbergen",
-   "found_at": "2026-09-16 07:52",
-   "match_score": 35,
-   "reason": "Accessible admin/social-media role with no experience requirement and no French, though it wants very good Dutch.",
-   "lang": "nl",
-   "internship": false,
-   "apply_email": "evelien.vanhauttegem@manpower.be",
-   "dutch_stretch": true,
-   "exp_stretch": false,
-   "closed_at": "2026-10-12 21:53",
    "closed_why": "Closed — VDAB has taken this vacancy offline."
   }
  ]
