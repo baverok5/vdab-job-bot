@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-04 20:34 UTC",
+ "updated": "2026-11-04 21:11 UTC",
  "jobs": [
   {
    "id": "4471489541",
@@ -852,28 +852,6 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-11-04 20:07",
-   "closed_check_v": 2
-  },
-  {
-   "id": "4464122493",
-   "url": "https://www.linkedin.com/jobs/view/4464122493",
-   "title": "Digital Training Intern (Fragrance & Beauty, Benelux & Scandinavia)",
-   "company": "CHANEL",
-   "location": "Amsterdam or Brussels",
-   "match_score": 62,
-   "reason": "Professional 6-month digital training internship open to non-students, no French required, and the candidate's digital content, copywriting and CMS skills fit.",
-   "apply_email": "",
-   "found_at": "2026-10-02 19:47",
-   "status": "new",
-   "details": "6-month internship (starting Dec 2026) in the Benelux & Scandinavia Training team, Fragrance & Beauty division, based in Amsterdam or Brussels.\nCreate and edit digital mobile learnings; follow up the communication plan for digital applications (copywriting, content calendars).\nDesign digital content (guides, visuals, presentations); steer translation of learning materials into the three local languages.\nSupport learning strategy, presentations, learning KPIs and analyses; daily contact with Beauty Advisors, learning communities and other departments.\nOrganise digital events and support training-room preparation, gifts and welcoming guests.\nLanguages: fluency in Dutch and English required; French is an asset. HBO/WO studies in HR, psychology, communication & media or sales preferred; MS Office, Power BI and creative tools (InDesign, Canva).",
-   "why_good": "Internship is lenient on experience and degree, and the candidate is not required to be an enrolled student.\nReal digital content and copywriting experience: SEO blog/content writing, content calendars and CMS publishing in WordPress/Elementor.\nCanva and presentation/visual creation are within reach; the candidate produces web and social visuals.\nStrong digital-native profile with MS Office, analytics (GA4, Search Console) and reporting skills that map to learning KPIs.\nEnglish fluent and Dutch improving (B1 writing / A2+ speaking) — the role asks for Dutch fluency, so the candidate would lean on English and his growing Dutch; French is only an asset, not required.",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": true,
-   "lang": "en",
    "cv_fit_v": 19,
    "closed_check": "2026-11-04 20:07",
    "closed_check_v": 2
@@ -11299,6 +11277,28 @@
   }
  ],
  "rejected": [
+  {
+   "id": "4464122493",
+   "url": "https://www.linkedin.com/jobs/view/4464122493",
+   "title": "Digital Training Intern (Fragrance & Beauty, Benelux & Scandinavia)",
+   "company": "CHANEL",
+   "location": "Amsterdam or Brussels",
+   "match_score": 62,
+   "reason": "First seen about 46 days ago — a vacancy open this long has almost always been filled.",
+   "apply_email": "",
+   "found_at": "2026-10-02 19:47",
+   "status": "new",
+   "details": "6-month internship (starting Dec 2026) in the Benelux & Scandinavia Training team, Fragrance & Beauty division, based in Amsterdam or Brussels.\nCreate and edit digital mobile learnings; follow up the communication plan for digital applications (copywriting, content calendars).\nDesign digital content (guides, visuals, presentations); steer translation of learning materials into the three local languages.\nSupport learning strategy, presentations, learning KPIs and analyses; daily contact with Beauty Advisors, learning communities and other departments.\nOrganise digital events and support training-room preparation, gifts and welcoming guests.\nLanguages: fluency in Dutch and English required; French is an asset. HBO/WO studies in HR, psychology, communication & media or sales preferred; MS Office, Power BI and creative tools (InDesign, Canva).",
+   "why_good": "Internship is lenient on experience and degree, and the candidate is not required to be an enrolled student.\nReal digital content and copywriting experience: SEO blog/content writing, content calendars and CMS publishing in WordPress/Elementor.\nCanva and presentation/visual creation are within reach; the candidate produces web and social visuals.\nStrong digital-native profile with MS Office, analytics (GA4, Search Console) and reporting skills that map to learning KPIs.\nEnglish fluent and Dutch improving (B1 writing / A2+ speaking) — the role asks for Dutch fluency, so the candidate would lean on English and his growing Dutch; French is only an asset, not required.",
+   "why_bad": "First seen about 46 days ago — a vacancy open this long has almost always been filled.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": true,
+   "lang": "en",
+   "cv_fit_v": 19,
+   "closed_check": "2026-11-04 20:07",
+   "closed_check_v": 2
+  },
   {
    "id": "74821902",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74821902/technical-product-specialist",
@@ -51452,8 +51452,8 @@
    "cv_fit_v": 19
   }
  ],
- "search_cursor": 7,
- "li_cursor": 20,
+ "search_cursor": 12,
+ "li_cursor": 26,
  "letter_fails": {
   "4428705687": 2
  },
