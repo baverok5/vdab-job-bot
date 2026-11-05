@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05 20:46 UTC",
+ "updated": "2026-11-05 21:18 UTC",
  "jobs": [
   {
    "id": "4471489541",
@@ -1498,28 +1498,6 @@
    "status": "new",
    "details": "Role: Junior E-Business Analyst. Main tasks: Analyze and optimize digital strategies, manage digital campaigns, analyze campaign data, monitor and optimize online channels, create reports, advise on digital trends. Contract type: Permanent, full-time. Schedule: Day work. Language: Dutch (very good), English (good).",
    "why_good": "Matches GOAL FIELD: digital marketing, data analysis.\nHas relevant skills: planning/managing digital campaigns, analyzing data, monitoring/optimizing online channels, reporting.\nExperience requirement (0-2 years) is a stretch but acceptable as candidate has ~4 months of relevant experience.\nFlexible study requirement ('Or equivalent by experience') accommodates candidate's coursework.\nNeeds stronger Dutch than A2 (B1 writing, A2+ speaking) as it requires 'Zeer goed' (Very good) Dutch.",
-   "why_bad": "",
-   "dutch_stretch": true,
-   "exp_stretch": true,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-11-05 20:22",
-   "closed_check_v": 2
-  },
-  {
-   "id": "74644535",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74644535/telemarketeer-sales-development-support-flexijob",
-   "title": "Telemarketeer / Sales Development Support (flexijob)",
-   "company": "Echomedic",
-   "location": "DEINZE",
-   "match_score": 55,
-   "reason": "The role involves telemarketing and sales support, which aligns with the candidate's communication and customer-facing skills, and it has no hard-fail requirements.",
-   "apply_email": "yentl@echomedic.be",
-   "found_at": "2026-09-20 08:19",
-   "status": "new",
-   "details": "Role: Telemarketeer / Sales Development Support. Main tasks: Prospecting, lead generation, phone sales, market research, CRM management, reporting. Contract type: Flexijob, part-time (16 hours/week). Schedule: Day work, flexible. Language: Dutch (Very good).",
-   "why_good": "The role requires strong communication and sales skills, which the candidate possesses.\nIt's a flexijob, offering flexibility.\nIt involves CRM management and data handling, which aligns with the candidate's technical skills.\nThis is a stretch because the job explicitly requires \"Very good\" Dutch, which is above the candidate's current B1 writing and A2+ speaking level, and it asks for at least 2 years of experience, while the candidate has less.",
    "why_bad": "",
    "dutch_stretch": true,
    "exp_stretch": true,
@@ -11302,6 +11280,28 @@
   }
  ],
  "rejected": [
+  {
+   "id": "74644535",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74644535/telemarketeer-sales-development-support-flexijob",
+   "title": "Telemarketeer / Sales Development Support (flexijob)",
+   "company": "Echomedic",
+   "location": "DEINZE",
+   "match_score": 55,
+   "reason": "First seen about 46 days ago — a vacancy open this long has almost always been filled.",
+   "apply_email": "yentl@echomedic.be",
+   "found_at": "2026-09-20 08:19",
+   "status": "new",
+   "details": "Role: Telemarketeer / Sales Development Support. Main tasks: Prospecting, lead generation, phone sales, market research, CRM management, reporting. Contract type: Flexijob, part-time (16 hours/week). Schedule: Day work, flexible. Language: Dutch (Very good).",
+   "why_good": "The role requires strong communication and sales skills, which the candidate possesses.\nIt's a flexijob, offering flexibility.\nIt involves CRM management and data handling, which aligns with the candidate's technical skills.\nThis is a stretch because the job explicitly requires \"Very good\" Dutch, which is above the candidate's current B1 writing and A2+ speaking level, and it asks for at least 2 years of experience, while the candidate has less.",
+   "why_bad": "First seen about 46 days ago — a vacancy open this long has almost always been filled.",
+   "dutch_stretch": true,
+   "exp_stretch": true,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 19,
+   "closed_check": "2026-11-05 20:22",
+   "closed_check_v": 2
+  },
   {
    "id": "74866793",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74866793/magazijnier-erpe-mere-dagploeg-parttime",
@@ -51430,8 +51430,8 @@
    "cv_fit_v": 19
   }
  ],
- "search_cursor": 12,
- "li_cursor": 26,
+ "search_cursor": 1,
+ "li_cursor": 3,
  "letter_fails": {
   "4428705687": 2
  },
