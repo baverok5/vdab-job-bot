@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-06 20:15 UTC",
+ "updated": "2026-11-06 20:43 UTC",
  "jobs": [
   {
    "id": "4471489541",
@@ -44,32 +44,6 @@
    "cv_fit_v": 19,
    "closed_check": "2026-11-06 19:44",
    "closed_check_v": 2
-  },
-  {
-   "id": "855429554",
-   "url": "https://europa.eu/eures/portal/jv-se/jv-details/ZmU5MGJkZWMtOTEwNy00OWI0LTkzZTItZmNkZGVjZjdjMTIxIDM",
-   "title": "Stagiair(e) digitale marketing & communicatie",
-   "company": "Déhora Consultancy",
-   "location": "Unknown",
-   "match_score": 85,
-   "reason": "This is a paid internship opportunity in digital marketing and communication that aligns well with the candidate's skills and interests.",
-   "apply_email": "",
-   "found_at": "2026-09-21 11:06",
-   "status": "new",
-   "details": "Role: Digital Marketing & Communication Intern\nMain Tasks: Content creation, campaign writing, online visibility, social media, SEO/SEA strategy, WordPress content management, visual communication.\nContract Type: Internship (at least 8 weeks, preferably 4 days/week)\nSchedule: Not specified\nLanguage: Dutch (fluent required), English\nPay: Not specified",
-   "why_good": "- The role is an internship, so the experience and degree requirements are waived.\n- The core tasks align perfectly with the candidate's goal fields: digital marketing, content, web, and SEO.\n- Candidate has strong experience with WordPress, content management, SEO, and social media which are explicitly mentioned.\n- Candidate's English is fluent, and Dutch writing is B1, with speaking A2+, which is acceptable for an internship that mentions Dutch and English.",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": true,
-   "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-11-06 19:44",
-   "closed_check_v": 2,
-   "lang_req": {
-    "en": "b1",
-    "nl": "b2"
-   }
   },
   {
    "id": "4468710433",
@@ -7967,50 +7941,6 @@
    "closed_check_v": 2
   },
   {
-   "id": "4465075944",
-   "url": "https://www.linkedin.com/jobs/view/4465075944",
-   "title": "Junior Marketing Officer",
-   "company": "Emeria Benelux",
-   "location": "Gent",
-   "match_score": 35,
-   "reason": "Junior marketing role in the candidate's goal field, but it requires fluent Dutch, so it's a stretch.",
-   "apply_email": "",
-   "found_at": "2026-09-16 07:53",
-   "status": "new",
-   "details": "Junior Marketing Officer in the Marketing & Communication team of Emeria Benelux (residential real estate services).\nTasks: video content creation, campaign management (online/offline), social media management, brand consistency, creative content and promo material, marketing analytics/KPI reporting, event and project support, integrating new digital/AI tools.\nContract type not specified; full-time role based in Gent (Poortakkerstraat 91/501).\nLanguage: fluent Dutch required; no French mentioned.\nPay not stated.",
-   "why_good": "Junior-level marketing role squarely in the candidate's goal field (digital marketing, content, social media, campaigns).\nThe candidate's real experience covers social media content, CMS content management, campaign support, analytics (GA4, Search Console) and AI tools — a strong match for the task list.\nThe posting asks for 'opleiding of ervaring' in Marketing/Communication/Digital Media, which the candidate's hands-on experience satisfies without a completed degree.\nThe candidate uses AI tools daily and has a technical/web background, matching the 'Innovation & Tools' and digital-transformation angle.\nCaveat: the role requires fluent Dutch, which is above the candidate's A2+ speaking level — he would be leaning on his B1 writing and improving Dutch, so this is a stretch.",
-   "why_bad": "",
-   "dutch_stretch": true,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-11-06 19:44",
-   "closed_check_v": 2
-  },
-  {
-   "id": "4465615794",
-   "url": "https://www.linkedin.com/jobs/view/4465615794",
-   "title": "Medior Digital Marketeer",
-   "company": "24Flow",
-   "location": "Unknown",
-   "match_score": 35,
-   "reason": "Medior digital marketing role in the candidate's goal field; the 3-5 year ask is a stretch but not a hard wall, and Dutch is only 'fluent' with no French.",
-   "apply_email": "",
-   "found_at": "2026-09-16 07:42",
-   "status": "new",
-   "details": "Hands-on medior digital marketeer owning the full digital marketing engine for a B2B Salesforce-based software company.\nTasks: website/YouTube/SEO & GEO management, marketing automation & email campaigns, lead nurturing, LinkedIn social media, performance tracking, tool testing, AppExchange optimization, event and partner marketing support.\nContract: full-time, hybrid; salary competitive (not stated), 32 holidays, meal/eco vouchers, insurance, laptop & phone, CAO90 bonus.\nLanguage: fluent English & Dutch required (no French).\nExperience asked: 3-5 years in digital marketing/marketing operations, B2B and marketing-automation experience preferred.",
-   "why_good": "Directly in the goal field: SEO & GEO, WordPress, RankMath, Google Analytics, Semrush, content and CMS work all match the CV.\nThe candidate already uses AI tools (Claude, LLMs) daily and automates with Python — exactly the 'experiment with new marketing and AI tools' the role wants.\nReal WordPress/Elementor client-site and Shopify experience covers the website and content-management side.\nGap to note: the posting asks for 3-5 years and B2B/marketing-automation experience the candidate does not yet have — worth applying as a stretch.\nDutch stretch: the role wants fluent Dutch, while the candidate is B1 writing / A2+ speaking, so he would be leaning on English and improving Dutch.",
-   "why_bad": "",
-   "dutch_stretch": true,
-   "exp_stretch": true,
-   "internship": false,
-   "lang": "en",
-   "cv_fit_v": 19,
-   "closed_check": "2026-11-06 19:44",
-   "closed_check_v": 2
-  },
-  {
    "id": "74734722",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74734722/deeltijds-of-voltijds-bediende-marketing",
    "title": "deeltijds of voltijds bediende marketing",
@@ -11576,6 +11506,76 @@
   }
  ],
  "rejected": [
+  {
+   "id": "4465615794",
+   "url": "https://www.linkedin.com/jobs/view/4465615794",
+   "title": "Medior Digital Marketeer",
+   "company": "24Flow",
+   "location": "Unknown",
+   "match_score": 35,
+   "reason": "First seen about 45 days ago — a vacancy open this long has almost always been filled.",
+   "apply_email": "",
+   "found_at": "2026-09-16 07:42",
+   "status": "new",
+   "details": "Hands-on medior digital marketeer owning the full digital marketing engine for a B2B Salesforce-based software company.\nTasks: website/YouTube/SEO & GEO management, marketing automation & email campaigns, lead nurturing, LinkedIn social media, performance tracking, tool testing, AppExchange optimization, event and partner marketing support.\nContract: full-time, hybrid; salary competitive (not stated), 32 holidays, meal/eco vouchers, insurance, laptop & phone, CAO90 bonus.\nLanguage: fluent English & Dutch required (no French).\nExperience asked: 3-5 years in digital marketing/marketing operations, B2B and marketing-automation experience preferred.",
+   "why_good": "Directly in the goal field: SEO & GEO, WordPress, RankMath, Google Analytics, Semrush, content and CMS work all match the CV.\nThe candidate already uses AI tools (Claude, LLMs) daily and automates with Python — exactly the 'experiment with new marketing and AI tools' the role wants.\nReal WordPress/Elementor client-site and Shopify experience covers the website and content-management side.\nGap to note: the posting asks for 3-5 years and B2B/marketing-automation experience the candidate does not yet have — worth applying as a stretch.\nDutch stretch: the role wants fluent Dutch, while the candidate is B1 writing / A2+ speaking, so he would be leaning on English and improving Dutch.",
+   "why_bad": "First seen about 45 days ago — a vacancy open this long has almost always been filled.",
+   "dutch_stretch": true,
+   "exp_stretch": true,
+   "internship": false,
+   "lang": "en",
+   "cv_fit_v": 19,
+   "closed_check": "2026-11-06 19:44",
+   "closed_check_v": 2
+  },
+  {
+   "id": "4465075944",
+   "url": "https://www.linkedin.com/jobs/view/4465075944",
+   "title": "Junior Marketing Officer",
+   "company": "Emeria Benelux",
+   "location": "Gent",
+   "match_score": 35,
+   "reason": "First seen about 46 days ago — a vacancy open this long has almost always been filled.",
+   "apply_email": "",
+   "found_at": "2026-09-16 07:53",
+   "status": "new",
+   "details": "Junior Marketing Officer in the Marketing & Communication team of Emeria Benelux (residential real estate services).\nTasks: video content creation, campaign management (online/offline), social media management, brand consistency, creative content and promo material, marketing analytics/KPI reporting, event and project support, integrating new digital/AI tools.\nContract type not specified; full-time role based in Gent (Poortakkerstraat 91/501).\nLanguage: fluent Dutch required; no French mentioned.\nPay not stated.",
+   "why_good": "Junior-level marketing role squarely in the candidate's goal field (digital marketing, content, social media, campaigns).\nThe candidate's real experience covers social media content, CMS content management, campaign support, analytics (GA4, Search Console) and AI tools — a strong match for the task list.\nThe posting asks for 'opleiding of ervaring' in Marketing/Communication/Digital Media, which the candidate's hands-on experience satisfies without a completed degree.\nThe candidate uses AI tools daily and has a technical/web background, matching the 'Innovation & Tools' and digital-transformation angle.\nCaveat: the role requires fluent Dutch, which is above the candidate's A2+ speaking level — he would be leaning on his B1 writing and improving Dutch, so this is a stretch.",
+   "why_bad": "First seen about 46 days ago — a vacancy open this long has almost always been filled.",
+   "dutch_stretch": true,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 19,
+   "closed_check": "2026-11-06 19:44",
+   "closed_check_v": 2
+  },
+  {
+   "id": "855429554",
+   "url": "https://europa.eu/eures/portal/jv-se/jv-details/ZmU5MGJkZWMtOTEwNy00OWI0LTkzZTItZmNkZGVjZjdjMTIxIDM",
+   "title": "Stagiair(e) digitale marketing & communicatie",
+   "company": "Déhora Consultancy",
+   "location": "Unknown",
+   "match_score": 85,
+   "reason": "First seen about 46 days ago — a vacancy open this long has almost always been filled.",
+   "apply_email": "",
+   "found_at": "2026-09-21 11:06",
+   "status": "new",
+   "details": "Role: Digital Marketing & Communication Intern\nMain Tasks: Content creation, campaign writing, online visibility, social media, SEO/SEA strategy, WordPress content management, visual communication.\nContract Type: Internship (at least 8 weeks, preferably 4 days/week)\nSchedule: Not specified\nLanguage: Dutch (fluent required), English\nPay: Not specified",
+   "why_good": "- The role is an internship, so the experience and degree requirements are waived.\n- The core tasks align perfectly with the candidate's goal fields: digital marketing, content, web, and SEO.\n- Candidate has strong experience with WordPress, content management, SEO, and social media which are explicitly mentioned.\n- Candidate's English is fluent, and Dutch writing is B1, with speaking A2+, which is acceptable for an internship that mentions Dutch and English.",
+   "why_bad": "First seen about 46 days ago — a vacancy open this long has almost always been filled.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": true,
+   "lang": "nl",
+   "cv_fit_v": 19,
+   "closed_check": "2026-11-06 19:44",
+   "closed_check_v": 2,
+   "lang_req": {
+    "en": "b1",
+    "nl": "b2"
+   }
+  },
   {
    "id": "74902874",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74902874/t-ft-backoffice-project-coordinator",
@@ -51700,8 +51700,8 @@
    "cv_fit_v": 19
   }
  ],
- "search_cursor": 1,
- "li_cursor": 3,
+ "search_cursor": 6,
+ "li_cursor": 9,
  "letter_fails": {
   "4428705687": 2
  },
