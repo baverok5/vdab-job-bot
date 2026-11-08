@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-08 18:34 UTC",
+ "updated": "2026-11-08 19:09 UTC",
  "jobs": [
   {
    "id": "4471489541",
@@ -1460,28 +1460,6 @@
    "why_bad": "",
    "dutch_stretch": false,
    "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-11-08 18:08",
-   "closed_check_v": 2
-  },
-  {
-   "id": "74673480",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74673480/junior-e-business-analyst-digital-marketing-vlaams-brabant",
-   "title": "Junior E-business analyst - Digital Marketing",
-   "company": "Michael Page",
-   "location": "HOEILAART",
-   "match_score": 55,
-   "reason": "This role aligns well with the candidate's digital marketing and data analysis skills, with a flexible experience requirement.",
-   "apply_email": "",
-   "found_at": "2026-09-23 10:27",
-   "status": "new",
-   "details": "Role: Junior E-Business Analyst. Main tasks: Analyze and optimize digital strategies, manage digital campaigns, analyze campaign data, monitor and optimize online channels, create reports, advise on digital trends. Contract type: Permanent, full-time. Schedule: Day work. Language: Dutch (very good), English (good).",
-   "why_good": "Matches GOAL FIELD: digital marketing, data analysis.\nHas relevant skills: planning/managing digital campaigns, analyzing data, monitoring/optimizing online channels, reporting.\nExperience requirement (0-2 years) is a stretch but acceptable as candidate has ~4 months of relevant experience.\nFlexible study requirement ('Or equivalent by experience') accommodates candidate's coursework.\nNeeds stronger Dutch than A2 (B1 writing, A2+ speaking) as it requires 'Zeer goed' (Very good) Dutch.",
-   "why_bad": "",
-   "dutch_stretch": true,
-   "exp_stretch": true,
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
@@ -12109,6 +12087,28 @@
   }
  ],
  "rejected": [
+  {
+   "id": "74673480",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74673480/junior-e-business-analyst-digital-marketing-vlaams-brabant",
+   "title": "Junior E-business analyst - Digital Marketing",
+   "company": "Michael Page",
+   "location": "HOEILAART",
+   "match_score": 55,
+   "reason": "First seen about 46 days ago — a vacancy open this long has almost always been filled.",
+   "apply_email": "",
+   "found_at": "2026-09-23 10:27",
+   "status": "new",
+   "details": "Role: Junior E-Business Analyst. Main tasks: Analyze and optimize digital strategies, manage digital campaigns, analyze campaign data, monitor and optimize online channels, create reports, advise on digital trends. Contract type: Permanent, full-time. Schedule: Day work. Language: Dutch (very good), English (good).",
+   "why_good": "Matches GOAL FIELD: digital marketing, data analysis.\nHas relevant skills: planning/managing digital campaigns, analyzing data, monitoring/optimizing online channels, reporting.\nExperience requirement (0-2 years) is a stretch but acceptable as candidate has ~4 months of relevant experience.\nFlexible study requirement ('Or equivalent by experience') accommodates candidate's coursework.\nNeeds stronger Dutch than A2 (B1 writing, A2+ speaking) as it requires 'Zeer goed' (Very good) Dutch.",
+   "why_bad": "First seen about 46 days ago — a vacancy open this long has almost always been filled.",
+   "dutch_stretch": true,
+   "exp_stretch": true,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 19,
+   "closed_check": "2026-11-08 18:08",
+   "closed_check_v": 2
+  },
   {
    "id": "427927469",
    "url": "https://englishjobs.be/clickout/f41c621f201e31ae?ql=q&sig=5bd5fcdba7bf3d06facde4567204a5fb121d85f0&e=DK910ds59f0DNQQ17Q4T8r4ox2onZSbEB1tAJaBH6avh11VSDRCIR1KwwVx6znXKrOV7xUVsjIXUdMIIJ3CDpX8vvhN6x1J--MuestujPiIZweRF6BVYi29YdejPXIMFSFkMfxeuSEOeePB9tGP4aH--bkMFNZbvx1ZfqR7uk45qp1wcDbn6XDmWTy_93xOOyhjG4OLpb-5xyMgdQGj1DgpRPf_91Dq8PiOb9RVVsVbPDO3bqLzXlsHSGEbfx5DPsqEMxbEuqZaySjB2WFBb6sdxvTLC9z1N6WqlnKFjL57YkhRnk0VlshPVaePz8U_0uDSH50UTrUC0wOjVPlOmECruPPgB0_oDl0vuKi-_1_smg8EC-AWSzm3e3CaBI6jl09OdOWSsk_1dk1h8qp0Gy7wzDpQiTY_r-rgDIciH876UBT8x0hiHRsBkkJH6icJ0rc1d7J3xMla0Q0RMxbAO0ISIWbwovOHqaiPIYj9BoGHXZWjo_zj4J1RIb1mWhPHnJQuLYqXOk-V3i1fUckVoPPtNMygyyxBJSXEZ9pQx6tgOfixNRd_A5dZQ-2ZedDzAVMNbfWld9_X-ZyHcGwXxsxAFrxrsgeUHSV3dUiWlKCLn-9oKo-hS6g15jZLSbx06YepESZdkj9dngYHVgZGeH0RAJxjhHjboAbujkvFiXKYUG0K6u8bpkn2e0LXIPfXtsktWorBlEmOIXnIOF5i2jiexu7WBO9ngyeqT0loTvlMMetPx0t4Ly8KLWHbj_25TIqUPQJDRAs8S-SwRmUtQLPCmlfuLDrBE_-oaZyjPLnarDXXdU7AMmGE9ow27Kq99jKKN8cXyHKaWDeGRqrqKJMTMFzmiYQqUUSoz9I_xsclmCfHuxOeIR_oMxs5chohqL-zJHtu0q47l9XlMYUld86qRDocrvyHA9yE7OSPsVkCpwvA77MUUNoX_AyMsCNznt7UGHJI-rFDy2N-OBSENpWUmKhC20N4RruoiE8NED10nQVp-eUoJVimfzrpIJy-8JelznT9F8oZhKN3JIPZCdR2YVAvxtk2ejexTOmHgpqm-HkrMq8tC-8M4VKJd44UVlLv72aJkX2zSi1kNTnL0uknl_6dcjWlY08EEHlXhfTv7QpU4HdON6iedWzJtU96Leh1w5JzGzk7ZOyKkyNr1fT3W1d3hwvvjbM3D8aPIaxnhVhrIhNaaRQ4Z5HZP9nlyoOMfs9zrxDZFo-9xnYFxHMTKPtqL-t_1BU7nX1PyWh5mtOiMZj_JuhzEgP-JyUCF96fx-uF36PZbmEYjA4aY33RQxRi-Emtp7FLV-cKmc2sAizan2K7VGHSLh40tIRr-HuNKjTudXQd7dBxFLK7KDohdDJLYHNiYQd6maQnRaz2Y80hkgjVq6Nn0zhnK7CgbOdYdAcdQSuZL0tiLp3Phse9ph3rxn6mXLoTAfqpc0YUV0t2NVFLysLps9o-hSJUrlaH4sL42M0ydVuI_cGO8JHgkrfyO3nsouh1H78pHKYGiWz3ORxb-SFf9_ggL731ahFYqmMrgbF-eIHaLvdqb5h3O0cN6fJOejKB2LL7IgYfj7lX8S4MJZb8o4D1NKo91JFK7grWIqbyTmCzu4Ni2Znx1ZTAAhYn4emmjdwflnND5aSAp3GRRiWSjm3AZbScAdmvO_7DHcmPw3fT9rtXAnN-DPeXOuHPBQnLMAzv7rDxwxt1FEM4Tk6-n2iJANxAPee8FZ614ZpAiKOulhC6vGprSOOloOwEFed-M3wJF7-sQI96DS86abfZnjTJPlWDDslp8O-VBk8jzOZsOmWVaCNorKcNvB-0OoB8iNLW1eWX0g8QQY-p_oL6zsG2h5lDKqPNiqzXHUQ7Ni6ZGp_dSHWLCp7hmN6JHMDfMgQGLdOyIyGm99dccX6F2ZXnFXu4HU6yxZdab9YgpV3TRadMhdM7ozY-fiYKGmMFS_9sL9SLTDqCR0kZX0TegNLXQhc8HIcWcZZbusmEgZ6xhplPz-8K9up4ZGmV3rholIZpLQ2Nv6XaV7N-7F6ZlmM692615xw&prev=RQ9EBB8453336B6F&p=1&pg=1&w=1280",
@@ -52249,8 +52249,8 @@
    "cv_fit_v": 19
   }
  ],
- "search_cursor": 11,
- "li_cursor": 15,
+ "search_cursor": 0,
+ "li_cursor": 21,
  "letter_fails": {
   "4428705687": 2
  },
