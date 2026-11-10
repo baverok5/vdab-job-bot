@@ -1,0 +1,25 @@
+name: LinkedIn search probe
+
+# Runs the bot's exact LinkedIn guest searches for a handful of terms and prints
+# whether a specific posting shows up. Manual only. Read-only: no commit, no AI.
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: li-probe
+  cancel-in-progress: false
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests beautifulsoup4 playwright
+      - run: python -u li_probe.py
