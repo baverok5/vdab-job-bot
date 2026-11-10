@@ -78,7 +78,9 @@ LinkedIn, VDAB and EURES are searched by keyword (`LI_PRIORITY_KEYWORDS`,
 whose title contains none of the keywords is never collected. Example: "Jr AI
 Strategist" (BOI, Antwerp) was open for weeks and missing from the app until AI
 queries were added. If a good job is missing, check its title against these lists
-first. The goal field the AI judges against (`CANDIDATE_ONELINE`,
+first. Everything the candidate actually does belongs in the *every run* lists
+(`LI_PRIORITY_KEYWORDS`, `PRIORITY_SEARCH_URLS`); vague or niche terms go in the
+rotating ones, which each run only walks a slice of. The goal field the AI judges against (`CANDIDATE_ONELINE`,
 `CANDIDATE_PROFILE`, the eval prompt) also has to name the kind of job, or it is
 dropped at the title screen.
 

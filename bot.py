@@ -42,33 +42,35 @@ def _search(term):
 PRIORITY_SEARCH_URLS = [
     _search(t) for t in
     ("digital marketing", "marketing", "seo", "seo specialist", "seo manager",
-     "search engine optimization", "zoekmachine optimalisatie", "content manager",
-     "sea", "google ads", "wordpress",
+     "technical seo", "search engine optimization", "zoekmachine optimalisatie",
+     "content manager", "sea", "google ads", "wordpress", "wordpress developer",
+     "webmaster", "website manager", "woocommerce", "shopify", "elementor",
      "web design", "web designer", "webdesigner", "ux designer", "ui designer",
-     "front-end", "webflow", "web developer", "webshop", "content", "content marketing",
-     "social media", "online marketing", "growth marketing", "e-commerce",
-     "e-mail marketing", "communication", "copywriter", "marketing assistant",
-     "stage marketing", "internship marketing", "stage communicatie",
-     "web design stage", "digital", "creative",
-     # Belgian spelling ("marketeer") + digital-marketing subfields the old list
-     # missed, plus English-intersection terms — most Flemish marketing roles
-     # need Dutch, so we cast a wider net to grow the English-friendly subset.
+     "front-end", "webflow", "web developer", "webshop", "web content",
+     "e-commerce", "e-commerce manager", "content marketing",
+     "online marketing", "growth marketing", "e-mail marketing", "copywriter",
+     "marketing assistant", "stage marketing", "internship marketing",
+     "web design stage", "digital", "digital specialist",
+     # Belgian spelling ("marketeer") + digital-marketing subfields, plus
+     # English-intersection terms — most Flemish marketing roles need Dutch, so
+     # we cast a wider net to grow the English-friendly subset.
      "marketeer", "digital marketeer", "content marketeer", "performance marketing",
      "marketing automation", "paid media", "google analytics", "marketing officer",
-     "marketing coordinator", "junior marketing", "campaign", "advertising",
-     "employer branding", "crm marketing", "conversion", "brand", "media",
-     "marketing english", "international marketing", "growth hacker",
-     "digital strategist", "influencer marketing",
+     "marketing coordinator", "junior marketing", "employer branding",
+     "crm marketing", "conversion", "marketing english", "international marketing",
+     "growth hacker", "digital strategist", "influencer marketing",
      "ai strategist", "ai specialist", "ai marketing", "artificial intelligence",
-     "ai consultant", "ai automation", "generative ai", "prompt engineer")
+     "ai consultant", "ai automation", "ai content", "generative ai",
+     "prompt engineer", "geo specialist")
 ]
 # Everything else, walked a rotating slice at a time (collection is slow).
 ROTATING_SEARCH_URLS = (
     [_search(t) for t in
      ("english", "english speaking", "fluent english", "international",
-      "customer service", "content", "copywriter", "communication",
-      "logistics", "warehouse", "sales support", "administrative",
-      "junior", "data entry", "front-end")]
+      "customer service", "content", "communication", "social media",
+      "stage communicatie", "campaign", "advertising", "brand", "media",
+      "creative", "logistics", "warehouse", "sales support", "administrative",
+      "junior", "data entry")]
     + ["https://www.vdab.be/vindeenjob/jobs/english-jobs"]
 )
 SEARCHES_PER_RUN = int(os.environ.get("SEARCHES_PER_RUN", "5"))
@@ -734,49 +736,47 @@ def collect_links(browser, search_url, cap=5000, budget_s=40, max_pages=25):
 # earned an HTTP 429 and cost us the tail of the list anyway — half the volume
 # per run covers the same ground over two runs without the block.
 LI_PRIORITY_KEYWORDS = [
-    # SEO first + several variants so we never miss an SEO posting (distinct
-    # LinkedIn queries return different result sets).
+    # Everything the candidate actually does, searched on EVERY run, most
+    # important first (a rate-limit block ends the whole LinkedIn pass, so the
+    # order is also the priority). These used to rotate six at a time, which at
+    # one run a day meant "digital marketing" or "wordpress" was searched about
+    # once a week while "stage communicatie" ran daily. Narrow terms return few
+    # results, so they cost almost nothing; broad ones read the newest 60.
+    # SEO
     "seo", "seo specialist", "seo manager", "search engine optimization",
-    "seo consultant",
-    # Entry-level phrasings, early because they are exactly this candidate's
-    # level and they are cheap: a broad term like "digital marketing" returns
-    # hundreds of Belgian hits and we only read the first pages of it, so an
-    # internship posted weeks ago never surfaced under it. These narrow queries
-    # return few enough results that we see the whole set.
-    "marketing intern", "digital marketing intern", "marketing internship",
-    "seo intern", "content intern", "communications intern",
-    "stage marketing", "stage digitale marketing", "stage communicatie",
-    "marketing stagiair", "junior marketing", "junior digital marketing",
-    "marketing assistant", "marketing medewerker", "trainee marketing",
-    # "Webmaster" is this candidate's profile almost exactly — WordPress, site
-    # building, on-page SEO — and no query here was reaching it: a real Webmaster
-    # role he interviewed for had never been collected at all. Narrow query, few
-    # results, so it costs almost nothing to run every time.
-    "webmaster",
-    # AI roles: narrow queries, few results, cheap. "Jr AI Strategist" (BOI,
-    # Antwerp) was open for weeks and never collected because no query here
-    # contained "ai".
-    "ai strategist", "junior ai", "ai marketing", "ai specialist",
+    "seo consultant", "technical seo",
+    # Web / WordPress / site building
+    "webmaster", "wordpress", "wordpress developer", "web designer", "web design",
+    "website manager", "woocommerce", "shopify", "elementor", "webflow",
+    "front-end", "web content", "webshop", "e-commerce manager",
+    "ux designer", "ui designer",
+    # Digital marketing
+    "digital marketing", "digital marketeer", "online marketing", "marketing",
+    "google ads", "digital specialist", "communications",
+    # AI: "Jr AI Strategist" (BOI, Antwerp) was open for weeks and never
+    # collected because no query here contained "ai".
+    "ai strategist", "junior ai", "ai marketing", "ai specialist", "ai consultant",
+    "prompt engineer", "ai automation", "ai content", "geo specialist",
+    "generative ai", "junior consultant ai",
+    # Entry level: exactly this candidate's level, and narrow enough that the
+    # whole result set is seen.
+    "junior marketing", "junior digital marketing", "marketing assistant",
+    "marketing medewerker", "trainee marketing", "marketing intern",
+    "digital marketing intern", "marketing internship", "seo intern",
+    "stage marketing", "stage digitale marketing", "marketing stagiair",
 ]
-# Adjacent fields and broad terms — a slice of these each run.
-LI_ROTATE_PER_RUN = 6   # 4 runs/day -> every broad term still swept daily
+# Adjacent fields and vaguer terms — a slice of these each run, so the whole
+# list is covered every few days without a single run sending enough requests to
+# earn a block.
+LI_ROTATE_PER_RUN = 8
 LI_ROTATING_KEYWORDS = [
-    "content marketing", "content manager", "copywriter",
-    "digital marketing", "digital marketeer", "online marketing",
-    # "sea" alone returns sea-freight jobs; the marketing sense needs a partner
-    # word. "google ads" covers the same discipline cleanly.
-    "social media", "growth marketing", "sea specialist", "google ads", "e-commerce",
-    # Web / UX / front-end design — the candidate's WordPress/Elementor/Canva
-    # background fits these, and they're often LinkedIn-only (missed before).
-    "web designer", "web design", "wordpress", "ux designer", "ui designer",
-    "front-end", "webflow", "elementor", "wordpress developer", "webmaster",
-    "website manager", "woocommerce",
-    # Web/e-commerce titles that never say "marketing" or "SEO" but are the same
-    # work — site upkeep, product content, on-page optimisation.
-    "web content", "webshop", "e-commerce manager", "digital specialist",
-    "marketing", "communications",
-    "ai consultant", "prompt engineer", "ai automation", "ai content",
-    "geo specialist", "generative ai", "junior consultant ai",
+    "content marketing", "content manager", "copywriter", "growth marketing",
+    "social media", "sea specialist", "e-commerce",
+    "content intern", "communications intern", "stage communicatie",
+    "content creator", "community manager", "webredacteur", "cms",
+    "web analyst", "analytics", "aeo", "llm", "automation specialist",
+    "digital project coordinator", "marketing technologist",
+    "junior", "graduate", "entry level",
 ]
 LI_GUEST_SEARCH = ("https://www.linkedin.com/jobs-guest/jobs/api/"
                    "seeMoreJobPostings/search")
@@ -813,7 +813,7 @@ def _li_job_id(card):
     return None
 
 
-def collect_linkedin(keywords=None, pages_per_kw=6, budget_s=420):
+def collect_linkedin(keywords=None, pages_per_kw=6, budget_s=1500):
     """Scrape LinkedIn's public guest job search for Belgium. Returns
     {id: {id,url,title,company,location,src}}. Swallows all errors; backs off
     on a rate-limit/blocked response so we don't get the IP fully banned.
@@ -1350,6 +1350,8 @@ EURES_KEYWORDS = [
     "seo", "digital marketing", "webmaster", "content marketing",
     "e-commerce", "online marketing", "communications", "marketing intern",
     "ai specialist", "ai strategist", "artificial intelligence",
+    "wordpress", "web designer", "google ads", "digital marketeer",
+    "content manager", "copywriter", "social media", "shopify",
 ]
 EURES_PAGES = 2            # pages per keyword
 EURES_PER_PAGE = 50
