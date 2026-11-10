@@ -46,7 +46,8 @@ and cost by purpose: reads, letters, titles). Prices are third-party figures hel
 in `DS_PRICE`, so the total is approximate; check it against
 platform.deepseek.com/usage.
 
-- **One run a day**, 13:00 UTC, by schedule only. Pushes do **not** start a run
+- **One run a day**, 10:00 UTC (GitHub starts it ~3-5 h late), by schedule only. It is
+  deliberately thorough: every search term runs every time, and it can take 3+ hours. Pushes do **not** start a run
   (they used to, and each one cost money). To run now: Actions → *VDAB job bot*
   → *Run workflow*.
 - **Peak pricing.** DeepSeek bills double 01:00-04:00 and 06:00-10:00 UTC on

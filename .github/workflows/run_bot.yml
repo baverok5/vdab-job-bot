@@ -20,7 +20,11 @@ on:
     # bot.py enforces this independently: DeepSeek calls stop at the start of a
     # peak window and once a run has spent its budget, so a run that does drift
     # is cut short instead of billed at double rate.
-    - cron: "0 13 * * *"
+    # 10:00, not 13:00: the run now searches far more terms and can take 3+ hours
+    # before it even starts reading, and GitHub starts it 3-5 h late. 10:00 + delay
+    # lands the start around 13-15 UTC, clear of the 06-10 peak behind it and the
+    # 01-04 peak ahead of it.
+    - cron: "0 10 * * *"
   workflow_dispatch: {}
 
 permissions:
@@ -35,6 +39,7 @@ concurrency:
 jobs:
   run:
     runs-on: ubuntu-latest
+    timeout-minutes: 360   # the hosted-runner maximum; a thorough run is long
     steps:
       - uses: actions/checkout@v4
 
