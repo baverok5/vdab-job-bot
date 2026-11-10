@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-10 10:49 UTC",
+ "updated": "2026-11-10 11:25 UTC",
  "jobs": [
   {
    "id": "4471489541",
@@ -857,28 +857,6 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-11-10 10:21",
-   "closed_check_v": 2
-  },
-  {
-   "id": "4466340128",
-   "url": "https://www.linkedin.com/jobs/view/4466340128",
-   "title": "eCommerce Internship (6 months)",
-   "company": "Nestlé",
-   "location": "Brussels",
-   "match_score": 62,
-   "reason": "Paid eCommerce internship open to non-students via CIP convention, no French requirement (Dutch and/or English accepted), and internship leniency applies.",
-   "apply_email": "careers@be.nestle.com",
-   "found_at": "2026-09-11 20:07",
-   "status": "new",
-   "details": "- 6-month paid internship with Nestlé's eCommerce team in Brussels + homeworking\n- Own E-content process: upload/maintain/optimize product content across retailer platforms (Amazon, Delhaize, Carrefour, Colruyt, etc.)\n- Support E-commerce Manager on online-only customers (Happy Hour, Too Good To Go) and promotional coordination\n- Language: Fluent French and/or Dutch + strong English — Dutch-only or English is acceptable\n- 38h/week, 3.5 days paid leave, 3 days/week homeworking, 10 days work-from-abroad\n- Pay: €250–1200 net/month depending on contract type; transport reimbursed\n- Start February 2027; open to school internship OR voluntary internship after graduating via CIP (Convention d'Immersion Professionnelle)",
-   "why_good": "- Real eCommerce/SEO content experience: on-page SEO, product content, WordPress/WooCommerce, keyword research — directly transferable to E-content management\n- Works in English fluently; Dutch is improving (B1 writing / A2+ speaking) and the posting accepts French and/or Dutch, so English + basic Dutch is workable\n- Internship leniency applies: no degree completed yet is fine, and the CIP route explicitly allows non-enrolled graduates\n- Analytics/reporting skills (GA4, Search Console, Semrush, Ahrefs) match the data-driven eCommerce coordination tasks\n- FMCG/digital affinity shown through e-commerce client work (proteinbox.com.tr) and structured-data/technical SEO projects",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": true,
-   "lang": "en",
    "cv_fit_v": 19,
    "closed_check": "2026-11-10 10:21",
    "closed_check_v": 2
@@ -12142,6 +12120,28 @@
   }
  ],
  "rejected": [
+  {
+   "id": "4466340128",
+   "url": "https://www.linkedin.com/jobs/view/4466340128",
+   "title": "eCommerce Internship (6 months)",
+   "company": "Nestlé",
+   "location": "Brussels",
+   "match_score": 62,
+   "reason": "First seen about 45 days ago — a vacancy open this long has almost always been filled.",
+   "apply_email": "careers@be.nestle.com",
+   "found_at": "2026-09-11 20:07",
+   "status": "new",
+   "details": "- 6-month paid internship with Nestlé's eCommerce team in Brussels + homeworking\n- Own E-content process: upload/maintain/optimize product content across retailer platforms (Amazon, Delhaize, Carrefour, Colruyt, etc.)\n- Support E-commerce Manager on online-only customers (Happy Hour, Too Good To Go) and promotional coordination\n- Language: Fluent French and/or Dutch + strong English — Dutch-only or English is acceptable\n- 38h/week, 3.5 days paid leave, 3 days/week homeworking, 10 days work-from-abroad\n- Pay: €250–1200 net/month depending on contract type; transport reimbursed\n- Start February 2027; open to school internship OR voluntary internship after graduating via CIP (Convention d'Immersion Professionnelle)",
+   "why_good": "- Real eCommerce/SEO content experience: on-page SEO, product content, WordPress/WooCommerce, keyword research — directly transferable to E-content management\n- Works in English fluently; Dutch is improving (B1 writing / A2+ speaking) and the posting accepts French and/or Dutch, so English + basic Dutch is workable\n- Internship leniency applies: no degree completed yet is fine, and the CIP route explicitly allows non-enrolled graduates\n- Analytics/reporting skills (GA4, Search Console, Semrush, Ahrefs) match the data-driven eCommerce coordination tasks\n- FMCG/digital affinity shown through e-commerce client work (proteinbox.com.tr) and structured-data/technical SEO projects",
+   "why_bad": "First seen about 45 days ago — a vacancy open this long has almost always been filled.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": true,
+   "lang": "en",
+   "cv_fit_v": 19,
+   "closed_check": "2026-11-10 10:21",
+   "closed_check_v": 2
+  },
   {
    "id": "74938152",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74938152/customer-service-officer-tessenderlo-vast-contract",
@@ -52230,8 +52230,8 @@
    "cv_fit_v": 19
   }
  ],
- "search_cursor": 5,
- "li_cursor": 27,
+ "search_cursor": 10,
+ "li_cursor": 33,
  "letter_fails": {
   "4428705687": 2
  },
