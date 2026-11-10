@@ -58,7 +58,9 @@ PRIORITY_SEARCH_URLS = [
      "marketing coordinator", "junior marketing", "campaign", "advertising",
      "employer branding", "crm marketing", "conversion", "brand", "media",
      "marketing english", "international marketing", "growth hacker",
-     "digital strategist", "influencer marketing")
+     "digital strategist", "influencer marketing",
+     "ai strategist", "ai specialist", "ai marketing", "artificial intelligence",
+     "ai consultant", "ai automation", "generative ai", "prompt engineer")
 ]
 # Everything else, walked a rotating slice at a time (collection is slow).
 ROTATING_SEARCH_URLS = (
@@ -112,7 +114,13 @@ _PRIORITY_TIERS = (
                # Elementor, webmaster/webdesign work — so name it explicitly
                # rather than hoping "web design" alone catches it.
                r"wordpress|elementor|webflow|woo ?commerce|webmaster|website|"
-               r"web\s*design|webdesign|web ?develop|front[-\s]?end|\bux\b|\bui\b|growth", re.I),
+               r"web\s*design|webdesign|web ?develop|front[-\s]?end|\bux\b|\bui\b|growth|"
+               # AI strategy / marketing / automation roles. The CV is built on
+               # LLM use, prompt engineering, MCP integrations and Python
+               # automation, and "Jr AI Strategist" never surfaced: nothing here
+               # or in the searches knew the word.
+               r"\bai\b|a\.i\.|artificial\s*intell|generative|prompt\s*engineer|\bgeo\b|"
+               r"automati[sz]ation|no-?code", re.I),
     re.compile(r"marketing|communicat|\bbrand(?:ing|s)?\b|campaign|campagne|"
                r"advertis|\bpr\b", re.I),
 )
@@ -141,7 +149,9 @@ CANDIDATE_ONELINE = (
     "web design, front-end, e-commerce and webshops (Shopify, WooCommerce), "
     "online marketing, communication, "
     "CMS / content management / webredactie, and basic CRM / "
-    "marketing-automation / e-mail-marketing work. Also fits: "
+    "marketing-automation / e-mail-marketing work, plus AI-focused junior roles "
+    "(AI strategy, AI marketing, AI automation / no-code AI tools, prompt "
+    "engineering, GEO) — he uses LLMs daily and builds with them. Also fits: "
     "office/admin, customer service, reception, data entry, sales/commercial "
     "support, warehouse/logistics. NOT skilled trades/production/machine "
     "operators, NOT senior/lead/director, NOT licensed professions, NOT "
@@ -743,6 +753,10 @@ LI_PRIORITY_KEYWORDS = [
     # role he interviewed for had never been collected at all. Narrow query, few
     # results, so it costs almost nothing to run every time.
     "webmaster",
+    # AI roles: narrow queries, few results, cheap. "Jr AI Strategist" (BOI,
+    # Antwerp) was open for weeks and never collected because no query here
+    # contained "ai".
+    "ai strategist", "junior ai", "ai marketing", "ai specialist",
 ]
 # Adjacent fields and broad terms — a slice of these each run.
 LI_ROTATE_PER_RUN = 6   # 4 runs/day -> every broad term still swept daily
@@ -761,6 +775,8 @@ LI_ROTATING_KEYWORDS = [
     # work — site upkeep, product content, on-page optimisation.
     "web content", "webshop", "e-commerce manager", "digital specialist",
     "marketing", "communications",
+    "ai consultant", "prompt engineer", "ai automation", "ai content",
+    "geo specialist", "generative ai", "junior consultant ai",
 ]
 LI_GUEST_SEARCH = ("https://www.linkedin.com/jobs-guest/jobs/api/"
                    "seeMoreJobPostings/search")
@@ -1333,6 +1349,7 @@ EURES_TEXT = {}
 EURES_KEYWORDS = [
     "seo", "digital marketing", "webmaster", "content marketing",
     "e-commerce", "online marketing", "communications", "marketing intern",
+    "ai specialist", "ai strategist", "artificial intelligence",
 ]
 EURES_PAGES = 2            # pages per keyword
 EURES_PER_PAGE = 50
@@ -1971,7 +1988,9 @@ def _sync_letter_email(job_id, apply_email):
 # Grounded strictly in cv.md.
 CANDIDATE_PROFILE = """WHO THE CANDIDATE IS:
 - GOAL FIELD: digital marketing / SEO & GEO / content / WordPress & web / web
-  design. Real experience: Junior Digital Marketer at Episto now (on-page SEO,
+  design, and junior AI-strategy / AI-marketing / AI-automation roles (daily LLM
+  use, prompt engineering, MCP integrations in WordPress and SEO tools, Python
+  automation, no-code AI tools). Real experience: Junior Digital Marketer at Episto now (on-page SEO,
   keyword research, SEO content, day-to-day CMS content management,
   WordPress/Elementor client sites and Shopify webshops (store design, product
   catalogue upkeep, blog content), Semrush, Ahrefs, Google Analytics,
@@ -2128,7 +2147,10 @@ def title_prescreen(titles, undecided=None):
 CANDIDATE: {CANDIDATE_ONELINE}
 
 KEEP a title if it could plausibly be an accessible junior/entry/office/admin/
-customer-service/marketing/SEO/content/web/sales-support/warehouse/logistics role.
+customer-service/marketing/SEO/content/web/sales-support/warehouse/logistics role,
+or a junior AI strategy / AI marketing / AI automation / prompt-engineering role
+(e.g. "Jr AI Strategist"). Do NOT drop those for sounding technical — only true
+ML/data-science/software ENGINEER titles are out.
 DROP only titles that are clearly: a skilled trade or production/machine operator;
 a TRUE leadership role (Senior, Sr., Lead, Team Lead, Head of, Director, VP, Chief,
 Principal); or a licensed/degree profession (engineer, doctor, nurse, lawyer,
@@ -2290,7 +2312,8 @@ alternative must FAIL, even for a marketing role.
 Otherwise PASS — the candidate may apply even if it's a stretch. Especially KEEP
 anything in or near the GOAL FIELD: digital marketing, SEO/SEA, content,
 copywriting, social media, WordPress / web / web design, front-end, e-commerce,
-online marketing, communication. For GOAL-FIELD jobs be inclusive — pass unless a
+online marketing, communication, and junior AI strategy / AI marketing / AI
+automation roles that do not demand an engineering or data-science degree. For GOAL-FIELD jobs be inclusive — pass unless a
 hard wall above truly applies (fluent Dutch/French, 2+ years, a skilled
 trade/licence, seniority, or a mandatory bachelor/master with no experience
 alternative). Also PASS accessible roles: customer service, administration /
@@ -2498,13 +2521,36 @@ def main():
             print(f"  eures: re-reading {len(stale)} match(es) to pick up the "
                   f"language level from the record")
         jobs["eures_reread_v3"] = True
+    # AI-focused junior roles were dropped by the title screen or judged "not a
+    # fit" because neither the screen, the goal field nor any search knew about
+    # them ("Jr AI Strategist" at BOI was never even collected). Put the recent
+    # ones back through the read, now that the criteria include them. Engineering
+    # / data-science / senior titles stay out. Done by the bot itself, as above.
+    if not jobs.get("ai_requeue_v1"):
+        ai_rx = re.compile(r"\bai\b|a\.i\.|artificial\s*intell|generative|"
+                           r"prompt\s*engineer", re.I)
+        no_rx = re.compile(r"engineer|developer|data scien|machine learning|\bml\b|"
+                           r"research|architect|devops|senior|\bsr\b|\blead\b|"
+                           r"principal|head of|director|phd|scientist", re.I)
+        _verd = jobs.get("verdicts") or {}
+        cands = [x for x in jobs.get("listing", [])
+                 if ai_rx.search(x.get("title", "")) and not no_rx.search(x.get("title", ""))
+                 and (_verd.get(x["id"]) or ["?"])[0] in ("t", "n")]
+        again = {x["id"] for x in sorted(cands, key=lambda x: str(x["id"]), reverse=True)[:150]}
+        if again:
+            jobs["rejected"] = [x for x in jobs.get("rejected", []) if x["id"] not in again]
+            for _i in again:
+                _verd.pop(_i, None)
+            seen -= again
+            print(f"  ai-roles: putting {len(again)} AI-titled job(s) back through the read")
+        jobs["ai_requeue_v1"] = sorted(again)
     screen = load_json(SCREEN_FILE, {"title_no": [], "shortlist": []})
     title_no = set(screen.get("title_no", []))     # dropped at the cheap title stage
     shortlist = set(screen.get("shortlist", []))   # passed title stage, await full eval
     # The CRM re-queue above cleared these from `seen`; they also have to go back
     # into the shortlist, because that is what the full-read queue is drawn from.
     for _flag in ("crm_requeue_v1", "ready_cap_recover_v1",
-                  "new_cv_exp_requeue_v1"):
+                  "new_cv_exp_requeue_v1", "ai_requeue_v1"):
         _again = jobs.get(_flag)
         if isinstance(_again, list) and _again:
             shortlist |= set(_again)

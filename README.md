@@ -71,6 +71,17 @@ To measure instead of guess, run *Actions → DeepSeek probe*: it sends the real
 screening prompt to the live API with thinking default vs disabled and under both
 model names, and prints what DeepSeek reports. About a cent, makes no commit.
 
+## Search coverage
+
+LinkedIn, VDAB and EURES are searched by keyword (`LI_PRIORITY_KEYWORDS`,
+`LI_ROTATING_KEYWORDS`, `PRIORITY_SEARCH_URLS`, `EURES_KEYWORDS` in `bot.py`). A job
+whose title contains none of the keywords is never collected. Example: "Jr AI
+Strategist" (BOI, Antwerp) was open for weeks and missing from the app until AI
+queries were added. If a good job is missing, check its title against these lists
+first. The goal field the AI judges against (`CANDIDATE_ONELINE`,
+`CANDIDATE_PROFILE`, the eval prompt) also has to name the kind of job, or it is
+dropped at the title screen.
+
 ## Data files — do not hand-edit
 
 `seen.json`, `screen.json`, `docs/jobs.json` and `docs/listing.json` are written
