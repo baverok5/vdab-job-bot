@@ -754,6 +754,15 @@ LI_PRIORITY_KEYWORDS = [
     "seo", "seo specialist", "seo manager", "seo consultant", "seo analyst",
     "seo copywriter", "seo content", "seo executive", "search engine optimization",
     "technical seo", "sea specialist", "ppc specialist", "sem specialist",
+    # AI: "Jr AI Strategist" (BOI, Antwerp) was open for weeks and never
+    # collected. A probe confirmed LinkedIn returns it first for "ai strategist";
+    # it was missed because the old 7-minute LinkedIn budget ran out before this
+    # term was reached. These run right after SEO so a block later cannot cost them.
+    "ai strategist", "junior ai", "ai marketing", "ai specialist", "ai consultant",
+    "prompt engineer", "ai automation", "ai content", "geo specialist",
+    "generative ai", "junior consultant ai", "ai coordinator", "ai assistant",
+    "ai operations", "ai implementation", "llm specialist", "no-code",
+    "automation specialist", "workflow automation", "chatbot",
     # Web / WordPress / site building / e-commerce
     "webmaster", "wordpress", "wordpress developer", "wordpress specialist",
     "wordpress consultant", "web designer", "web design", "website manager",
@@ -772,13 +781,6 @@ LI_PRIORITY_KEYWORDS = [
     "copywriter", "email marketing", "crm specialist", "marketing automation",
     "conversion optimization", "digital specialist", "communications",
     "communication officer", "communication specialist",
-    # AI: "Jr AI Strategist" (BOI, Antwerp) was open for weeks and never
-    # collected because no query here contained "ai".
-    "ai strategist", "junior ai", "ai marketing", "ai specialist", "ai consultant",
-    "prompt engineer", "ai automation", "ai content", "geo specialist",
-    "generative ai", "junior consultant ai", "ai coordinator", "ai assistant",
-    "ai operations", "ai implementation", "llm specialist", "no-code",
-    "automation specialist", "workflow automation", "chatbot",
     # Entry level: exactly this candidate's level, narrow enough that the whole
     # result set is seen.
     "junior marketing", "junior digital marketing", "marketing assistant",
@@ -842,24 +844,30 @@ def _li_job_id(card):
     return None
 
 
-def collect_linkedin(keywords=None, pages_per_kw=8, budget_s=5400):
+def collect_linkedin(keywords=None, pages_per_kw=6, budget_s=7200):
     """Scrape LinkedIn's public guest job search for Belgium. Returns
-    {id: {id,url,title,company,location,src}}. Swallows all errors; backs off
-    on a rate-limit/blocked response so we don't get the IP fully banned.
+    {id: {id,url,title,company,location,src}}. Swallows all errors.
 
     sortBy=DD asks for newest-first. LinkedIn's default is relevance, which for a
     crawler that only reads the first pages means a fresh posting can sit behind
-    a hundred older "more relevant" ones and never be collected at all."""
-    keywords = keywords or (LI_PRIORITY_KEYWORDS + LI_ROTATING_KEYWORDS)
-    found, t0, blocks = {}, time.time(), 0
-    for kw in keywords:
-        if time.time() - t0 > budget_s:
-            print(f"  linkedin: budget spent, {kw!r} onwards skipped this run")
-            break
-        dry = 0
-        for pg in range(pages_per_kw):
-            if time.time() - t0 > budget_s:
-                break
+    a hundred older "more relevant" ones and never be collected at all.
+
+    LinkedIn answers HTTP 429 after a short burst, but it recovers within
+    seconds-to-minutes and the 429s are patchy (a probe saw one on page 5 of one
+    term and none on the next term a second later). The old code treated the
+    first block as the end of the whole pass, which on a 147-term list would have
+    thrown away everything after it. Now: wait and retry, move a still-blocked
+    term to the end of the queue, cool down for five minutes if several terms in
+    a row stay blocked, and only give up after three such cool-downs."""
+    keywords = list(keywords or (LI_PRIORITY_KEYWORDS + LI_ROTATING_KEYWORDS))
+    found, t0 = {}, time.time()
+    st = {"stuck": 0, "cool": 0}
+
+    def fetch(kw, pg):
+        """Response, or None while LinkedIn keeps blocking us."""
+        for wait in (0, 20, 60):
+            if wait:
+                time.sleep(wait)
             try:
                 r = requests.get(LI_GUEST_SEARCH,
                                  params={"keywords": kw, "location": "Belgium",
@@ -871,27 +879,33 @@ def collect_linkedin(keywords=None, pages_per_kw=8, budget_s=5400):
                                  headers=LI_HEADERS, timeout=25)
             except Exception as e:
                 print(f"  linkedin search error ({kw}): {e}")
-                break
-            if r.status_code in (429, 999, 403):
-                blocks += 1
-                if blocks > 3:
-                    print(f"  linkedin blocked again (HTTP {r.status_code}) — giving up for this run")
-                    return found
-                print(f"  linkedin blocked (HTTP {r.status_code}) — waiting 120 s, retry {blocks}/3")
-                time.sleep(120)
-                try:
-                    r = requests.get(LI_GUEST_SEARCH,
-                                     params={"keywords": kw, "location": "Belgium",
-                                             "f_TPR": "r5184000", "sortBy": "DD",
-                                             "start": pg * 10},
-                                     headers=LI_HEADERS, timeout=25)
-                except Exception:
-                    break
-                if r.status_code in (429, 999, 403):
-                    print(f"  linkedin still blocked (HTTP {r.status_code}) — stopping LinkedIn for this run")
-                    return found
-            if r.status_code != 200 or not r.text.strip():
-                break
+                return False
+            if r.status_code not in (429, 999, 403):
+                return r
+            print(f"  linkedin blocked (HTTP {r.status_code}) on {kw!r} p{pg}"
+                  + (f" — retrying after {[20, 60][wait == 20]} s" if wait < 60 else ""))
+        return None
+
+    def scrape(kw):
+        """True when the term was read to the end, False if it was cut short by a block."""
+        dry = 0
+        for pg in range(pages_per_kw):
+            if time.time() - t0 > budget_s:
+                return True
+            r = fetch(kw, pg)
+            if r is None:
+                st["stuck"] += 1
+                if st["stuck"] >= 3:
+                    st["cool"] += 1
+                    if st["cool"] > 3:
+                        raise StopIteration
+                    print("  linkedin: blocked on 3 terms in a row — cooling down 5 min")
+                    time.sleep(300)
+                    st["stuck"] = 0
+                return False
+            if r is False or r.status_code != 200 or not r.text.strip():
+                return True
+            st["stuck"] = 0
             soup = BeautifulSoup(r.text, "html.parser")
             added = 0
             for c in soup.select("li"):
@@ -919,8 +933,25 @@ def collect_linkedin(keywords=None, pages_per_kw=8, budget_s=5400):
             # more page before moving on. Two dry pages in a row does mean done.
             dry = dry + 1 if added == 0 else 0
             if dry >= 2:
+                return True
+            time.sleep(4.0)   # slow on purpose: a run a day, time is free, and bursts draw a 429
+        return True
+
+    deferred = []
+    try:
+        for kw in keywords:
+            if time.time() - t0 > budget_s:
+                print(f"  linkedin: budget spent, {kw!r} onwards skipped this run")
                 break
-            time.sleep(3.0)   # gentle: 1.5s over ~180 requests drew a 429, and time is free now
+            if not scrape(kw):
+                deferred.append(kw)
+        for kw in deferred:                      # one more try at the blocked terms
+            if time.time() - t0 > budget_s:
+                break
+            print(f"  linkedin: second try for {kw!r}")
+            scrape(kw)
+    except StopIteration:
+        print("  linkedin: still blocked after three cool-downs — stopping for this run")
     print(f"  linkedin: collected {len(found)} jobs in {int(time.time() - t0)}s")
     return found
 
