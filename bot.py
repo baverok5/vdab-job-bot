@@ -99,11 +99,39 @@ MARKETING_RX = re.compile(
     # one of them even though they are squarely this candidate's field.
     r"wordpress|copywrit|social\s*media|communicat|digital|\bweb\w*|website|"
     r"web\s*design|webdesign|webshop|front[-\s]?end|\bux\b|\bui\b|e-?commerce|"
-    r"growth|\bbrand(?:ing|s)?\b|campaign|advertis", re.I)
+    r"growth|\bbrand(?:ing|s)?\b|campaign|advertis|"
+    # AI strategy / marketing / automation roles are the target field too. Without
+    # this a title like "Jr AI Strategist" is "not marketing", which got it dropped
+    # at EURES collection and evicted from the listing before it was ever screened.
+    r"\bai\b|a\.i\.|artificial\s*intell|generative|prompt\s*engineer|\bgeo\b|\bllm", re.I)
 
 
 def is_marketing(title):
     return bool(MARKETING_RX.search(title or ""))
+
+
+def _idnum(j):
+    """Ids are strings. Sorted as text, a 10-digit LinkedIn id ("4482144737")
+    ranks BELOW every 8-digit VDAB id ("74417360"), because "4" < "7"."""
+    try:
+        return int(j["id"])
+    except (KeyError, TypeError, ValueError):
+        return 0
+
+
+def trim_listing(allv, other_cap=8000, linkedin_cap=4000):
+    """Keep every marketing/SEO/web/AI listing ever collected, plus the newest
+    non-marketing ones. The cap used to be one pool of 8000 sorted by the id AS
+    TEXT, so all 8000 slots went to VDAB and EURES and every LinkedIn job whose
+    title did not read as marketing was dropped before screening — "Jr AI
+    Strategist" (BOI), found by the search on its first page, among them. LinkedIn
+    ids are >= 1e9 (EURES ids are kept under that on purpose), so they get a pool
+    of their own, and the sort is numeric."""
+    mkt = [j for j in allv if is_marketing(j.get("title", ""))]
+    rest = [j for j in allv if not is_marketing(j.get("title", ""))]
+    li = sorted((j for j in rest if _idnum(j) >= 10**9), key=_idnum, reverse=True)[:linkedin_cap]
+    other = sorted((j for j in rest if _idnum(j) < 10**9), key=_idnum, reverse=True)[:other_cap]
+    return sorted(mkt + li + other, key=_idnum, reverse=True)
 
 
 # is_marketing is a yes/no flag, and it lumps an SEO internship together with a
@@ -2863,11 +2891,7 @@ def main():
             # candidate's target field — never evict it) PLUS the newest ~8000 of
             # everything else, so the browse list covers all digital-marketing
             # jobs on VDAB, not just a recent window that fillers push them out of.
-            allv = list(listing.values())
-            mkt = [j for j in allv if is_marketing(j["title"])]
-            rest = sorted((j for j in allv if not is_marketing(j["title"])),
-                          key=lambda j: j["id"], reverse=True)[:8000]
-            jobs["listing"] = sorted(mkt + rest, key=lambda j: j["id"], reverse=True)
+            jobs["listing"] = trim_listing(list(listing.values()))
             by_id = {j["id"]: j for j in jobs["listing"]}
             checkpoint()   # save the freshly-collected listing before screening
 
