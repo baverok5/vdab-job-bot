@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-11 10:37 UTC",
+ "updated": "2026-11-11 10:38 UTC",
  "jobs": [
   {
    "id": "4471489541",
@@ -13107,7 +13107,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-10 12:39",
+   "closed_check": "2026-11-11 10:06",
    "closed_check_v": 2
   },
   {
@@ -13129,7 +13129,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-10 12:39",
+   "closed_check": "2026-11-11 10:06",
    "closed_check_v": 2,
    "lang_req": {
     "nl": "b2"
@@ -13154,7 +13154,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-10 12:39",
+   "closed_check": "2026-11-11 10:06",
    "closed_check_v": 2,
    "lang_req": {
     "nl": "b2"
@@ -13179,7 +13179,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-10 12:39",
+   "closed_check": "2026-11-11 10:06",
    "closed_check_v": 2
   }
  ],
@@ -53487,7 +53487,11 @@
   "354433292",
   "75015870",
   "4488832473",
-  "75022326"
+  "75022326",
+  "848201378",
+  "4489474041",
+  "248464230",
+  "74965134"
  ],
  "eures_reread_v3": true,
  "crm_requeue_v1": true,
