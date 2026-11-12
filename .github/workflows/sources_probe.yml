@@ -1,0 +1,28 @@
+name: Job sources probe
+
+# Tries candidate job sites and APIs the way the bot would and prints what each
+# returns (HTTP status, blocking, job links found). Manual only. Read-only: no
+# commit, no AI call, no cost.
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sources-probe
+  cancel-in-progress: false
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: |
+          pip install requests beautifulsoup4 playwright
+          python -m playwright install --with-deps chromium
+      - run: python -u sources_probe.py
