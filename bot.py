@@ -1563,7 +1563,9 @@ def collect_talent(browser, keywords, budget_s=TALENT_BUDGET_S):
         added = 0
         for tid, link_text, card in cards:
             lines = [l.strip() for l in card.split("\n") if l.strip()]
-            lines = [l for l in lines if not _TALENT_NOISE.match(l)]
+            # keep only lines with real text: result cards separate fields with
+            # bullets ("•"), and one was being stored as the location
+            lines = [l for l in lines if not _TALENT_NOISE.match(l) and re.search(r"[A-Za-zÀ-ÿ]{2}", l)]
             title = link_text if len(link_text) >= 6 and not _TALENT_NOISE.match(link_text) \
                 else (lines[0] if lines else "")
             title = " ".join(title.split())[:140]
@@ -1639,8 +1641,16 @@ def _remote_location_ok(loc):
     return not REMOTE_BAD_LOCATION_RX.search(loc)
 
 
-def _add_remote(found, src, key, url, title, company, location, descr):
-    if not title or not url or not is_marketing(title) or is_excluded(title) or is_ineligible(title):
+REMOTE_FIELD_TAG_RX = re.compile(r"\b(?:marketing|seo|content|copywrit\w*|social media|wordpress|"
+                                 r"growth|ecommerce|e-commerce|digital marketing|ai marketing|web design|"
+                                 r"community|email marketing)\b", re.I)
+
+
+def _add_remote(found, src, key, url, title, company, location, descr, tags=None):
+    if not title or not url or is_excluded(title) or is_ineligible(title):
+        return 0
+    tag_text = " ".join(str(t) for t in (tags or []))
+    if not (is_marketing(title) or REMOTE_FIELD_TAG_RX.search(tag_text)):
         return 0
     if not _remote_location_ok(location):
         return 0
@@ -1696,7 +1706,8 @@ def collect_remote_apis():
         if isinstance(x, dict) and x.get("position"):
             jobs_by_src["remoteok.com"] += _add_remote(
                 found, "remoteok.com", x.get("id"), x.get("url") or x.get("apply_url"),
-                x.get("position"), x.get("company"), x.get("location"), x.get("description"))
+                x.get("position"), x.get("company"), x.get("location"), x.get("description"),
+                tags=x.get("tags"))
     print(f"  remote apis: kept {dict(jobs_by_src)} (in the candidate's field, reachable from Belgium)")
     return found
 
