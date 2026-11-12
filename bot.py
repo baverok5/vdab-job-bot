@@ -1482,6 +1482,247 @@ EURES_PER_PAGE = 50
 EURES_BUDGET_S = 600
 
 
+# ---------------------------------------------------------------- more sources
+# Added after probing candidate sites from GitHub's own servers (sources_probe.py):
+#   * Talent.com and EuroBrussels answer normally; Indeed, Jobat, Jooble, Monster,
+#     Glassdoor and Welcome to the Jungle sit behind Cloudflare-style checks and
+#     are NOT used — getting past them means tricks that get the bot's IP banned.
+#   * Remotive, Jobicy and RemoteOK publish their listings as JSON for exactly this.
+# Each collector is best-effort and logs what it got, so a site that changes its
+# markup shows up in the run log instead of failing silently.
+EXTRA_TEXT = {}        # url -> posting text taken from an API, so no page render is needed
+TALENT_BUDGET_S = 2700
+EUROBRUSSELS_PAGES = [
+    "https://www.eurobrussels.com/job_search",
+    "https://www.eurobrussels.com/jobs/communication_public_relations",
+]
+# Locations a Belgian-based remote worker can take. US-only / LATAM-only is left out.
+REMOTE_OK_LOCATION_RX = re.compile(
+    r"world\s*wide|anywhere|global|europe|emea|\beu\b|belgi|netherlands|benelux|"
+    r"\bremote\b(?!\s*[-–(]?\s*(?:us|usa|u\.s|canada|latam|apac|india|brazil))", re.I)
+REMOTE_BAD_LOCATION_RX = re.compile(
+    r"\b(?:usa?|u\.s\.?a?|united states|canada|latam|latin america|apac|india|brazil|"
+    r"north america|americas?|australia|singapore|philippines)\b", re.I)
+
+
+def extra_job_id(src, key):
+    """Stable numeric id (< 1e9, like EURES) for a posting that has none of ours."""
+    h = int(hashlib.sha1(f"{src}:{key}".encode("utf-8")).hexdigest()[:12], 16)
+    return str(100_000_000 + h % 900_000_000)
+
+
+def _plain_text(htm):
+    return " ".join(html.unescape(re.sub(r"<[^>]+>", " ", htm or "")).split())
+
+
+_TALENT_JS = """() => {
+  const out = [], seen = new Set();
+  for (const a of document.querySelectorAll('a[href*="/view?id="]')) {
+    const m = a.href.match(/[?&]id=([^&#]+)/);
+    if (!m || seen.has(m[1])) continue;
+    seen.add(m[1]);
+    let el = a, txt = '';
+    for (let i = 0; i < 6 && el; i++) {
+      el = el.parentElement;
+      const t = ((el && el.innerText) || '').trim();
+      if (t.split('\\n').filter(x => x.trim()).length >= 3) { txt = t; break; }
+    }
+    out.push([m[1], (a.innerText || '').trim(), txt.slice(0, 500)]);
+  }
+  return out;
+}"""
+_TALENT_NOISE = re.compile(r"^(laat meer zien|show more|voir plus|nieuw|new|gesponsord|sponsored|"
+                           r"snel solliciteren|easy apply)$", re.I)
+
+
+def collect_talent(browser, keywords, budget_s=TALENT_BUDGET_S):
+    """Talent.com Belgium, one results page per keyword. Each result card is read
+    as: title, company, location on separate lines (the first three get printed
+    so the run log shows whether that guess about the markup was right)."""
+    found, t0, shown = {}, time.time(), 0
+    for kw in keywords:
+        if time.time() - t0 > budget_s:
+            print(f"  talent: budget spent, {kw!r} onwards skipped this run")
+            break
+        page = None
+        try:
+            page = browser.new_page(user_agent=HEADERS["User-Agent"], locale="nl-BE")
+            page.goto("https://be.talent.com/jobs?k=" + kw.replace(" ", "+") + "&l=Belgium",
+                      wait_until="domcontentloaded", timeout=30000)
+            page.wait_for_timeout(3500)
+            cards = page.evaluate(_TALENT_JS)
+        except Exception as e:
+            print(f"  talent {kw!r}: failed — {' '.join(str(e).split())[:110]}")
+            continue
+        finally:
+            if page:
+                try:
+                    page.close()
+                except Exception:
+                    pass
+        added = 0
+        for tid, link_text, card in cards:
+            lines = [l.strip() for l in card.split("\n") if l.strip()]
+            lines = [l for l in lines if not _TALENT_NOISE.match(l)]
+            title = link_text if len(link_text) >= 6 and not _TALENT_NOISE.match(link_text) \
+                else (lines[0] if lines else "")
+            title = " ".join(title.split())[:140]
+            if len(title) < 6:
+                continue
+            rest = [l for l in lines if l != title]
+            company = rest[0][:80] if rest else ""
+            location = rest[1][:80] if len(rest) > 1 else ""
+            jid = extra_job_id("talent", tid)
+            if jid in found:
+                continue
+            found[jid] = {"id": jid, "url": f"https://be.talent.com/view?id={tid}",
+                          "title": title, "company": company, "location": location,
+                          "src": "talent.com"}
+            added += 1
+            if shown < 3:
+                shown += 1
+                print(f"    talent sample: {title!r} | {company!r} | {location!r}")
+        print(f"  talent {kw!r}: +{added} (total {len(found)})")
+        time.sleep(3.0)
+    return found
+
+
+def collect_eurobrussels(browser):
+    """English-language EU-affairs / communications jobs in Brussels. The site's
+    keyword box does nothing for us (same page back for any keyword), so read its
+    listing pages: /job_search (newest) and the Communication/PR category."""
+    found = {}
+    for url in EUROBRUSSELS_PAGES:
+        page = None
+        try:
+            page = browser.new_page(user_agent=HEADERS["User-Agent"], locale="en-GB")
+            page.goto(url, wait_until="domcontentloaded", timeout=30000)
+            page.wait_for_timeout(2500)
+            links = page.eval_on_selector_all(
+                'a[href*="/job_display/"]',
+                "els => els.map(e => [e.href, (e.innerText || '').trim()])")
+        except Exception as e:
+            print(f"  eurobrussels {url}: failed — {' '.join(str(e).split())[:110]}")
+            continue
+        finally:
+            if page:
+                try:
+                    page.close()
+                except Exception:
+                    pass
+        added = 0
+        for href, text in links:
+            m = re.search(r"/job_display/(\d+)/([^/?#]+)", href)
+            if not m:
+                continue
+            jid = extra_job_id("eurobrussels", m.group(1))
+            if jid in found:
+                continue
+            title = " ".join(text.split())[:140]
+            if len(title) < 6:
+                title = m.group(2).replace("_", " ").strip()
+            found[jid] = {"id": jid, "url": f"https://www.eurobrussels.com/job_display/{m.group(1)}/{m.group(2)}",
+                          "title": title, "company": "", "location": "Brussels",
+                          "src": "eurobrussels.com"}
+            added += 1
+        print(f"  eurobrussels {url.rsplit('/', 1)[-1]}: +{added} (total {len(found)})")
+        time.sleep(2.0)
+    return found
+
+
+def _remote_location_ok(loc):
+    """True for worldwide / Europe / Belgium / plain "Remote" / unstated; False when
+    the posting names only places outside reach ("USA", "Remote - US", "LATAM")."""
+    loc = (loc or "").strip()
+    if not loc or REMOTE_OK_LOCATION_RX.search(loc):
+        return True
+    return not REMOTE_BAD_LOCATION_RX.search(loc)
+
+
+def _add_remote(found, src, key, url, title, company, location, descr):
+    if not title or not url or not is_marketing(title) or is_excluded(title) or is_ineligible(title):
+        return 0
+    if not _remote_location_ok(location):
+        return 0
+    jid = extra_job_id(src, key)
+    if jid in found:
+        return 0
+    found[jid] = {"id": jid, "url": url, "title": " ".join(title.split())[:140],
+                  "company": (company or "")[:80],
+                  "location": (location or "Remote")[:80], "src": src}
+    EXTRA_TEXT[url] = "\n".join(x for x in (title, company, f"Location: {location or 'Remote'}",
+                                            _plain_text(descr)) if x)[:15000]
+    return 1
+
+
+def collect_remote_apis():
+    """Remote-job boards that publish JSON: Remotive, Jobicy, RemoteOK. Kept to
+    postings a Belgium-based person can take (worldwide / Europe / unstated), in
+    the candidate's field. Request counts are deliberately tiny: Remotive asks for
+    only a few calls a day."""
+    found, hdr = {}, {"User-Agent": HEADERS["User-Agent"], "Accept": "application/json"}
+    jobs_by_src = Counter()
+
+    def get(url, **params):
+        try:
+            r = requests.get(url, params=params or None, headers=hdr, timeout=30)
+            if r.status_code != 200:
+                print(f"  remote api {url.split('/')[2]}: HTTP {r.status_code}")
+                return None
+            return r.json()
+        except Exception as e:
+            print(f"  remote api {url.split('/')[2]}: {type(e).__name__}")
+            return None
+
+    for cat in ("marketing", "design", "writing"):                # Remotive
+        d = get("https://remotive.com/api/remote-jobs", category=cat, limit=100)
+        for x in (d or {}).get("jobs", []):
+            jobs_by_src["remotive.com"] += _add_remote(
+                found, "remotive.com", x.get("id"), x.get("url"), x.get("title"),
+                x.get("company_name"), x.get("candidate_required_location"),
+                x.get("description"))
+        time.sleep(1.5)
+    for params in ({"industry": "marketing", "geo": "europe"}, {"industry": "marketing"},   # Jobicy
+                   {"tag": "seo"}, {"tag": "ai"}, {"tag": "wordpress"}):
+        d = get("https://jobicy.com/api/v2/remote-jobs", count=100, **params)
+        for x in (d or {}).get("jobs", []):
+            jobs_by_src["jobicy.com"] += _add_remote(
+                found, "jobicy.com", x.get("id"), x.get("url"), x.get("jobTitle"),
+                x.get("companyName"), x.get("jobGeo"),
+                x.get("jobDescription") or x.get("jobExcerpt"))
+        time.sleep(1.5)
+    d = get("https://remoteok.com/api")                                                  # RemoteOK
+    for x in (d if isinstance(d, list) else []):
+        if isinstance(x, dict) and x.get("position"):
+            jobs_by_src["remoteok.com"] += _add_remote(
+                found, "remoteok.com", x.get("id"), x.get("url") or x.get("apply_url"),
+                x.get("position"), x.get("company"), x.get("location"), x.get("description"))
+    print(f"  remote apis: kept {dict(jobs_by_src)} (in the candidate's field, reachable from Belgium)")
+    return found
+
+
+def collect_more_sources(browser):
+    """Talent.com + EuroBrussels + the remote-job APIs, as one {id: meta} dict."""
+    found = {}
+    try:
+        kws = list(LI_PRIORITY_KEYWORDS) + list(LI_ROTATING_KEYWORDS)
+        found.update(collect_talent(browser, kws))
+    except Exception as e:
+        print(f"  talent: stopped — {type(e).__name__}: {str(e)[:100]}")
+    try:
+        found.update(collect_eurobrussels(browser))
+    except Exception as e:
+        print(f"  eurobrussels: stopped — {type(e).__name__}: {str(e)[:100]}")
+    try:
+        found.update(collect_remote_apis())
+    except Exception as e:
+        print(f"  remote apis: stopped — {type(e).__name__}: {str(e)[:100]}")
+    c = Counter(m["src"] for m in found.values())
+    print(f"  more sources: {len(found)} postings {dict(c)}")
+    return found
+
+
+
 def eures_job_id(raw):
     """Stable 9-digit id for a EURES vacancy. It MUST stay under 1e9: anything
     at or above that is treated as a LinkedIn id by the staleness gate, and a
@@ -1889,6 +2130,8 @@ def fetch_job_detail(browser, url, job_id, check_closed=False):
         return fetch_linkedin_detail(job_id, check_closed=check_closed)
     if EURES_DETAIL_PAGE in (url or ""):
         return fetch_eures_detail(url)
+    if url in EXTRA_TEXT:                     # remote-job APIs already gave the posting
+        return EXTRA_TEXT[url], None
     page = browser.new_page(
         user_agent=HEADERS["User-Agent"],
         locale="nl-BE",
@@ -2869,12 +3112,36 @@ def main():
                 print(f"  eures: {len(eures_meta)} new, {dropped} already covered "
                       f"by VDAB/LinkedIn/boards")
 
+            # Fifth source: Talent.com, EuroBrussels and the remote-job APIs (the
+            # others that were probed are blocked). Same dedupe as the boards.
+            extra_meta = collect_more_sources(browser)
+            if extra_meta:
+                known = {dedupe_key(j.get("title"), j.get("company"))
+                         for j in jobs.get("listing", [])}
+                known |= {dedupe_key(m["title"], m.get("company"))
+                          for m in list(li_meta.values()) + list(board_meta.values())
+                          + list(eures_meta.values())}
+                known.discard(None)
+                dropped = 0
+                for _m in list(extra_meta.values()):
+                    k = dedupe_key(_m["title"], _m.get("company"))
+                    if k and k in known:
+                        extra_meta.pop(_m["id"], None)
+                        dropped += 1
+                        continue
+                    if k:
+                        known.add(k)
+                    all_links.add((_m["url"], _m["id"]))
+                print(f"  more sources: {len(extra_meta)} new, {dropped} already covered")
+            else:
+                extra_meta = {}
+
             # Accumulate the master listing across runs (union by id), dropping
             # roles the candidate never wants. This is what keeps coverage growing
             # instead of being pinned to a single search's results.
             listing = {j["id"]: j for j in jobs.get("listing", [])}
             for (u, i) in all_links:
-                m = li_meta.get(i) or board_meta.get(i) or eures_meta.get(i)
+                m = li_meta.get(i) or board_meta.get(i) or eures_meta.get(i) or extra_meta.get(i)
                 if m:  # LinkedIn / job-board item — it carries a real title
                     if is_excluded(m["title"]) or is_ineligible(m["title"]):
                         continue

@@ -238,7 +238,7 @@
 <div class="toast" id="toast"></div>
 
 <script>
-const APP_VERSION = "v89";                 // MUST match CACHE in sw.js — it is how you tell whether the phone got the deploy
+const APP_VERSION = "v90";                 // MUST match CACHE in sw.js — it is how you tell whether the phone got the deploy
 const LS = "jobstatus";                    // { jobId: "applied" | "skipped" | "closed" }
 const LS_AT = "jobstatus_at";              // { jobId: epoch ms the status was set }
 const getStatus = () => JSON.parse(localStorage.getItem(LS) || "{}");
@@ -978,6 +978,9 @@ const BOARD_NAMES = {
   "jobsinbrussels.com": "JobsinBrussels",
   "findajobinbelgium.com": "FindaJobinBelgium",
   "eures": "EURES",          // the EU portal — every national employment service feeds it
+  "talent.com": "Talent.com", "be.talent.com": "Talent.com",
+  "eurobrussels.com": "EuroBrussels",
+  "remotive.com": "Remotive", "jobicy.com": "Jobicy", "remoteok.com": "RemoteOK",
 };
 function srcOf(j) {
   if (!j) return "VDAB";
