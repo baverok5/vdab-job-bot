@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-13 17:59 UTC",
+ "updated": "2026-11-13 18:00 UTC",
  "jobs": [
   {
    "id": "4471489541",
@@ -15175,7 +15175,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-12 17:50",
+   "closed_check": "2026-11-13 17:27",
    "closed_check_v": 2
   },
   {
@@ -15197,7 +15197,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-12 17:50",
+   "closed_check": "2026-11-13 17:27",
    "closed_check_v": 2
   },
   {
@@ -15219,7 +15219,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-12 17:50",
+   "closed_check": "2026-11-13 17:27",
    "closed_check_v": 2
   },
   {
@@ -15241,7 +15241,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-12 17:50",
+   "closed_check": "2026-11-13 17:27",
    "closed_check_v": 2,
    "lang_req": {
     "nl": "b1"
@@ -15266,7 +15266,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-12 17:50",
+   "closed_check": "2026-11-13 17:27",
    "closed_check_v": 2
   },
   {
@@ -15288,7 +15288,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-12 17:50",
+   "closed_check": "2026-11-13 17:27",
    "closed_check_v": 2
   },
   {
@@ -15310,7 +15310,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-12 17:50",
+   "closed_check": "2026-11-13 17:27",
    "closed_check_v": 2
   },
   {
@@ -15332,7 +15332,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-12 17:50",
+   "closed_check": "2026-11-13 17:27",
    "closed_check_v": 2
   },
   {
@@ -15354,7 +15354,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-12 17:50",
+   "closed_check": "2026-11-13 17:27",
    "closed_check_v": 2,
    "lang_req": {
     "nl": "b2"
@@ -15379,7 +15379,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-12 17:50",
+   "closed_check": "2026-11-13 17:27",
    "closed_check_v": 2,
    "lang_req": {
     "nl": "b2"
@@ -15404,7 +15404,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-12 17:50",
+   "closed_check": "2026-11-13 17:27",
    "closed_check_v": 2
   }
  ],
@@ -55841,7 +55841,8 @@
   "4477666053",
   "4488704502",
   "74939380",
-  "74925237"
+  "74925237",
+  "4488520755"
  ],
  "eures_reread_v3": true,
  "crm_requeue_v1": true,
