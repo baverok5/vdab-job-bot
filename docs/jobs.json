@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-13 18:00 UTC",
+ "updated": "2026-11-13 20:03 UTC",
  "jobs": [
   {
    "id": "4471489541",
@@ -993,28 +993,6 @@
    "exp_stretch": true,
    "internship": false,
    "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
-   "closed_check_v": 2
-  },
-  {
-   "id": "4467995103",
-   "url": "https://www.linkedin.com/jobs/view/4467995103",
-   "title": "Growth / Marketing generalist (co-builder role)",
-   "company": "Exhibitly",
-   "location": "Ghent",
-   "match_score": 62,
-   "reason": "A growth/marketing generalist role that explicitly says years of experience don't matter and only lists Dutch as a nice-to-have, so the junior candidate fits.",
-   "apply_email": "",
-   "found_at": "2026-09-16 11:59",
-   "status": "new",
-   "details": "- Early-stage AI events startup hiring a marketing generalist to own brand voice, content, SEO/GEO, inbound, outbound and referral loops\n- Half brand/content, half lead generation; own the number (triple qualified demos in six months)\n- Full-time, permanent co-builder role with equity; offices at Wintercircus, Ghent\n- English-speaking international team; Dutch listed only as a nice-to-have\n- Pay not stated; offers MacBook, iPhone, tools, travel to industry events, lunch/dinner, insurance, meal vouchers\n- Process: CEO call, deep dive, case/pitch, final chat",
-   "why_good": "- Directly matches the goal field: SEO, GEO, content, email, paid and inbound growth are the core of the role\n- Candidate is genuinely AI-native (daily LLM use, prompt engineering, AI agents/MCP) — the posting calls this non-negotiable\n- Real SEO/GEO and content experience: on-page SEO, keyword research, SEO content, technical SEO/GEO audits, JSON-LD schema, llms.txt\n- Technical edge (Python automation, WordPress/Elementor, HTML/CSS/JS, published Android app) suits a one-person ship-and-own role\n- 'Years of experience doesn't matter. We care what you've shipped' — the candidate's portfolio (mirook.com, client sites) is exactly what they'd lean on",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "en",
    "cv_fit_v": 19,
    "closed_check": "2026-11-13 17:27",
    "closed_check_v": 2
@@ -15409,6 +15387,28 @@
   }
  ],
  "rejected": [
+  {
+   "id": "4467995103",
+   "url": "https://www.linkedin.com/jobs/view/4467995103",
+   "title": "Growth / Marketing generalist (co-builder role)",
+   "company": "Exhibitly",
+   "location": "Ghent",
+   "match_score": 62,
+   "reason": "First seen about 45 days ago — a vacancy open this long has almost always been filled.",
+   "apply_email": "",
+   "found_at": "2026-09-16 11:59",
+   "status": "new",
+   "details": "- Early-stage AI events startup hiring a marketing generalist to own brand voice, content, SEO/GEO, inbound, outbound and referral loops\n- Half brand/content, half lead generation; own the number (triple qualified demos in six months)\n- Full-time, permanent co-builder role with equity; offices at Wintercircus, Ghent\n- English-speaking international team; Dutch listed only as a nice-to-have\n- Pay not stated; offers MacBook, iPhone, tools, travel to industry events, lunch/dinner, insurance, meal vouchers\n- Process: CEO call, deep dive, case/pitch, final chat",
+   "why_good": "- Directly matches the goal field: SEO, GEO, content, email, paid and inbound growth are the core of the role\n- Candidate is genuinely AI-native (daily LLM use, prompt engineering, AI agents/MCP) — the posting calls this non-negotiable\n- Real SEO/GEO and content experience: on-page SEO, keyword research, SEO content, technical SEO/GEO audits, JSON-LD schema, llms.txt\n- Technical edge (Python automation, WordPress/Elementor, HTML/CSS/JS, published Android app) suits a one-person ship-and-own role\n- 'Years of experience doesn't matter. We care what you've shipped' — the candidate's portfolio (mirook.com, client sites) is exactly what they'd lean on",
+   "why_bad": "First seen about 45 days ago — a vacancy open this long has almost always been filled.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "en",
+   "cv_fit_v": 19,
+   "closed_check": "2026-11-13 17:27",
+   "closed_check_v": 2
+  },
   {
    "id": "74936660",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74936660/sales-adviseur-care",
