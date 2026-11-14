@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14 16:32 UTC",
+ "updated": "2026-11-14 16:37 UTC",
  "jobs": [
   {
    "id": "4471489541",
@@ -10886,28 +10886,6 @@
    "closed_check_v": 2
   },
   {
-   "id": "4487037775",
-   "url": "https://www.linkedin.com/jobs/view/4487037775",
-   "title": "Social media & content creator",
-   "company": "Rose Marketing",
-   "location": "Ieper",
-   "match_score": 38,
-   "reason": "Social media/content creation role in the candidate's goal field; no degree, French, or seniority wall, though it leans on camera/shoot skills and fluent Dutch.",
-   "apply_email": "",
-   "found_at": "2026-11-03 21:02",
-   "status": "new",
-   "details": "Social media & content creator for local businesses in the Ieper region\nWeekly on-location shoots, filming with a real camera (lenses, light, sound), scripting\nAdvising entrepreneurs on strategy and building content calendars; spotting trends\nFollow-up of clients, scripting, shooting, strategy with a small team\nDutch-language posting; pay not stated",
-   "why_good": "Content creation and content calendars -> writes and publishes blog/social content and manages CMS content at Episto\nTrend-spotting and translating to content -> SEO keyword/trend research and content work with Semrush/Ahrefs\nAdvising clients on strategy -> client website and content work for consultancy and e-commerce clients\nVisual content production -> Canva and web/WordPress design experience\nNote: this needs stronger Dutch than the candidate's A2+ speaking, and leans on real-camera shooting he has not done",
-   "why_bad": "",
-   "dutch_stretch": true,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
-   "closed_check_v": 2
-  },
-  {
    "id": "74970399",
    "url": "https://www.vdab.be/vindeenjob/vacatures/74970399/klantendienstmedewerker-crelan-in-mechelen-pool",
    "title": "Klantendienstmedewerker Crelan (pool)",
@@ -10926,7 +10904,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -10948,7 +10926,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2,
    "lang_req": {
     "nl": "b1"
@@ -10973,7 +10951,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -10995,7 +10973,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -11017,7 +10995,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -11039,7 +11017,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -11061,7 +11039,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -11083,7 +11061,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -11108,7 +11086,7 @@
    "lang_req": {
     "nl": "b1"
    },
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -11130,7 +11108,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -11152,7 +11130,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -11174,7 +11152,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -11196,7 +11174,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -11221,7 +11199,7 @@
    "lang_req": {
     "nl": "b2"
    },
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -11246,7 +11224,7 @@
    "lang_req": {
     "nl": "b1"
    },
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -11271,7 +11249,7 @@
    "lang_req": {
     "nl": "b2"
    },
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -11293,7 +11271,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -11315,7 +11293,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -11337,7 +11315,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -11359,7 +11337,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -11381,7 +11359,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -11407,7 +11385,7 @@
     "en": "b1",
     "nl": "b2"
    },
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -11429,7 +11407,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -11451,7 +11429,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -11473,29 +11451,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
-   "closed_check_v": 2
-  },
-  {
-   "id": "4484099276",
-   "url": "https://www.linkedin.com/jobs/view/4484099276",
-   "title": "Communications & Social Media Intern",
-   "company": "Sailpeak",
-   "location": "Brussels",
-   "match_score": 38,
-   "reason": "Part-time communications/social media internship open to 0-2 years experience, English-fluent, French only a plus.",
-   "apply_email": "",
-   "found_at": "2026-10-27 19:38",
-   "status": "new",
-   "details": "Part-time (2.5 days/week) communications & social media internship at a Brussels consulting firm\nCreate and publish social media content, write articles and company updates, refresh brand voice\nEmployer branding: spotlight team/culture, support recruitment communication, school & alumni outreach\nPlan internal events and team moments; support partners at events\nLanguages: English fluency required, French a plus (not required)\nPaid intern stipend, hybrid, flexible around studies",
-   "why_good": "Asks for social media content creation and writing -> candidate writes SEO blog/content and manages WordPress/Shopify content at Episto\nWants fresh ideas and brand-voice consistency -> candidate runs client sites and store design end-to-end, shaping tone and layout\nCuriosity for tech & AI -> candidate uses LLMs daily, builds Python automation and has an Android app live\n0-2 years experience accepted -> candidate's ~2-3 years of web/SEO/content work fits comfortably\nNote: this is a communications/events role, not SEO/analytics — the real overlap is content creation, writing and brand consistency, and it's a paid internship open to non-students",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": true,
-   "lang": "en",
-   "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -11517,7 +11473,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -11539,7 +11495,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -11565,7 +11521,7 @@
     "en": "b2",
     "nl": "b2"
    },
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -11587,7 +11543,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -11609,7 +11565,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -11631,7 +11587,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -11653,7 +11609,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -11675,7 +11631,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -11697,7 +11653,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -11719,7 +11675,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -11741,7 +11697,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -11763,7 +11719,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -11785,7 +11741,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -11807,7 +11763,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -11829,7 +11785,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -11854,7 +11810,7 @@
    "lang_req": {
     "nl": "b2"
    },
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -11876,7 +11832,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -11898,7 +11854,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -11924,7 +11880,7 @@
     "en": "b2",
     "nl": "b2"
    },
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -11949,7 +11905,7 @@
    "lang_req": {
     "nl": "b2"
    },
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -11974,7 +11930,7 @@
    "lang_req": {
     "nl": "b2"
    },
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -11996,7 +11952,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -12022,7 +11978,7 @@
     "en": "b2",
     "nl": "b2"
    },
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -12044,7 +12000,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -12066,7 +12022,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -12088,7 +12044,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -12115,7 +12071,7 @@
     "fr": "b1",
     "nl": "b2"
    },
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -12137,7 +12093,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -12159,7 +12115,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -12181,7 +12137,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -12203,7 +12159,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -12225,7 +12181,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -12247,7 +12203,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -12269,7 +12225,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2,
    "lang_req": {
     "nl": "b2"
@@ -12294,7 +12250,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -12316,7 +12272,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -12338,35 +12294,13 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2,
    "lang_req": {
     "en": "b1",
     "fr": "b2",
     "nl": "b2"
    }
-  },
-  {
-   "id": "4472621585",
-   "url": "https://www.linkedin.com/jobs/view/4472621585",
-   "title": "Brand Ambassador - Partner Marketing",
-   "company": "MediaMarkt Benelux",
-   "location": "Strombeek-Bever",
-   "match_score": 38,
-   "reason": "Junior entry-level content/campaign role with no French requirement and an hbo-worklevel-or-bachelor route, though it expects strong Dutch communication.",
-   "apply_email": "vanvlietk@media-saturn.com",
-   "found_at": "2026-10-01 19:09",
-   "status": "new",
-   "details": "- Junior entry-level Brand Ambassador in the Partner Marketing team, linking internal teams, suppliers and external partners\n- Tasks: keeping product pages and content current and complete, coordinating campaigns/promotions, data analysis and reporting, stakeholder management\n- Full time, 39 hours/week, at MediaMarkt HQ Strombeek-Bever (Benelux scope)\n- Gross monthly salary €2.865\n- Language: good command of Dutch and English required, French is a plus (not required)\n- Degree: hbo working/thinking level and/or a bachelor in marketing or similar — no strict diploma wall",
-   "why_good": "- Content management is core to the CV: WordPress/Elementor CMS work, publishing pages/blog posts and maintaining existing content at Episto\n- Campaign and product-page support maps onto his SEO/blog content and e-commerce work (Shopify stores, product catalogue upkeep)\n- Data analysis and reporting use tools he already runs: Google Analytics, Search Console, Semrush/Ahrefs\n- Entry-level junior label, no years-of-experience bar and no French requirement\n- Note honestly: it needs stronger Dutch than his A2+ speaking / B1 writing, since communication and stakeholder work are largely in Dutch",
-   "why_bad": "",
-   "dutch_stretch": true,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
-   "closed_check_v": 2
   },
   {
    "id": "4474165313",
@@ -12387,7 +12321,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -12409,7 +12343,7 @@
    "internship": true,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -12431,7 +12365,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -12453,7 +12387,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -12475,7 +12409,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -12497,7 +12431,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -12519,7 +12453,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -12541,7 +12475,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -12563,7 +12497,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -12585,7 +12519,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -12607,7 +12541,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -12632,7 +12566,7 @@
    "lang_req": {
     "nl": "b2"
    },
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -12654,7 +12588,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -12676,7 +12610,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -12698,7 +12632,7 @@
    "internship": false,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -12720,7 +12654,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -12742,7 +12676,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -12765,7 +12699,7 @@
    "lang": "nl",
    "cv_fit_v": 19,
    "lang_req": {},
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -12787,7 +12721,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -12809,7 +12743,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -12831,7 +12765,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -12853,7 +12787,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -12875,7 +12809,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -12897,7 +12831,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -12919,7 +12853,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -12941,7 +12875,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -12963,7 +12897,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -12985,7 +12919,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -13007,7 +12941,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -13029,7 +12963,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -13051,7 +12985,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -13073,7 +13007,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -13095,7 +13029,7 @@
    "internship": true,
    "lang": "en",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -13117,7 +13051,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -13139,7 +13073,7 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-13 17:27",
+   "closed_check": "2026-11-14 16:18",
    "closed_check_v": 2
   },
   {
@@ -58614,6 +58548,57 @@
  "new_cv_exp_requeue_v1": true,
  "closed": [
   {
+   "id": "4472621585",
+   "url": "https://www.linkedin.com/jobs/view/4472621585",
+   "title": "Brand Ambassador - Partner Marketing",
+   "company": "MediaMarkt Benelux",
+   "location": "Strombeek-Bever",
+   "found_at": "2026-10-01 19:09",
+   "match_score": 38,
+   "reason": "Junior entry-level content/campaign role with no French requirement and an hbo-worklevel-or-bachelor route, though it expects strong Dutch communication.",
+   "lang": "nl",
+   "internship": false,
+   "apply_email": "vanvlietk@media-saturn.com",
+   "dutch_stretch": true,
+   "exp_stretch": false,
+   "closed_at": "2026-11-14 16:37",
+   "closed_why": "Closed — LinkedIn says it is no longer accepting applications."
+  },
+  {
+   "id": "4484099276",
+   "url": "https://www.linkedin.com/jobs/view/4484099276",
+   "title": "Communications & Social Media Intern",
+   "company": "Sailpeak",
+   "location": "Brussels",
+   "found_at": "2026-10-27 19:38",
+   "match_score": 38,
+   "reason": "Part-time communications/social media internship open to 0-2 years experience, English-fluent, French only a plus.",
+   "lang": "en",
+   "internship": true,
+   "apply_email": "",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "closed_at": "2026-11-14 16:34",
+   "closed_why": "Closed — LinkedIn says it is no longer accepting applications."
+  },
+  {
+   "id": "4487037775",
+   "url": "https://www.linkedin.com/jobs/view/4487037775",
+   "title": "Social media & content creator",
+   "company": "Rose Marketing",
+   "location": "Ieper",
+   "found_at": "2026-11-03 21:02",
+   "match_score": 38,
+   "reason": "Social media/content creation role in the candidate's goal field; no degree, French, or seniority wall, though it leans on camera/shoot skills and fluent Dutch.",
+   "lang": "nl",
+   "internship": false,
+   "apply_email": "",
+   "dutch_stretch": true,
+   "exp_stretch": false,
+   "closed_at": "2026-11-14 16:34",
+   "closed_why": "Closed — LinkedIn says it is no longer accepting applications."
+  },
+  {
    "id": "75000534",
    "url": "https://www.vdab.be/vindeenjob/vacatures/75000534/klantenadviseur",
    "title": "Klantenadviseur",
@@ -67191,60 +67176,6 @@
    "exp_stretch": false,
    "closed_at": "2026-10-22 17:45",
    "closed_why": "Closed — VDAB has taken this vacancy offline."
-  },
-  {
-   "id": "72570663",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/72570663/internal-sales-assistant",
-   "title": "Internal Sales Assistant",
-   "company": "MENTOR hr (for an international finishing-materials producer)",
-   "location": "Regio Waregem",
-   "found_at": "2026-09-15 21:07",
-   "match_score": 42,
-   "reason": "Accessible internal sales/customer-service role with limited experience (<2 years) and degree 'or equivalent by experience', no French required.",
-   "lang": "nl",
-   "internship": false,
-   "apply_email": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "closed_at": "2026-10-22 17:45",
-   "closed_why": "Closed — VDAB has taken this vacancy offline."
-  },
-  {
-   "id": "745621657",
-   "url": "https://europa.eu/eures/portal/jv-se/jv-details/NDBjMTFkZTMtY2Q4OC00NDYzLTlkYTMtMjM0MmNhOThmYmE1IDM",
-   "title": "Digital Interactions Advisor",
-   "company": "Telenet",
-   "location": "Unknown",
-   "found_at": "2026-10-15 18:40",
-   "match_score": 45,
-   "reason": "Accessible customer-support role with no degree, no French, and Dutch only at B2 level.",
-   "lang": "nl",
-   "internship": false,
-   "apply_email": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "lang_req": {
-    "nl": "b2"
-   },
-   "closed_at": "2026-10-21 18:08",
-   "closed_why": "Closed — EURES has withdrawn this vacancy."
-  },
-  {
-   "id": "4469900373",
-   "url": "https://www.linkedin.com/jobs/view/4469900373",
-   "title": "Marketing & Communication internship",
-   "company": "DOOR9 Hotel & Restaurant",
-   "location": "Hasselt",
-   "found_at": "2026-10-01 14:52",
-   "match_score": 60,
-   "reason": "This is an English-language marketing/communications internship that matches the candidate's digital marketing, SEO/GEO and content skills, and internships are judged leniently.",
-   "lang": "en",
-   "internship": true,
-   "apply_email": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "closed_at": "2026-10-21 17:55",
-   "closed_why": "Closed — LinkedIn says it is no longer accepting applications."
   }
  ],
  "ai_requeue_v1": true
