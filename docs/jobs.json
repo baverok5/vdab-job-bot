@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-15 17:12 UTC",
+ "updated": "2026-11-15 19:05 UTC",
  "jobs": [
   {
    "id": "4471489541",
@@ -19,28 +19,6 @@
    "exp_stretch": false,
    "internship": false,
    "lang": "en",
-   "cv_fit_v": 19,
-   "closed_check": "2026-11-15 16:44",
-   "closed_check_v": 2
-  },
-  {
-   "id": "4468710433",
-   "url": "https://www.linkedin.com/jobs/view/4468710433",
-   "title": "Stagiair Content Brand & SEO",
-   "company": "Carrefour Belgium",
-   "location": "Zaventem",
-   "match_score": 85,
-   "reason": "This is a paid internship suitable for the candidate's goal field, and all hard requirements are met.",
-   "apply_email": "",
-   "found_at": "2026-09-21 11:05",
-   "status": "new",
-   "details": "Internship Role: Content Brand & SEO\nMain Tasks: Content creation for magazine and social media, stakeholder coordination, editorial strategy support, digital visibility management.\nContract Type: Internship (6 months)\nSchedule: Full-time\nLanguage: English (required), Dutch (a plus)\nPay: €750/month (indemnity)",
-   "why_good": "Paid internship in Marketing, aligned with candidate's goal field.\nFocuses on content creation, social media, and digital marketing.\nRequires English and offers Dutch as a plus, fitting the candidate's language skills.\nTasks involve content management, editorial support, and digital promotion, all relevant to the candidate's profile.",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": true,
-   "lang": "nl",
    "cv_fit_v": 19,
    "closed_check": "2026-11-15 16:44",
    "closed_check_v": 2
@@ -18713,6 +18691,28 @@
   }
  ],
  "rejected": [
+  {
+   "id": "4468710433",
+   "url": "https://www.linkedin.com/jobs/view/4468710433",
+   "title": "Stagiair Content Brand & SEO",
+   "company": "Carrefour Belgium",
+   "location": "Zaventem",
+   "match_score": 85,
+   "reason": "First seen about 45 days ago — a vacancy open this long has almost always been filled.",
+   "apply_email": "",
+   "found_at": "2026-09-21 11:05",
+   "status": "new",
+   "details": "Internship Role: Content Brand & SEO\nMain Tasks: Content creation for magazine and social media, stakeholder coordination, editorial strategy support, digital visibility management.\nContract Type: Internship (6 months)\nSchedule: Full-time\nLanguage: English (required), Dutch (a plus)\nPay: €750/month (indemnity)",
+   "why_good": "Paid internship in Marketing, aligned with candidate's goal field.\nFocuses on content creation, social media, and digital marketing.\nRequires English and offers Dutch as a plus, fitting the candidate's language skills.\nTasks involve content management, editorial support, and digital promotion, all relevant to the candidate's profile.",
+   "why_bad": "First seen about 45 days ago — a vacancy open this long has almost always been filled.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": true,
+   "lang": "nl",
+   "cv_fit_v": 19,
+   "closed_check": "2026-11-15 16:44",
+   "closed_check_v": 2
+  },
   {
    "id": "75046541",
    "url": "https://www.vdab.be/vindeenjob/vacatures/75046541/accountmanager-b2b-voltijds",
