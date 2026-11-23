@@ -238,7 +238,7 @@
 <div class="toast" id="toast"></div>
 
 <script>
-const APP_VERSION = "v90";                 // MUST match CACHE in sw.js — it is how you tell whether the phone got the deploy
+const APP_VERSION = "v91";                // MUST match CACHE in sw.js — it is how you tell whether the phone got the deploy
 const LS = "jobstatus";                    // { jobId: "applied" | "skipped" | "closed" }
 const LS_AT = "jobstatus_at";              // { jobId: epoch ms the status was set }
 const getStatus = () => JSON.parse(localStorage.getItem(LS) || "{}");
@@ -526,11 +526,15 @@ function shareFile(blob, filename) {
   return true;
 }
 
-function downloadCv(lang) {
-  if (shareFile(CV_BLOBS[lang === "en" ? "en" : "nl"], "Baver Ok - CV.pdf")) return;
+// `t` = { url, name } for the CV the bot tailored to one job (prepared/cv/<id>.pdf);
+// without it the general CV is served.
+function downloadCv(lang, t) {
+  const tailored = !!(t && t.url);
+  const name = (t && t.name) || "Baver Ok - CV.pdf";
+  if (shareFile(tailored ? CV_BLOBS[t.url] : CV_BLOBS[lang === "en" ? "en" : "nl"], name)) return;
   const a = document.createElement("a");
-  a.href = lang === "en" ? "cv.pdf" : "cv-nl.pdf";
-  a.download = "Baver Ok - CV.pdf";
+  a.href = tailored ? t.url : (lang === "en" ? "cv.pdf" : "cv-nl.pdf");
+  a.download = name;
   a.target = "_blank";
   document.body.appendChild(a); a.click();
   setTimeout(() => a.remove(), 1500);
@@ -579,7 +583,7 @@ function ensurePat() {
   }
   return t;
 }
-async function pingClaude(j, box) {
+async function pingClaude(j, box, cvPdf) {
   const t = ensurePat();
   if (!t) { box.innerHTML = '<div class="hint">The Gmail button needs the one-time GitHub token.</div>'; return; }
   box.innerHTML = '<div class="hint">📮 Pinging Claude…</div>';
@@ -587,7 +591,7 @@ async function pingClaude(j, box) {
     const r = await fetch(`https://api.github.com/repos/baverok5/vdab-job-bot/issues/${SIGNAL_PR}/comments`, {
       method: "POST",
       headers: { "Authorization": "Bearer " + t, "Accept": "application/vnd.github+json", "Content-Type": "application/json" },
-      body: JSON.stringify({ body: `draft-job: ${j.id} — ${j.title}${j.apply_email ? " → " + j.apply_email : " (no direct email)"} [lang: ${langOf(j, null) || "?"}]` }),
+      body: JSON.stringify({ body: `draft-job: ${j.id} — ${j.title}${j.apply_email ? " → " + j.apply_email : " (no direct email)"} [lang: ${langOf(j, null) || "?"}]${cvPdf ? " [attach this CV, tailored to the job: https://baverok5.github.io/vdab-job-bot/" + cvPdf + "]" : ""}` }),
     });
     if (!r.ok) throw new Error("HTTP " + r.status);
     box.innerHTML = '<div class="hint">📮 Sent! Claude is creating the draft — check Gmail → Drafts in a few minutes.</div>';
@@ -749,7 +753,7 @@ function chromeApplyPack(j, d, lang, letter, cv) {
 
 === ME (applicant) ===
 ${APPLICANT}
-My CV is also online if you ever need to read it: ${CV_PDF_URL} (for upload fields, build the PDF from the CV text below instead — see RULES)${mail ? "\nThis one applies by email to: " + mail : ""}
+My CV is also online if you ever need to read it: ${d.cv_pdf ? "https://baverok5.github.io/vdab-job-bot/" + d.cv_pdf + " (tailored to this job)" : CV_PDF_URL} (for upload fields, build the PDF from the CV text below instead — see RULES)${mail ? "\nThis one applies by email to: " + mail : ""}
 
 === JOB ===
 Title: ${j.title || ""}${j.company ? "\nCompany: " + j.company : ""}
@@ -784,10 +788,15 @@ function renderPrepared(j, d, box) {
   const subject = subjectFor(j, d, lang);
   const body = pickLang(d.email_body, lang);
   const letter = pickLang(d.cover_letter, lang);
-  // Always the real CV — never a per-job rewrite. Falls back to whatever the
-  // letter stored only if cv.en.md / cv.nl.md have not landed yet.
-  const cv = CVTEXT[lang === "en" ? "en" : "nl"] || pickLang(d.tailored_cv, lang);
+  // The CV the bot tailored to this job (d.cv_pdf / d.cv_text) when it made one:
+  // same facts as the real CV, reordered and reworded for the posting. Otherwise
+  // the general CV from cv.en.md / cv.nl.md.
+  const tailored = !!(d.cv_pdf && d.cv_text);
+  const cv = tailored ? d.cv_text : (CVTEXT[lang === "en" ? "en" : "nl"] || pickLang(d.tailored_cv, lang));
   const cvText = cv || pickLang(d.cv_highlights, lang);
+  const cvTarget = tailored ? { url: d.cv_pdf, name: "Baver Ok - CV - " + safeName(j.title) + ".pdf" } : null;
+  if (IS_IOS && tailored && !CV_BLOBS[d.cv_pdf])     // the share sheet needs the file ready at tap time
+    fetch(d.cv_pdf).then((r) => (r.ok ? r.blob() : null)).then((b) => { if (b) CV_BLOBS[d.cv_pdf] = b; }).catch(() => {});
   // The raw markdown feeds buildPdf (it renders the headings and bold). Anything
   // shown on screen, copied, or pasted into a form gets the readable version —
   // "## Profile" and "**x**" must never reach an employer as literal characters.
@@ -797,7 +806,7 @@ function renderPrepared(j, d, box) {
       <div class="h">Download to upload / attach</div>
       <div class="dlbtns">
         <button class="btn primary" data-dl="letter">⬇️ Cover letter (PDF)</button>
-        ${cvText ? '<button class="btn primary" data-dl="cv">⬇️ CV (PDF)</button>' : ""}
+        ${cvText ? `<button class="btn primary" data-dl="cv">⬇️ ${tailored ? "CV for this job (PDF)" : "CV (PDF)"}</button>` : ""}
       </div></div>
     <div class="sec"><button class="btn primary copybtn" data-copy="chrome" style="width:100%">🤖 Copy all for Claude for Chrome</button>
       <div class="hint" style="text-align:left;margin-top:6px">Open the job's application page in Chrome, then paste this into the Claude for Chrome side panel. It fills in and <b>submits</b> the application on its own, and reports back at the end.</div></div>
@@ -807,7 +816,7 @@ function renderPrepared(j, d, box) {
     <div class="sec"><div class="h">Cover letter</div>
       <div class="quote">${esc(letterP)}</div>
       <button class="copybtn" data-copy="letter">Copy cover letter</button></div>
-    ${cv ? `<div class="sec"><div class="h">My CV ${lang === "en" ? "🇬🇧 English" : "🇳🇱 Nederlands"}</div>
+    ${cv ? `<div class="sec"><div class="h">${tailored ? "CV tailored to this job" : "My CV"} ${lang === "en" ? "🇬🇧 English" : "🇳🇱 Nederlands"}</div>
       <div class="quote" style="max-height:260px;overflow-y:auto">${esc(cvP)}</div>
       <button class="copybtn" data-copy="cv">Copy CV</button></div>`
       : (cvText ? `<div class="sec"><div class="h">CV highlights for this job</div>${bullets(cvText)}</div>` : "")}
@@ -836,12 +845,12 @@ function renderPrepared(j, d, box) {
   box.querySelectorAll("[data-dl]").forEach((b) => b.addEventListener("click", (e) => {
     e.stopPropagation();
     if (b.dataset.dl === "letter") downloadTextPdf(letter, "Cover letter - " + nm + ".pdf");
-    else downloadCv(lang);
+    else downloadCv(lang, cvTarget);
   }));
   const draftBtn = box.querySelector('[data-prep="draft"]');
   if (draftBtn) draftBtn.addEventListener("click", (e) => {
     e.stopPropagation();
-    pingClaude(j, box.querySelector(".pingstat"));  // real draft with PDFs, via Claude
+    pingClaude(j, box.querySelector(".pingstat"), d.cv_pdf);  // real draft with PDFs, via Claude
   });
 }
 
@@ -1492,7 +1501,9 @@ function render() {
     const s = st[j.id];
     if (s === "applied") buckets.applied.push(j);
     else if (s === "skipped") buckets.skipped.push(j);
-    else if (s !== "closed") closedShown.push(j);
+    // Jobs the bot found closed are not listed anywhere any more — they are
+    // gone from Ready and simply not shown. Only ones you acted on stay visible
+    // (Applied / Skipped above), plus the ones you marked closed yourself.
   }
   closedShown.sort((a, b) => (b.closed_at || "").localeCompare(a.closed_at || ""));
   const listing = DATA.listing || [];
@@ -1591,11 +1602,11 @@ function render() {
 
   if (TAB === "closed") {
     if (!closedShown.length && !closedMine.length) {
-      list.innerHTML = '<div class="empty"><div class="big">🚫</div>Nothing closed yet.<br>Every run re-checks all Ready jobs; the ones that stop accepting applications move here by themselves.</div>';
+      list.innerHTML = '<div class="empty"><div class="big">🚫</div>Nothing here.<br>Jobs that stop accepting applications are removed automatically on every run. Only jobs you marked closed yourself (🚫) are listed here.</div>';
       return;
     }
     list.insertAdjacentHTML("beforeend",
-      `<div class="hint" style="margin:2px 0 12px">${closedShown.length} found closed by the bot, ${closedMine.length} marked closed by you. Checked again on every run.</div>`);
+      `<div class="hint" style="margin:2px 0 12px">${closedMine.length} marked closed by you. Closed jobs the bot finds are removed automatically.</div>`);
     const items = [...closedMine.map((j) => [j, true]), ...closedShown.map((j) => [j, false])];   // yours first
     appendPaged(list, items, ([j, mine]) => closedCard(j, mine), 25);
     return;

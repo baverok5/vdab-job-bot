@@ -26,6 +26,8 @@ import requests
 from bs4 import BeautifulSoup
 from playwright.sync_api import sync_playwright
 
+import cv_render
+
 # ---------------------------------------------------------------- settings
 
 # Several searches, not just "english", to widen the net for jobs open to an
@@ -204,6 +206,8 @@ SEEN_FILE = "seen.json"           # every job ID we fully evaluated (render + AI
 SCREEN_FILE = "screen.json"       # cheap title-screen state: shortlist + rejects
 CV_FILE = "cv.md"                 # your master CV
 PREPARED_DIR = "docs/prepared"    # pre-written email + cover letter per match
+TAILORED_DIR = os.path.join(PREPARED_DIR, "cv")   # <id>.pdf: the CV tailored to that job
+CV_TAILOR_BUDGET = int(os.environ.get("CV_TAILOR_BUDGET", "120"))   # backfill per run
 
 GEMINI_KEY = os.environ.get("GEMINI_API_KEY", "")
 # Two models on purpose:
@@ -2293,7 +2297,183 @@ baverok.com | linkedin.com/in/baverok"""
                    gemini_model=GEMINI_WRITE_MODEL)
 
 
-def write_letter(job_id, url, job_text, apply_email, cv_text, info=None):
+def tailor_cv(job_text, info, lang):
+    """Ask the writer model for a CV tailored to ONE posting and return it as
+    structured data, or None. The model only picks, orders and lightly rewords
+    the real CV's own lines (cv_render.merge_tailored rejects invented numbers,
+    addresses and unknown ids), so a tailored CV never claims more than the
+    master one."""
+    master = cv_render.load_master(lang)
+    compact = {
+        "summary": master["summary"],
+        "experience": [{"id": e["id"], "title": e["title"],
+                        "bullets": [{"id": b["id"], "text": b["t"]} for b in e["bullets"]]}
+                       for e in master["experience"]],
+        "projects": [{"id": e["id"], "title": e["title"],
+                      "bullets": [{"id": b["id"], "text": b["t"]} for b in e["bullets"]]}
+                     for e in master["projects"]],
+        "skills": master["skills"],
+    }
+    language = "ENGLISH" if lang == "en" else "DUTCH (natural, correct Nederlands)"
+    prompt = f"""You tailor a real CV to one job posting. The candidate is a junior
+digital marketer (SEO, GEO/AI search, Google Ads, WordPress/WooCommerce, AI tools,
+Python automation). Write in {language}. NEVER invent anything: every fact, number,
+tool, employer and result must already be in the CV below.
+
+Reply ONLY with JSON:
+{{
+  "headline": "one line, max 85 characters, 3-4 key phrases separated by ' · ', the candidate's real strengths that this job asks for first",
+  "summary": "the CV summary rewritten for THIS job, 80-110 words, first person, opening with what the job needs most; only facts from the CV summary and experience",
+  "experience": [ {{"id": "episto", "bullets": [{{"id": "epi-1"}}, {{"id": "epi-3", "text": "optional light rewording"}}]}} ],
+  "projects": [ {{"id": "pupsmart", "bullets": [{{"id": "pup-1"}}]}} ],
+  "skills": [ {{"label": "SEO & marketing", "items": ["items from the CV", "most relevant first"]}} ]
+}}
+
+Rules:
+- experience: always include episto, freelance and kxp, each with the 2-5 bullets most relevant
+  to this posting, most relevant first. Include vividoctor only for web/front-end/technical jobs and
+  tango only for customer-facing, sales or people jobs. Do not reorder the jobs themselves.
+- A bullet may be reworded ("text") ONLY to use the posting's own vocabulary for something the
+  candidate really did (e.g. Google Ads <-> SEA, webshop <-> e-commerce). Keep every number,
+  name, tool and markdown link ([text](url)) and the **bold** marks exactly. When unsure, give only the id.
+- projects: 1-3 projects ordered by relevance to the job (AI roles: PupSmart, AI job-search
+  assistant, Rebound; web/e-commerce roles: whichever fits), using the project's own bullets.
+- skills: all three labels, items reordered with the job's keywords first; you may drop items that
+  are irrelevant for this job but never add one that is not in the CV.
+- The candidate speaks Dutch at B1/A2+; never claim more.
+
+THE JOB ({info.get('title', '')} at {info.get('company', '')}):
+{job_text[:5000]}
+
+THE CV (JSON, ids to reference):
+{json.dumps(compact, ensure_ascii=False)}"""
+    try:
+        answer = ask_llm(prompt, expect_json=True, provider=WRITE_PROVIDER,
+                         gemini_model=GEMINI_WRITE_MODEL)
+    except QuotaExhausted:
+        raise
+    except Exception as e:                       # a bad answer must not stop the run
+        print(f"  tailor_cv: {type(e).__name__}: {e}")
+        return None
+    return cv_render.merge_tailored(master, answer, lang)
+
+
+def make_tailored_cv(job_id, job_text, info, lang, browser):
+    """Tailor + print the CV for one job. Returns {"cv_pdf", "cv_text"} (cv_pdf is
+    relative to the site root, like the prepared json) or None."""
+    data = tailor_cv(job_text, info, lang)
+    if not data:
+        return None
+    out = os.path.join(TAILORED_DIR, f"{job_id}.pdf")
+    _, pages = cv_render.render_pdf(browser, data, out)
+    if pages > 2:                                  # trim the optional parts, once
+        data["experience"] = [e for e in data["experience"]
+                              if e["id"] in ("episto", "freelance", "kxp")]
+        data["projects"] = data["projects"][:1]
+        _, pages = cv_render.render_pdf(browser, data, out)
+    if pages > 2:
+        try:
+            os.remove(out)
+        except OSError:
+            pass
+        return None
+    return {"cv_pdf": f"prepared/cv/{job_id}.pdf", "cv_text": cv_render.to_markdown(data)}
+
+
+def has_tailored_cv(job_id):
+    p = os.path.join(PREPARED_DIR, f"{job_id}.json")
+    try:
+        d = json.load(open(p, encoding="utf-8"))
+    except (FileNotFoundError, json.JSONDecodeError):
+        return False
+    return bool(d.get("cv_pdf")) and os.path.exists(os.path.join(TAILORED_DIR, f"{job_id}.pdf"))
+
+
+def add_tailored_cv(job_id, job_text, info, lang, browser):
+    """Add a tailored CV to an already-written prepared json. Never raises. After
+    two failed tries the job is left on the master CV (cv_fail) instead of being
+    retried on every run."""
+    p = os.path.join(PREPARED_DIR, f"{job_id}.json")
+    try:
+        d = json.load(open(p, encoding="utf-8"))
+    except (FileNotFoundError, json.JSONDecodeError):
+        return False
+    try:
+        res = make_tailored_cv(job_id, job_text, info, lang, browser)
+    except QuotaExhausted:
+        return False
+    except Exception as e:
+        print(f"  tailored CV failed: {type(e).__name__}: {e}")
+        res = None
+    if res:
+        d.update(res)
+        d.pop("cv_fail", None)
+    else:
+        d["cv_fail"] = int(d.get("cv_fail", 0)) + 1
+    save_json(p, d)
+    return bool(res)
+
+
+def backfill_tailored_cvs(browser, jobs, budget=None):
+    """Tailor a CV for Ready jobs that have a letter but no tailored CV yet, best
+    fits first. Re-reads the posting (same as the letter backfill). Budgeted per run."""
+    budget = CV_TAILOR_BUDGET if budget is None else budget
+    todo = []
+    for j in jobs["jobs"]:
+        jid = j.get("id")
+        p = os.path.join(PREPARED_DIR, f"{jid}.json")
+        try:
+            d = json.load(open(p, encoding="utf-8"))
+        except (FileNotFoundError, json.JSONDecodeError):
+            continue
+        if not d.get("cover_letter") or int(d.get("cv_fail", 0)) >= 2 or has_tailored_cv(jid):
+            continue
+        todo.append(j)
+    todo.sort(key=lambda j: (bool(j.get("dutch_stretch")), -int(j.get("match_score", 0) or 0)))
+    todo = todo[:budget]
+    if not todo:
+        return 0
+    print(f"\nTailoring CVs for {len(todo)} matched job(s)...")
+    done = 0
+    for j in todo:
+        jid, url = j.get("id"), j.get("url")
+        job_text, _mail = fetch_job_detail(browser, url, jid, check_closed=True)
+        if job_text == LI_CLOSED:
+            _drop_closed(jobs, jid)
+            print(f"  CLOSED — removed {j.get('title','')[:50]}")
+            continue
+        if not job_text:
+            continue
+        lang = job_lang(j.get("title"), job_text)
+        if add_tailored_cv(jid, job_text, {"title": j.get("title", ""),
+                                            "company": j.get("company", "")}, lang, browser):
+            done += 1
+            print(f"  📄 {j.get('title', '')[:50]}")
+        time.sleep(1)
+    print(f"Tailored CVs done: {done}.")
+    return done
+
+
+def prune_tailored_cvs(jobs):
+    """Delete tailored CV PDFs of jobs that are no longer in Ready, so the repo
+    does not keep a PDF for every job ever seen."""
+    keep = {str(j.get("id")) for j in jobs.get("jobs", [])}
+    try:
+        names = os.listdir(TAILORED_DIR)
+    except OSError:
+        return 0
+    gone = 0
+    for n in names:
+        if n.endswith(".pdf") and n[:-4] not in keep:
+            try:
+                os.remove(os.path.join(TAILORED_DIR, n))
+                gone += 1
+            except OSError:
+                pass
+    return gone
+
+
+def write_letter(job_id, url, job_text, apply_email, cv_text, info=None, browser=None):
     """Pre-write the application email + cover letter for one matched job and
     save it where the app's '✍️ Write my letter' button reads it
     (docs/prepared/<id>.json). Returns True on success. Never raises — a failed
@@ -2317,8 +2497,10 @@ def write_letter(job_id, url, job_text, apply_email, cv_text, info=None):
         "email_body": docs.get("email_body", ""),
         "cover_letter": docs.get("cover_letter", ""),
         "cv_highlights": docs.get("cv_highlights", ""),
-        "fmt": 4,   # 4 = no per-job CV; the app serves the one real CV
+        "fmt": 5,   # 5 = letter + a CV tailored to the job (cv_pdf), when it could be made
     })
+    if browser is not None:
+        add_tailored_cv(job_id, job_text, info, lang, browser)
     return True
 
 
@@ -2331,10 +2513,8 @@ def has_letter(job_id):
     rewrites them in the posting's OWN language. Until a letter's turn comes the
     app keeps showing the bilingual text, which still works.
 
-    The CV used to be part of this test, back when each letter carried its own
-    rewritten copy. It no longer does — there is one CV, served by the app from
-    cv.en.md / cv.nl.md — so requiring it here would send every letter ever
-    written back through the generator for nothing."""
+    The tailored CV is NOT part of this test: backfill_tailored_cvs adds it to
+    letters that are already written, without rewriting them."""
     p = os.path.join(PREPARED_DIR, f"{job_id}.json")
     try:
         d = json.load(open(p, encoding="utf-8"))
@@ -3240,6 +3420,10 @@ def main():
             # over. Finding a job the candidate can apply to comes before having
             # its letter pre-written.
             backfill_letters(browser, jobs, cv_text, budget=40, checkpoint=checkpoint)
+            backfill_tailored_cvs(browser, jobs)
+            _gone = prune_tailored_cvs(jobs)
+            if _gone:
+                print(f"  removed {_gone} tailored CV(s) of jobs that left Ready")
 
             # LAST, with whatever time/quota remains: re-check a small slice of the
             # saved pool under the current criteria (e.g. move Dutch-required
@@ -3454,7 +3638,7 @@ def revet_saved(browser, jobs, cv_text, budget=40, checkpoint=None):
             if write_letter(job_id, url, job_text,
                             apply_email or j.get("apply_email"), cv_text,
                             {"title": verdict.get("title", ""),
-                             "company": verdict.get("company", "")}):
+                             "company": verdict.get("company", "")}, browser=browser):
                 print("  ✍️ letter written")
         elif kept and apply_email:
             # Letter already exists — just backfill a recipient we newly found.
@@ -3766,7 +3950,8 @@ def backfill_letters(browser, jobs, cv_text, budget=30, checkpoint=None):
         j["lang"] = job_lang(j.get("title"), job_text)
         if write_letter(job_id, url, job_text,
                         apply_email or j.get("apply_email"), cv_text,
-                        {"title": j.get("title", ""), "company": j.get("company", "")}):
+                        {"title": j.get("title", ""), "company": j.get("company", "")},
+                        browser=browser):
             done += 1
             print(f"  ✍️ {j.get('title', '')[:50]}")
             if checkpoint and done % 10 == 0:
@@ -3864,7 +4049,7 @@ def _process_jobs(browser, new_links, seen, jobs, cv_text, checkpoint=None):
             # text in hand — the app's button then works instantly, no setup.
             if write_letter(job_id, url, job_text, apply_email, cv_text,
                             {"title": verdict.get("title", ""),
-                             "company": verdict.get("company", "")}):
+                             "company": verdict.get("company", "")}, browser=browser):
                 print("  ✍️ letter written")
             send_telegram(
                 f"<b>New job match ({verdict.get('match_score')}%)</b>\n"

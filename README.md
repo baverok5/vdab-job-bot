@@ -2,41 +2,39 @@
 
 ## The CV
 
-There is **one** CV. It is not rewritten, reordered or "tailored" for individual
-jobs — that was removed deliberately.
+The CV is **structured data** (new design with photo, two A4 pages), and every
+Ready job gets its **own copy, tailored to the posting**.
 
 | file | what it is |
 | --- | --- |
-| `cv.md` | the CV, English. The one that goes out with every English application. |
-| `cv.nl.md` | the same CV translated to Dutch. Nothing else differs. |
-| `docs/cv.pdf`, `docs/cv-nl.pdf` | rendered by `make_cv_pdf.py`, with clickable links |
-| `docs/cv.en.md`, `docs/cv.nl.md` | published copies the app reads to build its own PDF |
+| `cv_master.en.json`, `cv_master.nl.json` | the source of truth: the real CV in English and Dutch, every bullet with an id (same ids in both) |
+| `cv_photo.jpg` | the photo in the header |
+| `cv_render.py` | HTML/PDF design, markdown export and the check that keeps tailored CVs honest |
+| `cv.md`, `cv.nl.md`, `docs/cv.en.md`, `docs/cv.nl.md` | generated markdown (what the evaluator, letter writer and app read) |
+| `docs/cv.pdf`, `docs/cv-nl.pdf` | generated general CV (used when no tailored one exists) |
+| `docs/prepared/cv/<job id>.pdf` | the CV tailored to one job, plus `cv_pdf` / `cv_text` in `docs/prepared/<id>.json` |
 
-After editing `cv.md` or `cv.nl.md`, rebuild both:
+After editing a `cv_master.*.json`, rebuild the generated files:
 
 ```
-python3 make_cv_pdf.py                       # -> docs/cv.pdf  + docs/cv.en.md
-python3 make_cv_pdf.py cv.nl.md docs/cv-nl.pdf   # -> docs/cv-nl.pdf + docs/cv.nl.md
+python3 cv_render.py     # -> cv.md, cv.nl.md, docs/cv.*.md, docs/cv.pdf, docs/cv-nl.pdf
 ```
 
-`make_cv_pdf.py` reproduces the layout of the CV Baver supplied, measured off
-it: 9.5pt body, 12.5pt title-case section headings, 10.5pt bold job titles,
-bold run-in labels (`**SEO & GEO:**`), links in his blue with a real clickable
-annotation, Turkish letters via a /Differences encoding rather than
-transliteration, and one page — if a translation runs long the whole document
-is re-flowed a few percent smaller rather than spilling onto a second page. The app
-strips the markdown for anything shown on screen or pasted into a form, and its
-⬇️ CV button downloads `docs/cv.pdf` itself rather than rebuilding one, because
-a PDF assembled in the browser cannot carry the links.
+**Tailoring** (`tailor_cv` in `bot.py`): the writer model gets the posting and the
+CV's bullets by id. It returns a headline, a rewritten summary, which bullets to
+keep and in what order (lightly reworded to the posting's vocabulary), which
+projects to show and the skills order. `cv_render.merge_tailored` then drops
+anything that is not true: unknown ids, any number or web address not in the real
+CV, skills that are not in the CV. The three main jobs (Episto, freelance, KXP)
+always stay, and a tailored CV is at most two pages. The language follows the
+posting (Dutch posting -> Dutch CV). Each run tailors up to `CV_TAILOR_BUDGET`
+(120) Ready jobs that do not have one yet, best fits first, new matches get theirs
+with the letter, and PDFs of jobs that left Ready are deleted.
 
-A change to the CV reaches every letter at once, including ones written months
-ago, because the app serves the CV from those published files rather than from
-each stored letter.
-
-**When building a Gmail draft (the 📮 signal):** attach the CV PDF built from
-`cv.md` for an English posting, `cv.nl.md` for a Dutch one. Two separate PDFs —
-CV and cover letter are never merged. Never regenerate or reword the CV for the
-job.
+**When building a Gmail draft (the 📮 signal):** attach the tailored CV from the
+signal comment (`prepared/cv/<id>.pdf`) if it is named there, otherwise the general
+`docs/cv.pdf` (English) / `docs/cv-nl.pdf` (Dutch). CV and cover letter are never
+merged into one file.
 
 ## What a run costs, and the switches
 

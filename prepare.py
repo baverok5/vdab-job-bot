@@ -35,17 +35,21 @@ def main():
         browser = pw.chromium.launch(args=["--no-sandbox"])
         try:
             job_text, apply_email = bot.fetch_job_detail(browser, job_url, job_id)
+            if not job_text:
+                result = {"id": job_id, "url": job_url, "status": "error",
+                          "error": "Could not read the job page."}
+                bot.save_json(out_path, result)
+                raise SystemExit("Could not render job page")
+            docs = bot.generate_application(job_text, cv_text) or {}
+            # The CV tailored to this posting, printed while the browser is open.
+            lang = bot.job_lang("", job_text)
+            tailored = bot.make_tailored_cv(job_id, job_text, {"title": "", "company": ""},
+                                            lang, browser) or {}
         finally:
             browser.close()
 
-    if not job_text:
-        result = {"id": job_id, "url": job_url, "status": "error",
-                  "error": "Could not read the job page."}
-        bot.save_json(out_path, result)
-        raise SystemExit("Could not render job page")
-
-    docs = bot.generate_application(job_text, cv_text) or {}
     result = {
+        **tailored,
         "id": job_id,
         "url": job_url,
         "status": "ready" if docs else "error",
