@@ -1,7 +1,7 @@
 // Service worker for the VDAB Job Applier PWA.
 // Network-first for the app shell + data so updates always reach the phone
 // (previously the shell was cache-first, which pinned users to an old UI).
-const CACHE = "vjobs-v91";
+const CACHE = "vjobs-v92";
 const SHELL = [
   "./",
   "./index.html",
@@ -29,17 +29,23 @@ self.addEventListener("activate", (e) => {
   );
 });
 
-function networkFirst(request) {
+function networkFirst(request, keep = true, mode = "no-store") {
   // cache:"no-store" so the browser's own HTTP cache can't hand back a stale
   // shell: GitHub Pages serves index.html with max-age, which kept a phone on
   // an old app version (and so an old sync payload) even after a reload.
-  return fetch(request, { cache: "no-store" })
+  // The stored copy is keyed WITHOUT the ?t= cache-buster the app adds: keyed
+  // by full URL, every load added another copy (listing.json is ~38 MB) to the
+  // cache until the phone ran out of room.
+  const key = request.url.split("?")[0];
+  return fetch(request, { cache: mode })
     .then((r) => {
-      const copy = r.clone();
-      caches.open(CACHE).then((c) => c.put(request, copy));
+      if (keep && r.ok) {
+        const copy = r.clone();
+        caches.open(CACHE).then((c) => c.put(key, copy));
+      }
       return r;
     })
-    .catch(() => caches.match(request).then((r) => r || caches.match("./index.html")));
+    .catch(() => caches.match(key).then((r) => r || caches.match("./index.html")));
 }
 
 self.addEventListener("fetch", (e) => {
@@ -52,7 +58,10 @@ self.addEventListener("fetch", (e) => {
   if (isHTML || url.pathname.endsWith("jobs.json") || url.pathname.endsWith("listing.json") ||
       url.pathname.endsWith("cv.en.md") || url.pathname.endsWith("cv.nl.md") ||
       url.pathname.endsWith("cv.pdf") || url.pathname.endsWith("cv-nl.pdf")) {
-    e.respondWith(networkFirst(e.request));
+    // listing.json: not kept (38 MB) and revalidated with its ETag, so an
+    // unchanged file costs a 304, not a download.
+    const big = url.pathname.endsWith("listing.json");
+    e.respondWith(big ? networkFirst(e.request, false, "no-cache") : networkFirst(e.request));
     return;
   }
   // Static assets (icons, manifest): cache-first is fine.

@@ -301,6 +301,7 @@ def newest_linkedin_id(jobs):
            if str(j.get("id", "")).isdigit() and int(j["id"]) >= 1_000_000_000]
     return max(ids) if ids else 0
 CHECKPOINT_EVERY = 25  # save + git-push progress this often so a long run can't lose its work
+CHECKPOINT_MIN_SECONDS = 15 * 60   # ...but never commit more often than this
 
 # Bump this whenever the fit criteria in evaluate_job change. Saved matches that
 # were judged under an older version get re-vetted (a one-time migration) so the
@@ -2473,6 +2474,27 @@ def prune_tailored_cvs(jobs):
     return gone
 
 
+def prune_orphan_letters(jobs):
+    """Delete prepared letters of jobs that are neither in Ready nor in the Closed
+    pool (which also holds what you applied to). Letters were never cleaned up:
+    3,800 files sat in docs/prepared for ~850 Ready jobs."""
+    keep = {str(j.get("id")) for pool in ("jobs", "closed") for j in jobs.get(pool, [])}
+    try:
+        names = os.listdir(PREPARED_DIR)
+    except OSError:
+        return 0
+    gone = 0
+    for n in names:
+        stem = n[:-5]
+        if n.endswith(".json") and stem.isdigit() and stem not in keep:
+            try:
+                os.remove(os.path.join(PREPARED_DIR, n))
+                gone += 1
+            except OSError:
+                pass
+    return gone
+
+
 def write_letter(job_id, url, job_text, apply_email, cv_text, info=None, browser=None):
     """Pre-write the application email + cover letter for one matched job and
     save it where the app's '✍️ Write my letter' button reads it
@@ -3139,6 +3161,8 @@ def main():
               f"{len(title_no)} previously dropped titles.")
         title_no = set()
 
+    ckpt_last = [0.0]
+
     def checkpoint():
         """Persist current progress and push it, so a long run that dies partway
         (or is stopped) keeps everything screened so far. Best-effort: never let a
@@ -3149,6 +3173,12 @@ def main():
         save_jobs_split(jobs)
         save_json(SEEN_FILE, sorted(seen))
         save_json(SCREEN_FILE, {"title_no": sorted(title_no), "shortlist": sorted(shortlist), "title_screen_v": TITLE_SCREEN_VERSION})
+        # Files are saved every time, but a git commit only every few minutes:
+        # a run made ~100 commits of a 4 MB file, which is most of why .git is
+        # over half a GB. A crash now loses at most CHECKPOINT_MIN_SECONDS of work.
+        if time.time() - ckpt_last[0] < CHECKPOINT_MIN_SECONDS:
+            return
+        ckpt_last[0] = time.time()
         try:
             subprocess.run(["git", "add", JOBS_FILE, SEEN_FILE, SCREEN_FILE, PREPARED_DIR],
                            check=False, capture_output=True)
@@ -3424,6 +3454,9 @@ def main():
             _gone = prune_tailored_cvs(jobs)
             if _gone:
                 print(f"  removed {_gone} tailored CV(s) of jobs that left Ready")
+            _gone = prune_orphan_letters(jobs)
+            if _gone:
+                print(f"  removed {_gone} letter(s) of jobs that are no longer in Ready or Closed")
 
             # LAST, with whatever time/quota remains: re-check a small slice of the
             # saved pool under the current criteria (e.g. move Dutch-required

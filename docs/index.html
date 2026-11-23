@@ -238,7 +238,7 @@
 <div class="toast" id="toast"></div>
 
 <script>
-const APP_VERSION = "v91";                // MUST match CACHE in sw.js — it is how you tell whether the phone got the deploy
+const APP_VERSION = "v92";               // MUST match CACHE in sw.js — it is how you tell whether the phone got the deploy
 const LS = "jobstatus";                    // { jobId: "applied" | "skipped" | "closed" }
 const LS_AT = "jobstatus_at";              // { jobId: epoch ms the status was set }
 const getStatus = () => JSON.parse(localStorage.getItem(LS) || "{}");
@@ -1812,7 +1812,7 @@ document.getElementById("qclear").addEventListener("click", () => {
 function refreshData() {
   return fetch("jobs.json?t=" + Date.now())
     .then((r) => r.json())
-    .then((d) => { DATA = d; render(); return fetch("listing.json?t=" + Date.now()); })
+    .then((d) => { DATA = d; render(); return fetch("listing.json", { cache: "no-cache" }); })
     .then((r) => (r && r.ok ? r.json() : null))
     .then((extra) => {
       if (!extra) return true;
