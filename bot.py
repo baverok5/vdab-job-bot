@@ -2269,9 +2269,42 @@ with writing — that is normal)."""
   "cover_letter": "the full cover letter (motivatiebrief) in DUTCH (250-330 words)","""
     prompt = f"""You are an expert career writer. Write application documents for this job,
 based ONLY on the real CV below. NEVER invent experience, education, or skills
-not in the CV. Professional but warm, no clichés. {style} Write all web
-addresses as bare text (baverok.com, linkedin.com/in/baverok) — never markdown
-links, never http(s):// prefixes.
+not in the CV. {style} Write all web addresses as bare text (baverok.com,
+linkedin.com/in/baverok) — never markdown links, never http(s):// prefixes.
+
+VOICE — personal and confident, like a real person writing to a real person:
+- Write in the first person, warm and direct, the way Baver would talk to the
+  hiring manager over coffee. Name the company and say something specific about
+  what THEY do or ask for (from the posting) and why it appeals to him. No
+  generic praise ("exciting opportunity", "dynamic team", "I am excited to apply").
+- Open with a concrete strength of his that this job needs (a real result from
+  the CV, e.g. the 4.57% CTR and 53 clicks Google Ads test, the #3 / #4 Google
+  rankings, the ~600-page site build), not with enthusiasm.
+- Sound like someone who already does this work and wants to do more of it.
+- NEVER undersell him. Do not write "still developing", "eager to learn X",
+  "limited experience", "I have not yet", "I know the basics", "although I
+  lack", or any apology, hedge or admission of a gap. If the posting asks for
+  something he does not have, DO NOT MENTION IT AT ALL: write about what he does
+  have that is closest, stated as fact (e.g. for SEA: "I run Google Ads Search
+  campaigns and chose buyer-intent keywords that earned a 4.57% CTR"). Never
+  list requirements he misses and never say a skill is new to him.
+- Dutch: state it as a plain fact only if the posting asks about languages, in
+  one positive clause ("I work in English every day and I write and speak
+  Dutch at a working level"). Never apologise for it, never call it "improving".
+
+PRACTICAL FACTS you may use ONLY when the posting makes them relevant (location,
+commuting, hours, start date, mobility). Never invent others:
+- He lives in Zwijndrecht, near Antwerp, in Belgium, and has his own car.
+  Working in or travelling to Brussels (or anywhere in Flanders / Brussels) is
+  no problem for him. When the posting says the office is in Brussels, or asks
+  for on-site / hybrid work or travel, say so in one natural sentence in the
+  letter and in the email (e.g. "I have my own car, so the daily trip to your
+  Brussels office is no problem").
+- Do not mention the car or his home town when the job is fully remote or the
+  posting says nothing about location.
+
+END the letter with a confident, specific closing: what he would do in the first
+weeks, and a request to talk. No "I hope", no "I would be grateful".
 
 Reply ONLY with JSON:
 {{
@@ -2279,9 +2312,8 @@ Reply ONLY with JSON:
   "cv_highlights": "5 bullet points (one newline-separated string) reordering the CV's most relevant points for THIS job"
 }}
 
-Do NOT rewrite, reorder or tailor the CV itself. One fixed CV goes out with every
-application — English as written, Dutch as a straight translation of it — so the
-CV below is background for the letter, not something to reshape.
+The CV itself is handled separately (a copy tailored to this job is attached), so
+the CV below is the source of facts for the letter. Do not paste it back.
 
 THE JOB ({job_info.get('title', '')} at {job_info.get('company', '')}):
 {job_text[:6000]}
@@ -2519,7 +2551,7 @@ def write_letter(job_id, url, job_text, apply_email, cv_text, info=None, browser
         "email_body": docs.get("email_body", ""),
         "cover_letter": docs.get("cover_letter", ""),
         "cv_highlights": docs.get("cv_highlights", ""),
-        "fmt": 5,   # 5 = letter + a CV tailored to the job (cv_pdf), when it could be made
+        "fmt": 6,   # 6 = personal-voice letter (no apologies, car/Brussels note) + tailored CV when made
     })
     if browser is not None:
         add_tailored_cv(job_id, job_text, info, lang, browser)
@@ -2540,7 +2572,7 @@ def has_letter(job_id):
     p = os.path.join(PREPARED_DIR, f"{job_id}.json")
     try:
         d = json.load(open(p, encoding="utf-8"))
-        return bool(d.get("cover_letter")) and d.get("fmt", 0) >= 3
+        return bool(d.get("cover_letter")) and d.get("fmt", 0) >= 6
     except (FileNotFoundError, json.JSONDecodeError):
         return False
 
@@ -3449,7 +3481,7 @@ def main():
             # Now the rest of the letter backfill, on the quota screening left
             # over. Finding a job the candidate can apply to comes before having
             # its letter pre-written.
-            backfill_letters(browser, jobs, cv_text, budget=40, checkpoint=checkpoint)
+            backfill_letters(browser, jobs, cv_text, budget=120, checkpoint=checkpoint)
             backfill_tailored_cvs(browser, jobs)
             _gone = prune_tailored_cvs(jobs)
             if _gone:
