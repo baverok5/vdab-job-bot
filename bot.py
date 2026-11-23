@@ -3840,6 +3840,37 @@ def _stepstone_open(browser, job):
     return None, None
 
 
+_CLOSED_PHRASES = re.compile(
+    r"no longer (?:available|accepting|open)"
+    r"|(?:job|position|vacancy|listing|posting)[^.<>]{0,30}(?:has been filled|is filled|has expired|is expired|is closed|has closed|was removed)"
+    r"|vacature[^.<>]{0,40}(?:niet meer|verlopen|gesloten|vervuld|offline)"
+    r"|(?:offre|poste)[^.<>]{0,40}(?:n'est plus|expir|pourvu)", re.I)
+
+
+def _board_open(browser, job):
+    """Every other source (Talent.com, EuroBrussels, Jobicy, Remotive, RemoteOK,
+    jobinbelgium...): fetch the posting's own page. Only a 404/410 or an expiry
+    notice at the top of the page counts as closed; a normal page is open; blocks,
+    timeouts and thin pages are "could not tell"."""
+    url = job.get("url") or ""
+    if not url.startswith("http"):
+        return None, None
+    try:
+        r = requests.get(url, timeout=25, allow_redirects=True,
+                         headers={"User-Agent": HEADERS["User-Agent"],
+                                  "Accept-Language": HEADERS.get("Accept-Language", "en")})
+    except requests.RequestException:
+        return None, None
+    if r.status_code in (404, 410):
+        return False, "Closed — the job board no longer has this posting."
+    if r.status_code != 200:
+        return None, None
+    text = BeautifulSoup(r.text, "html.parser").get_text(" ", strip=True)
+    if _CLOSED_PHRASES.search(text[:4000]):
+        return False, "Closed — the page says this posting is no longer available."
+    return (True, None) if len(text) > 1500 else (None, None)
+
+
 # source -> checker(browser, job) -> (state, why)
 #   state True  : positively still open
 #   state False : positively closed; `why` says how we know
@@ -3847,7 +3878,8 @@ def _stepstone_open(browser, job):
 # A checker may only return False on definite evidence, because False moves a
 # live vacancy out of the feed. "Could not tell" keeps the job where it is.
 _OPEN_CHECKERS = {"LinkedIn": _linkedin_open, "VDAB": _vdab_open,
-                  "EURES": _eures_open, "StepStone": _stepstone_open}
+                  "EURES": _eures_open, "StepStone": _stepstone_open,
+                  "other": _board_open}
 
 
 def check_still_open(browser, job):
@@ -3889,6 +3921,7 @@ def sweep_closed(browser, jobs, max_minutes=None, checkpoint=None):
     per = {}                                   # source -> [checked, closed, unknown]
     moved = checked = 0
     batch = []                                 # (job, state, why)
+    other = []                                 # job-board results, kept apart (see below)
 
     def apply_batch():
         nonlocal moved
@@ -3920,7 +3953,11 @@ def sweep_closed(browser, jobs, max_minutes=None, checkpoint=None):
         row[0] += 1
         row[1] += st is False
         row[2] += st is None
-        batch.append((j, st, why or "Closed — the posting no longer accepts applications."))
+        entry = (j, st, why or "Closed — the posting no longer accepts applications.")
+        if src == "other":       # the unverified generic checker: judged as a group below
+            other.append(entry)
+        else:
+            batch.append(entry)
         checked += 1
         if len(batch) >= 50:
             if not apply_batch():
@@ -3929,6 +3966,16 @@ def sweep_closed(browser, jobs, max_minutes=None, checkpoint=None):
             if checkpoint and checked % 100 == 0:
                 checkpoint()
         time.sleep(1 if src == "LinkedIn" else 0.4)   # LinkedIn rate-limits
+    if healthy and other:
+        # The generic board checker has no per-site proof like VDAB's API, so a
+        # blocking site could look like "everything closed". If half of them or
+        # more come back closed, none of them are believed.
+        n_closed = sum(1 for _, s, _ in other if s is False)
+        if len(other) >= 8 and n_closed / len(other) >= 0.5:
+            print(f"  ⚠️  {n_closed} of {len(other)} job-board postings came back closed — "
+                  f"that looks like a block page, so none of them are moved.")
+        else:
+            batch.extend(other)
     if healthy:
         apply_batch()
     for src, (n, c, u) in sorted(per.items()):

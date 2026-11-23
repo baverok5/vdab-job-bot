@@ -1,0 +1,54 @@
+name: Closed-job check
+
+# The daily "is it still open?" agent. Re-checks every job in Ready and removes the
+# ones that closed. No AI key, no cost. Runs before the long bot run, so Ready is
+# clean each morning even if that run is late or fails.
+on:
+  schedule:
+    - cron: "30 4 * * *"      # 04:30 UTC (GitHub may start it later)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: job-bot             # same group as the bot: they never edit jobs.json together
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          pip install requests beautifulsoup4 playwright
+          python -m playwright install --with-deps chromium
+
+      - name: Check every Ready job
+        env:
+          CLOSED_SWEEP_MINUTES: "100"
+        run: python -u closed_check.py
+
+      - name: Commit results
+        run: |
+          git config user.name "job-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add docs/jobs.json docs/listing.json docs/prepared
+          git diff --cached --quiet && { echo "nothing to commit"; exit 0; }
+          git commit -m "Closed-job check $(date -u +'%Y-%m-%d %H:%M')"
+          for i in 1 2 3 4 5; do
+            git push origin HEAD:main && { echo "pushed"; exit 0; }
+            echo "push rejected — syncing with remote (attempt $i)"
+            git fetch origin main
+            git merge -X ours --no-edit origin/main || { git merge --abort || true; }
+            sleep $((RANDOM % 6 + 3))
+          done
+          echo "push still failing after retries" >&2
+          exit 1
