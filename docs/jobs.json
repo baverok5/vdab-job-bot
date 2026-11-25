@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-25 20:18 UTC",
+ "updated": "2026-11-25 22:58 UTC",
  "jobs": [
   {
    "id": "420470929",
@@ -13130,28 +13130,6 @@
    "closed_check_v": 2
   },
   {
-   "id": "4471876189",
-   "url": "https://www.linkedin.com/jobs/view/4471876189",
-   "title": "Google Ads Expert",
-   "company": "boostU",
-   "location": "Herentals",
-   "match_score": 38,
-   "reason": "The candidate has relevant experience and skills for this Google Ads Expert role, though Dutch language proficiency is a stretch.",
-   "apply_email": "",
-   "found_at": "2026-09-27 01:34",
-   "status": "new",
-   "details": "Role: Google Ads Expert.\nMain Tasks: Design, implement, and optimize Google Ads campaigns (Search, Performance Max, Shopping, Display, Demand Gen, YouTube), data analysis, tracking via GTM/GA4/server-side tagging, client reporting, AI advertising trends.\nContract Type: Full-time, competitive salary with bonus.\nSchedule: Not specified.\nLanguage: Dutch (fluent required, candidate has B1 writing/A2+ speaking), English (fluent).\nPay: Competitive salary with bonus.",
-   "why_good": "Candidate has experience with Google Analytics and Search Console, and lists Semrush and Ahrefs which are related to campaign analysis.\nHas a Google Ads Search Certification.\nWrites Python for automation, which can be relevant for scripting in ad platforms.\nExperience managing client websites and content is transferable to understanding client needs.\nThis role requires stronger Dutch than the candidate currently possesses (B1 writing, A2+ speaking) but is deemed a stretch rather than a hard fail.",
-   "why_bad": "The job explicitly requires fluent Dutch, while the candidate's Dutch is B1 writing and A2+ speaking.\nWhile not a hard fail, the candidate's direct Google Ads campaign management experience is primarily through certifications and less extensive than the 3 years requested, though they do have analytics experience.",
-   "dutch_stretch": true,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-11-25 19:43",
-   "closed_check_v": 2
-  },
-  {
    "id": "75116827",
    "url": "https://www.vdab.be/vindeenjob/vacatures/75116827/junior-marketplace-manager-bol-com",
    "title": "Junior Marketplace Manager Bol.com",
@@ -18319,6 +18297,28 @@
   }
  ],
  "rejected": [
+  {
+   "id": "4471876189",
+   "url": "https://www.linkedin.com/jobs/view/4471876189",
+   "title": "Google Ads Expert",
+   "company": "boostU",
+   "location": "Herentals",
+   "match_score": 38,
+   "reason": "First seen about 46 days ago — a vacancy open this long has almost always been filled.",
+   "apply_email": "",
+   "found_at": "2026-09-27 01:34",
+   "status": "new",
+   "details": "Role: Google Ads Expert.\nMain Tasks: Design, implement, and optimize Google Ads campaigns (Search, Performance Max, Shopping, Display, Demand Gen, YouTube), data analysis, tracking via GTM/GA4/server-side tagging, client reporting, AI advertising trends.\nContract Type: Full-time, competitive salary with bonus.\nSchedule: Not specified.\nLanguage: Dutch (fluent required, candidate has B1 writing/A2+ speaking), English (fluent).\nPay: Competitive salary with bonus.",
+   "why_good": "Candidate has experience with Google Analytics and Search Console, and lists Semrush and Ahrefs which are related to campaign analysis.\nHas a Google Ads Search Certification.\nWrites Python for automation, which can be relevant for scripting in ad platforms.\nExperience managing client websites and content is transferable to understanding client needs.\nThis role requires stronger Dutch than the candidate currently possesses (B1 writing, A2+ speaking) but is deemed a stretch rather than a hard fail.",
+   "why_bad": "First seen about 46 days ago — a vacancy open this long has almost always been filled.",
+   "dutch_stretch": true,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 19,
+   "closed_check": "2026-11-25 19:43",
+   "closed_check_v": 2
+  },
   {
    "id": "283083017",
    "url": "https://be.talent.com/view?id=622414425881839685",
