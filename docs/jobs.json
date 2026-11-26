@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26 19:57 UTC",
+ "updated": "2026-11-26 21:26 UTC",
  "jobs": [
   {
    "id": "420470929",
@@ -1404,31 +1404,6 @@
    "internship": false,
    "lang": "nl",
    "cv_fit_v": 19,
-   "closed_check": "2026-11-26 19:24",
-   "closed_check_v": 2
-  },
-  {
-   "id": "424885806",
-   "url": "https://europa.eu/eures/portal/jv-se/jv-details/NGNjMzk5ZjctMTEzMi00NDQyLTgwNTYtZWM2ZTM1OTBhZTJmIDM",
-   "title": "Digital Marketeer",
-   "company": "Oh'Green",
-   "location": "Unknown",
-   "match_score": 62,
-   "reason": "Digital marketing/SEO/e-commerce role requiring only Dutch B1, matching the candidate's core skills and experience level.",
-   "apply_email": "",
-   "found_at": "2026-10-11 19:01",
-   "status": "new",
-   "details": "Digital Marketeer at Oh'Green (green/lifestyle/pet retail brand)\nManage and optimize online platforms: website UX, speed, conversion, SEO for product categories\nSet up and optimize marketing automation e-mail journeys, campaigns, segmentation, A/B testing\nDaily KPI tracking/reporting with Google Analytics, GTM, CRM and sales data\nCross-functional work with purchasing, marketing and store teams\nLanguage: Dutch B1 required; no French mentioned",
-   "why_good": "Asks for website optimization and CMS knowledge -> candidate runs WordPress/Elementor/Astra client sites and Shopify stores at Episto\nWants SEO optimization of product categories -> candidate does on-page SEO, keyword research and SEO content daily\nNeeds analytics and data-driven reporting (GA, GTM) -> candidate uses Google Analytics and Search Console, certified GA4\nMarketing automation and e-mail journeys are the main gap -> candidate has no Actito/Custobar/Klaviyo experience, would need to learn on the job\nRetail/e-commerce experience preferred -> candidate manages Shopify webshops (store design, catalogue, blog content)",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": false,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19,
-   "lang_req": {
-    "nl": "b1"
-   },
    "closed_check": "2026-11-26 19:24",
    "closed_check_v": 2
   },
@@ -13074,28 +13049,6 @@
    "closed_check_v": 2
   },
   {
-   "id": "74811734",
-   "url": "https://www.vdab.be/vindeenjob/vacatures/74811734/digital-marketeer",
-   "title": "Digital Marketeer",
-   "company": "Oh'Green",
-   "location": "Aarschot",
-   "match_score": 38,
-   "reason": "Digital marketing role in the candidate's goal field with only a ~2-year experience ask and Dutch at 'Goed' level, no French required.",
-   "apply_email": "",
-   "found_at": "2026-10-11 19:01",
-   "status": "new",
-   "details": "- Digital Marketeer for Oh'Green (garden/lifestyle/pet retail brand), Aarschot\n- Website management & SEO optimization of product categories, product/content updates with purchasing and store teams\n- Marketing automation: e-mail journeys, segmentation, campaign execution and analysis\n- Data-driven tracking/reporting with Google Analytics, GTM, CRM data; A/B testing\n- Full-time, permanent contract (vaste job, onbepaalde duur), day work, hybrid (2 days remote)\n- Languages: Dutch (Goed); Studies: Bachelor; Experience: min. 2 years",
-   "why_good": "- Asks for website management and SEO optimization of product categories -> candidate does on-page SEO, keyword research and CMS content management at Episto\n- Wants CMS experience -> candidate publishes and maintains WordPress/Elementor/Astra/Rank Math sites and Shopify webshops\n- Needs analytics and data-driven reporting (GA, GTM, CRM) -> candidate uses Google Analytics, Search Console, Semrush and Ahrefs daily\n- Campaigns, e-mail automation and A/B testing are new territory -> candidate's real overlap is SEO/content/web, not marketing automation (Actito, Custobar, Klaviyo), so this is a genuine gap\n- Posting asks min. 2 years and a Bachelor -> candidate has ~4 months and no completed degree, but the ask is not senior and is worth a shot",
-   "why_bad": "",
-   "dutch_stretch": false,
-   "exp_stretch": true,
-   "internship": false,
-   "lang": "nl",
-   "cv_fit_v": 19,
-   "closed_check": "2026-11-26 19:24",
-   "closed_check_v": 2
-  },
-  {
    "id": "4477812680",
    "url": "https://www.linkedin.com/jobs/view/4477812680",
    "title": "SEO-specialist",
@@ -18410,6 +18363,53 @@
   }
  ],
  "rejected": [
+  {
+   "id": "74811734",
+   "url": "https://www.vdab.be/vindeenjob/vacatures/74811734/digital-marketeer",
+   "title": "Digital Marketeer",
+   "company": "Oh'Green",
+   "location": "Aarschot",
+   "match_score": 38,
+   "reason": "First seen about 46 days ago — a vacancy open this long has almost always been filled.",
+   "apply_email": "",
+   "found_at": "2026-10-11 19:01",
+   "status": "new",
+   "details": "- Digital Marketeer for Oh'Green (garden/lifestyle/pet retail brand), Aarschot\n- Website management & SEO optimization of product categories, product/content updates with purchasing and store teams\n- Marketing automation: e-mail journeys, segmentation, campaign execution and analysis\n- Data-driven tracking/reporting with Google Analytics, GTM, CRM data; A/B testing\n- Full-time, permanent contract (vaste job, onbepaalde duur), day work, hybrid (2 days remote)\n- Languages: Dutch (Goed); Studies: Bachelor; Experience: min. 2 years",
+   "why_good": "- Asks for website management and SEO optimization of product categories -> candidate does on-page SEO, keyword research and CMS content management at Episto\n- Wants CMS experience -> candidate publishes and maintains WordPress/Elementor/Astra/Rank Math sites and Shopify webshops\n- Needs analytics and data-driven reporting (GA, GTM, CRM) -> candidate uses Google Analytics, Search Console, Semrush and Ahrefs daily\n- Campaigns, e-mail automation and A/B testing are new territory -> candidate's real overlap is SEO/content/web, not marketing automation (Actito, Custobar, Klaviyo), so this is a genuine gap\n- Posting asks min. 2 years and a Bachelor -> candidate has ~4 months and no completed degree, but the ask is not senior and is worth a shot",
+   "why_bad": "First seen about 46 days ago — a vacancy open this long has almost always been filled.",
+   "dutch_stretch": false,
+   "exp_stretch": true,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 19,
+   "closed_check": "2026-11-26 19:24",
+   "closed_check_v": 2
+  },
+  {
+   "id": "424885806",
+   "url": "https://europa.eu/eures/portal/jv-se/jv-details/NGNjMzk5ZjctMTEzMi00NDQyLTgwNTYtZWM2ZTM1OTBhZTJmIDM",
+   "title": "Digital Marketeer",
+   "company": "Oh'Green",
+   "location": "Unknown",
+   "match_score": 62,
+   "reason": "First seen about 46 days ago — a vacancy open this long has almost always been filled.",
+   "apply_email": "",
+   "found_at": "2026-10-11 19:01",
+   "status": "new",
+   "details": "Digital Marketeer at Oh'Green (green/lifestyle/pet retail brand)\nManage and optimize online platforms: website UX, speed, conversion, SEO for product categories\nSet up and optimize marketing automation e-mail journeys, campaigns, segmentation, A/B testing\nDaily KPI tracking/reporting with Google Analytics, GTM, CRM and sales data\nCross-functional work with purchasing, marketing and store teams\nLanguage: Dutch B1 required; no French mentioned",
+   "why_good": "Asks for website optimization and CMS knowledge -> candidate runs WordPress/Elementor/Astra client sites and Shopify stores at Episto\nWants SEO optimization of product categories -> candidate does on-page SEO, keyword research and SEO content daily\nNeeds analytics and data-driven reporting (GA, GTM) -> candidate uses Google Analytics and Search Console, certified GA4\nMarketing automation and e-mail journeys are the main gap -> candidate has no Actito/Custobar/Klaviyo experience, would need to learn on the job\nRetail/e-commerce experience preferred -> candidate manages Shopify webshops (store design, catalogue, blog content)",
+   "why_bad": "First seen about 46 days ago — a vacancy open this long has almost always been filled.",
+   "dutch_stretch": false,
+   "exp_stretch": false,
+   "internship": false,
+   "lang": "nl",
+   "cv_fit_v": 19,
+   "lang_req": {
+    "nl": "b1"
+   },
+   "closed_check": "2026-11-26 19:24",
+   "closed_check_v": 2
+  },
   {
    "id": "75115444",
    "url": "https://www.vdab.be/vindeenjob/vacatures/75115444/comptable-comptabilite-generale-e-commerce-service-client",
