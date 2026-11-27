@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27 19:55 UTC",
+ "updated": "2026-11-27 23:10 UTC",
  "jobs": [
   {
    "id": "420470929",
@@ -324,28 +324,6 @@
    "lang_req": {
     "nl": "b1"
    },
-   "closed_check": "2026-11-27 19:19",
-   "closed_check_v": 2
-  },
-  {
-   "id": "4472704625",
-   "url": "https://www.linkedin.com/jobs/view/4472704625",
-   "title": "Social Media Manager",
-   "company": "Meta Endurance",
-   "location": "Unknown",
-   "match_score": 65,
-   "reason": "The candidate's skills and experience align well with this junior social media role, with only minor gaps in specific platform experience.",
-   "apply_email": "",
-   "found_at": "2026-09-28 12:07",
-   "status": "new",
-   "details": "Role: Social Media Manager\nMain tasks: Social media strategy, content creation (visuals and copywriting), social media management, event coverage, data analysis.\nContract type: Not specified\nSchedule: Not specified\nLanguage: English (required)\nPay: Not specified",
-   "why_good": "- The candidate has strong experience in digital marketing, content creation, and analytics, which are core to this role.\n- Experience with WordPress/Elementor and CMS management demonstrates content management skills.\n- The role emphasizes content creation and copywriting, aligning with the candidate's profile.\n- The required experience of ~2-4 years is a stretch for the candidate's ~2 years of relevant experience, but still worth applying for.",
-   "why_bad": "- The posting mentions Instagram, YouTube, and TikTok, and while the candidate has general content creation experience, specific deep experience on these platforms is not detailed.\n- The role asks for around 2-4 years of experience, and the candidate has closer to 2 years of relevant experience.",
-   "dutch_stretch": false,
-   "exp_stretch": true,
-   "internship": false,
-   "lang": "en",
-   "cv_fit_v": 19,
    "closed_check": "2026-11-27 19:19",
    "closed_check_v": 2
   },
@@ -13301,28 +13279,6 @@
    "closed_check_v": 2
   },
   {
-   "id": "4472717391",
-   "url": "https://www.linkedin.com/jobs/view/4472717391",
-   "title": "Digital Marketing Intern",
-   "company": "Nestlé",
-   "location": "Brussels",
-   "match_score": 38,
-   "reason": "This is a paid internship opportunity that aligns well with the candidate's goal field and experience, despite a language stretch.",
-   "apply_email": "careers@be.nestle.com",
-   "found_at": "2026-09-28 12:06",
-   "status": "new",
-   "details": "Role: Digital Marketing Intern\nMain tasks: Content creation for website, CRM and data management, community management, social media handling, loyalty program contribution.\nContract type: Paid internship, 6 months.\nSchedule: 38 hours/week, 5 days.\nLanguage: Dutch/French (fluent preferred), English (strong command).\nPay: 250€ - 1200€ net per month.",
-   "why_good": "Internship role aligned with candidate's goal field (Digital Marketing, SEO, Content).\nTasks include content creation, SEO, social media handling, and CRM, matching candidate's skills.\nNo degree is strictly required; it's a preference or current pursuit.\nPaid internship with flexibility (remote work, transport reimbursement).",
-   "why_bad": "Requires fluent Dutch, which the candidate is currently working towards (B1 writing, A2+ speaking).\nWhile not a hard fail due to the internship leniency, fluent Dutch is a stated strong preference/requirement.",
-   "dutch_stretch": true,
-   "exp_stretch": false,
-   "internship": true,
-   "lang": "en",
-   "cv_fit_v": 19,
-   "closed_check": "2026-11-27 19:19",
-   "closed_check_v": 2
-  },
-  {
    "id": "75135424",
    "url": "https://www.vdab.be/vindeenjob/vacatures/75135424/junior-marketing-digital-content-coordinator",
    "title": "Junior Marketing & Digital Content Coordinator",
@@ -18791,6 +18747,50 @@
   }
  ],
  "rejected": [
+  {
+   "id": "4472717391",
+   "url": "https://www.linkedin.com/jobs/view/4472717391",
+   "title": "Digital Marketing Intern",
+   "company": "Nestlé",
+   "location": "Brussels",
+   "match_score": 38,
+   "reason": "First seen about 45 days ago — a vacancy open this long has almost always been filled.",
+   "apply_email": "careers@be.nestle.com",
+   "found_at": "2026-09-28 12:06",
+   "status": "new",
+   "details": "Role: Digital Marketing Intern\nMain tasks: Content creation for website, CRM and data management, community management, social media handling, loyalty program contribution.\nContract type: Paid internship, 6 months.\nSchedule: 38 hours/week, 5 days.\nLanguage: Dutch/French (fluent preferred), English (strong command).\nPay: 250€ - 1200€ net per month.",
+   "why_good": "Internship role aligned with candidate's goal field (Digital Marketing, SEO, Content).\nTasks include content creation, SEO, social media handling, and CRM, matching candidate's skills.\nNo degree is strictly required; it's a preference or current pursuit.\nPaid internship with flexibility (remote work, transport reimbursement).",
+   "why_bad": "First seen about 45 days ago — a vacancy open this long has almost always been filled.",
+   "dutch_stretch": true,
+   "exp_stretch": false,
+   "internship": true,
+   "lang": "en",
+   "cv_fit_v": 19,
+   "closed_check": "2026-11-27 19:19",
+   "closed_check_v": 2
+  },
+  {
+   "id": "4472704625",
+   "url": "https://www.linkedin.com/jobs/view/4472704625",
+   "title": "Social Media Manager",
+   "company": "Meta Endurance",
+   "location": "Unknown",
+   "match_score": 65,
+   "reason": "First seen about 46 days ago — a vacancy open this long has almost always been filled.",
+   "apply_email": "",
+   "found_at": "2026-09-28 12:07",
+   "status": "new",
+   "details": "Role: Social Media Manager\nMain tasks: Social media strategy, content creation (visuals and copywriting), social media management, event coverage, data analysis.\nContract type: Not specified\nSchedule: Not specified\nLanguage: English (required)\nPay: Not specified",
+   "why_good": "- The candidate has strong experience in digital marketing, content creation, and analytics, which are core to this role.\n- Experience with WordPress/Elementor and CMS management demonstrates content management skills.\n- The role emphasizes content creation and copywriting, aligning with the candidate's profile.\n- The required experience of ~2-4 years is a stretch for the candidate's ~2 years of relevant experience, but still worth applying for.",
+   "why_bad": "First seen about 46 days ago — a vacancy open this long has almost always been filled.",
+   "dutch_stretch": false,
+   "exp_stretch": true,
+   "internship": false,
+   "lang": "en",
+   "cv_fit_v": 19,
+   "closed_check": "2026-11-27 19:19",
+   "closed_check_v": 2
+  },
   {
    "id": "75108196",
    "url": "https://www.vdab.be/vindeenjob/vacatures/75108196/technical-service-coordinator-machinebouw-vast-contract",
